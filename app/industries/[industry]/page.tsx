@@ -10,19 +10,12 @@ import ProcessSection from '@/components/industries/ProcessSection';
 import StatisticsSection from '@/components/industries/StatisticsSection';
 import CaseStudies from '@/components/industries/CaseStudies';
 import InnovationSection from '@/components/industries/InnovationSection';
-
-export async function generateStaticParams() {
-  return industries.map((industry) => ({
-    industry: industry.id,
-  }));
-}
-
-export default async function IndustryPage({
+export default function IndustryPage({
   params,
   
 }: {
   params: { industry: string };
-  searchParams: { [key: string]: string | string[] };
+  searchParams?: { [key: string]: string | string[] };
 }) {
   const industry = industries.find((ind) => ind.id === params.industry);
 
