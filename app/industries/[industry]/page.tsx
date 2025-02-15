@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import {industries} from '@/constants/industries';
+import { industries } from '@/constants/industries';
 import HeroSection from '@/components/industries/HeroSection';
 import ServiceHighlights from '@/components/industries/ServiceHighlights';
 import ClientSection from '@/components/industries/ClientSection';
@@ -17,10 +17,12 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function IndustryPage({
+export default async function IndustryPage({
   params,
+  
 }: {
   params: { industry: string };
+  searchParams: { [key: string]: string | string[] };
 }) {
   const industry = industries.find((ind) => ind.id === params.industry);
 
