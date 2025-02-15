@@ -4,10 +4,6 @@ import {
   motion,
   useTransform,
   useScroll,
-<<<<<<< HEAD
-=======
-  useVelocity,
->>>>>>> 324c0464a26006967fc5c05a5a38fb816f9edc9c
   useSpring,
 } from "framer-motion";
 import { cn } from "@/lib/utils";

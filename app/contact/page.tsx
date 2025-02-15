@@ -7,11 +7,7 @@ import { Button } from '@/components/ui/button';
 import { useState } from 'react';
 import Navbar from '@/components/ui/navbar';
 import Footer from '@/components/footer';
-<<<<<<< HEAD
-// import Header from '@/components/ui/Header';
-=======
-import Header from '@/components/ui/Header';
->>>>>>> 324c0464a26006967fc5c05a5a38fb816f9edc9c
+//import Header from '@/components/ui/Header';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -39,11 +35,7 @@ export default function ContactPage() {
             <div>
               <h1 className="text-4xl font-bold tracking-tight text-foreground">Get in touch</h1>
               <p className="mt-4 text-lg text-muted-foreground">
-<<<<<<< HEAD
                 We&apos;d love to hear from you. Please fill out this form or shoot us an email.
-=======
-                We'd love to hear from you. Please fill out this form or shoot us an email.
->>>>>>> 324c0464a26006967fc5c05a5a38fb816f9edc9c
               </p>
             </div>
             

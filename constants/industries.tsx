@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 export const industries = [
-=======
-const industries = [
->>>>>>> 324c0464a26006967fc5c05a5a38fb816f9edc9c
   { title: "Automotive", href: "/industries/automotive" },
   { title: "Aerospace and Defense", href: "#" },
   { title: "Heavy Machinery and Industrial Equipment", href: "#" },
@@ -13,9 +9,4 @@ const industries = [
   { title: "Robotics and Automation", href: "#" },
   { title: "Renewable Energy", href: "#" },
   { title: "Consumer Products", href: "#" },
-<<<<<<< HEAD
   ];
-=======
-  ]
-  export default industries;
->>>>>>> 324c0464a26006967fc5c05a5a38fb816f9edc9c

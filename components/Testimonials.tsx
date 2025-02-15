@@ -66,11 +66,7 @@ export default function TestimonialSlider() {
                 <CardContent className="p-10">
                   <div className="space-y-8">
                     <blockquote className="text-[#4CD0E0] text-xl leading-relaxed min-h-[120px]">
-<<<<<<< HEAD
                       &quot;{testimonial.quote}&quot;
-=======
-                      "{testimonial.quote}"
->>>>>>> 324c0464a26006967fc5c05a5a38fb816f9edc9c
                     </blockquote>
                     <div className="flex items-center gap-6">
                       <div className="relative w-20 h-20 rounded-full overflow-hidden">

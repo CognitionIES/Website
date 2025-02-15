@@ -1,10 +1,7 @@
 import Link from 'next/link';
 // import industries  from '@/constants/industries';
 import { ArrowRight } from 'lucide-react';
-<<<<<<< HEAD
 import Image from 'next/image';
-=======
->>>>>>> 324c0464a26006967fc5c05a5a38fb816f9edc9c
 
 export default function IndustriesPage() {
   return (
@@ -33,17 +30,11 @@ export default function IndustriesPage() {
               >
                 <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
                   <div className="relative h-48">
-<<<<<<< HEAD
                     <Image
                       src={industry.heroImage}
                       alt={industry.title}
                       width={640}
                       height={360}
-=======
-                    <img
-                      src={industry.heroImage}
-                      alt={industry.title}
->>>>>>> 324c0464a26006967fc5c05a5a38fb816f9edc9c
                       className="w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors" />
