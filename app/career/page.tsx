@@ -6,7 +6,7 @@ import {
   Users,
   Target,
   Award,
-  Search,
+  
   MapPin,
   Briefcase,
   ChevronRight,

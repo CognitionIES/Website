@@ -59,7 +59,6 @@ const industries = {
     ]
   }
 };
-
 export function IndustriesSection() {
   const [activeIndustry, setActiveIndustry] = React.useState("manufacturing");
   const [imageLoading, setImageLoading] = React.useState(true);
@@ -113,6 +112,11 @@ export function IndustriesSection() {
         {/* Column 3: Industry image */}
         <div className="bg-gray-50 p-4">
           <div className="relative h-full w-full overflow-hidden rounded-lg">
+            {imageLoading && (
+              <div className="absolute inset-0 flex items-center justify-center bg-gray-200">
+                Loading...
+              </div>
+            )}
             <Image
               src={industries[activeIndustry].image}
               alt={industries[activeIndustry].title}

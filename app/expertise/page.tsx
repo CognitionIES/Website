@@ -250,6 +250,7 @@ import frameBackground from "@/constants/images/Background/Frame_8.jpg";
 import Footer from "@/components/footer";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, MousePointer2 } from "lucide-react";
+import Header from "@/components/ui/Header";
 
 export default function ExpertisePage() {
   const [showScrollHint, setShowScrollHint] = useState(true);
@@ -274,6 +275,7 @@ export default function ExpertisePage() {
       <div className="relative">
         {/* Navbar */}
         <div className="relative z-50">
+          <Header />
           <Navbar />
         </div>
 
