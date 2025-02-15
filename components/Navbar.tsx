@@ -47,8 +47,11 @@ function Navbar() {
             <Link href="/" className="relative z-10">
               <Image
                 src={logo1}
+<<<<<<< HEAD
                 width={100}
                 height={100}
+=======
+>>>>>>> 324c0464a26006967fc5c05a5a38fb816f9edc9c
                 alt="Company Logo"
                 className="h-16 w-auto"
                 priority

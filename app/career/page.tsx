@@ -31,7 +31,10 @@ import Footer from '@/components/footer';
 import Navbar from '@/components/ui/navbar';
 import testimonials from '@/constants/testimonials';
 import jobListings from '@/constants/jobListings';
+<<<<<<< HEAD
 import Image from 'next/image';
+=======
+>>>>>>> 324c0464a26006967fc5c05a5a38fb816f9edc9c
 
 export default function CareersPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -165,11 +168,17 @@ export default function CareersPage() {
             {testimonials.map((testimonial) => (
               <Card key={testimonial.id} className="flex flex-col">
                 <CardHeader className="flex-row gap-4 items-center">
+<<<<<<< HEAD
                   <Image
                     src={testimonial.image}
                     alt={testimonial.name}
                     width={64}
                     height={64}
+=======
+                  <img
+                    src={testimonial.image}
+                    alt={testimonial.name}
+>>>>>>> 324c0464a26006967fc5c05a5a38fb816f9edc9c
                     className="rounded-full w-16 h-16 object-cover"
                   />
                   <div>

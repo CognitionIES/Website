@@ -1,5 +1,9 @@
 import { notFound } from 'next/navigation';
+<<<<<<< HEAD
 import {industries} from '@/constants/industries';
+=======
+import { industries } from '@/constants/industries';
+>>>>>>> 324c0464a26006967fc5c05a5a38fb816f9edc9c
 import HeroSection from '@/components/industries/HeroSection';
 import ServiceHighlights from '@/components/industries/ServiceHighlights';
 import ClientSection from '@/components/industries/ClientSection';
