@@ -55,7 +55,7 @@ export default function CareersPage() {
             Shape the Future of Engineering
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-            Join a team that's shaping the future of automotive, aerospace, healthcare, robotics, and more.
+            Join a team that&apos;s shaping the future of automotive, aerospace, healthcare, robotics, and more.
           </p>
           <Button
             size="lg"
@@ -107,7 +107,6 @@ export default function CareersPage() {
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="w-full"
-                icon={Search}
               />
             </div>
             <Select value={locationFilter} onValueChange={setLocationFilter}>

@@ -253,7 +253,7 @@ import { ChevronDown, MousePointer2 } from "lucide-react";
 
 export default function ExpertisePage() {
   const [showScrollHint, setShowScrollHint] = useState(true);
-  const [currentSection, setCurrentSection] = useState(0);
+  const [currentSection] = useState(0);
 
   useEffect(() => {
     const timer = setTimeout(() => setShowScrollHint(false), 5000);

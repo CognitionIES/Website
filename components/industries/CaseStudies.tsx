@@ -33,7 +33,7 @@ const CaseStudies: FC<CaseStudiesProps> = ({ industry }) => {
         <div className="max-w-3xl mx-auto text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">Case Studies</h2>
           <p className="text-gray-600">
-            Discover how we've helped our clients achieve remarkable results
+            Discover how we&apos;ve helped our clients achieve remarkable results
           </p>
         </div>
         <div className="grid md:grid-cols-2 gap-8">

@@ -70,6 +70,7 @@ export default function ServiceDetails() {
       console.log("Form submitted:", values);
       toast.success("Form submitted successfully!");
       form.reset();
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
       toast.error("An error occurred. Please try again.");
     }

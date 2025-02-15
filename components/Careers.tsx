@@ -28,7 +28,7 @@ export default function Careers() {
               </h3>
             </div>
             <p className="text-base leading-relaxed text-[#4A4A4A]">
-              If you share our love for engineering and innovation, We'll provide you with all
+              If you share our love for engineering and innovation, We&apos;ll provide you with all
               the tools and platforms to navigate your growth journey. Join us to engineer
               the change you envision!
             </p>

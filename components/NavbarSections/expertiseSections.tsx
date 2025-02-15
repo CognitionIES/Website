@@ -22,13 +22,13 @@
 //       {
 //         title: "Design & Development",
 //         items: [
-//           { 
+//           {
 //             title: "Mechanical Design",
 //             href: "/expertise/product/mechanical",
 //             image: "https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?q=80&w=400&h=300&fit=crop",
 //             description: "Precision mechanical engineering and design services"
 //           },
-//           { 
+//           {
 //             title: "CAE/CFD",
 //             href: "/expertise/product/cae-cfd",
 //             image: "https://images.unsplash.com/photo-1580894894513-541e068a3e2b?q=80&w=400&h=300&fit=crop",
@@ -39,13 +39,13 @@
 //       {
 //         title: "Engineering Services",
 //         items: [
-//           { 
+//           {
 //             title: "Electrical Engineering",
 //             href: "/expertise/product/electrical",
 //             image: "https://images.unsplash.com/photo-1620283085439-39620a1e21c4?q=80&w=400&h=300&fit=crop",
 //             description: "Comprehensive electrical system design and implementation"
 //           },
-//           { 
+//           {
 //             title: "Hydraulic Engineering",
 //             href: "/expertise/product/hydraulic",
 //             image: "https://images.unsplash.com/photo-1574246604907-db69e30ddb97?q=80&w=400&h=300&fit=crop",
@@ -56,13 +56,13 @@
 //       {
 //         title: "Manufacturing",
 //         items: [
-//           { 
+//           {
 //             title: "Prototyping and 3D Printing",
 //             href: "/expertise/product/prototyping",
 //             image: "https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?q=80&w=400&h=300&fit=crop",
 //             description: "Rapid prototyping and additive manufacturing"
 //           },
-//           { 
+//           {
 //             title: "Asset Management",
 //             href: "/expertise/product/asset-management",
 //             image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=400&h=300&fit=crop",
@@ -81,13 +81,13 @@
 //       {
 //         title: "Cloud & Infrastructure",
 //         items: [
-//           { 
+//           {
 //             title: "Cloud Computing",
 //             href: "/expertise/it/cloud",
 //             image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=400&h=300&fit=crop",
 //             description: "Scalable cloud solutions and infrastructure"
 //           },
-//           { 
+//           {
 //             title: "DevOps Solutions",
 //             href: "/expertise/it/devops",
 //             image: "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?q=80&w=400&h=300&fit=crop",
@@ -98,13 +98,13 @@
 //       {
 //         title: "Data & Security",
 //         items: [
-//           { 
+//           {
 //             title: "Data Analytics",
 //             href: "/expertise/it/analytics",
 //             image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=400&h=300&fit=crop",
 //             description: "Advanced data analytics and insights"
 //           },
-//           { 
+//           {
 //             title: "Cybersecurity",
 //             href: "/expertise/it/security",
 //             image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=400&h=300&fit=crop",
@@ -123,13 +123,13 @@
 //       {
 //         title: "Design & Engineering",
 //         items: [
-//           { 
+//           {
 //             title: "Pipeline Design",
 //             href: "/expertise/pipeline/design",
 //             image: "https://images.unsplash.com/photo-1574068752649-c0c6f5a01ab7?q=80&w=400&h=300&fit=crop",
 //             description: "Expert pipeline design and engineering"
 //           },
-//           { 
+//           {
 //             title: "Integrity Management",
 //             href: "/expertise/pipeline/integrity",
 //             image: "https://images.unsplash.com/photo-1574068752647-fa9bf7050e9f?q=80&w=400&h=300&fit=crop",
@@ -140,13 +140,13 @@
 //       {
 //         title: "Maintenance & Safety",
 //         items: [
-//           { 
+//           {
 //             title: "Risk Assessment",
 //             href: "/expertise/pipeline/risk",
 //             image: "https://images.unsplash.com/photo-1574068752648-e9a0d16bf788?q=80&w=400&h=300&fit=crop",
 //             description: "Thorough risk assessment and mitigation"
 //           },
-//           { 
+//           {
 //             title: "Maintenance Planning",
 //             href: "/expertise/pipeline/maintenance",
 //             image: "https://images.unsplash.com/photo-1574068752646-4c0c4f4b2b0f?q=80&w=400&h=300&fit=crop",
@@ -295,7 +295,7 @@
 //       "Embedded Systems Engineering",
 //       "Technical Publication",
 //       "Supply Chain Management/Procurement",
-      
+
 //     ]
 //   },
 //   it: {
@@ -416,35 +416,68 @@ import { cn } from "@/lib/utils";
 const expertise = {
   product: {
     title: "Product Engineering",
-    image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=800&h=600&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=800&h=600&fit=crop",
     categories: [
-      { title: "Mechanical Design Services", href: "/expertise?section=mechanical" },
+      {
+        title: "Mechanical Design Services",
+        href: "/expertise?section=mechanical",
+      },
       { title: "CAE/CFD", href: "/expertise?section=cae-cfd" },
-      { title: "Electrical Engineering Services", href: "/expertise?section=electrical" },
-      { title: "Hydraulic Engineering Services", href: "/expertise?section=hydraulic" },
-      { title: "Prototyping and 3D Printing", href: "/expertise?section=prototyping" },
-      { title: "Asset Management", href: "/expertise?section=asset-management" },
-      { title: "Embedded Systems Engineering", href: "/expertise?section=embedded-systems" },
-      { title: "Technical Publication", href: "/expertise?section=technical-publication" },
-      { title: "Supply Chain Management/Procurement", href: "/expertise?section=supply-chain" }
-    ]
+      {
+        title: "Electrical Engineering Services",
+        href: "/expertise?section=electrical",
+      },
+      {
+        title: "Hydraulic Engineering Services",
+        href: "/expertise?section=hydraulic",
+      },
+      {
+        title: "Prototyping and 3D Printing",
+        href: "/expertise?section=prototyping",
+      },
+      {
+        title: "Asset Management",
+        href: "/expertise?section=asset-management",
+      },
+      {
+        title: "Embedded Systems Engineering",
+        href: "/expertise?section=embedded-systems",
+      },
+      {
+        title: "Technical Publication",
+        href: "/expertise?section=technical-publication",
+      },
+      {
+        title: "Supply Chain Management/Procurement",
+        href: "/expertise?section=supply-chain",
+      },
+    ],
   },
   it: {
     title: "IT Services",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&h=600&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&h=600&fit=crop",
     categories: [
       { title: "Cloud Services", href: "/expertise/it/cloud" },
-      { title: "Software Development", href: "/expertise/it/software" }
-    ]
+      { title: "Software Development", href: "/expertise/it/software" },
+    ],
   },
   pipeline: {
     title: "Pipeline Services",
-    image: "https://images.unsplash.com/photo-1471958680802-1345a694ba6d?q=80&w=800&h=600&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1471958680802-1345a694ba6d?q=80&w=800&h=600&fit=crop",
     categories: [
-      { title: "Hydraulic Engineering Services", href: "/expertise/pipeline/hydraulic-engineering" },
-      { title: "Asset Management", href: "/expertise/pipeline/asset-management" }
-    ]
-  }
+      {
+        title: "Hydraulic Engineering Services",
+        href: "/expertise/pipeline/hydraulic-engineering",
+      },
+      {
+        title: "Asset Management",
+        href: "/expertise/pipeline/asset-management",
+      },
+    ],
+  },
 };
 
 export function ExpertiseSection() {
@@ -461,7 +494,7 @@ export function ExpertiseSection() {
               key={key}
               className={cn(
                 "w-full px-4 py-3 text-left hover:text-blue-600 transition-colors",
-                activeExpertise === key 
+                activeExpertise === key
               )}
               onMouseEnter={() => {
                 setActiveExpertise(key);
@@ -469,7 +502,9 @@ export function ExpertiseSection() {
               }}
             >
               <div className="flex items-center gap-3">
-                <div className="font-medium text-gray-900 hover:text-blue-600">{category.title}</div>
+                <div className="font-medium text-gray-900 hover:text-blue-600">
+                  {category.title}
+                </div>
               </div>
             </button>
           ))}
@@ -483,7 +518,9 @@ export function ExpertiseSection() {
               href={subCategory.href}
               className="block p-2 rounded-md  transition-colors"
             >
-              <div className="font-medium text-sm hover:text-blue-600 text-gray-900">{subCategory.title}</div>
+              <div className="font-medium text-sm hover:text-blue-600 text-gray-900">
+                {subCategory.title}
+              </div>
             </Link>
           ))}
         </div>
@@ -491,6 +528,11 @@ export function ExpertiseSection() {
         {/* Column 3: Expertise Image */}
         <div className="bg-gray-50">
           <div className="relative h-[400px] w-[300px]">
+            {imageLoading && (
+              <div className="absolute inset-0 flex items-center justify-center bg-gray-200">
+                Loading...
+              </div>
+            )}
             <Image
               src={expertise[activeExpertise].image}
               alt={expertise[activeExpertise].title}

@@ -9,7 +9,7 @@ interface StatisticsSectionProps {
   industry: Industry;
 }
 
-const StatisticsSection: FC<StatisticsSectionProps> = ({ industry }) => {
+const StatisticsSection: FC<StatisticsSectionProps> = ({ }) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
