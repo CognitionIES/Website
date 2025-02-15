@@ -11,7 +11,7 @@ const ContactCTA: FC = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-white mb-6">
-            Let's Work Together
+            Let&apos;s Work Together
           </h2>
           <p className="text-white/90 mb-8">
             Get in touch with our experts to discuss your project requirements

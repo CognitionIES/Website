@@ -66,7 +66,7 @@ export default function AboutUs() {
                 </div>
                 <h3 className="font-semibold text-xl text-gray-900">Quick Support</h3>
                 <p className="text-gray-600">
-                  We'll help you test bold new ideas while sharing your.
+                  We&apos;ll help you test bold new ideas while sharing your.
                 </p>
               </div>
             </div>

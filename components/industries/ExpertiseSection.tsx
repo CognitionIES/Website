@@ -3,6 +3,7 @@
 import { FC } from 'react';
 import { Industry } from '@/types/industry';
 import { CheckCircle } from 'lucide-react';
+import Image from 'next/image';
 
 interface ExpertiseSectionProps {
   industry: Industry;
@@ -37,7 +38,7 @@ const ExpertiseSection: FC<ExpertiseSectionProps> = ({ industry }) => {
             </div>
           </div>
           <div className="relative h-[400px] rounded-lg overflow-hidden">
-            <img
+            <Image
               src={industry.heroImage}
               alt={`${industry.title} expertise`}
               className="absolute inset-0 w-full h-full object-cover"

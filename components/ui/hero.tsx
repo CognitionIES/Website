@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { heroSlides } from '@/constants/hero';
+import Image from 'next/image';
 
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -34,9 +35,11 @@ export default function Hero() {
         >
           {/* Background Image with Overlay */}
           <div className="absolute inset-0">
-            <img
+            <Image
               src={slide.image}
               alt={slide.title}
+              width={1920}
+              height={1080}
               className="h-full w-full object-cover"
             />
             <div className="absolute inset-0 bg-black/50" />

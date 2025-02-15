@@ -1,6 +1,7 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
+import Image from 'next/image';
 
 export default function Careers() {
   return (
@@ -8,9 +9,11 @@ export default function Careers() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 items-center">
           <div className="relative h-[200px] md:h-[350px] rounded-xl shadow-lg overflow-hidden">
-            <img
+            <Image
               src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80"
               alt="Team collaborating in office"
+              width={600}
+              height={400}
               className="object-cover w-full h-full"
             />
           </div>

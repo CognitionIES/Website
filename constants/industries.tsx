@@ -1,4 +1,4 @@
-const industries = [
+export const industries = [
   { title: "Automotive", href: "/industries/automotive" },
   { title: "Aerospace and Defense", href: "#" },
   { title: "Heavy Machinery and Industrial Equipment", href: "#" },
@@ -9,5 +9,4 @@ const industries = [
   { title: "Robotics and Automation", href: "#" },
   { title: "Renewable Energy", href: "#" },
   { title: "Consumer Products", href: "#" },
-  ]
-  export default industries;
+  ];

@@ -31,6 +31,7 @@ import Footer from '@/components/footer';
 import Navbar from '@/components/ui/navbar';
 import testimonials from '@/constants/testimonials';
 import jobListings from '@/constants/jobListings';
+import Image from 'next/image';
 
 export default function CareersPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -164,9 +165,11 @@ export default function CareersPage() {
             {testimonials.map((testimonial) => (
               <Card key={testimonial.id} className="flex flex-col">
                 <CardHeader className="flex-row gap-4 items-center">
-                  <img
+                  <Image
                     src={testimonial.image}
                     alt={testimonial.name}
+                    width={64}
+                    height={64}
                     className="rounded-full w-16 h-16 object-cover"
                   />
                   <div>
