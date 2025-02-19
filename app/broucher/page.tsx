@@ -1,117 +1,39 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { Checkbox } from "@/components/ui/checkbox";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-import { toast } from "sonner";
+// import Navbar from "@/components/ui/navbar";
+import Left from "@/components/Broucher/left";
+import Right from "@/components/Broucher/Right";
+import Hero from "@/components/Broucher/Hero";
+import { MegaMenu } from "@/components/ui/MegaMenu";
 
-const formSchema = z.object({
-  firstName: z.string().min(2, "First name is required"),
-  lastName: z.string().min(2, "Last name is required"),
-  email: z.string().email("Invalid email address"),
-  companyName: z.string().min(2, "Company name is required"),
-  jobTitle: z.string().min(2, "Job title is required"),
-  industry: z.string().min(1, "Please select an industry"),
-  country: z.string().min(1, "Please select a country"),
-  marketingConsent: z.boolean().default(false),
-});
-
-const industries = [
-  "Manufacturing",
-  "Technology",
-  "Healthcare",
-  "Energy",
-  "Transportation",
-  "Construction",
-  "Other",
-];
-
-const countries = [
-  "United States",
-  "United Kingdom",
-  "Canada",
-  "Germany",
-  "France",
-  "Japan",
-  "Australia",
-  "India",
-  // Add more countries as needed
-];
 
 export default function ServiceDetails() {
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      marketingConsent: false,
-    },
-  });
-
-  const onSubmit = async (values: z.infer<typeof formSchema>) => {
-    try {
-      // In a real implementation, this would be an API call
-      console.log("Form submitted:", values);
-      toast.success("Form submitted successfully!");
-      form.reset();
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    } catch (error) {
-      toast.error("An error occurred. Please try again.");
-    }
-  };
 
   return (
-    <main className="min-h-screen ">
-      {/* Header Section */}
-          <div className="bg-[#f0f0f0]">
-            <div className="container mx-auto px-4 py-8 md:py-12">
-              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
-                <div className="max-w-2xl">
-                  <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                    Engineering Services
-                  </h1>
-                  <p className="text-lg text-gray-600">
-                    Comprehensive engineering solutions for the process
-                    industry, delivering excellence in plant design and
-                    optimization.
-                  </p>
-                </div>
-                <Button
-                  size="lg"
-                  className="bg-white rounded-base hover:bg-white border-black text-[#0c1d44] bg-[#23dce1]"
-                >
-                  Download Brochure
-                </Button>
-              </div>
-            </div>
-          </div>
-          {/* Banner Image */}
-          <div className="w-full h-[400px] relative">
-            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3')] bg-cover bg-center">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-900/10 to-blue-950/10" />
-            </div>
-          </div>
+    <main className="min-h-screen  ">
+      <MegaMenu />
+      <Hero />         
+      {/* Banner Image */}
+      <div className="w-full h-[400px] relative">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3')] bg-cover bg-center">
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/10 to-blue-950/10" />
+        </div>
+      </div>
 
-          {/* Content Section */}
-          <div className="container mx-auto px-4 py-12">
-            <div className="flex flex-col lg:flex-row gap-12">
-              {/* Left Column - Service Details */}
+      {/* Content Section */}
+    
+      <div className="min-h-screen flex  ">
+        
+        <Left/>
+        <Right />
+      </div>  
+    </main>
+  );
+}
+/* 
+      <div className="container mx-auto px-4 py-12">
+            <div className="flex flex-col lg:flex-row gap-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              {/* Left Column - Service Details 
               <div className="lg:w-5/12">
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">
                   Engineering for efficient projects & plants
@@ -120,11 +42,14 @@ export default function ServiceDetails() {
                   <p className="mb-6">
                     Our engineering solutions create strong market
                     differentiation with offerings for efficient, safe, and
-                    sustainable production facilities. We bring excellence in
-                    engineering and operation through comprehensive service
-                    portfolios.
+                    sustainable production facilities.
                   </p>
-
+                  <p> We bring excellence in
+                    engineering and operation through comprehensive service
+                    portfolios.</p>
+                    <br></br>
+                    <br></br>
+                    <br></br>
                   <div className="space-y-4">
                     <div className="flex items-start gap-3">
                       <div className="h-6 w-6 mt-1 text-blue-600">→</div>
@@ -151,10 +76,19 @@ export default function ServiceDetails() {
                       </p>
                     </div>
                   </div>
+                    
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                  <p>
+                  Download our brochure for more information.
+                  </p>
+
+
                 </div>
               </div>
 
-              {/* Right Column - Contact Form */}
+              {/* Right Column - Contact Form
               <div className="lg:w-7/12">
                 <div className="bg-[#0c1d44] p-6 md:p-8 rounded-lg">
                   <h3 className="text-xl font-bold text-gray-900 mb-6 text-white">
@@ -354,7 +288,4 @@ export default function ServiceDetails() {
               </div>
             </div>
           </div>
-        
-    </main>
-  );
-}
+*/

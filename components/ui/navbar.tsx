@@ -14,8 +14,8 @@ import {
 import { cn } from "@/lib/utils"
 import { ExpertiseSection } from "@/components/NavbarSections/expertiseSections"
 import { IndustriesSection } from "@/components/NavbarSections/IndustriesSection"
+// import Header from "./Header"
 import logo1 from "@/constants/images/LOGO/LOGO_PNG_1.png"
-
 
 function Navbar() {
   const [isSticky, setIsSticky] = useState(false)
@@ -29,9 +29,11 @@ function Navbar() {
   }, [])
 
   return (
-    <>    <nav
+    <>  
+    {/* <Header />  */}
+    <nav 
       className={cn(
-        "w-full h-20 z-[1000] transition-all duration-300",
+        "w-full h-20 z-[1000] transition-all duration-300 py-2",
         isSticky 
           ? "fixed top-0 bg-white shadow-md" 
           : "bg-white border-b border-gray-200"
@@ -73,10 +75,10 @@ function Navbar() {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-base font-medium text-gray-700 hover:text-blue-600">
+                  <NavigationMenuTrigger className="text-base font-medium text-gray-700 hover:text-blue-600 ">
                     Expertise
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent>
+                  <NavigationMenuContent className="align-content: center ">
                     <ExpertiseSection
                       activeSection={activeExpertiseSection}
                       onSectionHover={setActiveExpertiseSection}

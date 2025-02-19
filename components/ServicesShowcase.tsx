@@ -10,7 +10,7 @@ const services = [
     title: "Mobility",
     description: "We bring together digital and physical engineering expertise to revolutionize the future of transportation. From autonomous vehicles to smart infrastructure, we're shaping how the world moves.",
     color: "bg-[#2563eb]",
-    image: "https://images.unsplash.com/photo-1611266353653-48952db9da32?auto=format&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80  ",
   },
   {
     id: 2,

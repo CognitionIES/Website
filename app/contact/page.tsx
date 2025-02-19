@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { useState } from 'react';
 import Navbar from '@/components/ui/navbar';
 import Footer from '@/components/footer';
+import { MegaMenu } from '@/components/ui/MegaMenu';
 //import Header from '@/components/ui/Header';
 
 export default function ContactPage() {
@@ -26,7 +27,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-background">
       
-      <Navbar />
+      <MegaMenu />
       <div className='bg-slate-50'>
       <div className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 ">

@@ -11,21 +11,24 @@ import ServicesSection from "@/components/ServicesSection";
 //import Career from "@/components/Careers";
 import Careers from "@/components/Careers";
 import TestimonialSlider from "@/components/Testimonials";
+import ServicesShowcase from "@/components/ServicesShowcase";
+import { MegaMenu } from "@/components/ui/MegaMenu";
 
 
 
 export default function Home() {
   return (
+    <div>
+    < MegaMenu />
     <div 
       className=" gap-16 font-[family-name:var(--font-geist-sans)] bg-cover bg-center"
       style={{  
         backgroundImage: `url(${frameBackground.src})`, // Dynamically load the image
       }} 
-    >
+      >
     <div className="min-h-screen  gap-16 font-[family-name:var(--font-geist-sans)]">
       {/* Header */}
       <div className="">
-        <Navbar />
       </div>
       <div className=" flex flex-col gap-16  items-center sm:items-start w-full">
           <Hero /> 
@@ -33,6 +36,10 @@ export default function Home() {
       <section className="">
         <ServicesSection />
       </section>
+      <section>
+        {/* <ServicesShowcase /> */}
+      </section>
+      
       <section className=" bg-white">
         <TestimonialSlider />
       </section>
@@ -50,6 +57,7 @@ export default function Home() {
       <footer className=" gap-6 items-center justify-center mt-auto">
         <Footer />
       </footer>
+    </div>
     </div>
   );
 }

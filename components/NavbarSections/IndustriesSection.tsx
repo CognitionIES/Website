@@ -59,79 +59,82 @@ const industries = {
     ]
   }
 };
+
 export function IndustriesSection() {
   const [activeIndustry, setActiveIndustry] = React.useState("manufacturing");
   const [imageLoading, setImageLoading] = React.useState(true);
 
   return (
-    <div className="w-[1200px] bg-white rounded-lg shadow-lg mt-2">
-      <div className="grid grid-cols-3 min-h-[400px]">
-        {/* Column 1: Main industries */}
-        <div className="border-r">
-          {Object.entries(industries).map(([key, industry]) => (
-            <button
-              key={key}
-              className={cn(
-                "w-full px-4 py-3 text-left hover:bg-gray-50 transition-colors",
-                activeIndustry === key && "bg-blue-50"
+    <div className="flex justify-center mt-2">
+      <div className="w-[1200px] bg-white rounded-lg shadow-lg">
+        <div className="grid grid-cols-3 min-h-[400px]">
+          {/* Column 1: Main industries */}
+          <div className="border-r">
+            {Object.entries(industries).map(([key, industry]) => (
+              <button
+                key={key}
+                className={cn(
+                  "w-full px-4 py-3 text-left hover:bg-gray-50 transition-colors",
+                  activeIndustry === key && "bg-blue-50"
+                )}
+                onMouseEnter={() => {
+                  setActiveIndustry(key);
+                  setImageLoading(true);
+                }}
+              >
+                <div className="flex items-center gap-3">
+                  <div>
+                    <div className="font-medium text-gray-900">{industry.title}</div>
+                    <div className="text-sm text-gray-500">{industry.description}</div>
+                  </div>
+                </div>
+              </button>
+            ))}
+          </div>
+
+          {/* Column 2: Categories */}
+          <div className="p-6 space-y-4">
+            {industries[activeIndustry].categories.map((category) => (
+              <Link
+                key={category.title}
+                href={category.href}
+                className="block p-3 rounded-md hover:bg-gray-50 transition-colors"
+              >
+                <div className="flex items-center justify-between">
+                  <div>
+                    <div className="font-medium text-gray-900">{category.title}</div>
+                    <div className="text-sm text-gray-500">{category.description}</div>
+                  </div>
+                  <ChevronRight className="w-4 h-4 text-gray-400" />
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          {/* Column 3: Industry image */}
+          <div className="bg-gray-50 p-4">
+            <div className="relative h-full w-full overflow-hidden rounded-lg">
+              {imageLoading && (
+                <div className="absolute inset-0 flex items-center justify-center bg-gray-200">
+                  Loading...
+                </div>
               )}
-              onMouseEnter={() => {
-                setActiveIndustry(key);
-                setImageLoading(true);
-              }}
-            >
-              <div className="flex items-center gap-3">
-                <div>
-                  <div className="font-medium text-gray-900">{industry.title}</div>
-                  <div className="text-sm text-gray-500">{industry.description}</div>
-                </div>
+              <Image
+                src={industries[activeIndustry].image}
+                alt={industries[activeIndustry].title}
+                fill
+                className="object-cover"
+                onLoad={() => setImageLoading(false)}
+                priority
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+                <h3 className="text-xl font-semibold text-white">
+                  {industries[activeIndustry].title}
+                </h3>
+                <p className="text-sm text-gray-200">
+                  {industries[activeIndustry].description}
+                </p>
               </div>
-            </button>
-          ))}
-        </div>
-
-        {/* Column 2: Categories */}
-        <div className="p-6 space-y-4">
-          {industries[activeIndustry].categories.map((category) => (
-            <Link
-              key={category.title}
-              href={category.href}
-              className="block p-3 rounded-md hover:bg-gray-50 transition-colors"
-            >
-              <div className="flex items-center justify-between">
-                <div>
-                  <div className="font-medium text-gray-900">{category.title}</div>
-                  <div className="text-sm text-gray-500">{category.description}</div>
-                </div>
-                <ChevronRight className="w-4 h-4 text-gray-400" />
-              </div>
-            </Link>
-          ))}
-        </div>
-
-        {/* Column 3: Industry image */}
-        <div className="bg-gray-50 p-4">
-          <div className="relative h-full w-full overflow-hidden rounded-lg">
-            {imageLoading && (
-              <div className="absolute inset-0 flex items-center justify-center bg-gray-200">
-                Loading...
-              </div>
-            )}
-            <Image
-              src={industries[activeIndustry].image}
-              alt={industries[activeIndustry].title}
-              fill
-              className="object-cover"
-              onLoad={() => setImageLoading(false)}
-              priority
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
-              <h3 className="text-xl font-semibold text-white">
-                {industries[activeIndustry].title}
-              </h3>
-              <p className="text-sm text-gray-200">
-                {industries[activeIndustry].description}
-              </p>
             </div>
           </div>
         </div>

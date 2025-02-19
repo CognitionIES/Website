@@ -1,9 +1,10 @@
 "use client"
 
-import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { heroSlides } from '@/constants/hero';
-import Image from 'next/image';
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import { heroSlides } from "@/constants/hero";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+
 
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -15,46 +16,32 @@ export default function Hero() {
     return () => clearInterval(timer);
   }, []);
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
-  };
-
   return (
-    <div className="relative h-screen w-full overflow-hidden">
-      {/* Slides */}
+    <div className="relative h-screen w-full overflow-hidden z-0">
       {heroSlides.map((slide, index) => (
         <div
           key={slide.id}
           className={`absolute inset-0 transition-opacity duration-1000 ${
-            index === currentSlide ? 'opacity-100' : 'opacity-0'
+            currentSlide === index ? "opacity-100 z-0" : "opacity-0 z-0"
           }`}
         >
-          {/* Background Image with Overlay */}
-          <div className="absolute inset-0">
-            <Image
-              src={slide.image}
-              alt={slide.title}
-              width={1920}
-              height={1080}
-              className="h-full w-full object-cover"
-            />
-            <div className="absolute inset-0 bg-black/50" />
-          </div>
-
-          {/* Content */}
-          <div className="relative h-full flex items-center justify-center">
+          <Image
+            src={slide.image}
+            alt={slide.title}
+            width={1920}
+            height={1080}
+            className="w-full h-full object-cover"
+          />
+          {/* Text Overlay */}
+          <div className="absolute inset-0 flex items-center justify-center bg-black/40 z-10">
             <div className="text-center text-white px-4 max-w-4xl mx-auto">
               <p className="text-lg md:text-xl mb-4 text-blue-400 font-medium">
                 {slide.subtitle}
               </p>
-              <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              <h1 className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-md">
                 {slide.title}
               </h1>
-              <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
+              <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto drop-shadow-md">
                 {slide.description}
               </p>
               <button className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-lg text-lg font-medium transition-colors">
@@ -65,36 +52,28 @@ export default function Hero() {
         </div>
       ))}
 
-      {/* Navigation Buttons */}
+      {/* Left & Right Navigation */}
       <button
-        onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 p-2 rounded-full backdrop-blur-sm transition-colors"
-        aria-label="Previous slide"
+        onClick={() =>
+          setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length)
+        }
+        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 p-2 rounded-full z-20"
       >
-        <ChevronLeft className="w-6 h-6 text-white" />
-      </button>
-      <button
-        onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 p-2 rounded-full backdrop-blur-sm transition-colors"
-        aria-label="Next slide"
-      >
-        <ChevronRight className="w-6 h-6 text-white" />
+        <ChevronLeft className="text-white w-6 h-6" />
       </button>
 
-      {/* Slide Indicators */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-2">
-        {heroSlides.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentSlide(index)}
-            className={`w-2 h-2 rounded-full transition-all duration-300 ${
-              index === currentSlide
-                ? 'bg-white w-8'
-                : 'bg-white/50 hover:bg-white/75'
-            }`}
-            aria-label={`Go to slide ${index + 1}`}
-          />
-        ))}
+      <button
+        onClick={() =>
+          setCurrentSlide((prev) => (prev + 1) % heroSlides.length)
+        }
+        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 p-2 rounded-full z-20"
+      >
+        <ChevronRight className="text-white w-6 h-6" />
+      </button>
+
+      {/* Dropdown Fix */}
+      <div className="absolute top-0 left-0 z-30 w-full p-4 bg-white shadow-md">
+        {/* Dropdown content goes here */}
       </div>
     </div>
   );

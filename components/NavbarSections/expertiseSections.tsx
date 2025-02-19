@@ -527,7 +527,7 @@ export function ExpertiseSection() {
 
         {/* Column 3: Expertise Image */}
         <div className="bg-gray-50">
-          <div className="relative h-[400px] w-[300px]">
+          <div className="relative h-[200px] w-[200px] p-4">
             {imageLoading && (
               <div className="absolute inset-0 flex items-center justify-center bg-gray-200">
                 Loading...
