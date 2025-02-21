@@ -20,7 +20,7 @@ export default function ContactPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission logic here
+    // Handle form submission logic 
     console.log(formData);
   };
 

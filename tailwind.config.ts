@@ -11,8 +11,12 @@ export default {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+
   theme: {
   	extend: {
+		fontFamily: {
+      	  calibri: ["Calibri", "sans-serif"], // Adding Calibri
+      	},
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',

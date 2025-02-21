@@ -37,7 +37,7 @@ export default function Home() {
         <ServicesSection />
       </section>
       <section>
-        {/* <ServicesShowcase /> */}
+        <ServicesShowcase />
       </section>
       
       <section className=" bg-white">

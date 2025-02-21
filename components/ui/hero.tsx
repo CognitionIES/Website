@@ -17,12 +17,12 @@ export default function Hero() {
   }, []);
 
   return (
-    <div className="relative h-screen w-full overflow-hidden z-0">
+    <div className="relative h-[calc(100vh-4rem)] w-full overflow-hidden ">
       {heroSlides.map((slide, index) => (
         <div
           key={slide.id}
-          className={`absolute inset-0 transition-opacity duration-1000 ${
-            currentSlide === index ? "opacity-100 z-0" : "opacity-0 z-0"
+          className={`absolute  inset-0 transition-opacity duration-1000 ${
+            currentSlide === index ? "opacity-100" : "opacity-0"
           }`}
         >
           <Image
@@ -30,6 +30,7 @@ export default function Hero() {
             alt={slide.title}
             width={1920}
             height={1080}
+            priority
             className="w-full h-full object-cover"
           />
           {/* Text Overlay */}
@@ -44,7 +45,7 @@ export default function Hero() {
               <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto drop-shadow-md">
                 {slide.description}
               </p>
-              <button className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-lg text-lg font-medium transition-colors">
+              <button className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-lg text-lg hover:bg-white hover:text-black font-medium transition-colors">
                 Learn More
               </button>
             </div>
@@ -70,11 +71,6 @@ export default function Hero() {
       >
         <ChevronRight className="text-white w-6 h-6" />
       </button>
-
-      {/* Dropdown Fix */}
-      <div className="absolute top-0 left-0 z-30 w-full p-4 bg-white shadow-md">
-        {/* Dropdown content goes here */}
-      </div>
     </div>
   );
 }

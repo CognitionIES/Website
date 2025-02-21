@@ -142,10 +142,12 @@ function Footer() {
             <ul className="space-y-2">
               {/* ... links remain the same */}
               {[
-                ["LinkedIn", "https://linkedin.com"],
-                ["Facebook", "https://facebook.com"],
-                ["Instagram", "https://instagram.com"],
-                ["Twitter", "https://twitter.com"],
+                ["Home", "https://linkedin.com"],
+                ["Industries", "https://facebook.com"],
+                ["Expertise", "https://instagram.com"],
+                ["Resources", "https://twitter.com"],
+                ["Careers", "https://twitter.com"],
+                ["About Us", "https://twitter.com"],
               ].map(([title, url]) => (
                 <li key={title}>
                   <a
@@ -162,7 +164,7 @@ function Footer() {
           </div>
               {/* Socials - Takes 2 columns on desktop */}
           <div className="col-span-12 md:col-span-2">
-            <h3 className="text-h4 font-semibold mb-8">Socials</h3>
+            <h3 className="ttext-lg sm:text-xl lg:text-2xl font-semibold mb-4">Socials</h3>
             <ul className="space-y-4">
               {[
                 ["LinkedIn", "https://linkedin.com"],
@@ -186,7 +188,7 @@ function Footer() {
           {/* ... rest of the footer sections remain the same */}
           {/* Contact Us - Takes 3 columns on desktop */}
           <div className="col-span-12 md:col-span-3">
-            <h3 className="text-h4 font-semibold mb-8">Contact Us</h3>
+            <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold mb-4">Contact Us</h3>
             <ul className="space-y-4">
               <li>
                 <a

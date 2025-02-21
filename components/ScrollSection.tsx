@@ -6,13 +6,17 @@ import Image from "next/image";
 import blueBulletImage from "@/constants/images/Bullet_Points/bullet_point_blue_1.png";
 import grayBulletImage from "@/constants/images/Bullet_Points/bullet_point_gray.png";
 
+// ScrollSection component creates animated sections that reveal content as users scroll
+// Features alternating layouts, bullet points, and responsive design
+//  Framer Motion for smooth animations and intersection observer for scroll detection
+
 interface ScrollSectionProps {
-  index: number;
-  title: string;
-  description: string;
-  imageUrl: string;
-  bulletPoints: string[];
-  logos: { src: string; alt: string }[];
+  index: number;          // (even/odd)
+  title: string;          // Section heading
+  description: string;    // Main content text
+  imageUrl: string;       // image URL
+  bulletPoints: string[]; // List of key points
+  logos: { src: string; alt: string }[]; // Company logos
 }
 
 export function ScrollSection({
@@ -23,14 +27,17 @@ export function ScrollSection({
   bulletPoints = [],
   logos,
 }: ScrollSectionProps) {
+  // Setup intersection observer to trigger animations
   const [ref, inView] = useInView({
     threshold: 0.3,
     triggerOnce: false,
   });
 
+  // Determine layout based on index
   const isEven = index % 2 === 0;
   const bulletImage = isEven ? blueBulletImage : grayBulletImage;
 
+  // Animation variants for container and items
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -63,7 +70,9 @@ export function ScrollSection({
       animate={inView ? "visible" : "hidden"}
       className="relative max-w-7xl mx-auto px-4"
     >
+      {/* Main grid layout */}
       <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
+        {/* Content section with title, description, and bullet points */}
         <motion.div
           className={`space-y-6 ${
             isEven
@@ -144,6 +153,7 @@ export function ScrollSection({
           </motion.div>
         </motion.div>
 
+        {/* Featured image section with hover effects */}
         <motion.div
           className={`relative h-[550px] w-[350px] ${
             isEven
