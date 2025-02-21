@@ -1,34 +1,37 @@
 "use client";
 
-
-
 import Footer from "@/components/footer";
-import Navbar from "@/components/ui/navbar";
 import OpenPositions from "@/components/CareerPage/openPositions";
-
 import Hero from "@/components/CareerPage/Hero";
 import Values from "@/components/CareerPage/Values";
 import Testimonials from "@/components/CareerPage/Testimonials";
 import WorkWithUs from "@/components/CareerPage/WorkWithUs";
 import { MegaMenu } from "@/components/ui/MegaMenu";
 
-export default function CareersPage() {
+const brandColors = {
+  primary: "#00A4B4", 
+  secondary: "#4A4A4A", 
+  background: "#FFFFFF",
+  text: "#1A1A1A",
+};
 
+export default function CareersPage() {
   return (
-    <div className="min-h-screen bg-background"> 
+    <div className="min-h-screen bg-white"> 
       <MegaMenu />
       <Hero />
-      <div className="">
+      <div className="bg-gradient-to-b from-white to-[#F5FDFF]"> {/* Subtle gradient background */}
         <Values />
         <OpenPositions />
-        <Testimonials />
-        <WorkWithUs/>
+        <div className="bg-[#00A4B4]/5"> {/* Very light teal background */}
+          <Testimonials />
+        </div>
+        <WorkWithUs />
       </div>
       <Footer />
     </div>
   );
 }
-
 
 {/* CTA Section */}
 {/* <section className="py-20 bg-primary text-primary-foreground">

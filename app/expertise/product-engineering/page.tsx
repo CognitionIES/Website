@@ -22,6 +22,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { MegaMenu } from "@/components/ui/MegaMenu";
+import Footer from "@/components/footer";
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -44,7 +45,7 @@ const ServiceCard = ({ service }) => {
         <service.icon className="w-5 h-5 text-primary" />
       </div>
 
-      <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/80 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
+      <div className="absolute inset-0 bg-gradient-to-t from-[#003C46]/90 via-[#00A4B4]/80 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
         <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
           <h3 className="text-xl font-semibold mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
             {service.title}
@@ -54,7 +55,7 @@ const ServiceCard = ({ service }) => {
           </p>
           <Link
             href={service.href}
-            className="inline-block bg-white text-primary px-4 py-2 rounded-md font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200 hover:bg-white/90"
+            className="inline-block bg-white text-[#00A4B4] px-4 py-2 rounded-md font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200 hover:bg-white/90"
           >
             Learn More
           </Link>
@@ -169,7 +170,7 @@ export default function EngineeringExpertise() {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-[#FFFFFF]">
       <MegaMenu />
       {/* Hero Section */}
       <div className="relative h-[400px]">
@@ -180,7 +181,7 @@ export default function EngineeringExpertise() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#003C46]/90 to-[#00A4B4]/80" />
         <div className="absolute inset-0 max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <div className="h-full flex flex-col justify-center items-center text-white">
             <nav className="self-start mb-8 flex items-center space-x-2">
@@ -219,7 +220,7 @@ export default function EngineeringExpertise() {
       </div>
 
       {/* About Section */}
-      <section className="py-12 md:py-16 lg:py-20">
+      <section className="py-12 md:py-16 lg:py-20 bg-[#F5FDFF]">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -228,16 +229,16 @@ export default function EngineeringExpertise() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 font-calibri ">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#003C46]">
                 Comprehensive Engineering Solutions
               </h2>
-              <p className="text-lg text-muted-foreground mb-6">
+              <p className="text-lg text-[#4A4A4A] mb-6">
                 Our engineering expertise spans across multiple disciplines,
                 providing innovative solutions for complex technical challenges.
                 We combine cutting-edge technology with proven methodologies to
                 deliver exceptional results.
               </p>
-              <p className="text-lg text-muted-foreground">
+              <p className="text-lg text-[#4A4A4A]">
                 From concept to implementation, we work closely with you to
                 ensure your engineering projects are executed with precision and
                 excellence.
@@ -263,7 +264,7 @@ export default function EngineeringExpertise() {
       </section>
 
       {/* Services Grid */}
-      <section className="py-12 md:py-16 lg:py-20 bg-secondary">
+      <section className="py-12 md:py-16 lg:py-20 bg-[#FFFFFF]">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -271,10 +272,10 @@ export default function EngineeringExpertise() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#003C46]">
               Our Engineering Services
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-[#4A4A4A] max-w-2xl mx-auto">
               Comprehensive engineering solutions tailored to your specific
               needs
             </p>
@@ -296,18 +297,18 @@ export default function EngineeringExpertise() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-12 md:py-16 lg:py-20">
+      <section className="w-full py-12 sm:py-16 lg:py-24 bg-[#F5FDFF]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className=" mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 text-[#003C46]">
               Frequently Asked Questions
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg  text-[#4A4A4A] max-w-7xl mb-10 mx-auto  ">
               Find answers to common questions about our engineering services
             </p>
           </motion.div>
@@ -315,20 +316,29 @@ export default function EngineeringExpertise() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="max-w-3xl mx-auto"
+            className="max-w-7xl spcae-y-4 mx-auto"
           >
-            <Accordion type="single" collapsible>
+            <Accordion type="single" collapsible className="text-[#4A4A4A]">
               {faqs.map((faq, index) => (
-                <AccordionItem key={index} value={`item-${index}`}>
-                  <AccordionTrigger className="text-left">
+                <AccordionItem 
+                  key={index} 
+                  value={`item-${index}`}
+                  className="border-[#99D5DF]/20"
+                >
+                  <AccordionTrigger className="text-left text-base sm:text-lg lg:text-xl hover:text-[#00A4B4]">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent>{faq.answer}</AccordionContent>
+                  <AccordionContent className="text-[#4A4A4A] text-base leading-relaxed pt-4">
+                    {faq.answer}
+                  </AccordionContent>
                 </AccordionItem>
               ))}
             </Accordion>
           </motion.div>
         </div>
+      </section>
+      <section>
+        <Footer />
       </section>
     </div>
   );

@@ -221,21 +221,21 @@ export function MegaMenu() {
           isSticky
             ? "fixed top-0 left-0 right-0 z-[1000] shadow-md backdrop-blur-md bg-white/75"
             : "relative"
-        )}        
+        )}
       >
-        <div className="max-w-7xl mx-auto px-4  sm:px-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div
             className={cn(
-              "flex justify-between  items-center transition-all duration-300",
+              "flex items-center justify-between transition-all duration-300",
               isSticky ? "h-14" : "h-16"
             )}
           >
-            {/* Logo */}
+            {/* Logo - Left aligned */}
             <div className="flex-shrink-0">
-              <Link href="/" className="flex ">
+              <Link href="/" className="flex">
                 <span
                   className={cn(
-                    "font-bold text-blue-900  transition-all duration-300",
+                    "font-bold text-blue-900 transition-all duration-300",
                     isSticky ? "text-2xl" : "text-3xl"
                   )}
                 >
@@ -244,17 +244,16 @@ export function MegaMenu() {
               </Link>
             </div>
 
-            {/* Main Navigation */}
-            <div className="hidden md:flex md:items-center text-align: left ">
-              
+            {/* Right side container for navigation and actions */}
+            <div className="hidden md:flex md:items-center p-2 ml-auto">
+              {/* Navigation Links */}
               <Link
                 href="/"
-                className="text-gray-700 hover:text-blue-900 p-2 text-lg font-medium transition-colors duration-200"
+                className="text-gray-700 hover:text-blue-900 text-lg p-2  font-medium transition-colors duration-200"
               >
                 Home
               </Link>
 
-             
               {/* Industries Dropdown */}
               <div
                 className="relative"
@@ -264,7 +263,10 @@ export function MegaMenu() {
                 }}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
-                <button className="flex items-center p-2 text-gray-700 hover:text-blue-900 py-4 text-lg font-medium transition-colors duration-200">
+                <button className={`flex items-center p-2 text-gray-700 hover:text-blue-900 text-lg font-medium transition-colors duration-200 ${
+                    isSticky ? "py-3" : "py-4"
+                  }`}
+                  >
                   Industries
                   <ChevronDown className="ml-1 h-4 w-4" />
                 </button>
@@ -272,7 +274,7 @@ export function MegaMenu() {
                 {/* Industries Mega Dropdown */}
                 {activeDropdown === "industries" && (
                   <div
-                    className="absolute z-[100] left-1/2 transform -translate-x-1/2 mt-0 w-screen max-w-5xl bg-white shadow-lg border-t border-gray-100 transition-all duration-300 ease-in-out min-h-[300px]"
+                    className="absolute z-[100] left-1/2 transform -translate-x-1/2 mt-0 w-screen max-w-7xl bg-white shadow-lg border-t border-gray-100 transition-all duration-300 ease-in-out min-h-[300px]"
                     onMouseEnter={() => setActiveDropdown("industries")}
                     onMouseLeave={() => setActiveDropdown(null)}
                   >
@@ -280,6 +282,7 @@ export function MegaMenu() {
                       {/* Column 1: Main Categories */}
                       <div className="space-y-1 bg-[#003c46] flex flex-col py-2">
                         {industriesData.map((category, index) => (
+                          
                           <button
                             key={category.title}
                             onMouseEnter={() => setActiveCategory(index)}
@@ -335,7 +338,7 @@ export function MegaMenu() {
                   </div>
                 )}
               </div>
-              
+
               {/* Expertise Dropdown */}
               <div
                 className="relative"
@@ -345,7 +348,11 @@ export function MegaMenu() {
                 }}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
-                <button className="flex items-center text-gray-700 p-2 hover:text-blue-900 py-4 text-lg font-medium transition-colors duration-200 ">
+                <button
+                  className={`flex items-center p-2 text-gray-700 hover:text-blue-900 text-lg font-medium transition-colors duration-200 ${
+                    isSticky ? "py-3" : "py-4"
+                  }`}
+                >
                   Expertise
                   <ChevronDown className="ml-1 h-4 w-4" />
                 </button>
@@ -353,31 +360,32 @@ export function MegaMenu() {
                 {/* Expertise Mega Dropdown */}
                 {activeDropdown === "expertise" && (
                   <div
-                    className="absolute z-[100] left-1/2 transform -translate-x-1/2 mt-0 w-screen max-w-7xl bg-white shadow-lg border-t border-gray-100 transition-all duration-300 ease-in-out min-h-[300px]"
+                    className="absolute z-[100] transform -translate-x-[55%] mt-0 w-screen max-w-7xl bg-white shadow-lg border-t border-gray-100 transition-all duration-300 ease-in-out min-h-[300px]"
                     onMouseEnter={() => setActiveDropdown("expertise")}
                     onMouseLeave={() => setActiveDropdown(null)}
                   >
                     <div className="grid grid-cols-3 min-h-[400px]">
                       {/* Column 1: Main Categories */}
-                        <div className="space-y-1 bg-[#003c46] flex flex-col py-2">
-                          {expertiseData.map((category, index) => (
-                            <button
-                              key={category.title}
-                              onMouseEnter={() => setActiveCategory(index)}
-                              className={cn(
-                                "w-full flex items-center px-4 py-2 text-base font-medium transition-colors duration-200",
-                                activeCategory === index
-                                  ? "text-[#00b6d3]"
-                                  : "text-white hover:bg-black"
-                              )}
-                            >
-                              {category.icon && (
-                                <span className="mr-2">{category.icon}</span>
-                              )}
-                              {category.title}
-                            </button>
-                          ))}
-                        </div>
+                      <div className=" bg-[#003c46] flex flex-col py-2">
+                        {expertiseData.map((category, index) => (
+                          <button
+                            key={category.title}
+                            onMouseEnter={() => setActiveCategory(index)}
+                            className={cn(
+                              "w-full flex items-center px-4 py-2 text-base font-medium transition-colors duration-200",
+                              activeCategory === index
+                                ? "text-[#00b6d3]"
+                                : "text-white hover:bg-black"
+                            )}
+                          >
+                            {category.icon && (
+                              <span className="mr-2">{category.icon}</span>
+                            )} 
+                            {category.title}
+                             
+                          </button>
+                        ))}
+                      </div>
 
                       {/* Column 2: Sub Categories */}
                       <div className="space-y-1 bg-[#0098af] flex flex-col py-2">
@@ -419,24 +427,34 @@ export function MegaMenu() {
 
               <Link
                 href="/resources"
-                className="text-gray-700 hover:text-blue-900 p-2 text-lg font-medium transition-colors duration-200"
+                className="text-gray-700 hover:text-blue-900 text-lg p-2  font-medium transition-colors duration-200"
               >
                 Resources
               </Link>
 
               <Link
                 href="/careers"
-                className="text-gray-700 hover:text-blue-900 p-2 text-lg font-medium transition-colors duration-200"
+                className="text-gray-700 hover:text-blue-900 text-lg p-2  font-medium transition-colors duration-200"
               >
                 Careers
               </Link>
 
               <Link
                 href="/about"
-                className="text-gray-700 hover:text-blue-900 p-2 text-lg font-medium transition-colors duration-200"
+                className="text-gray-700 hover:text-blue-900 text-lg p-2  font-medium transition-colors duration-200"
               >
                 About Us
               </Link>
+
+              {/* Search and Contact Button */}
+              <div className="flex items-center space-x-4 ml-6">
+                <button className="text-gray-700 hover:text-blue-900 transition-colors duration-200">
+                  <Search className="h-5 w-5" />
+                </button>
+                <Button className="bg-blue-900 text-white hover:bg-blue-800 text-lg transition-colors duration-200">
+                  Contact Us
+                </Button>
+              </div>
             </div>
 
             {/* Mobile Menu Button */}
@@ -451,16 +469,6 @@ export function MegaMenu() {
                   <Menu className="h-6 w-6" />
                 )}
               </button>
-            </div>
-
-            {/* Right Side Actions */}
-            <div className="flex items-center space-x-4">
-              <button className="text-gray-700 hover:text-blue-900 transition-colors duration-200">
-                <Search className="h-5 w-5" />
-              </button>
-              <Button className="bg-blue-900 text-white hover:bg-blue-800 text-lg transition-colors duration-200">
-                Contact Us
-              </Button>
             </div>
           </div>
         </div>
@@ -480,13 +488,21 @@ export function MegaMenu() {
               {/* Mobile Industries Dropdown */}
               <div className="space-y-1">
                 <button
-                  onClick={() => setActiveDropdown(activeDropdown === "industries-mobile" ? null : "industries-mobile")}
+                  onClick={() =>
+                    setActiveDropdown(
+                      activeDropdown === "industries-mobile"
+                        ? null
+                        : "industries-mobile"
+                    )
+                  }
                   className="flex items-center justify-between w-full px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-900 hover:bg-gray-50"
                 >
                   Industries
-                  <ChevronDown className={`ml-2 h-4 w-4 transition-transform ${
-                    activeDropdown === "industries-mobile" ? "rotate-180" : ""
-                  }`} />
+                  <ChevronDown
+                    className={`ml-2 h-4 w-4 transition-transform ${
+                      activeDropdown === "industries-mobile" ? "rotate-180" : ""
+                    }`}
+                  />
                 </button>
                 {activeDropdown === "industries-mobile" && (
                   <div className="pl-4">
@@ -514,13 +530,21 @@ export function MegaMenu() {
               {/* Mobile Expertise Dropdown */}
               <div className="space-y-1">
                 <button
-                  onClick={() => setActiveDropdown(activeDropdown === "expertise-mobile" ? null : "expertise-mobile")}
+                  onClick={() =>
+                    setActiveDropdown(
+                      activeDropdown === "expertise-mobile"
+                        ? null
+                        : "expertise-mobile"
+                    )
+                  }
                   className="flex items-center justify-between w-full px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-900 hover:bg-gray-50"
                 >
                   Expertise
-                  <ChevronDown className={`ml-2 h-4 w-4 transition-transform ${
-                    activeDropdown === "expertise-mobile" ? "rotate-180" : ""
-                  }`} />
+                  <ChevronDown
+                    className={`ml-2 h-4 w-4 transition-transform ${
+                      activeDropdown === "expertise-mobile" ? "rotate-180" : ""
+                    }`}
+                  />
                 </button>
                 {activeDropdown === "expertise-mobile" && (
                   <div className="pl-4">

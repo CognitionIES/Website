@@ -1,29 +1,30 @@
-import { Button } from "../ui/button";
+import Image from "next/image";
+import image from "@/constants/images/Careers.jpg"
 
 export default function Hero() {
   return (
-    <section className="relative h-[60vh] flex items-center justify-center bg-gradient-to-r from-primary/90 to-primary text-white">
-      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2070')] bg-cover bg-center mix-blend-overlay"></div>
-      <div className="relative  container mx-auto px-4 text-center">
-        <h1 className="text-4xl md:text-6xl font-bold mb-6">
-          Shape the Future of Engineering
+    <div className="relative h-[500px] overflow-hidden">
+      {/* Background Image */}
+      <Image
+        src={image} // Make sure to add this image to your public/images folder
+        alt="Office Environment"
+        fill
+        className="object-cover"
+        priority
+      />
+      
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#003C46]/90 to-[#00A4B4]/80" />
+      
+      {/* Content */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white">
+          Join Our Team
         </h1>
-        <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-          Join a team that&apos;s shaping the future of automotive, aerospace,
-          healthcare, robotics, and more.
+        <p className="text-xl md:text-2xl text-[#99D5DF] max-w-2xl">
+          Be part of a team that&apos;s engineering the future. We&apos;re looking for talented individuals who share our passion for innovation.
         </p>
-        <Button
-          size="lg"
-          className="bg-white text-primary hover:bg-white/90"
-          onClick={() =>
-            document
-              .getElementById("positions")
-              ?.scrollIntoView({ behavior: "smooth" })
-          }
-        >
-          View Open Positions
-        </Button>
       </div>
-    </section>
+    </div>
   );
 }

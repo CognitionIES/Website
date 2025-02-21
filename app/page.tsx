@@ -36,9 +36,9 @@ export default function Home() {
       <section className="">
         <ServicesSection />
       </section>
-      <section>
+      {/* <section>
         <ServicesShowcase />
-      </section>
+      </section> */}
       
       <section className=" bg-white">
         <TestimonialSlider />
