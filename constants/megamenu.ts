@@ -48,21 +48,50 @@ export const expertiseData: MainCategory[] = [
 // Industries section data
 export const industriesData: MainCategory[] = [
   {
-    title: "Automotive",
-    href: "/industries/automotive",
-    icon: <Factory className="w-5 h-5 mr-2" />,
+    title: "Mobility",
+    href: "/industries/mobility",
     subCategories: [
-      { title: "Vehicle Design", href: "/industries/automotive?section=vehicle-design" },
-      { title: "Powertrain Engineering", href: "/industries/automotive?section=powertrain" },
-      { title: "Electric Vehicles", href: "/industries/automotive?section=ev" },
-      { title: "Manufacturing & Automation", href: "/industries/automotive?section=manufacturing" },
-      { title: "Connected Cars", href: "/industries/automotive?section=connected-cars" },
-      { title: "Autonomous Vehicles", href: "/industries/automotive?section=autonomous" },
+      { title: "Automotive", href: "/industries/automotive" },
+      { title: "Trucks & Off-Highway Vehicles", href: "/industries/trucks" },
+      { title: "Rail Transportation", href: "/industries/rail" },
+      { title: "Aerospace & Defense", href: "/industries/aerospace" },
+      { title: "Marine & Offshore", href: "/industries/marine" },
     ],
     image: {
       src: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=2070&auto=format&fit=crop",
-      alt: "Automotive Industry",
-      title: "Innovative Automotive Solutions",
+      alt: "Mobility Industry",
+      title: "Innovative Mobility Solutions",
+    },
+  },
+  {
+    title: "Sustainability",
+    href: "/industries/sustainability",
+    subCategories: [
+      { title: "Oil & Gas", href: "/industries/oil-gas" },
+      {
+        title: "Process Manufacturing",
+        href: "/industries/process-manufacturing",
+        subSubCategories: [
+          { title: "Discrete Manufacturing", href: "/industries/discrete-manufacturing" },
+          { title: "Batch Manufacturing", href: "/industries/batch-manufacturing" },
+          { title: "Continuous Manufacturing", href: "/industries/continuous-manufacturing" },
+          { title: "Chemical & Petrochemical", href: "/industries/chemical" },
+          { title: "Power & Energy", href: "/industries/power-energy" },
+          { title: "Renewable Energy", href: "/industries/renewable-energy" },
+          { title: "Pharmaceutical & Biotech", href: "/industries/pharmaceutical" },
+          { title: "Agriculture & Agro-Processing", href: "/industries/agriculture" },
+          { title: "Cement & Construction", href: "/industries/cement" },
+          { title: "Textile & Apparel", href: "/industries/textile" },
+          { title: "Water & Wastewater Treatment", href: "/industries/water" },
+          { title: "Pulp & Paper", href: "/industries/pulp" },
+        ],
+      },
+      { title: "Renewable Energy", href: "/industries/renewable-energy" },
+    ],
+    image: {
+      src: "https://images.unsplash.com/photo-1551333131-04a53b3e2c43?q=80&w=2070&auto=format&fit=crop",
+      alt: "Sustainability Industry",
+      title: "Sustainable Solutions",
     },
   },
   {

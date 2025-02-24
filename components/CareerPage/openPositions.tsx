@@ -89,7 +89,7 @@ export default function openPositions() {
                     <ChevronRight className="ml-2 w-4 h-4" />
                   </Button> */}
                   <Button className="px-6 py-2 border-2 border-[#0A2D68] text-[#0c1d44] bg-[#23dce1] font-medium rounded-md hover:bg-[#23dce1] hover:bg-white transition-transform">
-                    Download Brochure
+                    Apply
                     <ChevronRight className="ml-2 w-4 h-4" />
                   </Button>
                 </div>

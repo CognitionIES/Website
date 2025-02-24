@@ -15,7 +15,6 @@ import ServicesShowcase from "@/components/ServicesShowcase";
 import { MegaMenu } from "@/components/ui/MegaMenu";
 
 
-
 export default function Home() {
   return (
     <div>
@@ -51,7 +50,7 @@ export default function Home() {
       <section>
         <AccordionDemo />
       </section>
-      
+     
     </div>
       {/* Footer */}
       <footer className=" gap-6 items-center justify-center mt-auto">

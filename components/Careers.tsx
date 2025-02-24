@@ -35,7 +35,7 @@ export default function Careers() {
             </p>
             
               <Link href="/careers">
-                <Button className="bg-[#00A4B4] text-white px-8 py-4 rounded-md hover:bg-[#0098AF] transition-colors duration-200 w-fit">
+                <Button className="bg-[#0098af] text-white px-8 py-4 rounded-md hover:bg-[#0098AF] transition-colors duration-200 w-fit">
                   Explore Opportunities
                 </Button>
               </Link>

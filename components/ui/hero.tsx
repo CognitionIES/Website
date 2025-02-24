@@ -1,10 +1,9 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { heroSlides } from "@/constants/hero";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-
 
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -45,7 +44,7 @@ export default function Hero() {
               <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto drop-shadow-md">
                 {slide.description}
               </p>
-              <button className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-lg text-lg hover:bg-white hover:text-black font-medium transition-colors">
+              <button className="bg-[#00b6d3] hover:bg-blue-600 text-white px-8 py-3 rounded-lg text-lg hover:bg-white hover:text-black font-medium transition-colors">
                 Learn More
               </button>
             </div>
@@ -56,7 +55,9 @@ export default function Hero() {
       {/* Left & Right Navigation */}
       <button
         onClick={() =>
-          setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length)
+          setCurrentSlide(
+            (prev) => (prev - 1 + heroSlides.length) % heroSlides.length
+          )
         }
         className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 p-2 rounded-full z-20"
       >

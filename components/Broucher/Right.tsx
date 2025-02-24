@@ -250,7 +250,7 @@ export default function Right(){
 
               <Button
                 type="submit"
-                className="w-32 bg-[#23dce1] hover:bg-white text-[#0c1d44] font-semibold"
+                className="w-32 bg-[#23dce1] hover:bg-white text-[#0c1d44] text-base font-medium rounded-md transition-transform"
               >
                 Submit
               </Button>

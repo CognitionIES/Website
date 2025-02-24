@@ -2,11 +2,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  FiHome,
-  FiChevronRight,
-  
-} from "react-icons/fi";
+import { FiHome, FiChevronRight } from "react-icons/fi";
 import {
   Accordion,
   AccordionContent,
@@ -16,7 +12,7 @@ import {
 import { MegaMenu } from "@/components/ui/MegaMenu";
 import Footer from "@/components/footer";
 
-import {services, faqs} from "./contants"
+import { services, faqs } from "./constants";
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -30,7 +26,6 @@ const ServiceCard = ({ service }) => {
       <Image
         src={service.image}
         alt={service.title}
-        
         fill
         className="object-cover transition-transform duration-300 group-hover:scale-105"
       />
@@ -60,7 +55,6 @@ const ServiceCard = ({ service }) => {
 };
 
 export default function EngineeringExpertise() {
-
   return (
     <div className="min-h-screen bg-[#FFFFFF]">
       <MegaMenu />
@@ -91,13 +85,13 @@ export default function EngineeringExpertise() {
                 Expertise
               </Link>
               <FiChevronRight />
-              <span>Engineering Services</span>
+              <span>Plant Engineering</span>
             </nav>
             <motion.h1
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-4"
               {...fadeIn}
             >
-              Product Engineering Expertise
+              Plant Engineering Expertise
             </motion.h1>
             <motion.p
               className="text-lg md:text-xl text-center max-w-2xl"
@@ -122,19 +116,18 @@ export default function EngineeringExpertise() {
               transition={{ duration: 0.5 }}
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#003C46]">
-                Product Engineering Solutions
+                Plant Engineering Solutions
               </h2>
               <p className="text-lg text-[#4A4A4A] mb-6">
-                Our engineering expertise spans across multiple disciplines,
-                providing innovative solutions for complex technical challenges.
-                We combine cutting-edge technology with proven methodologies to
-                deliver exceptional results.
+                At Cognition IES, we help industries build smarter, safer, and
+                more efficient plants. From designing machinery and piping
+                systems to optimizing energy use and safety compliance, we cover
+                everything needed to keep your plant running smoothly. Whether
+                you&apos;re setting up a new facility or upgrading an existing one,
+                our team ensures seamless operations with practical,
+                cost-effective solutions.
               </p>
-              <p className="text-lg text-[#4A4A4A]">
-                From concept to implementation, we work closely with you to
-                ensure your engineering projects are executed with precision and
-                excellence.
-              </p>
+              <p className="text-lg text-[#4A4A4A]">Descritpion 2 </p>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 20 }}
@@ -147,7 +140,6 @@ export default function EngineeringExpertise() {
                 src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
                 alt="Engineering expertise"
                 fill
-                
                 className="object-cover rounded-lg"
               />
             </motion.div>
@@ -165,7 +157,7 @@ export default function EngineeringExpertise() {
             className=" mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#003C46]">
-              Our Product Engineering Services
+              Our Plant Engineering Services
             </h2>
             <p className="text-lg text-[#4A4A4A] max-w-7xl mx-auto">
               Comprehensive engineering solutions tailored to your specific
@@ -212,8 +204,8 @@ export default function EngineeringExpertise() {
           >
             <Accordion type="single" collapsible className="text-[#4A4A4A]">
               {faqs.map((faq, index) => (
-                <AccordionItem 
-                  key={index} 
+                <AccordionItem
+                  key={index}
                   value={`item-${index}`}
                   className="border-[#99D5DF]/20"
                 >
