@@ -227,7 +227,7 @@ import * as React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
-import { Car, Mail, Phone } from "lucide-react";
+import {  Mail, Phone } from "lucide-react";
 
 function Footer() {
   // Animation Variants
@@ -236,13 +236,13 @@ function Footer() {
     visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
   };
 
-  const staggerChildren = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.2, delayChildren: 0.1 },
-    },
-  };
+  // const staggerChildren = {
+  //   hidden: { opacity: 0 },
+  //   visible: {
+  //     opacity: 1,
+  //     transition: { staggerChildren: 0.2, delayChildren: 0.1 },
+  //   },
+  // };
 
   const scaleHover = {
     rest: { scale: 1 },

@@ -5,7 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
-import Navbar from '@/components/ui/navbar';
+//import Navbar from '@/components/ui/navbar';
 import Footer from '@/components/footer';
 import { MegaMenu } from '@/components/ui/MegaMenu';
 //import Header from '@/components/ui/Header';

@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+//import { motion } from "framer-motion";
 import Hero from "@/components/HomePage/hero";
 import ServicesSection from "@/components/HomePage/Services";
 import TestimonialSlider from "@/components/HomePage/Testimonials";

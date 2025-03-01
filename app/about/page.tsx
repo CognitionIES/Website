@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { MegaMenu } from "@/components/ui/MegaMenu";
 import Footer from "@/components/footer";
-const image = "https://images.unsplash.com/photo-1558494949-ef010cbdcc31";
+//const image = "https://images.unsplash.com/photo-1558494949-ef010cbdcc31";
 
 export default function AboutPage() {
   // Animation Variants

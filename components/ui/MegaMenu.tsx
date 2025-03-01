@@ -52,6 +52,7 @@ import { motion } from "framer-motion";
 interface SubCategory {
   title: string;
   href: string;
+  icon?: ReactNode; // Add optional icon property
 }
 
 interface MainCategory {
@@ -75,7 +76,6 @@ const expertiseData: MainCategory[] = [
       {
         title: "Mechanical Design Services",
         href: "/expertise?section=mechanical",
-        // eslint-disable-next-line react/jsx-no-undef
         icon: <Car className="w-4 h-4" />,
       },
       {

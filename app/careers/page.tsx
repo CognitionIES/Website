@@ -24,18 +24,18 @@ import { Input } from "@/components/ui/input";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { MegaMenu } from "@/components/ui/MegaMenu";
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import { FiHome, FiChevronRight, FiChevronDown } from "react-icons/fi"; // Added FiChevronDown for scroll indicator
-import careerPattern from "@/constants/images/career-pattern.jpg"; // Optional hexagonal pattern image
+//import careerPattern from "@/constants/images/career-pattern.jpg"; // Optional hexagonal pattern image
 import Link from "next/link";
 import Particles from "react-tsparticles"; // For particle effects
-import { loadFull } from "tsparticles"; // Load full particle config
+//import { loadFull } from "tsparticles"; // Load full particle config
 
 export default function CareersPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [locationFilter, setLocationFilter] = useState("all");
   const [activeJob, setActiveJob] = useState(null); // For job preview modal
-  const [isHovered, setIsHovered] = useState(null); // For hover feedback
+ // const [isHovered, setIsHovered] = useState(null); // For hover feedback
 
   const filteredJobs = jobListings.filter((job) => {
     const matchesSearch =
@@ -427,7 +427,7 @@ export default function CareersPage() {
                   </CardHeader>
                   <CardContent className="p-0 pt-4">
                     <p className="text-sm font-light text-gray-600 italic leading-relaxed line-clamp-2">
-                      "{testimonial.quote}"
+                      &quot;{testimonial.quote}&quot;
                     </p>
                   </CardContent>
                 </Card>

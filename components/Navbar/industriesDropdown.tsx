@@ -1,3 +1,7 @@
+import Link from "next/link";
+import Image from "next/image";
+import { ArrowRight, ChevronDown } from "lucide-react";
+
 export function industriesDropdown(){
     return (<div
         className="relative"

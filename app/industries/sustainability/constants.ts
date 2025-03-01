@@ -1,12 +1,12 @@
 import {
   FiActivity,
-  FiBook,
-  FiCpu,
-  FiDatabase,
+  // FiBook,
+  // FiCpu,
+  // FiDatabase,
   FiDroplet,
   FiPrinter,
   FiTool,
-  FiTruck,
+  //FiTruck,
   FiZap,
 } from "react-icons/fi";
 
