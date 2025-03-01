@@ -14,7 +14,7 @@ export default function Home() {
     <div className="min-h-screen bg-gray-100 text-gray-900 font-sans overflow-hidden">
       <MegaMenu />
       <div className="gap-16">
-        <div className="min-h-screen gap-16 font-[family-name:var(--font-geist-sans)]">
+        <div className="min-h-screen gap-16 ">
           {/* Hero */}
           <Hero />
           {/* Services */}

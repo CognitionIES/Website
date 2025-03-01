@@ -10,7 +10,7 @@ export default function AboutUs() {
     <section className="relative min-h-screen overflow-hidden">
       {/* Background Pattern */}
       <div 
-        className=" gap-16 font-[family-name:var(--font-geist-sans)] bg-cover bg-center"
+        className=" gap-16  bg-cover bg-center"
         style={{
           backgroundImage: `url(${frameBackground.src})`, // Dynamically load the image
         }} >
