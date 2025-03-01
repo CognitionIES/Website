@@ -28,7 +28,7 @@ import { useState} from "react";
 import { FiHome, FiChevronRight, FiChevronDown } from "react-icons/fi"; // Added FiChevronDown for scroll indicator
 //import careerPattern from "@/constants/images/career-pattern.jpg"; // Optional hexagonal pattern image
 import Link from "next/link";
-import Particles from "react-tsparticles"; // For particle effects
+//import Particles from "react-tsparticles"; // For particle effects
 //import { loadFull } from "tsparticles"; // Load full particle config
 
 export default function CareersPage() {
@@ -91,7 +91,7 @@ export default function CareersPage() {
         <div className="absolute inset-0 bg-gradient-to-br from-[#003C46]/85 to-[#0098AF]/70" />
         <div className="absolute inset-0 opacity-5 bg-[url('/images/career-pattern.jpg')] bg-repeat" />
 
-        <Particles
+        {/* <Particles
           id="tsparticles-hero"
           options={{
             particles: {
@@ -116,7 +116,7 @@ export default function CareersPage() {
             background: { color: "transparent" },
           }}
           className="absolute inset-0 pointer-events-none"
-        />
+        /> */}
 
         <motion.div
           initial="hidden"
