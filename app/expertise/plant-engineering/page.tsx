@@ -1,4 +1,5 @@
 "use client";
+
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,8 +12,18 @@ import {
 } from "@/components/ui/accordion";
 import { MegaMenu } from "@/components/ui/MegaMenu";
 import Footer from "@/components/footer";
-
+import { IconType } from "react-icons"; // Added for icon typing
 import { services, faqs } from "./constants";
+
+// Define Service type
+interface Service {
+  icon: IconType;
+  title: string;
+  description: string;
+  image: string;
+  alt: string;
+  href: string;
+}
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -20,7 +31,7 @@ const fadeIn = {
   transition: { duration: 0.5 },
 };
 
-const ServiceCard = ({ service }) => {
+const ServiceCard = ({ service }: { service: Service }) => {
   return (
     <div className="group relative h-[300px] rounded-lg overflow-hidden cursor-pointer">
       <Image
@@ -127,7 +138,7 @@ export default function EngineeringExpertise() {
                 our team ensures seamless operations with practical,
                 cost-effective solutions.
               </p>
-              <p className="text-lg text-[#4A4A4A]">Descritpion 2 </p>
+              <p className="text-lg text-[#4A4A4A]">Description 2</p>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 20 }}
@@ -154,7 +165,7 @@ export default function EngineeringExpertise() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className=" mb-12"
+            className="mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#003C46]">
               Our Plant Engineering Services
@@ -187,12 +198,12 @@ export default function EngineeringExpertise() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className=" mb-12"
+            className="mb-12"
           >
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 text-[#003C46]">
               Frequently Asked Questions
             </h2>
-            <p className="text-lg  text-[#4A4A4A] max-w-7xl mb-10 mx-auto  ">
+            <p className="text-lg text-[#4A4A4A] max-w-7xl mb-10 mx-auto">
               Find answers to common questions about our engineering services
             </p>
           </motion.div>
@@ -200,7 +211,7 @@ export default function EngineeringExpertise() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="max-w-7xl spcae-y-4 mx-auto"
+            className="max-w-7xl space-y-4 mx-auto"
           >
             <Accordion type="single" collapsible className="text-[#4A4A4A]">
               {faqs.map((faq, index) => (

@@ -1,14 +1,15 @@
-import { ReactNode } from 'react';
-import { Wrench, Factory, Server } from 'lucide-react';
+import { ComponentType } from "react";
+import { Wrench,  Server } from "lucide-react";
 
 // Type definitions
 export interface SubCategory {
   title: string;
   href: string;
+  subSubCategories?: SubCategory[]; // Added for nested subcategories
 }
 
 export interface MainCategory {
-  icon: ReactNode;
+  icon?: ComponentType<{ className?: string }>; // Icon as a component type, optional
   title: string;
   href: string;
   subCategories: SubCategory[];
@@ -24,7 +25,7 @@ export const expertiseData: MainCategory[] = [
   {
     title: "Product Engineering",
     href: "/expertise/product-engineering",
-    icon: <Wrench className="w-5 h-5 mr-2" />,
+    icon: Wrench,
     subCategories: [
       { title: "Mechanical Design Services", href: "/expertise?section=mechanical" },
       { title: "Electrical Engineering Services", href: "/expertise?section=electrical" },
@@ -42,7 +43,6 @@ export const expertiseData: MainCategory[] = [
       title: "Advanced Product Engineering Solutions",
     },
   },
-  // ... rest of expertiseData
 ];
 
 // Industries section data
@@ -62,6 +62,7 @@ export const industriesData: MainCategory[] = [
       alt: "Mobility Industry",
       title: "Innovative Mobility Solutions",
     },
+    icon: undefined,
   },
   {
     title: "Sustainability",
@@ -93,11 +94,12 @@ export const industriesData: MainCategory[] = [
       alt: "Sustainability Industry",
       title: "Sustainable Solutions",
     },
+    icon: undefined,
   },
   {
     title: "Aerospace",
     href: "/industries/aerospace",
-    icon: <Server className="w-5 h-5 mr-2" />,
+    icon: Server,
     subCategories: [
       { title: "Aircraft Design", href: "/industries/aerospace?section=aircraft-design" },
       { title: "Propulsion Systems", href: "/industries/aerospace?section=propulsion" },
@@ -114,7 +116,7 @@ export const industriesData: MainCategory[] = [
   {
     title: "Energy & Utilities",
     href: "/industries/energy",
-    icon: <Wrench className="w-5 h-5 mr-2" />,
+    icon: Wrench,
     subCategories: [
       { title: "Renewable Energy", href: "/industries/energy?section=renewable" },
       { title: "Power Generation", href: "/industries/energy?section=power" },
@@ -136,4 +138,4 @@ export const navigationItems = [
   { title: "Resources", href: "/resources" },
   { title: "Careers", href: "/careers" },
   { title: "About Us", href: "/about" },
-]; 
+];

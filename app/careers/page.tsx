@@ -24,18 +24,25 @@ import { Input } from "@/components/ui/input";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { MegaMenu } from "@/components/ui/MegaMenu";
-import { useState} from "react";
-import { FiHome, FiChevronRight, FiChevronDown } from "react-icons/fi"; // Added FiChevronDown for scroll indicator
-//import careerPattern from "@/constants/images/career-pattern.jpg"; // Optional hexagonal pattern image
+import { useState } from "react";
+import { FiHome, FiChevronRight, FiChevronDown } from "react-icons/fi";
 import Link from "next/link";
-//import Particles from "react-tsparticles"; // For particle effects
-//import { loadFull } from "tsparticles"; // Load full particle config
+
+// Define the Job interface
+interface Job {
+  id: number;
+  title: string;
+  department: string;
+  location: string;
+  engagementModel: string;
+  description: string;
+  applyLink?: string; // Optional field
+}
 
 export default function CareersPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [locationFilter, setLocationFilter] = useState("all");
-  const [activeJob, setActiveJob] = useState(null); // For job preview modal
- // const [isHovered, setIsHovered] = useState(null); // For hover feedback
+  const [activeJob, setActiveJob] = useState<Job | null>(null); // Updated with type
 
   const filteredJobs = jobListings.filter((job) => {
     const matchesSearch =
@@ -73,8 +80,6 @@ export default function CareersPage() {
     },
   };
 
-  // Initialize particles
-
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900 font-sans overflow-hidden">
       <MegaMenu />
@@ -90,33 +95,6 @@ export default function CareersPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-br from-[#003C46]/85 to-[#0098AF]/70" />
         <div className="absolute inset-0 opacity-5 bg-[url('/images/career-pattern.jpg')] bg-repeat" />
-
-        {/* <Particles
-          id="tsparticles-hero"
-          options={{
-            particles: {
-              number: { value: 10, density: { enable: true, value_area: 800 } },
-              color: { value: "#99D5DF" },
-              shape: { type: "circle" },
-              opacity: { value: 0.15, anim: { enable: true, speed: 1 } },
-              size: { value: 2, random: true },
-              move: {
-                enable: true,
-                speed: 1.5,
-                direction: "bottom",
-                random: true,
-                straight: false,
-                outMode: "out",
-              },
-            },
-            interactivity: {
-              detect_on: "canvas",
-              modes: { repel: { distance: 100 } },
-            },
-            background: { color: "transparent" },
-          }}
-          className="absolute inset-0 pointer-events-none"
-        /> */}
 
         <motion.div
           initial="hidden"
@@ -185,16 +163,11 @@ export default function CareersPage() {
         className="py-16 bg-gradient-to-b from-gray-50 to-[#F5FDFF] relative"
       >
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-          <motion.div
-            variants={fadeIn}
-            className="relative mb-12"
-          >
-            <h2 className="text-3xl font-bold text-[#003C46]  relative">
+          <motion.div variants={fadeIn} className="relative mb-12">
+            <h2 className="text-3xl font-bold text-[#003C46] relative">
               Our Values
               <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-[#0098AF] to-transparent" />
-
             </h2>
-           
           </motion.div>
           <div className="grid md:grid-cols-4 gap-6">
             {[
@@ -250,14 +223,10 @@ export default function CareersPage() {
         id="positions"
       >
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-          <motion.div
-            variants={fadeIn}
-            className="relative mb-8" // Reduced margin-bottom for tighter spacing
-          >
-            <h2 className="text-3xl font-bold text-[#5B5B5B] ">
+          <motion.div variants={fadeIn} className="relative mb-8">
+            <h2 className="text-3xl font-bold text-[#5B5B5B]">
               Open Positions
               <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-[#0098AF] to-transparent" />
-
             </h2>
           </motion.div>
 
@@ -296,12 +265,11 @@ export default function CareersPage() {
                 <Card className="border-0">
                   <CardHeader>
                     <div className="flex justify-between items-start">
-                     <div>
+                      <div>
                         <CardTitle className="text-lg font-semibold text-[#5B5B5B] mb-2 hover:text-[#0098AF] transition-colors duration-200">
                           {job.title}
                         </CardTitle>
                         <CardDescription>
-                        
                           <div className="flex gap-4 text-sm font-light text-gray-600">
                             <span>{job.department}</span>
                             <span>{job.location}</span>
@@ -314,7 +282,7 @@ export default function CareersPage() {
                           className="text-[#0098AF] border-[#0098AF] hover:bg-[#0098AF] hover:text-white px-3 py-1 rounded-lg font-medium shadow-sm hover:scale-105 transition-all duration-200 text-sm"
                           onClick={(e) => {
                             e.stopPropagation();
-                            setActiveJob(job);
+                            setActiveJob(job); // Now type-safe
                           }}
                         >
                           View Details
@@ -324,7 +292,7 @@ export default function CareersPage() {
                           className="bg-[#0098AF] text-white hover:bg-[#007B8F] px-3 py-1 rounded-lg font-medium shadow-sm hover:scale-105 transition-all duration-200 text-sm"
                           onClick={(e) => {
                             e.stopPropagation();
-                            window.open(job.applyLink || "#", "_blank"); // Assuming job has an applyLink field
+                            window.open(job.applyLink || "#", "_blank");
                           }}
                         >
                           Apply Now
@@ -365,7 +333,7 @@ export default function CareersPage() {
                   <span>{activeJob.location}</span>
                 </div>
                 <p className="text-sm font-light text-gray-600 leading-relaxed mb-6">
-                  {job.description}
+                  {activeJob.description} {/* Fixed typo: job -> activeJob */}
                 </p>
                 <Button
                   className="bg-[#0098AF] text-white hover:bg-[#007B8F] px-4 py-1 rounded-lg font-medium shadow-sm hover:scale-105 transition-all duration-200 text-sm"
@@ -388,14 +356,10 @@ export default function CareersPage() {
         className="py-20 bg-gradient-to-b from-[#0098AF]/5 to-gray-50 relative"
       >
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-          <motion.div
-            variants={fadeIn}
-            className="relative mb-12"
-          >
-            <h2 className="text-3xl font-bold text-[#5B5B5B]  relative">
+          <motion.div variants={fadeIn} className="relative mb-12">
+            <h2 className="text-3xl font-bold text-[#5B5B5B] relative">
               Employee Testimonials
               <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-[#0098AF] to-transparent" />
-
             </h2>
           </motion.div>
           <div className="grid md:grid-cols-2 gap-6">
@@ -446,15 +410,11 @@ export default function CareersPage() {
         className="py-20 bg-gray-50 relative"
       >
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-          <motion.div
-            variants={fadeIn}
-            className="relative mb-12"
-          >
-            <h2 className="text-3xl font-bold text-[#5B5B5B]  relative">
+          <motion.div variants={fadeIn} className="relative mb-12">
+            <h2 className="text-3xl font-bold text-[#5B5B5B] relative">
               Why Work With Us
               <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-[#0098AF] to-transparent" />
             </h2>
-            
           </motion.div>
           <div className="grid md:grid-cols-3 gap-6">
             {benefits.map((benefit, index) => (

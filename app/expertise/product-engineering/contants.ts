@@ -18,6 +18,7 @@ export const services = [
       "Comprehensive mechanical design solutions including 3D modeling, simulation, and optimization",
     image:
       "https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+      alt: "Mechanical design",
     href: "/expertise?section=mechanical",
   },
   {
@@ -27,6 +28,7 @@ export const services = [
       "Advanced computational analysis for engineering design and fluid dynamics",
     image:
       "https://images.unsplash.com/photo-1580894894513-541e068a3e2b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+      alt: "Mechanical design",
     href: "/expertise?section=cae-cfd",
   },
   {
@@ -36,6 +38,7 @@ export const services = [
       "Innovative electrical system design and power distribution solutions",
     image:
       "https://images.unsplash.com/photo-1498084393753-b411b2d26b34?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+      alt: "Mechanical design",
     href: "/expertise?section=electrical",
   },
   {
@@ -44,7 +47,8 @@ export const services = [
     description: "Expert hydraulic system design and fluid power solutions",
     image:
       "https://plus.unsplash.com/premium_photo-1682147307418-07ad7e897bc9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    href: "/expertise?section=hydraulic",
+      alt: "Mechanical design",
+      href: "/expertise?section=hydraulic",
   },
   {
     icon: FiPrinter,
@@ -52,6 +56,7 @@ export const services = [
     description: "Rapid prototyping and additive manufacturing services",
     image:
       "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+      alt: "Mechanical design",
     href: "/expertise?section=prototyping",
   },
   {
@@ -60,6 +65,7 @@ export const services = [
     description: "Comprehensive asset lifecycle management and optimization",
     image:
       "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+      alt: "Mechanical design",
     href: "/expertise?section=asset-management",
   },
   {
@@ -68,6 +74,7 @@ export const services = [
     description: "Custom embedded solutions and IoT device development",
     image:
       "https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+      alt: "Mechanical design",
     href: "/expertise?section=embedded-systems",
   },
   {
@@ -76,6 +83,7 @@ export const services = [
     description: "Professional technical documentation and manual creation",
     image:
       "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+      alt: "Mechanical design",
     href: "/expertise?section=technical-publication",
   },
   {
@@ -85,6 +93,7 @@ export const services = [
       "End-to-end supply chain optimization and procurement services",
     image:
       "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+      alt: "Mechanical design",
     href: "/expertise?section=supply-chain",
   },
 ];

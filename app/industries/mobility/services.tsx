@@ -16,7 +16,6 @@ export default function Services() {
             Innovative solutions for automotive, aerospace, rail, marine, and
             logistics.
           </p>
-        
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.05 }}
@@ -33,7 +32,7 @@ export default function Services() {
             <div
               key={service.title}
               className="group hover:shadow-xl transition-shadow duration-1000 cursor-pointer glow-trail"
-              onClick={() => console.log(`Clicked ${service.title}`)} // Interactive feedback
+              onClick={() => console.log(`Clicked ${service.title}`)}
               onMouseEnter={() => {
                 const audio = new Audio("/sounds/hover.mp3");
                 audio.play();
@@ -41,7 +40,6 @@ export default function Services() {
             >
               <ServiceCard
                 service={service}
-                className="bg-white border border-[#0098AF]/20 rounded-xl shadow-md hover:shadow-lg border-gradient-to-r from-[#0098AF]/20 to-[#5B5B5B]/20"
               />
               <motion.div
                 initial={{ opacity: 0, scale: 0 }}
@@ -100,7 +98,6 @@ export default function Services() {
           }}
           className="absolute bottom-20 right-20 w-2 h-2 bg-[#5B5B5B] opacity-10 rounded-full glow-trail"
         />
-       
       </div>
     </section>
   );

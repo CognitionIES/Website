@@ -227,22 +227,19 @@ import * as React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
-import {  Mail, Phone } from "lucide-react";
+// Remove unused imports: Mail, Phone from lucide-react
+// import { Mail, Phone } from "lucide-react";
 
 function Footer() {
   // Animation Variants
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
   };
-
-  // const staggerChildren = {
-  //   hidden: { opacity: 0 },
-  //   visible: {
-  //     opacity: 1,
-  //     transition: { staggerChildren: 0.2, delayChildren: 0.1 },
-  //   },
-  // };
 
   const scaleHover = {
     rest: { scale: 1 },
@@ -250,27 +247,25 @@ function Footer() {
   };
 
   return (
-    <footer className="bg-[#5B5B5B] text-white py-8 sm:py-15 lg:py-20 relative overflow-hidden  opacity-90">
+    <footer className="bg-[#5B5B5B] text-white py-8 sm:py-15 lg:py-20 relative overflow-hidden opacity-90">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div
-         
-          className="grid grid-cols-1 md:grid-cols-12 gap-8 sm:gap-10 lg:gap-12"
-        >
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 sm:gap-10 lg:gap-12">
           {/* Company Logo & Description */}
-          <div variants={fadeIn} className="col-span-12 md:col-span-5">
+          <motion.div variants={fadeIn} className="col-span-12 md:col-span-5">
             <div className="flex items-center mb-6 relative">
               <span className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
-                <span className="text-[#0098AF] drop-shadow-md">COGNITION IES</span>
+                <span className="text-[#0098AF] drop-shadow-md">
+                  COGNITION IES
+                </span>
               </span>
-             
             </div>
             <p className="text-lg text-justify leading-relaxed text-gray-200 mb-6 font-light">
-              At Cognition IES Pvt. Ltd., we are shaping the future of engineering
-              with a commitment to precision, innovation, and client-focused
-              solutions. Established in 2023, our company is dedicated to
-              providing advanced engineering services tailored to the unique
-              demands of discrete manufacturing industries, delivering wow-worthy
-              results.
+              At Cognition IES Pvt. Ltd., we are shaping the future of
+              engineering with a commitment to precision, innovation, and
+              client-focused solutions. Established in 2023, our company is
+              dedicated to providing advanced engineering services tailored to
+              the unique demands of discrete manufacturing industries,
+              delivering wow-worthy results.
             </p>
             <motion.span
               initial={{ width: 0 }}
@@ -278,8 +273,7 @@ function Footer() {
               transition={{ delay: 0.6, duration: 1 }}
               className="block h-1 bg-[#0098AF] opacity-70 mt-4 rounded-full"
             />
-            
-          </div>
+          </motion.div>
 
           {/* Useful Links */}
           <motion.div variants={fadeIn} className="col-span-12 md:col-span-2">
@@ -345,19 +339,31 @@ function Footer() {
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-lg text-gray-200 hover:text-[#0098AF] transition-colors duration-100 flex items-center gap-3 font-medium"
+                    className="text-lg text-gray-200 hover:text-[#0098AF] transition-colors duration-300 flex items-center gap-3 font-medium"
                   >
                     {title === "LinkedIn" && (
-                      <Icon icon="brandico:linkedin" className="text-[#0098AF] opacity-70 w-6 h-6" />
+                      <Icon
+                        icon="brandico:linkedin"
+                        className="text-[#0098AF] opacity-70 w-6 h-6"
+                      />
                     )}
                     {title === "Facebook" && (
-                      <Icon icon="brandico:facebook" className="text-[#0098AF] opacity-70 w-6 h-6" />
+                      <Icon
+                        icon="brandico:facebook"
+                        className="text-[#0098AF] opacity-70 w-6 h-6"
+                      />
                     )}
                     {title === "Instagram" && (
-                      <Icon icon="brandico:instagram" className="text-[#0098AF] opacity-70 w-6 h-6" />
+                      <Icon
+                        icon="brandico:instagram"
+                        className="text-[#0098AF] opacity-70 w-6 h-6"
+                      />
                     )}
                     {title === "Twitter" && (
-                      <Icon icon="brandico:twitter" className="text-[#0098AF] opacity-70 w-6 h-6" />
+                      <Icon
+                        icon="brandico:twitter"
+                        className="text-[#0098AF] opacity-70 w-6 h-6"
+                      />
                     )}
                     {title}
                   </Link>
@@ -382,7 +388,7 @@ function Footer() {
                   href="mailto:info@cognitionies.com"
                   className="text-lg text-white hover:text-[#0098AF] transition-colors duration-300 flex items-center gap-3 font-medium"
                 >
-                  <Mail
+                  <Icon
                     icon="material-symbols:email-rounded"
                     className="text-[#0098AF] opacity-70 w-6 h-6"
                   />
@@ -399,7 +405,7 @@ function Footer() {
                   href="tel:+1(847)254-5337"
                   className="text-lg text-white hover:text-[#0098AF] transition-colors duration-300 flex items-center gap-3 font-medium"
                 >
-                  <Phone
+                  <Icon
                     icon="material-symbols:phone-rounded"
                     className="text-[#0098AF] opacity-70 w-6 h-6"
                   />
@@ -416,7 +422,7 @@ function Footer() {
                   href="tel:+919825815795"
                   className="text-lg text-white hover:text-[#0098AF] transition-colors duration-300 flex items-center gap-3 font-medium"
                 >
-                  <Phone
+                  <Icon
                     icon="material-symbols:phone-rounded"
                     className="text-[#0098AF] opacity-70 w-6 h-6"
                   />
@@ -438,7 +444,12 @@ function Footer() {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 0.2 }}
-              transition={{ delay: 1, duration: 1, repeat: Infinity, repeatType: "reverse" }}
+              transition={{
+                delay: 1,
+                duration: 1,
+                repeat: Infinity,
+                repeatType: "reverse",
+              }}
               className="absolute bottom-8 left-8 w-5 h-5 bg-[#0098AF] opacity-50 rounded-full"
             />
           </motion.div>
@@ -459,13 +470,23 @@ function Footer() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.2 }}
-        transition={{ delay: 1.5, duration: 1, repeat: Infinity, repeatType: "reverse" }}
+        transition={{
+          delay: 1.5,
+          duration: 1,
+          repeat: Infinity,
+          repeatType: "reverse",
+        }}
         className="absolute top-12 left-12 w-6 h-6 bg-[#0098AF] opacity-50 rounded-full"
       />
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.2 }}
-        transition={{ delay: 2, duration: 1, repeat: Infinity, repeatType: "reverse" }}
+        transition={{
+          delay: 2,
+          duration: 1,
+          repeat: Infinity,
+          repeatType: "reverse",
+        }}
         className="absolute bottom-12 right-12 w-6 h-6 bg-[#0098AF] opacity-50 rounded-full"
       />
     </footer>

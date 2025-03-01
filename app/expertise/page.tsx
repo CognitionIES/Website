@@ -239,7 +239,6 @@
 //     </div>
 //   );
 // }
-
 "use client";
 
 import { ScrollSection } from "@/components/ScrollSection";
@@ -290,7 +289,7 @@ export default function ExpertisePage() {
               className="min-h-screen flex items-center justify-center py-16"
             >
               <div
-                className={`w-[full] max-w-13xl mx-auto px-2  py-12 rounded-3xl transition-colors duration-500 ${
+                className={`w-[full] max-w-13xl mx-auto px-2 py-12 rounded-3xl transition-colors duration-500 ${
                   index % 2 === 0
                     ? "bg-blue-400/5 dark:bg-blue-950/10"
                     : "bg-gray-400/10 dark:bg-gray-900/10"
@@ -302,7 +301,7 @@ export default function ExpertisePage() {
                   description={section.description}
                   imageUrl={section.imageUrl}
                   bulletPoints={section.bulletPoints}
-                  logos={section.logos}
+                  logos={section.logos.map(logo => ({ src: logo.src.src, alt: logo.alt }))} // Transform logos
                 />
               </div>
             </section>

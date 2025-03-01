@@ -6,6 +6,7 @@ const jobListings = [
       location: 'India',
       engagementModel: 'Full Time',
       description: 'Description 1',
+      applyLink: 'https://www.google.com',
     },
     {
       id: 2,
@@ -14,6 +15,7 @@ const jobListings = [
       location: 'USA',
       engagementModel: 'Time and Material',
       description: 'Description 2.',
+      applyLink: 'https://www.google.com',
     },
     {
       id: 3,
@@ -22,6 +24,7 @@ const jobListings = [
       location: 'India',
       engagementModel: 'Dedicated Team',
       description: 'Description 3.',
+      applyLink: 'https://www.google.com',
     },
   ];
 export default jobListings;  
