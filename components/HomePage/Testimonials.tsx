@@ -57,12 +57,21 @@ export default function TestimonialSlider() {
           What Our Clients Say
         </h1>
         <p className="text-base leading-relaxed text-[#4A4A4A] mb-8">
-          True partnerships go beyond contracts—they're built on trust, collaboration, and results. Our clients count on us to deliver precision, innovation, and engineering expertise that makes a real impact. Here's what they have to say:
+          True partnerships go beyond contracts—they&apos;re built on trust,
+          collaboration, and results. Our clients count on us to deliver
+          precision, innovation, and engineering expertise that makes a real
+          impact. Here&apos;s what they have to say:
         </p>
-        <Carousel opts={{ align: "start", loop: true }} className="w-full max-w-7xl mx-auto">
+        <Carousel
+          opts={{ align: "start", loop: true }}
+          className="w-full max-w-7xl mx-auto"
+        >
           <CarouselContent className="-ml-4 gap-8">
             {testimonials.map((testimonial, index) => (
-              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/2 pl-4">
+              <CarouselItem
+                key={index}
+                className="md:basis-1/2 lg:basis-1/2 pl-4"
+              >
                 <Card className="bg-[#003C46] text-white border-none h-full">
                   <CardContent className="p-10">
                     <div className="space-y-8">

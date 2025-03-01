@@ -2,11 +2,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  FiHome,
-  FiChevronRight,
-  
-} from "react-icons/fi";
+import { FiHome, FiChevronRight } from "react-icons/fi";
 import {
   Accordion,
   AccordionContent,
@@ -16,7 +12,7 @@ import {
 import { MegaMenu } from "@/components/ui/MegaMenu";
 import Footer from "@/components/footer";
 
-import {services, faqs} from "./contants"
+import { services, faqs } from "./contants";
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -30,7 +26,6 @@ const ServiceCard = ({ service }) => {
       <Image
         src={service.image}
         alt={service.title}
-        
         fill
         className="object-cover transition-transform duration-300 group-hover:scale-105"
       />
@@ -60,7 +55,6 @@ const ServiceCard = ({ service }) => {
 };
 
 export default function EngineeringExpertise() {
-
   return (
     <div className="min-h-screen bg-[#FFFFFF]">
       <MegaMenu />
@@ -124,13 +118,13 @@ export default function EngineeringExpertise() {
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#003C46]">
                 Product Engineering Solutions
               </h2>
-              <p className="text-lg text-[#4A4A4A] mb-6">
+              <p className="text-lg text-[#4A4A4A] mb-6 text-justify">
                 Our engineering expertise spans across multiple disciplines,
                 providing innovative solutions for complex technical challenges.
                 We combine cutting-edge technology with proven methodologies to
                 deliver exceptional results.
               </p>
-              <p className="text-lg text-[#4A4A4A]">
+              <p className="text-lg text-[#4A4A4A] text-justify">
                 From concept to implementation, we work closely with you to
                 ensure your engineering projects are executed with precision and
                 excellence.
@@ -147,7 +141,6 @@ export default function EngineeringExpertise() {
                 src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
                 alt="Engineering expertise"
                 fill
-                
                 className="object-cover rounded-lg"
               />
             </motion.div>
@@ -212,8 +205,8 @@ export default function EngineeringExpertise() {
           >
             <Accordion type="single" collapsible className="text-[#4A4A4A]">
               {faqs.map((faq, index) => (
-                <AccordionItem 
-                  key={index} 
+                <AccordionItem
+                  key={index}
                   value={`item-${index}`}
                   className="border-[#99D5DF]/20"
                 >

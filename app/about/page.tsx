@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { MegaMenu } from "@/components/ui/MegaMenu";
 import Footer from "@/components/footer";
+const image = "https://images.unsplash.com/photo-1558494949-ef010cbdcc31";
 
 export default function AboutPage() {
   // Animation Variants
@@ -34,7 +35,7 @@ export default function AboutPage() {
     <div className="min-h-screen bg-gray-100 text-gray-900 font-sans overflow-hidden">
       <MegaMenu />
       {/* Hero Section */}
-      <section className="relative h-[90vh] flex items-center justify-center bg-gradient-to-br from-[#0098AF] via-[#007B8F] to-[#5B5B5B] text-white">
+       <section className="relative h-[90vh] flex items-center justify-center bg-gradient-to-br from-[#0098AF] via-[#007B8F] to-[#5B5B5B] text-white">
         
         <motion.div
           initial="hidden"
@@ -144,8 +145,104 @@ export default function AboutPage() {
           }}
           className="absolute bottom-10 right-10 w-6 h-6 bg-[#0098AF] opacity-30 rounded-full"
         />
-      </section>
+      </section> 
+       {/* <section>
+        <div className="relative h-[500px] overflow-hidden">
+          <Image
+            src={image}
+            alt="Office Environment"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#003C46]/85 to-[#0098AF]/70" />
+          <div className="absolute inset-0 opacity-5 bg-[url('/images/career-pattern.jpg')] bg-repeat" />
 
+          <Particles
+            id="tsparticles-hero"
+            options={{
+              particles: {
+                number: {
+                  value: 10,
+                  density: { enable: true, value_area: 800 },
+                },
+                color: { value: "#99D5DF" },
+                shape: { type: "circle" },
+                opacity: { value: 0.15, anim: { enable: true, speed: 1 } },
+                size: { value: 2, random: true },
+                move: {
+                  enable: true,
+                  speed: 1.5,
+                  direction: "bottom",
+                  random: true,
+                  straight: false,
+                  outMode: "out",
+                },
+              },
+              interactivity: {
+                detect_on: "canvas",
+                modes: { repel: { distance: 100 } },
+              },
+              background: { color: "transparent" },
+            }}
+            className="absolute inset-0 pointer-events-none"
+          />
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeIn}
+            className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 h-full flex flex-col justify-center"
+          >
+            <nav className="self-start mb-6 flex items-center space-x-2 text-sm font-light text-white/80">
+              <Link
+                href="/"
+                className="hover:text-[#99D5DF] flex items-center gap-1 transition-colors duration-200"
+              >
+                <FiHome className="w-4 h-4" />
+                Home
+              </Link>
+              <FiChevronRight className="w-4 h-4" />
+              <Link
+                href="/about"
+                className="hover:text-[#99D5DF] transition-colors duration-200"
+              >
+                About Us
+              </Link>
+            </nav>
+
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4 text-white drop-shadow-md relative">
+              Cognition IES
+              <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-[#99D5DF] to-transparent" />
+            </h1>
+            <p className="text-lg md:text-xl text-[#99D5DF]/90 max-w-xl font-light leading-relaxed mb-6">
+              Engineering the future with innovation, agility, and a human-first
+              approach since 2023.
+            </p>
+
+             {/* Scroll Indicator  
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 0.7, y: 0 }}
+              transition={{
+                repeat: Infinity,
+                duration: 1.5,
+                repeatType: "reverse",
+              }}
+              className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white/70"
+            >
+              <FiChevronDown className="w-6 h-6" />
+            </motion.div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 0.25, scale: 1 }}
+            transition={{ delay: 0.5, duration: 1 }}
+            className="absolute bottom-0 left-0 w-80 h-80 bg-[#0098AF] opacity-50 rounded-full blur-3xl"
+          />
+        </div> 
+      </section>  */}
       {/* Our Story */}
       <section className="py-24 bg-white relative">
         <div className="max-w-7xl mx-auto px-6">
@@ -160,14 +257,14 @@ export default function AboutPage() {
               <h2 className="text-4xl md:text-5xl font-bold text-[#5B5B5B] mb-6 tracking-tight">
                 Our Journey
               </h2>
-              <p className="text-lg font-light leading-relaxed text-gray-700 mb-6">
+              <p className="text-lg font-light leading-relaxed text-justify text-gray-700 mb-6">
                 Born in 2023 from a visionary spark in India, Cognition IES has
                 evolved into a global innovator. We’ve reimagined engineering by
                 breaking down traditional hierarchies, connecting our expert
                 engineers directly with clients to deliver seamless solutions
                 for industries like automotive, aerospace, and medical devices.
               </p>
-              <p className="text-lg font-light text-gray-700 mb-6 relative">
+              <p className="text-lg font-light text-justify text-gray-700 mb-6 relative">
                 Our unique blend of startup agility and deep expertise drives us
                 to create value that’s bold, practical, and sustainable—every
                 single day.
@@ -202,10 +299,9 @@ export default function AboutPage() {
                     <span className="text-white font-bold text-xl">65+</span>
                   </div>
                   <p className="text-lg font-medium text-black">
-                  Years of Expertise
+                    Years of Expertise
                   </p>
                 </div>
-
               </motion.div>
             </motion.div>
             <motion.div
@@ -445,7 +541,7 @@ export default function AboutPage() {
                 <motion.div
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
-                  className="absolute -top-4 -right-4 w-12 h-12 bg-[#0098AF] opacity-80 rounded-full flex items-center justify-center text-white font-bold shadow-sm"
+                  className="absolute -top-4 -right-4 w-12 h-12 bg-[#0098AF] opacity-80 rounded-full flex items-center justify-center text-white  font-bold shadow-sm"
                 >
                   {index + 1}
                 </motion.div>
@@ -603,7 +699,7 @@ export default function AboutPage() {
             </motion.h2>
             <motion.p
               variants={fadeIn}
-              className="text-lg font-light max-w-2xl mx-auto mb-8 relative"
+              className="text-lg font-light text-justify max-w-2xl mx-auto mb-8 relative"
             >
               Ready to turn your engineering challenges into opportunities?
               Let’s connect and create something extraordinary together.

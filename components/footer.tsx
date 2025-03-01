@@ -226,9 +226,8 @@
 import * as React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
 import { Icon } from "@iconify/react";
-import Image from "next/image";
+import { Car, Mail, Phone } from "lucide-react";
 
 function Footer() {
   // Animation Variants
@@ -251,29 +250,21 @@ function Footer() {
   };
 
   return (
-    <footer className="bg-[#5B5B5B] text-white py-16 sm:py-20 lg:py-28 relative overflow-hidden  opacity-90">
+    <footer className="bg-[#5B5B5B] text-white py-8 sm:py-15 lg:py-20 relative overflow-hidden  opacity-90">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={staggerChildren}
+        <div
+         
           className="grid grid-cols-1 md:grid-cols-12 gap-8 sm:gap-10 lg:gap-12"
         >
           {/* Company Logo & Description */}
-          <motion.div variants={fadeIn} className="col-span-12 md:col-span-5">
+          <div variants={fadeIn} className="col-span-12 md:col-span-5">
             <div className="flex items-center mb-6 relative">
               <span className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
                 <span className="text-[#0098AF] drop-shadow-md">COGNITION IES</span>
               </span>
-              <motion.span
-                initial={{ opacity: 0, scale: 0 }}
-                whileInView={{ opacity: 0.3, scale: 1 }}
-                transition={{ delay: 0.5, duration: 1 }}
-                className="absolute -top-3 -right-3 w-4 h-4 bg-[#0098AF] rounded-full opacity-70"
-              />
+             
             </div>
-            <p className="text-lg leading-relaxed text-gray-200 mb-6 font-light">
+            <p className="text-lg text-justify leading-relaxed text-gray-200 mb-6 font-light">
               At Cognition IES Pvt. Ltd., we are shaping the future of engineering
               with a commitment to precision, innovation, and client-focused
               solutions. Established in 2023, our company is dedicated to
@@ -287,13 +278,8 @@ function Footer() {
               transition={{ delay: 0.6, duration: 1 }}
               className="block h-1 bg-[#0098AF] opacity-70 mt-4 rounded-full"
             />
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 0.2, y: 0 }}
-              transition={{ delay: 0.7, duration: 1 }}
-              className="absolute bottom-0 left-0 w-16 h-16 bg-[#0098AF] opacity-20 rounded-full blur-xl -z-10"
-            />
-          </motion.div>
+            
+          </div>
 
           {/* Useful Links */}
           <motion.div variants={fadeIn} className="col-span-12 md:col-span-2">
@@ -359,7 +345,7 @@ function Footer() {
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-lg text-gray-200 hover:text-[#0098AF] transition-colors duration-300 flex items-center gap-3 font-medium"
+                    className="text-lg text-gray-200 hover:text-[#0098AF] transition-colors duration-100 flex items-center gap-3 font-medium"
                   >
                     {title === "LinkedIn" && (
                       <Icon icon="brandico:linkedin" className="text-[#0098AF] opacity-70 w-6 h-6" />
@@ -394,9 +380,9 @@ function Footer() {
               <li className="relative">
                 <Link
                   href="mailto:info@cognitionies.com"
-                  className="text-lg text-[#0098AF] hover:text-[#007B8F] transition-colors duration-300 flex items-center gap-3 font-medium"
+                  className="text-lg text-white hover:text-[#0098AF] transition-colors duration-300 flex items-center gap-3 font-medium"
                 >
-                  <Icon
+                  <Mail
                     icon="material-symbols:email-rounded"
                     className="text-[#0098AF] opacity-70 w-6 h-6"
                   />
@@ -411,9 +397,9 @@ function Footer() {
               <li className="relative">
                 <Link
                   href="tel:+1(847)254-5337"
-                  className="text-lg text-[#0098AF] hover:text-[#007B8F] transition-colors duration-300 flex items-center gap-3 font-medium"
+                  className="text-lg text-white hover:text-[#0098AF] transition-colors duration-300 flex items-center gap-3 font-medium"
                 >
-                  <Icon
+                  <Phone
                     icon="material-symbols:phone-rounded"
                     className="text-[#0098AF] opacity-70 w-6 h-6"
                   />
@@ -428,9 +414,9 @@ function Footer() {
               <li className="relative">
                 <Link
                   href="tel:+919825815795"
-                  className="text-lg text-[#0098AF] hover:text-[#007B8F] transition-colors duration-300 flex items-center gap-3 font-medium"
+                  className="text-lg text-white hover:text-[#0098AF] transition-colors duration-300 flex items-center gap-3 font-medium"
                 >
-                  <Icon
+                  <Phone
                     icon="material-symbols:phone-rounded"
                     className="text-[#0098AF] opacity-70 w-6 h-6"
                   />
@@ -456,7 +442,7 @@ function Footer() {
               className="absolute bottom-8 left-8 w-5 h-5 bg-[#0098AF] opacity-50 rounded-full"
             />
           </motion.div>
-        </motion.div>
+        </div>
       </div>
       <motion.div
         initial={{ opacity: 0, scale: 0 }}

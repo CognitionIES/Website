@@ -1,6 +1,3 @@
-
-
-
 const jobListings = [
     {
       id: 1,
