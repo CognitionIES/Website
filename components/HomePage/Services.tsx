@@ -45,7 +45,7 @@ const services = [
 ];
 
 export default function ServicesSection() {
-  const [activeCard, setActiveCard] = useState<number>(1);
+  const [activeCard, setActiveCard] = useState<number>(1); // First card (Mobility) open by default
 
   return (
     <section className="w-full py-12 sm:py-16 lg:py-24 bg-gradient-to-b from-gray-50 to-[#F5FDFF] relative">
@@ -71,7 +71,8 @@ export default function ServicesSection() {
                 service.textColor,
                 activeCard === service.id ? "md:col-span-6" : "md:col-span-3"
               )}
-              onClick={() => setActiveCard(service.id)}
+              onMouseEnter={() => setActiveCard(service.id)}
+              onMouseLeave={() => setActiveCard(1)} // Return to first card as default
             >
               <div
                 className="absolute inset-0 bg-cover bg-center transition-opacity duration-500"
@@ -132,7 +133,6 @@ export default function ServicesSection() {
     </section>
   );
 }
-
 /*
 
 "use client";

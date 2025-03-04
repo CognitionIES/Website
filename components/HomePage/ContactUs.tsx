@@ -47,10 +47,10 @@ export default function ContactUs() {
         />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px28 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           {/* Contact Information Column (with Google Maps Iframe) */}
-          <div className="space-y-6">
+          <div className="space-y-2">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#003C46] relative">
               Get in Touch
               <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-[#0098AF] to-transparent" />
@@ -61,24 +61,21 @@ export default function ContactUs() {
             </p>
             <div className="space-y-4 text-sm sm:text-base">
               <p className="text-gray-600 font-light">
-                <strong>Email:</strong> contact@cognitionies.com
+                <strong>Email:</strong> inquiry@cognitionies.com
               </p>
               <p className="text-gray-600 font-light">
                 <strong>Phone:</strong> +1 (847) 254-5337 | +91 98258-15795
               </p>
-              <p className="text-gray-600 font-light">
-                <strong>Location:</strong> Vadodara, India | Chicago, USA
-              </p>
             </div>
             {/* Google Maps Iframe */}
-            <div className="rounded-lg overflow-hidden shadow-md mt-6 h-[300px] md:h-[400px]">
+            <div className="py-[50px] h-[300px] md:h-[400px]">
              <WorldMapDemo/>
             </div>
           </div>
 
           {/* Form Column */}
           <div className="bg-white p-6 rounded-xl shadow-md border border-[#0098AF]/10">
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-2 gap-4">
                 <Input
                   placeholder="First Name"
@@ -159,7 +156,7 @@ export default function ContactUs() {
                   id="consent"
                   checked={formData.consent}
                   onCheckedChange={(checked) =>
-                    setFormData({ ...formData, consent: checked })
+                    setFormData({ ...formData, consent: !!checked })
                   }
                   className="border-[#0098AF] data-[state=checked]:bg-[#0098AF]"
                 />
@@ -195,13 +192,13 @@ export default function ContactUs() {
           repeat: Infinity,
           repeatType: "reverse",
         }}
-        className="absolute top-1/4 left-1/4 w-5 h-5 bg-[#0098AF] opacity-30 rounded-full -z-10"
+        className="absolute top-1/4 left-1/4 w-5 h-5 bg-[#0098AF] rounded-full -z-10"
       />
       <motion.div
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 0.1, scale: 1 }}
         transition={{ delay: 0.7, duration: 1 }}
-        className="absolute bottom-1/3 right-1/3 w-32 h-32 bg-[#99D5DF] opacity-20 rounded-full blur-2xl -z-10"
+        className="absolute bottom-1/3 right-1/3 w-32 h-32 bg-[#99D5DF]  rounded-full blur-2xl -z-10"
       />
       <motion.div
         initial={{ opacity: 0 }}
@@ -212,7 +209,7 @@ export default function ContactUs() {
           repeat: Infinity,
           repeatType: "reverse",
         }}
-        className="absolute top-1/3 right-1/4 w-4 h-4 bg-[#5B5B5B] opacity-30 rounded-full -z-10"
+        className="absolute top-1/3 right-1/4 w-4 h-4 bg-[#5B5B5B]  rounded-full "
       />
     </section>
   );

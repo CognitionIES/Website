@@ -8,14 +8,14 @@ import Link from "next/link";
 
 export default function AboutUs() {
   return (
-    <section className="w-full bg-gradient-to-b from-gray-50 to-[#F5FDFF] py-12 sm:py-16 lg:py-24 relative overflow-hidden">
+    <section className="w-full bg-gradient-to-b from-gray-50 to-[#F5FDFF] py-12 sm:py-14 lg:py-22 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           {/* Text Column */}
-          <div className="space-y-6">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#003C46] relative drop-shadow-md">
+          <div className="space-y-5">
+            <h2 className="text-3xl sm:text-4xl  lg:text-5xl font-bold text-[#003C46] relative drop-shadow-md">
               Who We Are?
-              <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-[#0098AF] to-transparent" />
+              <span className="absolute bottom-0  left-0 w-12 h-0.5 bg-gradient-to-r from-[#0098AF] to-transparent" />
             </h2>
             <p className="text-base sm:text-lg leading-relaxed text-gray-600 text-justify">
               At Cognition IES Pvt. Ltd., we are shaping the future of
@@ -24,8 +24,8 @@ export default function AboutUs() {
               dedicated to providing advanced engineering services tailored to
               the unique demands of discrete manufacturing industries.
             </p>
-            <p className="font-semibold text-xl text-[#003C46] relative drop-shadow-sm">
-              We Focus on Driving Operational Efficiency and Product Innovation
+            <p className="font-bold text-2xl  text-[#003C46] relative drop-shadow-sm">
+              We Focus on Driving Operational Efficiency & Product Innovation
             </p>
             <p className="text-base sm:text-lg leading-relaxed text-gray-600 text-justify">
               We bring state-of-the-art engineering practices to solve complex

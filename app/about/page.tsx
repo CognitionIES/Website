@@ -29,107 +29,107 @@ export default function AboutPage() {
     <div className="min-h-screen bg-gray-100 text-gray-900 font-sans overflow-hidden">
       <MegaMenu />
       {/* Hero Section */}
-      <section className="relative h-[90vh] flex items-center justify-center bg-gradient-to-br from-[#0098AF] via-[#007B8F] to-[#5B5B5B] text-white">
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={staggerChildren}
-          className="max-w-7xl mx-auto px-6 z-10 text-center"
-        >
-          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 relative">
-            Cognition IES
-          </h1>
-          <p className="text-xl md:text-2xl font-light max-w-3xl mx-auto leading-relaxed mb-8 relative">
-            Engineering the future with innovation, agility, and a human-first
-            approach since 2023.
-            <motion.span
-              initial={{ width: 0 }}
-              animate={{ width: "20%" }}
-              transition={{ delay: 1.2, duration: 1 }}
-              className="absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 bg-white opacity-50"
+      {/* <section className="relative h-[90vh] flex items-center justify-center bg-gradient-to-br from-[#0098AF] via-[#007B8F] to-[#5B5B5B] text-white">
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={staggerChildren}
+            className="max-w-7xl mx-auto px-6 z-10 text-center"
+          >
+            <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 relative">
+              Cognition IES
+            </h1>
+            <p className="text-xl md:text-2xl font-light max-w-3xl mx-auto leading-relaxed mb-8 relative">
+              Engineering the future with innovation, agility, and a human-first
+              approach since 2023.
+              <motion.span
+                initial={{ width: 0 }}
+                animate={{ width: "20%" }}
+                transition={{ delay: 1.2, duration: 1 }}
+                className="absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 bg-white opacity-50"
+              />
+            </p>
+            <div className="flex justify-center space-x-4">
+              <Button
+                variant="outline"
+                className="text-[#0098AF] border-white hover:bg-white hover:text-[#0098AF] px-8 py-3 rounded-full text-lg font-semibold shadow-lg relative overflow-hidden"
+              >
+                Learn More
+                <motion.span
+                  initial={{ scale: 0 }}
+                  whileHover={{ scale: 20 }}
+                  transition={{ duration: 0.5 }}
+                  className="absolute inset-0 bg-white opacity-10 rounded-full"
+                />
+              </Button>
+              <Button
+                variant="default"
+                className="bg-[#0098AF] text-white hover:bg-[#007B8F] px-8 py-3 rounded-full text-lg font-semibold shadow-lg relative overflow-hidden"
+              >
+                Contact Us
+                <motion.span
+                  initial={{ scale: 0 }}
+                  whileHover={{ scale: 20 }}
+                  transition={{ duration: 0.5 }}
+                  className="absolute inset-0 bg-[#0098AF] opacity-20 rounded-full"
+                />
+              </Button>
+            </div>
+          </motion.div>
+          <div className="absolute inset-0 opacity-20">
+            <Image
+              src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31"
+              alt="Abstract Tech"
+              layout="fill"
+              objectFit="cover"
             />
-          </p>
-          <div className="flex justify-center space-x-4">
-            <Button
-              variant="outline"
-              className="text-[#0098AF] border-white hover:bg-white hover:text-[#0098AF] px-8 py-3 rounded-full text-lg font-semibold shadow-lg relative overflow-hidden"
-            >
-              Learn More
-              <motion.span
-                initial={{ scale: 0 }}
-                whileHover={{ scale: 20 }}
-                transition={{ duration: 0.5 }}
-                className="absolute inset-0 bg-white opacity-10 rounded-full"
-              />
-            </Button>
-            <Button
-              variant="default"
-              className="bg-[#0098AF] text-white hover:bg-[#007B8F] px-8 py-3 rounded-full text-lg font-semibold shadow-lg relative overflow-hidden"
-            >
-              Contact Us
-              <motion.span
-                initial={{ scale: 0 }}
-                whileHover={{ scale: 20 }}
-                transition={{ duration: 0.5 }}
-                className="absolute inset-0 bg-[#0098AF] opacity-20 rounded-full"
-              />
-            </Button>
           </div>
-        </motion.div>
-        <div className="absolute inset-0 opacity-20">
-          <Image
-            src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31"
-            alt="Abstract Tech"
-            layout="fill"
-            objectFit="cover"
+          <motion.div
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 0.25, scale: 1 }}
+            transition={{ delay: 0.5, duration: 1 }}
+            className="absolute bottom-0 left-0 w-80 h-80 bg-[#0098AF] opacity-50 rounded-full blur-3xl"
           />
-        </div>
-        <motion.div
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 0.25, scale: 1 }}
-          transition={{ delay: 0.5, duration: 1 }}
-          className="absolute bottom-0 left-0 w-80 h-80 bg-[#0098AF] opacity-50 rounded-full blur-3xl"
-        />
-        <motion.div
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 0.25, scale: 1 }}
-          transition={{ delay: 0.7, duration: 1 }}
-          className="absolute top-0 right-0 w-96 h-96 bg-[#5B5B5B] opacity-50 rounded-full blur-3xl"
-        />
-        <motion.div
-          initial={{ opacity: 0, rotate: 0 }}
-          animate={{ opacity: 0.1, rotate: 360 }}
-          transition={{
-            delay: 1,
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-          className="absolute top-1/4 left-1/4 w-48 h-48 border-2 border-[#0098AF] opacity-50 rounded-full"
-        />
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 0.3, y: 0 }}
-          transition={{
-            delay: 1.5,
-            duration: 1,
-            repeat: Infinity,
-            repeatType: "reverse",
-          }}
-          className="absolute top-10 left-10 w-4 h-4 bg-[#0098AF] opacity-50 rounded-full"
-        />
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.2 }}
-          transition={{
-            delay: 2,
-            duration: 1,
-            repeat: Infinity,
-            repeatType: "reverse",
-          }}
-          className="absolute bottom-10 right-10 w-6 h-6 bg-[#0098AF] opacity-30 rounded-full"
-        />
-      </section>
+          <motion.div
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 0.25, scale: 1 }}
+            transition={{ delay: 0.7, duration: 1 }}
+            className="absolute top-0 right-0 w-96 h-96 bg-[#5B5B5B] opacity-50 rounded-full blur-3xl"
+          />
+          <motion.div
+            initial={{ opacity: 0, rotate: 0 }}
+            animate={{ opacity: 0.1, rotate: 360 }}
+            transition={{
+              delay: 1,
+              duration: 20,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+            className="absolute top-1/4 left-1/4 w-48 h-48 border-2 border-[#0098AF] opacity-50 rounded-full"
+          />
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 0.3, y: 0 }}
+            transition={{
+              delay: 1.5,
+              duration: 1,
+              repeat: Infinity,
+              repeatType: "reverse",
+            }}
+            className="absolute top-10 left-10 w-4 h-4 bg-[#0098AF] opacity-50 rounded-full"
+          />
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.2 }}
+            transition={{
+              delay: 2,
+              duration: 1,
+              repeat: Infinity,
+              repeatType: "reverse",
+            }}
+            className="absolute bottom-10 right-10 w-6 h-6 bg-[#0098AF] opacity-30 rounded-full"
+          />
+        </section> */}
       <section>
         <div className="relative h-[500px] overflow-hidden">
           <Image
@@ -720,18 +720,18 @@ export default function AboutPage() {
                 </Button>
               </Link>
               <Link href="/expertise">
-              <Button
-                variant="outline"
-                className="text-[#0098AF] border-white hover:bg-white hover:text-[#0098AF] px-10 py-4 rounded-full text-lg font-semibold shadow-lg relative overflow-hidden"
-              >
-                Explore Expertise
-                <motion.span
-                  initial={{ scale: 0 }}
-                  whileHover={{ scale: 20 }}
-                  transition={{ duration: 0.5 }}
-                  className="absolute inset-0 bg-white opacity-10 rounded-full"
-                />
-              </Button>
+                <Button
+                  variant="outline"
+                  className="text-[#0098AF] border-white hover:bg-white hover:text-[#0098AF] px-10 py-4 rounded-full text-lg font-semibold shadow-lg relative overflow-hidden"
+                >
+                  Explore Expertise
+                  <motion.span
+                    initial={{ scale: 0 }}
+                    whileHover={{ scale: 20 }}
+                    transition={{ duration: 0.5 }}
+                    className="absolute inset-0 bg-white opacity-10 rounded-full"
+                  />
+                </Button>
               </Link>
             </div>
           </motion.div>
