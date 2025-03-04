@@ -3,10 +3,10 @@ import { ArrowRight } from "lucide-react"
 export default function Left(){
     return (<div className=" py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
         <div className="max-w-xl ">
-          <h2 className="text-2xl font-bold text-[#0c1d44] mb-6">
-            Engineering for efficient projects & plants
+          <h2 className="text-3xl font-bold text-[#003C46] mb-6 relative drop-shadow-sm">
+            Engineering for Efficient Projects and Plants
           </h2>
-          <p className="text-gray-600 mb-8">
+          <p className="text-gray-600 mb-8 text-justify">
             Plant Engineering is the most sought-after practice at LTTS, it creates a strong
             market differentiation with its offerings for efficient, safe, and sustainable
             production facilities.

@@ -5,19 +5,13 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { MegaMenu } from "@/components/ui/MegaMenu";
 import Footer from "@/components/footer";
-//const image = "https://images.unsplash.com/photo-1558494949-ef010cbdcc31";
+import { FiChevronDown, FiChevronRight, FiHome } from "react-icons/fi";
+import Link from "next/link";
+
+const image = "https://images.unsplash.com/photo-1558494949-ef010cbdcc31";
 
 export default function AboutPage() {
   // Animation Variants
-  const fadeIn = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
-    },
-  };
-
   const staggerChildren = {
     hidden: { opacity: 0 },
     visible: {
@@ -35,24 +29,17 @@ export default function AboutPage() {
     <div className="min-h-screen bg-gray-100 text-gray-900 font-sans overflow-hidden">
       <MegaMenu />
       {/* Hero Section */}
-       <section className="relative h-[90vh] flex items-center justify-center bg-gradient-to-br from-[#0098AF] via-[#007B8F] to-[#5B5B5B] text-white">
-        
+      <section className="relative h-[90vh] flex items-center justify-center bg-gradient-to-br from-[#0098AF] via-[#007B8F] to-[#5B5B5B] text-white">
         <motion.div
           initial="hidden"
           animate="visible"
           variants={staggerChildren}
           className="max-w-7xl mx-auto px-6 z-10 text-center"
         >
-          <motion.h1
-            variants={fadeIn}
-            className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 relative"
-          >
+          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 relative">
             Cognition IES
-          </motion.h1>
-          <motion.p
-            variants={fadeIn}
-            className="text-xl md:text-2xl font-light max-w-3xl mx-auto leading-relaxed mb-8 relative"
-          >
+          </h1>
+          <p className="text-xl md:text-2xl font-light max-w-3xl mx-auto leading-relaxed mb-8 relative">
             Engineering the future with innovation, agility, and a human-first
             approach since 2023.
             <motion.span
@@ -61,11 +48,8 @@ export default function AboutPage() {
               transition={{ delay: 1.2, duration: 1 }}
               className="absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 bg-white opacity-50"
             />
-          </motion.p>
-          <motion.div
-            variants={fadeIn}
-            className="flex justify-center space-x-4"
-          >
+          </p>
+          <div className="flex justify-center space-x-4">
             <Button
               variant="outline"
               className="text-[#0098AF] border-white hover:bg-white hover:text-[#0098AF] px-8 py-3 rounded-full text-lg font-semibold shadow-lg relative overflow-hidden"
@@ -90,7 +74,7 @@ export default function AboutPage() {
                 className="absolute inset-0 bg-[#0098AF] opacity-20 rounded-full"
               />
             </Button>
-          </motion.div>
+          </div>
         </motion.div>
         <div className="absolute inset-0 opacity-20">
           <Image
@@ -145,8 +129,8 @@ export default function AboutPage() {
           }}
           className="absolute bottom-10 right-10 w-6 h-6 bg-[#0098AF] opacity-30 rounded-full"
         />
-      </section> 
-       {/* <section>
+      </section>
+      <section>
         <div className="relative h-[500px] overflow-hidden">
           <Image
             src={image}
@@ -158,43 +142,7 @@ export default function AboutPage() {
           <div className="absolute inset-0 bg-gradient-to-br from-[#003C46]/85 to-[#0098AF]/70" />
           <div className="absolute inset-0 opacity-5 bg-[url('/images/career-pattern.jpg')] bg-repeat" />
 
-          <Particles
-            id="tsparticles-hero"
-            options={{
-              particles: {
-                number: {
-                  value: 10,
-                  density: { enable: true, value_area: 800 },
-                },
-                color: { value: "#99D5DF" },
-                shape: { type: "circle" },
-                opacity: { value: 0.15, anim: { enable: true, speed: 1 } },
-                size: { value: 2, random: true },
-                move: {
-                  enable: true,
-                  speed: 1.5,
-                  direction: "bottom",
-                  random: true,
-                  straight: false,
-                  outMode: "out",
-                },
-              },
-              interactivity: {
-                detect_on: "canvas",
-                modes: { repel: { distance: 100 } },
-              },
-              background: { color: "transparent" },
-            }}
-            className="absolute inset-0 pointer-events-none"
-          />
-
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeIn}
-            className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 h-full flex flex-col justify-center"
-          >
+          <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 h-full flex flex-col justify-center">
             <nav className="self-start mb-6 flex items-center space-x-2 text-sm font-light text-white/80">
               <Link
                 href="/"
@@ -221,7 +169,7 @@ export default function AboutPage() {
               approach since 2023.
             </p>
 
-             {/* Scroll Indicator  
+            {/* Scroll Indicator */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 0.7, y: 0 }}
@@ -234,15 +182,15 @@ export default function AboutPage() {
             >
               <FiChevronDown className="w-6 h-6" />
             </motion.div>
-          </motion.div>
+          </div>
           <motion.div
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 0.25, scale: 1 }}
             transition={{ delay: 0.5, duration: 1 }}
             className="absolute bottom-0 left-0 w-80 h-80 bg-[#0098AF] opacity-50 rounded-full blur-3xl"
           />
-        </div> 
-      </section>  */}
+        </div>
+      </section>
       {/* Our Story */}
       <section className="py-24 bg-white relative">
         <div className="max-w-7xl mx-auto px-6">
@@ -253,7 +201,7 @@ export default function AboutPage() {
             variants={staggerChildren}
             className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center"
           >
-            <motion.div variants={fadeIn} className="lg:col-span-3">
+            <div className="lg:col-span-3">
               <h2 className="text-4xl md:text-5xl font-bold text-[#5B5B5B] mb-6 tracking-tight">
                 Our Journey
               </h2>
@@ -275,10 +223,7 @@ export default function AboutPage() {
                   className="absolute bottom-0 left-0 h-0.5 bg-[#0098AF] opacity-50"
                 />
               </p>
-              <motion.div
-                variants={fadeIn}
-                className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8 relative"
-              >
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8 relative">
                 {/* Subtle Glow Effect Around Stats */}
                 <motion.div
                   initial={{ opacity: 0, scale: 0.95 }}
@@ -302,12 +247,9 @@ export default function AboutPage() {
                     Years of Expertise
                   </p>
                 </div>
-              </motion.div>
-            </motion.div>
-            <motion.div
-              variants={fadeIn}
-              className="lg:col-span-2 relative h-80 lg:h-[500px]"
-            >
+              </div>
+            </div>
+            <div className="lg:col-span-2 relative h-80 lg:h-[500px]">
               <Image
                 src="https://images.unsplash.com/photo-1516321497487-e288fb19713f"
                 alt="Creative Workspace"
@@ -354,7 +296,7 @@ export default function AboutPage() {
                 }}
                 className="absolute top-10 right-10 w-5 h-5 bg-[#0098AF] opacity-30 rounded-full"
               />
-            </motion.div>
+            </div>
           </motion.div>
           <div className="absolute top-0 right-0 w-56 h-56 bg-[#5B5B5B] opacity-20 rounded-full blur-3xl -z-10" />
           <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#0098AF] opacity-20 rounded-full blur-3xl -z-10" />
@@ -382,10 +324,7 @@ export default function AboutPage() {
             variants={staggerChildren}
             className="space-y-16 relative"
           >
-            <motion.div
-              variants={fadeIn}
-              className="bg-white p-8 rounded-xl shadow-lg max-w-2xl mx-auto transform -rotate-3 relative z-10 border-l-4 border-[#0098AF]"
-            >
+            <div className="bg-white p-8  rounded-xl shadow-lg max-w-2xl -rotate-3 mx-auto transform  relative border-l-4 border-[#0098AF] z-10  ">
               <h2 className="text-3xl font-semibold text-[#5B5B5B] mb-4 tracking-tight">
                 Our Mission
               </h2>
@@ -400,11 +339,8 @@ export default function AboutPage() {
                 transition={{ delay: 0.5, duration: 1 }}
                 className="h-1 bg-[#0098AF] opacity-50 mt-4 rounded-full"
               />
-            </motion.div>
-            <motion.div
-              variants={fadeIn}
-              className="bg-[#0098AF] opacity-10 p-8 rounded-xl shadow-lg max-w-2xl ml-auto transform rotate-3 relative z-10 border-r-4 border-[#0098AF]"
-            >
+            </div>
+            <div className="bg-[#0098AF] opacity-90 p-8 rounded-xl rotate-3 shadow-lg max-w-2xl ml-auto transform border-r-4 border-[#5b5b5b] relative z-10 border-r-4 border-[#0098AF]">
               <h2 className="text-3xl font-semibold text-[#5B5B5B] mb-4 tracking-tight">
                 Our Vision
               </h2>
@@ -418,7 +354,7 @@ export default function AboutPage() {
                 transition={{ delay: 0.5, duration: 1 }}
                 className="h-1 bg-[#5B5B5B] opacity-50 mt-4 rounded-full"
               />
-            </motion.div>
+            </div>
             <motion.div
               initial={{ opacity: 0, scale: 0 }}
               whileInView={{ opacity: 0.15, scale: 1 }}
@@ -448,6 +384,89 @@ export default function AboutPage() {
               className="absolute bottom-10 right-10 w-5 h-5 bg-[#0098AF] opacity-30 rounded-full"
             />
           </motion.div>
+
+          {/* Background Image for Mission Vision Section */}
+          <div className="absolute inset-0 opacity-50">
+            <Image
+              src="https://images.unsplash.com/photo-1476304884326-cd2c88572c5f?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Abstract Lines"
+              layout="fill"
+              objectFit="cover"
+            />
+          </div>
+        </div>
+      </section>
+      {/* <section className="py-24 bg-gradient-to-b from[#F9FAFB] to-[#E5E7EB] relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerChildren}
+            className="space-y-16 relative z-10"
+          >
+            <div className="bg-white p-8 rounded-xl shadow-md max-w-2xl mx-auto transform -rotate-2 border-l-4 border-[#0098AF] hover:shadow-lg transition-shadow duration-300">
+              <h2 className="text-3xl font-semibold text-[#003C46] mb-4 tracking-tight">
+                Our Mission
+              </h2>
+              <p className="text-lg font-light text-gray-600 leading-relaxed">
+                To spark engineering innovation with a people-first mindset,
+                empowering every team member to deliver exceptional value
+                directly to our clients.
+              </p>
+              <motion.div
+                initial={{ width: 0 }}
+                whileInView={{ width: "50%" }}
+                transition={{ delay: 0.5, duration: 1 }}
+                className="h-1 bg-[#0098AF] opacity-80 mt-4 rounded-full"
+              />
+            </div>
+            <div className="bg-[#E6F0F2] p-8 rounded-xl shadow-md max-w-2xl ml-auto transform rotate-2 border-r-4 border-[#5B5B5B] hover:shadow-lg transition-shadow duration-300">
+              <h2 className="text-3xl font-semibold text-[#003C46] mb-4 tracking-tight">
+                Our Vision
+              </h2>
+              <p className="text-lg font-light text-gray-600 leading-relaxed">
+                To lead as the world’s trusted engineering partner, thriving on
+                self-driven teams and sustainable, collaborative brilliance.
+              </p>
+              <motion.div
+                initial={{ width: 0 }}
+                whileInView={{ width: "50%" }}
+                transition={{ delay: 0.5, duration: 1 }}
+                className="h-1 bg-[#5B5B5B] opacity-80 mt-4 rounded-full"
+              />
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0 }}
+              whileInView={{ opacity: 0.15, scale: 1 }}
+              transition={{ duration: 1 }}
+              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-[#99D5DF] opacity-15 rounded-full blur-3xl -z-20"
+            />
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 0.25, y: 0 }}
+              transition={{
+                delay: 0.5,
+                duration: 1,
+                repeat: Infinity,
+                repeatType: "reverse",
+              }}
+              className="absolute top-10 left-10 w-4 h-4 bg-[#0098AF] opacity-40 rounded-full -z-10"
+            />
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.2 }}
+              transition={{
+                delay: 1.5,
+                duration: 1,
+                repeat: Infinity,
+                repeatType: "reverse",
+              }}
+              className="absolute bottom-10 right-10 w-5 h-5 bg-[#5B5B5B] opacity-30 rounded-full -z-10"
+            />
+          </motion.div>
+
           <div className="absolute inset-0 opacity-5">
             <Image
               src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0"
@@ -456,27 +475,15 @@ export default function AboutPage() {
               objectFit="cover"
             />
           </div>
-          <motion.div
-            initial={{ opacity: 0, rotate: 0 }}
-            whileInView={{ opacity: 0.1, rotate: 360 }}
-            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            className="absolute bottom-0 right-0 w-40 h-40 border-2 border-[#0098AF] opacity-50 rounded-full -z-10"
-          />
         </div>
-      </section>
+      </section> */}
 
       {/* Key Values */}
       <section className="py-24 bg-white relative">
         <div className="max-w-7xl mx-auto px-6">
-          <motion.h2
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeIn}
-            className="text-4xl md:text-5xl font-bold text-center text-[#5B5B5B] mb-12 tracking-tight"
-          >
+          <h2 className="text-4xl md:text-5xl font-bold text-center text-[#5B5B5B] mb-12 tracking-tight">
             What Drives Us
-          </motion.h2>
+          </h2>
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -536,12 +543,12 @@ export default function AboutPage() {
                 <motion.div
                   initial={{ opacity: 0, scale: 0 }}
                   whileHover={{ opacity: 0.1, scale: 1 }}
-                  className="absolute inset-0 bg-[#0098AF] opacity-20 rounded-lg"
+                  className="absolute inset-0 bg-[#0098AF] opacity-20 rounded-full"
                 />
                 <motion.div
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
-                  className="absolute -top-4 -right-4 w-12 h-12 bg-[#0098AF] opacity-80 rounded-full flex items-center justify-center text-white  font-bold shadow-sm"
+                  className="absolute -top-4 -right-4 w-12 h-12 bg-[#0098AF] opacity-80 rounded-full flex items-center justify-center text-white font-bold shadow-sm"
                 >
                   {index + 1}
                 </motion.div>
@@ -589,15 +596,9 @@ export default function AboutPage() {
       {/* Stats & Impact */}
       <section className="py-24 bg-[#5B5B5B] text-white relative">
         <div className="max-w-7xl mx-auto px-6">
-          <motion.h2
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeIn}
-            className="text-4xl md:text-5xl font-bold text-center mb-12 tracking-tight"
-          >
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 tracking-tight">
             Our Impact
-          </motion.h2>
+          </h2>
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -611,10 +612,9 @@ export default function AboutPage() {
               { stat: "100%", label: "On-Time Delivery" },
               { stat: "ISO 9001", label: "Certified Quality" },
             ].map((item, index) => (
-              <motion.div
+              <div
                 key={index}
-                variants={fadeIn}
-                className="p-6 bg-[#5B5B5B] bg-opacity-60 rounded-lg shadow-lg border-2 border-[#0098AF] opacity-30 relative overflow-hidden"
+                className="p-6 bg-[#5B5B5B] bg-opacity-60 rounded-lg shadow-lg border-2 border-[#0098AF] opacity-90 relative overflow-hidden"
               >
                 <h3 className="text-5xl font-bold mb-2">{item.stat}</h3>
                 <p className="text-lg font-light">{item.label}</p>
@@ -634,7 +634,7 @@ export default function AboutPage() {
                   }}
                   className="absolute top-2 left-2 w-3 h-3 bg-[#0098AF] opacity-30 rounded-full"
                 />
-              </motion.div>
+              </div>
             ))}
           </motion.div>
           <div className="absolute inset-0 opacity-10">
@@ -691,46 +691,40 @@ export default function AboutPage() {
             viewport={{ once: true }}
             variants={staggerChildren}
           >
-            <motion.h2
-              variants={fadeIn}
-              className="text-4xl md:text-5xl font-bold mb-6 tracking-tight"
-            >
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">
               Shape the Future with Us
-            </motion.h2>
-            <motion.p
-              variants={fadeIn}
-              className="text-lg font-light text-justify max-w-2xl mx-auto mb-8 relative"
-            >
+            </h2>
+            <p className="text-lg font-light text-justify max-w-2xl mx-auto mb-8 relative">
               Ready to turn your engineering challenges into opportunities?
               Let’s connect and create something extraordinary together.
               <motion.span
                 initial={{ width: 0 }}
                 whileInView={{ width: "20%" }}
                 transition={{ duration: 1 }}
-                className="absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 bg-white opacity-50"
+                className="absolute bottom-0 left-[90px] transform -translate-x-1/2 h-0.5 bg-white opacity-50"
               />
-            </motion.p>
-            <motion.div
-              variants={fadeIn}
-              className="flex justify-center space-x-6"
-            >
-              <Button
-                variant="default"
-                className="bg-white text-[#5B5B5B] hover:bg-gray-100 px-10 py-4 rounded-full text-lg font-semibold shadow-lg relative overflow-hidden"
-              >
-                Get in Touch
-                <motion.span
-                  initial={{ scale: 0 }}
-                  whileHover={{ scale: 20 }}
-                  transition={{ duration: 0.5 }}
-                  className="absolute inset-0 bg-[#0098AF] opacity-20 rounded-full"
-                />
-              </Button>
+            </p>
+            <div className="flex justify-center space-x-6">
+              <Link href="/contact">
+                <Button
+                  variant="default"
+                  className="bg-white text-[#5B5B5B] hover:bg-gray-100 px-10 py-4 rounded-full text-lg font-semibold shadow-lg relative overflow-hidden"
+                >
+                  Get in Touch
+                  <motion.span
+                    initial={{ scale: 0 }}
+                    whileHover={{ scale: 20 }}
+                    transition={{ duration: 0.5 }}
+                    className="absolute inset-0 bg-[#0098AF] opacity-20 rounded-full"
+                  />
+                </Button>
+              </Link>
+              <Link href="/expertise">
               <Button
                 variant="outline"
                 className="text-[#0098AF] border-white hover:bg-white hover:text-[#0098AF] px-10 py-4 rounded-full text-lg font-semibold shadow-lg relative overflow-hidden"
               >
-                Explore Services
+                Explore Expertise
                 <motion.span
                   initial={{ scale: 0 }}
                   whileHover={{ scale: 20 }}
@@ -738,7 +732,8 @@ export default function AboutPage() {
                   className="absolute inset-0 bg-white opacity-10 rounded-full"
                 />
               </Button>
-            </motion.div>
+              </Link>
+            </div>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, scale: 0 }}

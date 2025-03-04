@@ -5,14 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import {
-  ChevronDown,
-  Search,
-  ArrowRight,
-  Menu,
-  X,
-  BarChart,
-} from "lucide-react";
+import { ChevronDown, ArrowRight, Menu, X, BarChart } from "lucide-react";
 import {
   Fan,
   Gauge,
@@ -725,13 +718,13 @@ export function MegaMenu() {
               </Link>
 
               {/* Search and Contact Button */}
-              <div className="flex items-center space-x-4 ml-6">
-                <button className="text-gray-700 hover:text-blue-900 transition-colors duration-200">
-                  <Search className="h-5 w-5" />
-                </button>
-                <Button className="bg-[#0098af] text-white hover:bg-white hover:text-black text-lg transition-colors duration-200">
-                  Contact Us
-                </Button>
+
+              <div className="flex items-center space-x-4 ml-2">
+                <Link href="/contact">
+                  <Button className="bg-[#0098af] text-white hover:bg-white hover:text-black text-lg transition-colors duration-200 border-2 border-transparent hover:border-[#0098af] hover:outline hover:outline-2 hover:outline-[#0098af]">
+                    Contact Us
+                  </Button>
+                </Link>
               </div>
             </div>
 

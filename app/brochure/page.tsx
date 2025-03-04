@@ -3,16 +3,13 @@
 // import Navbar from "@/components/ui/navbar";
 import Left from "@/components/Broucher/left";
 import Right from "@/components/Broucher/Right";
-import Hero from "@/components/Broucher/Hero";
 import { MegaMenu } from "@/components/ui/MegaMenu";
 
-
 export default function ServiceDetails() {
-
   return (
-    <main className="min-h-screen  ">
+    <main className="min-h-screen">
       <MegaMenu />
-      <Hero />         
+
       {/* Banner Image */}
       <div className="w-full h-[400px] relative">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3')] bg-cover bg-center">
@@ -20,13 +17,13 @@ export default function ServiceDetails() {
         </div>
       </div>
 
+      {/* Partition Line */}
+      <div className="w-full h-[4px] bg-gradient-to-r from-[#0098AF] via-[#0098AF] to-[#0098AF]    relative z-10" />
       {/* Content Section */}
-    
-      <div className="min-h-screen flex  ">
-        
-        <Left/>
+      <div className="min-h-screen flex">
+        <Left />
         <Right />
-      </div>  
+      </div>
     </main>
   );
 }

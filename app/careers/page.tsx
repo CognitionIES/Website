@@ -42,7 +42,7 @@ interface Job {
 export default function CareersPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [locationFilter, setLocationFilter] = useState("all");
-  const [activeJob, setActiveJob] = useState<Job | null>(null); // Updated with type
+  const [activeJob, setActiveJob] = useState<Job | null>(null);
 
   const filteredJobs = jobListings.filter((job) => {
     const matchesSearch =
@@ -54,15 +54,6 @@ export default function CareersPage() {
   });
 
   // Animation Variants
-  const fadeIn = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
-    },
-  };
-
   const staggerChildren = {
     hidden: { opacity: 0 },
     visible: {
@@ -96,13 +87,7 @@ export default function CareersPage() {
         <div className="absolute inset-0 bg-gradient-to-br from-[#003C46]/85 to-[#0098AF]/70" />
         <div className="absolute inset-0 opacity-5 bg-[url('/images/career-pattern.jpg')] bg-repeat" />
 
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeIn}
-          className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 h-full flex flex-col justify-center"
-        >
+        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 h-full flex flex-col justify-center">
           <nav className="self-start mb-6 flex items-center space-x-2 text-sm font-light text-white/80">
             <Link
               href="/"
@@ -145,12 +130,24 @@ export default function CareersPage() {
           >
             <FiChevronDown className="w-6 h-6" />
           </motion.div>
-        </motion.div>
+        </div>
+        {/* Decorative Elements in Hero */}
         <motion.div
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 0.25, scale: 1 }}
           transition={{ delay: 0.5, duration: 1 }}
-          className="absolute bottom-0 left-0 w-80 h-80 bg-[#0098AF] opacity-50 rounded-full blur-3xl"
+          className="absolute bottom-0 left-0 w-80 h-80 bg-[#0098AF] opacity-50 rounded-full blur-3xl -z-10"
+        />
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.15 }}
+          transition={{
+            delay: 1,
+            duration: 1,
+            repeat: Infinity,
+            repeatType: "reverse",
+          }}
+          className="absolute top-20 right-16 w-5 h-5 bg-[#5B5B5B] opacity-30 rounded-full -z-10"
         />
       </div>
 
@@ -163,12 +160,12 @@ export default function CareersPage() {
         className="py-16 bg-gradient-to-b from-gray-50 to-[#F5FDFF] relative"
       >
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-          <motion.div variants={fadeIn} className="relative mb-12">
+          <div className="relative mb-12">
             <h2 className="text-3xl font-bold text-[#003C46] relative">
               Our Values
               <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-[#0098AF] to-transparent" />
             </h2>
-          </motion.div>
+          </div>
           <div className="grid md:grid-cols-4 gap-6">
             {[
               {
@@ -210,6 +207,24 @@ export default function CareersPage() {
               </motion.div>
             ))}
           </div>
+          {/* Subtle Decorative Elements */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 0.1, scale: 1 }}
+            transition={{ delay: 0.7, duration: 1 }}
+            className="absolute top-1/4 right-1/3 w-32 h-32 bg-[#99D5DF] opacity-20 rounded-full blur-2xl -z-10"
+          />
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.15 }}
+            transition={{
+              delay: 1.5,
+              duration: 1,
+              repeat: Infinity,
+              repeatType: "reverse",
+            }}
+            className="absolute bottom-10 left-20 w-4 h-4 bg-[#0098AF] opacity-30 rounded-full -z-10"
+          />
         </div>
       </motion.div>
 
@@ -223,23 +238,23 @@ export default function CareersPage() {
         id="positions"
       >
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-          <motion.div variants={fadeIn} className="relative mb-8">
+          <div className="relative mb-8">
             <h2 className="text-3xl font-bold text-[#5B5B5B]">
               Open Positions
               <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-[#0098AF] to-transparent" />
             </h2>
-          </motion.div>
+          </div>
 
           <div className="flex flex-col md:flex-row gap-4 mb-8">
-            <motion.div variants={fadeIn} className="flex-1">
+            <div className="flex-1">
               <Input
                 placeholder="Search positions..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="w-full border border-[#0098AF]/20 rounded-lg shadow-sm focus:border-[#0098AF] focus:ring-[#0098AF]/10 placeholder-gray-400 transition-all duration-200"
               />
-            </motion.div>
-            <motion.div variants={fadeIn}>
+            </div>
+            <div>
               <Select value={locationFilter} onValueChange={setLocationFilter}>
                 <SelectTrigger className="w-full md:w-[200px] border border-[#0098AF]/20 rounded-lg shadow-sm focus:border-[#0098AF] focus:ring-[#0098AF]/10">
                   <SelectValue placeholder="Filter by location" />
@@ -250,7 +265,7 @@ export default function CareersPage() {
                   <SelectItem value="USA">USA</SelectItem>
                 </SelectContent>
               </Select>
-            </motion.div>
+            </div>
           </div>
 
           <motion.div variants={staggerChildren} className="grid gap-6">
@@ -282,7 +297,7 @@ export default function CareersPage() {
                           className="text-[#0098AF] border-[#0098AF] hover:bg-[#0098AF] hover:text-white px-3 py-1 rounded-lg font-medium shadow-sm hover:scale-105 transition-all duration-200 text-sm"
                           onClick={(e) => {
                             e.stopPropagation();
-                            setActiveJob(job); // Now type-safe
+                            setActiveJob(job);
                           }}
                         >
                           View Details
@@ -325,15 +340,13 @@ export default function CareersPage() {
                 className="bg-white p-6 rounded-lg shadow-xl max-w-lg w-full border border-[#0098AF]/10"
                 onClick={(e) => e.stopPropagation()}
               >
-                <h3 className="text-xl font-bold text-[#5B5B5B] mb-3">
-                  {activeJob.title}
-                </h3>
+                <h3 className="text-xl font-bold text-[#5B5B5B] mb-3">{activeJob.title}</h3>
                 <div className="flex gap-4 text-sm font-light text-gray-600 mb-4">
                   <span>{activeJob.department}</span>
                   <span>{activeJob.location}</span>
                 </div>
                 <p className="text-sm font-light text-gray-600 leading-relaxed mb-6">
-                  {activeJob.description} {/* Fixed typo: job -> activeJob */}
+                  {activeJob.description}
                 </p>
                 <Button
                   className="bg-[#0098AF] text-white hover:bg-[#007B8F] px-4 py-1 rounded-lg font-medium shadow-sm hover:scale-105 transition-all duration-200 text-sm"
@@ -344,6 +357,19 @@ export default function CareersPage() {
               </motion.div>
             </motion.div>
           )}
+          {/* Subtle Decorative Elements */}
+          <div className="absolute top-1/4 right-10 w-48 h-48 bg-[#5B5B5B] opacity-15 rounded-full blur-3xl -z-10" />
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.15 }}
+            transition={{
+              delay: 1,
+              duration: 1,
+              repeat: Infinity,
+              repeatType: "reverse",
+            }}
+            className="absolute bottom-1/3 left-1/4 w-5 h-5 bg-[#0098AF] opacity-30 rounded-full -z-10"
+          />
         </div>
       </motion.div>
 
@@ -356,12 +382,12 @@ export default function CareersPage() {
         className="py-20 bg-gradient-to-b from-[#0098AF]/5 to-gray-50 relative"
       >
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-          <motion.div variants={fadeIn} className="relative mb-12">
+          <div className="relative mb-12">
             <h2 className="text-3xl font-bold text-[#5B5B5B] relative">
               Employee Testimonials
               <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-[#0098AF] to-transparent" />
             </h2>
-          </motion.div>
+          </div>
           <div className="grid md:grid-cols-2 gap-6">
             {testimonials.map((testimonial) => (
               <motion.div
@@ -398,6 +424,13 @@ export default function CareersPage() {
               </motion.div>
             ))}
           </div>
+          {/* Subtle Decorative Elements */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 0.1, scale: 1 }}
+            transition={{ delay: 0.7, duration: 1 }}
+            className="absolute top-1/2 left-1/3 w-32 h-32 bg-[#99D5DF] opacity-20 rounded-full blur-2xl -z-10"
+          />
         </div>
       </motion.div>
 
@@ -410,12 +443,12 @@ export default function CareersPage() {
         className="py-20 bg-gray-50 relative"
       >
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-          <motion.div variants={fadeIn} className="relative mb-12">
+          <div className="relative mb-12">
             <h2 className="text-3xl font-bold text-[#5B5B5B] relative">
               Why Work With Us
               <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-[#0098AF] to-transparent" />
             </h2>
-          </motion.div>
+          </div>
           <div className="grid md:grid-cols-3 gap-6">
             {benefits.map((benefit, index) => (
               <motion.div
@@ -440,6 +473,18 @@ export default function CareersPage() {
               </motion.div>
             ))}
           </div>
+          {/* Subtle Decorative Elements */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.15 }}
+            transition={{
+              delay: 1,
+              duration: 1,
+              repeat: Infinity,
+              repeatType: "reverse",
+            }}
+            className="absolute top-1/4 right-1/4 w-4 h-4 bg-[#5B5B5B] opacity-30 rounded-full -z-10"
+          />
         </div>
       </motion.div>
 

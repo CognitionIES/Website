@@ -1,7 +1,7 @@
 export const heroSlides = [
   {
     id: 1,
-    title: "Engineering Tomorrow, Today",
+    title: "Engineering Today, Tomorrow",
     subtitle: "Smart Solutions for a Changing World",
     description: "We don’t just design products—we engineer possibilities. From concept to reality, we deliver precision, innovation, and efficiency at every stage.",
     image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=2940",
