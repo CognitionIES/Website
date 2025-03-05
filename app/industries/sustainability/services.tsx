@@ -10,11 +10,10 @@ export default function Services() {
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#003C46] drop-shadow-sm text-sparkle">
-            Our Mobility Engineering Services
+            Our Sustainability Services
           </h2>
           <p className="text-lg text-[#5B5B5B] font-light leading-relaxed">
-            Innovative solutions for automotive, aerospace, rail, marine, and
-            logistics.
+            Eco-friendly solutions for energy, waste, and resource management.
           </p>
           <motion.div
             initial={{ opacity: 0 }}

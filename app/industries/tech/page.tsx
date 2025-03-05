@@ -14,7 +14,7 @@ import About from "./about";
 import Services from "./services";
 import { faqs } from "./constants";
 
-export default function MobilityIndustry() {
+export default function TechIndustry() {
   return (
     <div className="min-h-screen bg-gray-100 text-gray-900 font-sans overflow-hidden">
       <MegaMenu />
@@ -24,7 +24,7 @@ export default function MobilityIndustry() {
         <About />
         <Services />
 
-        {/* FAQ Section (Simple, Earlier Design) */}
+        {/* FAQ Section */}
         <section className="w-full py-12 md:py-16 bg-[#F5FDFF] relative">
           <div className="max-w-7xl mx-auto px-4 md:px-6">
             <div className="mb-12">
@@ -32,9 +32,8 @@ export default function MobilityIndustry() {
                 Frequently Asked Questions
               </h2>
               <p className="text-lg text-[#4A4A4A] font-light leading-relaxed">
-                Quick answers about our mobility engineering solutions.
+                Quick answers about our tech industry solutions.
               </p>
-
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 0.05 }}
@@ -108,7 +107,6 @@ export default function MobilityIndustry() {
               }}
               className="absolute bottom-20 left-20 w-2 h-2 bg-[#5B5B5B] opacity-10 rounded-full glow-trail"
             />
-
             <motion.div
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 0.05, scale: 1 }}

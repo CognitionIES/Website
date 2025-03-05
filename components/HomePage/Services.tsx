@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const services = [
   {
@@ -17,6 +18,7 @@ const services = [
     textColor: "text-white",
     image:
       "https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    href: "/industries/mobility",
   },
   {
     id: 2,
@@ -29,6 +31,7 @@ const services = [
     textColor: "text-gray-800",
     image:
       "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    href: "/industries/sustainability",
   },
   {
     id: 3,
@@ -41,11 +44,13 @@ const services = [
     textColor: "text-white",
     image:
       "https://images.unsplash.com/photo-1535378917042-10a22c95931a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    href: "/industries/tech",
   },
 ];
 
 export default function ServicesSection() {
-  const [activeCard, setActiveCard] = useState<number>(1); // First card (Mobility) open by default
+  // Set Mobility (id: 1) as the default active card on initial load
+  const [activeCard, setActiveCard] = useState<number>(1);
 
   return (
     <section className="w-full py-12 sm:py-16 lg:py-24 bg-gradient-to-b from-gray-50 to-[#F5FDFF] relative">
@@ -72,7 +77,7 @@ export default function ServicesSection() {
                 activeCard === service.id ? "md:col-span-6" : "md:col-span-3"
               )}
               onMouseEnter={() => setActiveCard(service.id)}
-              onMouseLeave={() => setActiveCard(1)} // Return to first card as default
+              // Removed onMouseLeave to keep the last hovered card active
             >
               <div
                 className="absolute inset-0 bg-cover bg-center transition-opacity duration-500"
@@ -106,12 +111,14 @@ export default function ServicesSection() {
                   </p>
                 </div>
                 <div className="flex justify-end mt-4">
-                  <Button
-                    variant="secondary"
-                    className="bg-[#0098AF] hover:bg-[#007B8F] text-white rounded-sm px-6 transition-transform duration-300"
-                  >
-                    Read More
-                  </Button>
+                  <Link href={service.href}>
+                    <Button
+                      variant="secondary"
+                      className="bg-[#0098AF] hover:bg-[#007B8F] text-white rounded-sm px-6 transition-transform duration-300"
+                    >
+                      Read More
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </div>

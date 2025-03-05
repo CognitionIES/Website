@@ -1,86 +1,72 @@
-import {
-  FiActivity,
-  // FiBook,
-  // FiCpu,
-  // FiDatabase,
-  FiDroplet,
-  FiPrinter,
-  FiTool,
-  //FiTruck,
-  FiZap,
-} from "react-icons/fi";
+import { FiActivity, FiDroplet, FiSun, FiZap } from "react-icons/fi";
 
 export const services = [
   {
-    icon: FiTool,
-    title: "Automotive",
+    icon: FiSun,
+    title: "Renewable Energy",
     description:
-      "Innovative engineering solutions for vehicle design, manufacturing, and performance optimization.",
+      "Harnessing solar, wind, and hydro power for clean, sustainable energy solutions.",
     image:
-      "https://plus.unsplash.com/premium_photo-1664298230305-9116cf510bed?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    href: "/expertise?section=mechanical",
-  },
-  {
-    icon: FiActivity,
-    title: "Trucks & Off-highway Vehicles",
-    description:
-      "Advanced engineering for heavy-duty vehicles, improving durability, safety, and fuel efficiency.",
-    image:
-      "https://plus.unsplash.com/premium_photo-1682144324433-ae1ee89a0238?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    alt: "Trucks and off-highway vehicle engineering",
-    href: "/expertise?section=cae-cfd",
+      "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    href: "/sustainability?section=renewable-energy",
   },
   {
     icon: FiZap,
-    title: "Railway & Transportation",
+    title: "Circular Economy",
     description:
-      "Engineering solutions for rail systems, focusing on efficiency, electrification, and automation.",
+      "Designing systems to reduce waste and promote recycling and reuse.",
     image:
-      "https://plus.unsplash.com/premium_photo-1664392286855-b02386936882?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    alt: "Railway and transportation engineering",
-    href: "/expertise?section=electrical",
+      "https://plus.unsplash.com/premium_photo-1682310063773-b521f91afb97?q=80&w=2112&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    href: "/sustainability?section=circular-economy",
+  },
+  {
+    icon: FiZap,
+    title: "Energy Efficiency",
+    description:
+      "Optimizing systems to reduce energy consumption and emissions.",
+    image:
+      "https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    href: "/sustainability?section=energy-efficiency",
   },
   {
     icon: FiDroplet,
-    title: "Aerospace & Defense",
+    title: "Water Management",
     description:
-      "Cutting-edge aerospace engineering for aircraft, defense systems, and space technology.",
+      "Innovative solutions for water conservation and purification.",
     image:
-      "https://media.istockphoto.com/id/498381212/photo/military-jets-in-flight.jpg?s=2048x2048&w=is&k=20&c=mSaH_Ri6hnVdO6sZlNxfyeGcSsiSjV1n7mGupuJNhD8=",
-    alt: "Aerospace and defense engineering",
-    href: "/expertise?section=hydraulic",
+      "https://images.unsplash.com/photo-1589938219129-3bff434f8c6a?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    href: "/sustainability?section=water-management",
   },
   {
-    icon: FiPrinter,
-    title: "Marine & Offshore",
+    icon: FiActivity,
+    title: "Sustainable Infrastructure",
     description:
-      "Engineering expertise for shipbuilding, offshore platforms, and maritime sustainability.",
+      "Building eco-friendly infrastructure for resilient communities.",
     image:
-      "https://media.istockphoto.com/id/533552151/photo/oil-rig.jpg?s=2048x2048&w=is&k=20&c=9hJpJnPZcxS5QBq3WJL9Cildyjm6Gi21FanjTSbQzr0=",
-    alt: "Marine and offshore engineering",
-    href: "/expertise?section=prototyping",
+      "https://images.unsplash.com/photo-1709450245503-4f903ffea3ff?q=80&w=2008&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    href: "/sustainability?section=sustainable-infrastructure",
   },
 ];
 
 export const faqs = [
   {
-    question: "What types of mobility solutions do you offer?",
+    question: "What sustainability solutions do you provide?",
     answer:
-      "We provide engineering solutions for automotive, trucks, railways, aerospace, and marine industries, improving efficiency, safety, and sustainability.",
+      "We offer services in renewable energy, circular economy, energy efficiency, water management, and sustainable infrastructure.",
   },
   {
-    question: "How do you ensure safety in mobility engineering?",
+    question: "How do you reduce environmental impact?",
     answer:
-      "We follow strict industry standards, conduct rigorous testing, and integrate advanced safety technologies to enhance reliability and performance.",
+      "We use eco-friendly materials, optimize resource use, and implement renewable energy solutions to minimize emissions and waste.",
   },
   {
-    question: "Do you work on electric and autonomous vehicles?",
+    question: "Can you help with carbon footprint reduction?",
     answer:
-      "Yes! We specialize in EV design, battery optimization, and autonomous systems for next-generation mobility.",
+      "Yes, we design energy-efficient systems and integrate renewables to lower your carbon footprint.",
   },
   {
-    question: "How do you improve energy efficiency in transportation?",
+    question: "What is your approach to water conservation?",
     answer:
-      "We focus on lightweight materials, aerodynamics, and energy-efficient propulsion systems to reduce emissions and improve sustainability.",
+      "We develop advanced purification and recycling systems to ensure sustainable water use.",
   },
 ];

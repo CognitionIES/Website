@@ -239,6 +239,7 @@ const industriesData = [
   {
     title: "Mobility",
     icon: <Car className="w-5 h-5" />,
+    href: "/industries/mobility",
     subCategories: [
       {
         title: "Automotive",
@@ -275,6 +276,7 @@ const industriesData = [
   {
     title: "Sustainability",
     icon: <Leaf className="w-5 h-5" />,
+    href: "/industries/sustainability",
     subCategories: [
       {
         title: "Discrete Manufacturing & Industrial Products",
@@ -353,6 +355,7 @@ const industriesData = [
   {
     title: "Tech",
     icon: <Cpu className="w-5 h-5" />,
+    href: "/industries/tech",
     subCategories: [
       {
         title: "Digital Engineering",
@@ -483,15 +486,16 @@ export function MegaMenu() {
                       {/* Main Categories */}
                       <div className="space-y-1 bg-[#003c46] flex flex-col py-2">
                         {industriesData.map((category, index) => (
-                          <button
+                          <Link
                             key={category.title}
-                            onMouseEnter={() => setActiveCategory(index)}
+                            href={category.href} // Linking to the main category page
                             className={cn(
                               "w-full flex items-center justify-between px-4 py-2 text-lg font-medium transition-colors duration-200",
                               activeCategory === index
                                 ? "text-[#00b6d3]"
                                 : "text-white hover:bg-black"
                             )}
+                            onMouseEnter={() => setActiveCategory(index)}
                           >
                             <div className="flex items-center">
                               {category.icon && (
@@ -500,11 +504,9 @@ export function MegaMenu() {
                               {category.title}
                             </div>
                             {activeCategory === index && (
-                              <span className="text-[#00b6d3] font-bold text-lg">
-                                &gt;
-                              </span>
+                              <span className="text-[#00b6d3] font-bold text-lg"></span>
                             )}
-                          </button>
+                          </Link>
                         ))}
                       </div>
                       {/* Sub Categories with Icons */}
@@ -627,31 +629,30 @@ export function MegaMenu() {
                 {activeDropdown === "expertise" && (
                   <div className="absolute z-[100] transform -translate-x-[54%] mt-0 w-screen max-w-7xl bg-white shadow-lg border-t border-gray-100 transition-all duration-300 ease-in-out min-h-[300px]">
                     <div className="grid grid-cols-3 min-h-[400px]">
-                      {/* Main Categories */}
+                      {/* Main Categories with Links */}
                       <div className="bg-[#003c46] flex flex-col py-2">
                         {expertiseData.map((category, index) => (
-                          <button
-                            key={category.title}
-                            onMouseEnter={() => setActiveCategory(index)}
-                            className={cn(
-                              "w-full flex items-center justify-between px-4 py-2 text-lg font-medium transition-colors duration-200",
-                              activeCategory === index
-                                ? "text-[#00b6d3]"
-                                : "text-white hover:bg-black"
-                            )}
-                          >
-                            <div className="flex items-center">
-                              {category.icon && (
-                                <span className="mr-2">{category.icon}</span>
+                          <Link key={category.title} href={category.href}>
+                            <button
+                              onMouseEnter={() => setActiveCategory(index)}
+                              className={cn(
+                                "w-full flex items-center justify-between px-4 py-2 text-lg font-medium transition-colors duration-200",
+                                activeCategory === index
+                                  ? "text-[#00b6d3]"
+                                  : "text-white hover:bg-black"
                               )}
-                              {category.title}
-                            </div>
-                            {activeCategory === index && (
-                              <span className="text-[#00b6d3] font-bold text-lg">
-                                &gt;
-                              </span>
-                            )}
-                          </button>
+                            >
+                              <div className="flex items-center">
+                                {category.icon && (
+                                  <span className="mr-2">{category.icon}</span>
+                                )}
+                                {category.title}
+                              </div>
+                              {activeCategory === index && (
+                                <span className="text-[#00b6d3] font-bold text-lg"></span>
+                              )}
+                            </button>
+                          </Link>
                         ))}
                       </div>
 

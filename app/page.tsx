@@ -21,7 +21,7 @@ export default function Home() {
           {/* Hero */}
           <Hero />
           <section className="bg-gradient-to-b from-gray-50 to-[#F5FDFF]">
-            <AboutUs/>
+            <AboutUs />
           </section>
           {/* Services */}
           <section className="bg-gradient-to-b from-gray-50 to-[#F5FDFF]">
@@ -43,7 +43,7 @@ export default function Home() {
             <AccordionDemo />
           </section>
           <section>
-            <ContactUs/>
+            <ContactUs />
           </section>
         </div>
 
