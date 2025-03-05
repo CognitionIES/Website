@@ -4,8 +4,8 @@ const isProd = process.env.NODE_ENV === "production";
 
 const nextConfig: NextConfig = {
   output: "export", // Enables static export
-  basePath: isProd ? "/Website" : "", // Replace "Website" with your actual repo name
-  assetPrefix: isProd ? "/Website/" : "",
+  basePath: isProd ? "/_next" : "", // Replace "Website" with your actual repo name
+  assetPrefix: isProd ? "/_next/" : "",
 
   images: {
     domains: ["images.unsplash.com", "upload.wikimedia.org", "plus.unsplash.com"],
