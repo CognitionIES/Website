@@ -625,7 +625,7 @@ export function MegaMenu() {
                 </button>
 
                 {activeDropdown === "expertise" && (
-                  <div className="absolute z-[100] transform -translate-x-[55%] mt-0 w-screen max-w-7xl bg-white shadow-lg border-t border-gray-100 transition-all duration-300 ease-in-out min-h-[300px]">
+                  <div className="absolute z-[100] transform -translate-x-[54%] mt-0 w-screen max-w-7xl bg-white shadow-lg border-t border-gray-100 transition-all duration-300 ease-in-out min-h-[300px]">
                     <div className="grid grid-cols-3 min-h-[400px]">
                       {/* Main Categories */}
                       <div className="bg-[#003c46] flex flex-col py-2">

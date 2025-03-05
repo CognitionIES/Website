@@ -324,7 +324,7 @@ export default function AboutPage() {
             variants={staggerChildren}
             className="space-y-16 relative"
           >
-            <div className="bg-white p-8  rounded-xl shadow-lg max-w-2xl -rotate-3 mx-auto transform  relative border-l-4 border-[#0098AF] z-10  ">
+            <div className="bg-white p-8  rounded-xl shadow-lg max-w-2xl  mx-auto transform  relative border-l-4 border-[#0098AF] z-10  ">
               <h2 className="text-3xl font-semibold text-[#5B5B5B] mb-4 tracking-tight">
                 Our Mission
               </h2>
@@ -340,7 +340,7 @@ export default function AboutPage() {
                 className="h-1 bg-[#0098AF] opacity-50 mt-4 rounded-full"
               />
             </div>
-            <div className="bg-[#0098AF] opacity-90 p-8 rounded-xl rotate-3 shadow-lg max-w-2xl ml-auto transform border-r-4 border-[#5b5b5b] relative z-10 border-r-4 border-[#0098AF]">
+            <div className="bg-[#0098AF] opacity-90 p-8 rounded-xl shadow-lg max-w-2xl ml-auto transform border-r-4 border-[#5b5b5b] relative z-10 border-r-4 border-[#0098AF]">
               <h2 className="text-3xl font-semibold text-[#5B5B5B] mb-4 tracking-tight">
                 Our Vision
               </h2>

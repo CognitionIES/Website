@@ -1,8 +1,6 @@
 "use client";
 
 import Footer from "@/components/footer";
-import image from "@/constants/images/Careers.jpg";
-import testimonials from "@/constants/testimonials";
 import jobListings from "@/constants/jobListings";
 import { constants as benefits } from "./constants";
 import {
@@ -22,11 +20,11 @@ import {
 } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { MegaMenu } from "@/components/ui/MegaMenu";
 import { useState } from "react";
-import { FiHome, FiChevronRight, FiChevronDown } from "react-icons/fi";
-import Link from "next/link";
+import Hero from "./Hero";
+import Values from "./Values";
+import Testimonials from "./Testimonials";
 
 // Define the Job interface
 interface Job {
@@ -76,157 +74,10 @@ export default function CareersPage() {
       <MegaMenu />
 
       {/* Hero Section */}
-      <div className="relative h-[500px] overflow-hidden">
-        <Image
-          src={image}
-          alt="Office Environment"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-[#003C46]/85 to-[#0098AF]/70" />
-        <div className="absolute inset-0 opacity-5 bg-[url('/images/career-pattern.jpg')] bg-repeat" />
-
-        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 h-full flex flex-col justify-center">
-          <nav className="self-start mb-6 flex items-center space-x-2 text-sm font-light text-white/80">
-            <Link
-              href="/"
-              className="hover:text-[#99D5DF] flex items-center gap-1 transition-colors duration-200"
-            >
-              <FiHome className="w-4 h-4" />
-              Home
-            </Link>
-            <FiChevronRight className="w-4 h-4" />
-            <Link
-              href="/careers"
-              className="hover:text-[#99D5DF] transition-colors duration-200"
-            >
-              Careers
-            </Link>
-          </nav>
-
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4 text-white drop-shadow-md relative">
-            Join Our Team
-            <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-[#99D5DF] to-transparent" />
-          </h1>
-          <p className="text-lg md:text-xl text-[#99D5DF]/90 max-w-xl font-light leading-relaxed mb-6">
-            Shape the future with us. We’re seeking passionate innovators to join our journey.
-          </p>
-          <Button
-            variant="default"
-            className="bg-[#0098AF] text-white hover:bg-[#007B8F] px-2 py-1 rounded-lg font-medium shadow-md hover:scale-105 transition-transform duration-200 self-start"
-            onClick={() =>
-              document.getElementById("positions")?.scrollIntoView({ behavior: "smooth" })
-            }
-          >
-            Explore Careers
-          </Button>
-          {/* Scroll Indicator */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 0.7, y: 0 }}
-            transition={{ repeat: Infinity, duration: 1.5, repeatType: "reverse" }}
-            className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white/70"
-          >
-            <FiChevronDown className="w-6 h-6" />
-          </motion.div>
-        </div>
-        {/* Decorative Elements in Hero */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 0.25, scale: 1 }}
-          transition={{ delay: 0.5, duration: 1 }}
-          className="absolute bottom-0 left-0 w-80 h-80 bg-[#0098AF] opacity-50 rounded-full blur-3xl -z-10"
-        />
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.15 }}
-          transition={{
-            delay: 1,
-            duration: 1,
-            repeat: Infinity,
-            repeatType: "reverse",
-          }}
-          className="absolute top-20 right-16 w-5 h-5 bg-[#5B5B5B] opacity-30 rounded-full -z-10"
-        />
-      </div>
+      <Hero />
 
       {/* Values Section */}
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={staggerChildren}
-        className="py-16 bg-gradient-to-b from-gray-50 to-[#F5FDFF] relative"
-      >
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="relative mb-12">
-            <h2 className="text-3xl font-bold text-[#003C46] relative">
-              Our Values
-              <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-[#0098AF] to-transparent" />
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-4 gap-6">
-            {[
-              {
-                title: "Co-Innovation",
-                description: "Collaborating with clients to craft groundbreaking solutions.",
-              },
-              {
-                title: "People-First Culture",
-                description: "Empowering every voice to shape our success.",
-              },
-              {
-                title: "Excellence in Execution",
-                description: "Delivering precision and quality, every time.",
-              },
-              {
-                title: "Sustainability & Responsibility",
-                description: "Building greener solutions for a better tomorrow.",
-              },
-            ].map((value, index) => (
-              <motion.div
-                key={index}
-                variants={cardHover}
-                initial="rest"
-                whileHover="hover"
-                className="bg-white p-6 rounded-lg border border-[#0098AF]/10 shadow-sm cursor-pointer"
-              >
-                <Card className="border-0">
-                  <CardHeader className="p-0">
-                    <CardTitle className="text-lg font-semibold text-[#5B5B5B] mb-2 hover:text-[#0098AF] transition-colors duration-200">
-                      {value.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="p-0">
-                    <CardDescription className="text-sm font-light text-gray-600 leading-relaxed">
-                      {value.description}
-                    </CardDescription>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-          {/* Subtle Decorative Elements */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 0.1, scale: 1 }}
-            transition={{ delay: 0.7, duration: 1 }}
-            className="absolute top-1/4 right-1/3 w-32 h-32 bg-[#99D5DF] opacity-20 rounded-full blur-2xl -z-10"
-          />
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.15 }}
-            transition={{
-              delay: 1.5,
-              duration: 1,
-              repeat: Infinity,
-              repeatType: "reverse",
-            }}
-            className="absolute bottom-10 left-20 w-4 h-4 bg-[#0098AF] opacity-30 rounded-full -z-10"
-          />
-        </div>
-      </motion.div>
+      <Values />
 
       {/* Open Positions Section */}
       <motion.div
@@ -340,7 +191,9 @@ export default function CareersPage() {
                 className="bg-white p-6 rounded-lg shadow-xl max-w-lg w-full border border-[#0098AF]/10"
                 onClick={(e) => e.stopPropagation()}
               >
-                <h3 className="text-xl font-bold text-[#5B5B5B] mb-3">{activeJob.title}</h3>
+                <h3 className="text-xl font-bold text-[#5B5B5B] mb-3">
+                  {activeJob.title}
+                </h3>
                 <div className="flex gap-4 text-sm font-light text-gray-600 mb-4">
                   <span>{activeJob.department}</span>
                   <span>{activeJob.location}</span>
@@ -374,65 +227,7 @@ export default function CareersPage() {
       </motion.div>
 
       {/* Testimonials Section */}
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={staggerChildren}
-        className="py-20 bg-gradient-to-b from-[#0098AF]/5 to-gray-50 relative"
-      >
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="relative mb-12">
-            <h2 className="text-3xl font-bold text-[#5B5B5B] relative">
-              Employee Testimonials
-              <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-[#0098AF] to-transparent" />
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-2 gap-6">
-            {testimonials.map((testimonial) => (
-              <motion.div
-                key={testimonial.id}
-                variants={cardHover}
-                initial="rest"
-                whileHover="hover"
-                className="bg-white p-6 rounded-lg border border-[#0098AF]/10 shadow-sm cursor-pointer"
-              >
-                <Card className="border-0">
-                  <CardHeader className="flex flex-row gap-4 items-center p-0">
-                    <Image
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                      width={60}
-                      height={60}
-                      className="rounded-full w-14 h-14 object-cover shadow-sm"
-                    />
-                    <div>
-                      <CardTitle className="text-lg font-semibold text-[#5B5B5B] hover:text-[#0098AF] transition-colors duration-200">
-                        {testimonial.name}
-                      </CardTitle>
-                      <CardDescription className="text-sm font-light text-gray-600">
-                        {testimonial.role}
-                      </CardDescription>
-                    </div>
-                  </CardHeader>
-                  <CardContent className="p-0 pt-4">
-                    <p className="text-sm font-light text-gray-600 italic leading-relaxed line-clamp-2">
-                      &quot;{testimonial.quote}&quot;
-                    </p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-          {/* Subtle Decorative Elements */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 0.1, scale: 1 }}
-            transition={{ delay: 0.7, duration: 1 }}
-            className="absolute top-1/2 left-1/3 w-32 h-32 bg-[#99D5DF] opacity-20 rounded-full blur-2xl -z-10"
-          />
-        </div>
-      </motion.div>
+      <Testimonials />
 
       {/* Why Work With Us Section */}
       <motion.div
