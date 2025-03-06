@@ -5,9 +5,9 @@ import Footer from "@/components/footer";
 import { MegaMenu } from "@/components/ui/MegaMenu";
 import HeroSection from "./HeroSection";
 import ValuesSection from "./ValuesSection";
-import OpenPositions from "./OpenPositions";
 import TestimonialsSection from "./TestimonialsSection";
 import BenefitsSection from "./BenefitsSection";
+import OpenPositions from "./OpenPositions";
 
 export default function CareersPage() {
   return (
