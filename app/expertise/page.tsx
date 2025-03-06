@@ -1,3 +1,102 @@
+"use client";
+
+import { ScrollSection } from "@/components/ScrollSection";
+import { useEffect, useState } from "react";
+import sections from "@/constants/sections";
+import frameBackground from "@/constants/images/Background/Frame_8.jpg";
+import Footer from "@/components/footer";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronDown, MousePointer2 } from "lucide-react";
+import { MegaMenu } from "@/components/ui/MegaMenu";
+
+export default function ExpertisePage() {
+  const [showScrollHint, setShowScrollHint] = useState(true);
+  const [currentSection] = useState(0);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setShowScrollHint(false), 5000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <div className="relative min-h-screen">
+      {/* Fixed Background */}
+      <div
+        className="fixed inset-0 bg-cover bg-center -z-10"
+        style={{
+          backgroundImage: `url(${frameBackground.src})`,
+        }}
+      />
+
+      {/* Main Container */}
+      <div className="relative">
+        {/* Navbar */}
+        <div className="relative z-50">
+          <MegaMenu />
+        </div>
+
+        {/* Content Container */}
+        <main className="relative pt-8">
+          {/* Decorative Line */}
+          <div className="fixed top-0 left-8 bottom-0 w-px bg-gradient-to-b from-transparent via-foreground/10 to-transparent" />
+
+          {/* Sections */}
+          {Object.values(sections).map((section, index) => (
+            <section
+              key={index}
+              id={section.title.toLowerCase().replace(/\s+/g, "-")}
+              className="min-h-screen flex items-center justify-center py-16"
+            >
+              <div
+                className={`w-[full] max-w-13xl mx-auto px-2 py-12 rounded-3xl transition-colors duration-500 ${
+                  index % 2 === 0
+                    ? "bg-blue-400/5 dark:bg-blue-950/10"
+                    : "bg-gray-400/10 dark:bg-gray-900/10"
+                }`}
+              >
+                <ScrollSection
+                  index={index}
+                  title={section.title}
+                  description={section.description}
+                  imageUrl={section.imageUrl}
+                  bulletPoints={section.bulletPoints}
+                  logos={section.logos.map(logo => ({ src: logo.src.src, alt: logo.alt }))} // Transform logos
+                />
+              </div>
+            </section>
+          ))}
+        </main>
+
+        {/* Footer */}
+        <Footer />
+      </div>
+
+      {/* Scroll Navigation Hints */}
+      <AnimatePresence>
+        {showScrollHint && currentSection === 0 && (
+          <motion.div
+            className="fixed bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-primary/90"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 10 }}
+            transition={{ duration: 0.3 }}
+          >
+            <motion.div
+              className="flex items-center gap-2 px-4 py-2 rounded-full bg-background/80 backdrop-blur-sm shadow-lg"
+              animate={{ y: [0, 4, 0] }}
+              transition={{ duration: 2, repeat: Infinity }}
+            >
+              <MousePointer2 size={16} />
+              <span className="text-sm font-medium">Scroll to explore</span>
+              <ChevronDown size={16} />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
+
 // "use client";
 
 // import { ScrollSection } from "@/components/ScrollSection";
@@ -239,101 +338,3 @@
 //     </div>
 //   );
 // }
-"use client";
-
-import { ScrollSection } from "@/components/ScrollSection";
-import { useEffect, useState } from "react";
-import sections from "@/constants/sections";
-import frameBackground from "@/constants/images/Background/Frame_8.jpg";
-import Footer from "@/components/footer";
-import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, MousePointer2 } from "lucide-react";
-import { MegaMenu } from "@/components/ui/MegaMenu";
-
-export default function ExpertisePage() {
-  const [showScrollHint, setShowScrollHint] = useState(true);
-  const [currentSection] = useState(0);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setShowScrollHint(false), 5000);
-    return () => clearTimeout(timer);
-  }, []);
-
-  return (
-    <div className="relative min-h-screen">
-      {/* Fixed Background */}
-      <div
-        className="fixed inset-0 bg-cover bg-center -z-10"
-        style={{
-          backgroundImage: `url(${frameBackground.src})`,
-        }}
-      />
-
-      {/* Main Container */}
-      <div className="relative">
-        {/* Navbar */}
-        <div className="relative z-50">
-          <MegaMenu />
-        </div>
-
-        {/* Content Container */}
-        <main className="relative pt-8">
-          {/* Decorative Line */}
-          <div className="fixed top-0 left-8 bottom-0 w-px bg-gradient-to-b from-transparent via-foreground/10 to-transparent" />
-
-          {/* Sections */}
-          {Object.values(sections).map((section, index) => (
-            <section
-              key={index}
-              id={section.title.toLowerCase().replace(/\s+/g, "-")}
-              className="min-h-screen flex items-center justify-center py-16"
-            >
-              <div
-                className={`w-[full] max-w-13xl mx-auto px-2 py-12 rounded-3xl transition-colors duration-500 ${
-                  index % 2 === 0
-                    ? "bg-blue-400/5 dark:bg-blue-950/10"
-                    : "bg-gray-400/10 dark:bg-gray-900/10"
-                }`}
-              >
-                <ScrollSection
-                  index={index}
-                  title={section.title}
-                  description={section.description}
-                  imageUrl={section.imageUrl}
-                  bulletPoints={section.bulletPoints}
-                  logos={section.logos.map(logo => ({ src: logo.src.src, alt: logo.alt }))} // Transform logos
-                />
-              </div>
-            </section>
-          ))}
-        </main>
-
-        {/* Footer */}
-        <Footer />
-      </div>
-
-      {/* Scroll Navigation Hints */}
-      <AnimatePresence>
-        {showScrollHint && currentSection === 0 && (
-          <motion.div
-            className="fixed bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-primary/90"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 10 }}
-            transition={{ duration: 0.3 }}
-          >
-            <motion.div
-              className="flex items-center gap-2 px-4 py-2 rounded-full bg-background/80 backdrop-blur-sm shadow-lg"
-              animate={{ y: [0, 4, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            >
-              <MousePointer2 size={16} />
-              <span className="text-sm font-medium">Scroll to explore</span>
-              <ChevronDown size={16} />
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  );
-}

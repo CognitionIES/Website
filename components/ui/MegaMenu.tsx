@@ -60,6 +60,7 @@ interface MainCategory {
   };
 }
 
+// In MegaMenu.tsx
 const expertiseData: MainCategory[] = [
   {
     title: "Product Engineering",
@@ -68,47 +69,47 @@ const expertiseData: MainCategory[] = [
     subCategories: [
       {
         title: "Mechanical Design Services",
-        href: "/expertise?section=mechanical",
+        href: "/expertise/product-engineering?section=mechanical",
         icon: <Car className="w-4 h-4" />,
       },
       {
         title: "Electrical Engineering Services",
-        href: "/expertise?section=electrical",
+        href: "/expertise/product-engineering?section=electrical",
         icon: <Zap className="w-4 h-4" />,
       },
       {
         title: "CAE/CFD",
-        href: "/expertise?section=cae-cfd",
+        href: "/expertise/product-engineering?section=cae-cfd",
         icon: <BarChart className="w-4 h-4" />,
       },
       {
         title: "Hydraulic Engineering Services",
-        href: "/expertise?section=hydraulic",
+        href: "/expertise/product-engineering?section=hydraulic",
         icon: <Droplet className="w-4 h-4" />,
       },
       {
         title: "Prototyping and 3D Printing",
-        href: "/expertise?section=prototyping",
+        href: "/expertise/product-engineering?section=prototyping",
         icon: <Printer className="w-4 h-4" />,
       },
       {
         title: "Asset Management",
-        href: "/expertise?section=asset-management",
+        href: "/expertise/product-engineering?section=asset-management",
         icon: <Layers className="w-4 h-4" />,
       },
       {
         title: "Embedded Systems Engineering",
-        href: "/expertise?section=embedded-systems",
+        href: "/expertise/product-engineering?section=embedded-systems",
         icon: <Settings className="w-4 h-4" />,
       },
       {
         title: "Technical Publication",
-        href: "/expertise?section=technical-publication",
+        href: "/expertise/product-engineering?section=technical-publication",
         icon: <FileText className="w-4 h-4" />,
       },
       {
         title: "Supply Chain Management / Procurement",
-        href: "/expertise?section=supply-chain",
+        href: "/expertise/product-engineering?section=supply-chain",
         icon: <Truck className="w-4 h-4" />,
       },
     ],
@@ -120,57 +121,57 @@ const expertiseData: MainCategory[] = [
   },
   {
     title: "Plant Engineering",
-    href: "/expertise/pipeline-services",
+    href: "/expertise/plant-engineering",
     icon: <Factory className="w-5 h-5 mr-2" />,
     subCategories: [
       {
         title: "Mechanical & Electrical Engineering Services",
-        href: "/expertise/pipeline-design",
+        href: "/expertise/plant-engineering?section=mechanical-electrical",
         icon: <Car className="w-4 h-4" />,
       },
       {
         title: "Process Engineering Services",
-        href: "/expertise/integrity",
+        href: "/expertise/plant-engineering?section=process",
         icon: <Settings className="w-4 h-4" />,
       },
       {
         title: "Piping & Fluid System Services",
-        href: "/expertise/maintenance",
+        href: "/expertise/plant-engineering?section=piping-fluid",
         icon: <Droplet className="w-4 h-4" />,
       },
       {
         title: "Civil & Structural Engineering Services",
-        href: "/expertise/safety",
+        href: "/expertise/plant-engineering?section=civil-structural",
         icon: <Layers className="w-4 h-4" />,
       },
       {
         title: "HVAC & Ventilation System Services",
-        href: "/expertise/monitoring",
+        href: "/expertise/plant-engineering?section=hvac",
         icon: <Fan className="w-4 h-4" />,
       },
       {
         title: "Instrumentation Engineering Services",
-        href: "/expertise/environmental",
+        href: "/expertise/plant-engineering?section=instrumentation",
         icon: <Gauge className="w-4 h-4" />,
       },
       {
         title: "Safety & Compliance Services",
-        href: "/expertise/emergency",
+        href: "/expertise/plant-engineering?section=safety-compliance",
         icon: <Shield className="w-4 h-4" />,
       },
       {
         title: "Energy Management & Sustainability Services",
-        href: "/expertise/training",
+        href: "/expertise/plant-engineering?section=energy-management",
         icon: <Leaf className="w-4 h-4" />,
       },
       {
         title: "Digitalization & Industry 4.0 Services",
-        href: "/expertise/emergency",
+        href: "/expertise/plant-engineering?section=digitalization",
         icon: <Cpu className="w-4 h-4" />,
       },
       {
         title: "Project Management",
-        href: "/expertise/emergency",
+        href: "/expertise/plant-engineering?section=project-management",
         icon: <Clipboard className="w-4 h-4" />,
       },
     ],
@@ -180,6 +181,7 @@ const expertiseData: MainCategory[] = [
       title: "Comprehensive Pipeline Solutions",
     },
   },
+  // IT Services can remain as is with individual pages if preferred, or adjust similarly
   {
     title: "IT Services",
     icon: <Server className="w-5 h-5 mr-2" />,
@@ -187,42 +189,42 @@ const expertiseData: MainCategory[] = [
     subCategories: [
       {
         title: "Software Development",
-        href: "/expertise/software",
+        href: "/expertise/it-services/software-development",
         icon: <Code className="w-4 h-4" />,
       },
       {
         title: "Cloud Solutions",
-        href: "/expertise/cloud",
+        href: "/expertise/it-services/cloud-solutions",
         icon: <Cloud className="w-4 h-4" />,
       },
       {
         title: "Data Analytics",
-        href: "/expertise/data",
+        href: "/expertise/it-services/data-analytics",
         icon: <BarChart className="w-4 h-4" />,
       },
       {
         title: "Cybersecurity",
-        href: "/expertise/security",
+        href: "/expertise/it-services/cybersecurity",
         icon: <Shield className="w-4 h-4" />,
       },
       {
         title: "AI & Machine Learning",
-        href: "/expertise/ai-ml",
+        href: "/expertise/it-services/ai-ml",
         icon: <Brain className="w-4 h-4" />,
       },
       {
         title: "DevOps Services",
-        href: "/expertise/devops",
+        href: "/expertise/it-services/devops",
         icon: <GitBranch className="w-4 h-4" />,
       },
       {
         title: "Quality Assurance",
-        href: "/expertise/qa",
+        href: "/expertise/it-services/qa",
         icon: <CheckCircle className="w-4 h-4" />,
       },
       {
         title: "Digital Transformation",
-        href: "/expertise/digital",
+        href: "/expertise/it-services/digital",
         icon: <Globe className="w-4 h-4" />,
       },
     ],
@@ -233,7 +235,6 @@ const expertiseData: MainCategory[] = [
     },
   },
 ];
-
 // Constants for menu data industries section
 const industriesData = [
   {
@@ -481,8 +482,8 @@ export function MegaMenu() {
                 </button>
 
                 {activeDropdown === "industries" && (
-                  <div className="absolute z-[100] left-1/2 transform -translate-x-1/2 mt-0 w-screen max-w-7xl bg-white shadow-lg border-t border-gray-100 transition-all duration-300 ease-in-out min-h-[300px]">
-                    <div className="grid grid-cols-3 min-h-[400px]">
+                  <div className="absolute z-[100] left-1/2 transform -translate-x-1/2 mt-0 w-screen max-w-7xl bg-white shadow-lg border-t border-gray-100 transition-all duration-300 ease-in-out min-h-[350px]">
+                    <div className="grid grid-cols-3 min-h-[450px]">
                       {/* Main Categories */}
                       <div className="space-y-1 bg-[#003c46] flex flex-col py-2">
                         {industriesData.map((category, index) => (
@@ -509,6 +510,7 @@ export function MegaMenu() {
                           </Link>
                         ))}
                       </div>
+
                       {/* Sub Categories with Icons */}
                       <div className="space-y-1 bg-[#0098af] flex flex-col py-2">
                         {industriesData[activeCategory].subCategories.map(
@@ -522,9 +524,9 @@ export function MegaMenu() {
                                   toggleSubCategory(subCategory.title)
                                 }
                                 className={cn(
-                                  "flex items-center justify-between px-4 py-2 text-white hover:text-[#003c46] transition-colors duration-200",
-                                  expandedSubCategory === subCategory.title &&
-                                    "bg-[#0098af]"
+                                  "flex items-center justify-between px-4 py-1 text-white hover:text-[#003c46] transition-colors duration-200",
+                                  // Removed the background color condition since we want it always open
+                                  "bg-[#0098af]"
                                 )}
                               >
                                 <div className="flex items-center">
@@ -535,24 +537,12 @@ export function MegaMenu() {
                                   )}
                                   {subCategory.title}
                                 </div>
-                                {subCategory.subSubCategories && (
-                                  <ChevronDown
-                                    className={cn(
-                                      "h-4 w-4 transition-transform duration-200 bg-[#0098af]",
-                                      expandedSubCategory ===
-                                        subCategory.title &&
-                                        "transform rotate-180"
-                                    )}
-                                  />
-                                )}
                               </button>
                               {subCategory.subSubCategories && (
                                 <div
                                   className={cn(
                                     "overflow-hidden transition-all duration-300 bg-[#0098af] text-white",
-                                    expandedSubCategory === subCategory.title
-                                      ? "max-h-[500px] opacity-100"
-                                      : "max-h-0 opacity-0"
+                                    "max-h-[500px] opacity-100 ml-2"
                                   )}
                                 >
                                   {subCategory.subSubCategories.map(
@@ -628,9 +618,9 @@ export function MegaMenu() {
 
                 {activeDropdown === "expertise" && (
                   <div className="absolute z-[100] transform -translate-x-[54%] mt-0 w-screen max-w-7xl bg-white shadow-lg border-t border-gray-100 transition-all duration-300 ease-in-out min-h-[300px]">
-                    <div className="grid grid-cols-3 min-h-[400px]">
+                    <div className="grid grid-cols-3 min-h-[450px]">
                       {/* Main Categories with Links */}
-                      <div className="bg-[#003c46] flex flex-col py-2">
+                      <div className="space-y-1 bg-[#003c46] flex flex-col py-2">
                         {expertiseData.map((category, index) => (
                           <Link key={category.title} href={category.href}>
                             <button
@@ -842,13 +832,13 @@ export function MegaMenu() {
               </div>
 
               {/* Other Mobile Menu Items */}
-              <Link
+              {/* <Link
                 href="/resources"
                 className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-900 hover:bg-gray-50"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Resources
-              </Link>
+              </Link> */}
               <Link
                 href="/careers"
                 className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-900 hover:bg-gray-50"
@@ -866,7 +856,7 @@ export function MegaMenu() {
 
               {/* Mobile Contact Button */}
               <div className="px-3 py-2">
-                <Button className="w-full bg-blue-900 text-white hover:bg-blue-800 transition-colors duration-200">
+                <Button className="w-full bg-[#0098af] text-white hover:bg-white hover:text-black border-2 border-transparent hover:border-[#0098af] hover:outline hover:outline-2 hover:outline-[#0098af] transition-colors duration-200">
                   Contact Us
                 </Button>
               </div>

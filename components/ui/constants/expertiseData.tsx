@@ -86,7 +86,7 @@ export const expertiseData: MainCategory[] = [
   },
   {
     title: "Plant Engineering",
-    href: "/expertise/pipeline-services",
+    href: "/expertise/abcs",
     icon: <Factory className="w-5 h-5 mr-2" />,
     subCategories: [
       {

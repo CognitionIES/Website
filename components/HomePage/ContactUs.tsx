@@ -64,11 +64,11 @@ export default function ContactUs() {
                 <strong>Email:</strong> inquiry@cognitionies.com
               </p>
               <p className="text-gray-600 font-light">
-                <strong>Phone:</strong> +1 (847) 254-5337 | +91 98258-15795
+                <strong>Toll Free Phone:</strong> 1800 800 9000
               </p>
             </div>
             {/* Google Maps Iframe */}
-            <div className="py-[50px] h-[300px] md:h-[400px]">
+            <div className="py-[50px] h-[300px] sm:p-6 md:h-[400px]">
              <WorldMapDemo/>
             </div>
           </div>

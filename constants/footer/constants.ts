@@ -1,0 +1,57 @@
+// This file holds all constants for the footer component
+export const FOOTER_CONSTANTS = {
+    // Company Info
+    COMPANY: {
+      NAME: "COGNITION IES",
+      DESCRIPTION: "At Cognition IES Pvt. Ltd., we are shaping the future of engineering with a commitment to precision, innovation, and client-focused solutions. Established in 2023, our company is dedicated to providing advanced engineering services tailored to the unique demands of discrete manufacturing industries, delivering wow-worthy results.",
+    },
+  
+    // Useful Links
+    USEFUL_LINKS: {
+      TITLE: "Useful Links",
+      ITEMS: [
+        ["Home", "/"],
+        ["Industries", "/industries"],
+        ["Expertise", "/expertise"],
+        ["Resources", "/resources"],
+        ["Careers", "/careers"],
+        ["About Us", "/about"],
+      ],
+    },
+  
+    // Socials
+    SOCIALS: {
+      TITLE: "Socials",
+      ITEMS: [
+        ["LinkedIn", "https://linkedin.com/company/cognition-ies"],
+        ["Facebook", "https://facebook.com/cognition-ies"],
+        ["Instagram", "https://instagram.com/cognition-ies"],
+        ["Twitter", "https://twitter.com/cognition-ies"],
+      ],
+    },
+  
+    // Contact Us
+    CONTACT: {
+      TITLE: "Contact Us",
+      ITEMS: [
+        ["Email", "mailto:info@cognitionies.com", "info@cognitionies.com"],
+        ["Phone", "tel:+1800 800 9000", "+1 1800 800 9000"],
+      ],
+    },
+  
+    // Animation Variants
+    ANIMATIONS: {
+      FADE_IN: {
+        hidden: { opacity: 0, y: 20 },
+        visible: {
+          opacity: 1,
+          y: 0,
+          transition: { duration: 0.6, ease: "easeOut" },
+        },
+      },
+      SCALE_HOVER: {
+        rest: { scale: 1 },
+        hover: { scale: 1.05, transition: { duration: 0.3 } },
+      },
+    },
+  };
