@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { ChevronDown, ArrowRight, Menu, X, BarChart } from "lucide-react";
+import { ChevronDown, ArrowRight, Menu, X, BarChart, Calculator, Workflow, Fuel, Microscope, HardHat, Newspaper } from "lucide-react";
 import {
   Fan,
   Gauge,
@@ -40,6 +40,9 @@ import {
 import { Wrench, Factory, Server } from "lucide-react"; // Import icons
 import Logo1 from "@/constants/images/WEB LOGO.png";
 import { motion } from "framer-motion";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faCompassDrafting } from "@fortawesome/free-regular-svg-icons"; // Correct package
+import { faGears,faPlugCircleBolt } from "@fortawesome/free-solid-svg-icons"; // Import faGears
 
 // Type definitions for menu structure
 interface SubCategory {
@@ -69,47 +72,47 @@ const expertiseData: MainCategory[] = [
     subCategories: [
       {
         title: "Mechanical Design Services",
-        href: "/expertise/product-engineering?section=mechanical",
-        icon: <Car className="w-4 h-4" />,
+        href: "/expertise?section=mechanical",
+        icon:<FontAwesomeIcon icon={faGears}  className="w-5 h-5" />,
       },
       {
         title: "Electrical Engineering Services",
-        href: "/expertise/product-engineering?section=electrical",
-        icon: <Zap className="w-4 h-4" />,
+        href: "/expertise?section=electrical",
+        icon:<FontAwesomeIcon icon={faPlugCircleBolt}  className="w-4 h-4" />,
       },
       {
         title: "CAE/CFD",
-        href: "/expertise/product-engineering?section=cae-cfd",
-        icon: <BarChart className="w-4 h-4" />,
+        href: "/expertise?section=cae-cfd",
+        icon: <Calculator className="w-4 h-4" />,
       },
       {
         title: "Hydraulic Engineering Services",
-        href: "/expertise/product-engineering?section=hydraulic",
-        icon: <Droplet className="w-4 h-4" />,
+        href: "/expertise?section=hydraulic",
+        icon: <Workflow className="w-4 h-4" />,
       },
       {
         title: "Prototyping and 3D Printing",
-        href: "/expertise/product-engineering?section=prototyping",
+        href: "/expertise?section=prototyping",
         icon: <Printer className="w-4 h-4" />,
       },
       {
         title: "Asset Management",
-        href: "/expertise/product-engineering?section=asset-management",
+        href: "/expertise?section=asset-management",
         icon: <Layers className="w-4 h-4" />,
       },
       {
         title: "Embedded Systems Engineering",
-        href: "/expertise/product-engineering?section=embedded-systems",
-        icon: <Settings className="w-4 h-4" />,
+        href: "/expertise?section=embedded-systems",
+        icon: <Cpu className="w-4 h-4" />,
       },
       {
         title: "Technical Publication",
-        href: "/expertise/product-engineering?section=technical-publication",
+        href: "/expertise?section=technical-publication",
         icon: <FileText className="w-4 h-4" />,
       },
       {
         title: "Supply Chain Management / Procurement",
-        href: "/expertise/product-engineering?section=supply-chain",
+        href: "/expertise?section=supply-chain",
         icon: <Truck className="w-4 h-4" />,
       },
     ],
@@ -292,7 +295,7 @@ const industriesData = [
           {
             title: "Oil and Gas",
             href: "/industries/sustainability/process-manufacturing/oil-gas",
-            icon: <Droplet className="w-4 h-4" />,
+            icon: <Fuel className="w-4 h-4" />,
           },
           {
             title: "Chemicals and Petrochemicals",
@@ -307,12 +310,12 @@ const industriesData = [
           {
             title: "Renewable Energy",
             href: "/industries/sustainability/process-manufacturing/renewable",
-            icon: <Sun className="w-4 h-4" />,
+            icon: <Leaf className="w-4 h-4" />,
           },
           {
             title: "Pharmaceuticals and Biotech",
             href: "/industries/sustainability/process-manufacturing/pharma",
-            icon: <Pill className="w-4 h-4" />,
+            icon: <Microscope className="w-4 h-4" />,
           },
           {
             title: "Agriculture and Agro-Processing",
@@ -322,7 +325,7 @@ const industriesData = [
           {
             title: "Cement and Construction",
             href: "/industries/sustainability/process-manufacturing/cement",
-            icon: <Car className="w-4 h-4" />,
+            icon: <HardHat className="w-4 h-4" />,
           },
           {
             title: "Textile and Apparel",
@@ -337,7 +340,7 @@ const industriesData = [
           {
             title: "Pulp and Paper",
             href: "/industries/sustainability/process-manufacturing/pulp",
-            icon: <Book className="w-4 h-4" />,
+            icon: <Newspaper className="w-4 h-4" />,
           },
         ],
       },
@@ -464,7 +467,7 @@ export function MegaMenu() {
                 onMouseLeave={() => setActiveDropdown(null)}
               >
                 <button
-                  className={`flex items-center p-2 text-gray-700 hover:text-blue-900 text-lg font-medium transition-colors duration-200 ${
+                  className={`flex items-center p-1 text-gray-700 hover:text-blue-900 text-lg font-medium transition-all ease-in-out duration-300 ${
                     isSticky ? "py-3" : "py-4"
                   }`}
                 >
@@ -477,10 +480,9 @@ export function MegaMenu() {
                     }
                     transition={{ duration: 0.2 }}
                   >
-                    <ChevronDown className="ml-1 h-4 w-4" />
+                    <ChevronDown className="ml- h-4 w-4" />
                   </motion.span>
                 </button>
-
                 {activeDropdown === "industries" && (
                   <div className="absolute z-[100] left-1/2 transform -translate-x-1/2 mt-0 w-screen max-w-7xl bg-white shadow-lg border-t border-gray-100 transition-all duration-300 ease-in-out min-h-[350px]">
                     <div className="grid grid-cols-3 min-h-[450px]">
@@ -612,7 +614,7 @@ export function MegaMenu() {
                     animate={activeDropdown === "expertise" ? "open" : "closed"}
                     transition={{ duration: 0.2 }}
                   >
-                    <ChevronDown className="ml-1 h-4 w-4" />
+                    <ChevronDown className="ml- h-4 w-4" />
                   </motion.span>
                 </button>
 

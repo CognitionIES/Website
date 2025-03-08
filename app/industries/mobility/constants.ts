@@ -14,7 +14,7 @@ export const services = [
       "Innovative engineering solutions for vehicle design, manufacturing, and performance optimization.",
     image:
       "https://plus.unsplash.com/premium_photo-1664298230305-9116cf510bed?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    href: "/expertise/product-engineering?section=mechanical",
+    href: "/expertise?section=mechanical",
   },
   {
     icon: FiActivity,
@@ -24,7 +24,7 @@ export const services = [
     image:
       "https://plus.unsplash.com/premium_photo-1682144324433-ae1ee89a0238?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     alt: "Trucks and off-highway vehicle engineering",
-    href: "/expertise/product-engineering?section=cae-cfd",
+    href: "/expertise?section=cae-cfd",
   },
   {
     icon: FiZap,
@@ -34,7 +34,7 @@ export const services = [
     image:
       "https://plus.unsplash.com/premium_photo-1664392286855-b02386936882?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     alt: "Railway and transportation engineering",
-    href: "/expertise/product-engineering?section=electrical",
+    href: "/expertise?section=electrical",
   },
   {
     icon: FiDroplet,
@@ -44,7 +44,7 @@ export const services = [
     image:
       "https://media.istockphoto.com/id/498381212/photo/military-jets-in-flight.jpg?s=2048x2048&w=is&k=20&c=mSaH_Ri6hnVdO6sZlNxfyeGcSsiSjV1n7mGupuJNhD8=",
     alt: "Aerospace and defense engineering",
-    href: "/expertise/product-engineering?section=hydraulic",
+    href: "/expertise?section=hydraulic",
   },
   {
     icon: FiPrinter,
@@ -54,7 +54,7 @@ export const services = [
     image:
       "https://media.istockphoto.com/id/533552151/photo/oil-rig.jpg?s=2048x2048&w=is&k=20&c=9hJpJnPZcxS5QBq3WJL9Cildyjm6Gi21FanjTSbQzr0=",
     alt: "Marine and offshore engineering",
-    href: "/expertise/product-engineering?section=prototyping",
+    href: "/expertise?section=prototyping",
   },
 ];
 
