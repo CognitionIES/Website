@@ -30,12 +30,10 @@ import {
   Cpu,
   Droplet,
   Zap,
-  Sun,
-  Pill,
+  
   Wheat,
   Shirt,
   Droplets,
-  Book,
 } from "lucide-react";
 import { Wrench, Factory, Server } from "lucide-react"; // Import icons
 import Logo1 from "@/constants/images/WEB LOGO.png";
