@@ -1,7 +1,7 @@
 "use client";
 
 // AboutUs Page
-import { MegaMenu } from "@/components/ui/MegaMenu";
+import { MegaMenu } from "@/components/ui/Megamenu/MegaMenu";
 import Footer from "@/components/footer";
 import Hero from "./hero"
 import CompanyStory from "./CompanyStory";

@@ -1,7 +1,7 @@
 "use client";
 
 // This file puts together all parts of the contact page
-import { MegaMenu } from "@/components/ui/MegaMenu";
+import { MegaMenu } from "@/components/ui/Megamenu/MegaMenu";
 import Footer from "@/components/footer";
 import HeroSection from "./HeroSection";
 import ContactSection from "./ContactSection";

@@ -6,7 +6,8 @@ import Image from "next/image";
 import { PRODUCT_ENGINEERING_CONSTANTS } from "@/constants/product-engineering/constants";
 
 export default function AboutSection() {
-  const { TITLE, DESCRIPTION_1, DESCRIPTION_2, IMAGE } = PRODUCT_ENGINEERING_CONSTANTS.ABOUT;
+  const { TITLE, DESCRIPTION_1, DESCRIPTION_2, IMAGE } =
+    PRODUCT_ENGINEERING_CONSTANTS.ABOUT;
 
   return (
     <section className="py-12 md:py-16 lg:py-20 bg-[#F5FDFF]">
@@ -19,9 +20,15 @@ export default function AboutSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#003C46]">{TITLE}</h2>
-            <p className="text-lg text-[#4A4A4A] mb-6 text-justify">{DESCRIPTION_1}</p>
-            <p className="text-lg text-[#4A4A4A] text-justify">{DESCRIPTION_2}</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#003C46]">
+              {TITLE}
+            </h2>
+            <p className="text-lg text-[#4A4A4A] mb-6 text-justify">
+              {DESCRIPTION_1}
+            </p>
+            <p className="text-lg text-[#4A4A4A] text-justify">
+              {DESCRIPTION_2}
+            </p>
           </motion.div>
           {/* Image */}
           <motion.div
@@ -31,7 +38,12 @@ export default function AboutSection() {
             transition={{ duration: 0.5 }}
             className="relative h-[400px]"
           >
-            <Image src={IMAGE} alt="Engineering expertise" fill className="object-cover rounded-lg" />
+            <Image
+              src={IMAGE}
+              alt="Engineering expertise"
+              fill
+              className="object-cover rounded-lg"
+            />
           </motion.div>
         </div>
       </div>

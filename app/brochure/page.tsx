@@ -1,7 +1,7 @@
 "use client";
 
 // This file puts together all parts of the brochure page
-import { MegaMenu } from "@/components/ui/MegaMenu";
+import { MegaMenu } from "@/components/ui/Megamenu/MegaMenu";
 import Banner from "./Banner";
 import LeftSection from "./LeftSection";
 import RightSection from "./RightSection";

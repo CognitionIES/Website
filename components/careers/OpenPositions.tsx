@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import jobListings from "@/constants/jobListings";
 import {
   Card,
@@ -20,8 +21,8 @@ import {
 } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
 import { CAREERS_CONSTANTS } from "@/constants/careersPage/constants";
-import Link from "next/link";
 
+// Define what a job looks like
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 interface Job {
   id: number;
@@ -34,12 +35,13 @@ interface Job {
 }
 
 export default function OpenPositions() {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [locationFilter, setLocationFilter] = useState("all");
+  const [searchTerm, setSearchTerm] = useState(""); // Holds the search text
+  const [locationFilter, setLocationFilter] = useState("all"); // Holds the selected location
 
   const { TITLE, LOCATIONS } = CAREERS_CONSTANTS.POSITIONS;
   const { STAGGER_CHILDREN, CARD_HOVER } = CAREERS_CONSTANTS.ANIMATIONS;
 
+  // Filter jobs based on search and location
   const filteredJobs = jobListings.filter((job) => {
     const matchesSearch =
       job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -58,6 +60,7 @@ export default function OpenPositions() {
       id="positions"
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        {/* Section title */}
         <div className="relative mb-8">
           <h2 className="text-3xl font-bold text-[#5B5B5B]">
             {TITLE}
@@ -65,6 +68,7 @@ export default function OpenPositions() {
           </h2>
         </div>
 
+        {/* Search and filter inputs */}
         <div className="flex flex-col md:flex-row gap-4 mb-8">
           <div className="flex-1">
             <Input
@@ -90,6 +94,7 @@ export default function OpenPositions() {
           </div>
         </div>
 
+        {/* Job cards */}
         <motion.div variants={STAGGER_CHILDREN} className="grid gap-6">
           {filteredJobs.map((job) => (
             <motion.div
@@ -97,7 +102,7 @@ export default function OpenPositions() {
               variants={CARD_HOVER}
               initial="rest"
               whileHover="hover"
-              className="bg-white border border-[#0098AF]/10 rounded-lg shadow-sm cursor-pointer"
+              className="bg-white border border-[#0098AF]/10 rounded-lg shadow-sm"
             >
               <Card className="border-0">
                 <CardHeader>
@@ -113,10 +118,10 @@ export default function OpenPositions() {
                         </div>
                       </CardDescription>
                     </div>
-                    <Link href={`/careers/job/${job.id}`}>
+                    <Link href={`/jobs/${job.id}`}>
                       <Button
-                        variant="outline"
-                        className="text-[#0098AF] border-[#0098AF] hover:bg-[#0098AF] hover:text-white px-3 py-1 rounded-lg font-medium shadow-sm hover:scale-105 transition-all duration-200 text-sm"
+                        variant="default"
+                        className="bg-[#0098AF] text-white hover:bg-[#007B8F] px-3 py-1 rounded-lg font-medium shadow-sm hover:scale-105 transition-all duration-200 text-sm"
                       >
                         View Job
                       </Button>

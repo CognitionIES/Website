@@ -7,7 +7,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { MegaMenu } from "@/components/ui/MegaMenu";
+import { MegaMenu } from "@/components/ui/Megamenu/MegaMenu";
 import Footer from "@/components/footer";
 import Hero from "./hero";
 import About from "./about";

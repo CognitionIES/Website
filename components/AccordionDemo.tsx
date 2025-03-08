@@ -14,7 +14,10 @@ export default function AccordionDemo() {
           Why Choose Cognition IES?
         </h2>
         <p className="text-lg text-gray-600 max-w-7xl mx-auto mb-10">
-          The right engineering partner isn’t just about technical expertise—it’s about working with a team that understands your industry, your challenges, and the pressure to stay ahead. We don’t just solve problems. We build solutions that make a difference.
+          The right engineering partner isn’t just about technical
+          expertise—it’s about working with a team that understands your
+          industry, your challenges, and the pressure to stay ahead. We don’t
+          just solve problems. We build solutions that make a difference.
         </p>
         <Accordion type="single" collapsible className="text-gray-600">
           {faqs.map((faq, index) => (

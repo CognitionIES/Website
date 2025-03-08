@@ -2,7 +2,7 @@
 
 // This file puts together all parts of the careers page
 import Footer from "@/components/footer";
-import { MegaMenu } from "@/components/ui/MegaMenu";
+import { MegaMenu } from "@/components/ui/Megamenu/MegaMenu";
 import HeroSection from "./HeroSection";
 import ValuesSection from "./ValuesSection";
 import TestimonialsSection from "./TestimonialsSection";

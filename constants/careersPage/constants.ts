@@ -1,8 +1,10 @@
+import HeroCareerImg from "@/constants/images/Careers.jpg"
+
 // This file holds all constants for the careers page
 export const CAREERS_CONSTANTS = {
     // Hero Section
     HERO: {
-      IMAGE: "/images/Careers.jpg", // Local image path (adjust as needed)
+      IMAGE: HeroCareerImg, // Local image path (adjust as needed)
       TITLE: "Join Our Team",
       SUBTITLE: "Shape the future with us. We’re seeking passionate innovators to join our journey.",
     },

@@ -1,6 +1,6 @@
-// components/HomePage/ContactUs.tsx
 "use client";
 
+// Contact Us section with form and map
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -17,6 +17,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import WorldMapDemo from "../ui/WorldMapDemo";
+import { CONTACT_CONSTANTS } from "@/constants/home/contact";
 
 export default function ContactUs() {
   const [formData, setFormData] = useState({
@@ -30,50 +31,43 @@ export default function ContactUs() {
     consent: false,
   });
 
-  const handleSubmit = (e: { preventDefault: () => void; }) => {
+  const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    console.log(formData); // Replace with your form submission logic
+    console.log(formData); // Replace with actual submission logic
   };
 
   return (
-    <section className="w-full bg-gradient-to-b from-gray-50 to-[#F5FDFF] py-12 sm:py-16 lg:py-24 relative overflow-hidden">
-      {/* Background Image */}
+    <section className="w-full py-12 sm:py-16 lg:py-24 relative overflow-hidden">
       <div className="absolute inset-0 -z-10">
         <Image
-          src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=1920&h=1080"
+          src={CONTACT_CONSTANTS.IMAGE}
           alt="Contact Us Scene"
           fill
           className="object-cover opacity-20"
         />
       </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px28 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-          {/* Contact Information Column (with Google Maps Iframe) */}
           <div className="space-y-2">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#003C46] relative">
-              Get in Touch
+              {CONTACT_CONSTANTS.TITLE}
               <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-[#0098AF] to-transparent" />
             </h2>
             <p className="text-base sm:text-lg leading-relaxed text-gray-600">
-              Reach out to discuss your project or learn more about our
-              services—we’re here to help.
+              {CONTACT_CONSTANTS.DESCRIPTION}
             </p>
             <div className="space-y-4 text-sm sm:text-base">
               <p className="text-gray-600 font-light">
-                <strong>Email:</strong> inquiry@cognitionies.com
+                <strong>Email:</strong> {CONTACT_CONSTANTS.EMAIL}
               </p>
               <p className="text-gray-600 font-light">
-                <strong>Toll Free Phone:</strong> 1800 800 9000
+                <strong>Toll Free Phone:</strong> {CONTACT_CONSTANTS.PHONE}
               </p>
             </div>
-            {/* Google Maps Iframe */}
             <div className="py-[50px] h-[300px] sm:p-6 md:h-[400px]">
-             <WorldMapDemo/>
+              <WorldMapDemo />
             </div>
           </div>
-
-          {/* Form Column */}
           <div className="bg-white p-6 rounded-xl shadow-md border border-[#0098AF]/10">
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-2 gap-4">
@@ -135,10 +129,11 @@ export default function ContactUs() {
                   <SelectValue placeholder="Interested In" />
                 </SelectTrigger>
                 <SelectContent className="bg-white border-[#0098AF]/10">
-                  <SelectItem value="Mobility">Mobility</SelectItem>
-                  <SelectItem value="Sustainability">Sustainability</SelectItem>
-                  <SelectItem value="Technology">Technology</SelectItem>
-                  <SelectItem value="Other">Other</SelectItem>
+                  {CONTACT_CONSTANTS.INTEREST_OPTIONS.map((option) => (
+                    <SelectItem key={option.value} value={option.value}>
+                      {option.label}
+                    </SelectItem>
+                  ))}
                 </SelectContent>
               </Select>
               <Textarea
@@ -182,7 +177,6 @@ export default function ContactUs() {
           </div>
         </div>
       </div>
-      {/* Subtle Decorative Elements (Dots and Circles) */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.15 }}
@@ -198,7 +192,7 @@ export default function ContactUs() {
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 0.1, scale: 1 }}
         transition={{ delay: 0.7, duration: 1 }}
-        className="absolute bottom-1/3 right-1/3 w-32 h-32 bg-[#99D5DF]  rounded-full blur-2xl -z-10"
+        className="absolute bottom-1/3 right-1/3 w-32 h-32 bg-[#99D5DF] rounded-full blur-2xl -z-10"
       />
       <motion.div
         initial={{ opacity: 0 }}
@@ -209,7 +203,7 @@ export default function ContactUs() {
           repeat: Infinity,
           repeatType: "reverse",
         }}
-        className="absolute top-1/3 right-1/4 w-4 h-4 bg-[#5B5B5B]  rounded-full "
+        className="absolute top-1/3 right-1/4 w-4 h-4 bg-[#5B5B5B] rounded-full -z-10"
       />
     </section>
   );

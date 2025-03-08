@@ -48,7 +48,9 @@ export default function CompanyStory() {
                   className="flex items-center space-x-4 bg-[#0098AF] opacity-60 p-4 rounded-lg shadow-md border border-[#0098AF] opacity-30"
                 >
                   <div className="w-12 h-12 bg-[#5B5B5B] rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold text-xl">{stat.stat}</span>
+                    <span className="text-white font-bold text-xl">
+                      {stat.stat}
+                    </span>
                   </div>
                   <p className="text-lg font-medium text-black">{stat.label}</p>
                 </div>
@@ -76,7 +78,9 @@ export default function CompanyStory() {
               transition={{ delay: 0.8 }}
               className="absolute -bottom-6 -right-6 w-40 h-40 bg-[#5B5B5B] opacity-20 rounded-full shadow-md flex items-center justify-center text-center p-4"
             >
-              <p className="text-white font-semibold">Global Reach: India & USA</p>
+              <p className="text-white font-semibold">
+                Global Reach:  India & USA
+              </p>
             </motion.div>
           </div>
         </motion.div>

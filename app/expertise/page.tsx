@@ -7,7 +7,7 @@ import frameBackground from "@/constants/images/Background/Frame_8.jpg";
 import Footer from "@/components/footer";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, MousePointer2 } from "lucide-react";
-import { MegaMenu } from "@/components/ui/MegaMenu";
+import { MegaMenu } from "@/components/ui/Megamenu/MegaMenu";
 
 export default function ExpertisePage() {
   const [showScrollHint, setShowScrollHint] = useState(true);
