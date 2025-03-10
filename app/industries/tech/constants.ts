@@ -1,48 +1,14 @@
-import { FiCloud, FiCode, FiCpu, FiLock, FiZap } from "react-icons/fi";
+import {  FiCode,  } from "react-icons/fi";
 
 export const services = [
   {
     icon: FiCode,
-    title: "Software Development",
+    title: "Digital Engineering ",
     description:
       "Custom software solutions for web, mobile, and enterprise applications.",
     image:
-      "https://images.unsplash.com/photo-1537432376769-00f5c0f4c427?auto=format&fit=crop&w=2070&q=80",
+      "https://media.istockphoto.com/id/2155769555/photo/artificial-intelligence-concept-cpu-quantum-computing.jpg?s=2048x2048&w=is&k=20&c=oVG1Mt7WWV1R9XeyPCjVQLzBj65uPi_t8SeA2ohhBrs=",
     href: "/tech?section=software-development",
-  },
-  {
-    icon: FiCloud,
-    title: "Cloud Computing",
-    description:
-      "Scalable, secure cloud infrastructure and services for all industries.",
-    image:
-      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=2070&q=80",
-    href: "/tech?section=cloud-computing",
-  },
-  {
-    icon: FiCpu,
-    title: "Artificial Intelligence",
-    description:
-      "AI and machine learning solutions for automation and insights.",
-    image:
-      "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=2070&q=80",
-    href: "/tech?section=artificial-intelligence",
-  },
-  {
-    icon: FiLock,
-    title: "Cybersecurity",
-    description: "Advanced protection against cyber threats and data breaches.",
-    image:
-      "https://images.unsplash.com/photo-1563986768494-4dee9b3b5754?auto=format&fit=crop&w=2070&q=80",
-    href: "/tech?section=cybersecurity",
-  },
-  {
-    icon: FiZap,
-    title: "IoT Solutions",
-    description: "Connecting devices for smarter systems and real-time data.",
-    image:
-      "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=2070&q=80",
-    href: "/tech?section=iot-solutions",
   },
 ];
 

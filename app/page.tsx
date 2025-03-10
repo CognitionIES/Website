@@ -111,15 +111,20 @@ const ServicesSection = dynamic(
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-[#F5FDFF] text-gray-900 font-sans overflow-hidden relative">
+    <div>
       <MegaMenu />
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-[#F5FDFF] text-gray-900 font-sans overflow-hidden relative">
       <main className="relative">
         <Hero />
         <section className="bg-gradient-to-b from-gray-50 to-[#F5FDFF]">
           <AboutUs />
         </section>
+        
         <section className="bg-gradient-to-b from-gray-50 to-[#F5FDFF]">
           <ServicesSection />
+        </section>
+        <section className="bg-white">
+          <AccordionDemo />
         </section>
         <section className="bg-gradient-to-b from-[#0098AF]/5 to-gray-50">
           <TestimonialSlider />
@@ -127,9 +132,7 @@ export default function Home() {
         <section className="bg-gradient-to-b from-gray-50 to-[#F5FDFF]">
           <Careers />
         </section>
-        <section className="bg-white">
-          <AccordionDemo />
-        </section>
+      
         <section>
           <ContactUs />
         </section>
@@ -164,6 +167,7 @@ export default function Home() {
         }}
         className="absolute top-1/2 right-12 w-4 h-4 bg-[#5B5B5B] rounded-full -z-10"
       />
+    </div>
     </div>
   );
 }

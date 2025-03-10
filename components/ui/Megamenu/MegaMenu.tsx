@@ -5,7 +5,19 @@ import Link from "next/link";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { ChevronDown, ArrowRight, Menu, X, BarChart, Calculator, Workflow, Fuel, Microscope, HardHat, Newspaper } from "lucide-react";
+import {
+  ChevronDown,
+  ArrowRight,
+  Menu,
+  X,
+  BarChart,
+  Calculator,
+  Workflow,
+  Fuel,
+  Microscope,
+  HardHat,
+  Newspaper,
+} from "lucide-react";
 import {
   Fan,
   Gauge,
@@ -30,7 +42,6 @@ import {
   Cpu,
   Droplet,
   Zap,
-  
   Wheat,
   Shirt,
   Droplets,
@@ -40,7 +51,7 @@ import Logo1 from "@/constants/images/WEB LOGO.png";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faCompassDrafting } from "@fortawesome/free-regular-svg-icons"; // Correct package
-import { faGears,faPlugCircleBolt } from "@fortawesome/free-solid-svg-icons"; // Import faGears
+import { faGears, faPlugCircleBolt } from "@fortawesome/free-solid-svg-icons"; // Import faGears
 
 // Type definitions for menu structure
 interface SubCategory {
@@ -71,12 +82,12 @@ const expertiseData: MainCategory[] = [
       {
         title: "Mechanical Design Services",
         href: "/expertise?section=mechanical",
-        icon:<FontAwesomeIcon icon={faGears}  className="w-5 h-5" />,
+        icon: <FontAwesomeIcon icon={faGears} className="w-5 h-5" />,
       },
       {
         title: "Electrical Engineering Services",
         href: "/expertise?section=electrical",
-        icon:<FontAwesomeIcon icon={faPlugCircleBolt}  className="w-4 h-4" />,
+        icon: <FontAwesomeIcon icon={faPlugCircleBolt} className="w-4 h-4" />,
       },
       {
         title: "CAE/CFD",
@@ -146,7 +157,7 @@ const expertiseData: MainCategory[] = [
         icon: <Layers className="w-4 h-4" />,
       },
       {
-        title: "HVAC & Ventilation System Services",
+        title: "HVAC   Services",
         href: "/expertise/plant-engineering?section=hvac",
         icon: <Fan className="w-4 h-4" />,
       },
