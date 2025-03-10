@@ -57,6 +57,9 @@ import TeamCenter from "@/constants/images/Company_logo/TeamCenter_logo.jpg";
 import vxWorks from "@/constants/images/Company_logo/vxWorks_logo.png";
 import windchill from "@/constants/images/Company_logo/windchill_logo.png";
 import word from "@/constants/images/Company_logo/word_logo.png";
+import logo1 from "@/constants/images/Company_logo/altairHyperWorks_logo-bg-removed.png"
+import comsolMultiphysics_1 from "@/constants/images/Company_logo/comsolMultiphysics_logo_1.jpg"
+import hyDraw_CAD from "@/constants/images/Company_logo/HyDraw_Cad.png"
 
 import sap from "@/constants/images/Company_logo/sap_logo.jpg";
 import oracleNestitue from "@/constants/images/Company_logo/oracleNestitute_logo.png";
@@ -80,6 +83,7 @@ const logo = {
     autodeskMec,
     automationStudio,
     comsolMultiphysics,
+    comsolMultiphysics_1,
     corelDraw,
     Creo,
     DesignX,
@@ -93,6 +97,7 @@ const logo = {
     formLabs,
     freeRTOS,
     hydroSYM,
+    hyDraw_CAD,
     ID,
     inforEAM,
     jda,
@@ -129,7 +134,7 @@ const logo = {
     infor,
     Photoshop,
     UltiMakerCura,
-    
+    logo1,
 };
 
 export default logo;

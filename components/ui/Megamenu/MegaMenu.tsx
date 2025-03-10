@@ -17,12 +17,12 @@ import {
   Microscope,
   HardHat,
   Newspaper,
+  Rss,
 } from "lucide-react";
 import {
   Fan,
   Gauge,
   Shield,
-  Clipboard,
   Code,
   Cloud,
   Brain,
@@ -137,54 +137,39 @@ const expertiseData: MainCategory[] = [
     icon: <Factory className="w-5 h-5 mr-2" />,
     subCategories: [
       {
-        title: "Mechanical & Electrical Engineering Services",
-        href: "/expertise/plant-engineering?section=mechanical-electrical",
-        icon: <Car className="w-4 h-4" />,
+        title: "FEED & Conceptual Design",
+        href: "/expertise/plant-engineering/feed-conceptual",
+        icon: <Rss className="w-4 h-4" />,
       },
       {
-        title: "Process Engineering Services",
-        href: "/expertise/plant-engineering?section=process",
+        title: "Detailed Engineering",
+        href: "/expertise/plant-engineering/detailed-engineering",
         icon: <Settings className="w-4 h-4" />,
       },
       {
-        title: "Piping & Fluid System Services",
-        href: "/expertise/plant-engineering?section=piping-fluid",
+        title: "Digitalization & Industry 4.0 Services",
+        href: "/expertise/plant-engineering/digitalization",
         icon: <Droplet className="w-4 h-4" />,
       },
       {
-        title: "Civil & Structural Engineering Services",
-        href: "/expertise/plant-engineering?section=civil-structural",
+        title: "Process Engineering Services",
+        href: "/expertise/plant-engineering/process-engineering",
         icon: <Layers className="w-4 h-4" />,
       },
       {
-        title: "HVAC   Services",
-        href: "/expertise/plant-engineering?section=hvac",
+        title: "Material Handling & Logistics Services",
+        href: "/expertise/plant-engineering/material-handling",
         icon: <Fan className="w-4 h-4" />,
       },
       {
-        title: "Instrumentation Engineering Services",
-        href: "/expertise/plant-engineering?section=instrumentation",
+        title: "Supply Chain & Vendor Management Services",
+        href: "/expertise/plant-engineering/supply-chain",
         icon: <Gauge className="w-4 h-4" />,
       },
       {
-        title: "Safety & Compliance Services",
-        href: "/expertise/plant-engineering?section=safety-compliance",
+        title: "Project Management Control Activities",
+        href: "/expertise/plant-engineering/project-management",
         icon: <Shield className="w-4 h-4" />,
-      },
-      {
-        title: "Energy Management & Sustainability Services",
-        href: "/expertise/plant-engineering?section=energy-management",
-        icon: <Leaf className="w-4 h-4" />,
-      },
-      {
-        title: "Digitalization & Industry 4.0 Services",
-        href: "/expertise/plant-engineering?section=digitalization",
-        icon: <Cpu className="w-4 h-4" />,
-      },
-      {
-        title: "Project Management",
-        href: "/expertise/plant-engineering?section=project-management",
-        icon: <Clipboard className="w-4 h-4" />,
       },
     ],
     image: {

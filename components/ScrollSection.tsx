@@ -1,3 +1,4 @@
+// ScrollSection.tsx
 "use client";
 
 import { motion } from "framer-motion";
@@ -6,17 +7,23 @@ import Image from "next/image";
 import blueBulletImage from "@/constants/images/Bullet_Points/bullet_point_blue_1.png";
 import grayBulletImage from "@/constants/images/Bullet_Points/bullet_point_gray.png";
 
-// ScrollSection component creates animated sections that reveal content as users scroll
-// Features alternating layouts, bullet points, and responsive design
-//  Framer Motion for smooth animations and intersection observer for scroll detection
+interface LogoItem {
+  src: string;
+  alt: string;
+}
+
+interface LogoRow {
+  label: string;
+  items: LogoItem[];
+}
 
 interface ScrollSectionProps {
-  index: number;          // (even/odd)
-  title: string;          // Section heading
-  description: string;    // Main content text
-  imageUrl: string;       // image URL
-  bulletPoints: string[]; // List of key points
-  logos: { src: string; alt: string }[]; // Company logos
+  index: number;
+  title: string;
+  description: string;
+  imageUrl: string;
+  bulletPoints: string[];
+  logos: LogoRow[];
 }
 
 export function ScrollSection({
@@ -27,17 +34,14 @@ export function ScrollSection({
   bulletPoints = [],
   logos,
 }: ScrollSectionProps) {
-  // Setup intersection observer to trigger animations
   const [ref, inView] = useInView({
     threshold: 0.3,
     triggerOnce: false,
   });
 
-  // Determine layout based on index
   const isEven = index % 2 === 0;
   const bulletImage = isEven ? blueBulletImage : grayBulletImage;
 
-  // Animation variants for container and items
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -62,6 +66,29 @@ export function ScrollSection({
     },
   };
 
+  // Mapping of labels to grid column classes
+  const gridColumnMap: { [key: string]: string } = {
+    "CAD & PLM:": "md:grid-cols-7", // Mechanical
+    "ELECTRICAL CAD & PCB DESIGN:": "md:grid-cols-6", // Electrical
+    "COMPUTER AIDED ENGINEERING:": "md:grid-cols-5", // CAE
+    "COMPUTATIONAL FLUID DYNAMICS:": "md:grid-cols-5", // CFD
+    "3D MODEL SOFTWARE:": "md:grid-cols-3", // Prototyping
+    "CAD:": "md:grid-cols-7", // Hydraulic CAD
+    "SIMULATION:": "md:grid-cols-7", // Hydraulic Simulation
+    "ASSET MANAGEMENT SOFTWARE:": "md:grid-cols-4", // Asset
+    "ANALYTICS AND DATA VISUALIZATION:": "md:grid-cols-4", // Asset & SCM
+    "IDE AND PROGRAMMING:": "md:grid-cols-3", // Embedded
+    "TESTING AND DEBUGGING:": "md:grid-cols-3", // Embedded
+    "RTOS DEVELOPMENT:": "md:grid-cols-3", // Embedded
+    "PUBLISHING, DIGITAL AND GRAPHICS:": "md:grid-cols-5", // Technical
+    "SUPPLY CHAIN MANAGEMENT:": "md:grid-cols-4", // SCM
+  };
+
+  // Function to get grid class based on label
+  const getGridClass = (label: string) => {
+    return gridColumnMap[label] || "md:grid-cols-5"; // Default to 5 columns if no match
+  };
+
   return (
     <motion.div
       ref={ref}
@@ -70,9 +97,7 @@ export function ScrollSection({
       animate={inView ? "visible" : "hidden"}
       className="relative max-w-7xl mx-auto px-4"
     >
-      {/* Main grid layout */}
       <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
-        {/* Content section with title, description, and bullet points */}
         <motion.div
           className={`space-y-6 ${
             isEven
@@ -126,36 +151,55 @@ export function ScrollSection({
             ))}
           </motion.div>
 
+          {/* Updated Logo Section with Dynamic Grid Columns */}
           <motion.div
-            className="bg-white shadow-lg rounded-xl p-6"
+            className="bg-white shadow-lg rounded-xl p-6 space-y-2"
             variants={itemVariants}
           >
-            <div className="grid grid-cols-7 md:grid-cols-7 gap-4 md:gap-3">
-              {logos?.map((logo, idx) => (
-                <motion.div
-                  key={idx}
-                  className="aspect-[3/2] relative group"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                  variants={itemVariants}
+            {logos.map((row, rowIdx) => (
+              <motion.div
+                key={rowIdx}
+                className="flex items-center gap-4"
+                variants={itemVariants}
+              >
+                {/* Label on the left */}
+                <div className="w-30 flex-shrink-1">
+                  <h3 className="text-sm font-semibold text-foreground uppercase">
+                    {row.label}
+                  </h3>
+                </div>
+                {/* Logos on the right with dynamic grid columns */}
+                <div
+                  className={`flex-1 grid grid-cols-3 ${getGridClass(
+                    row.label
+                  )} ${row.items.length <= 3 ? "gap-4" : "gap-2"}`}
                 >
-                  <div className="absolute inset-0 bg-foreground/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity" />
-                  <Image
-                    src={logo.src}
-                    alt={logo.alt}
-                    fill
-                    className="object-contain p-2 transition-all duration-300 group-hover:brightness-110"
-                    sizes="(max-width: 768px) 60px, 80px"
-                  />
-                </motion.div>
-              ))}
-            </div>
+                  {row.items.map((logo, idx) => (
+                    <motion.div
+                      key={idx}
+                      className="aspect-square relative group min-w-[50px] min-h-[50px] outline-none group-hover:outline group-hover:outline-2 group-hover:outline-green group-hover:outline-offset-2 rounded-lg"
+                      whileHover={{ scale: 1.15 }}
+                      transition={{ type: "spring", stiffness: 300 }}
+                      variants={itemVariants}
+                    >
+                      <div className="absolute inset-0 bg-foreground/5 rounded-lg opacity-0 transition-opacity" />
+                      <Image
+                        src={logo.src}
+                        alt={logo.alt}
+                        fill
+                        className="object-contain p-1 transition-all duration-300 group-hover:brightness-110 rounded-lg"
+                        sizes="(max-width: 768px) 50px, 80px"
+                      />
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
           </motion.div>
         </motion.div>
 
-        {/* Featured image section with hover effects */}
         <motion.div
-          className={`relative h-[550px] w-[350px] ${
+          className={`relative h-[600px] w-[350px] ${
             isEven
               ? "md:order-2 md:col-span-4 md:ml-auto"
               : "md:order-1 md:col-span-4 md:mr-auto"

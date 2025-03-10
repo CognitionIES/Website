@@ -60,7 +60,15 @@ export default function ExpertisePage() {
                   description={section.description}
                   imageUrl={section.imageUrl}
                   bulletPoints={section.bulletPoints}
-                  logos={section.logos.map(logo => ({ src: logo.src.src, alt: logo.alt }))} // Transform logos
+                  logos={
+                    section.logos?.map((row) => ({
+                      label: row.label,
+                      items: row.items.map((logo) => ({
+                        src: logo.src.src, // Adjust if logo.src is a string
+                        alt: logo.alt,
+                      })),
+                    })) || [] // Fallback to empty array if logos is undefined
+                  }
                 />
               </div>
             </section>
