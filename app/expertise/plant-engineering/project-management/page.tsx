@@ -1,7 +1,7 @@
 "use client"; // Required for onClick in FeedConceptualContent
 
 import FeedConceptualHero from "./hero";
-import Content from "./content";
+import FeedConceptualContent from "./content";
 import ServiceSidebar from "../ServiceSidebar";
 import Footer from "@/components/footer";
 import { MegaMenu } from "@/components/ui/Megamenu/MegaMenu";
@@ -15,11 +15,12 @@ export default function FeedConceptualPage() {
       </section>
       <section className="py-12">
         <h2 className="text-4xl font-bold text-center mb-12 text-[#0098AF] drop-shadow-md animate-fadeIn">
-          Our Engineering Services
+        Driving Projects to Success with Precision and Control
         </h2>
         <div className="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row gap-6">
-          <Content />
+          <FeedConceptualContent />
           <div className="lg:w-2/6">
+            {/* Adjusted to lg:w-1/6 (16.67%) to complement lg:w-5/6, fitting within max-w-7xl */}
             <ServiceSidebar />
           </div>
         </div>

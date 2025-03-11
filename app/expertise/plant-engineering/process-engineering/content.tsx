@@ -6,20 +6,10 @@ export default function ServiceContent() {
       {/* Section 1: Heading and Overview */}
       <section className="mb-12">
         <h1 className="text-4xl md:text-4xl font-bold text-[#0098AF] mb-6 animate-fade-in">
-          Front-End Engineering Design
+        Process Engineering Services
         </h1>
-        <p className="text-lg text-gray-700 leading-relaxed max-w-3xl text-justify">
-          Front-End Engineering Design (FEED) is critical to project success,
-          laying the foundation by defining scope, technical feasibility, cost
-          estimation, and risk assessment before execution. A well-structured
-          FEED minimizes uncertainties, ensures budget control, and enhances
-          operational efficiency. Our comprehensive services help clients gain a
-          competitive edge in the bidding process by delivering precise
-          engineering estimates and detailed designs that support project
-          feasibility and resource optimization. From conceptual design and
-          effort estimation to risk assessment and procurement support, we
-          provide tailored solutions that enable successful bids for projects
-          across various industries.
+        <p className="text-lg text-gray-700 leading-relaxed max-w-3xl">
+          Description 1{" "}
         </p>
       </section>
 
@@ -29,7 +19,9 @@ export default function ServiceContent() {
           Tools & Technologies
         </h2>
         <div className="w-full py-4">
-          <p>Slider Component</p>
+          <p>
+            Slider Component
+          </p>
           {/* <div
             className="group relative flex gap-6 overflow-hidden p-2"
             style={{

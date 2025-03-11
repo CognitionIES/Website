@@ -1,36 +1,95 @@
-export default function Content() {
-    return (
-      <div className="lg:w-3/5">
-        <section className="bg-white p-6 rounded-xl shadow-lg border border-[#0098AF]/20 hover:shadow-xl transition-shadow duration-300">
-          <h3 className="text-2xl font-semibold mb-4 text-[#0098AF]">
-            Conceptual Design & Front-End Engineering Design (FEED)
-          </h3>
-          <p className="text-gray-700 leading-relaxed">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+// import Image from "next/image";
+
+export default function ServiceContent() {
+  return (
+    <div className="max-w-7xl mx-auto px-4 py-12">
+      {/* Section 1: Heading and Overview */}
+      <section className="mb-12">
+        <h1 className="text-4xl md:text-4xl font-bold text-[#0098AF] mb-6 animate-fade-in">
+          Detailed Engineering Services
+        </h1>
+        <p className="text-lg text-gray-700 leading-relaxed max-w-3xl">
+          Description 1{" "}
+        </p>
+      </section>
+
+      {/* Section 2: Tools/Technology with Infinite Slider */}
+      <section className="mb-12">
+        <h2 className="text-2xl font-semibold text-[#0098AF] mb-6">
+          Tools & Technologies
+        </h2>
+        <div className="w-full py-4">
+          <p>
+            Slider Component
           </p>
-          <p className="text-gray-700 mt-4 leading-relaxed">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          </p>
-          <button
-            onClick={() => document.getElementById("expertise")?.scrollIntoView({ behavior: "smooth" })}
-            className="mt-6 bg-[#0098AF] text-white px-4 py-2 rounded-lg hover:bg-[#007B8F] transition-colors duration-300 flex items-center gap-2 hover:scale-105"
+          {/* <div
+            className="group relative flex gap-6 overflow-hidden p-2"
+            style={{
+              maskImage:
+                "linear-gradient(to left, transparent 0%, black 20%, black 80%, transparent 95%)",
+            }}
           >
-            Learn More
-            <span className="animate-pulse">→</span>
-          </button>
-        </section>
-        <section
-          id="expertise"
-          className="bg-white p-6 rounded-xl shadow-lg mt-8 border border-[#0098AF]/20 hover:shadow-xl transition-shadow duration-300"
-        >
-          <h3 className="text-2xl font-semibold mb-4 text-[#0098AF]">
-            Our Expertise
-          </h3>
-          <p className="text-gray-700 leading-relaxed">Description 1</p>
-          <p className="text-gray-700 mt-4 leading-relaxed">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          </p>
-        </section>
-      </div>
-    );
-  }
+            {Array(2) // Reduced to 2 for simplicity; adjust as needed
+              .fill(null)
+              .map((_, index) => (
+                <div
+                  key={index}
+                  className="flex shrink-0 animate-logo-cloud flex-row justify-around gap-6"
+                >
+                  {logos.map((logo, key) => (
+                    <Image
+                      key={key}
+                      src={logo.url}
+                      className="h-12 md:h-16 w-auto object-contain"
+                      alt={`${logo.name}`}
+                    />
+                  ))}
+                </div>
+              ))}
+          </div> */}
+        </div>
+      </section>
+
+      {/* Section 3: What We Offer */}
+      <section>
+        <h2 className="text-2xl font-semibold text-[#0098AF] mb-6">
+          What We Offer
+        </h2>
+        <p className="text-lg text-gray-700 leading-relaxed mb-6 max-w-3xl">
+          We provide a comprehensive set of services to ensure your success.
+          Here’s how we can support you:
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <ul className="space-y-4 text-gray-700">
+            <li className="flex items-start gap-2">
+              <span className="text-[#0098AF]">•</span>
+              <span>...</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-[#0098AF]">•</span>
+              <span>...</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-[#0098AF]">•</span>
+              <span>...</span>
+            </li>
+          </ul>
+          <ul className="space-y-4 text-gray-700">
+            <li className="flex items-start gap-2">
+              <span className="text-[#0098AF]">•</span>
+              <span>...</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-[#0098AF]">•</span>
+              <span>...</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-[#0098AF]">•</span>
+              <span>...</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  );
+}

@@ -698,10 +698,10 @@ export function MegaMenu() {
               </div>
 
               <Link
-                href="/resources"
+                href="/projects"
                 className="text-gray-700 hover:text-blue-900 text-lg p-2  font-medium transition-colors duration-200"
               >
-                Resources
+                Projects
               </Link>
 
               <Link

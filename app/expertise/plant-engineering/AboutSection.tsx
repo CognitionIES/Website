@@ -19,9 +19,9 @@ export default function AboutSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#003C46]">{TITLE}</h2>
-            <p className="text-lg text-[#4A4A4A] mb-6">{DESCRIPTION_1}</p>
-            <p className="text-lg text-[#4A4A4A]">{DESCRIPTION_2}</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#003C46] ">{TITLE}</h2>
+            <p className="text-lg text-[#4A4A4A] mb-6 text-justify">{DESCRIPTION_1}</p>
+            <p className="text-lg text-[#4A4A4A] text-justify">{DESCRIPTION_2}</p>
           </motion.div>
           {/* Image */}
           <motion.div

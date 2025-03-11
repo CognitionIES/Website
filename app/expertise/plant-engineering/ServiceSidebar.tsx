@@ -12,7 +12,7 @@ interface Service {
 
 const services: Service[] = [
   {
-    title: "FEED & Conceptual Design",
+    title: "Front-End Engineering Design ",
     href: "/expertise/plant-engineering/feed-conceptual",
     icon: <RssIcon className="w-4 h-4 text-[#0098AF] transition-colors" />,
   },
@@ -47,7 +47,7 @@ export default function ServiceSidebar() {
   const pathname = usePathname();
 
   return (
-    <div className="bg-white p-4 rounded-xl shadow-md sticky top-6 border border-[#0098AF]/20 hover:shadow-lg transition-shadow duration-300 max-w-xs">
+    <div className="bg-white p-8 rounded-xl shadow-md sticky top-16 border border-[#0098AF]/20 hover:shadow-lg transition-shadow duration-300 max-w-sm ">
       {/* Reduced padding from p-8 to p-4 for a slimmer look */}
       <h3 className="text-xl font-semibold mb-4 text-[#0098AF] border-b border-[#0098AF]/20 pb-2">
         Our Services

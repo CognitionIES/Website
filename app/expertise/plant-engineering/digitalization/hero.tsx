@@ -21,8 +21,8 @@ export default function Hero() {
         <div className="absolute inset-0 opacity-5 bg-[url('/images/engineering-pattern.jpg')] bg-repeat" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 h-full flex flex-col justify-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white -top-10 drop-shadow-md relative">
-          Front-End Engineering Design 
-          <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-[#99D5DF] to-transparent" />
+          Digitalization & Industry 4.0 Services
+            <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-[#99D5DF] to-transparent" />
           </h1>
           {/* Move nav outside the centered flex flow and position it absolutely */}
           <nav className="absolute bottom-0 left-6 sm:left-8 lg:left-12 mb-6 flex items-center space-x-2 text-sm font-light text-white/80">
@@ -42,10 +42,10 @@ export default function Hero() {
             </Link>
             <FiChevronRight className="w-4 h-4" />
             <Link
-              href="/expertise/expertise/plant-engineering/digitalization"
+              href="/expertise/plant-engineering/digitalization"
               className="hover:text-[#99D5DF] transition-colors duration-200"
             >
-              Front-End Engineering Design 
+              Digitalization & Industry 4.0 Services
             </Link>
           </nav>
           <motion.div
