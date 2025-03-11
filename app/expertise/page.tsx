@@ -1,54 +1,56 @@
-"use client";
+'use client';
 
-import { ScrollSection } from "@/components/ScrollSection";
-import { useEffect, useState } from "react";
 import sections from "@/constants/sections";
 import frameBackground from "@/constants/images/Background/Frame_8.jpg";
 import Footer from "@/components/footer";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, MousePointer2 } from "lucide-react";
 import { MegaMenu } from "@/components/ui/Megamenu/MegaMenu";
+import { Suspense, useEffect, useState } from "react";
+import SearchParamsHandler from "./SearchParamsHandler";
+import { ScrollSection } from "@/components/ScrollSection";
 
 export default function ExpertisePage() {
   const [showScrollHint, setShowScrollHint] = useState(true);
-  const [currentSection] = useState(0);
 
   useEffect(() => {
     const timer = setTimeout(() => setShowScrollHint(false), 5000);
     return () => clearTimeout(timer);
   }, []);
 
+  // Optional: Handle the param in the parent if needed
+
+
+
+  const handleParamChange = (param: string): void => {
+    console.log('Current param:', param); // For debugging or further use
+  };
+
   return (
     <div className="relative min-h-screen">
-      {/* Fixed Background */}
       <div
         className="fixed inset-0 bg-cover bg-center -z-10"
         style={{
           backgroundImage: `url(${frameBackground.src})`,
         }}
       />
-
-      {/* Main Container */}
       <div className="relative">
-        {/* Navbar */}
         <div className="relative z-50">
           <MegaMenu />
         </div>
-
-        {/* Content Container */}
         <main className="relative pt-8">
-          {/* Decorative Line */}
           <div className="fixed top-0 left-8 bottom-0 w-px bg-gradient-to-b from-transparent via-foreground/10 to-transparent" />
-
-          {/* Sections */}
-          {Object.values(sections).map((section, index) => (
+          <Suspense fallback={<div>Loading search parameters...</div>}>
+            <SearchParamsHandler onParamChange={handleParamChange} />
+          </Suspense>
+          {Object.entries(sections).map(([key, section], index) => (
             <section
-              key={index}
-              id={section.title.toLowerCase().replace(/\s+/g, "-")}
+              key={key}
+              id={key}
               className="min-h-screen flex items-center justify-center py-16"
             >
               <div
-                className={`w-[full] max-w-13xl mx-auto px-2 py-12 rounded-3xl transition-colors duration-500 ${
+                className={`w-full max-w-7xl mx-auto px-2 py-12 rounded-3xl transition-colors duration-500 ${
                   index % 2 === 0
                     ? "bg-blue-400/5 dark:bg-blue-950/10"
                     : "bg-gray-400/10 dark:bg-gray-900/10"
@@ -60,28 +62,16 @@ export default function ExpertisePage() {
                   description={section.description}
                   imageUrl={section.imageUrl}
                   bulletPoints={section.bulletPoints}
-                  logos={
-                    section.logos?.map((row) => ({
-                      label: row.label,
-                      items: row.items.map((logo) => ({
-                        src: logo.src.src, // Adjust if logo.src is a string
-                        alt: logo.alt,
-                      })),
-                    })) || [] // Fallback to empty array if logos is undefined
-                  }
+                  logos={section.logos}
                 />
               </div>
             </section>
           ))}
         </main>
-
-        {/* Footer */}
         <Footer />
       </div>
-
-      {/* Scroll Navigation Hints */}
       <AnimatePresence>
-        {showScrollHint && currentSection === 0 && (
+        {showScrollHint && (
           <motion.div
             className="fixed bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-primary/90"
             initial={{ opacity: 0, y: 10 }}

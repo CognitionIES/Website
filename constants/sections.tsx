@@ -1,12 +1,11 @@
 import logo from "@/constants/Imported-images";
 
 const sections = {
-  // 1. Mechanical Design Services (2 rows)
+  // 1. Mechanical Design Services
   mechanical: {
     title: "MECHANICAL DESIGN SERVICES",
     description:
       "Comprehensive mechanical engineering solutions delivering innovative designs and optimized performance across industries. Our expertise combines cutting-edge technology with practical engineering principles.",
-
     imageUrl:
       "https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?q=80&w=2070&auto=format&fit=crop",
     bulletPoints: [
@@ -44,7 +43,7 @@ const sections = {
     ],
   },
 
-  // 2. Electrical Engineering (1 row)
+  // 2. Electrical Engineering
   electrical: {
     title: "Electrical Engineering Services",
     description:
@@ -78,8 +77,8 @@ const sections = {
     ],
   },
 
-  // 3. CAE/CFD (2 rows)
-  analysis: {
+  // 3. CAE/CFD (changed key from "analysis" to "cae-cfd")
+  "cae-cfd": {
     title: "CAE/CFD",
     description:
       "Advanced engineering analysis services using state-of-the-art simulation tools and methodologies to optimize design performance and reliability",
@@ -119,7 +118,7 @@ const sections = {
     ],
   },
 
-  // 4. Prototyping and 3D Printing (1 row)
+  // 4. Prototyping and 3D Printing
   prototyping: {
     title: "Prototyping and 3D Printing",
     description:
@@ -150,7 +149,7 @@ const sections = {
     ],
   },
 
-  // 5. Hydraulic Engineering (2 rows)
+  // 5. Hydraulic Engineering
   hydraulic: {
     title: "Hydraulic Engineering Services",
     description:
@@ -182,15 +181,15 @@ const sections = {
       {
         label: "SIMULATION:",
         items: [
-          { src: logo.automationStudio, alt: "Altair" }, // Added as per image
+          { src: logo.automationStudio, alt: "Altair" },
           { src: logo.festoFluidSim, alt: "Altair" },
         ],
       },
     ],
   },
 
-  // 6. Asset Management (2 rows)
-  asset: {
+  // 6. Asset Management (changed key from "asset" to "asset-management")
+  "asset-management": {
     title: "Asset Management",
     description: "Random loreum ipslum",
     imageUrl:
@@ -227,8 +226,8 @@ const sections = {
     ],
   },
 
-  // 7. Embedded Systems Engineering (3 rows)
-  embedded: {
+  // 7. Embedded Systems Engineering (changed key from "embedded" to "embedded-systems")
+  "embedded-systems": {
     title: "Embedded Systems Engineering",
     description:
       "Advanced embedded systems solutions integrating hardware and software for intelligent device control and automation.",
@@ -252,14 +251,14 @@ const sections = {
         items: [
           { src: logo.keil, alt: "ANSYS" },
           { src: logo.stm32CubeIDE, alt: "Altair" },
-          { src: logo.lauterbachD, alt: "Altair" }, // Updated to match image (MPLAB X IDE)
+          { src: logo.lauterbachD, alt: "Altair" },
         ],
       },
       {
         label: "TESTING AND DEBUGGING:",
         items: [
-          { src: logo.lauterbachD, alt: "Altair" }, // Updated to match image (LAUTERBACH)
-          { src: logo.qnx, alt: "Altair" }, // Updated to match image (CANalyzer)
+          { src: logo.lauterbachD, alt: "Altair" },
+          { src: logo.qnx, alt: "Altair" },
           { src: logo.jtag, alt: "Altair" },
         ],
       },
@@ -274,8 +273,8 @@ const sections = {
     ],
   },
 
-  // 8. Technical Publication (2 rows)
-  technical: {
+  // 8. Technical Publication (changed key from "technical" to "technical-publication")
+  "technical-publication": {
     title: "Technical Documentation",
     description:
       "Comprehensive technical documentation services ensuring clear communication of complex technical information.",
@@ -302,7 +301,6 @@ const sections = {
           { src: logo.FM, alt: "Altair" },
           { src: logo.rh, alt: "Altair" },
           { src: logo.Photoshop, alt: "Altair" },
-      
           { src: logo.corelDraw, alt: "Altair" },
           { src: logo.madcapFlare, alt: "Altair" },
           { src: logo.KeyShot, alt: "Altair" },
@@ -313,8 +311,8 @@ const sections = {
     ],
   },
 
-  // 9. Supply Chain Management/Procurement (2 rows)
-  supplyChain: {
+  // 9. Supply Chain Management/Procurement (changed key from "supplyChain" to "supply-chain")
+  "supply-chain": {
     title: "Supply Chain Management / Procurement",
     description:
       "End-to-end supply chain and procurement solutions to streamline sourcing, logistics, and vendor management.",
@@ -356,6 +354,8 @@ const sections = {
 };
 
 export default sections;
+
+
 /* 
  embedded: {
     title: "Embedded Systems Engineering",

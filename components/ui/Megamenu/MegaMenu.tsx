@@ -20,7 +20,7 @@ import {
   Rss,
 } from "lucide-react";
 import {
-  Fan,
+  
   Gauge,
   Shield,
   Code,
@@ -52,6 +52,7 @@ import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faCompassDrafting } from "@fortawesome/free-regular-svg-icons"; // Correct package
 import { faGears, faPlugCircleBolt } from "@fortawesome/free-solid-svg-icons"; // Import faGears
+import { usePathname, useRouter } from "next/navigation";
 
 // Type definitions for menu structure
 interface SubCategory {
@@ -76,7 +77,7 @@ interface MainCategory {
 const expertiseData: MainCategory[] = [
   {
     title: "Product Engineering",
-    href: "/expertise/product-engineering",
+    href: "/expertise",
     icon: <Wrench className="w-5 h-5 mr-2" />,
     subCategories: [
       {
@@ -155,11 +156,6 @@ const expertiseData: MainCategory[] = [
         title: "Process Engineering Services",
         href: "/expertise/plant-engineering/process-engineering",
         icon: <Layers className="w-4 h-4" />,
-      },
-      {
-        title: "Material Handling & Logistics Services",
-        href: "/expertise/plant-engineering/material-handling",
-        icon: <Fan className="w-4 h-4" />,
       },
       {
         title: "Supply Chain & Vendor Management Services",
@@ -383,7 +379,8 @@ export function MegaMenu() {
     null
   );
   const dropdownRef = useRef<HTMLDivElement>(null);
-
+  const router = useRouter();
+  const pathname = usePathname();
   const toggleSubCategory = (title: string) => {
     setExpandedSubCategory(expandedSubCategory === title ? null : title);
   };
@@ -615,7 +612,7 @@ export function MegaMenu() {
                 {activeDropdown === "expertise" && (
                   <div className="absolute z-[100] transform -translate-x-[54%] mt-0 w-screen max-w-7xl bg-white shadow-lg border-t border-gray-100 transition-all duration-300 ease-in-out min-h-[300px]">
                     <div className="grid grid-cols-3 min-h-[450px]">
-                      {/* Main Categories with Links */}
+                      {/* Main Categories */}
                       <div className="space-y-1 bg-[#003c46] flex flex-col py-2">
                         {expertiseData.map((category, index) => (
                           <Link key={category.title} href={category.href}>
@@ -634,21 +631,38 @@ export function MegaMenu() {
                                 )}
                                 {category.title}
                               </div>
-                              {activeCategory === index && (
-                                <span className="text-[#00b6d3] font-bold text-lg"></span>
-                              )}
                             </button>
                           </Link>
                         ))}
                       </div>
 
-                      {/* Sub Categories with Icons */}
+                      {/* Sub Categories */}
                       <div className="space-y-1 bg-[#0098af] flex flex-col py-2">
                         {expertiseData[activeCategory].subCategories.map(
                           (subCategory) => (
                             <Link
                               key={subCategory.title}
                               href={subCategory.href}
+                              onClick={(e) => {
+                                if (
+                                  subCategory.href.includes("?section=") &&
+                                  pathname === "/expertise"
+                                ) {
+                                  e.preventDefault();
+                                  const sectionId =
+                                    subCategory.href.split("section=")[1];
+                                  const targetSection =
+                                    document.getElementById(sectionId);
+                                  if (targetSection) {
+                                    targetSection.scrollIntoView({
+                                      behavior: "smooth",
+                                      block: "start",
+                                    });
+                                  }
+                                } else {
+                                  router.push(subCategory.href);
+                                }
+                              }}
                               className="flex items-center px-4 py-1 text-base text-white hover:text-[#003c46] transition-colors duration-200"
                             >
                               {subCategory.icon && (
