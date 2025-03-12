@@ -1,17 +1,17 @@
-"use client"; // Required for onClick in FeedConceptualContent
+"use client"; // Required if any child component (e.g., ServiceSidebar) uses client-side features like usePathname
 
-import FeedConceptualHero from "./hero";
+import Hero from "./hero";
 import Content from "./content";
 import ServiceSidebar from "../ServiceSidebar";
 import Footer from "@/components/footer";
 import { MegaMenu } from "@/components/ui/Megamenu/MegaMenu";
 
-export default function FeedConceptualPage() {
+export default function MechaPage() {
   return (
     <div>
       <MegaMenu />
       <section>
-        <FeedConceptualHero />
+        <Hero />
       </section>
       <section className="py-12">
         <h2 className="text-4xl font-bold text-center mb-12 text-[#0098AF] drop-shadow-md animate-fadeIn">

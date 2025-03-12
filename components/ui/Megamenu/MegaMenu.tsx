@@ -138,32 +138,57 @@ const expertiseData: MainCategory[] = [
     icon: <Factory className="w-5 h-5 mr-2" />,
     subCategories: [
       {
-        title: "FEED & Conceptual Design",
+        title: "Process & Safety Engineering",
         href: "/expertise/plant-engineering/feed-conceptual",
         icon: <Rss className="w-4 h-4" />,
       },
       {
-        title: "Detailed Engineering",
+        title: "Mechanical Engineering",
         href: "/expertise/plant-engineering/detailed-engineering",
         icon: <Settings className="w-4 h-4" />,
       },
       {
-        title: "Digitalization & Industry 4.0 Services",
+        title: "Piping Engineering",
         href: "/expertise/plant-engineering/digitalization",
         icon: <Droplet className="w-4 h-4" />,
       },
       {
-        title: "Process Engineering Services",
+        title: "Piping Stress Analysis",
         href: "/expertise/plant-engineering/process-engineering",
         icon: <Layers className="w-4 h-4" />,
       },
       {
-        title: "Supply Chain & Vendor Management Services",
+        title: "Civil Engineering",
         href: "/expertise/plant-engineering/supply-chain",
         icon: <Gauge className="w-4 h-4" />,
       },
       {
-        title: "Project Management Control Activities",
+        title: "Structural Engineering",
+        href: "/expertise/plant-engineering/project-management",
+        icon: <Shield className="w-4 h-4" />,
+      },
+      {
+        title: "Electrical Engineering",
+        href: "/expertise/plant-engineering/project-management",
+        icon: <Shield className="w-4 h-4" />,
+      },
+      {
+        title: "Instrumentation Engineering",
+        href: "/expertise/plant-engineering/project-management",
+        icon: <Shield className="w-4 h-4" />,
+      },
+      {
+        title: "Modular Package",
+        href: "/expertise/plant-engineering/project-management",
+        icon: <Shield className="w-4 h-4" />,
+      },
+      {
+        title: "Reverse Engineering",
+        href: "/expertise/plant-engineering/project-management",
+        icon: <Shield className="w-4 h-4" />,
+      },
+      {
+        title: "Procurement Support",
         href: "/expertise/plant-engineering/project-management",
         icon: <Shield className="w-4 h-4" />,
       },

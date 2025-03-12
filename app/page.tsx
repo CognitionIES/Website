@@ -123,6 +123,7 @@ export default function Home() {
         <section className="bg-gradient-to-b from-gray-50 to-[#F5FDFF]">
           <ServicesSection />
         </section>
+        
         <section className="bg-white">
           <AccordionDemo />
         </section>
