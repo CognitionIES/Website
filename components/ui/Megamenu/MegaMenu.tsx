@@ -139,57 +139,57 @@ const expertiseData: MainCategory[] = [
     subCategories: [
       {
         title: "Process & Safety Engineering",
-        href: "/expertise/plant-engineering/feed-conceptual",
+        href: "/expertise/plant-engineering/process-and-safety",
         icon: <Rss className="w-4 h-4" />,
       },
       {
         title: "Mechanical Engineering",
-        href: "/expertise/plant-engineering/detailed-engineering",
+        href: "/expertise/plant-engineering/mechanical",
         icon: <Settings className="w-4 h-4" />,
       },
       {
         title: "Piping Engineering",
-        href: "/expertise/plant-engineering/digitalization",
+        href: "/expertise/plant-engineering/piping",
         icon: <Droplet className="w-4 h-4" />,
       },
       {
         title: "Piping Stress Analysis",
-        href: "/expertise/plant-engineering/process-engineering",
+        href: "/expertise/plant-engineering/piping-stress-analysis",
         icon: <Layers className="w-4 h-4" />,
       },
       {
         title: "Civil Engineering",
-        href: "/expertise/plant-engineering/supply-chain",
+        href: "/expertise/plant-engineering/civil",
         icon: <Gauge className="w-4 h-4" />,
       },
       {
         title: "Structural Engineering",
-        href: "/expertise/plant-engineering/project-management",
+        href: "/expertise/plant-engineering/structural",
         icon: <Shield className="w-4 h-4" />,
       },
       {
         title: "Electrical Engineering",
-        href: "/expertise/plant-engineering/project-management",
+        href: "/expertise/plant-engineering/electrical",
         icon: <Shield className="w-4 h-4" />,
       },
       {
         title: "Instrumentation Engineering",
-        href: "/expertise/plant-engineering/project-management",
+        href: "/expertise/plant-engineering/instrumentation",
         icon: <Shield className="w-4 h-4" />,
       },
       {
         title: "Modular Package",
-        href: "/expertise/plant-engineering/project-management",
+        href: "/expertise/plant-engineering/modular-package",
         icon: <Shield className="w-4 h-4" />,
       },
       {
         title: "Reverse Engineering",
-        href: "/expertise/plant-engineering/project-management",
+        href: "/expertise/plant-engineering/reverse-engineering",
         icon: <Shield className="w-4 h-4" />,
       },
       {
         title: "Procurement Support",
-        href: "/expertise/plant-engineering/project-management",
+        href: "/expertise/plant-engineering/procurement-support",
         icon: <Shield className="w-4 h-4" />,
       },
     ],
