@@ -47,6 +47,10 @@
 //     "Engineering isn’t just about solving problems—it’s about pushing boundaries. Our services spans three core domains, where precision meets innovation. Whether it’s revolutionizing mobility, engineering sustainable solutions, or harnessing the power of technology, we help industries move faster, work smarter, and build for the future.",
 // };
 // constants/home/services.js
+//import process from "@/constants/images/process-1.jpeg";
+import process1 from "@/constants/images/Careers.jpg"
+import process2 from "@/constants/images/process-2.jpeg"
+
 export const SERVICES = [
   {
     id: 1,
@@ -57,8 +61,8 @@ export const SERVICES = [
       "We provide comprehensive Product Engineering solutions, covering Mechanical Design, Electrical Engineering, CAE/CFD, Hydraulic Systems, Prototyping & 3D Printing, Asset Management, Embedded Systems, Technical Publications, and Supply Chain Management. Our agile approach delivers bold, sustainable products for industries like automotive, aerospace, and medical devices.",
     bgColor: "bg-[#003C46]",
     textColor: "text-white",
-    image:
-      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800",
+    image:process1,
+
     href: "/services/product-engineering",
   },
   {
@@ -70,12 +74,10 @@ export const SERVICES = [
       "Our Plant Engineering services includes Process & Safety Engineering, Mechanical & Piping Design, Piping Stress Analysis, Civil & Structural Engineering, Electrical & Instrumentation solutions, Modular Packages, Reverse Engineering, and Procurement Support. We ensure efficiency, safety, and scalability for your industrial operations.",
     bgColor: "bg-[#0098AF]",
     textColor: "text-white",
-    image:
-    "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800",
+    image: process2, 
     href: "/services/plant-engineering",
   },
 ];
-
 export const SERVICES_SECTION = {
   TITLE: "Engineering Excellence",
   DESCRIPTION:

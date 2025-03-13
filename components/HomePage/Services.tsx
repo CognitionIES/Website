@@ -395,6 +395,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import Image from "next/image"; // Import Image component
 import { SERVICES, SERVICES_SECTION } from "@/constants/home/services";
 import { motion } from "framer-motion";
 
@@ -406,7 +407,7 @@ export default function ServicesSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-justify max-w-7xl mx-auto mb-12">
-          <h1 className="text-2xl sm:text-3xl  lg:text-4xl font-semibold text-[#003C46] mb-4 tracking-tight drop-shadow-sm">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#003C46] mb-4 tracking-tight drop-shadow-sm">
             {SERVICES_SECTION.TITLE}
           </h1>
           <p className="text-sm sm:text-base lg:text-lg leading-relaxed text-gray-600 ">
@@ -440,14 +441,19 @@ export default function ServicesSection() {
                 activeCard === service.id ? "collapse" : "expand"
               }`}
             >
-              {/* Background Image */}
-              <div
-                className="absolute inset-0 bg-cover bg-center transition-opacity duration-500"
-                style={{
-                  backgroundImage: `url(${service.image})`,
-                  opacity: activeCard === service.id ? 0.1 : 0.9,
-                }}
-              />
+              {/* Image */}
+              <div className="absolute inset-0">
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  height={900}
+                  width={900}
+                  className="object-cover bg-center transition-opacity duration-500"
+                  style={{
+                    opacity: activeCard === service.id ? 0.1 : 0.9,
+                  }}
+                />
+              </div>
 
               {/* Gradient Overlay */}
               <div
@@ -467,7 +473,7 @@ export default function ServicesSection() {
                   </h2>
                   <p
                     className={cn(
-                      "text-sm sm:text-base lg:text-lg  textjustify  leading-relaxed transition-all duration-500 ease-in-out",
+                      "text-sm sm:text-base lg:text-lg textjustify leading-relaxed transition-all duration-500 ease-in-out",
                       activeCard === service.id
                         ? "text-white/90 opacity-100"
                         : "text-white/80 opacity-0 h-0"

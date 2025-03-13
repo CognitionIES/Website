@@ -18,14 +18,14 @@ const projects: Project[] = [
     description: "Description 1",
     image:
       "https://images.unsplash.com/photo-1644329770639-1a20809b82a3?q=80&w=2145&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Replace with actual image path
-    href: "https://images.unsplash.com/photo-1644329770639-1a20809b82a3?q=80&w=2145&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    href: "/projects/digitalization",
   },
   {
     title: "Product Cost Management",
     description: "Description 2",
     image:
       "https://images.unsplash.com/photo-1644329770639-1a20809b82a3?q=80&w=2145&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Replace with actual image path
-    href: "https://images.unsplash.com/photo-1644329770639-1a20809b82a3?q=80&w=2145&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    href: "/projects/product-cost-management",
   },
 ];
 // components/RecentProjects.tsx
