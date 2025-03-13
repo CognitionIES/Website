@@ -54,6 +54,17 @@ interface MainCategory {
   };
 }
 
+const projectsData: SubCategory[] = [
+  {
+    title: "Digitalization",
+    href: "/projects/digitalization",
+  },
+  {
+    title: "Product Cost Management",
+    href: "/projects/product-cost-management",
+  },
+];
+
 // In MegaMenu.tsx
 const servicesData: MainCategory[] = [
   {
@@ -616,7 +627,7 @@ export function MegaMenu() {
                 </button>
 
                 {activeDropdown === "services" && (
-                  <div className="absolute z-[100] transform -translate-x-[62%] mt-0 w-screen max-w-7xl bg-white shadow-lg border-t border-gray-100 transition-all duration-300 ease-in-out min-h-[300px]">
+                  <div className="absolute z-[100] transform -translate-x-[62%] mt-[2px] w-screen max-w-7xl bg-white shadow-lg border-t border-gray-100 transition-all duration-300 ease-in-out min-h-[300px]">
                     <div className="grid grid-cols-3 min-h-[450px]">
                       {/* Main Categories */}
                       <div className="space-y-1 bg-[#003c46] flex flex-col py-2">
@@ -702,17 +713,46 @@ export function MegaMenu() {
                   </div>
                 )}
               </div>
-
-              <Link
-                href="/projects"
-                className="text-gray-700 hover:text-blue-900 text-lg p-2  font-medium transition-colors duration-200"
+              <div
+                className="relative"
+                onMouseEnter={() => setActiveDropdown("projects")}
+                onMouseLeave={() => setActiveDropdown(null)}
               >
-                Projects
-              </Link>
+                <button
+                  className={`flex items-center p-2 text-gray-700 hover:text-blue-900 text-lg font-medium transition-colors duration-200 ${
+                    isSticky ? "py-3" : "py-4"
+                  }`}
+                >
+                  Projects
+                  <motion.span
+                    variants={arrowVariants}
+                    initial="closed"
+                    animate={activeDropdown === "projects" ? "open" : "closed"}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <ChevronDown className="ml- h-4 w-4" />
+                  </motion.span>
+                </button>
+                {activeDropdown === "projects" && (
+                  <div className="absolute z-[100] left-0 mt-0 w-56 bg-[#0098af] mt-[1px] shadow-lg border border-gray-100 rounded-md">
+                    <div className="flex  flex-col">
+                      {projectsData.map((item) => (
+                        <Link
+                          key={item.title}
+                          href={item.href}
+                          className="px-4 py-2 text-white  hover:text-black transition-colors duration-200"
+                        >
+                          {item.title}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
 
               <Link
                 href="/careers"
-                className="text-gray-700 hover:text-blue-900 text-lg p-2  font-medium transition-colors duration-200"
+                className="text-gray-700 hover:text-blue-900 text-lg p-2 font-medium transition-colors duration-200"
               >
                 Careers
               </Link>

@@ -20,7 +20,7 @@ export default function TestimonialSlider() {
         <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#003C46] mb-4 drop-shadow-md">
           {TESTIMONIALS_SECTION.TITLE}
         </h1>
-        <p className="text-base leading-relaxed text-gray-600 mb-8">
+        <p className="text-base sm:text-lg leading-relaxed text-gray-600 text-justify  mb-8">
           {TESTIMONIALS_SECTION.DESCRIPTION}
         </p>
         <Carousel

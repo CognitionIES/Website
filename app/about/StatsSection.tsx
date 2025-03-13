@@ -24,7 +24,7 @@ export default function StatsSection() {
           {STATS.map((item, index) => (
             <div
               key={index}
-              className="p-6 bg-[#5B5B5B] bg-opacity-60 rounded-lg shadow-lg border-2 border-[#0098AF] opacity-90 relative overflow-hidden"
+              className="p-6 bg-[#5B5B5B] bg-opacity-60 rounded-lg shadow-lg border-2 border-[#0098AF] opacity-100 relative overflow-hidden"
             >
               <h3 className="text-5xl font-bold mb-2">{item.stat}</h3>
               <p className="text-lg font-light">{item.label}</p>

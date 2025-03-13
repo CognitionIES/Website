@@ -11,7 +11,7 @@ export default function KeyValues() {
   return (
     <section className="py-24 bg-white relative">
       <div className="max-w-7xl mx-auto px-6">
-        <h2 className="text-4xl md:text-5xl font-bold text-center text-[#5B5B5B] mb-12 tracking-tight">
+        <h2 className="text-4xl md:text-5xl font-bold text-center text-[#003C46] mb-12 tracking-tight">
           {TEXT.VALUES_TITLE}
         </h2>
         <motion.div
@@ -46,7 +46,7 @@ export default function KeyValues() {
               <h3 className="text-xl font-semibold text-[#5B5B5B] mb-2">
                 {value.title}
               </h3>
-              <p className="text-base font-light text-gray-700">{value.desc}</p>
+              <p className="text-base leading-relaxed text-gray-700">{value.desc}</p>
             </motion.div>
           ))}
         </motion.div>

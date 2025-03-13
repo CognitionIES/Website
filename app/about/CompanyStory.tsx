@@ -19,13 +19,14 @@ export default function CompanyStory() {
           className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center"
         >
           <div className="lg:col-span-3">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#5B5B5B] mb-6 tracking-tight">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#003C46] mb-6 drop-shadow-md tracking-tight">
               {TEXT.STORY_TITLE}
             </h2>
-            <p className="text-lg font-light leading-relaxed text-justify text-gray-700 mb-6">
+            
+            <p className="text-lg leading-relaxed text-justify text-gray-700 mb-6">
               {TEXT.STORY_P1}
             </p>
-            <p className="text-lg font-light text-justify text-gray-700 mb-6 relative">
+            <p className="text-lg  text-justify text-gray-700 mb-6 relative">
               {TEXT.STORY_P2}
               <motion.span
                 initial={{ width: 0 }}
@@ -45,14 +46,14 @@ export default function CompanyStory() {
               {STATS.slice(0, 2).map((stat, index) => (
                 <div
                   key={index}
-                  className="flex items-center space-x-4 bg-[#0098AF] opacity-60 p-4 rounded-lg shadow-md border border-[#0098AF] opacity-30"
+                  className="flex items-center space-x-4 bg-[#0098AF] opacity-90 p-4 rounded-lg shadow-md border border-[#0098AF] opacity-30"
                 >
                   <div className="w-12 h-12 bg-[#5B5B5B] rounded-full flex items-center justify-center">
                     <span className="text-white font-bold text-xl">
                       {stat.stat}
                     </span>
                   </div>
-                  <p className="text-lg font-medium text-black">{stat.label}</p>
+                  <p className="text-lg leading-relaxed text-white   font-medium text-black">{stat.label}</p>
                 </div>
               ))}
             </div>
