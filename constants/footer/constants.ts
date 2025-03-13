@@ -11,9 +11,9 @@ export const FOOTER_CONSTANTS = {
       TITLE: "Useful Links",
       ITEMS: [
         ["Home", "/"],
-        ["Industries", "/industries"],
-        ["Expertise", "/expertise"],
-        ["Resources", "/resources"],
+        // ["Industries", "/industries"],
+        ["Services", "/expertise"],
+        ["Projects", "/resources"],
         ["Careers", "/careers"],
         ["About Us", "/about"],
       ],
@@ -24,9 +24,9 @@ export const FOOTER_CONSTANTS = {
       TITLE: "Socials",
       ITEMS: [
         ["LinkedIn", "https://linkedin.com/company/cognition-ies"],
-        ["Facebook", "https://facebook.com/cognition-ies"],
-        ["Instagram", "https://instagram.com/cognition-ies"],
-        ["Twitter", "https://twitter.com/cognition-ies"],
+        // ["Facebook", "https://facebook.com/cognition-ies"],
+        // ["Instagram", "https://instagram.com/cognition-ies"],
+        // ["Twitter", "https://twitter.com/cognition-ies"],
       ],
     },
   

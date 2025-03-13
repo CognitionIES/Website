@@ -8,19 +8,11 @@ export default function Content() {
       {/* Section 1: Service Name and Overview */}
       <section className="mb-12">
         <h1 className="text-4xl md:text-5xl font-bold text-[#003C46] mb-4 tracking-tight">
-          Piping Engineering
+          Reverse Engineering
           <span className="block w-20 h-1 bg-gradient-to-r from-[#0098AF] to-transparent mt-3 rounded-full" />
         </h1>
         <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-3xl font-light text-justify">
-          At Cognition, our Piping Engineering services are designed to deliver
-          efficient, safe, and optimized piping systems for industrial plants.
-          We specialize in creating detailed layouts, conducting rigorous
-          analysis, and managing materials to ensure seamless integration and
-          performance. With extensive expertise, our team collaborates with you
-          to address complex piping challenges, from design to documentation,
-          enhancing project reliability and compliance. Whether it’s a new
-          installation or an upgrade, we provide tailored solutions to meet your
-          specific piping needs.
+          At Cognition, our Reverse Engineering services enable you to recreate, analyze, and enhance existing systems with precision and efficiency. We leverage advanced scanning and modeling techniques to transform physical assets into accurate digital models, facilitating upgrades, maintenance, and integration. Our expert team ensures seamless data capture and detailed deliverables, empowering you to optimize plant performance and extend asset lifespan with confidence.
         </p>
       </section>
 
@@ -31,15 +23,11 @@ export default function Content() {
           <FiChevronRight className="ml-2 text-[#0098AF]" />
         </h2>
         <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-4 font-light">
-          We utilize industry-leading tools like AutoCAD Plant 3D, CAESAR II,
-          and PDMS to deliver precise and efficient piping engineering
-          solutions.
+          We utilize industry-leading tools like FARO Laser Scanner, Geomagic Design X, and AutoCAD to deliver precise and efficient reverse engineering solutions.
         </p>
         {/* Placeholder for slider with subtle shadow and border */}
         <div className="w-full h-24 bg-gray-100 flex items-center justify-center rounded-lg mt-4 border border-gray-200 shadow-sm">
-          <span className="text-gray-500 font-medium">
-            Logo Slider Carousel
-          </span>
+          <span className="text-gray-500 font-medium">Logo Slider Carousel</span>
         </div>
         {/* Decorative dot */}
         <div className="absolute top-4 right-4 w-3 h-3 bg-[#0098AF] rounded-full opacity-50" />
@@ -51,132 +39,80 @@ export default function Content() {
           What We Offer
         </h2>
         <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-6 max-w-3xl font-light text-justify">
-          We provide a comprehensive set of services to ensure your success in
-          Piping Engineering. Here’s how we can support you:
+          We provide a comprehensive set of services to ensure your success in Reverse Engineering. Here’s how we can support you:
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <ul className="space-y-4">
-            {/* Category 1: Piping Layout & Design */}
+            {/* Category 1: Advanced Scanning & Data Capture */}
             <li className="flex items-start gap-3">
               <span className="text-[#0098AF] text-lg">➢</span>
               <span className="font-semibold text-gray-800 text-lg">
-                Piping Layout & Design
+                Advanced Scanning & Data Capture
               </span>
             </li>
             <li className="flex items-start gap-3 ml-6">
               <span className="text-[#0098AF] text-base">•</span>
               <span className="text-gray-600 font-light">
-                Overall & Unit Plot Plans
+                High-Precision Laser Scanning for Existing Plants & Equipment
               </span>
             </li>
             <li className="flex items-start gap-3 ml-6">
               <span className="text-[#0098AF] text-base">•</span>
               <span className="text-gray-600 font-light">
-                Equipment Layout & General Arrangement Drawings
+                Creating Accurate 3D Laser Models from Scanned Point Cloud Data
               </span>
             </li>
             <li className="flex items-start gap-3 ml-6">
               <span className="text-[#0098AF] text-base">•</span>
               <span className="text-gray-600 font-light">
-                Piping Layout & General Arrangement Drawings
-              </span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
-                Piping Isometric Drawings
-              </span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
-                Line List / Line Schedule
-              </span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
-                Nozzle Orientation, Spool Fabrication, Special Supports &
-                Platform Design
-              </span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
-                Piping Support Design & Load Calculations
+                Supported File Formats: .pptx, .pcg, .xyz, .dwg, .dgn, .rvt, .fls
               </span>
             </li>
 
-            {/* Category 2: Material & Specification Management */}
+            {/* Category 2: 3D Modeling & Data Translation */}
             <li className="flex items-start gap-3">
               <span className="text-[#0098AF] text-lg">➢</span>
               <span className="font-semibold text-gray-800 text-lg">
-                Material & Specification Management
+                3D Modeling & Data Translation
               </span>
             </li>
             <li className="flex items-start gap-3 ml-6">
               <span className="text-[#0098AF] text-base">•</span>
               <span className="text-gray-600 font-light">
-                Piping Material Take-Off (MTO) & Bill of Materials (BOM)
+                Converting As-Built Data into Millimeter-Accurate 3D CAD Models
               </span>
             </li>
             <li className="flex items-start gap-3 ml-6">
               <span className="text-[#0098AF] text-base">•</span>
               <span className="text-gray-600 font-light">
-                Insulation, Painting, & Material Specifications
+                Generating Dumb Models from Laser Scans
               </span>
             </li>
             <li className="flex items-start gap-3 ml-6">
               <span className="text-[#0098AF] text-base">•</span>
               <span className="text-gray-600 font-light">
-                Specialty Items List
-              </span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
-                Valve & Piping Special Component Data Sheets
+                Transforming Dumb Models into Intelligent Models
               </span>
             </li>
           </ul>
           <ul className="space-y-4">
-            {/* Category 3: Analysis & Modeling */}
+            {/* Category 3: Deliverables & Final Outputs */}
             <li className="flex items-start gap-3">
               <span className="text-[#0098AF] text-lg">➢</span>
               <span className="font-semibold text-gray-800 text-lg">
-                Analysis & Modeling
+                Deliverables & Final Outputs
               </span>
             </li>
             <li className="flex items-start gap-3 ml-6">
               <span className="text-[#0098AF] text-base">•</span>
               <span className="text-gray-600 font-light">
-                Piping Stress Analysis
+                Extraction & Submission of Detailed Engineering Drawings & Reports
               </span>
             </li>
             <li className="flex items-start gap-3 ml-6">
               <span className="text-[#0098AF] text-base">•</span>
               <span className="text-gray-600 font-light">
-                3D Modeling & Simulation
-              </span>
-            </li>
-
-            {/* Category 4: Procurement & Documentation Support */}
-            <li className="flex items-start gap-3">
-              <span className="text-[#0098AF] text-lg">➢</span>
-              <span className="font-semibold text-gray-800 text-lg">
-                Procurement & Documentation Support
-              </span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
-                Technical Bid Evaluation (TBE) for Piping Components
-              </span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
-                As-Built Documentation & Updates
+                Integration of Reverse Engineered Models into Existing Design Workflows
               </span>
             </li>
           </ul>

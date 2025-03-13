@@ -295,9 +295,102 @@
 // }
 
 // */
+// "use client";
+
+// // Services section with expandable cards
+// import { useState } from "react";
+// import { Button } from "@/components/ui/button";
+// import { cn } from "@/lib/utils";
+// import Link from "next/link";
+// import { SERVICES, SERVICES_SECTION } from "@/constants/home/services";
+// import { motion } from "framer-motion";
+
+// export default function ServicesSection() {
+//   const [activeCard, setActiveCard] = useState<number>(1); // Default to Mobility
+
+//   return (
+//     <section className="w-full py-12 sm:py-16 lg:py-24 relative">
+//       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+//         <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#003C46] mb-4 drop-shadow-md">
+//           {SERVICES_SECTION.TITLE}
+//         </h1>
+//         <p className="text-base leading-relaxed text-gray-600 mb-8">
+//           {SERVICES_SECTION.DESCRIPTION}
+//         </p>
+//         <div className="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-6 lg:gap-8">
+//           {SERVICES.map((service) => (
+//             <div
+//               key={service.id}
+//               className={cn(
+//                 "rounded-xl overflow-hidden relative cursor-pointer transition-all duration-500 ease-in-out",
+//                 service.bgColor,
+//                 service.textColor,
+//                 activeCard === service.id ? "md:col-span-6" : "md:col-span-3"
+//               )}
+//               onMouseEnter={() => setActiveCard(service.id)}
+//             >
+//               <div
+//                 className="absolute inset-0 bg-cover bg-center transition-opacity duration-500"
+//                 style={{
+//                   backgroundImage: `url(${service.image})`,
+//                   opacity: activeCard === service.id ? 0 : 1,
+//                 }}
+//               />
+//               <div
+//                 className={cn(
+//                   "absolute inset-0 transition-opacity duration-500",
+//                   service.id === 2
+//                     ? "bg-gradient-to-b from-transparent to-[#000000] opacity-90"
+//                     : "bg-gradient-to-b from-transparent to-[#000000]/70 opacity-70"
+//                 )}
+//               />
+//               <div className="relative h-full p-8 flex flex-col justify-between min-h-[400px]">
+//                 <div>
+//                   <h2 className="text-3xl font-bold mb-4 text-white drop-shadow-md">
+//                     {service.title}
+//                   </h2>
+//                   <p
+//                     className={cn(
+//                       "text-lg transition-all duration-500 ease-in-out",
+//                       activeCard === service.id ? "opacity-90" : "opacity-0 h-0"
+//                     )}
+//                   >
+//                     {activeCard === service.id
+//                       ? service.fullDescription
+//                       : service.shortDescription}
+//                   </p>
+//                 </div>
+//                 <div className="flex justify-end mt-4">
+//                   <Link href={service.href}>
+//                     <Button
+//                       variant="secondary"
+//                       className="bg-[#0098AF] hover:bg-[#007B8F] text-white rounded-sm px-6 transition-transform duration-300"
+//                     >
+//                       Read More
+//                     </Button>
+//                   </Link>
+//                 </div>
+//               </div>
+//             </div>
+//           ))}
+//         </div>
+//         <motion.div
+//           initial={{ opacity: 0 }}
+//           animate={{ opacity: 0.15 }}
+//           transition={{
+//             delay: 1,
+//             duration: 1,
+//             repeat: Infinity,
+//             repeatType: "reverse",
+//           }}
+//           className="absolute top-1/3 left-16 w-5 h-5 bg-[#0098AF] opacity-30 rounded-full -z-10"
+//         />
+//       </div>
+//     </section>
+//   );
+// }
 "use client";
 
-// Services section with expandable cards
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -306,53 +399,78 @@ import { SERVICES, SERVICES_SECTION } from "@/constants/home/services";
 import { motion } from "framer-motion";
 
 export default function ServicesSection() {
-  const [activeCard, setActiveCard] = useState<number>(1); // Default to Mobility
+  const [activeCard, setActiveCard] = useState(1); // Default to Product Engineering
 
   return (
-    <section className="w-full py-12 sm:py-16 lg:py-24 relative">
+    <section className="w-full py-12 sm:py-16 lg:py-20 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#003C46] mb-4 drop-shadow-md">
-          {SERVICES_SECTION.TITLE}
-        </h1>
-        <p className="text-base leading-relaxed text-gray-600 mb-8">
-          {SERVICES_SECTION.DESCRIPTION}
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-6 lg:gap-8">
+        {/* Section Header */}
+        <div className="text-justify max-w-7xl mx-auto mb-12">
+          <h1 className="text-2xl sm:text-3xl  lg:text-4xl font-semibold text-[#003C46] mb-4 tracking-tight drop-shadow-sm">
+            {SERVICES_SECTION.TITLE}
+          </h1>
+          <p className="text-sm sm:text-base lg:text-lg leading-relaxed text-gray-600 ">
+            {SERVICES_SECTION.DESCRIPTION}
+          </p>
+        </div>
+
+        {/* Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-8 lg:gap-10">
           {SERVICES.map((service) => (
             <div
               key={service.id}
               className={cn(
-                "rounded-xl overflow-hidden relative cursor-pointer transition-all duration-500 ease-in-out",
-                service.bgColor,
+                "rounded-lg overflow-hidden relative cursor-pointer transition-all duration-500 ease-in-out bg-white shadow-md border border-gray-200/80",
                 service.textColor,
-                activeCard === service.id ? "md:col-span-6" : "md:col-span-3"
+                activeCard === service.id ? "md:col-span-7" : "md:col-span-5",
+                "hover:shadow-lg hover:bg-gray-50"
               )}
               onMouseEnter={() => setActiveCard(service.id)}
+              onClick={() => setActiveCard(service.id)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  setActiveCard(service.id);
+                }
+              }}
+              tabIndex={0}
+              role="button"
+              aria-expanded={activeCard === service.id}
+              aria-label={`${service.title} card. Press to ${
+                activeCard === service.id ? "collapse" : "expand"
+              }`}
             >
+              {/* Background Image */}
               <div
                 className="absolute inset-0 bg-cover bg-center transition-opacity duration-500"
                 style={{
                   backgroundImage: `url(${service.image})`,
-                  opacity: activeCard === service.id ? 0 : 1,
+                  opacity: activeCard === service.id ? 0.1 : 0.9,
                 }}
               />
+
+              {/* Gradient Overlay */}
               <div
                 className={cn(
                   "absolute inset-0 transition-opacity duration-500",
-                  service.id === 2
-                    ? "bg-gradient-to-b from-transparent to-[#000000] opacity-90"
-                    : "bg-gradient-to-b from-transparent to-[#000000]/70 opacity-70"
+                  activeCard === service.id
+                    ? "bg-gradient-to-br from-[#003C46]/85 to-[#0098AF]/95 opacity-100"
+                    : "bg-gradient-to-b from-transparent to-[#000000]/70 opacity-75"
                 )}
               />
-              <div className="relative h-full p-8 flex flex-col justify-between min-h-[400px]">
+
+              {/* Content */}
+              <div className="relative h-full p-6 sm:p-8 lg:p-8 flex flex-col justify-between min-h-[400px]">
                 <div>
-                  <h2 className="text-3xl font-bold mb-4 text-white drop-shadow-md">
+                  <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-4 text-white tracking-wide drop-shadow-md">
                     {service.title}
                   </h2>
                   <p
                     className={cn(
-                      "text-lg transition-all duration-500 ease-in-out",
-                      activeCard === service.id ? "opacity-90" : "opacity-0 h-0"
+                      "text-sm sm:text-base lg:text-lg  textjustify  leading-relaxed transition-all duration-500 ease-in-out",
+                      activeCard === service.id
+                        ? "text-white/90 opacity-100"
+                        : "text-white/80 opacity-0 h-0"
                     )}
                   >
                     {activeCard === service.id
@@ -360,31 +478,37 @@ export default function ServicesSection() {
                       : service.shortDescription}
                   </p>
                 </div>
-                <div className="flex justify-end mt-4">
+
+                {/* Button */}
+                <div className="flex justify-end mt-6">
                   <Link href={service.href}>
                     <Button
                       variant="secondary"
-                      className="bg-[#0098AF] hover:bg-[#007B8F] text-white rounded-sm px-6 transition-transform duration-300"
+                      className={cn(
+                        "bg-[#5b5b5b] text-white font-medium rounded-md px-6 py-2 transition-all duration-200",
+                        activeCard === service.id
+                          ? "hover:bg-white hover:shadow-md hover:text-[#000000]"
+                          : "bg-[#0098AF] hover:bg-[#003C46]"
+                      )}
                     >
-                      Read More
+                      Explore More
                     </Button>
                   </Link>
                 </div>
+
+                {/* Active Indicator Line */}
+                {activeCard === service.id && (
+                  <motion.div
+                    className="absolute bottom-0 left-0 h-1 bg-[#99D5DF] rounded-t-sm"
+                    initial={{ width: "0%" }}
+                    animate={{ width: "100%" }}
+                    transition={{ duration: 0.5, ease: "easeOut" }}
+                  />
+                )}
               </div>
             </div>
           ))}
         </div>
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.15 }}
-          transition={{
-            delay: 1,
-            duration: 1,
-            repeat: Infinity,
-            repeatType: "reverse",
-          }}
-          className="absolute top-1/3 left-16 w-5 h-5 bg-[#0098AF] opacity-30 rounded-full -z-10"
-        />
       </div>
     </section>
   );

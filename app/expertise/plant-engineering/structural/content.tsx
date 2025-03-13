@@ -8,20 +8,18 @@ export default function Content() {
       {/* Section 1: Service Name and Overview */}
       <section className="mb-12">
         <h1 className="text-4xl md:text-5xl font-bold text-[#003C46] mb-4 tracking-tight">
-          Piping Stress Analysis
+          Structural Engineering
           <span className="block w-20 h-1 bg-gradient-to-r from-[#0098AF] to-transparent mt-3 rounded-full" />
         </h1>
         <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-3xl font-light text-justify">
-          At Cognition, our Piping Stress Analysis services are dedicated to
-          ensuring the safety, reliability, and longevity of piping systems in
-          industrial plants. We employ advanced analytical techniques to
-          evaluate stress under various conditions, optimizing design and
-          supporting structures to meet stringent standards. With deep
-          expertise, our team collaborates with you to address complex
-          challenges, from high-pressure systems to seismic loads, delivering
-          tailored solutions that enhance operational efficiency and compliance.
-          Whether for new designs or existing upgrades, we provide comprehensive
-          stress analysis to safeguard your infrastructure.
+          At Cognition, our Structural Engineering services are designed to
+          deliver robust, safe, and efficient structural solutions for
+          industrial plants. We specialize in designing and analyzing
+          specialized structures, providing detailed engineering for complex
+          frameworks, and ensuring safe transportation and lifting operations.
+          Our expert team collaborates with you to meet project-specific
+          requirements, ensuring compliance with industry standards and
+          optimizing structural performance for long-term reliability.
         </p>
       </section>
 
@@ -32,8 +30,8 @@ export default function Content() {
           <FiChevronRight className="ml-2 text-[#0098AF]" />
         </h2>
         <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-4 font-light">
-          We utilize industry-leading tools like CAESAR II, AutoPIPE, and ANSYS
-          to deliver precise and efficient piping stress analysis solutions.
+          We utilize industry-leading tools like STAAD.Pro, SAP2000, and ANSYS
+          to deliver precise and efficient structural engineering solutions.
         </p>
         {/* Placeholder for slider with subtle shadow and border */}
         <div className="w-full h-24 bg-gray-100 flex items-center justify-center rounded-lg mt-4 border border-gray-200 shadow-sm">
@@ -52,153 +50,118 @@ export default function Content() {
         </h2>
         <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-6 max-w-3xl font-light text-justify">
           We provide a comprehensive set of services to ensure your success in
-          Piping Stress Analysis. Here’s how we can support you:
+          Structural Engineering. Here’s how we can support you:
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <ul className="space-y-4">
-            {/* Category 1: Types of Piping Stress Analysis */}
+            {/* Category 1: Specialized Structural Engineering */}
             <li className="flex items-start gap-3">
               <span className="text-[#0098AF] text-lg">➢</span>
               <span className="font-semibold text-gray-800 text-lg">
-                Types of Piping Stress Analysis
+                Specialized Structural Engineering
               </span>
             </li>
             <li className="flex items-start gap-3 ml-6">
               <span className="text-[#0098AF] text-base">•</span>
               <span className="text-gray-600 font-light">
-                Finite Element Analysis (FEA)
+                Hot Oil Heater Supporting Structures
               </span>
             </li>
             <li className="flex items-start gap-3 ml-6">
               <span className="text-[#0098AF] text-base">•</span>
               <span className="text-gray-600 font-light">
-                Surge & Slug Flow Analysis
+                Waste Heat Recovery Units (WHRU)
               </span>
             </li>
             <li className="flex items-start gap-3 ml-6">
               <span className="text-[#0098AF] text-base">•</span>
               <span className="text-gray-600 font-light">
-                Fatigue & Creep Assessment
+                Reactor Structures & FPSO Modules
               </span>
             </li>
             <li className="flex items-start gap-3 ml-6">
               <span className="text-[#0098AF] text-base">•</span>
               <span className="text-gray-600 font-light">
-                Displacement & Deflection Studies
-              </span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
-                Occasional Load Analysis (Wind & Seismic)
-              </span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
-                Sustained / Longitudinal Stress Evaluation
-              </span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
-                Piping Flexibility & Support Optimization
-              </span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
-                Elastic & Plastic Stress Analysis
+                Technological Structures & Heavy Industrial Frameworks
               </span>
             </li>
 
-            {/* Category 2: Critical System Stress Analysis Expertise */}
+            {/* Category 3: Transportation & Lifting Engineering */}
             <li className="flex items-start gap-3">
               <span className="text-[#0098AF] text-lg">➢</span>
               <span className="font-semibold text-gray-800 text-lg">
-                Critical System Stress Analysis Expertise
+                Transportation & Lifting Engineering
               </span>
             </li>
             <li className="flex items-start gap-3 ml-6">
               <span className="text-[#0098AF] text-base">•</span>
               <span className="text-gray-600 font-light">
-                Cryogenic Piping Systems
+                Structural Integrity Assessments for Transport
               </span>
             </li>
             <li className="flex items-start gap-3 ml-6">
               <span className="text-[#0098AF] text-base">•</span>
               <span className="text-gray-600 font-light">
-                Above-Ground & Underground Piping Networks
-              </span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
-                Jacketed Piping Systems
-              </span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
-                FRP (Fiberglass Reinforced Plastic) Piping Systems
-              </span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
-                Offshore & FPSO (Floating Production Storage & Offloading)
-                Piping Systems
-              </span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
-                High-Temperature & High-Pressure Piping
+                Lifting Analysis, Reports & Drawings
               </span>
             </li>
           </ul>
           <ul className="space-y-4">
-            {/* Category 3: Engineering Calculations & Validations */}
+            {/* Category 2: Structural Detailing & Analysis */}
+
             <li className="flex items-start gap-3">
               <span className="text-[#0098AF] text-lg">➢</span>
               <span className="font-semibold text-gray-800 text-lg">
-                Engineering Calculations & Validations
+                Structural Detailing & Analysis
               </span>
             </li>
             <li className="flex items-start gap-3 ml-6">
               <span className="text-[#0098AF] text-base">•</span>
               <span className="text-gray-600 font-light">
-                Trunnion Support Load Check
+                General Arrangement (GA), Erection, and Fabrication Drawings
               </span>
             </li>
             <li className="flex items-start gap-3 ml-6">
               <span className="text-[#0098AF] text-base">•</span>
               <span className="text-gray-600 font-light">
-                Flange Integrity Analysis (NC-3685.3 & API Standards)
+                Pipe Supports, Pipe Racks, Shelters, Platforms, Crossovers, and
+                Sleepers
               </span>
             </li>
             <li className="flex items-start gap-3 ml-6">
               <span className="text-[#0098AF] text-base">•</span>
               <span className="text-gray-600 font-light">
-                Upheaval & Buckling Analysis
+                Structural Stress Analysis for:
               </span>
             </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
+            <li className="flex items-start gap-3 ml-12">
+              <span className="text-[#0098AF] text-base">◦</span>
               <span className="text-gray-600 font-light">
-                Weld Strength Evaluation
+                Barge Transport & Offshore Load Handling
               </span>
             </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
+            <li className="flex items-start gap-3 ml-12">
+              <span className="text-[#0098AF] text-base">◦</span>
               <span className="text-gray-600 font-light">
-                U-Bolt Load Calculations
+                Dropped Object Impact Studies
               </span>
             </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
+            <li className="flex items-start gap-3 ml-12">
+              <span className="text-[#0098AF] text-base">◦</span>
               <span className="text-gray-600 font-light">
-                Collapse & Structural Stability Calculations
+                Transit & Survival Load Assessments
+              </span>
+            </li>
+            <li className="flex items-start gap-3 ml-12">
+              <span className="text-[#0098AF] text-base">◦</span>
+              <span className="text-gray-600 font-light">
+                Fire, Blast, and Fatigue Conditions
+              </span>
+            </li>
+            <li className="flex items-start gap-3 ml-12">
+              <span className="text-[#0098AF] text-base">◦</span>
+              <span className="text-gray-600 font-light">
+                In-Place Analysis (Operating, Damage, Extreme Scenarios)
               </span>
             </li>
           </ul>

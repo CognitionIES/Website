@@ -10,43 +10,24 @@ import {
   ArrowRight,
   Menu,
   X,
-  BarChart,
+  // BarChart,
   Calculator,
   Workflow,
-  Fuel,
-  Microscope,
-  HardHat,
-  Newspaper,
   Rss,
 } from "lucide-react";
 import {
-  
   Gauge,
   Shield,
-  Code,
-  Cloud,
-  Brain,
-  GitBranch,
-  CheckCircle,
-  Globe,
-  FlaskConical,
+  // Code,
+  // Cloud,
+  // Brain,
+  // GitBranch,
+  // CheckCircle,
+  // Globe,
 } from "lucide-react";
 import { Printer, Layers, Settings, FileText, Truck } from "lucide-react";
-import {
-  Car,
-  Forklift,
-  TramFront,
-  Plane,
-  Ship,
-  Leaf,
-  Cpu,
-  Droplet,
-  Zap,
-  Wheat,
-  Shirt,
-  Droplets,
-} from "lucide-react";
-import { Wrench, Factory, Server } from "lucide-react"; // Import icons
+import { Cpu, Droplet } from "lucide-react";
+import { Wrench, Factory } from "lucide-react"; // Import icons
 import Logo1 from "@/constants/images/WEB LOGO.png";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -200,195 +181,195 @@ const expertiseData: MainCategory[] = [
     },
   },
   // IT Services can remain as is with individual pages if preferred, or adjust similarly
-  {
-    title: "IT Services",
-    icon: <Server className="w-5 h-5 mr-2" />,
-    href: "/expertise/it-services",
-    subCategories: [
-      {
-        title: "Software Development",
-        href: "/expertise/it-services/software-development",
-        icon: <Code className="w-4 h-4" />,
-      },
-      {
-        title: "Cloud Solutions",
-        href: "/expertise/it-services/cloud-solutions",
-        icon: <Cloud className="w-4 h-4" />,
-      },
-      {
-        title: "Data Analytics",
-        href: "/expertise/it-services/data-analytics",
-        icon: <BarChart className="w-4 h-4" />,
-      },
-      {
-        title: "Cybersecurity",
-        href: "/expertise/it-services/cybersecurity",
-        icon: <Shield className="w-4 h-4" />,
-      },
-      {
-        title: "AI & Machine Learning",
-        href: "/expertise/it-services/ai-ml",
-        icon: <Brain className="w-4 h-4" />,
-      },
-      {
-        title: "DevOps Services",
-        href: "/expertise/it-services/devops",
-        icon: <GitBranch className="w-4 h-4" />,
-      },
-      {
-        title: "Quality Assurance",
-        href: "/expertise/it-services/qa",
-        icon: <CheckCircle className="w-4 h-4" />,
-      },
-      {
-        title: "Digital Transformation",
-        href: "/expertise/it-services/digital",
-        icon: <Globe className="w-4 h-4" />,
-      },
-    ],
-    image: {
-      src: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop",
-      alt: "IT Services",
-      title: "Innovative IT Solutions",
-    },
-  },
+  // {
+  //   title: "IT Services",
+  //   icon: <Server className="w-5 h-5 mr-2" />,
+  //   href: "/expertise/it-services",
+  //   subCategories: [
+  //     {
+  //       title: "Software Development",
+  //       href: "/expertise/it-services/software-development",
+  //       icon: <Code className="w-4 h-4" />,
+  //     },
+  //     {
+  //       title: "Cloud Solutions",
+  //       href: "/expertise/it-services/cloud-solutions",
+  //       icon: <Cloud className="w-4 h-4" />,
+  //     },
+  //     {
+  //       title: "Data Analytics",
+  //       href: "/expertise/it-services/data-analytics",
+  //       icon: <BarChart className="w-4 h-4" />,
+  //     },
+  //     {
+  //       title: "Cybersecurity",
+  //       href: "/expertise/it-services/cybersecurity",
+  //       icon: <Shield className="w-4 h-4" />,
+  //     },
+  //     {
+  //       title: "AI & Machine Learning",
+  //       href: "/expertise/it-services/ai-ml",
+  //       icon: <Brain className="w-4 h-4" />,
+  //     },
+  //     {
+  //       title: "DevOps Services",
+  //       href: "/expertise/it-services/devops",
+  //       icon: <GitBranch className="w-4 h-4" />,
+  //     },
+  //     {
+  //       title: "Quality Assurance",
+  //       href: "/expertise/it-services/qa",
+  //       icon: <CheckCircle className="w-4 h-4" />,
+  //     },
+  //     {
+  //       title: "Digital Transformation",
+  //       href: "/expertise/it-services/digital",
+  //       icon: <Globe className="w-4 h-4" />,
+  //     },
+  //   ],
+  //   image: {
+  //     src: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop",
+  //     alt: "IT Services",
+  //     title: "Innovative IT Solutions",
+  //   },
+  // },
 ];
 // Constants for menu data industries section
-const industriesData = [
-  {
-    title: "Mobility",
-    icon: <Car className="w-5 h-5" />,
-    href: "/industries/mobility",
-    subCategories: [
-      {
-        title: "Automotive",
-        icon: <Car className="w-4 h-4" />,
-        href: "/industries/mobility/automotive",
-      },
-      {
-        title: "Trucks and Off-Highway Vehicles",
-        icon: <Forklift className="w-4 h-4" />,
-        href: "/industries/mobility/trucks",
-      },
-      {
-        title: "Railways and Transportation",
-        icon: <TramFront className="w-4 h-4" />,
-        href: "/industries/mobility/railways",
-      },
-      {
-        title: "Aerospace and Defense",
-        icon: <Plane className="w-4 h-4" />,
-        href: "/industries/mobility/aerospace",
-      },
-      {
-        title: "Marine and Offshore",
-        icon: <Ship className="w-4 h-4" />,
-        href: "/industries/mobility/marine",
-      },
-    ],
-    image: {
-      src: "https://images.unsplash.com/photo-1517153295259-74eb0b416cee?auto=format&fit=crop&q=80",
-      alt: "Automotive manufacturing",
-      title: "Next-gen mobility solutions",
-    },
-  },
-  {
-    title: "Sustainability",
-    icon: <Leaf className="w-5 h-5" />,
-    href: "/industries/sustainability",
-    subCategories: [
-      {
-        title: "Discrete Manufacturing & Industrial Products",
-        href: "/industries/sustainability/discrete-manufacturing",
-        icon: <Factory className="w-4 h-4" />,
-      },
-      {
-        title: "Process Manufacturing",
-        href: "/industries/sustainability/process-manufacturing",
-        icon: <Settings className="w-4 h-4" />,
-        subSubCategories: [
-          {
-            title: "Oil and Gas",
-            href: "/industries/sustainability/process-manufacturing/oil-gas",
-            icon: <Fuel className="w-4 h-4" />,
-          },
-          {
-            title: "Chemicals and Petrochemicals",
-            href: "/industries/sustainability/process-manufacturing/chemicals",
-            icon: <FlaskConical className="w-4 h-4" />,
-          },
-          {
-            title: "Power and Energy",
-            href: "/industries/sustainability/process-manufacturing/power",
-            icon: <Zap className="w-4 h-4" />,
-          },
-          {
-            title: "Renewable Energy",
-            href: "/industries/sustainability/process-manufacturing/renewable",
-            icon: <Leaf className="w-4 h-4" />,
-          },
-          {
-            title: "Pharmaceuticals and Biotech",
-            href: "/industries/sustainability/process-manufacturing/pharma",
-            icon: <Microscope className="w-4 h-4" />,
-          },
-          {
-            title: "Agriculture and Agro-Processing",
-            href: "/industries/sustainability/process-manufacturing/agriculture",
-            icon: <Wheat className="w-4 h-4" />,
-          },
-          {
-            title: "Cement and Construction",
-            href: "/industries/sustainability/process-manufacturing/cement",
-            icon: <HardHat className="w-4 h-4" />,
-          },
-          {
-            title: "Textile and Apparel",
-            href: "/industries/sustainability/process-manufacturing/textile",
-            icon: <Shirt className="w-4 h-4" />,
-          },
-          {
-            title: "Water and Wastewater Treatment",
-            href: "/industries/sustainability/process-manufacturing/water",
-            icon: <Droplets className="w-4 h-4" />,
-          },
-          {
-            title: "Pulp and Paper",
-            href: "/industries/sustainability/process-manufacturing/pulp",
-            icon: <Newspaper className="w-4 h-4" />,
-          },
-        ],
-      },
-      {
-        title: "ABCDE",
-        href: "/industries/sustainability/discrete",
-        icon: <Cpu className="w-4 h-4" />,
-      },
-    ],
-    image: {
-      src: "https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?auto=format&fit=crop&q=80",
-      alt: "Sustainable manufacturing",
-      title: "Sustainable industrial solutions",
-    },
-  },
-  {
-    title: "Tech",
-    icon: <Cpu className="w-5 h-5" />,
-    href: "/industries/tech",
-    subCategories: [
-      {
-        title: "Digital Engineering",
-        href: "/industries/tech/digital-engineering",
-        icon: <Code className="w-4 h-4" />,
-      },
-    ],
-    image: {
-      src: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80",
-      alt: "Technology solutions",
-      title: "Advanced tech solutions",
-    },
-  },
-];
+// const industriesData = [
+//   {
+//     title: "Mobility",
+//     icon: <Car className="w-5 h-5" />,
+//     href: "/industries/mobility",
+//     subCategories: [
+//       {
+//         title: "Automotive",
+//         icon: <Car className="w-4 h-4" />,
+//         href: "/industries/mobility/automotive",
+//       },
+//       {
+//         title: "Trucks and Off-Highway Vehicles",
+//         icon: <Forklift className="w-4 h-4" />,
+//         href: "/industries/mobility/trucks",
+//       },
+//       {
+//         title: "Railways and Transportation",
+//         icon: <TramFront className="w-4 h-4" />,
+//         href: "/industries/mobility/railways",
+//       },
+//       {
+//         title: "Aerospace and Defense",
+//         icon: <Plane className="w-4 h-4" />,
+//         href: "/industries/mobility/aerospace",
+//       },
+//       {
+//         title: "Marine and Offshore",
+//         icon: <Ship className="w-4 h-4" />,
+//         href: "/industries/mobility/marine",
+//       },
+//     ],
+//     image: {
+//       src: "https://images.unsplash.com/photo-1517153295259-74eb0b416cee?auto=format&fit=crop&q=80",
+//       alt: "Automotive manufacturing",
+//       title: "Next-gen mobility solutions",
+//     },
+//   },
+//   {
+//     title: "Sustainability",
+//     icon: <Leaf className="w-5 h-5" />,
+//     href: "/industries/sustainability",
+//     subCategories: [
+//       {
+//         title: "Discrete Manufacturing & Industrial Products",
+//         href: "/industries/sustainability/discrete-manufacturing",
+//         icon: <Factory className="w-4 h-4" />,
+//       },
+//       {
+//         title: "Process Manufacturing",
+//         href: "/industries/sustainability/process-manufacturing",
+//         icon: <Settings className="w-4 h-4" />,
+//         subSubCategories: [
+//           {
+//             title: "Oil and Gas",
+//             href: "/industries/sustainability/process-manufacturing/oil-gas",
+//             icon: <Fuel className="w-4 h-4" />,
+//           },
+//           {
+//             title: "Chemicals and Petrochemicals",
+//             href: "/industries/sustainability/process-manufacturing/chemicals",
+//             icon: <FlaskConical className="w-4 h-4" />,
+//           },
+//           {
+//             title: "Power and Energy",
+//             href: "/industries/sustainability/process-manufacturing/power",
+//             icon: <Zap className="w-4 h-4" />,
+//           },
+//           {
+//             title: "Renewable Energy",
+//             href: "/industries/sustainability/process-manufacturing/renewable",
+//             icon: <Leaf className="w-4 h-4" />,
+//           },
+//           {
+//             title: "Pharmaceuticals and Biotech",
+//             href: "/industries/sustainability/process-manufacturing/pharma",
+//             icon: <Microscope className="w-4 h-4" />,
+//           },
+//           {
+//             title: "Agriculture and Agro-Processing",
+//             href: "/industries/sustainability/process-manufacturing/agriculture",
+//             icon: <Wheat className="w-4 h-4" />,
+//           },
+//           {
+//             title: "Cement and Construction",
+//             href: "/industries/sustainability/process-manufacturing/cement",
+//             icon: <HardHat className="w-4 h-4" />,
+//           },
+//           {
+//             title: "Textile and Apparel",
+//             href: "/industries/sustainability/process-manufacturing/textile",
+//             icon: <Shirt className="w-4 h-4" />,
+//           },
+//           {
+//             title: "Water and Wastewater Treatment",
+//             href: "/industries/sustainability/process-manufacturing/water",
+//             icon: <Droplets className="w-4 h-4" />,
+//           },
+//           {
+//             title: "Pulp and Paper",
+//             href: "/industries/sustainability/process-manufacturing/pulp",
+//             icon: <Newspaper className="w-4 h-4" />,
+//           },
+//         ],
+//       },
+//       {
+//         title: "ABCDE",
+//         href: "/industries/sustainability/discrete",
+//         icon: <Cpu className="w-4 h-4" />,
+//       },
+//     ],
+//     image: {
+//       src: "https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?auto=format&fit=crop&q=80",
+//       alt: "Sustainable manufacturing",
+//       title: "Sustainable industrial solutions",
+//     },
+//   },
+//   {
+//     title: "Tech",
+//     icon: <Cpu className="w-5 h-5" />,
+//     href: "/industries/tech",
+//     subCategories: [
+//       {
+//         title: "Digital Engineering",
+//         href: "/industries/tech/digital-engineering",
+//         icon: <Code className="w-4 h-4" />,
+//       },
+//     ],
+//     image: {
+//       src: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80",
+//       alt: "Technology solutions",
+//       title: "Advanced tech solutions",
+//     },
+//   },
+// ];
 // Arrow variants for animation
 const arrowVariants = {
   closed: { rotate: 0 },
@@ -400,15 +381,15 @@ export function MegaMenu() {
   const [activeCategory, setActiveCategory] = useState<number>(0);
   const [isSticky, setIsSticky] = useState(true);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [expandedSubCategory, setExpandedSubCategory] = useState<string | null>(
-    null
-  );
+  // const [expandedSubCategory, setExpandedSubCategory] = useState<string | null>(
+  //   null
+  // );
   const dropdownRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
   const pathname = usePathname();
-  const toggleSubCategory = (title: string) => {
-    setExpandedSubCategory(expandedSubCategory === title ? null : title);
-  };
+  // const toggleSubCategory = (title: string) => {
+  //   setExpandedSubCategory(expandedSubCategory === title ? null : title);
+  // };
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -417,7 +398,7 @@ export function MegaMenu() {
         !dropdownRef.current.contains(event.target as Node)
       ) {
         setActiveDropdown(null);
-        setExpandedSubCategory(null);
+        //setExpandedSubCategory(null);
       }
     }
 
@@ -474,7 +455,7 @@ export function MegaMenu() {
               </Link>
 
               {/* Industries Dropdown */}
-              <div
+              {/* <div
                 className="relative"
                 onMouseEnter={() => {
                   setActiveDropdown("industries");
@@ -502,7 +483,7 @@ export function MegaMenu() {
                 {activeDropdown === "industries" && (
                   <div className="absolute z-[100] left-1/2 transform -translate-x-1/2 mt-0 w-screen max-w-7xl bg-white shadow-lg border-t border-gray-100 transition-all duration-300 ease-in-out min-h-[350px]">
                     <div className="grid grid-cols-3 min-h-[450px]">
-                      {/* Main Categories */}
+                      {/* Main Categories *
                       <div className="space-y-1 bg-[#003c46] flex flex-col py-2">
                         {industriesData.map((category, index) => (
                           <Link
@@ -529,7 +510,7 @@ export function MegaMenu() {
                         ))}
                       </div>
 
-                      {/* Sub Categories with Icons */}
+                      {/* Sub Categories with Icons 
                       <div className="space-y-1 bg-[#0098af] flex flex-col py-2">
                         {industriesData[activeCategory].subCategories.map(
                           (subCategory) => (
@@ -586,7 +567,7 @@ export function MegaMenu() {
                         )}
                       </div>
 
-                      {/* Featured Image */}
+                      {/* Featured Image 
                       <div className="bg-[#99d5df] shadow-sm flex flex-col items-center gap-4 min-h-[400px] p-4">
                         <div className="w-full h-48 overflow-hidden">
                           <Image
@@ -607,7 +588,7 @@ export function MegaMenu() {
                     </div>
                   </div>
                 )}
-              </div>
+              </div> */}
 
               {/* Expertise Dropdown */}
               <div
@@ -623,7 +604,7 @@ export function MegaMenu() {
                     isSticky ? "py-3" : "py-4"
                   }`}
                 >
-                  Expertise
+                  Services
                   <motion.span
                     variants={arrowVariants}
                     initial="closed"
@@ -635,7 +616,7 @@ export function MegaMenu() {
                 </button>
 
                 {activeDropdown === "expertise" && (
-                  <div className="absolute z-[100] transform -translate-x-[54%] mt-0 w-screen max-w-7xl bg-white shadow-lg border-t border-gray-100 transition-all duration-300 ease-in-out min-h-[300px]">
+                  <div className="absolute z-[100] transform -translate-x-[62%] mt-0 w-screen max-w-7xl bg-white shadow-lg border-t border-gray-100 transition-all duration-300 ease-in-out min-h-[300px]">
                     <div className="grid grid-cols-3 min-h-[450px]">
                       {/* Main Categories */}
                       <div className="space-y-1 bg-[#003c46] flex flex-col py-2">
@@ -782,7 +763,7 @@ export function MegaMenu() {
                 Home
               </Link>
 
-              {/* Mobile Industries Dropdown */}
+              {/* Mobile Industries Dropdown
               <div className="space-y-1">
                 <button
                   onClick={() =>
@@ -822,7 +803,7 @@ export function MegaMenu() {
                     ))}
                   </div>
                 )}
-              </div>
+              </div> */}
 
               {/* Mobile Expertise Dropdown */}
               <div className="space-y-1">

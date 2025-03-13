@@ -96,6 +96,7 @@ import AboutUs from "@/components/HomePage/AboutUs";
 import AccordionDemo from "@/components/AccordionDemo";
 import ContactUs from "@/components/HomePage/ContactUs";
 import dynamic from "next/dynamic";
+import RecentProjects from "@/components/HomePage/RecentProjects";
 
 const TestimonialSlider = dynamic(
   () => import("@/components/HomePage/Testimonials"),
@@ -123,9 +124,13 @@ export default function Home() {
         <section className="bg-gradient-to-b from-gray-50 to-[#F5FDFF]">
           <ServicesSection />
         </section>
-        
+        <section className="bg-gradient-to-b from-gray-50 to-[#F5FDFF]">
+          <RecentProjects />
+          </section>
         <section className="bg-white">
           <AccordionDemo />
+        </section>
+        <section>
         </section>
         <section className="bg-gradient-to-b from-[#0098AF]/5 to-gray-50">
           <TestimonialSlider />
