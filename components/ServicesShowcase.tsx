@@ -9,7 +9,7 @@ const services = [
     id: 1,
     title: "Product Engineering",
     description:
-      "We deliver end-to-end product solutions with expertise in Mechanical Design, Electrical Engineering, CAE/CFD, Hydraulic Systems, Prototyping, Asset Management, Embedded Systems, Technical Publications, and Supply Chain Management—transforming ideas into innovative, market-ready products.",
+      "We deliver end-to-end product solutions with services in Mechanical Design, Electrical Engineering, CAE/CFD, Hydraulic Systems, Prototyping, Asset Management, Embedded Systems, Technical Publications, and Supply Chain Management—transforming ideas into innovative, market-ready products.",
     color: "bg-[#0098AF]",
     image:
       "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200",

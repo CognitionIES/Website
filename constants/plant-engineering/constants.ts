@@ -27,7 +27,7 @@ import {
     // Hero Section
     HERO: {
       IMAGE: "https://images.unsplash.com/photo-1581094794329-c8112c4e5190?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80",
-      TITLE: "Plant Engineering Expertise",
+      TITLE: "Plant Engineering services",
       SUBTITLE: "Innovative engineering solutions for complex challenges",
     },
   
@@ -50,7 +50,7 @@ import {
           description: "Enhancing plant processes and ensuring compliance with safety standards to minimize risks and improve efficiency.",
           image: "https://images.unsplash.com/photo-1581091012184-5e0e349d1b5e?auto=format&fit=crop&w=1200&q=80",
           alt: "Process safety equipment",
-          href: "/expertise/plant-engineering/process-and-safety",
+          href: "/services/plant-engineering/process-and-safety",
         },
         {
           icon: Wrench,
@@ -58,7 +58,7 @@ import {
           description: "Designing and maintaining robust mechanical systems for optimal plant performance and reliability.",
           image: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=1200&q=80",
           alt: "Mechanical engineering tools",
-          href: "/expertise/plant-engineering/mechanical",
+          href: "/services/plant-engineering/mechanical",
         },
         {
           icon: Pipeline,
@@ -66,7 +66,7 @@ import {
           description: "Crafting efficient piping systems for the safe transport of fluids and gases throughout the plant.",
           image: "https://images.unsplash.com/photo-1507337272725-eec743fbdc31?auto=format&fit=crop&w=1200&q=80",
           alt: "Piping engineering layout",
-          href: "/expertise/plant-engineering/piping",
+          href: "/services/plant-engineering/piping",
         },
         {
           icon: Gauge,
@@ -74,7 +74,7 @@ import {
           description: "Analyzing piping systems to ensure structural integrity under various operating conditions.",
           image: "https://images.unsplash.com/photo-1581092335397-9583eb92d232?auto=format&fit=crop&w=1200&q=80",
           alt: "Piping stress analysis dashboard",
-          href: "/expertise/plant-engineering/piping-stress-analysis",
+          href: "/services/plant-engineering/piping-stress-analysis",
         },
         {
           icon: Building2,
@@ -82,7 +82,7 @@ import {
           description: "Providing foundational civil engineering solutions for durable and safe plant infrastructure.",
           image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80",
           alt: "Civil engineering construction",
-          href: "/expertise/plant-engineering/civil",
+          href: "/services/plant-engineering/civil",
         },
         {
           icon: Building2,
@@ -90,7 +90,7 @@ import {
           description: "Designing strong, stable structures to support plant operations and withstand environmental challenges.",
           image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80",
           alt: "Structural engineering framework",
-          href: "/expertise/plant-engineering/structural",
+          href: "/services/plant-engineering/structural",
         },
         {
           icon: Fan,
@@ -98,7 +98,7 @@ import {
           description: "Implementing reliable electrical systems to power plant operations efficiently and safely.",
           image: "https://images.unsplash.com/photo-1581094282220-1e7b2b35b7b8?auto=format&fit=crop&w=1200&q=80",
           alt: "Electrical engineering panel",
-          href: "/expertise/plant-engineering/electrical",
+          href: "/services/plant-engineering/electrical",
         },
         {
           icon: Gauge,
@@ -106,7 +106,7 @@ import {
           description: "Integrating advanced instrumentation for precise monitoring and control of plant processes.",
           image: "https://images.unsplash.com/photo-1581092335397-9583eb92d232?auto=format&fit=crop&w=1200&q=80",
           alt: "Instrumentation control system",
-          href: "/expertise/plant-engineering/instrumentation",
+          href: "/services/plant-engineering/instrumentation",
         },
         {
           icon: Cpu,
@@ -114,7 +114,7 @@ import {
           description: "Delivering pre-engineered modular solutions for faster installation and operational flexibility.",
           image: "https://images.unsplash.com/photo-1581093458791-89b6f8c3b962?auto=format&fit=crop&w=1200&q=80",
           alt: "Modular plant package",
-          href: "/expertise/plant-engineering/modular-package",
+          href: "/services/plant-engineering/modular-package",
         },
         {
           icon: Flask,
@@ -122,7 +122,7 @@ import {
           description: "Analyzing existing systems to recreate or improve designs for enhanced performance.",
           image: "https://images.unsplash.com/photo-1581092919530-5957b3129a36?auto=format&fit=crop&w=1200&q=80",
           alt: "Reverse engineering process",
-          href: "/expertise/plant-engineering/reverse-engineering",
+          href: "/services/plant-engineering/reverse-engineering",
         },
         {
           icon: ClipboardList,
@@ -130,7 +130,7 @@ import {
           description: "Streamlining procurement processes to source quality materials and equipment on time and within budget.",
           image: "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?auto=format&fit=crop&w=1200&q=80",
           alt: "Procurement planning meeting",
-          href: "/expertise/plant-engineering/procurement-support",
+          href: "/services/plant-engineering/procurement-support",
         },
       ] as Service[],
     },
@@ -146,7 +146,7 @@ import {
         },
         {
           question: "What industries do you serve?",
-          answer: "We work across industries like automotive, aerospace, heavy machinery, energy, healthcare, and manufacturing. Our expertise allows us to create tailored solutions for various plant operations.",
+          answer: "We work across industries like automotive, aerospace, heavy machinery, energy, healthcare, and manufacturing. Our services allows us to create tailored solutions for various plant operations.",
         },
         {
           question: "Can you help upgrade an existing plant?",

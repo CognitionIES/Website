@@ -57,55 +57,55 @@ export interface MainCategory {
   };
 }
 
-export const expertiseData: MainCategory[] = [
+export const servicesData: MainCategory[] = [
   {
     title: "Product Engineering",
-    href: "/expertise/product-engineering",
+    href: "/services/product-engineering",
     icon: <Wrench className="w-5 h-5 mr-2" />,
     subCategories: [
       {
         title: "Mechanical Design Services",
-        href: "/expertise/product-engineering?section=mechanical",
+        href: "/services/product-engineering?section=mechanical",
         icon: <Car className="w-4 h-4" />,
       },
       {
         title: "Electrical Engineering Services",
-        href: "/expertise/product-engineering?section=electrical",
+        href: "/services/product-engineering?section=electrical",
         icon: <Zap className="w-4 h-4" />,
       },
       {
         title: "CAE/CFD",
-        href: "/expertise/product-engineering?section=cae-cfd",
+        href: "/services/product-engineering?section=cae-cfd",
         icon: <BarChart className="w-4 h-4" />,
       },
       {
         title: "Hydraulic Engineering Services",
-        href: "/expertise/product-engineering?section=hydraulic",
+        href: "/services/product-engineering?section=hydraulic",
         icon: <Droplet className="w-4 h-4" />,
       },
       {
         title: "Prototyping and 3D Printing",
-        href: "/expertise/product-engineering?section=prototyping",
+        href: "/services/product-engineering?section=prototyping",
         icon: <Printer className="w-4 h-4" />,
       },
       {
         title: "Asset Management",
-        href: "/expertise/product-engineering?section=asset-management",
+        href: "/services/product-engineering?section=asset-management",
         icon: <Layers className="w-4 h-4" />,
       },
       {
         title: "Embedded Systems Engineering",
-        href: "/expertise/product-engineering?section=embedded-systems",
+        href: "/services/product-engineering?section=embedded-systems",
         icon: <Settings className="w-4 h-4" />,
       },
       {
         title: "Technical Publication",
-        href: "/expertise/product-engineering?section=technical-publication",
+        href: "/services/product-engineering?section=technical-publication",
         icon: <FileText className="w-4 h-4" />,
       },
       {
         title: "Supply Chain Management / Procurement",
-        href: "/expertise/product-engineering?section=supply-chain",
+        href: "/services/product-engineering?section=supply-chain",
         icon: <Truck className="w-4 h-4" />,
       },
     ],
@@ -117,57 +117,57 @@ export const expertiseData: MainCategory[] = [
   },
   {
     title: "Plant Engineering",
-    href: "/expertise/plant-engineering",
+    href: "/services/plant-engineering",
     icon: <Factory className="w-5 h-5 mr-2" />,
     subCategories: [
       {
         title: "Mechanical & Electrical Engineering Services",
-        href: "/expertise/plant-engineering?section=mechanical-electrical",
+        href: "/services/plant-engineering?section=mechanical-electrical",
         icon: <Car className="w-4 h-4" />,
       },
       {
         title: "Process Engineering Services",
-        href: "/expertise/plant-engineering?section=process",
+        href: "/services/plant-engineering?section=process",
         icon: <Settings className="w-4 h-4" />,
       },
       {
         title: "Piping & Fluid System Services",
-        href: "/expertise/plant-engineering?section=piping-fluid",
+        href: "/services/plant-engineering?section=piping-fluid",
         icon: <Droplet className="w-4 h-4" />,
       },
       {
         title: "Civil & Structural Engineering Services",
-        href: "/expertise/plant-engineering?section=civil-structural",
+        href: "/services/plant-engineering?section=civil-structural",
         icon: <Layers className="w-4 h-4" />,
       },
       {
         title: "HVAC & Ventilation System Services",
-        href: "/expertise/plant-engineering?section=hvac",
+        href: "/services/plant-engineering?section=hvac",
         icon: <Fan className="w-4 h-4" />,
       },
       {
         title: "Instrumentation Engineering Services",
-        href: "/expertise/plant-engineering?section=instrumentation",
+        href: "/services/plant-engineering?section=instrumentation",
         icon: <Gauge className="w-4 h-4" />,
       },
       {
         title: "Safety & Compliance Services",
-        href: "/expertise/plant-engineering?section=safety-compliance",
+        href: "/services/plant-engineering?section=safety-compliance",
         icon: <Shield className="w-4 h-4" />,
       },
       {
         title: "Energy Management & Sustainability Services",
-        href: "/expertise/plant-engineering?section=energy-management",
+        href: "/services/plant-engineering?section=energy-management",
         icon: <Leaf className="w-4 h-4" />,
       },
       {
         title: "Digitalization & Industry 4.0 Services",
-        href: "/expertise/plant-engineering?section=digitalization",
+        href: "/services/plant-engineering?section=digitalization",
         icon: <Cpu className="w-4 h-4" />,
       },
       {
         title: "Project Management",
-        href: "/expertise/plant-engineering?section=project-management",
+        href: "/services/plant-engineering?section=project-management",
         icon: <Clipboard className="w-4 h-4" />,
       },
     ],
@@ -181,46 +181,46 @@ export const expertiseData: MainCategory[] = [
   {
     title: "IT Services",
     icon: <Server className="w-5 h-5 mr-2" />,
-    href: "/expertise/it-services",
+    href: "/services/it-services",
     subCategories: [
       {
         title: "Software Development",
-        href: "/expertise/it-services/software-development",
+        href: "/services/it-services/software-development",
         icon: <Code className="w-4 h-4" />,
       },
       {
         title: "Cloud Solutions",
-        href: "/expertise/it-services/cloud-solutions",
+        href: "/services/it-services/cloud-solutions",
         icon: <Cloud className="w-4 h-4" />,
       },
       {
         title: "Data Analytics",
-        href: "/expertise/it-services/data-analytics",
+        href: "/services/it-services/data-analytics",
         icon: <BarChart className="w-4 h-4" />,
       },
       {
         title: "Cybersecurity",
-        href: "/expertise/it-services/cybersecurity",
+        href: "/services/it-services/cybersecurity",
         icon: <Shield className="w-4 h-4" />,
       },
       {
         title: "AI & Machine Learning",
-        href: "/expertise/it-services/ai-ml",
+        href: "/services/it-services/ai-ml",
         icon: <Brain className="w-4 h-4" />,
       },
       {
         title: "DevOps Services",
-        href: "/expertise/it-services/devops",
+        href: "/services/it-services/devops",
         icon: <GitBranch className="w-4 h-4" />,
       },
       {
         title: "Quality Assurance",
-        href: "/expertise/it-services/qa",
+        href: "/services/it-services/qa",
         icon: <CheckCircle className="w-4 h-4" />,
       },
       {
         title: "Digital Transformation",
-        href: "/expertise/it-services/digital",
+        href: "/services/it-services/digital",
         icon: <Globe className="w-4 h-4" />,
       },
     ],

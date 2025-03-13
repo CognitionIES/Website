@@ -55,55 +55,55 @@ interface MainCategory {
 }
 
 // In MegaMenu.tsx
-const expertiseData: MainCategory[] = [
+const servicesData: MainCategory[] = [
   {
     title: "Product Engineering",
-    href: "/expertise",
+    href: "/services",
     icon: <Wrench className="w-5 h-5 mr-2" />,
     subCategories: [
       {
         title: "Mechanical Design Services",
-        href: "/expertise?section=mechanical",
+        href: "/services?section=mechanical",
         icon: <FontAwesomeIcon icon={faGears} className="w-5 h-5" />,
       },
       {
         title: "Electrical Engineering Services",
-        href: "/expertise?section=electrical",
+        href: "/services?section=electrical",
         icon: <FontAwesomeIcon icon={faPlugCircleBolt} className="w-4 h-4" />,
       },
       {
         title: "CAE/CFD",
-        href: "/expertise?section=cae-cfd",
+        href: "/services?section=cae-cfd",
         icon: <Calculator className="w-4 h-4" />,
       },
       {
         title: "Hydraulic Engineering Services",
-        href: "/expertise?section=hydraulic",
+        href: "/services?section=hydraulic",
         icon: <Workflow className="w-4 h-4" />,
       },
       {
         title: "Prototyping and 3D Printing",
-        href: "/expertise?section=prototyping",
+        href: "/services?section=prototyping",
         icon: <Printer className="w-4 h-4" />,
       },
       {
         title: "Asset Management",
-        href: "/expertise?section=asset-management",
+        href: "/services?section=asset-management",
         icon: <Layers className="w-4 h-4" />,
       },
       {
         title: "Embedded Systems Engineering",
-        href: "/expertise?section=embedded-systems",
+        href: "/services?section=embedded-systems",
         icon: <Cpu className="w-4 h-4" />,
       },
       {
         title: "Technical Publication",
-        href: "/expertise?section=technical-publication",
+        href: "/services?section=technical-publication",
         icon: <FileText className="w-4 h-4" />,
       },
       {
         title: "Supply Chain Management / Procurement",
-        href: "/expertise?section=supply-chain",
+        href: "/services?section=supply-chain",
         icon: <Truck className="w-4 h-4" />,
       },
     ],
@@ -115,62 +115,62 @@ const expertiseData: MainCategory[] = [
   },
   {
     title: "Plant Engineering",
-    href: "/expertise/plant-engineering",
+    href: "/services/plant-engineering",
     icon: <Factory className="w-5 h-5 mr-2" />,
     subCategories: [
       {
         title: "Process & Safety Engineering",
-        href: "/expertise/plant-engineering/process-and-safety",
+        href: "/services/plant-engineering/process-and-safety",
         icon: <Rss className="w-4 h-4" />,
       },
       {
         title: "Mechanical Engineering",
-        href: "/expertise/plant-engineering/mechanical",
+        href: "/services/plant-engineering/mechanical",
         icon: <Settings className="w-4 h-4" />,
       },
       {
         title: "Piping Engineering",
-        href: "/expertise/plant-engineering/piping",
+        href: "/services/plant-engineering/piping",
         icon: <Droplet className="w-4 h-4" />,
       },
       {
         title: "Piping Stress Analysis",
-        href: "/expertise/plant-engineering/piping-stress-analysis",
+        href: "/services/plant-engineering/piping-stress-analysis",
         icon: <Layers className="w-4 h-4" />,
       },
       {
         title: "Civil Engineering",
-        href: "/expertise/plant-engineering/civil",
+        href: "/services/plant-engineering/civil",
         icon: <Gauge className="w-4 h-4" />,
       },
       {
         title: "Structural Engineering",
-        href: "/expertise/plant-engineering/structural",
+        href: "/services/plant-engineering/structural",
         icon: <Shield className="w-4 h-4" />,
       },
       {
         title: "Electrical Engineering",
-        href: "/expertise/plant-engineering/electrical",
+        href: "/services/plant-engineering/electrical",
         icon: <Shield className="w-4 h-4" />,
       },
       {
         title: "Instrumentation Engineering",
-        href: "/expertise/plant-engineering/instrumentation",
+        href: "/services/plant-engineering/instrumentation",
         icon: <Shield className="w-4 h-4" />,
       },
       {
         title: "Modular Package",
-        href: "/expertise/plant-engineering/modular-package",
+        href: "/services/plant-engineering/modular-package",
         icon: <Shield className="w-4 h-4" />,
       },
       {
         title: "Reverse Engineering",
-        href: "/expertise/plant-engineering/reverse-engineering",
+        href: "/services/plant-engineering/reverse-engineering",
         icon: <Shield className="w-4 h-4" />,
       },
       {
         title: "Procurement Support",
-        href: "/expertise/plant-engineering/procurement-support",
+        href: "/services/plant-engineering/procurement-support",
         icon: <Shield className="w-4 h-4" />,
       },
     ],
@@ -184,46 +184,46 @@ const expertiseData: MainCategory[] = [
   // {
   //   title: "IT Services",
   //   icon: <Server className="w-5 h-5 mr-2" />,
-  //   href: "/expertise/it-services",
+  //   href: "/services/it-services",
   //   subCategories: [
   //     {
   //       title: "Software Development",
-  //       href: "/expertise/it-services/software-development",
+  //       href: "/services/it-services/software-development",
   //       icon: <Code className="w-4 h-4" />,
   //     },
   //     {
   //       title: "Cloud Solutions",
-  //       href: "/expertise/it-services/cloud-solutions",
+  //       href: "/services/it-services/cloud-solutions",
   //       icon: <Cloud className="w-4 h-4" />,
   //     },
   //     {
   //       title: "Data Analytics",
-  //       href: "/expertise/it-services/data-analytics",
+  //       href: "/services/it-services/data-analytics",
   //       icon: <BarChart className="w-4 h-4" />,
   //     },
   //     {
   //       title: "Cybersecurity",
-  //       href: "/expertise/it-services/cybersecurity",
+  //       href: "/services/it-services/cybersecurity",
   //       icon: <Shield className="w-4 h-4" />,
   //     },
   //     {
   //       title: "AI & Machine Learning",
-  //       href: "/expertise/it-services/ai-ml",
+  //       href: "/services/it-services/ai-ml",
   //       icon: <Brain className="w-4 h-4" />,
   //     },
   //     {
   //       title: "DevOps Services",
-  //       href: "/expertise/it-services/devops",
+  //       href: "/services/it-services/devops",
   //       icon: <GitBranch className="w-4 h-4" />,
   //     },
   //     {
   //       title: "Quality Assurance",
-  //       href: "/expertise/it-services/qa",
+  //       href: "/services/it-services/qa",
   //       icon: <CheckCircle className="w-4 h-4" />,
   //     },
   //     {
   //       title: "Digital Transformation",
-  //       href: "/expertise/it-services/digital",
+  //       href: "/services/it-services/digital",
   //       icon: <Globe className="w-4 h-4" />,
   //     },
   //   ],
@@ -590,11 +590,11 @@ export function MegaMenu() {
                 )}
               </div> */}
 
-              {/* Expertise Dropdown */}
+              {/* services Dropdown */}
               <div
                 className="relative"
                 onMouseEnter={() => {
-                  setActiveDropdown("expertise");
+                  setActiveDropdown("services");
                   setActiveCategory(0);
                 }}
                 onMouseLeave={() => setActiveDropdown(null)}
@@ -608,19 +608,19 @@ export function MegaMenu() {
                   <motion.span
                     variants={arrowVariants}
                     initial="closed"
-                    animate={activeDropdown === "expertise" ? "open" : "closed"}
+                    animate={activeDropdown === "services" ? "open" : "closed"}
                     transition={{ duration: 0.2 }}
                   >
                     <ChevronDown className="ml- h-4 w-4" />
                   </motion.span>
                 </button>
 
-                {activeDropdown === "expertise" && (
+                {activeDropdown === "services" && (
                   <div className="absolute z-[100] transform -translate-x-[62%] mt-0 w-screen max-w-7xl bg-white shadow-lg border-t border-gray-100 transition-all duration-300 ease-in-out min-h-[300px]">
                     <div className="grid grid-cols-3 min-h-[450px]">
                       {/* Main Categories */}
                       <div className="space-y-1 bg-[#003c46] flex flex-col py-2">
-                        {expertiseData.map((category, index) => (
+                        {servicesData.map((category, index) => (
                           <Link key={category.title} href={category.href}>
                             <button
                               onMouseEnter={() => setActiveCategory(index)}
@@ -644,7 +644,7 @@ export function MegaMenu() {
 
                       {/* Sub Categories */}
                       <div className="space-y-1 bg-[#0098af] flex flex-col py-2">
-                        {expertiseData[activeCategory].subCategories.map(
+                        {servicesData[activeCategory].subCategories.map(
                           (subCategory) => (
                             <Link
                               key={subCategory.title}
@@ -652,7 +652,7 @@ export function MegaMenu() {
                               onClick={(e) => {
                                 if (
                                   subCategory.href.includes("?section=") &&
-                                  pathname === "/expertise"
+                                  pathname === "/services"
                                 ) {
                                   e.preventDefault();
                                   const sectionId =
@@ -684,8 +684,8 @@ export function MegaMenu() {
                       <div className="bg-[#99d5df] shadow-sm flex flex-col items-center gap-4 min-h-[400px] p-4">
                         <div className="w-full h-48 overflow-hidden">
                           <Image
-                            src={expertiseData[activeCategory].image.src}
-                            alt={expertiseData[activeCategory].image.alt}
+                            src={servicesData[activeCategory].image.src}
+                            alt={servicesData[activeCategory].image.alt}
                             width={300}
                             height={200}
                             className="w-full h-full object-cover transition-all duration-500 hover:scale-105"
@@ -693,7 +693,7 @@ export function MegaMenu() {
                         </div>
                         <div className="flex items-center gap-2">
                           <p className="text-gray-700">
-                            {expertiseData[activeCategory].image.title}
+                            {servicesData[activeCategory].image.title}
                           </p>
                           <ArrowRight className="w-5 h-5 text-gray-600" />
                         </div>
@@ -805,33 +805,33 @@ export function MegaMenu() {
                 )}
               </div> */}
 
-              {/* Mobile Expertise Dropdown */}
+              {/* Mobile services Dropdown */}
               <div className="space-y-1">
                 <button
                   onClick={() =>
                     setActiveDropdown(
-                      activeDropdown === "expertise-mobile"
+                      activeDropdown === "services-mobile"
                         ? null
-                        : "expertise-mobile"
+                        : "services-mobile"
                     )
                   }
                   className="flex items-center justify-between w-full px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-900 hover:bg-gray-50"
                 >
-                  Expertise
+                  services
                   <ChevronDown
                     className={`ml-2 h-4 w-4 transition-transform ${
-                      activeDropdown === "expertise-mobile" ? "rotate-180" : ""
+                      activeDropdown === "services-mobile" ? "rotate-180" : ""
                     }`}
                   />
                 </button>
-                {activeDropdown === "expertise-mobile" && (
+                {activeDropdown === "services-mobile" && (
                   <div className="pl-4">
-                    {expertiseData.map((expertise) => (
-                      <div key={expertise.title} className="space-y-1">
+                    {servicesData.map((services) => (
+                      <div key={services.title} className="space-y-1">
                         <div className="px-3 py-2 text-lg font-semibold text-gray-800">
-                          {expertise.title}
+                          {services.title}
                         </div>
-                        {expertise.subCategories.map((subCategory) => (
+                        {services.subCategories.map((subCategory) => (
                           <Link
                             key={subCategory.title}
                             href={subCategory.href}

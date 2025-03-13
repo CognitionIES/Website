@@ -20,7 +20,7 @@ export const TESTIMONIALS = [
   },
   {
     quote:
-      "Beyond their technical expertise, what stands out is their professionalism and ability to integrate smoothly into our development process. They've added immense value to our projects.",
+      "Beyond their technical services, what stands out is their professionalism and ability to integrate smoothly into our development process. They've added immense value to our projects.",
     author: "Sarah Chen",
     position: "VP of Engineering",
     company: "TechCorp Global",
@@ -41,5 +41,5 @@ export const TESTIMONIALS = [
 export const TESTIMONIALS_SECTION = {
   TITLE: "What Our Clients Say",
   DESCRIPTION:
-    "True partnerships go beyond contracts—they're built on trust, collaboration, and results. Our clients count on us to deliver precision, innovation, and engineering expertise that makes a real impact. Here's what they have to say:",
+    "True partnerships go beyond contracts—they're built on trust, collaboration, and results. Our clients count on us to deliver precision, innovation, and engineering services that makes a real impact. Here's what they have to say:",
 };

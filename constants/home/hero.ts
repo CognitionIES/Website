@@ -10,7 +10,7 @@ export const HERO_SLIDES = [
     {
       id: 2,
       image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80",
-      title: "Innovation Meets Expertise",
+      title: "Innovation Meets services",
       subtitle: "Transforming Ideas into Reality",
       description: "From concept to completion, our team brings cutting-edge technology and proven methods to every project.",
     },

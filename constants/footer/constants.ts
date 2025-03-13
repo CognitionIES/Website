@@ -12,7 +12,7 @@ export const FOOTER_CONSTANTS = {
       ITEMS: [
         ["Home", "/"],
         // ["Industries", "/industries"],
-        ["Services", "/expertise"],
+        ["Services", "/services"],
         ["Projects", "/resources"],
         ["Careers", "/careers"],
         ["About Us", "/about"],

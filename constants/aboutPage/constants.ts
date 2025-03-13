@@ -24,7 +24,7 @@ export const ABOUT_CONSTANTS = {
     STORY_P1:
       "Born in 2023 from a visionary spark in India, Cognition IES has evolved into a global innovator. We’ve reimagined engineering by breaking down traditional hierarchies, connecting our expert engineers directly with clients to deliver seamless solutions for industries like automotive, aerospace, and medical devices.",
     STORY_P2:
-      "Our unique blend of startup agility and deep expertise drives us to create value that’s bold, practical, and sustainable—every single day.",
+      "Our unique blend of startup agility and deep services drives us to create value that’s bold, practical, and sustainable—every single day.",
     MISSION_TITLE: "Our Mission",
     MISSION_DESC:
       "To spark engineering innovation with a people-first mindset, empowering every team member to deliver exceptional value directly to our clients.",
@@ -55,7 +55,7 @@ export const ABOUT_CONSTANTS = {
   // Stats and Values
   STATS: [
     { stat: "50+", label: "Skilled Engineers" },
-    { stat: "65+", label: "Years of Expertise" },
+    { stat: "65+", label: "Years of services" },
     { stat: "100%", label: "On-Time Delivery" },
     { stat: "ISO 9001", label: "Certified Quality" },
   ],

@@ -8,7 +8,7 @@
 //       question: "What engineering services do you offer?",
 //       answer: (
 //         <>
-//           Whether you need a concept designed from scratch, an existing product optimized, or a smarter way to manufacture at scale, we’ve got you covered. Our expertise includes:
+//           Whether you need a concept designed from scratch, an existing product optimized, or a smarter way to manufacture at scale, we’ve got you covered. Our services includes:
 //           <ul className="list-disc list-inside mt-2">
 //             <li>Product design and development that turns ideas into reality</li>
 //             <li>Embedded and digital engineering for AI-driven, IoT-connected solutions</li>
@@ -51,7 +51,7 @@
 //     {
 //       question: "Where are your engineering teams located?",
 //       answer:
-//         "With teams in India and the USA, we offer the best of both worlds—global expertise with local market insights. Our engineers work seamlessly with your team, ensuring projects stay on track, on budget, and aligned with your business goals.",
+//         "With teams in India and the USA, we offer the best of both worlds—global services with local market insights. Our engineers work seamlessly with your team, ensuring projects stay on track, on budget, and aligned with your business goals.",
 //     },
 //   ];
 

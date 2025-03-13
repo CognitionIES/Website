@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, X, Menu } from "lucide-react";
-import { expertiseData } from "./constants/expertiseData";
+import { servicesData } from "./constants/expertiseData";
 import { industriesData } from "./constants/industriesData";
 
 type MobileNavProps = {
@@ -73,25 +73,25 @@ export function MobileNav({
               )}
             </div>
 
-            {/* Mobile Expertise Dropdown */}
+            {/* Mobile services Dropdown */}
             <div className="space-y-1">
               <button
                 onClick={() =>
-                  setActiveDropdown(activeDropdown === "expertise-mobile" ? null : "expertise-mobile")
+                  setActiveDropdown(activeDropdown === "services-mobile" ? null : "services-mobile")
                 }
                 className="flex items-center justify-between w-full px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-900 hover:bg-gray-50"
               >
-                Expertise
+                services
                 <ChevronDown
-                  className={`ml-2 h-4 w-4 transition-transform ${activeDropdown === "expertise-mobile" ? "rotate-180" : ""}`}
+                  className={`ml-2 h-4 w-4 transition-transform ${activeDropdown === "services-mobile" ? "rotate-180" : ""}`}
                 />
               </button>
-              {activeDropdown === "expertise-mobile" && (
+              {activeDropdown === "services-mobile" && (
                 <div className="pl-4">
-                  {expertiseData.map((expertise) => (
-                    <div key={expertise.title} className="space-y-1">
-                      <div className="px-3 py-2 text-lg font-semibold text-gray-800">{expertise.title}</div>
-                      {expertise.subCategories.map((subCategory) => (
+                  {servicesData.map((services) => (
+                    <div key={services.title} className="space-y-1">
+                      <div className="px-3 py-2 text-lg font-semibold text-gray-800">{services.title}</div>
+                      {services.subCategories.map((subCategory) => (
                         <Link
                           key={subCategory.title}
                           href={subCategory.href}

@@ -1,9 +1,9 @@
   import logos1 from "../constants/images/logos1.png";
 
-  const expertiseSections = {
+  const servicesSections = {
       mechanical: {
         title: "Mechanical Design Services",
-        description: "Comprehensive mechanical engineering solutions delivering innovative designs and optimized performance across industries. Our expertise combines cutting-edge technology with practical engineering principles.",
+        description: "Comprehensive mechanical engineering solutions delivering innovative designs and optimized performance across industries. Our services combines cutting-edge technology with practical engineering principles.",
         imageUrl: "https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?q=80&w=2070&auto=format&fit=crop",
         bulletPoints: [
           "Product Design and Development",
@@ -170,4 +170,4 @@
     }
   };
   
-  export default expertiseSections;
+  export default servicesSections;

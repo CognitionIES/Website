@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, Search, ArrowRight } from "lucide-react";
-import { expertiseData } from "./constants/expertiseData";
+import { servicesData } from "./constants/expertiseData";
 import { industriesData } from "./constants/industriesData";
 // import { Logo1 } from "./constants/images";
 import { arrowVariants } from "./utils/animations";
@@ -26,7 +26,10 @@ export function DesktopNav({
 }: DesktopNavProps) {
   return (
     <div className="hidden md:flex md:items-center p-2 ml-auto">
-      <Link href="/" className="text-gray-700 hover:text-blue-900 text-lg p-2 font-medium transition-colors duration-200">
+      <Link
+        href="/"
+        className="text-gray-700 hover:text-blue-900 text-lg p-2 font-medium transition-colors duration-200"
+      >
         Home
       </Link>
 
@@ -40,7 +43,9 @@ export function DesktopNav({
         onMouseLeave={() => setActiveDropdown(null)}
       >
         <button
-          className={`flex items-center p-2 text-gray-700 hover:text-blue-900 text-lg font-medium transition-colors duration-200 ${isSticky ? "py-3" : "py-4"}`}
+          className={`flex items-center p-2 text-gray-700 hover:text-blue-900 text-lg font-medium transition-colors duration-200 ${
+            isSticky ? "py-3" : "py-4"
+          }`}
         >
           Industries
           <motion.span
@@ -62,28 +67,34 @@ export function DesktopNav({
                     onMouseEnter={() => setActiveCategory(index)}
                     className={cn(
                       "w-full flex items-center justify-between px-4 py-2 text-lg font-medium transition-colors duration-200",
-                      activeCategory === index ? "text-[#00b6d3]" : "text-white hover:bg-black"
+                      activeCategory === index
+                        ? "text-[#00b6d3]"
+                        : "text-white hover:bg-black"
                     )}
                   >
                     <div className="flex items-center">
                       {category.icon}
                       {category.title}
                     </div>
-                    {activeCategory === index && <span className="text-[#00b6d3] font-bold text-lg"></span>}
+                    {activeCategory === index && (
+                      <span className="text-[#00b6d3] font-bold text-lg"></span>
+                    )}
                   </button>
                 ))}
               </div>
               <div className="space-y-1 bg-[#0098af] flex flex-col py-2">
-                {industriesData[activeCategory].subCategories.map((subCategory) => (
-                  <Link
-                    key={subCategory.title}
-                    href={subCategory.href}
-                    className="flex items-center px-4 py-1 text-base text-white hover:text-[#003c46] transition-colors duration-200"
-                  >
-                    {subCategory.icon}
-                    {subCategory.title}
-                  </Link>
-                ))}
+                {industriesData[activeCategory].subCategories.map(
+                  (subCategory) => (
+                    <Link
+                      key={subCategory.title}
+                      href={subCategory.href}
+                      className="flex items-center px-4 py-1 text-base text-white hover:text-[#003c46] transition-colors duration-200"
+                    >
+                      {subCategory.icon}
+                      {subCategory.title}
+                    </Link>
+                  )
+                )}
               </div>
               <div className="bg-[#99d5df] shadow-sm flex flex-col items-center gap-4 min-h-[400px] p-4">
                 <div className="w-full h-48 overflow-hidden">
@@ -96,7 +107,9 @@ export function DesktopNav({
                   />
                 </div>
                 <div className="flex items-center gap-2">
-                  <p className="text-gray-700">{industriesData[activeCategory].image.title}</p>
+                  <p className="text-gray-700">
+                    {industriesData[activeCategory].image.title}
+                  </p>
                   <ArrowRight className="w-5 h-5 text-gray-600" />
                 </div>
               </div>
@@ -105,73 +118,83 @@ export function DesktopNav({
         )}
       </div>
 
-      {/* Expertise Dropdown */}
+      {/* services Dropdown */}
       <div
         className="relative"
         onMouseEnter={() => {
-          setActiveDropdown("expertise");
+          setActiveDropdown("services");
           setActiveCategory(0);
         }}
         onMouseLeave={() => setActiveDropdown(null)}
       >
         <button
-          className={`flex items-center p-2 text-gray-700 hover:text-blue-900 text-lg font-medium transition-colors duration-200 ${isSticky ? "py-3" : "py-4"}`}
+          className={`flex items-center p-2 text-gray-700 hover:text-blue-900 text-lg font-medium transition-colors duration-200 ${
+            isSticky ? "py-3" : "py-4"
+          }`}
         >
-          Expertise
+          services
           <motion.span
             variants={arrowVariants}
             initial="closed"
-            animate={activeDropdown === "expertise" ? "open" : "closed"}
+            animate={activeDropdown === "services" ? "open" : "closed"}
             transition={{ duration: 0.2 }}
           >
             <ChevronDown className="ml-1 h-4 w-4" />
           </motion.span>
         </button>
-        {activeDropdown === "expertise" && (
+        {activeDropdown === "services" && (
           <div className="absolute z-[100] transform -translate-x-[55%] mt-0 w-screen max-w-7xl bg-white shadow-lg border-t border-gray-100 transition-all duration-300 ease-in-out min-h-[300px]">
             <div className="grid grid-cols-3 min-h-[400px]">
               <div className="bg-[#003c46] flex flex-col py-2">
-                {expertiseData.map((category, index) => (
+                {servicesData.map((category, index) => (
                   <button
                     key={category.title}
                     onMouseEnter={() => setActiveCategory(index)}
                     className={cn(
                       "w-full flex items-center justify-between px-4 py-2 text-lg font-medium transition-colors duration-200",
-                      activeCategory === index ? "text-[#00b6d3]" : "text-white hover:bg-black"
+                      activeCategory === index
+                        ? "text-[#00b6d3]"
+                        : "text-white hover:bg-black"
                     )}
                   >
                     <div className="flex items-center">
                       {category.icon}
                       {category.title}
                     </div>
-                    {activeCategory === index && <span className="text-[#00b6d3] font-bold text-lg"></span>}
+                    {activeCategory === index && (
+                      <span className="text-[#00b6d3] font-bold text-lg"></span>
+                    )}
                   </button>
                 ))}
               </div>
               <div className="space-y-1 bg-[#0098af] flex flex-col py-2">
-                {expertiseData[activeCategory].subCategories.map((subCategory) => (
-                  <Link
-                    key={subCategory.title}
-                    href={subCategory.href}
-                    className="flex items-center px-4 py-1 text-base text-white hover:text-[#003c46] transition-colors duration-200"
-                  >
-                    {subCategory.icon}
-                    {subCategory.title}
-                  </Link>
-                ))}
+                {servicesData[activeCategory].subCategories.map(
+                  (subCategory) => (
+                    <Link
+                      key={subCategory.title}
+                      href={subCategory.href}
+                      className="flex items-center px-4 py-1 text-base text-white hover:text-[#003c46] transition-colors duration-200"
+                    >
+                      {subCategory.icon}
+                      {subCategory.title}
+                    </Link>
+                  )
+                )}
               </div>
               <div className="bg-[#99d5df] shadow-sm flex flex-col items-center gap-4 min-h-[400px] p-4">
                 <div className="w-full h-48 overflow-hidden">
                   <Image
-                    src={expertiseData[activeCategory].image.src}
-                    alt={expertiseData[activeCategory].image.alt}
+                    src={servicesData[activeCategory].image.src}
+                    alt={servicesData[activeCategory].image.alt}
                     width={300}
                     height={200}
                     className="w-full h-full object-cover transition-all duration-500 hover:scale-105"
                   />
                 </div>
                 <div className="flex items-center gap-2">
-                  <p className="text-gray-700">{expertiseData[activeCategory].image.title}</p>
+                  <p className="text-gray-700">
+                    {servicesData[activeCategory].image.title}
+                  </p>
                   <ArrowRight className="w-5 h-5 text-gray-600" />
                 </div>
               </div>
@@ -180,13 +203,22 @@ export function DesktopNav({
         )}
       </div>
 
-      <Link href="/resources" className="text-gray-700 hover:text-blue-900 text-lg p-2 font-medium transition-colors duration-200">
+      <Link
+        href="/resources"
+        className="text-gray-700 hover:text-blue-900 text-lg p-2 font-medium transition-colors duration-200"
+      >
         Resources
       </Link>
-      <Link href="/careers" className="text-gray-700 hover:text-blue-900 text-lg p-2 font-medium transition-colors duration-200">
+      <Link
+        href="/careers"
+        className="text-gray-700 hover:text-blue-900 text-lg p-2 font-medium transition-colors duration-200"
+      >
         Careers
       </Link>
-      <Link href="/about" className="text-gray-700 hover:text-blue-900 text-lg p-2 font-medium transition-colors duration-200">
+      <Link
+        href="/about"
+        className="text-gray-700 hover:text-blue-900 text-lg p-2 font-medium transition-colors duration-200"
+      >
         About Us
       </Link>
 

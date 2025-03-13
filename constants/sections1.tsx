@@ -11,7 +11,7 @@ const sections1 = [
     },
     {
       title: "Creative Excellence",
-      description: "Our creative team pushes boundaries to deliver unique and memorable experiences. We blend artistry with technical expertise to create solutions that stand out.",
+      description: "Our creative team pushes boundaries to deliver unique and memorable experiences. We blend artistry with technical services to create solutions that stand out.",
       imageUrl: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop",
     },
     {

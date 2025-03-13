@@ -13,7 +13,7 @@
 //     shortDescription:
 //       "We engineer the future of transportation, from next-gen vehicles to smart infrastructure.",
 //     fullDescription:
-//       "Mobility is evolving, and we’re at the forefront of this transformation. Our expertise bridges digital and physical engineering, enabling everything from autonomous systems and electric mobility to advanced aerospace and rail solutions. The result? Seamless, efficient, and future-ready transportation.",
+//       "Mobility is evolving, and we’re at the forefront of this transformation. Our services bridges digital and physical engineering, enabling everything from autonomous systems and electric mobility to advanced aerospace and rail solutions. The result? Seamless, efficient, and future-ready transportation.",
 //     bgColor: "bg-[#003C46]",
 //     textColor: "text-white",
 //     image:
@@ -39,7 +39,7 @@
 //     shortDescription:
 //       "From AI-driven systems to embedded solutions, we power the next era of innovation.",
 //     fullDescription:
-//       "Technology is reshaping industries, and we make sure businesses stay ahead. Our expertise spans MedTech, semiconductor advancements, and connected systems, ensuring our clients leverage cutting-edge solutions to enhance efficiency, scalability, and performance.",
+//       "Technology is reshaping industries, and we make sure businesses stay ahead. Our services spans MedTech, semiconductor advancements, and connected systems, ensuring our clients leverage cutting-edge solutions to enhance efficiency, scalability, and performance.",
 //     bgColor: "bg-[#5B5B5B]",
 //     textColor: "text-white",
 //     image:
@@ -60,7 +60,7 @@
 //         </h1>
 //         <p className="text-base leading-relaxed text-gray-600 mb-8">
 //           Engineering isn’t just about solving problems—it’s about pushing
-//           boundaries. Our expertise spans three core domains, where precision
+//           boundaries. Our services spans three core domains, where precision
 //           meets innovation. Whether it’s revolutionizing mobility, engineering
 //           sustainable solutions, or harnessing the power of technology, we help
 //           industries move faster, work smarter, and build for the future.
@@ -156,7 +156,7 @@
 //     shortDescription:
 //       "We engineer the future of transportation, from next-gen vehicles to smart infrastructure.",
 //     fullDescription:
-//       "Mobility is evolving, and we’re at the forefront of this transformation. Our expertise bridges digital and physical engineering, enabling everything from autonomous systems and electric mobility to advanced aerospace and rail solutions. The result? Seamless, efficient, and future-ready transportation.",
+//       "Mobility is evolving, and we’re at the forefront of this transformation. Our services bridges digital and physical engineering, enabling everything from autonomous systems and electric mobility to advanced aerospace and rail solutions. The result? Seamless, efficient, and future-ready transportation.",
 //     bgColor: "bg-[#0A1E5C]", // Keeping original for now, but we'll adjust theme
 //     textColor: "text-white",
 //     image:
@@ -180,7 +180,7 @@
 //     shortDescription:
 //       "From AI-driven systems to embedded solutions, we power the next era of innovation.",
 //     fullDescription:
-//       "Technology is reshaping industries, and we make sure businesses stay ahead. Our expertise spans MedTech, semiconductor advancements, and connected systems, ensuring our clients leverage cutting-edge solutions to enhance efficiency, scalability, and performance.",
+//       "Technology is reshaping industries, and we make sure businesses stay ahead. Our services spans MedTech, semiconductor advancements, and connected systems, ensuring our clients leverage cutting-edge solutions to enhance efficiency, scalability, and performance.",
 //     bgColor: "bg-black", // Updating to match theme
 //     textColor: "text-white",
 //     image:
@@ -209,7 +209,7 @@
 //         </h1>
 //         <p className="text-base leading-relaxed text-gray-200 mb-8 font-light">
 //           Engineering isn’t just about solving problems—it’s about pushing
-//           boundaries. Our expertise spans three core domains, where precision
+//           boundaries. Our services spans three core domains, where precision
 //           meets innovation. Whether it’s revolutionizing mobility, engineering
 //           sustainable solutions, or harnessing the power of technology, we help
 //           industries move faster, work smarter, and build for the future.

@@ -33,7 +33,7 @@
 // //               {[
 // //                 ["Home", "/"],
 // //                 ["About", "/about"],
-// //                 ["Expertise", "/expertise"],
+// //                 ["services", "/services"],
 // //                 ["Careers", "/careers"],
 // //                 ["Industries", "/industries"],
 // //                 ["Contact Us", "/contact"],

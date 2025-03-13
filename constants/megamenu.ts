@@ -20,22 +20,22 @@ export interface MainCategory {
   };
 }
 
-// Expertise section data
-export const expertiseData: MainCategory[] = [
+// services section data
+export const servicesData: MainCategory[] = [
   {
     title: "Product Engineering",
-    href: "/expertise/product-engineering",
+    href: "/services/product-engineering",
     icon: Wrench,
     subCategories: [
-      { title: "Mechanical Design Services", href: "/expertise?section=mechanical" },
-      { title: "Electrical Engineering Services", href: "/expertise?section=electrical" },
-      { title: "CAE/CFD", href: "/expertise?section=cae-cfd" },
-      { title: "Hydraulic Engineering Services", href: "/expertise?section=hydraulic" },
-      { title: "Prototyping and 3D Printing", href: "/expertise?section=prototyping" },
-      { title: "Asset Management", href: "/expertise?section=asset-management" },
-      { title: "Embedded Systems Engineering", href: "/expertise?section=embedded-systems" },
-      { title: "Technical Publication", href: "/expertise?section=technical-publication" },
-      { title: "Supply Chain Management / Procurement", href: "/expertise?section=supply-chain" },
+      { title: "Mechanical Design Services", href: "/services?section=mechanical" },
+      { title: "Electrical Engineering Services", href: "/services?section=electrical" },
+      { title: "CAE/CFD", href: "/services?section=cae-cfd" },
+      { title: "Hydraulic Engineering Services", href: "/services?section=hydraulic" },
+      { title: "Prototyping and 3D Printing", href: "/services?section=prototyping" },
+      { title: "Asset Management", href: "/services?section=asset-management" },
+      { title: "Embedded Systems Engineering", href: "/services?section=embedded-systems" },
+      { title: "Technical Publication", href: "/services?section=technical-publication" },
+      { title: "Supply Chain Management / Procurement", href: "/services?section=supply-chain" },
     ],
     image: {
       src: "https://images.unsplash.com/photo-1581092921461-eab62e97a780?q=80&w=2070&auto=format&fit=crop",

@@ -26,14 +26,14 @@ export const PRODUCT_ENGINEERING_CONSTANTS = {
   // Hero Section
   HERO: {
     IMAGE: "https://images.unsplash.com/photo-1581094794329-c8112c4e5190?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80",
-    TITLE: "Product Engineering Expertise",
+    TITLE: "Product Engineering services",
     SUBTITLE: "Innovative engineering solutions for complex challenges",
   },
 
   // About Section
   ABOUT: {
     TITLE: "Product Engineering Solutions",
-    DESCRIPTION_1: "Our engineering expertise spans across multiple disciplines, providing innovative solutions for complex technical challenges. We combine cutting-edge technology with proven methodologies to deliver exceptional results.",
+    DESCRIPTION_1: "Our engineering services spans across multiple disciplines, providing innovative solutions for complex technical challenges. We combine cutting-edge technology with proven methodologies to deliver exceptional results.",
     DESCRIPTION_2: "From concept to implementation, we work closely with you to ensure your engineering projects are executed with precision and excellence.",
     IMAGE: "https://images.unsplash.com/photo-1581092921461-eab62e97a780?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
   },
@@ -49,7 +49,7 @@ export const PRODUCT_ENGINEERING_CONSTANTS = {
         description: "Comprehensive mechanical design solutions including 3D modeling, simulation, and optimization",
         image: "https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
         alt: "Mechanical design",
-        href: "/expertise?section=mechanical",
+        href: "/services?section=mechanical",
       },
       {
         icon: FiActivity,
@@ -57,7 +57,7 @@ export const PRODUCT_ENGINEERING_CONSTANTS = {
         description: "Advanced computational analysis for engineering design and fluid dynamics",
         image: "https://images.unsplash.com/photo-1580894894513-541e068a3e2b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
         alt: "Mechanical design",
-        href: "/expertise?section=cae-cfd",
+        href: "/services?section=cae-cfd",
       },
       {
         icon: FiZap,
@@ -65,7 +65,7 @@ export const PRODUCT_ENGINEERING_CONSTANTS = {
         description: "Innovative electrical system design and power distribution solutions",
         image: "https://images.unsplash.com/photo-1498084393753-b411b2d26b34?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
         alt: "Mechanical design",
-        href: "/expertise?section=electrical",
+        href: "/services?section=electrical",
       },
       {
         icon: FiDroplet,
@@ -73,7 +73,7 @@ export const PRODUCT_ENGINEERING_CONSTANTS = {
         description: "Expert hydraulic system design and fluid power solutions",
         image: "https://plus.unsplash.com/premium_photo-1682147307418-07ad7e897bc9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         alt: "Mechanical design",
-        href: "/expertise?section=hydraulic",
+        href: "/services?section=hydraulic",
       },
       {
         icon: FiPrinter,
@@ -81,7 +81,7 @@ export const PRODUCT_ENGINEERING_CONSTANTS = {
         description: "Rapid prototyping and additive manufacturing services",
         image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
         alt: "Mechanical design",
-        href: "/expertise?section=prototyping",
+        href: "/services?section=prototyping",
       },
       {
         icon: FiDatabase,
@@ -89,7 +89,7 @@ export const PRODUCT_ENGINEERING_CONSTANTS = {
         description: "Comprehensive asset lifecycle management and optimization",
         image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
         alt: "Mechanical design",
-        href: "/expertise?section=asset-management",
+        href: "/services?section=asset-management",
       },
       {
         icon: FiCpu,
@@ -97,7 +97,7 @@ export const PRODUCT_ENGINEERING_CONSTANTS = {
         description: "Custom embedded solutions and IoT device development",
         image: "https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
         alt: "Mechanical design",
-        href: "/expertise?section=embedded-systems",
+        href: "/services?section=embedded-systems",
       },
       {
         icon: FiBook,
@@ -105,7 +105,7 @@ export const PRODUCT_ENGINEERING_CONSTANTS = {
         description: "Professional technical documentation and manual creation",
         image: "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
         alt: "Mechanical design",
-        href: "/expertise?section=technical-publication",
+        href: "/services?section=technical-publication",
       },
       {
         icon: FiTruck,
@@ -113,7 +113,7 @@ export const PRODUCT_ENGINEERING_CONSTANTS = {
         description: "End-to-end supply chain optimization and procurement services",
         image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
         alt: "Mechanical design",
-        href: "/expertise?section=supply-chain",
+        href: "/services?section=supply-chain",
       },
     ] as Service[],
   },
@@ -125,7 +125,7 @@ export const PRODUCT_ENGINEERING_CONSTANTS = {
     ITEMS: [
       {
         question: "What types of engineering services do you offer?",
-        answer: "We offer a comprehensive range of engineering services including mechanical design, CAE/CFD analysis, electrical engineering, hydraulic systems, prototyping, embedded systems, and more. Our expertise spans across multiple engineering disciplines to provide complete solutions.",
+        answer: "We offer a comprehensive range of engineering services including mechanical design, CAE/CFD analysis, electrical engineering, hydraulic systems, prototyping, embedded systems, and more. Our services spans across multiple engineering disciplines to provide complete solutions.",
       },
       {
         question: "How do you ensure quality in engineering projects?",
@@ -133,11 +133,11 @@ export const PRODUCT_ENGINEERING_CONSTANTS = {
       },
       {
         question: "What industries do you serve?",
-        answer: "We serve a wide range of industries including automotive, aerospace, manufacturing, energy, healthcare, and consumer products. Our engineering expertise is adaptable to various sectors, allowing us to deliver specialized solutions for specific industry needs.",
+        answer: "We serve a wide range of industries including automotive, aerospace, manufacturing, energy, healthcare, and consumer products. Our engineering services is adaptable to various sectors, allowing us to deliver specialized solutions for specific industry needs.",
       },
       {
         question: "Can you handle both small and large-scale engineering projects?",
-        answer: "Yes, we have the capability to handle projects of any scale. From small component design to large-scale system integration, our team can adapt our resources and expertise to meet your project requirements while maintaining the same level of quality and attention to detail.",
+        answer: "Yes, we have the capability to handle projects of any scale. From small component design to large-scale system integration, our team can adapt our resources and services to meet your project requirements while maintaining the same level of quality and attention to detail.",
       },
     ],
   },

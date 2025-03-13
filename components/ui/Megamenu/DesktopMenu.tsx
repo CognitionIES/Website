@@ -17,7 +17,7 @@ interface DesktopMenuProps {
   activeCategory: number;
   setActiveCategory: (value: number) => void;
   isSticky: boolean;
-  expertiseData: MainCategory[];
+  servicesData: MainCategory[];
   industriesData: MainCategory[];
 }
 
@@ -27,7 +27,7 @@ export function DesktopMenu({
   activeCategory,
   setActiveCategory,
   isSticky,
-  expertiseData,
+  servicesData,
   industriesData,
 }: DesktopMenuProps) {
   return (
@@ -72,11 +72,11 @@ export function DesktopMenu({
         )}
       </div>
 
-      {/* Expertise Dropdown */}
+      {/* services Dropdown */}
       <div
         className="relative"
         onMouseEnter={() => {
-          setActiveDropdown("expertise");
+          setActiveDropdown("services");
           setActiveCategory(0);
         }}
         onMouseLeave={() => setActiveDropdown(null)}
@@ -86,19 +86,19 @@ export function DesktopMenu({
             isSticky ? "py-3" : "py-4"
           }`}
         >
-          Expertise
+          services
           <motion.span
             variants={arrowVariants}
             initial="closed"
-            animate={activeDropdown === "expertise" ? "open" : "closed"}
+            animate={activeDropdown === "services" ? "open" : "closed"}
             transition={{ duration: 0.2 }}
           >
             <ChevronDown className="ml-1 h-4 w-4" />
           </motion.span>
         </button>
-        {activeDropdown === "expertise" && (
+        {activeDropdown === "services" && (
           <DropdownMenu
-            data={expertiseData}
+            data={servicesData}
             activeCategory={activeCategory}
             setActiveCategory={setActiveCategory}
           />

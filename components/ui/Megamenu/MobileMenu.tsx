@@ -8,7 +8,7 @@ interface MobileMenuProps {
   activeDropdown: string | null;
   setActiveDropdown: (value: string | null) => void;
   setIsMobileMenuOpen: (value: boolean) => void;
-  expertiseData: MainCategory[];
+  servicesData: MainCategory[];
   industriesData: MainCategory[];
 }
 
@@ -16,7 +16,7 @@ export function MobileMenu({
   activeDropdown,
   setActiveDropdown,
   setIsMobileMenuOpen,
-  expertiseData,
+  servicesData,
   industriesData,
 }: MobileMenuProps) {
   return (
@@ -70,31 +70,31 @@ export function MobileMenu({
           )}
         </div>
 
-        {/* Mobile Expertise Dropdown */}
+        {/* Mobile services Dropdown */}
         <div className="space-y-1">
           <button
             onClick={() =>
               setActiveDropdown(
-                activeDropdown === "expertise-mobile" ? null : "expertise-mobile"
+                activeDropdown === "services-mobile" ? null : "services-mobile"
               )
             }
             className="flex items-center justify-between w-full px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-900 hover:bg-gray-50"
           >
-            Expertise
+            services
             <ChevronDown
               className={`ml-2 h-4 w-4 transition-transform ${
-                activeDropdown === "expertise-mobile" ? "rotate-180" : ""
+                activeDropdown === "services-mobile" ? "rotate-180" : ""
               }`}
             />
           </button>
-          {activeDropdown === "expertise-mobile" && (
+          {activeDropdown === "services-mobile" && (
             <div className="pl-4">
-              {expertiseData.map((expertise) => (
-                <div key={expertise.title} className="space-y-1">
+              {servicesData.map((services) => (
+                <div key={services.title} className="space-y-1">
                   <div className="px-3 py-2 text-lg font-semibold text-gray-800">
-                    {expertise.title}
+                    {services.title}
                   </div>
-                  {expertise.subCategories.map((subCategory) => (
+                  {services.subCategories.map((subCategory) => (
                     <Link
                       key={subCategory.title}
                       href={subCategory.href}
