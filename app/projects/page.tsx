@@ -221,8 +221,9 @@ const Projects: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#003C46] relative drop-shadow-md  mb-12">
             Frequently Asked Questions
-            <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-12 h-0.5 bg-gradient-to-r from-[#0098AF] to-transparent" />
+          <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-[#0098AF] to-transparent" />
           </h2>
+
           <div className="space-y-6">
             {faqs.map((faq, index) => (
               <div key={index} className="bg-white p-6 rounded-xl shadow-lg">
