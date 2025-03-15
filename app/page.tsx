@@ -94,9 +94,10 @@ import Footer from "@/components/footer";
 import Hero from "@/components/HomePage/hero";
 import AboutUs from "@/components/HomePage/AboutUs";
 import AccordionDemo from "@/components/AccordionDemo";
-import ContactUs from "@/components/HomePage/ContactUs";
+// import ContactUs from "@/components/HomePage/ContactUs";
 import dynamic from "next/dynamic";
 import RecentProjects from "@/components/HomePage/RecentProjects";
+import ContactSection from "./contact/ContactSection";
 
 const TestimonialSlider = dynamic(
   () => import("@/components/HomePage/Testimonials"),
@@ -140,7 +141,7 @@ export default function Home() {
         </section>
       
         <section>
-          <ContactUs />
+          <ContactSection />
         </section>
       </main>
       <Footer />

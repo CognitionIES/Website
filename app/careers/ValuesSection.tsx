@@ -27,7 +27,7 @@ export default function ValuesSection() {
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           {/* Section title */}
           <div className="relative mb-12">
-            <h2 className="text-3xl font-bold text-[#003C46] relative">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#003C46] relative drop-shadow-md">
               {TITLE}
               <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-[#0098AF] to-transparent" />
             </h2>
@@ -44,12 +44,12 @@ export default function ValuesSection() {
               >
                 <Card className="border-0">
                   <CardHeader className="p-0">
-                    <CardTitle className="text-lg font-semibold text-[#5B5B5B] mb-2 hover:text-[#0098AF] transition-colors duration-200">
+                    <CardTitle className="text-xl font-bold text-[#5B5B5B] mb-2 hover:text-[#0098AF] transition-colors duration-200">
                       {value.title}
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="p-0">
-                    <CardDescription className="text-sm font-light text-gray-600 leading-relaxed">
+                    <CardDescription className="text-sm sm:text-base leading-relaxed text-gray-600 ">
                       {value.description}
                     </CardDescription>
                   </CardContent>

@@ -55,7 +55,7 @@ export const ABOUT_CONSTANTS = {
   // Stats and Values
   STATS: [
     { stat: "50+", label: "Skilled Engineers" },
-    { stat: "65+", label: "Years of services" },
+    { stat: "65+", label: "Years of Services" },
     { stat: "100%", label: "On-Time Delivery" },
     { stat: "ISO 9001", label: "Certified Quality" },
   ],

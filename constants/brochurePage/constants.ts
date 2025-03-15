@@ -8,7 +8,7 @@ export const BROCHURE_CONSTANTS = {
   LEFT_CONTENT: {
     TITLE: "Engineering for Efficient Projects and Plants",
     DESCRIPTION_1:
-      "Plant Engineering is the most sought-after practice at LTTS, it creates a strong market differentiation with its offerings for efficient, safe, and sustainable production facilities.",
+      "Plant Engineering is the most sought-after practice at Cognition, it creates a strong market differentiation with its offerings for efficient, safe, and sustainable production facilities.",
     DESCRIPTION_2:
       "We bring excellence in engineering and operation through our following service portfolios:",
     SERVICES: [
@@ -26,7 +26,7 @@ export const BROCHURE_CONSTANTS = {
     TITLE: "Download Brochure",
     PRIVACY_LINK: "/privacy-policy",
     CONSENT_TEXT:
-      "I would like to receive communications from LTTS about its products, resources, services, events, webinars, marketing events etc.",
+      "I would like to receive communications from Cognition about its products, resources, services, events, webinars, marketing events etc.",
     COUNTRIES: [
       "United States",
       "United Kingdom",

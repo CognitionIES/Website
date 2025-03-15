@@ -12,7 +12,7 @@ export default function TestimonialsSection() {
   const { STAGGER_CHILDREN, CARD_HOVER } = CAREERS_CONSTANTS.ANIMATIONS;
 
   return (
-    <section className="py-20 bg-secondary/30">
+    <section className=" bg-secondary/30">
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -23,7 +23,7 @@ export default function TestimonialsSection() {
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           {/* Section title */}
           <div className="relative mb-12">
-            <h2 className="text-3xl font-bold text-[#5B5B5B] relative">
+            <h2 className="text-3xl font-bold text-[#003C46] relative">
               {TITLE}
               <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-[#0098AF] to-transparent" />
             </h2>
@@ -48,7 +48,7 @@ export default function TestimonialsSection() {
                       className="rounded-full w-14 h-14 object-cover shadow-sm"
                     />
                     <div>
-                      <CardTitle className="text-lg font-semibold text-[#5B5B5B] hover:text-[#0098AF] transition-colors duration-200">
+                      <CardTitle className="text-xl font-semibold text-[#5B5B5B] hover:text-[#0098AF] transition-colors duration-200">
                         {testimonial.name}
                       </CardTitle>
                       <CardDescription className="text-sm font-light text-gray-600">
@@ -57,7 +57,7 @@ export default function TestimonialsSection() {
                     </div>
                   </CardHeader>
                   <CardContent className="p-0 pt-4">
-                    <p className="text-sm font-light text-gray-600 italic leading-relaxed line-clamp-2">
+                    <p className="text-base font-light text-gray-600 italic leading-relaxed line-clamp-2">
                       &quot;{testimonial.quote}&quot;
                     </p>
                   </CardContent>

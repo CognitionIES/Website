@@ -26,7 +26,7 @@ export default function BenefitsSection() {
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         {/* Section title */}
         <div className="relative mb-12">
-          <h2 className="text-3xl font-bold text-[#5B5B5B] relative">
+          <h2 className="text-3xl font-bold text-[#003C46] relative">
             {TITLE}
             <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-[#0098AF] to-transparent" />
           </h2>
@@ -41,14 +41,14 @@ export default function BenefitsSection() {
               whileHover="hover"
               className="bg-white p-6 rounded-lg border border-[#0098AF]/10 shadow-sm cursor-pointer"
             >
-              <Card className="border-0 text-center">
+              <Card className="border-0 ">
                 <CardHeader className="p-0">
-                  <CardTitle className="text-lg font-semibold text-[#5B5B5B] hover:text-[#0098AF] transition-colors duration-200">
+                  <CardTitle className="text-xl font-semibold text-[#5B5B5B] hover:text-[#0098AF] transition-colors duration-200">
                     {benefit.title}
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="p-0 pt-4">
-                  <CardDescription className="text-sm font-light text-gray-600 leading-relaxed line-clamp-2">
+                  <CardDescription className="text-base  text-gray-600 leading-relaxed line-clamp-2">
                     {benefit.description}
                   </CardDescription>
                 </CardContent>

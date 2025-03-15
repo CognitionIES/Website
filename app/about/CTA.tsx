@@ -44,7 +44,7 @@ export default function CTASection() {
                 variant="outline"
                 className="text-[#0098AF] border-white hover:bg-white hover:text-[#0098AF] px-10 py-4 rounded-full text-lg font-semibold shadow-lg relative overflow-hidden"
               >
-                Explore services
+                Explore Services
               </Button>
             </Link>
           </div>

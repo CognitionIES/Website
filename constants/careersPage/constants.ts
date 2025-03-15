@@ -26,7 +26,7 @@ export const CAREERS_CONSTANTS = {
           description: "Delivering precision and quality, every time.",
         },
         {
-          title: "Sustainability & Responsibility",
+          title: "Sustainability ",
           description: "Building greener solutions for a better tomorrow.",
         },
       ],

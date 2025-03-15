@@ -6,9 +6,8 @@ export const CONTACT_CONSTANTS = {
     PHONE: "1800 800 9000",
     IMAGE: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=1920&h=1080",
     INTEREST_OPTIONS: [
-      { value: "Mobility", label: "Mobility" },
-      { value: "Sustainability", label: "Sustainability" },
-      { value: "Technology", label: "Technology" },
-      { value: "Other", label: "Other" },
+      { value: "Product ", label: "Product Engineering" },
+      { value: "Plant ", label: "Plant Engineering" },
+      { value: "Others", label: "Others" },
     ],
   };

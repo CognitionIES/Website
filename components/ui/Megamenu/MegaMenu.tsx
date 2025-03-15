@@ -14,19 +14,27 @@ import {
   Calculator,
   Workflow,
   Rss,
+  ShoppingCart,
+  Rewind,
+  Box,
+  Sliders,
+  Zap,
+  ShieldCheck,
+  Building2,
+  Car,
 } from "lucide-react";
-import {
-  Gauge,
-  Shield,
-  // Code,
-  // Cloud,
-  // Brain,
-  // GitBranch,
-  // CheckCircle,
-  // Globe,
-} from "lucide-react";
-import { Printer, Layers, Settings, FileText, Truck } from "lucide-react";
-import { Cpu, Droplet } from "lucide-react";
+// import {
+//   Gauge,
+//   Shield,
+// Code,
+// Cloud,
+// Brain,
+// GitBranch,
+// CheckCircle,
+// Globe,
+//} from "lucide-react";
+import { Printer, Layers, FileText, Truck } from "lucide-react";
+import { Cpu } from "lucide-react";
 import { Wrench, Factory } from "lucide-react"; // Import icons
 import Logo1 from "@/constants/images/WEB LOGO.png";
 import { motion } from "framer-motion";
@@ -132,57 +140,57 @@ const servicesData: MainCategory[] = [
       {
         title: "Process & Safety Engineering",
         href: "/services/plant-engineering/process-and-safety",
-        icon: <Rss className="w-4 h-4" />,
+        icon: <Rss className="w-4 h-4" />, // Represents flow and safety monitoring
       },
       {
         title: "Mechanical Engineering",
         href: "/services/plant-engineering/mechanical",
-        icon: <Settings className="w-4 h-4" />,
+        icon: <Wrench className="w-4 h-4" />, // Symbolizes tools and machinery
       },
       {
         title: "Piping Engineering",
         href: "/services/plant-engineering/piping",
-        icon: <Droplet className="w-4 h-4" />,
+        icon: <Car className="w-4 h-4" />, // Direct representation of piping systems
       },
       {
         title: "Piping Stress Analysis",
         href: "/services/plant-engineering/piping-stress-analysis",
-        icon: <Layers className="w-4 h-4" />,
+        icon: <Layers className="w-4 h-4" />, // Indicates layered analysis or stress
       },
       {
         title: "Civil Engineering",
         href: "/services/plant-engineering/civil",
-        icon: <Gauge className="w-4 h-4" />,
+        icon: <Building2 className="w-4 h-4" />, // Represents infrastructure
       },
       {
         title: "Structural Engineering",
         href: "/services/plant-engineering/structural",
-        icon: <Shield className="w-4 h-4" />,
+        icon: <ShieldCheck className="w-4 h-4" />, // Suggests strength and safety
       },
       {
         title: "Electrical Engineering",
         href: "/services/plant-engineering/electrical",
-        icon: <Shield className="w-4 h-4" />,
+        icon: <Zap className="w-4 h-4" />, // Evokes electricity and power
       },
       {
         title: "Instrumentation Engineering",
         href: "/services/plant-engineering/instrumentation",
-        icon: <Shield className="w-4 h-4" />,
+        icon: <Sliders className="w-4 h-4" />, // Represents control and precision
       },
       {
         title: "Modular Package",
         href: "/services/plant-engineering/modular-package",
-        icon: <Shield className="w-4 h-4" />,
+        icon: <Box className="w-4 h-4" />, // Symbolizes modular units or packaging
       },
       {
         title: "Reverse Engineering",
         href: "/services/plant-engineering/reverse-engineering",
-        icon: <Shield className="w-4 h-4" />,
+        icon: <Rewind className="w-4 h-4" />, // Indicates going back or deconstructing
       },
       {
         title: "Procurement Support",
         href: "/services/plant-engineering/procurement-support",
-        icon: <Shield className="w-4 h-4" />,
+        icon: <ShoppingCart className="w-4 h-4" />, // Represents purchasing and support
       },
     ],
     image: {
@@ -676,7 +684,10 @@ export function MegaMenu() {
                                       block: "start",
                                     });
                                   }
-                                } else {
+                                } else if (
+                                  subCategory.href.includes("?section=")
+                                ) {
+                                  // Navigate to /services with the section query param
                                   router.push(subCategory.href);
                                 }
                               }}

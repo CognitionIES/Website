@@ -20,7 +20,7 @@ export default function WorkWithUs() {
   return (
     <section className="py-20">
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-center mb-12">
+        <h2 className="text-3xl font-bold text-[#003C46] text mb-12">
           Why Work With Us
         </h2>
         <div className="grid md:grid-cols-3 gap-8">

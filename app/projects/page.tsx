@@ -219,7 +219,7 @@ const Projects: React.FC = () => {
       {/* FAQ Section */}
       <section className="w-full py-12 sm:py-14 lg:py-22 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#003C46] relative drop-shadow-md text-center mb-12">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#003C46] relative drop-shadow-md  mb-12">
             Frequently Asked Questions
             <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-12 h-0.5 bg-gradient-to-r from-[#0098AF] to-transparent" />
           </h2>
