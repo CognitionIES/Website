@@ -26,8 +26,8 @@ export default function BenefitsSection() {
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         {/* Section title */}
         <div className="relative mb-12">
-          <h2 className="text-3xl font-bold text-[#003C46] relative">
-            {TITLE}
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#003C46] relative drop-shadow-md">
+        {TITLE}
             <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-[#0098AF] to-transparent" />
           </h2>
         </div>

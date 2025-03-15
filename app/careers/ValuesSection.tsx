@@ -16,7 +16,7 @@ export default function ValuesSection() {
   const { STAGGER_CHILDREN, CARD_HOVER } = CAREERS_CONSTANTS.ANIMATIONS;
 
   return (
-    <section className="py-16 bg-[#F5FDFF]">
+    <section className="py-16 bg-gradient-to-b from-gray-50 to-[#F5FDFF] relative">
       <motion.div
         initial="hidden"
         whileInView="visible"

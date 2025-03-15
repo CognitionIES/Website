@@ -156,7 +156,7 @@ export default function DigitalizationProject() {
             variants={buttonFadeIn}
           >
             <Link href="/contact">
-              <Button className="bg-white text-[#0098AF] rounded-lg hover:bg-[#003C46] hover:text-white transition-colors duration-300 text-lg px-8 py-3 shadow-md">
+              <Button className="bg-white text-[#000000] rounded-lg hover:bg-[#5b5b5b] hover:text-white transition-colors duration-300 text-lg px-8 py-3 shadow-md">
                 Get in Touch
               </Button>
             </Link>

@@ -21,8 +21,7 @@ export default function DigitalizationProject() {
     duration: "6 months",
     technologies: ["tech 1", "tech 2", "tech 3"],
     testimonial: {
-      quote:
-        "Testimony",
+      quote: "Testimony",
       author: "Jane Doe, CTO at CompanyName",
     },
   };
@@ -30,7 +29,11 @@ export default function DigitalizationProject() {
   // Minimal animation for CTA button
   const buttonFadeIn = {
     hidden: { opacity: 0, y: 10 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
   };
 
   return (
@@ -55,7 +58,10 @@ export default function DigitalizationProject() {
                 {project.description}
               </p>
               <p className="text-lg sm:text-xl leading-relaxed text-gray-700 text-justify">
-                Partnering with {project.client}, we delivered a tailored digital transformation solution over {project.duration}, leveraging modern technologies to streamline processes and drive business growth.
+                Partnering with {project.client}, we delivered a tailored
+                digital transformation solution over {project.duration},
+                leveraging modern technologies to streamline processes and drive
+                business growth.
               </p>
             </div>
             <div className="relative h-[320px] md:h-[450px] rounded-xl shadow-md overflow-hidden">
@@ -122,8 +128,12 @@ export default function DigitalizationProject() {
             <span className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-[#0098AF] to-transparent" />
           </h2>
           <div className="bg-white p-8 rounded-xl shadow-md text-center space-y-6 max-w-3xl mx-auto">
-            <p className="text-lg sm:text-xl text-gray-600 italic">&quot;{project.testimonial.quote}&quot;</p>
-            <p className="text-gray-800 font-semibold text-lg">{project.testimonial.author}</p>
+            <p className="text-lg sm:text-xl text-gray-600 italic">
+              &quot;{project.testimonial.quote}&quot;
+            </p>
+            <p className="text-gray-800 font-semibold text-lg">
+              {project.testimonial.author}
+            </p>
           </div>
         </div>
         <div className="absolute bottom-12 left-12 w-12 h-12 border-b border-r border-[#0098AF]/10" />
@@ -136,7 +146,8 @@ export default function DigitalizationProject() {
             Ready to Digitize Your Business?
           </h2>
           <p className="text-lg sm:text-xl mb-8">
-            Contact us to explore how our digitalization solutions can transform your operations.
+            Contact us to explore how our digitalization solutions can transform
+            your operations.
           </p>
           <motion.div
             initial="hidden"
@@ -145,7 +156,7 @@ export default function DigitalizationProject() {
             variants={buttonFadeIn}
           >
             <Link href="/contact">
-              <Button className="bg-white text-[#0098AF] rounded-lg hover:bg-[#003C46] hover:text-white transition-colors duration-300 text-lg px-8 py-3 shadow-md">
+              <Button className="bg-white text-[#000000] rounded-lg hover:bg-[#5b5b5b] hover:text-white transition-colors duration-300 text-lg px-8 py-3 shadow-md">
                 Get in Touch
               </Button>
             </Link>
@@ -157,4 +168,4 @@ export default function DigitalizationProject() {
       <Footer />
     </div>
   );
-};
+}
