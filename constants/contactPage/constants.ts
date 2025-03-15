@@ -23,7 +23,7 @@ export const CONTACT_CONSTANTS = {
     },
     EMAIL: {
       TITLE: "Email",
-      ADDRESS: "inquiry@cognitionies.com",
+      ADDRESS: "info@cognitionies.com",
     },
   },
 
