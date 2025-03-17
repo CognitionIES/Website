@@ -17,9 +17,11 @@ export default function BrochurePage() {
       <Banner />
 
       {/* Main content with left and right sections */}
-      <div className="min-h-screen flex">
-        <LeftSection />
-        <RightSection />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col lg:flex-row">
+          <LeftSection />
+          <RightSection />
+        </div>
       </div>
       <div className="w-full h-[4px] bg-gradient-to-r from-[#0098AF] via-[#0098AF] to-[#0098AF] relative z-10" />
 

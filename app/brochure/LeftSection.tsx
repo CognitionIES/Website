@@ -8,7 +8,7 @@ export default function LeftSection() {
   const { TITLE, DESCRIPTION_1, DESCRIPTION_2, SERVICES } = BROCHURE_CONSTANTS.LEFT_CONTENT;
 
   return (
-    <div className="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="w-full lg:w-1/2 py-12 pr-4 lg:pr-8">
       <div className="max-w-xl">
         {/* Title */}
         <h2 className="text-3xl font-bold text-[#003C46] mb-6 relative drop-shadow-sm">

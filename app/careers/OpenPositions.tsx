@@ -118,11 +118,6 @@ export default function CareersSection() {
   );
 
   // Position options
-  const positionOptions = [
-    { value: "1", label: "Position 1" },
-    { value: "2", label: "Position 2" },
-    { value: "3", label: "Position 3" },
-  ];
 
   // Location options
   const locationOptions = [
@@ -201,21 +196,33 @@ export default function CareersSection() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label
-                    htmlFor="email"
+                    htmlFor="location"
                     className="block text-sm font-medium text-[#5b5b5b]"
                   >
-                    Email Address
+                    Location
                   </label>
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder="Email"
-                    value={formData.email}
-                    onChange={(e) => handleInputChange("email", e.target.value)}
-                    className="w-full border border-[#5b5b5b]/40 focus:border-[#0098af] rounded-md text-sm py-2 px-3 bg-gray-50"
-                    required
+                  <Select
+                    value={formData.location}
+                    onValueChange={(value) =>
+                      handleInputChange("location", value)
+                    }
                     disabled={isSubmitting}
-                  />
+                  >
+                    <SelectTrigger className="w-full border border-[#5b5b5b]/40 focus:border-[#0098af] rounded-md text-sm py-2 px-3 text-[#5b5b5b] bg-gray-50">
+                      <SelectValue placeholder="Location" />
+                    </SelectTrigger>
+                    <SelectContent className="bg-white border border-[#5b5b5b]/40 rounded-md shadow">
+                      {locationOptions.map((option) => (
+                        <SelectItem
+                          key={option.value}
+                          value={option.value}
+                          className="text-sm py-1.5 px-3 hover:bg-[#0098af] hover:text-white"
+                        >
+                          {option.label}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
                 </div>
                 <div>
                   <label
@@ -238,8 +245,8 @@ export default function CareersSection() {
               </div>
 
               {/* Row 3: Position and Location */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
+              <div className="grid grid-cols-1 sm:grid-cols-1 gap-4">
+                {/* <div>
                   <label
                     htmlFor="position"
                     className="block text-sm font-medium text-[#5b5b5b]"
@@ -268,36 +275,25 @@ export default function CareersSection() {
                       ))}
                     </SelectContent>
                   </Select>
-                </div>
+                </div> */}
+
                 <div>
                   <label
-                    htmlFor="location"
+                    htmlFor="email"
                     className="block text-sm font-medium text-[#5b5b5b]"
                   >
-                    Location
+                    Email Address
                   </label>
-                  <Select
-                    value={formData.location}
-                    onValueChange={(value) =>
-                      handleInputChange("location", value)
-                    }
+                  <Input
+                    id="email"
+                    type="email"
+                    placeholder="Email"
+                    value={formData.email}
+                    onChange={(e) => handleInputChange("email", e.target.value)}
+                    className="w-full border border-[#5b5b5b]/40 focus:border-[#0098af] rounded-md text-sm py-2 px-3 bg-gray-50"
+                    required
                     disabled={isSubmitting}
-                  >
-                    <SelectTrigger className="w-full border border-[#5b5b5b]/40 focus:border-[#0098af] rounded-md text-sm py-2 px-3 text-[#5b5b5b] bg-gray-50">
-                      <SelectValue placeholder="Location" />
-                    </SelectTrigger>
-                    <SelectContent className="bg-white border border-[#5b5b5b]/40 rounded-md shadow">
-                      {locationOptions.map((option) => (
-                        <SelectItem
-                          key={option.value}
-                          value={option.value}
-                          className="text-sm py-1.5 px-3 hover:bg-[#0098af] hover:text-white"
-                        >
-                          {option.label}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
+                  />
                 </div>
               </div>
 
@@ -368,7 +364,8 @@ export default function CareersSection() {
                   I agree to receive communication. See our{" "}
                   <a href="/privacy-policy" className="text-[#0098af]">
                     Privacy Policy
-                  </a>.
+                  </a>
+                  .
                 </label>
               </div>
 
