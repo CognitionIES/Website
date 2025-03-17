@@ -7,7 +7,7 @@ import blueBulletImage from "@/constants/images/Bullet_Points/bullet_point_blue_
 import grayBulletImage from "@/constants/images/Bullet_Points/bullet_point_gray.png";
 
 interface LogoItem {
-  src: string | { src: string }; // Support both string and imported image module
+  src: string | { src: string };
   alt: string;
 }
 
@@ -63,27 +63,6 @@ export function ScrollSection({
         duration: 0.4,
       },
     },
-  };
-
-  const gridColumnMap: { [key: string]: string } = {
-    "CAD & PLM:": "md:grid-cols-7",
-    "ELECTRICAL CAD & PCB DESIGN:": "md:grid-cols-6",
-    "COMPUTER AIDED ENGINEERING:": "md:grid-cols-5",
-    "COMPUTATIONAL FLUID DYNAMICS:": "md:grid-cols-5",
-    "3D MODEL SOFTWARE:": "md:grid-cols-3",
-    "CAD:": "md:grid-cols-6",
-    "SIMULATION:": "md:grid-cols-6",
-    "ASSET MANAGEMENT SOFTWARE:": "md:grid-cols-4",
-    "ANALYTICS AND DATA VISUALIZATION:": "md:grid-cols-4",
-    "IDE AND PROGRAMMING:": "md:grid-cols-3",
-    "TESTING AND DEBUGGING:": "md:grid-cols-3",
-    "RTOS DEVELOPMENT:": "md:grid-cols-3",
-    "PUBLISHING, DIGITAL AND GRAPHICS:": "md:grid-cols-5",
-    "SUPPLY CHAIN MANAGEMENT:": "md:grid-cols-4",
-  };
-
-  const getGridClass = (label: string) => {
-    return gridColumnMap[label] || "md:grid-cols-5";
   };
 
   return (
@@ -150,54 +129,37 @@ export function ScrollSection({
 
           {logos.length > 0 && (
             <motion.div
-              className="bg-white shadow-lg rounded-xl p-6 space-y-2"
-              style={{ maxWidth: "750px" }}
+              className="bg-white shadow-md rounded-lg p-2 space-y-1 max-w-[700px]" // Reduced space-y from 2 to 1
               variants={itemVariants}
             >
               {logos.map((row, rowIdx) => (
-                <motion.div
-                  key={rowIdx}
-                  className="flex items-center  justify gap-4"
-                  variants={itemVariants}
-                >
-                  <div className="w-30 flex-shrink-0">
-                    <h3 className="text-sm font-semibold text-foreground uppercase">
-                      {row.label}
-                    </h3>
-                  </div>
-                  <div
-                    className={`grid ${getGridClass(
-                      row.label
-                    )} gap-2 justify-center`}
-                  >
+                <div key={rowIdx} className="space-y-0.5"> {/* Reduced from space-y-1 to space-y-0.5 */}
+                  <h3 className="text-[15px] font-semibold text-foreground uppercase border-b border-gray-200 pb-0.5"> {/* Reduced font size to 10px, padding to 0.5 */}
+                    {row.label}
+                  </h3>
+                  <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-8 gap-1"> {/* Increased to 8 columns */}
                     {row.items.map((logo, idx) => (
                       <motion.div
                         key={idx}
-                        className="aspect-square relative group min-w-[80px] min-h-[80px] outline-none group-hover:outline group-hover:outline-2 group-hover:outline-green group-hover:outline-offset-2 rounded-lg"
+                        className="aspect-square relative group min-w-[50px] min-h-[50px]  rounded-md flex items-center justify-center"
                         whileHover={{ scale: 1.05 }}
                         transition={{ type: "spring", stiffness: 300 }}
                         variants={itemVariants}
                       >
-                        {/* Adjusted background size */}
-                        <div className="relative w-[80%] h-[80%] mx-auto my-auto bg-foreground/5 rounded-lg opacity-0 transition-opacity" />
-                        <div className="absolute inset-0 flex items-center justify-center w-full h-full">
-                          <Image
-                            src={
-                              typeof logo.src === "string"
-                                ? logo.src
-                                : logo.src.src
-                            }
-                            alt={logo.alt}
-                            width={100}
-                            height={100}
-                            className="object-contain p-1 flex justify items-center transition-all duration-300 group-hover:brightness-110 rounded-lg"
-                            sizes="(max-width: 768px) 50px, 80px"
-                          />
-                        </div>
+                        <Image
+                          src={
+                            typeof logo.src === "string" ? logo.src : logo.src.src
+                          }
+                          alt={logo.alt}
+                          width={75}
+                          height={75}
+                          className="object-contain p-1 transition-all duration-300 group-hover:brightness-110"
+                          sizes="(max-width: 768px) 40px, 50px"
+                        />
                       </motion.div>
                     ))}
                   </div>
-                </motion.div>
+                </div>
               ))}
             </motion.div>
           )}

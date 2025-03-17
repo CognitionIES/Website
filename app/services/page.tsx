@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import sections from "@/constants/sections";
 import frameBackground from "@/constants/images/Background/Frame_8.jpg";
@@ -10,20 +10,18 @@ import { Suspense, useEffect, useState } from "react";
 import SearchParamsHandler from "./SearchParamsHandler";
 import { ScrollSection } from "@/components/ScrollSection";
 
-export default function servicesPage() {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
+export default function ServicesPage() {
   const [showScrollHint, setShowScrollHint] = useState(true);
 
-  // eslint-disable-next-line react-hooks/rules-of-hooks
+  // Scroll hint timeout
   useEffect(() => {
     const timer = setTimeout(() => setShowScrollHint(false), 5000);
     return () => clearTimeout(timer);
   }, []);
 
-  // Optional: Handle the param in the parent if needed
-
+  // Handle param change (e.g., for debugging)
   const handleParamChange = (param: string): void => {
-    console.log('Current param:', param); // For debugging or further use
+    console.log("Current param:", param);
   };
 
   return (
@@ -94,7 +92,6 @@ export default function servicesPage() {
     </div>
   );
 }
-
 // "use client";
 
 // import { ScrollSection } from "@/components/ScrollSection";
