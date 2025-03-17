@@ -18,7 +18,9 @@ export default function ProductEngineeringPage() {
       {/* About section */}
       <AboutSection />
       {/* Services section */}
-      <ServicesSection />
+      <section id="services">
+      <ServicesSection  />
+      </section >
       {/* FAQ section */}
       <FAQSection />
       {/* Footer */}

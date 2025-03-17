@@ -18,7 +18,9 @@ export default function PlantEngineeringPage() {
       {/* About section */}
       <AboutSection />
       {/* Services section */}
+      <section id="services">
       <ServicesSection />
+      </section>
       {/* FAQ section */}
       <FAQSection />
       {/* Footer */}

@@ -857,47 +857,47 @@ export function MegaMenu() {
               </div> */}
 
               {/* Mobile services Dropdown */}
-              <div className="space-y-1">
-                <button
-                  onClick={() =>
-                    setActiveDropdown(
-                      activeDropdown === "services-mobile"
-                        ? null
-                        : "services-mobile"
-                    )
-                  }
-                  className="flex items-center justify-between w-full px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-900 hover:bg-gray-50"
-                >
-                  services
-                  <ChevronDown
-                    className={`ml-2 h-4 w-4 transition-transform ${
-                      activeDropdown === "services-mobile" ? "rotate-180" : ""
-                    }`}
-                  />
-                </button>
-                {activeDropdown === "services-mobile" && (
-                  <div className="pl-4">
-                    {servicesData.map((services) => (
-                      <div key={services.title} className="space-y-1">
-                        <div className="px-3 py-2 text-lg font-semibold text-gray-800">
-                          {services.title}
-                        </div>
-                        {services.subCategories.map((subCategory) => (
-                          <Link
-                            key={subCategory.title}
-                            href={subCategory.href}
-                            className="block px-3 py-2 text-lg text-gray-600 hover:text-blue-900 hover:bg-gray-50"
-                            onClick={() => setIsMobileMenuOpen(false)}
-                          >
-                            {subCategory.title}
-                          </Link>
-                        ))}
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-
+              {/* Mobile services Dropdown */}
+<div className="space-y-1">
+  <button
+    onClick={() =>
+      setActiveDropdown(
+        activeDropdown === "services-mobile"
+          ? null
+          : "services-mobile"
+      )
+    }
+    className="flex items-center justify-between w-full px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-900 hover:bg-gray-50"
+  >
+    Services
+    <ChevronDown
+      className={`ml-2 h-4 w-4 transition-transform ${
+        activeDropdown === "services-mobile" ? "rotate-180" : ""
+      }`}
+    />
+  </button>
+  {activeDropdown === "services-mobile" && (
+    <div className="pl-4 max-h-60 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100 pb-2">
+      {servicesData.map((service) => (
+        <div key={service.title} className="space-y-1">
+          <div className="px-3 py-2 text-lg font-semibold text-gray-800">
+            {service.title}
+          </div>
+          {service.subCategories.map((subCategory) => (
+            <Link
+              key={subCategory.title}
+              href={subCategory.href}
+              className="block px-3 py-2 text-lg text-gray-600 hover:text-blue-900 hover:bg-gray-50"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              {subCategory.title}
+            </Link>
+          ))}
+        </div>
+      ))}
+    </div>
+  )}
+</div>
               {/* Other Mobile Menu Items */}
               {/* <Link
                 href="/resources"

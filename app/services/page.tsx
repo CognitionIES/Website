@@ -22,8 +22,6 @@ export default function servicesPage() {
 
   // Optional: Handle the param in the parent if needed
 
-
-
   const handleParamChange = (param: string): void => {
     console.log('Current param:', param); // For debugging or further use
   };

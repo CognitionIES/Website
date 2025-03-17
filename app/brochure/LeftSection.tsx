@@ -11,7 +11,7 @@ export default function LeftSection() {
     <div className="w-full lg:w-1/2 py-12 pr-4 lg:pr-8">
       <div className="max-w-xl">
         {/* Title */}
-        <h2 className="text-3xl font-bold text-[#003C46] mb-6 relative drop-shadow-sm">
+        <h2 className="text-3xl mt-[24px] font-bold text-[#003C46] mb-6 relative drop-shadow-sm">
           {TITLE}
         </h2>
         {/* First paragraph */}

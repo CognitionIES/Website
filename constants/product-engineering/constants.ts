@@ -51,14 +51,7 @@ export const PRODUCT_ENGINEERING_CONSTANTS = {
         alt: "Mechanical design",
         href: "/services?section=mechanical",
       },
-      {
-        icon: FiActivity,
-        title: "CAE/CFD",
-        description: "Advanced computational analysis for engineering design and fluid dynamics",
-        image: "https://images.unsplash.com/photo-1580894894513-541e068a3e2b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        alt: "Mechanical design",
-        href: "/services?section=cae-cfd",
-      },
+     
       {
         icon: FiZap,
         title: "Electrical Engineering Services",
@@ -66,6 +59,20 @@ export const PRODUCT_ENGINEERING_CONSTANTS = {
         image: "https://images.unsplash.com/photo-1498084393753-b411b2d26b34?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
         alt: "Mechanical design",
         href: "/services?section=electrical",
+      }, {
+        icon: FiActivity,
+        title: "CAE/CFD",
+        description: "Advanced computational analysis for engineering design and fluid dynamics",
+        image: "https://images.unsplash.com/photo-1580894894513-541e068a3e2b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        alt: "Mechanical design",
+        href: "/services?section=cae-cfd",
+      },{
+        icon: FiPrinter,
+        title: "Prototyping and 3D Printing",
+        description: "Rapid prototyping and additive manufacturing services",
+        image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        alt: "Mechanical design",
+        href: "/services?section=prototyping",
       },
       {
         icon: FiDroplet,
@@ -75,14 +82,7 @@ export const PRODUCT_ENGINEERING_CONSTANTS = {
         alt: "Mechanical design",
         href: "/services?section=hydraulic",
       },
-      {
-        icon: FiPrinter,
-        title: "Prototyping and 3D Printing",
-        description: "Rapid prototyping and additive manufacturing services",
-        image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-        alt: "Mechanical design",
-        href: "/services?section=prototyping",
-      },
+      
       {
         icon: FiDatabase,
         title: "Asset Management",
