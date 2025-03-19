@@ -223,8 +223,6 @@
 // export default Footer;
 "use client";
 
-
-
 // This file puts together all parts of the footer
 import * as React from "react";
 import { motion } from "framer-motion";

@@ -914,6 +914,13 @@ export function MegaMenu() {
                 Careers
               </Link>
               <Link
+                href="/projects"
+                className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-900 hover:bg-gray-50"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Projects
+              </Link>
+              <Link
                 href="/about"
                 className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-900 hover:bg-gray-50"
                 onClick={() => setIsMobileMenuOpen(false)}

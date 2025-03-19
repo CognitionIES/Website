@@ -12,7 +12,15 @@ export default function Content() {
           <span className="block w-20 h-1 bg-gradient-to-r from-[#0098AF] to-transparent mt-3 rounded-full" />
         </h1>
         <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-3xl font-light text-justify">
-          At Cognition, our Mechanical Engineering services are dedicated to designing and delivering robust, efficient, and reliable mechanical systems for industrial plants. We specialize in static and rotating equipment, detailed engineering, and HVAC solutions, ensuring optimal performance and durability. With extensive services, our team works closely with you to address complex mechanical challenges, providing tailored solutions for new installations or upgrades. Whether it’s equipment design or system optimization, we bring your project to life with precision and practicality.
+          At Cognition, our Mechanical Engineering services are dedicated to
+          designing and delivering robust, efficient, and reliable mechanical
+          systems for industrial plants. We specialize in static and rotating
+          equipment, detailed engineering, and HVAC solutions, ensuring optimal
+          performance and durability. With extensive services, our team works
+          closely with you to address complex mechanical challenges, providing
+          tailored solutions for new installations or upgrades. Whether it’s
+          equipment design or system optimization, we bring your project to life
+          with precision and practicality.
         </p>
       </section>
 
@@ -23,11 +31,15 @@ export default function Content() {
           <FiChevronRight className="ml-2 text-[#0098AF]" />
         </h2>
         <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-4 font-light">
-          We leverage industry-leading tools like SolidWorks, ANSYS, and AutoCAD Mechanical to deliver precise and efficient mechanical engineering solutions.
+          We leverage industry-leading tools like SolidWorks, ANSYS, and AutoCAD
+          Mechanical to deliver precise and efficient mechanical engineering
+          solutions.
         </p>
         {/* Placeholder for slider with subtle shadow and border */}
         <div className="w-full h-24 bg-gray-100 flex items-center justify-center rounded-lg mt-4 border border-gray-200 shadow-sm">
-          <span className="text-gray-500 font-medium">Logo Slider Carousel</span>
+          <span className="text-gray-500 font-medium">
+            Logo Slider Carousel
+          </span>
         </div>
         {/* Decorative dot */}
         <div className="absolute top-4 right-4 w-3 h-3 bg-[#0098AF] rounded-full opacity-50" />
@@ -39,7 +51,8 @@ export default function Content() {
           What We Offer
         </h2>
         <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-6 max-w-3xl font-light text-justify">
-          We provide a comprehensive set of services to ensure your success in Mechanical Engineering. Here’s how we can support you:
+          We provide a comprehensive set of services to ensure your success in
+          Mechanical Engineering. Here’s how we can support you:
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <ul className="space-y-4">
@@ -68,7 +81,9 @@ export default function Content() {
             </li>
             <li className="flex items-start gap-3 ml-6">
               <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">Dryers & Cooling Towers</span>
+              <span className="text-gray-600 font-light">
+                Dryers & Cooling Towers
+              </span>
             </li>
             <li className="flex items-start gap-3 ml-6">
               <span className="text-[#0098AF] text-base">•</span>
