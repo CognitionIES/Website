@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Play, Quote } from "lucide-react";
+import {  Quote } from "lucide-react";
 import {
   Carousel,
   CarouselContent,
@@ -9,7 +9,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+// import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
 import { useIsMobile } from "@/hooks/use-mobile";
