@@ -70,6 +70,12 @@ export default {
         muted: '#5B5B5B',
         light: '#F5FDFF',
         'primary-hover': '#007B8F'
+      },brand: {
+        primary: '#0098af',
+        secondary: '#5b5b5b',
+        dark: '#003C46',
+        light: '#E6F0F5',
+        accent: '#00b4d8'
       },
       keyframes: {
         "accordion-down": {
