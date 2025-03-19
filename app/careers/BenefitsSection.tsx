@@ -1,62 +1,50 @@
-"use client";
 
-// This component shows why people should work with us
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { motion } from "framer-motion";
-import { CAREERS_CONSTANTS } from "@/constants/careersPage/constants";
+import React from 'react';
+import { CAREERS_CONSTANTS } from '@/constants/careersPage/constants';
 
-export default function BenefitsSection() {
-  const { TITLE, ITEMS } = CAREERS_CONSTANTS.BENEFITS;
-  const { STAGGER_CHILDREN, CARD_HOVER } = CAREERS_CONSTANTS.ANIMATIONS;
+const BenefitsSection = () => {
+  const { ITEMS, TITLE } = CAREERS_CONSTANTS.BENEFITS;
 
   return (
-    <motion.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      variants={STAGGER_CHILDREN}
-      className="py-20 bg-gray-50 relative"
-    >
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        {/* Section title */}
-        <div className="relative mb-12">
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#003C46] relative drop-shadow-md">
-        {TITLE}
-            <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-[#0098AF] to-transparent" />
+    <section className="py-24 bg-[#F5FDFF]/50 relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-white to-transparent"></div>
+      <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-white to-transparent"></div>
+      
+      <div className="container mx-auto px-6">
+        <div className="text-center mb-16">
+        <span className="inline-block px-3 py-1 bg-[#0098AF]/10 text-[#0098AF] text-sm font-medium rounded-full mb-4">
+            Benefits & Perks
+          </span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[003C46] relative mb-2 text-center">
+            {TITLE}
+            <span className="line-indicator mx-auto"></span>
           </h2>
+          <p className="text-lg text-[#5B5B5B] mb-12 max-w-2xl mx-auto">
+            We believe in taking care of our team with comprehensive benefits and a supportive environment.
+          </p>
         </div>
-        {/* Benefits cards */}
-        <div className="grid md:grid-cols-3 gap-6">
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {ITEMS.map((benefit, index) => (
-            <motion.div
-              key={index}
-              variants={CARD_HOVER}
-              initial="rest"
-              whileHover="hover"
-              className="bg-white p-6 rounded-lg border border-[#0098AF]/10 shadow-sm cursor-pointer"
+            <div 
+              key={index} 
+              className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 card-hover animate-slide-up"
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <Card className="border-0 ">
-                <CardHeader className="p-0">
-                  <CardTitle className="text-xl font-semibold text-[#5B5B5B] hover:text-[#0098AF] transition-colors duration-200">
-                    {benefit.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="p-0 pt-4">
-                  <CardDescription className="text-base  text-gray-600 leading-relaxed line-clamp-2">
-                    {benefit.description}
-                  </CardDescription>
-                </CardContent>
-              </Card>
-            </motion.div>
+              <div className="flex items-center justify-center w-16 h-16 rounded-lg bg-[#0098AF]/10 mb-6">
+                <div className="w-8 h-8 rounded-md bg-[#0098AF] flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">{index + 1}</span>
+                </div>
+              </div>
+              <h3 className="text-xl font-bold text-[#003C46] mb-3">{benefit.title}</h3>
+              <p className="text-[#5B5B5B]">{benefit.description}</p>
+            </div>
           ))}
         </div>
       </div>
-    </motion.div>
+    </section>
   );
-}
+};
+
+export default BenefitsSection;

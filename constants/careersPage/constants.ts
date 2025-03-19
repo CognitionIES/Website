@@ -48,19 +48,32 @@ export const CAREERS_CONSTANTS = {
       TITLE: "Why Work With Us",
       ITEMS: [
         {
-          title: "Advanced Projects",
-          description: "Work on cutting-edge engineering solutions that shape industries.",
+          title: "Work-Life Balance",
+          description: "Flexible working hours and remote options to ensure you can maintain a healthy balance."
         },
         {
-          title: "Global Exposure",
-          description: "Collaborate with international teams and clients across continents.",
+          title: "Continuous Learning",
+          description: "Access to workshops, conferences, and learning resources to help you grow professionally."
         },
         {
-          title: "Growth Opportunities",
-          description: "Continuous learning and career advancement opportunities.",
+          title: "Inclusive Culture",
+          description: "A diverse and supportive environment where all voices are heard and valued."
         },
-      ],
+        {
+          title: "Competitive Compensation",
+          description: "Attractive salary packages and benefits designed to recognize your contributions."
+        },
+        {
+          title: "Modern Workspace",
+          description: "Thoughtfully designed workspaces that inspire creativity and collaboration."
+        },
+        {
+          title: "Health & Wellness",
+          description: "Comprehensive health benefits and wellness programs to support your physical and mental well-being."
+        }
+      ]
     },
+
   
     // Animation Variants (used across sections)
     ANIMATIONS: {

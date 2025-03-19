@@ -16,7 +16,12 @@ import pipingImage from "@/constants/images/Plant-engineering/Services/piping-en
 import pipingStressImage from "@/constants/images/Plant-engineering/Services/piping-stress-analysis.jpg";
 import mechImage from "@/constants/images/Plant-engineering/Services/mechanical-eng.jpg";
 import electricalImage from "@/constants/images/Plant-engineering/Services/ele.jpg";
-
+import civilImage from "@/constants/images/Plant-engineering/Services/civil.jpg";
+import procurementImage from "@/constants/images/Plant-engineering/Services/procurement.jpg";
+import structImage from "@/constants/images/Plant-engineering/Services/struct-eng.jpg";
+import modularImage from "@/constants/images/Plant-engineering/Services/modu.jpg";
+import reverseImage from "@/constants/images/Plant-engineering/Services/rev-eng.jpg";
+import instrumentImage from "@/constants/images/Plant-engineering/Services/intrument-eng.jpg";
 interface Service {
   title: string;
   href: string;
@@ -58,8 +63,7 @@ const services: Service[] = [
     title: "CIVIL ENGINEERING",
     href: "/services/plant-engineering/civil",
     icon: <GaugeCircle className="w-4 h-4 text-[#0098AF] transition-colors" />,
-    image:
-      "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=576&q=80",
+    image: civilImage,
     alt: "Civil engineering construction",
   },
   {
@@ -68,8 +72,7 @@ const services: Service[] = [
     icon: (
       <ShieldEllipsis className="w-4 h-4 text-[#0098AF] transition-colors" />
     ),
-    image:
-      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=576&q=80",
+    image: structImage,
     alt: "Structural engineering framework",
   },
   {
@@ -87,8 +90,7 @@ const services: Service[] = [
     icon: (
       <ShieldEllipsis className="w-4 h-4 text-[#0098AF] transition-colors" />
     ),
-    image:
-      "https://images.unsplash.com/photo-1581092335397-9583eb92d232?auto=format&fit=crop&w=576&q=80",
+    image: instrumentImage,
     alt: "Instrumentation control system",
   },
   {
@@ -97,8 +99,7 @@ const services: Service[] = [
     icon: (
       <ShieldEllipsis className="w-4 h-4 text-[#0098AF] transition-colors" />
     ),
-    image:
-      "https://images.unsplash.com/photo-1581093458791-89b6f8c3b962?auto=format&fit=crop&w=576&q=80",
+    image: modularImage,
     alt: "Modular plant package",
   },
   {
@@ -107,8 +108,7 @@ const services: Service[] = [
     icon: (
       <ShieldEllipsis className="w-4 h-4 text-[#0098AF] transition-colors" />
     ),
-    image:
-      "https://images.unsplash.com/photo-1581092919530-5957b3129a36?auto=format&fit=crop&w=576&q=80",
+    image: reverseImage,
     alt: "Reverse engineering process",
   },
   {
@@ -117,8 +117,7 @@ const services: Service[] = [
     icon: (
       <ShieldEllipsis className="w-4 h-4 text-[#0098AF] transition-colors" />
     ),
-    image:
-      "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?auto=format&fit=crop&w=576&q=80",
+    image: procurementImage,
     alt: "Procurement planning meeting",
   },
 ];
@@ -168,7 +167,7 @@ export default function ServiceSidebar() {
           />
         ) : (
           <Image
-            src="https://thumbs.dreamstime.com/b/vertical-image-construction-safety-concept-close-up-worker-holding-helmet-33226974.jpg?w=576"
+            src=" s://thumbs.dreamstime.com/b/vertical-image-construction-safety-concept-close-up-worker-holding-helmet-33226974.jpg?w=576"
             alt="Construction Safety Concept - Worker Holding Helmet"
             width={300}
             height={500}

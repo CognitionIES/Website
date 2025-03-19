@@ -8,6 +8,7 @@ import ValuesSection from "./ValuesSection";
 import TestimonialsSection from "./TestimonialsSection";
 import BenefitsSection from "./BenefitsSection";
 import OpenPositions from "./OpenPositions";
+import ApplicationForm from "./ApplicationForm";
 
 export default function CareersPage() {
   return (
@@ -24,6 +25,7 @@ export default function CareersPage() {
       <TestimonialsSection />
       {/* Benefits section */}
       <BenefitsSection />
+      <ApplicationForm />
       {/* Footer */}
       <Footer />
     </div>

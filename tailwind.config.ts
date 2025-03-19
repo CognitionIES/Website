@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 const {
   default: flattenColorPalette,
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 } = require("tailwindcss/lib/util/flattenColorPalette");
 
 export default {
@@ -62,6 +63,14 @@ export default {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      careers: {
+        primary: '#0098AF',
+        secondary: '#003C46',
+        accent: '#99D5DF',
+        muted: '#5B5B5B',
+        light: '#F5FDFF',
+        'primary-hover': '#007B8F'
+      },
       keyframes: {
         "accordion-down": {
           from: {
@@ -86,11 +95,13 @@ export default {
       },
     },
   },
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
   plugins: [require("tailwindcss-animate"), addVariablesForColors],
 } satisfies Config;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function addVariablesForColors({ addBase, theme }: any) {
-  let allColors = flattenColorPalette(theme("colors"));
-  let newVars = Object.fromEntries(
+  const allColors = flattenColorPalette(theme("colors"));
+  const newVars = Object.fromEntries(
     Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
   );
 

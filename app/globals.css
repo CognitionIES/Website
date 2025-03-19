@@ -72,4 +72,37 @@ body {
 * {
     font-family: Calibri, sans-serif;
   }
+  .section-title {
+    @apply text-3xl sm:text-4xl lg:text-5xl font-bold text-[#003C46] relative mb-2;
+  }
+  
+  .section-subtitle {
+    @apply text-lg text-[#5b5b5b] mb-12 max-w-2xl mx-auto;
+  }
+}
+
+@layer components {
+  .glass-morphism {
+    @apply backdrop-blur-xl bg-white/10 border border-white/20 shadow-lg;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-md hover:-translate-y-1;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-career bg-clip-text text-transparent;
+  }
+
+  .line-indicator {
+    @apply absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-[#0098af] to-transparent;
+  }
+  
+  .section-title {
+    @apply text-3xl sm:text-4xl lg:text-5xl font-bold text-[#003C46] relative mb-2;
+  }
+  
+  .section-subtitle {
+    @apply text-lg text-[#5b5b5b] mb-12 max-w-2xl mx-auto;
+  }
 }
