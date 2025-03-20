@@ -138,17 +138,16 @@ const RecentProjects = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
         {/* Section header with animation */}
         <div className="inline-block mb-2 px-3 py-1 bg-[#E6F0F5] bg-opacity-70 rounded-full backdrop-blur-sm">
-            <p className="text-xs font-medium tracking-wider text-[#0098af] uppercase">
-              Featured Work
-            </p>
-          </div><motion.div
+          <p className="text-xs font-medium tracking-wider text-[#0098af] uppercase">
+            Featured Work
+          </p>
+        </div>
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6, delay: 0.1 }}
           className="mb-12 max-w-7xl"
         >
-         
-
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-[#5b5b5b] mb-4 reveal-line inline-block">
             Our Recent Projects
           </h2>
@@ -304,7 +303,7 @@ const RecentProjects = () => {
               variant="outline"
               className="rounded-full bg-[#0098af] text-white  hover:bg-white hover:text-black  hover:outline hover:outline-2 hover:outline-[#0098af] px-4 py-4 h-auto text-base font-medium border-[#0098af]  transition-colors duration-300"
             >
- {/* <Button className="w-full bg-[#0098af] text-white hover:bg-white hover:text-black border-2 border-transparent hover:border-[#0098af] hover:outline hover:outline-2 hover:outline-[#0098af] transition-colors duration-200"> */}
+              {/* <Button className="w-full bg-[#0098af] text-white hover:bg-white hover:text-black border-2 border-transparent hover:border-[#0098af] hover:outline hover:outline-2 hover:outline-[#0098af] transition-colors duration-200"> */}
 
               <span>View All Projects</span>
               <ArrowRight className="ml-2 h-4 w-4" />

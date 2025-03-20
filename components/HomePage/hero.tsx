@@ -16,7 +16,7 @@ function Hero() {
       setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
     }, 5000);
     return () => clearInterval(timer);
-  }, [isPaused]);   
+  }, [isPaused]);
 
   // Navigation functions
   const goToPrevSlide = () =>
@@ -54,18 +54,18 @@ function Hero() {
           <div className="absolute inset-0 bg-gradient-to-br from-[#003C46]/70 to-[#0098AF]/50" />
 
           {/* Text Overlay */}
-          <div className="absolute inset-0 flex mt-[350px] ml-[410px]  z-10">
-            <div className="text-right text-white px-4 sm:px-6 max-w-5xl mx-auto">
-            <span className="inline-block py-1.5 px-4 bg-white/15 backdrop-blur-sm text-white text-xs uppercase tracking-widest font-semibold rounded-full border border-white/10 animate-slide-right shadow-lg">
-                    {slide.majorService}
-                  </span>
-              <p className="text-sm  sm:text-base md:text-lg lg:text-xl  text-[#99D5DF] font-medium tracking-widest uppercase drop-shadow-sm">
+          <div className="absolute bottom-8 right-8 flex items-end justify-end z-10">
+            <div className="text-right text-white px-4 sm:px-6 max-w-7xl">
+              <span className="inline-block py-1.5 px-4 bg-white/15 backdrop-blur-sm text-white text-xs uppercase tracking-widest font-semibold rounded-full border border-white/10 animate-slide-right shadow-lg">
+                {slide.majorService}
+              </span>
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[#99D5DF] font-medium tracking-widest uppercase drop-shadow-sm">
                 {slide.subtitle}
               </p>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-5 leading-tight w-full text-white drop-shadow-lg">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-5 leading-tight text-white drop-shadow-lg">
                 {slide.title}
               </h1>
-              <p className="text-sm  sm:text-base md:text-lg lg:text-xl mb-5 max-w-7xl mx-auto text-gray-100 font-light leading-relaxed drop-shadow-md">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl mb-5 text-gray-100 font-light leading-relaxed drop-shadow-md">
                 {slide.description}
               </p>
               {/* <button className="px-6 py-2.5 bg-[#0098AF] hover:bg-[#007B8F] text-white font-semibold rounded-md shadow-md transition-all duration-200 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#0098AF]/50">
@@ -112,6 +112,7 @@ function Hero() {
 }
 
 export default Hero;
+
 /*import { useEffect, useState, useRef } from "react";
 import { heroSlides } from "@/constants/hero";
 import { ChevronLeft, ChevronRight } from "lucide-react";

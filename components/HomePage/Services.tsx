@@ -417,6 +417,7 @@ export default function ServicesSection() {
 
         {/* Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-8 lg:gap-10">
+          
           {SERVICES.map((service) => (
             <div
               key={service.id}
@@ -460,20 +461,20 @@ export default function ServicesSection() {
                 className={cn(
                   "absolute inset-0 transition-opacity duration-500",
                   activeCard === service.id
-                    ? "bg-gradient-to-br from-[#003C46]/85 to-[#0098AF]/95 opacity-100"
+                    ? "bg-gradient-to-br from-[#003C46]/85 to-[#0098AF]/95 opacity-70"
                     : "bg-gradient-to-b from-transparent to-[#000000]/70 opacity-75"
                 )}
               />
 
               {/* Content */}
-              <div className="relative h-full p-6 sm:p-8 lg:p-8 flex flex-col justify-between min-h-[400px]">
+              <div className="relative h-full  sm:p-8 lg:p-8 flex flex-col justify-between min-h-[400px]">
                 <div>
                   <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-4 text-white tracking-wide drop-shadow-md">
                     {service.title}
                   </h2>
                   <p
                     className={cn(
-                      "text-sm sm:text-base lg:text-lg textjustify leading-relaxed transition-all duration-500 ease-in-out",
+                      "text-sm sm:text-xs lg:text-base textjustify mt-[155px] leading-relaxed transition-all duration-500 ease-in-out",
                       activeCard === service.id
                         ? "text-white/90 opacity-100"
                         : "text-white/80 opacity-0 h-0"
@@ -486,12 +487,12 @@ export default function ServicesSection() {
                 </div>
 
                 {/* Button */}
-                <div className="flex justify-end mt-6">
+                <div className="flex justify-end">
                   <Link href={service.href}>
                     <Button
                       variant="secondary"
                       className={cn(
-                        "bg-[#5b5b5b] text-white font-medium rounded-md px-6 py-2 transition-all duration-200",
+                        "bg-[#5b5b5b] text-white font-medium rounded-md px-6  transition-all duration-200",
                         activeCard === service.id
                           ? "hover:bg-white hover:shadow-md hover:text-[#000000]"
                           : "bg-[#0098AF] hover:bg-[#003C46]"

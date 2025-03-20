@@ -147,7 +147,7 @@ export default function ProductCostManagement() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Horizontal Line */}
-          <div className="w-12 h-[2px] bg-[#0098AF] rounded-full mb-2"></div>
+          {/* <div className="w-12 h-[2px] bg-[#0098AF] rounded-full mb-2"></div> */}
 
           {/* Heading */}
           <div className="mb-4">
@@ -164,51 +164,51 @@ export default function ProductCostManagement() {
 
           {/* Two-Column Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div className="space-y-6">
-            <p className="text-lg text-[#5b5b5b] text-justify">
-              Our client, a leading manufacturer in the industrial equipment
-              sector, specializes in outdoor power tools including log
-              splitters, pressure washers, and air compressors. They engaged
-              Cognition Engineering Solutions to optimize costs and improve the
-              competitiveness of their Log Splitter product line.
-            </p>
-            <p className="text-lg text-[#5b5b5b] text-justify">
-              The primary goal was to analyze the product&apos;s design,
-              components, and manufacturing costs to identify opportunities for
-              cost reduction without compromising quality and performance.
-            </p>
-          </div>
+            <div className="space-y-6">
+              <p className="text-lg text-[#5b5b5b] text-justify">
+                Our client, a leading manufacturer in the industrial equipment
+                sector, specializes in outdoor power tools including log
+                splitters, pressure washers, and air compressors. They engaged
+                Cognition Engineering Solutions to optimize costs and improve
+                the competitiveness of their Log Splitter product line.
+              </p>
+              <p className="text-lg text-[#5b5b5b] text-justify">
+                The primary goal was to analyze the product&apos;s design,
+                components, and manufacturing costs to identify opportunities
+                for cost reduction without compromising quality and performance.
+              </p>
+            </div>
 
-          <div className="space-y-6">
-            <div className="bg-white/80 backdrop-blur-sm shadow-sm p-6 rounded-lg border border-gray-100">
-              <h3 className="text-xl font-medium mb-4 text-brand-darkGray">
-                Project Objectives
-              </h3>
-              <ul className="space-y-3">
-                <li className="flex items-start">
-                  <span className="text-[#0098af] mr-2">⦿</span>
-                  <span>Manufacturing Cost Reduction</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#0098af] mr-2">⦿</span>
-                  <span>Increase Profit Margins (50% target)</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#0098af] mr-2">⦿</span>
-                  <span>Benchmarking with Competitors</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#0098af] mr-2">⦿</span>
-                  <span>Improve Quality and Processes</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#0098af] mr-2">⦿</span>
-                  <span>Factor of Safety Validation</span>
-                </li>
-              </ul>
+            <div className="space-y-6">
+              <div className="bg-white/80 backdrop-blur-sm shadow-sm p-6 rounded-lg border border-gray-100">
+                <h3 className="text-xl font-medium mb-4 text-brand-darkGray">
+                  Project Objectives
+                </h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <span className="text-[#0098af] mr-2">⦿</span>
+                    <span>Manufacturing Cost Reduction</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#0098af] mr-2">⦿</span>
+                    <span>Increase Profit Margins (50% target)</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#0098af] mr-2">⦿</span>
+                    <span>Benchmarking with Competitors</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#0098af] mr-2">⦿</span>
+                    <span>Improve Quality and Processes</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#0098af] mr-2">⦿</span>
+                    <span>Factor of Safety Validation</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
         </div>
       </motion.section>
 
@@ -219,7 +219,6 @@ export default function ProductCostManagement() {
         className="py-20 lg:py-28 bg-gradient-to-br bg-gradient-to-b from-gray-50 to-[#F5FDFF] relative"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="w-12 h-1 bg-[#0098AF] rounded-full mr-4"></div>
           <div className="flex items-center mb-8">
             <h2 className="text-4xl lg:text-5xl font-bold text-[#5B5B5B]">
               Our Approach
@@ -308,7 +307,6 @@ export default function ProductCostManagement() {
         className="py-20 lg:py-28 bg-white relative"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="w-12 h-[2px] bg-[#0098AF] rounded-full mr-4"></div>
           <div className="flex items-center mb-8">
             <h2 className="text-4xl lg:text-5xl font-bold text-[#5B5B5B]">
               Results & Impact

@@ -131,8 +131,8 @@ export default function Home() {
         <section className="bg-white">
           <AccordionDemo />
         </section>
-        <section>
-        </section>
+        {/* <section>
+        </section> */}
         <section className="">
           <TestimonialSlider />
         </section>
