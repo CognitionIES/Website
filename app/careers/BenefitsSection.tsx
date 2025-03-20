@@ -16,9 +16,8 @@ const BenefitsSection = () => {
         <span className="inline-block px-3 py-1 bg-[#0098AF]/10 text-[#0098AF] text-sm font-medium rounded-full mb-4">
             Benefits & Perks
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[003C46] relative mb-2 text-center">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#003C46] relative drop-shadow-md text-center">
             {TITLE}
-            <span className="line-indicator mx-auto"></span>
           </h2>
           <p className="text-lg text-[#5B5B5B] mb-12 max-w-2xl mx-auto">
             We believe in taking care of our team with comprehensive benefits and a supportive environment.

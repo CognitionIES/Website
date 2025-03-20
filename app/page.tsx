@@ -115,9 +115,9 @@ export default function Home() {
   return (
     <div>
       <MegaMenu />
+        <Hero />
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-[#F5FDFF] text-gray-900 font-sans overflow-hidden relative">
       <main className="relative">
-        <Hero />
         <section className="bg-gradient-to-b from-gray-50 to-[#F5FDFF]">
           <AboutUs />
         </section>

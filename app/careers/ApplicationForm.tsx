@@ -144,9 +144,8 @@ const ApplicationForm = () => {
           <span className="inline-block px-3 py-1 bg-[#0098AF]/10 text-[#0098AF] text-sm font-medium rounded-full mb-4">
             Join Our Team
           </span>
-          <h2 className="section-title text-center">
+          <h2 className="text-3xl sm:text-4xl mb-4 lg:text-5xl font-bold text-[#003C46] relative drop-shadow-md text-center text-center">
             Apply Now
-            <span className="line-indicator mx-auto"></span>
           </h2>
           <p className="section-subtitle">
             We&apos;re seeking talented individuals to join our innovative team.

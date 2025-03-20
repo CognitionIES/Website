@@ -32,7 +32,7 @@ const ServiceCard = ({ service }: { service: Service }) => {
         <service.icon className="w-5 h-5 text-primary" />
       </div>
       {/* Overlay with info */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#003C46]/90 via-[#00A4B4]/80 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
+      <div className="absolute inset-0 bg-gradient-to-t from-[#003C46]/90 via-[#00A4B4]/50 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
         <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
           <h3 className="text-xl font-semibold mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
             {service.title}
@@ -65,7 +65,9 @@ export default function ServicesSection() {
           viewport={{ once: true }}
           className="mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#003C46]">{TITLE}</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#003C46]">
+            {TITLE}
+          </h2>
           <p className="text-lg text-[#4A4A4A] max-w-7xl mx-auto">{SUBTITLE}</p>
         </motion.div>
         {/* Services grid */}
