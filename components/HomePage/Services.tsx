@@ -417,7 +417,6 @@ export default function ServicesSection() {
 
         {/* Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-8 lg:gap-10">
-          
           {SERVICES.map((service) => (
             <div
               key={service.id}
@@ -461,7 +460,7 @@ export default function ServicesSection() {
                 className={cn(
                   "absolute inset-0 transition-opacity duration-500",
                   activeCard === service.id
-                    ? "bg-gradient-to-br from-[#003C46]/85 to-[#0098AF]/95 opacity-70"
+                    ? "bg-gradient-to-br from-[#003C46]/85 to-[#0098AF]/95 opacity-100"
                     : "bg-gradient-to-b from-transparent to-[#000000]/70 opacity-75"
                 )}
               />

@@ -58,12 +58,12 @@
 //   export default faqs;
 const faqs = [
   {
-    question: "What industries do you specialize in?",
+    question: "Question 1?",
     answer:
       "Answer 1",
   },
   {
-    question: "What engineering services do you offer?",
+    question: "Question 2?",
     answer: (
       <>
        Answer 2
@@ -71,7 +71,7 @@ const faqs = [
     ),
   },
   {
-    question: "What engagement models do you offer?",
+    question: "Question 3?",
     answer: (
       <>
         Answer 3
@@ -79,7 +79,7 @@ const faqs = [
     ),
   },
   {
-    question: "How do you leverage technology for engineering solutions?",
+    question: "Question 4?",
     answer: (
       <>
         Answer 5
@@ -87,7 +87,7 @@ const faqs = [
     ),
   },
   {
-    question: "Where are your engineering teams located?",
+    question: "Question 5?",
     answer:
       "Answer 6",
   },

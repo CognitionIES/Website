@@ -128,9 +128,6 @@ export default function Home() {
         <section className="bg-gradient-to-b from-gray-50 to-[#F5FDFF]">
           <RecentProjects />
           </section>
-        <section className="bg-white">
-          <AccordionDemo />
-        </section>
         {/* <section>
         </section> */}
         <section className="">
@@ -140,6 +137,9 @@ export default function Home() {
           <Careers />
         </section>
       
+        <section className="bg-white">
+          <AccordionDemo />
+        </section>
         <section>
           <ContactSection />
         </section>

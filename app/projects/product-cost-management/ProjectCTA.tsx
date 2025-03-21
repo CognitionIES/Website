@@ -1,27 +1,48 @@
 import React from 'react';
-import { ArrowRight, Sparkle } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+
+const fadeInUp = {
+  initial: { opacity: 0, y: 30 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+  transition: { duration: 0.6, ease: "easeOut" },
+};
+
+const buttonHover = {
+  whileHover: { scale: 1.05, transition: { duration: 0.3 } },
+  whileTap: { scale: 0.95 },
+};
 
 const ProjectCTA = () => {
   return (
-    <div className="relative overflow-hidden bg-gradient-to-br from-brand-teal to-brand-blue rounded-xl py-12 md:py-16 px-8 md:px-12">
-      <div className="absolute top-0 right-0 -mt-16 -mr-16 w-64 h-64 rounded-full bg-white/20" />
-      <div className="absolute bottom-0 left-0 -mb-10 -ml-10 w-40 h-40 rounded-full bg-white/10" />
-      <Sparkle size={24} className="absolute top-10 left-10 text-brand-orange/50" />
-      <Sparkle size={16} className="absolute bottom-10 right-10 text-brand-orange/30" />
-      
-      <div className="relative z-10 max-w-3xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-medium mb-6 text-white">
-          Ready to <span className="text-brand-orange">optimize</span> your manufacturing costs?
-        </h2>
-        <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
-          Our team specializes in cost optimization without compromising quality.
-        </p>
-        <button className="inline-flex items-center bg-brand-orange text-white px-6 py-3 rounded-lg font-medium hover:bg-brand-teal hover:shadow-lg transition-all duration-300 group">
-          Start Your Project
-          <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-        </button>
+<div className="px-4 sm:px-6 lg:px-8 mb-12">
+        <motion.section
+          {...fadeInUp}
+          className="py-20 lg:py-28 bg-gradient-to-br from-[#0098af] to-[#5b5b5b] text-white relative overflow-hidden rounded-xl"
+        >
+          <div className="absolute inset-0 opacity-10 bg-dot-pattern bg-[length:30px_30px]"></div>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+              Ready to optimize your manufacturing costs?
+            </h2>
+            <p className="text-lg lg:text-xl mb-8 max-w-2xl mx-auto text-[#E6F0F5]">
+              Our engineering team specializes in cost optimization without
+              compromising quality. Discover how we can help improve your
+              product&apos;s market competitiveness.
+            </p>
+            <motion.div {...buttonHover}>
+              <Link href="/contact">
+                <Button className="bg-white text-[#5b5b5b] hover:bg-[#E6F0F5] px-10 py-4 text-lg font-semibold rounded-full shadow-lg transition-all duration-300">
+                  Start Your Project <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+            </motion.div>
+          </div>
+        </motion.section>
       </div>
-    </div>
   );
 };
 

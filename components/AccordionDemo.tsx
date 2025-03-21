@@ -54,7 +54,7 @@ export default function AccordionDemo() {
 
           <p className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-7xl">
             The right engineering partner isn&apos;t just about technical
-            services—it&apos;s about working with a team that understands your
+            services, it&apos;s about working with a team that understands your
             industry, your challenges, and the pressure to stay ahead.
           </p>
         </div>
