@@ -99,6 +99,7 @@ export default function ContactSection() {
   const interestOptions = [
     { value: "Product Engineering", label: "Product Engineering" },
     { value: "Plant Engineering", label: "Plant Engineering" },
+    { value: "ServiceCPQ", label: "ServiceCPQ" },
     { value: "Others", label: "Others" },
   ];
 

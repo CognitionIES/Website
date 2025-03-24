@@ -211,7 +211,7 @@ const servicesData: MainCategory[] = [
     subCategories: [
       {
         title: "SERVICECPQ",
-        href: "/services/it-services/software-development",
+        href: "/services/saas-solution/servicecpq",
         icon: <Code className="w-4 h-4" />,
       },
       

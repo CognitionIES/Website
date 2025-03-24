@@ -1,40 +1,40 @@
-import React, { useState } from 'react';
-import emailjs from '@emailjs/browser';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
+import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select';
-import { Checkbox } from '@/components/ui/checkbox';
-import { Label } from '@/components/ui/label';
-import { Upload, Phone, Mail, MapPin, User } from 'lucide-react';
-import { useToast } from '@/components/ui/use-toast';
+} from "@/components/ui/select";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Label } from "@/components/ui/label";
+import { Upload, Phone, Mail, MapPin, User } from "lucide-react";
+import { useToast } from "@/components/ui/use-toast";
 
 const ApplicationForm = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    location: 'remote',
-    message: '',
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    location: "remote",
+    message: "",
     resume: null as File | null,
-    resumeBase64: '', // Added to store base64 string
-    consent: false
+    resumeBase64: "", // Added to store base64 string
+    consent: false,
   });
 
   const handleInputChange = (
-    field: string, 
+    field: string,
     value: string | boolean | File | null
   ) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
+    setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -45,7 +45,7 @@ const ApplicationForm = () => {
         toast({
           title: "File Too Large",
           description: "Please upload a file smaller than 5MB",
-          variant: "destructive"
+          variant: "destructive",
         });
         return;
       }
@@ -54,10 +54,10 @@ const ApplicationForm = () => {
       const reader = new FileReader();
       reader.onload = (event) => {
         const base64String = event.target?.result as string;
-        setFormData(prev => ({
+        setFormData((prev) => ({
           ...prev,
           resume: file,
-          resumeBase64: base64String.split(',')[1] // Remove data:image/pdf;base64, prefix
+          resumeBase64: base64String.split(",")[1], // Remove data:image/pdf;base64, prefix
         }));
       };
       reader.readAsDataURL(file);
@@ -66,16 +66,16 @@ const ApplicationForm = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!formData.consent || !formData.resume || !formData.resumeBase64) {
       toast({
         title: "Missing required fields",
         description: "Please complete all required fields and upload a resume.",
-        variant: "destructive"
+        variant: "destructive",
       });
       return;
     }
-    
+
     setIsSubmitting(true);
 
     try {
@@ -88,42 +88,44 @@ const ApplicationForm = () => {
         message: formData.message,
         resume_name: formData.resume.name,
         resume_data: formData.resumeBase64,
-        resume_type: formData.resume.type
+        resume_type: formData.resume.type,
       };
 
       // Send email using EmailJS
       const response = await emailjs.send(
-        'service_4jm4x6o', // Service ID
-        'template_x7agzcz', // Template ID
+        "service_4jm4x6o", // Service ID
+        "template_x7agzcz", // Template ID
         templateParams,
-        'YHfV6LAgPBcm9VnHd' // Public Key
+        "YHfV6LAgPBcm9VnHd" // Public Key
       );
 
       if (response.status === 200) {
         toast({
           title: "Application Submitted",
-          description: "Thank you for your application! We'll be in touch soon.",
+          description:
+            "Thank you for your application! We'll be in touch soon.",
         });
 
         // Reset form
         setFormData({
-          firstName: '',
-          lastName: '',
-          email: '',
-          phone: '',
-          location: 'remote',
-          message: '',
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          location: "remote",
+          message: "",
           resume: null,
-          resumeBase64: '',
-          consent: false
+          resumeBase64: "",
+          consent: false,
         });
       }
     } catch (error) {
-      console.error('EmailJS error:', error);
+      console.error("EmailJS error:", error);
       toast({
         title: "Submission Failed",
-        description: "There was an error submitting your application. Please try again.",
-        variant: "destructive"
+        description:
+          "There was an error submitting your application. Please try again.",
+        variant: "destructive",
       });
     } finally {
       setIsSubmitting(false);
@@ -274,11 +276,8 @@ const ApplicationForm = () => {
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="remote">Remote</SelectItem>
-                      <SelectItem value="san-francisco">
-                        San Francisco, CA
-                      </SelectItem>
-                      <SelectItem value="new-york">New York, NY</SelectItem>
-                      <SelectItem value="london">London, UK</SelectItem>
+                      <SelectItem value="India">India</SelectItem>
+                      <SelectItem value="USA">USA</SelectItem>
                     </SelectContent>
                   </Select>
                   <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 text-[#5B5B5B]/50 h-4 w-4 z-10" />
