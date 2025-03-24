@@ -22,6 +22,8 @@ import {
   ShieldCheck,
   Building2,
   Car,
+  Code,
+  Server,
 } from "lucide-react";
 // import {
 //   Gauge,
@@ -202,58 +204,24 @@ const servicesData: MainCategory[] = [
     },
   },
   // IT Services can remain as is with individual pages if preferred, or adjust similarly
-  // {
-  //   title: "IT Services",
-  //   icon: <Server className="w-5 h-5 mr-2" />,
-  //   href: "/services/it-services",
-  //   subCategories: [
-  //     {
-  //       title: "Software Development",
-  //       href: "/services/it-services/software-development",
-  //       icon: <Code className="w-4 h-4" />,
-  //     },
-  //     {
-  //       title: "Cloud Solutions",
-  //       href: "/services/it-services/cloud-solutions",
-  //       icon: <Cloud className="w-4 h-4" />,
-  //     },
-  //     {
-  //       title: "Data Analytics",
-  //       href: "/services/it-services/data-analytics",
-  //       icon: <BarChart className="w-4 h-4" />,
-  //     },
-  //     {
-  //       title: "Cybersecurity",
-  //       href: "/services/it-services/cybersecurity",
-  //       icon: <Shield className="w-4 h-4" />,
-  //     },
-  //     {
-  //       title: "AI & Machine Learning",
-  //       href: "/services/it-services/ai-ml",
-  //       icon: <Brain className="w-4 h-4" />,
-  //     },
-  //     {
-  //       title: "DevOps Services",
-  //       href: "/services/it-services/devops",
-  //       icon: <GitBranch className="w-4 h-4" />,
-  //     },
-  //     {
-  //       title: "Quality Assurance",
-  //       href: "/services/it-services/qa",
-  //       icon: <CheckCircle className="w-4 h-4" />,
-  //     },
-  //     {
-  //       title: "Digital Transformation",
-  //       href: "/services/it-services/digital",
-  //       icon: <Globe className="w-4 h-4" />,
-  //     },
-  //   ],
-  //   image: {
-  //     src: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop",
-  //     alt: "IT Services",
-  //     title: "Innovative IT Solutions",
-  //   },
-  // },
+  {
+    title: "Saas Solutions",
+    icon: <Server className="w-5 h-5 mr-2" />,
+    href: "/services/it-services",
+    subCategories: [
+      {
+        title: "SERVICECPQ",
+        href: "/services/it-services/software-development",
+        icon: <Code className="w-4 h-4" />,
+      },
+      
+    ],
+    image: {
+      src: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop",
+      alt: "IT Services",
+      title: "Innovative IT Solutions",
+    },
+  },
 ];
 // Constants for menu data industries section
 // const industriesData = [

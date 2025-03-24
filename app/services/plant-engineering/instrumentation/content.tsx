@@ -54,155 +54,161 @@ export default function Content() {
           We provide a comprehensive set of services to ensure your success in
           Instrumentation Engineering. Here’s how we can support you:
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-          <ul className="space-y-2">
-            {/* Category 1: Basic Engineering */}
-            <li className="flex items-start gap-3">
-              <span className="text-[#0098AF] text-lg">➢</span>
-              <span className="font-semibold text-gray-800 text-lg">
-                Basic Engineering
-              </span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
-                Instrumentation Design Basis
-              </span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
-                Preliminary Instrument List / Index
-              </span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">I/O List</span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
-                Instrument Process Datasheets
-              </span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
-                Instrument Cable Block Diagram
-              </span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">Hook-Up Drawings</span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
-                Instrument Installation Details
-              </span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
-                Instrument Installation Details
-              </span>
-            </li>
-            {/* Category 2: Detailed Engineering (Part 1) */}
-            <li className="flex items-start gap-3">
-              <span className="text-[#0098AF] text-lg">➢</span>
-              <span className="font-semibold text-gray-800 text-lg">
-              Safety & Risk Assessment (Safety Studies)
-              </span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
-                Final Instrumentation Design Basis
-              </span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
-                Instrument Location Layout
-              </span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
-                Instrument Index & Specification Datasheets
-              </span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
-                DCS Control Room Layout
-              </span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
-                I/O List & Cause-Effect Diagram/List
-              </span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
-                Cable Tray Routing & Layout
-              </span>
-            </li>
-          </ul>
-          <ul className="space-y-2">
-            {/* Category 2: Detailed Engineering (Part 2) */}
-            <li className="flex items-start gap-3">
-              <span className="text-[#0098AF] text-lg">➢</span>
-              <span className="font-semibold text-gray-800 text-lg">
-              Safety & Risk Assessment (Safety Studies)(Continued)
-              </span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
-                Cable Tray & Fittings MTO
-              </span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
-                Hook-Up Drawings & Erection Hardware MTO
-              </span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
-                Instrument Installation Details
-              </span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
-                Junction Box Grouping
-              </span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
-                Instrument Cable Schedule & Wiring Diagram
-              </span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
-                Instrument Termination Drawings
-              </span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
-                As-Built Drawings & Documentation
-              </span>
-            </li>
-          </ul>
+
+        {/* 1st row */}
+        <div className=" mt-2 mb-4">
+          <span className="font-semibold text-gray-800  text-lg">
+            Basic Engineering
+          </span>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mt-[10px]">
+            <ul className="space-y-2 ">
+              {/* 1st column */}
+              <li className="flex items-start gap-3 ml-6">
+                <span className="text-[#0098AF] text-base">•</span>
+                <span className="text-gray-600 font-light">
+                  Instrumentation Design Basis
+                </span>
+              </li>
+              <li className="flex items-start gap-3 ml-6">
+                <span className="text-[#0098AF] text-base">•</span>
+                <span className="text-gray-600 font-light">I/O List</span>
+              </li>
+              <li className="flex items-start gap-3 ml-6">
+                <span className="text-[#0098AF] text-base">•</span>
+                <span className="text-gray-600 font-light">
+                  Instrument Cable Block Diagram
+                </span>
+              </li>
+              <li className="flex items-start gap-3 ml-6">
+                <span className="text-[#0098AF] text-base">•</span>
+                <span className="text-gray-600 font-light">
+                  Instrument Installation Details
+                </span>
+              </li>
+            </ul>
+            <ul className="space-y-2">
+              {/* 2nd column */}
+              <li className="flex items-start gap-3 ml-6">
+                <span className="text-[#0098AF] text-base">•</span>
+                <span className="text-gray-600 font-light">
+                  Preliminary Instrument List / Index
+                </span>
+              </li>
+              <li className="flex items-start gap-3 ml-6">
+                <span className="text-[#0098AF] text-base">•</span>
+                <span className="text-gray-600 font-light">
+                  Instrument Process Datasheets
+                </span>
+              </li>
+              <li className="flex items-start gap-3 ml-6">
+                <span className="text-[#0098AF] text-base">•</span>
+                <span className="text-gray-600 font-light">
+                  Hook-Up Drawings
+                </span>
+              </li>
+              <li className="flex items-start gap-3 ml-6">
+                <span className="text-[#0098AF] text-base">•</span>
+                <span className="text-gray-600 font-light">
+                  Process Optimization
+                </span>
+              </li>
+            </ul>
+          </div>
         </div>
+
+        {/* 2nd row */}
+        <div className=" mt-2 mb-4">
+          <span className="font-semibold text-gray-800  text-lg">
+            Safety & Risk Assessment (Safety Studies)
+          </span>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mt-[10px]">
+            <ul className="space-y-2 ">
+              {/* 1st column */}
+              <li className="flex items-start gap-3 ml-6">
+                <span className="text-[#0098AF] text-base">•</span>
+                <span className="text-gray-600 font-light">
+                  Final Instrumentation Design Basis
+                </span>
+              </li>
+              <li className="flex items-start gap-3 ml-6">
+                <span className="text-[#0098AF] text-base">•</span>
+                <span className="text-gray-600 font-light">
+                  Instrument Location Layout
+                </span>
+              </li>
+              <li className="flex items-start gap-3 ml-6">
+                <span className="text-[#0098AF] text-base">•</span>
+                <span className="text-gray-600 font-light">
+                  Instrument Index & Specification Datasheets
+                </span>
+              </li>
+              <li className="flex items-start gap-3 ml-6">
+                <span className="text-[#0098AF] text-base">•</span>
+                <span className="text-gray-600 font-light">
+                  DCS Control Room Layout
+                </span>
+              </li>{" "}
+              <li className="flex items-start gap-3 ml-6">
+                <span className="text-[#0098AF] text-base">•</span>
+                <span className="text-gray-600 font-light">
+                  I/O List & Cause-Effect Diagram/List
+                </span>
+              </li>{" "}
+              <li className="flex items-start gap-3 ml-6">
+                <span className="text-[#0098AF] text-base">•</span>
+                <span className="text-gray-600 font-light">
+                  Cable Tray Routing & Layout
+                </span>
+              </li>{" "}
+              <li className="flex items-start gap-3 ml-6">
+                <span className="text-[#0098AF] text-base">•</span>
+                <span className="text-gray-600 font-light">
+                  Hook-Up Drawings & Erection Hardware MTO
+                </span>
+              </li>{" "}
+            </ul>
+            <ul className="space-y-2">
+              {/* 2nd column */}
+              <li className="flex items-start gap-3 ml-6">
+                <span className="text-[#0098AF] text-base">•</span>
+                <span className="text-gray-600 font-light">
+                  Cable Tray & Fittings MTO
+                </span>
+              </li>
+              <li className="flex items-start gap-3 ml-6">
+                <span className="text-[#0098AF] text-base">•</span>
+                <span className="text-gray-600 font-light">
+                  InsInstrument Installation Details
+                </span>
+              </li>
+              <li className="flex items-start gap-3 ml-6">
+                <span className="text-[#0098AF] text-base">•</span>
+                <span className="text-gray-600 font-light">
+                  Junction Box Grouping
+                </span>
+              </li>
+              <li className="flex items-start gap-3 ml-6">
+                <span className="text-[#0098AF] text-base">•</span>
+                <span className="text-gray-600 font-light">
+                  Instrument Cable Schedule and Wiring Diagram
+                </span>
+              </li>
+              <li className="flex items-start gap-3 ml-6">
+                <span className="text-[#0098AF] text-base">•</span>
+                <span className="text-gray-600 font-light">
+                  Instrument Termination Drawings
+                </span>
+              </li>
+              <li className="flex items-start gap-3 ml-6">
+                <span className="text-[#0098AF] text-base">•</span>
+                <span className="text-gray-600 font-light">
+                  As-Built Drawings & Documentation
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
         {/* Decorative wave line at the bottom */}
         <div className="mt-8 w-full h-1 bg-gradient-to-r from-[#0098AF]/10 via-transparent to-[#0098AF]/10 rounded-full" />
       </section>

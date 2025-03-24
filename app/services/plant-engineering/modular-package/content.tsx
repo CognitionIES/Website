@@ -55,8 +55,9 @@ export default function Content() {
           We provide a comprehensive set of services to ensure your success in
           Modular Package Engineering. Here’s how we can support you:
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <ul className="space-y-4">
+        {/* 1st row */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+          <ul className="space-y-2">
             {/* Category 1: Modular Skid Design & Engineering */}
             <li className="flex items-start gap-3">
               <span className="text-[#0098AF] text-lg">➢</span>
@@ -73,45 +74,19 @@ export default function Content() {
             <li className="flex items-start gap-3 ml-6">
               <span className="text-[#0098AF] text-base">•</span>
               <span className="text-gray-600 font-light">
-                2D General Arrangement Drawings
-              </span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
-                E&I Skid Engineering (Cable Tray, Junction Box, Small-Bore
-                Containment, etc.)
-              </span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
                 Fabrication Isometric Drawings
               </span>
             </li>
             <li className="flex items-start gap-3 ml-6">
               <span className="text-[#0098AF] text-base">•</span>
               <span className="text-gray-600 font-light">
-                Detailed Structural Fabrication Drawings
-              </span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
-                Weight & Center of Gravity (COG) Calculation for Lifting
-                Arrangement
-              </span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
-                Lifting Arrangement Drawings & Calculations
-              </span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
                 Monorail Calculations
+              </span>
+            </li>
+            <li className="flex items-start gap-3 ml-6">
+              <span className="text-[#0098AF] text-base">•</span>
+              <span className="text-gray-600 font-light">
+                MTO & BOM Preparation
               </span>
             </li>
             <li className="flex items-start gap-3 ml-6">
@@ -124,13 +99,35 @@ export default function Content() {
             <li className="flex items-start gap-3 ml-6">
               <span className="text-[#0098AF] text-base">•</span>
               <span className="text-gray-600 font-light">
-                Lifting Lug Design & Details
+                Structural Steel Calculations (Including Anchor/Foundation
+                Loads)
+              </span>
+            </li>
+          </ul>
+          <ul className="space-y-2">
+            {/* Category 2: Process Skid Packages We Handle */}
+            <li className="flex items-start gap-3">
+              <span className="text-[#0098AF] text-lg">➢</span>
+              <span className="font-semibold text-gray-800 text-lg">
+                Static & Rotating Equipment
               </span>
             </li>
             <li className="flex items-start gap-3 ml-6">
               <span className="text-[#0098AF] text-base">•</span>
               <span className="text-gray-600 font-light">
-                MTO & BOM Preparation
+                2D General Arrangement Drawings
+              </span>
+            </li>
+            <li className="flex items-start gap-3 ml-6">
+              <span className="text-[#0098AF] text-base">•</span>
+              <span className="text-gray-600 font-light">
+                Detailed Structural Fabrication Drawings
+              </span>
+            </li>
+            <li className="flex items-start gap-3 ml-6">
+              <span className="text-[#0098AF] text-base">•</span>
+              <span className="text-gray-600 font-light">
+                Lifting Lug Design & Details
               </span>
             </li>
             <li className="flex items-start gap-3 ml-6">
@@ -139,54 +136,73 @@ export default function Content() {
                 Piping & Structural Stress Analysis Reports
               </span>
             </li>
-          </ul>
-          <ul className="space-y-4">
-            {/* Category 2: Process Skid Packages We Handle */}
-            <li className="flex items-start gap-3">
-              <span className="text-[#0098AF] text-lg">➢</span>
-              <span className="font-semibold text-gray-800 text-lg">
-                Process Skid Packages We Handle
+            <li className="flex items-start gap-3 ml-6">
+              <span className="text-[#0098AF] text-base">•</span>
+              <span className="text-gray-600 font-light">
+                Weight & COG Calculation for Lifting Arrangement
               </span>
             </li>
             <li className="flex items-start gap-3 ml-6">
               <span className="text-[#0098AF] text-base">•</span>
               <span className="text-gray-600 font-light">
-                Custody Transfer Skids
-              </span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
-                Fuel Oil Unloading & Transfer Skids
-              </span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
-                Heat Exchanger Skids
-              </span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
-                Chemical Process Skids (Metering, Injection, Dosing, Feeding,
-                Transport, Blending, Extraction & Filtration)
-              </span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
-                Corrosion Inhibitor Skids
-              </span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
-                High-Pressure Systems
+                Lifting Arrangement Drawings and Calculations
               </span>
             </li>
           </ul>
         </div>
+        
+        {/* 2nd row */}
+        <div className="text-center mt-2 mb-4">
+          <span className="text-[#0098AF] text-lg">➢</span>
+          <span className="font-semibold text-gray-800  text-lg">
+            Modular Skid Design & Engineering
+          </span>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mt-[10px]">
+            <ul className="space-y-2 ">
+              {/* 1st column */}
+              <li className="flex items-start gap-3 ml-6">
+                <span className="text-[#0098AF] text-base">•</span>
+                <span className="text-gray-600 font-light">
+                  Custody Transfer Skids
+                </span>
+              </li>
+              <li className="flex items-start gap-3 ml-6">
+                <span className="text-[#0098AF] text-base">•</span>
+                <span className="text-gray-600 font-light">
+                  Heat Exchanger Skids
+                </span>
+              </li>
+              <li className="flex items-start gap-3 ml-6">
+                <span className="text-[#0098AF] text-base">•</span>
+                <span className="text-gray-600 font-light">
+                  High-Pressure Systems
+                </span>
+              </li>
+            </ul>
+            <ul className="space-y-2">
+              {/* 2nd column */}
+              <li className="flex items-start gap-3 ml-6">
+                <span className="text-[#0098AF] text-base">•</span>
+                <span className="text-gray-600 font-light">
+                  Fuel Oil Unloading & Transfer Skids
+                </span>
+              </li>
+              <li className="flex items-start gap-3 ml-6">
+                <span className="text-[#0098AF] text-base">•</span>
+                <span className="text-gray-600 font-light">
+                  Corrosion Inhibitor Skids
+                </span>
+              </li>
+              <li className="flex items-start gap-3 ml-6">
+                <span className="text-[#0098AF] text-base">•</span>
+                <span className="text-gray-600 font-light">
+                  Chemical Process Skids
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
         {/* Decorative wave line at the bottom */}
         <div className="mt-8 w-full h-1 bg-gradient-to-r from-[#0098AF]/10 via-transparent to-[#0098AF]/10 rounded-full" />
       </section>

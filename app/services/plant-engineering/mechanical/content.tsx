@@ -198,12 +198,7 @@ export default function Content() {
                 Heat Load Calculation
               </span>
             </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
-                Technical Specifications for HVAC Packages
-              </span>
-            </li>
+
             <li className="flex items-start gap-3 ml-6">
               <span className="text-[#0098AF] text-base">•</span>
               <span className="text-gray-600 font-light">

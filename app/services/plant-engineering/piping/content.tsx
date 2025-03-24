@@ -54,8 +54,8 @@ export default function Content() {
           We provide a comprehensive set of services to ensure your success in
           Piping Engineering. Here’s how we can support you:
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <ul className="space-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+          <ul className="space-y-2">
             {/* Category 1: Piping Layout & Design */}
             <li className="flex items-start gap-3">
               <span className="text-[#0098AF] text-lg">➢</span>
@@ -108,6 +108,8 @@ export default function Content() {
             </li>
 
             {/* Category 2: Material & Specification Management */}
+          </ul>
+          <ul className="space-y-2">
             <li className="flex items-start gap-3">
               <span className="text-[#0098AF] text-lg">➢</span>
               <span className="font-semibold text-gray-800 text-lg">
@@ -116,14 +118,12 @@ export default function Content() {
             </li>
             <li className="flex items-start gap-3 ml-6">
               <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
-                Piping Material Take-Off (MTO) & Bill of Materials (BOM)
-              </span>
+              <span className="text-gray-600 font-light">Piping MTO & BOM</span>
             </li>
             <li className="flex items-start gap-3 ml-6">
               <span className="text-[#0098AF] text-base">•</span>
               <span className="text-gray-600 font-light">
-                Insulation, Painting, & Material Specifications
+                Insulation, Painting, & Material Spec.
               </span>
             </li>
             <li className="flex items-start gap-3 ml-6">
@@ -138,8 +138,6 @@ export default function Content() {
                 Valve & Piping Special Component Data Sheets
               </span>
             </li>
-          </ul>
-          <ul className="space-y-4">
             {/* Category 3: Analysis & Modeling */}
             <li className="flex items-start gap-3">
               <span className="text-[#0098AF] text-lg">➢</span>
@@ -159,26 +157,14 @@ export default function Content() {
                 3D Modeling & Simulation
               </span>
             </li>
+            <li className="flex items-start gap-3 ml-6">
+              <span className="text-[#0098AF] text-base">•</span>
+              <span className="text-gray-600 font-light">
+                As Built Documentation & Updates
+              </span>
+            </li>
 
-            {/* Category 4: Procurement & Documentation Support */}
-            <li className="flex items-start gap-3">
-              <span className="text-[#0098AF] text-lg">➢</span>
-              <span className="font-semibold text-gray-800 text-lg">
-                Procurement & Documentation Support
-              </span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
-                Technical Bid Evaluation (TBE) for Piping Components
-              </span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
-                As-Built Documentation & Updates
-              </span>
-            </li>
+            
           </ul>
         </div>
         {/* Decorative wave line at the bottom */}

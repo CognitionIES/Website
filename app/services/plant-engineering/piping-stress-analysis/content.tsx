@@ -16,12 +16,12 @@ export default function Content() {
           ensuring the safety, reliability, and longevity of piping systems in
           industrial plants. We employ advanced analytical techniques to
           evaluate stress under various conditions, optimizing design and
-          supporting structures to meet stringent standards. With deep
-          services, our team collaborates with you to address complex
-          challenges, from high-pressure systems to seismic loads, delivering
-          tailored solutions that enhance operational efficiency and compliance.
-          Whether for new designs or existing upgrades, we provide comprehensive
-          stress analysis to safeguard your infrastructure.
+          supporting structures to meet stringent standards. With deep services,
+          our team collaborates with you to address complex challenges, from
+          high-pressure systems to seismic loads, delivering tailored solutions
+          that enhance operational efficiency and compliance. Whether for new
+          designs or existing upgrades, we provide comprehensive stress analysis
+          to safeguard your infrastructure.
         </p>
       </section>
 
@@ -54,8 +54,8 @@ export default function Content() {
           We provide a comprehensive set of services to ensure your success in
           Piping Stress Analysis. Here’s how we can support you:
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <ul className="space-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+          <ul className="space-y-2">
             {/* Category 1: Types of Piping Stress Analysis */}
             <li className="flex items-start gap-3">
               <span className="text-[#0098AF] text-lg">➢</span>
@@ -111,53 +111,8 @@ export default function Content() {
                 Elastic & Plastic Stress Analysis
               </span>
             </li>
-
-            {/* Category 2: Critical System Stress Analysis services */}
-            <li className="flex items-start gap-3">
-              <span className="text-[#0098AF] text-lg">➢</span>
-              <span className="font-semibold text-gray-800 text-lg">
-                Critical System Stress Analysis services
-              </span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
-                Cryogenic Piping Systems
-              </span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
-                Above-Ground & Underground Piping Networks
-              </span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
-                Jacketed Piping Systems
-              </span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
-                FRP (Fiberglass Reinforced Plastic) Piping Systems
-              </span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
-                Offshore & FPSO (Floating Production Storage & Offloading)
-                Piping Systems
-              </span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
-                High-Temperature & High-Pressure Piping
-              </span>
-            </li>
           </ul>
-          <ul className="space-y-4">
+          <ul className="space-y-2">
             {/* Category 3: Engineering Calculations & Validations */}
             <li className="flex items-start gap-3">
               <span className="text-[#0098AF] text-lg">➢</span>
@@ -169,12 +124,6 @@ export default function Content() {
               <span className="text-[#0098AF] text-base">•</span>
               <span className="text-gray-600 font-light">
                 Trunnion Support Load Check
-              </span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
-                Flange Integrity Analysis (NC-3685.3 & API Standards)
               </span>
             </li>
             <li className="flex items-start gap-3 ml-6">
@@ -192,13 +141,19 @@ export default function Content() {
             <li className="flex items-start gap-3 ml-6">
               <span className="text-[#0098AF] text-base">•</span>
               <span className="text-gray-600 font-light">
-                U-Bolt Load Calculations
+                U Bolt Load Calculations
               </span>
             </li>
             <li className="flex items-start gap-3 ml-6">
               <span className="text-[#0098AF] text-base">•</span>
               <span className="text-gray-600 font-light">
-                Collapse & Structural Stability Calculations
+                Collapse & Structural Stability
+              </span>
+            </li>
+            <li className="flex items-start gap-3 ml-6">
+              <span className="text-[#0098AF] text-base">•</span>
+              <span className="text-gray-600 font-light">
+                Flange Integrity Analysis (NC-3685.3 & API Standards)
               </span>
             </li>
           </ul>

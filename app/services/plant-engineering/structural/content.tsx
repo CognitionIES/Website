@@ -52,8 +52,8 @@ export default function Content() {
           We provide a comprehensive set of services to ensure your success in
           Structural Engineering. Here’s how we can support you:
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <ul className="space-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+          <ul className="space-y-2">
             {/* Category 1: Specialized Structural Engineering */}
             <li className="flex items-start gap-3">
               <span className="text-[#0098AF] text-lg">➢</span>
@@ -96,29 +96,29 @@ export default function Content() {
             <li className="flex items-start gap-3 ml-6">
               <span className="text-[#0098AF] text-base">•</span>
               <span className="text-gray-600 font-light">
-                Structural Integrity Assessments for Transport
+                Lifting Analysis, Reports & Drawings
               </span>
             </li>
             <li className="flex items-start gap-3 ml-6">
               <span className="text-[#0098AF] text-base">•</span>
               <span className="text-gray-600 font-light">
-                Lifting Analysis, Reports & Drawings
+                Structural Integrity Assessments
               </span>
             </li>
           </ul>
-          <ul className="space-y-4">
+          <ul className="space-y-2">
             {/* Category 2: Structural Detailing & Analysis */}
 
             <li className="flex items-start gap-3">
               <span className="text-[#0098AF] text-lg">➢</span>
               <span className="font-semibold text-gray-800 text-lg">
-                Structural Detailing & Analysis
+                Structural Stress Analysis
               </span>
             </li>
             <li className="flex items-start gap-3 ml-6">
               <span className="text-[#0098AF] text-base">•</span>
               <span className="text-gray-600 font-light">
-                General Arrangement (GA), Erection, and Fabrication Drawings
+                GA, Erection, and Fabrication Drawings
               </span>
             </li>
             <li className="flex items-start gap-3 ml-6">
@@ -128,38 +128,39 @@ export default function Content() {
                 Sleepers
               </span>
             </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
-                Structural Stress Analysis for:
+            <li className="flex items-start gap-3">
+              <span className="text-[#0098AF] text-lg">➢</span>
+              <span className="font-semibold text-gray-800 text-lg">
+              Structural Stress Analysis
               </span>
             </li>
-            <li className="flex items-start gap-3 ml-12">
-              <span className="text-[#0098AF] text-base">◦</span>
+
+            <li className="flex items-start gap-3 ml-6">
+              <span className="text-[#0098AF] text-base">•</span>
               <span className="text-gray-600 font-light">
                 Barge Transport & Offshore Load Handling
               </span>
             </li>
-            <li className="flex items-start gap-3 ml-12">
-              <span className="text-[#0098AF] text-base">◦</span>
+            <li className="flex items-start gap-3 ml-6">
+              <span className="text-[#0098AF] text-base">•</span>
               <span className="text-gray-600 font-light">
-                Dropped Object Impact Studies
+                Barge Transport & Offshore Load Handling
               </span>
             </li>
-            <li className="flex items-start gap-3 ml-12">
-              <span className="text-[#0098AF] text-base">◦</span>
+            <li className="flex items-start gap-3 ml-6">
+              <span className="text-[#0098AF] text-base">•</span>
               <span className="text-gray-600 font-light">
                 Transit & Survival Load Assessments
               </span>
             </li>
-            <li className="flex items-start gap-3 ml-12">
-              <span className="text-[#0098AF] text-base">◦</span>
+            <li className="flex items-start gap-3 ml-6">
+              <span className="text-[#0098AF] text-base">•</span>
               <span className="text-gray-600 font-light">
-                Fire, Blast, and Fatigue Conditions
+                Fire, Blast, and Fatigue Conditions{" "}
               </span>
             </li>
-            <li className="flex items-start gap-3 ml-12">
-              <span className="text-[#0098AF] text-base">◦</span>
+            <li className="flex items-start gap-3 ml-6">
+              <span className="text-[#0098AF] text-base">•</span>
               <span className="text-gray-600 font-light">
                 In-Place Analysis (Operating, Damage, Extreme Scenarios)
               </span>

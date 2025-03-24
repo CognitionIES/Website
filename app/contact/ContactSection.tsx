@@ -13,7 +13,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
-import { FiMapPin, FiPhone, FiMail } from "react-icons/fi";
+import {  FiMail } from "react-icons/fi";
 import { useState, useCallback } from "react";
 import { CONTACT_CONSTANTS } from "@/constants/contactPage/constants";
 import Link from "next/link";
@@ -33,7 +33,7 @@ export default function ContactSection() {
   const [status, setStatus] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const { TITLE, DESCRIPTION, LOCATION, PHONE, EMAIL } =
+  const { TITLE, DESCRIPTION, EMAIL } =
     CONTACT_CONSTANTS.CONTACT;
   const { STAGGER_CHILDREN } = CONTACT_CONSTANTS.ANIMATIONS;
 
@@ -121,7 +121,7 @@ export default function ContactSection() {
               {DESCRIPTION}
             </p>
             <div className="space-y-4 text-gray-600 bg-white p-5 rounded-lg shadow-sm">
-              <div className="flex items-center space-x-3">
+              {/* <div className="flex items-center space-x-3">
                 <FiMapPin className="h-5 w-5 text-[#0098AF]" />
                 <div>
                   <h3 className="text-sm font-semibold text-gray-800">
@@ -129,9 +129,9 @@ export default function ContactSection() {
                   </h3>
                   <p className="text-sm">{LOCATION.ADDRESS}</p>
                 </div>
-              </div>
+              </div> */}
               <div className="flex items-center space-x-3">
-                <FiPhone className="h-5 w-5 text-[#0098AF]" />
+                {/* <FiPhone className="h-5 w-5 text-[#0098AF]" />
                 <div>
                   <h3 className="text-sm font-semibold text-gray-800">
                     {PHONE.TITLE}
@@ -141,7 +141,7 @@ export default function ContactSection() {
                       {number}
                     </p>
                   ))}
-                </div>
+                </div> */}
               </div>
               <div className="flex items-center space-x-3">
                 <FiMail className="h-5 w-5 text-[#0098AF]" />
