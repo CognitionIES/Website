@@ -133,7 +133,7 @@ export default function Home() {
         <section className="">
           <TestimonialSlider />
         </section>
-        <section className="bg-gradient-to-b from-gray-50 to-[#F5FDFF]">
+        <section className="">
           <Careers />
         </section>
       

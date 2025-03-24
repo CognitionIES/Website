@@ -69,7 +69,7 @@ export default function AccordionDemo() {
           <Accordion
             type="single"
             collapsible
-            className="bg-white rounded-xl shadow-sm border border-[#E6F0F5]"
+            className="bg-white rounded-xl max-w-7xl shadow-sm border border-[#E6F0F5]"
           >
             {faqs.map((faq, index) => (
               <AccordionItem
@@ -95,7 +95,7 @@ export default function AccordionDemo() {
         </motion.div>
 
         {/* Simple divider */}
-        <div className="mt-16 h-px w-full max-w-3xl mx-auto bg-gradient-to-r from-transparent via-[#0098af]/40 to-transparent"></div>
+        <div className="mt-16 h-[2px] w-full max-w-3xl mx-auto bg-gradient-to-r from-transparent via-[#0098af]/40 to-transparent"></div>
       </div>
     </section>
   );

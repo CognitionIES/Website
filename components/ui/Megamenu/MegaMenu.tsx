@@ -36,12 +36,14 @@ import {
 import { Printer, Layers, FileText, Truck } from "lucide-react";
 import { Cpu } from "lucide-react";
 import { Wrench, Factory } from "lucide-react"; // Import icons
-import Logo1 from "@/constants/images/WEB LOGO.png";
+import Logo1 from "@/constants/images/navbar-logo.png";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faCompassDrafting } from "@fortawesome/free-regular-svg-icons"; // Correct package
 import { faGears, faPlugCircleBolt } from "@fortawesome/free-solid-svg-icons"; // Import faGears
 import { usePathname, useRouter } from "next/navigation";
+
+
 
 // Type definitions for menu structure
 interface SubCategory {
@@ -445,11 +447,11 @@ export function MegaMenu() {
             : "relative"
         )}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="max-w-7xl mx-auto sm:px-6">
           <div
             className={cn(
               "flex items-center justify-between transition-all duration-300",
-              isSticky ? "h-14" : "h-16"
+              isSticky ? "h-16" : "h-16"
             )}
           >
             {/* Logo */}
@@ -458,7 +460,7 @@ export function MegaMenu() {
                 <Image
                   src={Logo1}
                   width={200}
-                  height={110}
+                  height={100}
                   alt="Company Logo"
                 />
               </Link>

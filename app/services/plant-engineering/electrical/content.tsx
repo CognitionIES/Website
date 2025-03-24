@@ -18,9 +18,9 @@ export default function Content() {
           precision, from conceptual design to detailed implementation. Our
           experienced team ensures seamless integration of electrical systems,
           addressing challenges like load management, safety compliance, and
-          energy efficiency. Whether you&apos;re building a new facility or upgrading
-          an existing one, we provide tailored solutions to keep your plant
-          running smoothly and sustainably.
+          energy efficiency. Whether you&apos;re building a new facility or
+          upgrading an existing one, we provide tailored solutions to keep your
+          plant running smoothly and sustainably.
         </p>
       </section>
 
@@ -54,13 +54,13 @@ export default function Content() {
           We provide a comprehensive set of services to ensure your success in
           Electrical Engineering. Here’s how we can support you:
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <ul className="space-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+          <ul className="space-y-2">
             {/* Category 1: Basic Engineering */}
             <li className="flex items-start gap-3">
               <span className="text-[#0098AF] text-lg">➢</span>
               <span className="font-semibold text-gray-800 text-lg">
-                Basic Engineering
+                Piping Layout & Design
               </span>
             </li>
             <li className="flex items-start gap-3 ml-6">
@@ -92,7 +92,7 @@ export default function Content() {
             <li className="flex items-start gap-3">
               <span className="text-[#0098AF] text-lg">➢</span>
               <span className="font-semibold text-gray-800 text-lg">
-                Detailed Engineering
+                Piping Layout & Design
               </span>
             </li>
             <li className="flex items-start gap-3 ml-6">
@@ -110,8 +110,7 @@ export default function Content() {
             <li className="flex items-start gap-3 ml-6">
               <span className="text-[#0098AF] text-base">•</span>
               <span className="text-gray-600 font-light">
-                Electrical Equipment, Switchgear, Switchyard & Transformer Yard
-                Layouts
+                Electrical Equipment & Components Layout
               </span>
             </li>
             <li className="flex items-start gap-3 ml-6">
@@ -133,37 +132,36 @@ export default function Content() {
               </span>
             </li>
           </ul>
-          <ul className="space-y-4">
+          <ul className="space-y-2">
             {/* Category 2: Detailed Engineering (Part 2) */}
             <li className="flex items-start gap-3">
               <span className="text-[#0098AF] text-lg">➢</span>
               <span className="font-semibold text-gray-800 text-lg">
-                Detailed Engineering (Continued)
+                Piping Layout & Design(Continued)
               </span>
             </li>
             <li className="flex items-start gap-3 ml-6">
               <span className="text-[#0098AF] text-base">•</span>
               <span className="text-gray-600 font-light">
-                Cable, Illumination & Lightning Protection Layouts
+                Preliminary Single Line Diagram (SLD)
               </span>
             </li>
             <li className="flex items-start gap-3 ml-6">
               <span className="text-[#0098AF] text-base">•</span>
               <span className="text-gray-600 font-light">
-                Plant Intercommunication System Layouts
+                Main Equipment & Switchgear Layout{" "}
               </span>
             </li>
             <li className="flex items-start gap-3 ml-6">
               <span className="text-[#0098AF] text-base">•</span>
               <span className="text-gray-600 font-light">
-                Power & Control Cable Listings, Schedules & Interconnection
-                Drawings
+                Plant Intercommunication System
               </span>
             </li>
             <li className="flex items-start gap-3 ml-6">
               <span className="text-[#0098AF] text-base">•</span>
               <span className="text-gray-600 font-light">
-                Relay Setting Schedules & Protection Coordination Charts
+                Power & Control Cable Listing
               </span>
             </li>
             <li className="flex items-start gap-3 ml-6">
@@ -182,6 +180,12 @@ export default function Content() {
               <span className="text-[#0098AF] text-base">•</span>
               <span className="text-gray-600 font-light">
                 As-Built Drawings & Documentation
+              </span>
+            </li>
+            <li className="flex items-start gap-3 ml-6">
+              <span className="text-[#0098AF] text-base">•</span>
+              <span className="text-gray-600 font-light">
+                Relay Setting Schedules & Protection Coordination Chart
               </span>
             </li>
           </ul>

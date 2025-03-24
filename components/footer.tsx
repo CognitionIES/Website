@@ -221,53 +221,251 @@
 // }
 
 // export default Footer;
-"use client";
+// "use client";
 
-// This file puts together all parts of the footer
-import * as React from "react";
-import { motion } from "framer-motion";
-import CompanyInfo from "./Footer/CompanyInfo";
-import UsefulLinks from "./Footer/UsefulLinks";
-import Socials from "./Footer/Socials";
-import ContactUs from "./Footer/ContactUs";
+// // This file puts together all parts of the footer
+// import * as React from "react";
+// import { motion } from "framer-motion";
+// import CompanyInfo from "./Footer/CompanyInfo";
+// import UsefulLinks from "./Footer/UsefulLinks";
+// import Socials from "./Footer/Socials";
+// import ContactUs from "./Footer/ContactUs";
 
-export default function Footer() {
+// export default function Footer() {
+//   return (
+//     <footer className="bg-[#5B5B5B] text-white py-8 sm:py-15 lg:py-20 relative overflow-hidden opacity-90">
+//       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+//         {/* Grid layout for footer sections */}
+//         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 sm:gap-10 lg:gap-12">
+//           <CompanyInfo />
+//           <UsefulLinks />
+//           <Socials />
+//           <ContactUs />
+//         </div>
+//       </div>
+//       {/* Decorative elements */}
+//       <motion.div
+//         initial={{ opacity: 0, scale: 0 }}
+//         whileInView={{ opacity: 0.3, scale: 1 }}
+//         transition={{ delay: 0.5, duration: 1 }}
+//         className="absolute bottom-0 left-0 w-80 h-80 bg-[#0098AF] opacity-20 rounded-full blur-3xl -z-10"
+//       />
+//       <motion.div
+//         initial={{ opacity: 0, scale: 0 }}
+//         whileInView={{ opacity: 0.25, scale: 1 }}
+//         transition={{ delay: 0.7, duration: 1 }}
+//         className="absolute top-0 right-0 w-72 h-72 bg-[#5B5B5B] opacity-20 rounded-full blur-3xl -z-10"
+//       />
+//       <motion.div
+//         initial={{ opacity: 0 }}
+//         animate={{ opacity: 0.2 }}
+//         transition={{ delay: 1.5, duration: 1, repeat: Infinity, repeatType: "reverse" }}
+//         className="absolute top-12 left-12 w-6 h-6 bg-[#0098AF] opacity-50 rounded-full"
+//       />
+//       <motion.div
+//         initial={{ opacity: 0 }}
+//         animate={{ opacity: 0.2 }}
+//         transition={{ delay: 2, duration: 1, repeat: Infinity, repeatType: "reverse" }}
+//         className="absolute bottom-12 right-12 w-6 h-6 bg-[#0098AF] opacity-50 rounded-full"
+//       />
+//     </footer>
+//   );
+// }
+
+import React from "react";
+import { Separator } from "@/components/ui/seprator";
+import {
+  Facebook,
+  Linkedin,
+  Mail,
+  Github,
+  Instagram,
+  ExternalLink,
+} from "lucide-react";
+import Image from "next/image";
+//import { motion } from "framer-motion";
+import Logo from "@/constants/images/cognition.png";
+import Link from "next/link";
+
+const Footer = () => {
   return (
-    <footer className="bg-[#5B5B5B] text-white py-8 sm:py-15 lg:py-20 relative overflow-hidden opacity-90">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        {/* Grid layout for footer sections */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 sm:gap-10 lg:gap-12">
-          <CompanyInfo />
-          <UsefulLinks />
-          <Socials />
-          <ContactUs />
+    <footer className="bg-[#003C46] text-white py-14 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto  sm:px-8 lg:px-12">
+        {/* Main footer content */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-24">
+          {/* Column 1: Company Info and Social Media */}
+          <div className="space-y-6 ">
+            <div className="flex items-center gap-1">
+              <Image
+                src={Logo}
+                alt="Cognition IES Logo"
+                width={64}
+                height={64}
+                className="h-16 "
+              />
+              <h3 className="text-3xl mt-1 font-bold hidden md:block">
+                <span className="text-[#0098af]">COGNITION</span> IES
+              </h3>
+            </div>
+
+            <p className="text-[#E6F0F5]/90 text-justify text-sm">
+              Engineering innovative solutions for a sustainable future through
+              cutting-edge technology and creative problem-solving approaches.
+            </p>
+
+            {/* Social Media Links */}
+            <div className="space-y-4">
+              <p className="text-sm font-medium text-[#00b4d8]">
+                Connect With Us
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <Link
+                  href="https://linkedin.com"
+                  className="bg-[#0098af]/30 p-2 rounded-xl hover:bg-[#0098af]/50 transition-colors"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin size={18} />
+                </Link>
+                <Link
+                  href="https://facebook.com"
+                  className="bg-[#0098af]/30 p-2 rounded-full hover:bg-[#0098af]/50 transition-colors"
+                  aria-label="Facebook"
+                >
+                  <Facebook size={18} />
+                </Link>
+
+                <Link
+                  href="https://github.com/cognitionies"
+                  className="bg-[#0098af]/30 p-2 rounded-full hover:bg-[#0098af]/50 transition-colors"
+                  aria-label="GitHub"
+                >
+                  <Github size={18} />
+                </Link>
+                <Link
+                  href="https://instagram.com"
+                  className="bg-[#0098af]/30 p-2 rounded-full hover:bg-[#0098af]/50 transition-colors"
+                  aria-label="Instagram"
+                >
+                  <Instagram size={18} />
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* Column 2: Quick Links */}
+          <div className="space-y-6">
+            <h4 className="text-lg font-medium text-white relative inline-block">
+              Quick Links
+              <span className="absolute -bottom-1 left-0 w-12 h-0.5 bg-[#0098af]"></span>
+            </h4>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="space-y-3">
+                <Link
+                  href="/services/product-engineering"
+                  className="flex items-center gap-2 text-[#E6F0F5]/90 hover:text-[#00b4d8] transition-colors text-sm group"
+                >
+                  <ExternalLink
+                    size={14}
+                    className="group-hover:translate-x-1 transition-transform"
+                  />
+                  <span>Product Engineering</span>
+                </Link>
+                <Link
+                  href="/services/plant-engineering"
+                  className="flex items-center gap-2 text-[#E6F0F5]/90 hover:text-[#00b4d8] transition-colors text-sm group"
+                >
+                  <ExternalLink
+                    size={14}
+                    className="group-hover:translate-x-1 transition-transform"
+                  />
+                  <span>Plant Engineering</span>
+                </Link>
+                <Link
+                  href="/log-splitter-cost-optimization"
+                  className="flex items-center gap-2 text-[#E6F0F5]/90 hover:text-[#00b4d8] transition-colors text-sm group"
+                >
+                  <ExternalLink
+                    size={14}
+                    className="group-hover:translate-x-1 transition-transform"
+                  />
+                  <span>Cost Optimization</span>
+                </Link>
+              </div>
+              <div className="space-y-3">
+                <Link
+                  href="/about"
+                  className="flex items-center gap-2 text-[#E6F0F5]/90 hover:text-[#00b4d8] transition-colors text-sm group"
+                >
+                  <ExternalLink
+                    size={14}
+                    className="group-hover:translate-x-1 transition-transform"
+                  />
+                  <span>About Us</span>
+                </Link>
+                <Link
+                  href="/careers"
+                  className="flex items-center gap-2 text-[#E6F0F5]/90 hover:text-[#00b4d8] transition-colors text-sm group"
+                >
+                  <ExternalLink
+                    size={14}
+                    className="group-hover:translate-x-1 transition-transform"
+                  />
+                  <span>Careers</span>
+                </Link>
+                <Link
+                  href="/contact"
+                  className="flex items-center gap-2 text-[#E6F0F5]/90 hover:text-[#00b4d8] transition-colors text-sm group"
+                >
+                  <ExternalLink
+                    size={14}
+                    className="group-hover:translate-x-1 transition-transform"
+                  />
+                  <span>Contact Us</span>
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* Column 3: Contact Information */}
+          <div className="space-y-6">
+            <h4 className="text-lg font-medium text-white  relative inline-block">
+              Get In Touch
+              <span className="absolute -bottom-1 left-0 w-12 h-0.5 bg-[#0098af]"></span>
+            </h4>
+            <ul className="space-y-4">
+              <li className="flex items-center gap-3">
+                <Mail
+                  size={18}
+                  className="flex-shrink-0 text-[#00b4d8] mt-0.5"
+                />
+                <div>
+                  <p className="text-sm text-white">Email Us</p>
+                  <a
+                    href="mailto:info@cognitionies.com"
+                    className="text-sm text-[#E6F0F5]/90 hover:text-[#00b4d8]"
+                  >
+                    info@cognitionies.com
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Thin separator line */}
+        <Separator className="my-8 bg-[#000000]/90" />
+
+        <div className="mt-16 h-[2px] w-full max-w-7xl mx-auto bg-gradient-to-r from-transparent via-[#0098af]/40 to-transparent"></div>
+        {/* Copyright text */}
+        <div className="text-center mt-8 text-sm text-[#E6F0F5]/70">
+          <p>
+            &copy; {new Date().getFullYear()} Cognition IES. All rights
+            reserved.
+          </p>
         </div>
       </div>
-      {/* Decorative elements */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0 }}
-        whileInView={{ opacity: 0.3, scale: 1 }}
-        transition={{ delay: 0.5, duration: 1 }}
-        className="absolute bottom-0 left-0 w-80 h-80 bg-[#0098AF] opacity-20 rounded-full blur-3xl -z-10"
-      />
-      <motion.div
-        initial={{ opacity: 0, scale: 0 }}
-        whileInView={{ opacity: 0.25, scale: 1 }}
-        transition={{ delay: 0.7, duration: 1 }}
-        className="absolute top-0 right-0 w-72 h-72 bg-[#5B5B5B] opacity-20 rounded-full blur-3xl -z-10"
-      />
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.2 }}
-        transition={{ delay: 1.5, duration: 1, repeat: Infinity, repeatType: "reverse" }}
-        className="absolute top-12 left-12 w-6 h-6 bg-[#0098AF] opacity-50 rounded-full"
-      />
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.2 }}
-        transition={{ delay: 2, duration: 1, repeat: Infinity, repeatType: "reverse" }}
-        className="absolute bottom-12 right-12 w-6 h-6 bg-[#0098AF] opacity-50 rounded-full"
-      />
     </footer>
   );
-}
+};
+
+export default Footer;

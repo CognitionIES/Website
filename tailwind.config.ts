@@ -15,6 +15,8 @@ export default {
     extend: {
       fontFamily: {
         calibri: ["Calibri", "sans-serif"], // Adding Calibri
+      },filter: {
+        "teal-900": "invert(20%) sepia(50%) saturate(500%) hue-rotate(160deg) brightness(40%) contrast(120%)",
       },
       colors: {
         background: "hsl(var(--background))",

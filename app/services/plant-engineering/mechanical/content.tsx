@@ -4,7 +4,7 @@ import { FiChevronRight } from "react-icons/fi"; // Decorative icon
 
 export default function Content() {
   return (
-    <div className="max-w-7xl mx-auto px-4 py-12 lg:w-5/6">
+    <div className="max-w-7xl mx-auto px-4 lg:w-5/6">
       {/* Section 1: Service Name and Overview */}
       <section className="mb-12">
         <h1 className="text-4xl md:text-5xl font-bold text-[#003C46] mb-4 tracking-tight">
@@ -54,51 +54,9 @@ export default function Content() {
           We provide a comprehensive set of services to ensure your success in
           Mechanical Engineering. Here’s how we can support you:
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <ul className="space-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+          <ul className="space-y-2">
             {/* Category 1: Design & Engineering of Static & Rotating Equipment */}
-            <li className="flex items-start gap-3">
-              <span className="text-[#0098AF] text-lg">➢</span>
-              <span className="font-semibold text-gray-800 text-lg">
-                Design & Engineering of Static & Rotating Equipment
-              </span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">Pressure Vessels</span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">Columns & Towers</span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">Heat Exchangers</span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">Storage Tanks</span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
-                Dryers & Cooling Towers
-              </span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
-                Pumping Systems (Pumps & Accessories)
-              </span>
-            </li>
-            <li className="flex items-start gap-3 ml-6">
-              <span className="text-[#0098AF] text-base">•</span>
-              <span className="text-gray-600 font-light">
-                Air & Gas Compressors, Vacuum Systems
-              </span>
-            </li>
-
-            {/* Category 2: Equipment Drawings & Detailing (Part 1) */}
             <li className="flex items-start gap-3">
               <span className="text-[#0098AF] text-lg">➢</span>
               <span className="font-semibold text-gray-800 text-lg">
@@ -108,19 +66,19 @@ export default function Content() {
             <li className="flex items-start gap-3 ml-6">
               <span className="text-[#0098AF] text-base">•</span>
               <span className="text-gray-600 font-light">
-                Equipment List & Mechanical Datasheets
+                Equipment List & Mechanical Datasheet
               </span>
             </li>
             <li className="flex items-start gap-3 ml-6">
               <span className="text-[#0098AF] text-base">•</span>
               <span className="text-gray-600 font-light">
-                Mechanical Schematic Diagrams
+                Mechanical Schematic Diagram
               </span>
             </li>
             <li className="flex items-start gap-3 ml-6">
               <span className="text-[#0098AF] text-base">•</span>
               <span className="text-gray-600 font-light">
-                Equipment Layout & Arrangement Drawings
+                Equipment Layout & Arrangement Drawing
               </span>
             </li>
             <li className="flex items-start gap-3 ml-6">
@@ -132,58 +90,92 @@ export default function Content() {
             <li className="flex items-start gap-3 ml-6">
               <span className="text-[#0098AF] text-base">•</span>
               <span className="text-gray-600 font-light">
-                General Assembly (GA) Drawings for Equipment
-              </span>
-            </li>
-          </ul>
-          <ul className="space-y-4">
-            {/* Category 2: Equipment Drawings & Detailing (Part 2) */}
-            <li className="flex items-start gap-3">
-              <span className="text-[#0098AF] text-lg">➢</span>
-              <span className="font-semibold text-gray-800 text-lg">
-                Equipment Drawings & Detailing (Continued)
+                GA Drawings for Equipment
               </span>
             </li>
             <li className="flex items-start gap-3 ml-6">
               <span className="text-[#0098AF] text-base">•</span>
               <span className="text-gray-600 font-light">
-                Nozzle & Manhole Detail Drawings
+                Nozzle & Manhole Detail Drawing
               </span>
             </li>
             <li className="flex items-start gap-3 ml-6">
               <span className="text-[#0098AF] text-base">•</span>
               <span className="text-gray-600 font-light">
-                Equipment & Pipe Support Drawings
+                Equipment & Pipe Support Drawing
               </span>
             </li>
             <li className="flex items-start gap-3 ml-6">
               <span className="text-[#0098AF] text-base">•</span>
               <span className="text-gray-600 font-light">
-                Ladder & Platform Support Drawings
+                Ladder & Platform Support Drawing
               </span>
             </li>
             <li className="flex items-start gap-3 ml-6">
               <span className="text-[#0098AF] text-base">•</span>
               <span className="text-gray-600 font-light">
-                Tray Support & Welded Internal Details
+                Tray Support & Welded Internal Detail
               </span>
             </li>
             <li className="flex items-start gap-3 ml-6">
               <span className="text-[#0098AF] text-base">•</span>
               <span className="text-gray-600 font-light">
-                Tube Bundle Detailing for Shell & Tube Heat Exchangers
+                Tube Bundle Detailing for Shell & Tube H
               </span>
             </li>
             <li className="flex items-start gap-3 ml-6">
               <span className="text-[#0098AF] text-base">•</span>
               <span className="text-gray-600 font-light">
-                3D Modeling & Visualization
+                3D Modeling & Visualizatio
               </span>
             </li>
             <li className="flex items-start gap-3 ml-6">
               <span className="text-[#0098AF] text-base">•</span>
               <span className="text-gray-600 font-light">
                 Material Take-Off (MTO) & Bill of Materials (BOM)
+              </span>
+            </li>
+          </ul>
+          <ul className="space-y-2">
+            {/* Category 2: Equipment Drawings & Detailing (Part 2) */}
+            <li className="flex items-start gap-3">
+              <span className="text-[#0098AF] text-lg">➢</span>
+              <span className="font-semibold text-gray-800 text-lg">
+                Static & Rotating Equipment
+              </span>
+            </li>
+            <li className="flex items-start gap-3 ml-6">
+              <span className="text-[#0098AF] text-base">•</span>
+              <span className="text-gray-600 font-light">Pressure Vessel</span>
+            </li>
+            <li className="flex items-start gap-3 ml-6">
+              <span className="text-[#0098AF] text-base">•</span>
+              <span className="text-gray-600 font-light">Columns & Tower</span>
+            </li>
+            <li className="flex items-start gap-3 ml-6">
+              <span className="text-[#0098AF] text-base">•</span>
+              <span className="text-gray-600 font-light">Heat Exchanger</span>
+            </li>
+            <li className="flex items-start gap-3 ml-6">
+              <span className="text-[#0098AF] text-base">•</span>
+              <span className="text-gray-600 font-light">Storage Tank</span>
+            </li>
+            <li className="flex items-start gap-3 ml-6">
+              <span className="text-[#0098AF] text-base">•</span>
+              <span className="text-gray-600 font-light">
+                Dryers & Cooling Tower
+              </span>
+            </li>
+            <li className="flex items-start gap-3 ml-6">
+              <span className="text-[#0098AF] text-base">•</span>
+              <span className="text-gray-600 font-light">
+                Pumps & Pumping Systems
+              </span>
+            </li>
+            <li className="flex items-start gap-3 ml-6">
+              <span className="text-[#0098AF] text-base">•</span>
+              <span className="text-gray-600 font-light">
+                Pumps & Pumping Systems
               </span>
             </li>
 

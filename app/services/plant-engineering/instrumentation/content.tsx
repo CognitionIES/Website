@@ -12,7 +12,15 @@ export default function Content() {
           <span className="block w-20 h-1 bg-gradient-to-r from-[#0098AF] to-transparent mt-3 rounded-full" />
         </h1>
         <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-3xl font-light">
-          At Cognition, our Instrumentation Engineering services are designed to deliver precise, reliable, and efficient control systems for industrial plants. We specialize in integrating advanced instrumentation to optimize process monitoring, enhance safety, and improve operational efficiency. With extensive experience, our team collaborates with you to address complex instrumentation challenges, ensuring seamless integration and performance. Whether you’re designing a new system or upgrading an existing one, we provide tailored solutions to meet your plant’s unique requirements.
+          At Cognition, our Instrumentation Engineering services are designed to
+          deliver precise, reliable, and efficient control systems for
+          industrial plants. We specialize in integrating advanced
+          instrumentation to optimize process monitoring, enhance safety, and
+          improve operational efficiency. With extensive experience, our team
+          collaborates with you to address complex instrumentation challenges,
+          ensuring seamless integration and performance. Whether you’re
+          designing a new system or upgrading an existing one, we provide
+          tailored solutions to meet your plant’s unique requirements.
         </p>
       </section>
 
@@ -23,11 +31,15 @@ export default function Content() {
           <FiChevronRight className="ml-2 text-[#0098AF]" />
         </h2>
         <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-4 font-light">
-          We utilize industry-leading tools like Honeywell Experion, Yokogawa CENTUM VP, and AutoCAD P&ID to deliver precise and efficient instrumentation solutions.
+          We utilize industry-leading tools like Honeywell Experion, Yokogawa
+          CENTUM VP, and AutoCAD P&ID to deliver precise and efficient
+          instrumentation solutions.
         </p>
         {/* Placeholder for slider with subtle shadow and border */}
         <div className="w-full h-24 bg-gray-100 flex items-center justify-center rounded-lg mt-4 border border-gray-200 shadow-sm">
-          <span className="text-gray-500 font-medium">Logo Slider Carousel</span>
+          <span className="text-gray-500 font-medium">
+            Logo Slider Carousel
+          </span>
         </div>
         {/* Decorative dot */}
         <div className="absolute top-4 right-4 w-3 h-3 bg-[#0098AF] rounded-full opacity-50" />
@@ -39,10 +51,11 @@ export default function Content() {
           What We Offer
         </h2>
         <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-6 max-w-3xl font-light">
-          We provide a comprehensive set of services to ensure your success in Instrumentation Engineering. Here’s how we can support you:
+          We provide a comprehensive set of services to ensure your success in
+          Instrumentation Engineering. Here’s how we can support you:
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <ul className="space-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+          <ul className="space-y-2">
             {/* Category 1: Basic Engineering */}
             <li className="flex items-start gap-3">
               <span className="text-[#0098AF] text-lg">➢</span>
@@ -88,12 +101,17 @@ export default function Content() {
                 Instrument Installation Details
               </span>
             </li>
-
+            <li className="flex items-start gap-3 ml-6">
+              <span className="text-[#0098AF] text-base">•</span>
+              <span className="text-gray-600 font-light">
+                Instrument Installation Details
+              </span>
+            </li>
             {/* Category 2: Detailed Engineering (Part 1) */}
             <li className="flex items-start gap-3">
               <span className="text-[#0098AF] text-lg">➢</span>
               <span className="font-semibold text-gray-800 text-lg">
-                Detailed Engineering
+              Safety & Risk Assessment (Safety Studies)
               </span>
             </li>
             <li className="flex items-start gap-3 ml-6">
@@ -133,12 +151,12 @@ export default function Content() {
               </span>
             </li>
           </ul>
-          <ul className="space-y-4">
+          <ul className="space-y-2">
             {/* Category 2: Detailed Engineering (Part 2) */}
             <li className="flex items-start gap-3">
               <span className="text-[#0098AF] text-lg">➢</span>
               <span className="font-semibold text-gray-800 text-lg">
-                Detailed Engineering (Continued)
+              Safety & Risk Assessment (Safety Studies)(Continued)
               </span>
             </li>
             <li className="flex items-start gap-3 ml-6">

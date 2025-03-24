@@ -33,8 +33,8 @@ export default function Careers() {
               {CAREERS_CONSTANTS.DESCRIPTION}
             </p>
             <Link href={CAREERS_CONSTANTS.BUTTON_HREF}>
-            <Button className="bg-[#0098af] text-white hover:bg-white hover:text-black text-base transition-colors duration-200 border-2 border-transparent hover:border-[#0098af] hover:outline hover:outline-2 hover:outline-[#0098af]">
-            {CAREERS_CONSTANTS.BUTTON_TEXT}
+              <Button className="bg-[#0098af] text-white hover:bg-white hover:text-black text-base transition-colors duration-200 border-2 border-transparent hover:border-[#0098af] hover:outline hover:outline-2 hover:outline-[#0098af]">
+                {CAREERS_CONSTANTS.BUTTON_TEXT}
               </Button>
             </Link>
           </div>

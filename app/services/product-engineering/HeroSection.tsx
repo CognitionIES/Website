@@ -44,7 +44,7 @@ export default function HeroSection() {
               href="/services"
               className="hover:text-[#99D5DF] transition-colors duration-200"
             >
-              services
+              Services
             </Link>
             <FiChevronRight className="w-4 h-4" />
             <span>Engineering Services</span>

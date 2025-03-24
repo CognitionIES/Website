@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
-import {  Quote } from "lucide-react";
+import { Quote } from "lucide-react";
 import {
   Carousel,
   CarouselContent,
@@ -256,7 +256,7 @@ const Testimonials = () => {
             isInView ? { scaleX: 1, opacity: 1 } : { scaleX: 0, opacity: 0 }
           }
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-16 h-px w-full max-w-2xl mx-auto bg-gradient-to-r from-transparent via-[#0098af]/30 to-transparent"
+          className="mt-16 h-px w-full max-w-2xl mx-auto bg-gradient-to-r from-transparent via-[#000000]/30 to-transparent"
         />
       </div>
     </section>
