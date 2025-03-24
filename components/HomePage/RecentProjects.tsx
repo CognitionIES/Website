@@ -148,9 +148,9 @@ const RecentProjects = () => {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="mb-12 max-w-7xl"
         >
-          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-[#5b5b5b] mb-4 reveal-line inline-block">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#003C46] mb-4 tracking-tight drop-shadow-sm">
             Our Recent Projects
-          </h2>
+          </h1>
 
           <p className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-7xl">
             Discover our latest innovations, each crafted with precision to
