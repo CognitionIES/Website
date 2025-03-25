@@ -28,7 +28,7 @@ const testimonials: Testimonial[] = [
   {
     id: "testimonial-1",
     quote:
-      "I am pleased to provide this reference for Cognition IES, which has been a reliable partner in supporting our engineering and cost analysis initiatives at Northern Tool + Equipment. They bring strong capabilities in teardown and idea generation, offering valuable insights that helped us refine our product design and explore cost-effective alternatives. Their approach to feature value and cost analysis has been beneficial in identifying areas for improvement.Cognition’s should-cost studies have provided useful visibility into cost structures and the level of detail has helped us make more informed decisions. In addition, their communication and deliverables are well-organized, making it easy for our teams to interpret findings and take action.We have had a very positive experience working with Cognition and would recommend them to organizations seeking engineering design support especially in the VAVE space.",
+      "I am pleased to provide this reference for Cognition IES, which has been a reliable partner in supporting our engineering and cost analysis initiatives at Northern Tool + Equipment. They bring strong capabilities in teardown and idea generation, offering valuable insights that helped us refine our product design and explore cost-effective alternatives. Their approach to feature value and cost analysis has been beneficial in identifying areas for improvement.Cognition’s should-cost studies have provided useful visibility into cost structures and the level of detail has helped us make more informed decisions. In addition, their communication and deliverables are well-organized, making it easy for our teams to interpret findings and take action.We have had a very positive experience working with Cognition and would recommend them to organizations seeking engineering design support especially in the VAVE space",
     author: "Pete Mattson",
     position: "Project Manager",
     company: "ABC",
@@ -39,7 +39,7 @@ const testimonials: Testimonial[] = [
   {
     id: "testimonial-2",
     quote:
-      "Their cost management strategies helped us identify opportunities we hadn't seen before. The ROI has been exceptional, and the implementation was smoother than we anticipated.",
+      "Their cost management strategies helped us identify opportunities we hadn't seen before. The ROI has been exceptional, and the implementation was smoother than we anticipated thanks to their team's support and guidance. We look forward to working with them again in the future.",
     author: "Michael Chen",
     position: "CFO",
     company: "Global Systems",
@@ -50,7 +50,7 @@ const testimonials: Testimonial[] = [
   {
     id: "testimonial-3",
     quote:
-      "Working with their team was a seamless experience from start to finish. Their attention to detail and innovative approach helped us achieve our goals ahead of schedule.",
+      "Working with their team was a seamless experience from start to finish. Their attention to detail and innovative approach helped us achieve our goals ahead of schedule and under budget. We highly recommend their services to anyone looking to take their business to the next level.",
     author: "Elena Rodriguez",
     position: "VP of Operations",
     company: "Nexus Enterprises",
