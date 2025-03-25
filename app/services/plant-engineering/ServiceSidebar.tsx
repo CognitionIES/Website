@@ -165,15 +165,7 @@ export default function ServiceSidebar() {
             height={300} // Estimated height based on aspect ratio (adjust if needed)
             className="w-full max-h-[550px] object-cover rounded-2xl shadow-md"
           />
-        ) : (
-          <Image
-            src=" s://thumbs.dreamstime.com/b/vertical-image-construction-safety-concept-close-up-worker-holding-helmet-33226974.jpg?w=576"
-            alt="Construction Safety Concept - Worker Holding Helmet"
-            width={300}
-            height={500}
-            className="w-full h-auto object-cover rounded-lg shadow-md"
-          />
-        )}
+        ) : null}
       </div>
     </div>
   );

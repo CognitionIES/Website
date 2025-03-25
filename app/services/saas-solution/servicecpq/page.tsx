@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { Helmet, HelmetProvider } from "react-helmet-async"; // Import HelmetProvider
 import Hero from "./hero";
 import Features from "./features";
 import Problems from "./problem";
@@ -13,15 +12,7 @@ import Footer from "@/components/footer";
 
 const Index = () => {
   return (
-    <HelmetProvider>
-      <Helmet>
-        <title>ServiceCPQ - AI-Powered After-Sales Platform</title>
-        <meta
-          name="description"
-          content="AI-powered platform unifying claims, CPQ, and repair workflows for comprehensive, unified after-sales management."
-        />
-      </Helmet>
-
+    <div>
       <MegaMenu />
       <Hero />
       <main className="overflow-hidden ">
@@ -32,7 +23,7 @@ const Index = () => {
         <CTA />
       </main>
       <Footer />
-    </HelmetProvider>
+    </div>
   );
 };
 
