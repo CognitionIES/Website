@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
-import {  Quote } from "lucide-react";
+import { Quote } from "lucide-react";
 import {
   Carousel,
   CarouselContent,
@@ -78,6 +78,7 @@ const Testimonials = () => {
 
     return () => {
       if (sectionRef.current) {
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         observer.unobserve(sectionRef.current);
       }
     };
