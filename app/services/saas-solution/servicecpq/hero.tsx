@@ -33,7 +33,10 @@ const Hero = () => {
 
           {/* CTA buttons */}
           <div className="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in-up delay-200">
-            <Link href="/contact" className="btn-primary group">
+            <Link
+              href="/contact"
+              className="bg-[#0098af] text-white px-6 py-3 rounded-md inline-flex items-center justify-center transition-all duration-300 hover:bg-[#003C46] focus:outline-none focus:ring-2 focus:ring-[#0098af]/50 focus:ring-offset-2;  group"
+            >
               Book Free Demo
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
@@ -41,14 +44,15 @@ const Hero = () => {
               href="https://www.servicecpq.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-secondary group"
+              className="bg-[#00b4d8] text-white px-6 py-3 rounded-md inline-flex items-center justify-center transition-all duration-300 hover:bg-[#0098af] focus:outline-none focus:ring-2 focus:ring-[#00b4d8]/50 focus:ring-offset-2;
+  "
             >
               Explore
             </a>
           </div>
 
           {/* Trust indicators */}
-          <div className="mt-10 text-center animate-fade-in-up delay-300">
+          {/* <div className="mt-10 text-center animate-fade-in-up delay-300">
             <div className="flex justify-center items-center space-x-6">
               <div className="text-center">
                 <p className="text-xl font-bold text-[#0098af]">5/5</p>
@@ -62,7 +66,7 @@ const Hero = () => {
                 </p>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 

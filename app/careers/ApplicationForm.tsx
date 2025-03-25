@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
-import { Upload, Phone, Mail, MapPin, User } from "lucide-react";
+import { Upload, Phone, Mail, MapPin, User, Briefcase } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 
 const ApplicationForm = () => {
@@ -24,6 +24,7 @@ const ApplicationForm = () => {
     email: "",
     phone: "",
     location: "remote",
+    jobTitle: "",
     message: "",
     resume: null as File | null,
     resumeBase64: "", // Added to store base64 string
@@ -85,6 +86,7 @@ const ApplicationForm = () => {
         email: formData.email,
         phone: formData.phone,
         location: formData.location,
+        job_title: formData.jobTitle, 
         message: formData.message,
         resume_name: formData.resume.name,
         resume_data: formData.resumeBase64,
@@ -113,6 +115,7 @@ const ApplicationForm = () => {
           email: "",
           phone: "",
           location: "remote",
+          jobTitle: "",
           message: "",
           resume: null,
           resumeBase64: "",
@@ -231,6 +234,7 @@ const ApplicationForm = () => {
                     />
                     <Mail className="absolute left-3 top-1/2 -translate-y-1/2 text-[#5B5B5B]/50 h-4 w-4" />
                   </div>
+
                 </div>
 
                 <div className="space-y-2">
@@ -256,31 +260,56 @@ const ApplicationForm = () => {
               </div>
 
               {/* Location */}
-              <div className="space-y-2">
-                <Label
-                  htmlFor="location"
-                  className="text-[#003C46] font-medium"
-                >
-                  Preferred Location <span className="text-red-500">*</span>
-                </Label>
-                <div className="relative">
-                  <Select
-                    value={formData.location}
-                    onValueChange={(value) =>
-                      handleInputChange("location", value)
-                    }
-                    disabled={isSubmitting}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <Label
+                    htmlFor="location"
+                    className="text-[#003C46] font-medium"
                   >
-                    <SelectTrigger className="pl-10 border-[#5B5B5B]/30 focus:ring-[#0098AF]">
-                      <SelectValue placeholder="Select location" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="remote">Remote</SelectItem>
-                      <SelectItem value="India">India</SelectItem>
-                      <SelectItem value="USA">USA</SelectItem>
-                    </SelectContent>
-                  </Select>
-                  <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 text-[#5B5B5B]/50 h-4 w-4 z-10" />
+                    Preferred Location <span className="text-red-500">*</span>
+                  </Label>
+                  <div className="relative">
+                    <Select
+                      value={formData.location}
+                      onValueChange={(value) =>
+                        handleInputChange("location", value)
+                      }
+                      disabled={isSubmitting}
+                    >
+                      <SelectTrigger className="pl-10 border-[#5B5B5B]/30 focus:ring-[#0098AF]">
+                        <SelectValue placeholder="Select location" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="remote">Remote</SelectItem>
+                        <SelectItem value="India">India</SelectItem>
+                        <SelectItem value="USA">USA</SelectItem>
+                      </SelectContent>
+                    </Select>
+                    <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 text-[#5B5B5B]/50 h-4 w-4 z-10" />
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <Label
+                    htmlFor="jobTitle"
+                    className="text-[#003C46] font-medium"
+                  >
+                    Job Title <span className="text-red-500">*</span>
+                  </Label>
+                  <div className="relative">
+                    <Input
+                      id="jobTitle"
+                      value={formData.jobTitle}
+                      onChange={(e) =>
+                        handleInputChange("jobTitle", e.target.value)
+                      }
+                      required
+                      className="pl-10 border-[#5B5B5B]/30 focus-visible:ring-[#0098AF]"
+                      placeholder="Enter your desired job title"
+                      disabled={isSubmitting}
+                    />
+                    <Briefcase className="absolute left-3 top-1/2 -translate-y-1/2 text-[#5B5B5B]/50 h-4 w-4" />
+                  </div>
                 </div>
               </div>
 

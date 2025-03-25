@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 const Integration = () => {
   return (
     <section className="py-20 bg-white">
-      <div className="container max-w-7xl mx-auto">
+      <div className="container px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="animate-fade-in-up">
             <h2 className="text-3xl md:text-4xl font-medium tracking-tight font-semibold text-[#003C46] mb-6">

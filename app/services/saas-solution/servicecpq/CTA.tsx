@@ -6,7 +6,7 @@ import Link from "next/link";
 const CTA = () => {
   return (
     <section className="py-20">
-      <div className="container max-w-7xl mx-auto">
+      <div className="container px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-semibold text-[#003C46] mb-6">
             Try & Buy

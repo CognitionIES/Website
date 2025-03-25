@@ -6,7 +6,7 @@ import Link from "next/link";
 const Problems = () => {
   return (
     <section className="py-20 bg-[#E6F0F5]/20">
-      <div className="container max-w-7xl mx-auto">
+      <div className="container px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="animate-fade-in-up">
             <h2 className="text-3xl md:text-4xl font-medium tracking-tight font-semibold text-[#003C46] mb-6">

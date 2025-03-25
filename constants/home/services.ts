@@ -48,8 +48,8 @@
 // };
 // constants/home/services.js
 //import process from "@/constants/images/process-1.jpeg";
-import product from "@/constants/images/product.jpeg"
-import process2 from "@/constants/images/process-2.jpeg"
+import product from "@/constants/images/home/product-1.jpeg"
+import process2 from "@/constants/images/home/process-3.jpeg"
 
 export const SERVICES = [
   {
@@ -58,11 +58,10 @@ export const SERVICES = [
     shortDescription:
       "Transforming ideas into innovative, market-ready products with precision and services.",
     fullDescription:
-      "We provide comprehensive Product Engineering solutions, covering Mechanical Design, Electrical Engineering, CAE/CFD, Hydraulic Systems, Prototyping & 3D Printing, Asset Management, Embedded Systems, Technical Publications, and Supply Chain Management. Our agile approach delivers bold, sustainable products for industries like automotive, aerospace, and medical devices.",
+      "We provide comprehensive Product Engineering solutions, covering Mechanical Design, Electrical Engineering, CAE/CFD, Hydraulic Systems, Prototyping & 3D Printing, Asset Management, Embedded Systems, Technical Publications, and Supply Chain Management. Our agile approach delivers bold, sustainable products for industries like automotive, .",
     bgColor: "bg-[#003C46]",
     textColor: "text-white",
     image:product,
-
     href: "/services/product-engineering",
   },
   {

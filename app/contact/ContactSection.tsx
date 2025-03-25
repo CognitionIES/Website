@@ -13,7 +13,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
-import {  FiMail } from "react-icons/fi";
+import { FiMail } from "react-icons/fi";
 import { useState, useCallback } from "react";
 import { CONTACT_CONSTANTS } from "@/constants/contactPage/constants";
 import Link from "next/link";
@@ -33,8 +33,7 @@ export default function ContactSection() {
   const [status, setStatus] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const { TITLE, DESCRIPTION, EMAIL } =
-    CONTACT_CONSTANTS.CONTACT;
+  const { TITLE, DESCRIPTION, EMAIL } = CONTACT_CONSTANTS.CONTACT;
   const { STAGGER_CHILDREN } = CONTACT_CONSTANTS.ANIMATIONS;
 
   // Memoized input change handler
@@ -121,7 +120,7 @@ export default function ContactSection() {
             <p className="text-base text-gray-600 leading-relaxed max-w-md">
               {DESCRIPTION}
             </p>
-            <div className="space-y-4 text-gray-600 bg-white p-5 rounded-lg shadow-sm">
+            <div className="text-gray-600 bg-white p-5 rounded-lg shadow-sm">
               {/* <div className="flex items-center space-x-3">
                 <FiMapPin className="h-5 w-5 text-[#0098AF]" />
                 <div>
@@ -150,7 +149,12 @@ export default function ContactSection() {
                   <h3 className="text-sm font-semibold text-gray-800">
                     {EMAIL.TITLE}
                   </h3>
-                  <p className="text-sm">{EMAIL.ADDRESS}</p>
+                  <Link
+                    href={`mailto:${EMAIL.ADDRESS}`}
+                    className="text-sm  hover:underline"
+                  >
+                    {EMAIL.ADDRESS}
+                  </Link>
                 </div>
               </div>
             </div>

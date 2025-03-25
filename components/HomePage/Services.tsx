@@ -446,8 +446,8 @@ export default function ServicesSection() {
                 <Image
                   src={service.image}
                   alt={service.title}
-                  height={900}
-                  width={900}
+                  height={1000}
+                  width={1000}
                   className="object-cover bg-center transition-opacity duration-500"
                   style={{
                     opacity: activeCard === service.id ? 0.1 : 0.9,

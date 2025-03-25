@@ -72,8 +72,8 @@ const features = [
 const Features = () => {
   return (
     <section id="features" className="section-padding py-14 bg-[#E6F0F5]/30">
-      <div className="container max-w-7xl mx-auto">
-        <div className="text-center  mx-auto mb-16 animate-fade-in-up">
+      <div className="container px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="text-center  mx-auto  mb-16 animate-fade-in-up">
           <h2 className="text-3xl md:text-4xl font-medium tracking-tight font-semibold text-[#003C46] mb-6">
             Powerful Features, Real Results
           </h2>
@@ -121,7 +121,9 @@ const FeatureCard = ({
       <div className="w-12 h-12 rounded-lg bg-[#0098af]/10 flex items-center justify-center mb-6">
         <div className="text-[#0098af]">{icon}</div>
       </div>
-      <h3 className="text-xl font-medium tracking-tight font-semibold text-[#003C46] mb-3">{title}</h3>
+      <h3 className="text-xl font-medium tracking-tight font-semibold text-[#003C46] mb-3">
+        {title}
+      </h3>
       <p className="text-[#5b5b5b]">{description}</p>
     </div>
   );

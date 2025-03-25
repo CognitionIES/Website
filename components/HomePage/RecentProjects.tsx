@@ -9,19 +9,24 @@ import {
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { useIsMobile } from "@/hooks/use-mobile";
+import digitalImage from "@/constants/images/home/digitalization.jpg";
+import { StaticImageData } from "next/image";
+//import pcmImage from "@/constants/images/home/pcm-1.jpg";
+import pcmImage2 from "@/constants/images/home/pcm-2.jpg";
+import Link from "next/link";
 
 type Project = {
   id: string;
   title: string;
   category: string;
   description: string;
-  image: string;
+  image: string | StaticImageData;
   href: string;
-  stats?: {
-    value: string;
-    label: string;
-  }[];
-};
+//   stats?: {
+//     value: string;
+//     label: string;
+//   }[];
+ };
 
 const projects: Project[] = [
   {
@@ -29,28 +34,27 @@ const projects: Project[] = [
     title: "Digitalization",
     category: "Digital Transformation",
     description:
-      "Transform business operations with cutting-edge digital solutions that enhance efficiency and drive scalability. Our approach integrates seamless workflows and data-driven insights.",
-    image:
-      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop",
+      "Conducted a detailed cost and function analysis of the Log Splitter, identifying cost-saving opportunities through competitive benchmarking and design optimization.",
+    image: digitalImage,
     href: "/projects/digitalization",
-    stats: [
-      { value: "40%", label: "Efficiency Increase" },
-      { value: "3.5x", label: "ROI" },
-    ],
+    // stats: [
+    //   { value: "40%", label: "Efficiency Increase" },
+    //   { value: "3.5x", label: "ROI" },
+    // ],
   },
   {
     id: "project-2",
-    title: "Product Cost Management",
+    title: "Log Splitter Cost Optimization & Benchmarking",
     category: "Financial Optimization",
     description:
-      "Strategic cost analysis and management systems that optimize spending and enhance profitability. Our methodology identifies opportunities for sustainable cost reduction while maintaining quality.",
+      "Conducted a detailed cost and function analysis of the Log Splitter, identifying cost-saving opportunities through competitive benchmarking and design optimization.",
     image:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop",
+    pcmImage2,
     href: "/projects/product-cost-management",
-    stats: [
-      { value: "28%", label: "Cost Reduction" },
-      { value: "6mo", label: "Implementation" },
-    ],
+    // stats: [
+    //   { value: "28%", label: "Cost Reduction" },
+    //   { value: "6mo", label: "Implementation" },
+    // ],
   },
 ];
 
@@ -138,7 +142,7 @@ const RecentProjects = () => {
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
         {/* Section header with animation */}
-        <div className="inline-block mb-2 px-3 py-1 bg-[#E6F0F5] bg-opacity-70 rounded-full backdrop-blur-sm">
+        <div className="inline-block mb-2 max-w-7xl mx-auto px-3 py-1 bg-[#E6F0F5] bg-opacity-70 rounded-full backdrop-blur-sm">
           <p className="text-xs font-medium tracking-wider text-[#0098af] uppercase">
             Featured Work
           </p>
@@ -149,15 +153,15 @@ const RecentProjects = () => {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="mb-12 max-w-7xl"
         >
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#003C46] mb-4 tracking-tight drop-shadow-sm">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#003C46]  tracking-tight drop-shadow-sm">
             Our Recent Projects
           </h1>
 
-          <p className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-7xl">
+          {/* <p className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-7xl">
             Discover our latest innovations, each crafted with precision to
             deliver exceptional results for businesses across various
             industries.
-          </p>
+          </p> */}
         </motion.div>
 
         {/* Navigation controls */}
@@ -205,9 +209,9 @@ const RecentProjects = () => {
         </div> */}
 
         {/* Projects grid with smooth animation */}
-        <div className="relative">
+        <div className="relative max-w-7xl "> 
           <div
-            className="flex transition-all duration-500 ease-out gap-6 lg:gap-8"
+            className="flex transition-all duration-500 ease-out gap-6 lg:gap-6"
             style={{
               transform: `translateX(-${
                 activeIndex * (100 / visibleProjects)
@@ -219,9 +223,9 @@ const RecentProjects = () => {
                 key={project.id}
                 initial={{ opacity: 0, y: 30 }}
                 animate={
-                  isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
+                  isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }
                 }
-                transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
+                transition={{ duration: 0.25, delay: 0.2 + index * 0.1 }}
                 className={cn(
                   "project-card flex-shrink-0 w-full",
                   isMobile ? "w-full" : "w-1/2"
@@ -233,7 +237,13 @@ const RecentProjects = () => {
                   <div className="relative h-[240px] w-full overflow-hidden">
                     <div
                       className="image-hover-scale absolute inset-0 bg-cover bg-center h-full w-full"
-                      style={{ backgroundImage: `url(${project.image})` }}
+                      style={{
+                        backgroundImage: `url(${
+                          typeof project.image === "string"
+                            ? project.image
+                            : project.image.src
+                        })`,
+                      }}
                     />
 
                     {/* Subtle gradient overlay */}
@@ -260,7 +270,7 @@ const RecentProjects = () => {
                     </p>
 
                     {/* Project statistics */}
-                    {project.stats && (
+                    {/* {project.stats && (
                       <div className="flex gap-4 mt-4 pt-3 border-t border-gray-100">
                         {project.stats.map((stat, i) => (
                           <div key={i} className="flex flex-col">
@@ -273,14 +283,14 @@ const RecentProjects = () => {
                           </div>
                         ))}
                       </div>
-                    )}
+                    )} */}
 
                     <a
                       href={project.href}
                       className="inline-flex items-center gap-1.5 text-base font-medium text-[#0098af] group relative"
                     >
                       <span className="relative">
-                        View Project
+                        View in detail
                         <span className="absolute -bottom-px left-0 w-full h-px bg-[#0098af]/50 scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
                       </span>
                       <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -297,19 +307,19 @@ const RecentProjects = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.5, delay: 0.5 }}
-          className="mt-12 text-center"
+          className="mt-6 text-center"
         >
-          <a href="/projects">
+          <Link href="/projects">
             <Button
               variant="outline"
-              className="rounded-full bg-[#0098af] text-white  hover:bg-white hover:text-black  hover:outline hover:outline-2 hover:outline-[#0098af] px-4 py-4 h-auto text-base font-medium border-[#0098af]  transition-colors duration-300"
+              className="rounded-full bg-[#0098af] text-white  hover:bg-white hover:text-black  hover:outline hover:outline-2 hover:outline-[#0098af] px-4 py-3 h-auto text-base font-medium border-[#0098af]  transition-colors duration-300"
             >
               {/* <Button className="w-full bg-[#0098af] text-white hover:bg-white hover:text-black border-2 border-transparent hover:border-[#0098af] hover:outline hover:outline-2 hover:outline-[#0098af] transition-colors duration-200"> */}
 
               <span>View All Projects</span>
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>
