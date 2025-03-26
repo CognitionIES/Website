@@ -22,11 +22,11 @@ type Project = {
   description: string;
   image: string | StaticImageData;
   href: string;
-//   stats?: {
-//     value: string;
-//     label: string;
-//   }[];
- };
+  //   stats?: {
+  //     value: string;
+  //     label: string;
+  //   }[];
+};
 
 const projects: Project[] = [
   {
@@ -48,8 +48,7 @@ const projects: Project[] = [
     category: "Financial Optimization",
     description:
       "Conducted a detailed cost and function analysis of the Log Splitter, identifying cost-saving opportunities through competitive benchmarking and design optimization.",
-    image:
-    pcmImage2,
+    image: pcmImage2,
     href: "/projects/product-cost-management",
     // stats: [
     //   { value: "28%", label: "Cost Reduction" },
@@ -103,7 +102,7 @@ const RecentProjects = () => {
   return (
     <section
       ref={sectionRef}
-      className="w-full py-16 sm:py-20 lg:py-24 overflow-hidden relative"
+      className="w-full py-8 sm:py-10 lg:py-12 overflow-hidden relative"
       style={{
         backgroundImage:
           "radial-gradient(circle at 10% 90%, rgba(0, 152, 175, 0.05) 0%, transparent 30%), radial-gradient(circle at 90% 10%, rgba(91, 91, 91, 0.05) 0%, transparent 30%)",
@@ -142,7 +141,7 @@ const RecentProjects = () => {
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
         {/* Section header with animation */}
-        <div className="inline-block mb-2 max-w-7xl mx-auto px-3 py-1 bg-[#E6F0F5] bg-opacity-70 rounded-full backdrop-blur-sm">
+        <div className="inline-block mb-1 max-w-7xl mx-auto px-3 bg-[#E6F0F5] bg-opacity-70 rounded-full backdrop-blur-sm">
           <p className="text-xs font-medium tracking-wider text-[#0098af] uppercase">
             Featured Work
           </p>
@@ -151,67 +150,20 @@ const RecentProjects = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="mb-12 max-w-7xl"
+          className="mb-6 max-w-7xl"
         >
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#003C46]  tracking-tight drop-shadow-sm">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#003C46] tracking-tight drop-shadow-sm">
             Our Recent Projects
           </h1>
 
-          {/* <p className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-7xl">
-            Discover our latest innovations, each crafted with precision to
-            deliver exceptional results for businesses across various
-            industries.
-          </p> */}
+    
         </motion.div>
 
-        {/* Navigation controls */}
-        {/* <div className="flex justify-between items-center mb-8">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-            transition={{ duration: 0.4, delay: 0.3 }}
-            className="flex items-center"
-          >
-            <div className="w-8 h-1 bg-gradient-to-r from-[#0098af] to-transparent mr-3 rounded-full"></div>
-            <p className="text-sm font-medium text-[#5b5b5b]">
-              <span className="text-[#5b5b5b]">{activeIndex + 1}</span>
-              <span className="mx-1">/</span>
-              <span>{projects.length}</span>
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
-            transition={{ duration: 0.4, delay: 0.3 }}
-            className="flex space-x-2"
-          >
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={handlePrev}
-              className="rounded-full w-10 h-10 border-[#0098af]/20 hover:bg-[#0098af]/10 hover:border-[#5b5b5b] transition-colors duration-300"
-              aria-label="Previous projects"
-            >
-              <ChevronLeft className="h-5 w-5 text-[#0098af]" />
-            </Button>
-
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={handleNext}
-              className="rounded-full w-10 h-10 border-[#0098af]/20 hover:bg-[#0098af]/10 hover:border-[#0098af] transition-colors duration-300"
-              aria-label="Next projects"
-            >
-              <ChevronRight className="h-5 w-5 text-[#0098af]" />
-            </Button>
-          </motion.div>
-        </div> */}
-
+        
         {/* Projects grid with smooth animation */}
-        <div className="relative max-w-7xl "> 
+        <div className="relative  max-w-7xl ">
           <div
-            className="flex transition-all duration-500 ease-out gap-6 lg:gap-6"
+            className="flex transition-all  duration-500 ease-out gap-6 lg:gap-6"
             style={{
               transform: `translateX(-${
                 activeIndex * (100 / visibleProjects)
@@ -232,9 +184,9 @@ const RecentProjects = () => {
                 )}
                 whileHover={{ y: -5 }}
               >
-                <div className="group h-full bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100">
+                <div className="group  h-full bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100">
                   {/* Image container with hover effect */}
-                  <div className="relative h-[240px] w-full overflow-hidden">
+                  <div className="relative h-[240] w-full overflow-hidden">
                     <div
                       className="image-hover-scale absolute inset-0 bg-cover bg-center h-full w-full"
                       style={{
@@ -260,7 +212,7 @@ const RecentProjects = () => {
                   </div>
 
                   {/* Content */}
-                  <div className="p-6 space-y-4">
+                  <div className="p-6 space-y-3">
                     <h3 className="text-2xl font-semibold text-[#5b5b5b] group-hover:text-[#0098af] transition-colors">
                       {project.title}
                     </h3>

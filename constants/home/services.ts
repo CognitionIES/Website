@@ -58,7 +58,7 @@ export const SERVICES = [
     shortDescription:
       "Transforming ideas into innovative, market-ready products with precision and services.",
     fullDescription:
-      "We provide comprehensive Product Engineering solutions, covering Mechanical Design, Electrical Engineering, CAE/CFD, Hydraulic Systems, Prototyping & 3D Printing, Asset Management, Embedded Systems, Technical Publications, and Supply Chain Management. Our agile approach delivers bold, sustainable products for industries like automotive, .",
+      "From concept to Creation, we enhance product design, performance, and cost efficiency using advanced engineering solutions. Explore our expertise in product innovation.",
     bgColor: "bg-[#003C46]",
     textColor: "text-white",
     image:product,
@@ -70,7 +70,7 @@ export const SERVICES = [
     shortDescription:
       "Optimizing industrial facilities with advanced engineering and reliable solutions.",
     fullDescription:
-      "Our Plant Engineering services includes Process & Safety Engineering, Mechanical & Piping Design, Piping Stress Analysis, Civil & Structural Engineering, Electrical & Instrumentation solutions, Modular Packages, Reverse Engineering, and Procurement Support. We ensure efficiency, safety, and scalability for your industrial operations.",
+      "Better Processes for Better Results, We optimize manufacturing processes, facility layouts, and equipment efficiency to ensure seamless production and operational excellence. Discover how we enhance industrial performance.",
     bgColor: "bg-[#0098AF]",
     textColor: "text-white",
     image: process2, 
@@ -80,5 +80,5 @@ export const SERVICES = [
 export const SERVICES_SECTION = {
   TITLE: "Engineering Excellence",
   DESCRIPTION:
-    "At Cognition IES, we redefine engineering by blending innovation with precision. Our two core services—Product Engineering and Plant Engineering—drive value for industries worldwide. From concept to completion, we deliver solutions that are sustainable, efficient, and tailored to your needs.",
+    "Driving innovation and efficiency through advanced engineering solutions, optimizing products and processes for maximum performance.",
 };

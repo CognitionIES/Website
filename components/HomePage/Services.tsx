@@ -473,10 +473,10 @@ export default function ServicesSection() {
                   </h2>
                   <p
                     className={cn(
-                      "text-sm sm:text-xs lg:text-base textjustify mt-[155px] leading-relaxed transition-all duration-500 ease-in-out",
+                      "text-base sm:text-sm lg:text-lg text-justify leading-relaxed transition-all duration-500  ease-in-out",
                       activeCard === service.id
-                        ? "text-white/90 opacity-100"
-                        : "text-white/80 opacity-0 h-0"
+                        ? "text-gray-200 opacity-100"
+                        : "text-gray-900 opacity-0 h-0"
                     )}
                   >
                     {activeCard === service.id
