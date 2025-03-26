@@ -9,6 +9,7 @@ import Integration from "./integeration";
 import CTA from "./CTA";
 import { MegaMenu } from "@/components/ui/Megamenu/MegaMenu";
 import Footer from "@/components/footer";
+import VideoShowcase from "./videoShowcase";
 
 const Index = () => {
   return (
@@ -17,6 +18,7 @@ const Index = () => {
       <Hero />
       <main className="overflow-hidden ">
         <Features />
+        <VideoShowcase />
         <Benefits />
         <Problems />
         <Integration />

@@ -45,8 +45,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGears, faPlugCircleBolt } from "@fortawesome/free-solid-svg-icons"; // Import faGears
 import { usePathname, useRouter } from "next/navigation";
 
-
-
 // Type definitions for menu structure
 interface SubCategory {
   title: string;
@@ -149,52 +147,52 @@ const servicesData: MainCategory[] = [
       {
         title: "Mechanical Engineering",
         href: "/services/plant-engineering/mechanical",
-        icon: <Wrench className="w-4 h-4" />, // Symbolizes tools and machinery
+        icon: <Wrench className="w-4 h-4" />,
       },
       {
         title: "Piping Engineering",
         href: "/services/plant-engineering/piping",
-        icon: <Car className="w-4 h-4" />, // Direct representation of piping systems
+        icon: <Car className="w-4 h-4" />,
       },
       {
         title: "Piping Stress Analysis",
         href: "/services/plant-engineering/piping-stress-analysis",
-        icon: <Layers className="w-4 h-4" />, // Indicates layered analysis or stress
+        icon: <Layers className="w-4 h-4" />,
       },
       {
         title: "Civil Engineering",
         href: "/services/plant-engineering/civil",
-        icon: <Building2 className="w-4 h-4" />, // Represents infrastructure
+        icon: <Building2 className="w-4 h-4" />,
       },
       {
         title: "Structural Engineering",
         href: "/services/plant-engineering/structural",
-        icon: <ShieldCheck className="w-4 h-4" />, // Suggests strength and safety
+        icon: <ShieldCheck className="w-4 h-4" />,
       },
       {
         title: "Electrical Engineering",
         href: "/services/plant-engineering/electrical",
-        icon: <Zap className="w-4 h-4" />, // Evokes electricity and power
+        icon: <Zap className="w-4 h-4" />,
       },
       {
         title: "Instrumentation Engineering",
         href: "/services/plant-engineering/instrumentation",
-        icon: <Sliders className="w-4 h-4" />, // Represents control and precision
+        icon: <Sliders className="w-4 h-4" />,
       },
       {
         title: "Modular Package",
         href: "/services/plant-engineering/modular-package",
-        icon: <Box className="w-4 h-4" />, // Symbolizes modular units or packaging
+        icon: <Box className="w-4 h-4" />,
       },
       {
         title: "Reverse Engineering",
         href: "/services/plant-engineering/reverse-engineering",
-        icon: <Rewind className="w-4 h-4" />, // Indicates going back or deconstructing
+        icon: <Rewind className="w-4 h-4" />,
       },
       {
         title: "Procurement Support",
         href: "/services/plant-engineering/procurement-support",
-        icon: <ShoppingCart className="w-4 h-4" />, // Represents purchasing and support
+        icon: <ShoppingCart className="w-4 h-4" />,
       },
     ],
     image: {
@@ -214,7 +212,6 @@ const servicesData: MainCategory[] = [
         href: "/services/saas-solution/servicecpq",
         icon: <Code className="w-4 h-4" />,
       },
-      
     ],
     image: {
       src: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop",
@@ -223,142 +220,7 @@ const servicesData: MainCategory[] = [
     },
   },
 ];
-// Constants for menu data industries section
-// const industriesData = [
-//   {
-//     title: "Mobility",
-//     icon: <Car className="w-5 h-5" />,
-//     href: "/industries/mobility",
-//     subCategories: [
-//       {
-//         title: "Automotive",
-//         icon: <Car className="w-4 h-4" />,
-//         href: "/industries/mobility/automotive",
-//       },
-//       {
-//         title: "Trucks and Off-Highway Vehicles",
-//         icon: <Forklift className="w-4 h-4" />,
-//         href: "/industries/mobility/trucks",
-//       },
-//       {
-//         title: "Railways and Transportation",
-//         icon: <TramFront className="w-4 h-4" />,
-//         href: "/industries/mobility/railways",
-//       },
-//       {
-//         title: "Aerospace and Defense",
-//         icon: <Plane className="w-4 h-4" />,
-//         href: "/industries/mobility/aerospace",
-//       },
-//       {
-//         title: "Marine and Offshore",
-//         icon: <Ship className="w-4 h-4" />,
-//         href: "/industries/mobility/marine",
-//       },
-//     ],
-//     image: {
-//       src: "https://images.unsplash.com/photo-1517153295259-74eb0b416cee?auto=format&fit=crop&q=80",
-//       alt: "Automotive manufacturing",
-//       title: "Next-gen mobility solutions",
-//     },
-//   },
-//   {
-//     title: "Sustainability",
-//     icon: <Leaf className="w-5 h-5" />,
-//     href: "/industries/sustainability",
-//     subCategories: [
-//       {
-//         title: "Discrete Manufacturing & Industrial Products",
-//         href: "/industries/sustainability/discrete-manufacturing",
-//         icon: <Factory className="w-4 h-4" />,
-//       },
-//       {
-//         title: "Process Manufacturing",
-//         href: "/industries/sustainability/process-manufacturing",
-//         icon: <Settings className="w-4 h-4" />,
-//         subSubCategories: [
-//           {
-//             title: "Oil and Gas",
-//             href: "/industries/sustainability/process-manufacturing/oil-gas",
-//             icon: <Fuel className="w-4 h-4" />,
-//           },
-//           {
-//             title: "Chemicals and Petrochemicals",
-//             href: "/industries/sustainability/process-manufacturing/chemicals",
-//             icon: <FlaskConical className="w-4 h-4" />,
-//           },
-//           {
-//             title: "Power and Energy",
-//             href: "/industries/sustainability/process-manufacturing/power",
-//             icon: <Zap className="w-4 h-4" />,
-//           },
-//           {
-//             title: "Renewable Energy",
-//             href: "/industries/sustainability/process-manufacturing/renewable",
-//             icon: <Leaf className="w-4 h-4" />,
-//           },
-//           {
-//             title: "Pharmaceuticals and Biotech",
-//             href: "/industries/sustainability/process-manufacturing/pharma",
-//             icon: <Microscope className="w-4 h-4" />,
-//           },
-//           {
-//             title: "Agriculture and Agro-Processing",
-//             href: "/industries/sustainability/process-manufacturing/agriculture",
-//             icon: <Wheat className="w-4 h-4" />,
-//           },
-//           {
-//             title: "Cement and Construction",
-//             href: "/industries/sustainability/process-manufacturing/cement",
-//             icon: <HardHat className="w-4 h-4" />,
-//           },
-//           {
-//             title: "Textile and Apparel",
-//             href: "/industries/sustainability/process-manufacturing/textile",
-//             icon: <Shirt className="w-4 h-4" />,
-//           },
-//           {
-//             title: "Water and Wastewater Treatment",
-//             href: "/industries/sustainability/process-manufacturing/water",
-//             icon: <Droplets className="w-4 h-4" />,
-//           },
-//           {
-//             title: "Pulp and Paper",
-//             href: "/industries/sustainability/process-manufacturing/pulp",
-//             icon: <Newspaper className="w-4 h-4" />,
-//           },
-//         ],
-//       },
-//       {
-//         title: "ABCDE",
-//         href: "/industries/sustainability/discrete",
-//         icon: <Cpu className="w-4 h-4" />,
-//       },
-//     ],
-//     image: {
-//       src: "https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?auto=format&fit=crop&q=80",
-//       alt: "Sustainable manufacturing",
-//       title: "Sustainable industrial solutions",
-//     },
-//   },
-//   {
-//     title: "Tech",
-//     icon: <Cpu className="w-5 h-5" />,
-//     href: "/industries/tech",
-//     subCategories: [
-//       {
-//         title: "Digital Engineering",
-//         href: "/industries/tech/digital-engineering",
-//         icon: <Code className="w-4 h-4" />,
-//       },
-//     ],
-//     image: {
-//       src: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80",
-//       alt: "Technology solutions",
-//       title: "Advanced tech solutions",
-//     },
-//   },
-// ];
+
 // Arrow variants for animation
 const arrowVariants = {
   closed: { rotate: 0 },
@@ -442,142 +304,6 @@ export function MegaMenu() {
               >
                 Home
               </Link>
-
-              {/* Industries Dropdown */}
-              {/* <div
-                className="relative"
-                onMouseEnter={() => {
-                  setActiveDropdown("industries");
-                  setActiveCategory(0);
-                }}
-                onMouseLeave={() => setActiveDropdown(null)}
-              >
-                <button
-                  className={`flex items-center p-1 text-gray-700 hover:text-blue-900 text-lg font-medium transition-all ease-in-out duration-300 ${
-                    isSticky ? "py-3" : "py-4"
-                  }`}
-                >
-                  Industries
-                  <motion.span
-                    variants={arrowVariants}
-                    initial="closed"
-                    animate={
-                      activeDropdown === "industries" ? "open" : "closed"
-                    }
-                    transition={{ duration: 0.2 }}
-                  >
-                    <ChevronDown className="ml- h-4 w-4" />
-                  </motion.span>
-                </button>
-                {activeDropdown === "industries" && (
-                  <div className="absolute z-[100] left-1/2 transform -translate-x-1/2 mt-0 w-screen max-w-7xl bg-white shadow-lg border-t border-gray-100 transition-all duration-300 ease-in-out min-h-[350px]">
-                    <div className="grid grid-cols-3 min-h-[450px]">
-                      {/* Main Categories *
-                      <div className="space-y-1 bg-[#003c46] flex flex-col py-2">
-                        {industriesData.map((category, index) => (
-                          <Link
-                            key={category.title}
-                            href={category.href} // Linking to the main category page
-                            className={cn(
-                              "w-full flex items-center justify-between px-4 py-2 text-lg font-medium transition-colors duration-200",
-                              activeCategory === index
-                                ? "text-[#00b6d3]"
-                                : "text-white hover:bg-black"
-                            )}
-                            onMouseEnter={() => setActiveCategory(index)}
-                          >
-                            <div className="flex items-center">
-                              {category.icon && (
-                                <span className="mr-2">{category.icon}</span>
-                              )}
-                              {category.title}
-                            </div>
-                            {activeCategory === index && (
-                              <span className="text-[#00b6d3] font-bold text-lg"></span>
-                            )}
-                          </Link>
-                        ))}
-                      </div>
-
-                      {/* Sub Categories with Icons 
-                      <div className="space-y-1 bg-[#0098af] flex flex-col py-2">
-                        {industriesData[activeCategory].subCategories.map(
-                          (subCategory) => (
-                            <div
-                              key={subCategory.title}
-                              className="flex flex-col"
-                            >
-                              <button
-                                onClick={() =>
-                                  toggleSubCategory(subCategory.title)
-                                }
-                                className={cn(
-                                  "flex items-center justify-between px-4 py-1 text-white hover:text-[#003c46] transition-colors duration-200",
-                                  // Removed the background color condition since we want it always open
-                                  "bg-[#0098af]"
-                                )}
-                              >
-                                <div className="flex items-center">
-                                  {subCategory.icon && (
-                                    <span className="mr-2">
-                                      {subCategory.icon}
-                                    </span>
-                                  )}
-                                  {subCategory.title}
-                                </div>
-                              </button>
-                              {subCategory.subSubCategories && (
-                                <div
-                                  className={cn(
-                                    "overflow-hidden transition-all duration-300 bg-[#0098af] text-white",
-                                    "max-h-[500px] opacity-100 ml-2"
-                                  )}
-                                >
-                                  {subCategory.subSubCategories.map(
-                                    (subSubCategory) => (
-                                      <Link
-                                        key={subSubCategory.title}
-                                        href={subSubCategory.href}
-                                        className="block px-6 py-1 text-white hover:text-[#003c46] transition-colors duration-200 flex items-center"
-                                      >
-                                        {subSubCategory.icon && (
-                                          <span className="mr-2">
-                                            {subSubCategory.icon}
-                                          </span>
-                                        )}
-                                        {subSubCategory.title}
-                                      </Link>
-                                    )
-                                  )}
-                                </div>
-                              )}
-                            </div>
-                          )
-                        )}
-                      </div>
-
-                      {/* Featured Image 
-                      <div className="bg-[#99d5df] shadow-sm flex flex-col items-center gap-4 min-h-[400px] p-4">
-                        <div className="w-full h-48 overflow-hidden">
-                          <Image
-                            src={industriesData[activeCategory].image.src}
-                            alt={industriesData[activeCategory].image.alt}
-                            width={300}
-                            height={200}
-                            className="w-full h-full object-cover transition-all duration-500 hover:scale-105"
-                          />
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <p className="text-gray-700">
-                            {industriesData[activeCategory].image.title}
-                          </p>
-                          <ArrowRight className="w-5 h-5 text-gray-600" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </div> */}
 
               {/* services Dropdown */}
               <div
@@ -778,39 +504,40 @@ export function MegaMenu() {
             <div className="px-4 pt-2 pb-3 space-y-1">
               <Link
                 href="/"
-                className="block px-3 py-2 text-base font-medium  text-gray-700 hover:text-blue-900 hover:bg-gray-50"
+                className="block px-3 py-2  text-base font-medium  text-gray-700 hover:text-blue-900 hover:bg-gray-50"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Home
               </Link>
 
-              {/* Mobile Industries Dropdown
+              {/* Mobile services Dropdown */}
+              {/* Mobile services Dropdown */}
               <div className="space-y-1">
                 <button
                   onClick={() =>
                     setActiveDropdown(
-                      activeDropdown === "industries-mobile"
+                      activeDropdown === "services-mobile"
                         ? null
-                        : "industries-mobile"
+                        : "services-mobile"
                     )
                   }
                   className="flex items-center justify-between w-full px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-900 hover:bg-gray-50"
                 >
-                  Industries
+                  Services
                   <ChevronDown
                     className={`ml-2 h-4 w-4 transition-transform ${
-                      activeDropdown === "industries-mobile" ? "rotate-180" : ""
+                      activeDropdown === "services-mobile" ? "rotate-180" : ""
                     }`}
                   />
                 </button>
-                {activeDropdown === "industries-mobile" && (
-                  <div className="pl-4">
-                    {industriesData.map((industry) => (
-                      <div key={industry.title} className="space-y-1">
+                {activeDropdown === "services-mobile" && (
+                  <div className="pl-4 max-h-60 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100 pb-2">
+                    {servicesData.map((service) => (
+                      <div key={service.title} className="space-y-1">
                         <div className="px-3 py-2 text-lg font-semibold text-gray-800">
-                          {industry.title}
+                          {service.title}
                         </div>
-                        {industry.subCategories.map((subCategory) => (
+                        {service.subCategories.map((subCategory) => (
                           <Link
                             key={subCategory.title}
                             href={subCategory.href}
@@ -824,58 +551,8 @@ export function MegaMenu() {
                     ))}
                   </div>
                 )}
-              </div> */}
+              </div>
 
-              {/* Mobile services Dropdown */}
-              {/* Mobile services Dropdown */}
-<div className="space-y-1">
-  <button
-    onClick={() =>
-      setActiveDropdown(
-        activeDropdown === "services-mobile"
-          ? null
-          : "services-mobile"
-      )
-    }
-    className="flex items-center justify-between w-full px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-900 hover:bg-gray-50"
-  >
-    Services
-    <ChevronDown
-      className={`ml-2 h-4 w-4 transition-transform ${
-        activeDropdown === "services-mobile" ? "rotate-180" : ""
-      }`}
-    />
-  </button>
-  {activeDropdown === "services-mobile" && (
-    <div className="pl-4 max-h-60 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100 pb-2">
-      {servicesData.map((service) => (
-        <div key={service.title} className="space-y-1">
-          <div className="px-3 py-2 text-lg font-semibold text-gray-800">
-            {service.title}
-          </div>
-          {service.subCategories.map((subCategory) => (
-            <Link
-              key={subCategory.title}
-              href={subCategory.href}
-              className="block px-3 py-2 text-lg text-gray-600 hover:text-blue-900 hover:bg-gray-50"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              {subCategory.title}
-            </Link>
-          ))}
-        </div>
-      ))}
-    </div>
-  )}
-</div>
-              {/* Other Mobile Menu Items */}
-              {/* <Link
-                href="/resources"
-                className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-900 hover:bg-gray-50"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Resources
-              </Link> */}
               <Link
                 href="/careers"
                 className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-900 hover:bg-gray-50"

@@ -69,7 +69,6 @@
 //   );
 // }
 "use client";
-// import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ABOUT_CONSTANTS } from "@/constants/home/about";
 import Image from "next/image";
@@ -104,7 +103,7 @@ const AboutUs = () => {
   return (
     <section
       ref={sectionRef}
-      className="w-full py-16 sm:py-20 lg:py-24 relative"
+      className="w-full py-12 sm:py-16 lg:py-24 relative"
       style={{
         backgroundImage:
           "radial-gradient(circle at 10% 90%, rgba(0, 152, 175, 0.05) 0%, transparent 30%), radial-gradient(circle at 90% 10%, rgba(91, 91, 91, 0.05) 0%, transparent 30%)",
@@ -117,52 +116,45 @@ const AboutUs = () => {
         <div className="absolute w-full h-full bg-dot-pattern bg-[length:20px_20px] opacity-[0.02]"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2  items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-6 md:gap-8">
           {/* Text content */}
           <div className="">
-            <h2 className="text-3xl  md:text-4xl text-justify font-semibold tracking-tight text-[#003C46]">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl text-justify font-semibold tracking-tight text-[#003C46]">
               {ABOUT_CONSTANTS.TITLE}
             </h2>
-            <div className="w-[100px] h-[3px]  bg-gradient-to-r from-[#0098af] to-transparent rounded-full"></div>
-            <p className="text-base sm:text-lg py-3 mt-3 text-justify text-gray-600 leading-relaxed">
+            <div className="w-[80px] sm:w-[100px] h-[3px] bg-gradient-to-r from-[#0098af] to-transparent rounded-full mt-2"></div>
+            <p className="text-sm sm:text-base md:text-lg py-3 mt-3 text-justify text-gray-600 leading-relaxed">
               {ABOUT_CONSTANTS.DESCRIPTION_1}
             </p>
-            <h3 className="text-xl  font-semibold py-3 text-justify text-[#003c46] pt-2">
+            <h3 className="text-lg sm:text-xl font-semibold py-2 text-justify text-[#003c46]">
               {ABOUT_CONSTANTS.SUBTITLE}
             </h3>
-            <p className="text-xs  sm:text-[16px] py-3 text-justify text-gray-600 rounded-xl leading-relaxed">
+            <p className="text-xs sm:text-sm md:text-[16px] py-2 text-justify text-gray-600 leading-relaxed">
               {ABOUT_CONSTANTS.DESCRIPTION_2}
             </p>
-            <p className="text-xl font-semibold py-3 text-justify text-[#003c46]">
+            <p className="text-lg sm:text-xl font-semibold py-2 text-justify text-[#003c46]">
               {ABOUT_CONSTANTS.DESCRIPTION_3}
             </p>
 
-            <div className="mt-2">
-               <Link href={ABOUT_CONSTANTS.BUTTON_HREF}>
-               <Button className="bg-[#0098af] text-white hover:bg-white hover:text-black text-base transition-colors duration-200 border-2 border-transparent hover:border-[#0098af] hover:outline hover:outline-2 hover:outline-[#0098af]">
-               {ABOUT_CONSTANTS.BUTTON_TEXT}
-                 </Button>
-               </Link>
-             </div>
+            <div className="mt-4">
+              <Link href={ABOUT_CONSTANTS.BUTTON_HREF}>
+                <Button className="bg-[#0098af] text-white hover:bg-white hover:text-black text-sm sm:text-base px-4 py-2 sm:px-6 sm:py-3 transition-colors duration-200 border-2 border-transparent hover:border-[#0098af] hover:outline hover:outline-2 hover:outline-[#0098af]">
+                  {ABOUT_CONSTANTS.BUTTON_TEXT}
+                </Button>
+              </Link>
+            </div>
           </div>
 
-          {/* Image */}
-          <div className="relative aspect-[4/3] md:aspect-auto md:h-[500px] md:w-[555px] ml-[53px] rounded-xl shadow-md overflow-hidden">
-            {/* Main image */}
+          {/* Image (hidden on mobile) */}
+          <div className="relative hidden md:block aspect-[4/3] md:aspect-auto md:h-[500px] md:w-[555px] rounded-xl shadow-md overflow-hidden">
             <Image
-              src= {ABOUT_CONSTANTS.IMAGE}
+              src={ABOUT_CONSTANTS.IMAGE}
               alt="Team collaboration"
               width={500}
               height={300}
               className="w-full h-full object-cover"
             />
-
-            {/* Subtle overlay for depth */}
-            {/* <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-60"></div> */}
-
-            {/* Decorative border accent */}
-            {/* <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#0098af] to-transparent"></div> */}
           </div>
         </div>
       </div>

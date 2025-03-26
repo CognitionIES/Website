@@ -223,7 +223,6 @@
 // export default Footer;
 "use client";
 
-// // This file puts together all parts of the footer
 import * as React from "react";
 import { motion } from "framer-motion";
 import CompanyInfo from "./Footer/CompanyInfo";
@@ -233,40 +232,43 @@ import ContactUs from "./Footer/ContactUs";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#5B5B5B] text-white py-8 sm:py-15 lg:py-20 relative overflow-hidden opacity-90">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+    <footer className="bg-[#5B5B5B] text-white py-6 sm:py-12 lg:py-20 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         {/* Grid layout for footer sections */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 sm:gap-10 lg:gap-12">
-          <CompanyInfo />
-          <UsefulLinks />
-          <Socials />
-          <ContactUs />
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-6 sm:gap-8 lg:gap-12">
+          <CompanyInfo className="md:col-span-4" />
+          <UsefulLinks className="md:col-span-3" />
+          <Socials className="md:col-span-2" />
+          <ContactUs className="md:col-span-3" />
         </div>
       </div>
+
       {/* Decorative elements */}
       <motion.div
         initial={{ opacity: 0, scale: 0 }}
-        whileInView={{ opacity: 0.3, scale: 1 }}
+        whileInView={{ opacity: 0.2, scale: 1 }}
         transition={{ delay: 0.5, duration: 1 }}
-        className="absolute bottom-0 left-0 w-80 h-80 bg-[#0098AF] opacity-20 rounded-full blur-3xl -z-10"
+        viewport={{ once: true }}
+        className="absolute bottom-0 left-0 w-64 sm:w-80 h-64 sm:h-80 bg-[#0098AF]/20 rounded-full blur-3xl -z-10 pointer-events-none"
       />
       <motion.div
         initial={{ opacity: 0, scale: 0 }}
-        whileInView={{ opacity: 0.25, scale: 1 }}
+        whileInView={{ opacity: 0.15, scale: 1 }}
         transition={{ delay: 0.7, duration: 1 }}
-        className="absolute top-0 right-0 w-72 h-72 bg-[#5B5B5B] opacity-20 rounded-full blur-3xl -z-10"
+        viewport={{ once: true }}
+        className="absolute top-0 right-0 w-56 sm:w-72 h-56 sm:h-72 bg-[#5B5B5B]/20 rounded-full blur-3xl -z-10 pointer-events-none"
       />
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{ opacity: 0.2 }}
+        animate={{ opacity: 0.15 }}
         transition={{ delay: 1.5, duration: 1, repeat: Infinity, repeatType: "reverse" }}
-        className="absolute top-12 left-12 w-6 h-6 bg-[#0098AF] opacity-50 rounded-full"
+        className="absolute top-8 sm:top-12 left-8 sm:left-12 w-5 sm:w-6 h-5 sm:h-6 bg-[#0098AF]/50 rounded-full -z-10"
       />
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{ opacity: 0.2 }}
+        animate={{ opacity: 0.15 }}
         transition={{ delay: 2, duration: 1, repeat: Infinity, repeatType: "reverse" }}
-        className="absolute bottom-12 right-12 w-6 h-6 bg-[#0098AF] opacity-50 rounded-full"
+        className="absolute bottom-8 sm:bottom-12 right-8 sm:right-12 w-5 sm:w-6 h-5 sm:h-6 bg-[#0098AF]/50 rounded-full -z-10"
       />
     </footer>
   );

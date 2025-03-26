@@ -8,54 +8,56 @@ import { CAREERS_CONSTANTS } from "@/constants/home/careers";
 
 const Careers = () => {
   return (
-    <section className="w-full py-16 bg-gradient-to-b from-white to-[#E6F0F5]/30 relative overflow-hidden">
-      {/* Simple decorative elements */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-[#0098af]/5 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 left-0 w-72 h-72 bg-[#0098af]/5 rounded-full blur-3xl"></div>
+    <section className="w-full py-10 sm:py-16 bg-gradient-to-b from-white to-[#E6F0F5]/20 relative overflow-hidden">
+      {/* Decorative background elements */}
+      <div className="absolute top-0 right-0 w-48 sm:w-64 h-48 sm:h-64 bg-[#0098af]/5 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute bottom-0 left-0 w-56 sm:w-72 h-56 sm:h-72 bg-[#0098af]/5 rounded-full blur-3xl pointer-events-none"></div>
 
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
+      <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
+          {/* Text Content */}
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: true }}
             className="order-2 md:order-1"
           >
-            <div className="space-y-4">
-              <div className="inline-flex px-3 py-1 bg-[#0098af]/10 rounded-full">
-                <p className="text-sm font-medium text-[#0098af]">
+            <div className="space-y-3 sm:space-y-4">
+              <div className="inline-flex px-2 sm:px-3 py-1 bg-[#0098af]/10 rounded-full shadow-sm">
+                <p className="text-xs sm:text-sm font-medium text-[#0098af] uppercase tracking-wide">
                   We&apos;re Hiring
                 </p>
               </div>
 
-              <h2 className="text-3xl md:text-4xl font-bold text-[#003C46]">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#003C46] leading-tight">
                 Join Our Team
               </h2>
 
-              <h3 className="text-xl text-gray-600 font-medium">
-                {CAREERS_CONSTANTS.SUBTITLE}{" "}
+              <h3 className="text-lg sm:text-xl text-gray-600 font-medium leading-snug">
+                {CAREERS_CONSTANTS.SUBTITLE}
               </h3>
 
-              <p className="text-gray-600 text-justify leading-relaxed">
-                {CAREERS_CONSTANTS.DESCRIPTION}{" "}
+              <p className="text-sm sm:text-base text-gray-600 text-justify leading-relaxed">
+                {CAREERS_CONSTANTS.DESCRIPTION}
               </p>
 
               <div className="pt-2">
                 <Link href="/careers">
-                  <Button className="bg-[#0098af] text-white hover:bg-white hover:text-black text-base transition-colors duration-200 border-2 border-transparent hover:border-[#0098af] hover:outline hover:outline-2 hover:outline-[#0098af] rounded-xl px-4 h-10 shadow-sm">
+                  <Button className="bg-[#0098af] text-white hover:bg-white hover:text-[#003C46] text-sm sm:text-base font-medium transition-all duration-300 border-2 border-transparent hover:border-[#0098af] rounded-xl px-3 sm:px-4 py-2 h-9 sm:h-10 shadow-md hover:shadow-lg">
                     <span>Explore Opportunities</span>
-                    <ArrowRight className="ml-2 h-4 w-4" />
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </Button>
                 </Link>
               </div>
             </div>
           </motion.div>
 
+          {/* Image Section */}
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: true }}
             className="order-1 md:order-2"
           >
@@ -65,12 +67,12 @@ const Careers = () => {
                 alt="Team collaborating in office"
                 width={500}
                 height={350}
-                className="w-full h-[350px] object-cover"
+                className="w-full h-[250px] sm:h-[350px] object-cover transition-transform duration-300 hover:scale-105"
               />
 
-              {/* Simple decorative element */}
-              <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur-sm p-3 rounded-xl shadow-md">
-                <p className="text-sm font-medium  text-[#003C46]">
+              {/* Decorative overlay */}
+              <div className="absolute bottom-3 sm:bottom-4 right-3 sm:right-4 bg-white/90 backdrop-blur-sm p-2 sm:p-3 rounded-xl shadow-md">
+                <p className="text-xs sm:text-sm font-medium text-[#003C46] italic">
                   Building the future together
                 </p>
               </div>
@@ -79,8 +81,8 @@ const Careers = () => {
         </div>
       </div>
 
-      {/* Adding a divider line for visual separation */}
-      <div className="mt-16 h-[2px] w-full max-w-3xl mx-auto bg-gradient-to-r from-transparent via-[#0098af]/40 to-transparent"></div>
+      {/* Divider */}
+      <div className="mt-10 sm:mt-16 h-[2px] w-full max-w-3xl mx-auto bg-gradient-to-r from-transparent via-[#0098af]/50 to-transparent"></div>
     </section>
   );
 };

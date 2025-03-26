@@ -395,7 +395,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import Image from "next/image"; // Import Image component
+import Image from "next/image";
 import { SERVICES, SERVICES_SECTION } from "@/constants/home/services";
 import { motion } from "framer-motion";
 
@@ -403,20 +403,20 @@ export default function ServicesSection() {
   const [activeCard, setActiveCard] = useState(1); // Default to Product Engineering
 
   return (
-    <section className="w-full py-12 sm:py-16 lg:py-20 ">
+    <section className="w-full py-8 sm:py-12 lg:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-justify max-w-7xl mx-auto mb-12">
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#003C46] mb-4 tracking-tight drop-shadow-sm">
+        <div className="text-justify max-w-7xl mx-auto mb-8 sm:mb-12">
+          <h1 className="text-xl sm:text-2xl lg:text-4xl font-semibold text-[#003C46] mb-3 sm:mb-4 tracking-tight drop-shadow-sm">
             {SERVICES_SECTION.TITLE}
           </h1>
-          <p className="text-sm sm:text-base lg:text-lg leading-relaxed text-gray-600 ">
+          <p className="text-xs sm:text-sm lg:text-lg leading-relaxed text-gray-600">
             {SERVICES_SECTION.DESCRIPTION}
           </p>
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-8 lg:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-6 lg:gap-10">
           {SERVICES.map((service) => (
             <div
               key={service.id}
@@ -450,7 +450,7 @@ export default function ServicesSection() {
                   width={1000}
                   className="object-cover bg-center transition-opacity duration-500"
                   style={{
-                    opacity: activeCard === service.id ? 0.1 : 0.9,
+                    opacity: activeCard === service.id ? 0.1 : 0.7, // Reduced opacity on mobile
                   }}
                 />
               </div>
@@ -466,14 +466,14 @@ export default function ServicesSection() {
               />
 
               {/* Content */}
-              <div className="relative h-full  sm:p-8 lg:p-8 flex flex-col justify-between min-h-[400px]">
+              <div className="relative h-full p-6 sm:p-8 lg:p-8 flex flex-col justify-between min-h-[350px] sm:min-h-[400px]">
                 <div>
-                  <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-4 text-white tracking-wide drop-shadow-md">
+                  <h2 className="text-lg sm:text-xl lg:text-3xl font-semibold mb-3 sm:mb-4 text-white tracking-wide drop-shadow-md">
                     {service.title}
                   </h2>
                   <p
                     className={cn(
-                      "text-base sm:text-sm lg:text-lg text-justify leading-relaxed transition-all duration-500  ease-in-out",
+                      "text-sm sm:text-base lg:text-lg text-justify leading-relaxed transition-all duration-500 ease-in-out",
                       activeCard === service.id
                         ? "text-gray-200 opacity-100"
                         : "text-gray-900 opacity-0 h-0"
@@ -486,12 +486,12 @@ export default function ServicesSection() {
                 </div>
 
                 {/* Button */}
-                <div className="flex justify-end">
+                <div className="flex justify-end mt-4">
                   <Link href={service.href}>
                     <Button
                       variant="secondary"
                       className={cn(
-                        "bg-[#5b5b5b] text-white font-medium rounded-md px-6  transition-all duration-200",
+                        "bg-[#5b5b5b] text-white font-medium rounded-md px-4 py-2 sm:px-6 sm:py-3 transition-all duration-200",
                         activeCard === service.id
                           ? "hover:bg-white hover:shadow-md hover:text-[#000000]"
                           : "bg-[#0098AF] hover:bg-[#003C46]"

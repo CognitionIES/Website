@@ -93,7 +93,7 @@ import { MegaMenu } from "@/components/ui/Megamenu/MegaMenu";
 import Footer from "@/components/footer";
 import Hero from "@/components/HomePage/hero";
 import AboutUs from "@/components/HomePage/AboutUs";
-import AccordionDemo from "@/components/AccordionDemo";
+//import AccordionDemo from "@/components/AccordionDemo";
 // import ContactUs from "@/components/HomePage/ContactUs";
 import dynamic from "next/dynamic";
 import RecentProjects from "@/components/HomePage/RecentProjects";
@@ -137,9 +137,9 @@ export default function Home() {
           <Careers />
         </section>
       
-        <section className="bg-white">
+        {/* <section className="bg-white">
           <AccordionDemo />
-        </section>
+        </section> */}
         <section>
           <ContactSection />
         </section>
