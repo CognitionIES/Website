@@ -24,6 +24,7 @@ import {
   Car,
   Code,
   Server,
+  Users,
 } from "lucide-react";
 // import {
 //   Gauge,
@@ -219,6 +220,38 @@ const servicesData: MainCategory[] = [
       title: "Innovative IT Solutions",
     },
   },
+  {
+    title: "Staffing and Recruitment Services",
+    icon: <Users className="w-5 h-5 mr-2" />,
+    href: "/services/staffing",
+    subCategories: [
+      {
+        title: "Temporary Staffing",
+        href: "/services/saas-solution/servicecpq",
+        icon: <Code className="w-4 h-4" />
+      },
+      {
+        title: "Permanent Placement",
+        href: "/services/saas-solution/servicecpq",
+        icon: <Code className="w-4 h-4" />
+      },
+      {
+        title: "Executive Search",
+        href: "/services/saas-solution/servicecpq",
+        icon: <Code className="w-4 h-4" />
+      },
+      {
+        title: "Contract-to-Hire",
+        href: "/services/saas-solution/servicecpq",
+        icon: <Code className="w-4 h-4" />
+      }
+    ],
+    image: {
+      src: "https://plus.unsplash.com/premium_photo-1661768507909-f961fcff0d45?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      alt: "Team collaborating in a modern office",
+      title: "Staffing and Recruitment Excellence"
+    }
+  }
 ];
 
 // Arrow variants for animation

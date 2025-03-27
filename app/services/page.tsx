@@ -3,29 +3,70 @@
 import sections from "@/constants/sections";
 import frameBackground from "@/constants/images/Background/Frame_8.jpg";
 import Footer from "@/components/footer";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { ChevronDown, MousePointer2 } from "lucide-react";
 import { MegaMenu } from "@/components/ui/Megamenu/MegaMenu";
-import { Suspense, useEffect, useState } from "react";
+import { Suspense, useEffect, useState, useRef } from "react";
 import SearchParamsHandler from "./SearchParamsHandler";
 import { ScrollSection } from "@/components/ScrollSection";
 
 export default function ServicesPage() {
+  const shouldReduceMotion = useReducedMotion();
   const [showScrollHint, setShowScrollHint] = useState(true);
+  const [currentSection, setCurrentSection] = useState(0);
+  const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const [isScrolling, setIsScrolling] = useState(false);
 
-  // Scroll hint timeout
   useEffect(() => {
     const timer = setTimeout(() => setShowScrollHint(false), 5000);
     return () => clearTimeout(timer);
   }, []);
 
-  // Handle param change (e.g., for debugging)
+  const scrollToSection = (index: number) => {
+    if (index < 0 || index >= sectionRefs.current.length || isScrolling) return;
+    setIsScrolling(true);
+    setCurrentSection(index);
+    sectionRefs.current[index]?.scrollIntoView({ behavior: "smooth" });
+    setTimeout(() => setIsScrolling(false), 800);
+  };
+
+  useEffect(() => {
+    const handleWheel = (event: WheelEvent) => {
+      if (isScrolling) return;
+      event.preventDefault();
+      if (event.deltaY > 0) {
+        scrollToSection(currentSection + 1);
+      } else {
+        scrollToSection(currentSection - 1);
+      }
+    };
+
+    const handleKeydown = (event: KeyboardEvent) => {
+      if (isScrolling) return;
+      if (event.key === "ArrowDown") {
+        event.preventDefault();
+        scrollToSection(currentSection + 1);
+      } else if (event.key === "ArrowUp") {
+        event.preventDefault();
+        scrollToSection(currentSection - 1);
+      }
+    };
+
+    window.addEventListener("wheel", handleWheel, { passive: false });
+    window.addEventListener("keydown", handleKeydown);
+    return () => {
+      window.removeEventListener("wheel", handleWheel);
+      window.removeEventListener("keydown", handleKeydown);
+    };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentSection, isScrolling]);
+
   const handleParamChange = (param: string): void => {
     console.log("Current param:", param);
   };
 
   return (
-    <div className="relative min-h-screen">
+    <div className="relative min-h-screen overflow-hidden pb-8">
       <div
         className="fixed inset-0 bg-cover bg-center -z-10"
         style={{
@@ -33,11 +74,14 @@ export default function ServicesPage() {
         }}
       />
       <div className="relative">
-        <div className="relative z-50">
+        <header className="relative z-50">
           <MegaMenu />
-        </div>
+        </header>
         <main className="relative pt-8">
-          <div className="fixed top-0 left-8 bottom-0 w-px bg-gradient-to-b from-transparent via-foreground/10 to-transparent" />
+          <div
+            className="fixed top-0 left-8 bottom-0 w-px bg-gradient-to-b from-transparent via-foreground/10 to-transparent"
+            aria-hidden="true"
+          />
           <Suspense fallback={<div>Loading search parameters...</div>}>
             <SearchParamsHandler onParamChange={handleParamChange} />
           </Suspense>
@@ -45,22 +89,28 @@ export default function ServicesPage() {
             <section
               key={key}
               id={key}
-              className="min-h-screen flex items-center justify-center py-16"
+              ref={(el) => {
+                sectionRefs.current[index] = el as HTMLDivElement | null;
+              }}
+              className={`min-h-screen flex items-center justify-center py-24 snap-start ${
+                index === 0 ? "mt-16" : "" // Add top margin to the first section
+              }`}
             >
               <div
-                className={`w-full max-w-7xl mx-auto px-2 py-12 rounded-3xl transition-colors duration-500 ${
+                className={`w-full max-w-7xl mx-auto px-2 py-4 rounded-3xl transition-colors duration-500 outline outline-2 outline-black/50 ${
                   index % 2 === 0
                     ? "bg-blue-400/5 dark:bg-blue-950/10"
                     : "bg-gray-400/10 dark:bg-gray-900/10"
                 }`}
+                style={{ minHeight: "50vh" }}
               >
                 <ScrollSection
                   index={index}
                   title={section.title}
                   description={section.description}
-                  imageUrl={section.imageUrl}
+                  imageUrl={section.imageUrl.src}
                   bulletPoints={section.bulletPoints}
-                  logos={section.logos}
+                  additionalImageUrl={section.additionalImageUrl?.src}
                 />
               </div>
             </section>
@@ -75,16 +125,20 @@ export default function ServicesPage() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 10 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: shouldReduceMotion ? 0 : 0.3 }}
           >
             <motion.div
               className="flex items-center gap-2 px-4 py-2 rounded-full bg-background/80 backdrop-blur-sm shadow-lg"
-              animate={{ y: [0, 4, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
+              animate={shouldReduceMotion ? {} : { y: [0, 4, 0] }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
             >
-              <MousePointer2 size={16} />
+              <MousePointer2 size={16} aria-hidden="true" />
               <span className="text-sm font-medium">Scroll to explore</span>
-              <ChevronDown size={16} />
+              <ChevronDown size={16} aria-hidden="true" />
             </motion.div>
           </motion.div>
         )}

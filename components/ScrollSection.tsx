@@ -1,20 +1,10 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
 import blueBulletImage from "@/constants/images/Bullet_Points/bullet_point_blue_1.png";
 import grayBulletImage from "@/constants/images/Bullet_Points/bullet_point_gray.png";
-
-interface LogoItem {
-  src: string | { src: string };
-  alt: string;
-}
-
-interface LogoRow {
-  label: string;
-  items: LogoItem[];
-}
 
 interface ScrollSectionProps {
   index: number;
@@ -22,7 +12,7 @@ interface ScrollSectionProps {
   description: string;
   imageUrl: string;
   bulletPoints: string[];
-  logos: LogoRow[];
+  additionalImageUrl?: string;
 }
 
 export function ScrollSection({
@@ -31,8 +21,9 @@ export function ScrollSection({
   description,
   imageUrl,
   bulletPoints = [],
-  logos = [],
+  additionalImageUrl,
 }: ScrollSectionProps) {
+  const shouldReduceMotion = useReducedMotion();
   const [ref, inView] = useInView({
     threshold: 0.3,
     triggerOnce: false,
@@ -46,7 +37,7 @@ export function ScrollSection({
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
+        staggerChildren: shouldReduceMotion ? 0 : 0.1,
       },
     },
   };
@@ -60,7 +51,7 @@ export function ScrollSection({
       opacity: 1,
       x: 0,
       transition: {
-        duration: 0.4,
+        duration: shouldReduceMotion ? 0 : 0.4,
       },
     },
   };
@@ -72,19 +63,23 @@ export function ScrollSection({
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
       className="relative max-w-7xl mx-auto px-4"
+      role="region"
+      aria-label={`Section ${title}`}
     >
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6 items-center">
+        {/* Reduced gap-8 to gap-4 and md:gap-12 to md:gap-6 to bring image and text closer */}
         <motion.div
-          className={`space-y-6 ${
+          className={`space-y-2 flex flex-col justify-between h-full ${
             isEven
-              ? "md:order-1 md:pr-8 md:col-span-8"
-              : "md:order-2 md:pl-8 md:col-span-8"
+              ? "md:order-2  md:col-span-8" // Reduced padding from md:pl-8 to md:pl-4
+              : "md:order-1  md:col-span-8" // Reduced padding from md:pr-8 to md:pr-4
           }`}
           variants={itemVariants}
         >
           <div className="space-y-3">
             <motion.h2
-              className="text-3xl md:text-2xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/80 uppercase"
+              className="text-4xl md:text-3xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/80 uppercase"
+              // Increased text size from text-3xl to text-4xl and md:text-2xl to md:text-3xl
               variants={itemVariants}
             >
               {title}
@@ -97,87 +92,78 @@ export function ScrollSection({
 
           <motion.p
             className="text-lg text-muted-foreground/90 leading-relaxed uppercase"
+            // Increased text size from text-base to text-lg
             variants={itemVariants}
           >
             {description}
           </motion.p>
 
-          <motion.div
-            className="flex flex-wrap gap-x-8 gap-y-3"
+          <motion.ul
+            className="flex flex-wrap gap-x-8 gap-y-3 mb-4"
+            // Reduced mb-8 to mb-4 to minimize space below bullet points
             variants={containerVariants}
           >
             {bulletPoints.map((point, idx) => (
-              <motion.div
+              <motion.li
                 key={idx}
                 className="flex items-start space-x-3 group flex-1 min-w-[250px]"
                 variants={itemVariants}
-                whileHover={{ x: 5 }}
+                //whileHover={shouldReduceMotion ? {} : { x: 5 }}
+                role="listitem"
               >
                 <Image
                   src={bulletImage}
-                  alt="bullet point"
+                  alt=""
                   width={16}
                   height={16}
-                  className="mt-1.5 flex-shrink-1 transition-transform group-hover:scale-125"
+                  className="mt-1.5 flex-shrink-0 transition-transform group-hover:scale-125 "
+                  aria-hidden="true"
                 />
-                <p className="text-base md:text-sm text-muted-foreground/90 group-hover:text-foreground transition-colors uppercase">
+                <span className="text-xl md:text-base text-muted-foreground/90 group-hover:text-foreground transition-colors uppercase">
+                  {/* Increased text size from text-lg to text-xl and md:text-sm to md:text-base */}
                   {point}
-                </p>
-              </motion.div>
+                </span>
+              </motion.li>
             ))}
-          </motion.div>
+          </motion.ul>
 
-          {logos.length > 0 && (
+          {additionalImageUrl && (
             <motion.div
-              className="bg-white shadow-md rounded-lg p-2 space-y-1 max-w-[700px]" // Reduced space-y from 2 to 1
+              className="relative max-w-[1200px] py-0 h-[140px] rounded-lg overflow-hidden mt-auto"
+              // Removed py-10, added mt-auto to stick the image to the bottom
               variants={itemVariants}
             >
-              {logos.map((row, rowIdx) => (
-                <div key={rowIdx} className="space-y-0.5"> {/* Reduced from space-y-1 to space-y-0.5 */}
-                  <h3 className="text-[15px] font-semibold text-foreground uppercase border-b border-gray-200 pb-0.5"> {/* Reduced font size to 10px, padding to 0.5 */}
-                    {row.label}
-                  </h3>
-                  <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-8 gap-1"> {/* Increased to 8 columns */}
-                    {row.items.map((logo, idx) => (
-                      <motion.div
-                        key={idx}
-                        className="aspect-square relative group min-w-[50px] min-h-[50px]  rounded-md flex items-center justify-center"
-                        whileHover={{ scale: 1.05 }}
-                        transition={{ type: "spring", stiffness: 300 }}
-                        variants={itemVariants}
-                      >
-                        <Image
-                          src={
-                            typeof logo.src === "string" ? logo.src : logo.src.src
-                          }
-                          alt={logo.alt}
-                          width={75}
-                          height={75}
-                          className="object-contain p-1 transition-all duration-300 group-hover:brightness-110"
-                          sizes="(max-width: 768px) 40px, 50px"
-                        />
-                      </motion.div>
-                    ))}
-                  </div>
-                </div>
-              ))}
+              <motion.div
+                className="relative w-full h-full transform-gpu"
+                whileHover={shouldReduceMotion ? {} : { scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <Image
+                  src={additionalImageUrl}
+                  alt={`Additional image for ${title}`}
+                  className="object-cover"
+                  fill
+                  sizes="(max-width: 1200px) 100vw, 1200px"
+                  loading="lazy"
+                />
+              </motion.div>
             </motion.div>
           )}
         </motion.div>
 
         <motion.div
-          className={`relative h-[600px] w-[350px] ${
+          className={`relative h-[510px] w-[360px] ${
             isEven
-              ? "md:order-2 md:col-span-4 md:ml-auto"
-              : "md:order-1 md:col-span-4 md:mr-auto"
+              ? "md:order-1 md:col-span-4 md:mr-2" // Reduced margin from md:mr-auto to md:mr-2
+              : "md:order-2 md:col-span-4 " // Reduced margin from md:ml-auto to md:ml-2
           }`}
           variants={itemVariants}
         >
-          <div className="absolute inset-0 rounded-2xl overflow-hidden shadow-xl">
+          <div className="absolute inset-0  rounded-2xl overflow-hidden shadow-xl">
             <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent z-10" />
             <motion.div
               className="relative w-full h-full transform-gpu"
-              whileHover={{ scale: 1.03 }}
+              whileHover={shouldReduceMotion ? {} : { scale: 1.03 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
               <Image
@@ -186,7 +172,8 @@ export function ScrollSection({
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
-                priority
+                priority={index === 0}
+                loading={index === 0 ? "eager" : "lazy"}
               />
             </motion.div>
           </div>

@@ -1,67 +1,41 @@
 // components/FaqButton.jsx
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
-import Image from 'next/image';
-import FaqGif from '@/constants/images/faq-gif-unscreen.gif';
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import Image from "next/image";
+import FaqGif from "@/constants/images/faq-gif-unscreen.gif";
+import FaqStatic from "@/constants/images/faq-image.png";
 
 const FaqButton = () => {
   const [isHovered, setIsHovered] = useState(false);
   const router = useRouter();
 
-  const handleClick = () => {
-    router.push('/faq');
+  const handleNavigation = () => {
+    router.push("/faq");
   };
 
+  const handleMouseEnter = () => setIsHovered(true);
+  const handleMouseLeave = () => setIsHovered(false);
+
   return (
-    <div className="fixed  right-2 z-[1100] hidden md:block">
+    <div className="fixed right-2 z-[1100] hidden md:block">
       <button
-        onClick={handleClick}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        className="
-          w-16
-          h-16 
-          bg-transparent 
-          rounded-full 
-          flex 
-          
-          items-center 
-          justify-center 
-          
-          transition-all 
-          duration-300 
-          hover:scale-105
-        "
+        onClick={handleNavigation}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        className="flex h-16 w-16 items-center justify-center rounded-full bg-transparent transition-transform duration-300 hover:scale-105"
       >
         <Image
-          src={FaqGif}
-          alt="FAQ"
-          width={64}  // Matches w-16 (16 * 4 = 64px)
-          height={64} // Matches h-16 (16 * 4 = 64px)
-          className="object-contain"
+          src={isHovered ? FaqGif : FaqStatic}
+          alt="FAQ Button"
+          width={64}
+          height={64}
+          className="object-contain transition-transform duration-200 ease-in-out"
+          style={{ transform: isHovered ? "scale(1)" : "scale(0.75)" }}
+          priority
         />
       </button>
-      
-      <div
-        className={`
-          absolute 
-          top-10 
-          right-0 
-          bg-gray-800 
-          text-white 
-          px-3 
-          py-1 
-          rounded-md 
-          text-sm 
-          transition-opacity 
-          duration-200
-          ${isHovered ? 'opacity-0' : 'opacity-0'}
-        `}
-      >
-        FAQ
-      </div>
     </div>
   );
 };

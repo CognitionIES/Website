@@ -1,4 +1,22 @@
-import logo from "@/constants/Imported-images";
+//import logo from "@/constants/Imported-images";
+import mechImage from "@/constants/images/service/mech.png";
+import elecImage from "@/constants/images/service/elec.png";
+import caeImage from "@/constants/images/service/cae.png";
+import prototypingImage from "@/constants/images/service/prototyp.png";
+import hydraulicImage from "@/constants/images/service/hydraulic.png";
+import assetImage from "@/constants/images/service/asset.png";
+import embeddedImage from "@/constants/images/service/embedded.png";
+import techImage from "@/constants/images/service/technical.png";
+import supplyImage from "@/constants/images/service/supply.png";
+import mechImage1 from "@/constants/images/side-images/mech.jpg";
+import elecImage1 from "@/constants/images/side-images/elec.jpg";
+import protoImage1 from "@/constants/images/side-images/prototyping.jpg";
+import hydraImage1 from "@/constants/images/side-images/hydraulic.jpg";
+import assetImage1 from "@/constants/images/side-images/asset.jpg";
+import embeddedImage1 from "@/constants/images/side-images/embedded.jpg";
+import supplyImage1 from "@/constants/images/side-images/supply.jpg";
+import caeImage1 from "@/constants/images/side-images/cae.png"
+import techImage1 from "@/constants/images/side-images/tech.jpeg"
 
 const sections = {
   // 1. Mechanical Design Services
@@ -6,8 +24,7 @@ const sections = {
     title: "MECHANICAL DESIGN SERVICES",
     description:
       "Comprehensive mechanical engineering solutions delivering innovative designs and optimized performance across industries. Our services combines cutting-edge technology with practical engineering principles.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?q=80&w=2070&auto=format&fit=crop",
+    imageUrl: mechImage1,
     bulletPoints: [
       "Product Design and Development",
       "Value Engineering and Value Analysis",
@@ -20,36 +37,15 @@ const sections = {
       "Digital & Physical Competitive Benchmarking",
       "Design Optimization (weight/cost Reduction)",
     ],
-    logos: [
-      {
-        label: "CAD & PLM:",
-        items: [
-          { src: logo.DSCatia, alt: "AutoCad" },
-          { src: logo.Creo, alt: "DesginX" },
-          { src: logo.SiemensNX, alt: "DesginX" },
-          { src: logo.AutoCad, alt: "DesginX" },
-          { src: logo.autoDeskInventor, alt: "DesginX" },
-          { src: logo.DSSolidWorks, alt: "DesginX" },
-          { src: logo.SolidEdge, alt: "DesginX" },
-          { src: logo.DesignX, alt: "DesginX" },
-          { src: logo.smartCAM, alt: "DesginX" },
-          { src: logo.TeamCenter, alt: "DesginX" },
-          { src: logo.windchill, alt: "DesginX" },
-          { src: logo.masterCam, alt: "DesginX" },
-          { src: logo.Enovia, alt: "DesginX" },
-          { src: logo.arena, alt: "DesginX" },
-        ],
-      },
-    ],
+    additionalImageUrl: mechImage,
   },
 
   // 2. Electrical Engineering
   electrical: {
-    title: "Electrical Engineering Services",
+    title: "Electrical Design Services",
     description:
       "Innovative electrical engineering solutions combining advanced circuit design with modern power systems and control technologies.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1498084393753-b411b2d26b34?q=80&w=2070&auto=format&fit=crop",
+    imageUrl: elecImage1,
     bulletPoints: [
       "Circuit Design and Simulation",
       "PCB Design and Development",
@@ -62,19 +58,7 @@ const sections = {
       "Power Distribution Systems",
       "Control System Design",
     ],
-    logos: [
-      {
-        label: "ELECTRICAL CAD & PCB DESIGN:",
-        items: [
-          { src: logo.eplan, alt: "ANSYS" },
-          { src: logo.AutodeskElc, alt: "ANSYS" },
-          { src: logo.AltiumDesigner, alt: "ANSYS" },
-          { src: logo.orCad, alt: "ANSYS" },
-          { src: logo.KiCad, alt: "ANSYS" },
-          { src: logo.AutodeskEagle, alt: "ANSYS" },
-        ],
-      },
-    ],
+    additionalImageUrl: elecImage,
   },
 
   // 3. CAE/CFD (changed key from "analysis" to "cae-cfd")
@@ -83,7 +67,7 @@ const sections = {
     description:
       "Advanced engineering analysis services using state-of-the-art simulation tools and methodologies to optimize design performance and reliability",
     imageUrl:
-      "https://images.unsplash.com/photo-1580894894513-541e068a3e2b?q=80&w=2070&auto=format&fit=crop",
+    caeImage1,
     bulletPoints: [
       "Structural Analysis (FEA)",
       "Thermal and Fluid Flow Analysis (CFD)",
@@ -96,26 +80,7 @@ const sections = {
       "Mold Flow and Casting Simulations",
       "CAE/CFD Solutions",
     ],
-    logos: [
-      {
-        label: "COMPUTER AIDED ENGINEERING:",
-        items: [
-          { src: logo.Ansys, alt: "KiCad" },
-          { src: logo.simulaAbaqus, alt: "Altium" },
-          { src: logo.ansaPreProcessor, alt: "Altium" },
-          { src: logo.logo1, alt: "Altium" },
-          { src: logo.optistruct, alt: "Altium" },
-        ],
-      },
-      {
-        label: "COMPUTATIONAL FLUID DYNAMICS:",
-        items: [
-          { src: logo.ansysFluent, alt: "Altium" },
-          { src: logo.starCMM, alt: "Altium" },
-          { src: logo.comsolMultiphysics_1, alt: "Altium" },
-        ],
-      },
-    ],
+    additionalImageUrl: caeImage,
   },
 
   // 4. Prototyping and 3D Printing
@@ -123,8 +88,7 @@ const sections = {
     title: "Prototyping and 3D Printing",
     description:
       "Rapid prototyping and additive manufacturing services to bring concepts to life quickly and efficiently.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1581092335397-9583eb92d232?q=80&w=2070&auto=format&fit=crop",
+    imageUrl: protoImage1,
     bulletPoints: [
       "Rapid Prototyping (3D Printing, CNC Machining)",
       "Concept Validation Models",
@@ -137,16 +101,7 @@ const sections = {
       "Prototype Optimization",
       "Quality Control and Inspection",
     ],
-    logos: [
-      {
-        label: "3D MODEL SOFTWARE:",
-        items: [
-          { src: logo.UltiMakerCura, alt: "Altair" },
-          { src: logo.simplify3d, alt: "ANSYS" },
-          { src: logo.formLabs, alt: "Altair" },
-        ],
-      },
-    ],
+    additionalImageUrl: prototypingImage,
   },
 
   // 5. Hydraulic Engineering
@@ -154,8 +109,7 @@ const sections = {
     title: "Hydraulic Engineering Services",
     description:
       "Expert hydraulic system design and optimization services ensuring efficient and reliable fluid power solutions.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop",
+    imageUrl: hydraImage1,
     bulletPoints: [
       "Hydraulic System Design and Optimization",
       "Hydraulic Circuit Modeling and Simulation",
@@ -168,32 +122,14 @@ const sections = {
       "System Integration",
       "Maintenance Planning",
     ],
-    logos: [
-      {
-        label: "CAD:",
-        items: [
-          { src: logo.autodeskMec, alt: "ANSYS" },
-          { src: logo.Creo, alt: "Altair" },
-          { src: logo.hydroSYM, alt: "Altair" },
-          { src: logo.hyDraw_CAD, alt: "HyDraw CAD" },
-        ],
-      },
-      {
-        label: "SIMULATION:",
-        items: [
-          { src: logo.automationStudio, alt: "Altair" },
-          { src: logo.festoFluidSim, alt: "Altair" },
-        ],
-      },
-    ],
+    additionalImageUrl: hydraulicImage,
   },
 
   // 6. Asset Management (changed key from "asset" to "asset-management")
   "asset-management": {
     title: "Asset Management",
     description: "Random loreum ipslum",
-    imageUrl:
-      "https://images.unsplash.com/photo-1581092335397-9583eb92d232?q=80&w=2070&auto=format&fit=crop",
+    imageUrl: assetImage1,
     bulletPoints: [
       "Asset Lifecycle Management and Cost Analysis",
       "Predictive and Preventive Maintenance Strategies",
@@ -204,26 +140,7 @@ const sections = {
       "Risk Assessment and Contingency Planning for Critical Assets",
       "Enterprise Asset Management (EAM) System Implementation",
     ],
-    logos: [
-      {
-        label: "ASSET MANAGEMENT SOFTWARE:",
-        items: [
-          { src: logo.maximo, alt: "ANSYS" },
-          { src: logo.sapEAM, alt: "ANSYS" },
-          { src: logo.inforEAM, alt: "ANSYS" },
-          { src: logo.assetPanda, alt: "ANSYS" },
-        ],
-      },
-      {
-        label: "ANALYTICS AND DATA VISUALIZATION:",
-        items: [
-          { src: logo.powerBI, alt: "ANSYS" },
-          { src: logo.tableau, alt: "ANSYS" },
-          { src: logo.qlik, alt: "ANSYS" },
-          { src: logo.sapAnalyticsCloud, alt: "ANSYS" },
-        ],
-      },
-    ],
+    additionalImageUrl: assetImage,
   },
 
   // 7. Embedded Systems Engineering (changed key from "embedded" to "embedded-systems")
@@ -231,8 +148,8 @@ const sections = {
     title: "Embedded Systems Engineering",
     description:
       "Advanced embedded systems solutions integrating hardware and software for intelligent device control and automation.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?q=80&w=2069&auto=format&fit=crop",
+    imageUrl:embeddedImage1,
+
     bulletPoints: [
       "Microcontroller and Microprocessor Programming",
       "Board Support Packages",
@@ -245,41 +162,15 @@ const sections = {
       "Firmware Development",
       "Real-time Operating Systems",
     ],
-    logos: [
-      {
-        label: "IDE AND PROGRAMMING:",
-        items: [
-          { src: logo.keil, alt: "ANSYS" },
-          { src: logo.stm32CubeIDE, alt: "Altair" },
-          { src: logo.lauterbachD, alt: "Altair" },
-        ],
-      },
-      {
-        label: "TESTING AND DEBUGGING:",
-        items: [
-          { src: logo.lauterbachD, alt: "Altair" },
-          { src: logo.qnx, alt: "Altair" },
-          { src: logo.jtag, alt: "Altair" },
-        ],
-      },
-      {
-        label: "RTOS DEVELOPMENT:",
-        items: [
-          { src: logo.qnx, alt: "Altair" },
-          { src: logo.vxWorks, alt: "Altair" },
-          { src: logo.freeRTOS, alt: "Altair" },
-        ],
-      },
-    ],
+    additionalImageUrl: embeddedImage,
   },
 
   // 8. Technical Publication (changed key from "technical" to "technical-publication")
   "technical-publication": {
-    title: "Technical Documentation",
+    title: "Technical Publication",
     description:
       "Comprehensive technical documentation services ensuring clear communication of complex technical information.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop",
+    imageUrl: techImage1,
     bulletPoints: [
       "Creation of Technical Manuals and User Guides",
       "Maintenance and Service Manuals Development",
@@ -292,32 +183,15 @@ const sections = {
       "Technical Documentation for Compliance",
       "SOPs and Regulatory Documentation",
     ],
-    logos: [
-      {
-        label: "PUBLISHING, DIGITAL AND GRAPHICS:",
-        items: [
-          { src: logo.ID, alt: "ANSYS" },
-          { src: logo.AI, alt: "Altair" },
-          { src: logo.FM, alt: "Altair" },
-          { src: logo.rh, alt: "Altair" },
-          { src: logo.Photoshop, alt: "Altair" },
-          { src: logo.corelDraw, alt: "Altair" },
-          { src: logo.madcapFlare, alt: "Altair" },
-          { src: logo.KeyShot, alt: "Altair" },
-          { src: logo.figma, alt: "Altair" },
-          { src: logo.word, alt: "Altair" },
-        ],
-      },
-    ],
+    additionalImageUrl: techImage,
   },
 
   // 9. Supply Chain Management/Procurement (changed key from "supplyChain" to "supply-chain")
   "supply-chain": {
-    title: "Supply Chain Management / Procurement",
+    title: "Supply Chain Management ",
     description:
       "End-to-end supply chain and procurement solutions to streamline sourcing, logistics, and vendor management.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=2070&auto=format&fit=crop",
+    imageUrl: supplyImage1,
     bulletPoints: [
       "Supplier Identification and Evaluation",
       "Strategic Sourcing",
@@ -330,31 +204,11 @@ const sections = {
       "Cost Reduction Strategies",
       "Vendor Relationship Management",
     ],
-    logos: [
-      {
-        label: "SUPPLY CHAIN MANAGEMENT:",
-        items: [
-          { src: logo.sap, alt: "Supply Chain Icon" },
-          { src: logo.oracleNestitue, alt: "Supply Chain Icon" },
-          { src: logo.infor, alt: "Supply Chain Icon" },
-          { src: logo.jda, alt: "Supply Chain Icon" },
-        ],
-      },
-      {
-        label: "ANALYTICS AND DATA VISUALIZATION:",
-        items: [
-          { src: logo.powerBI, alt: "Supply Chain Icon" },
-          { src: logo.tableau, alt: "Supply Chain Icon" },
-          { src: logo.qlik, alt: "Supply Chain Icon" },
-          { src: logo.sapAnalyticsCloud, alt: "Supply Chain Icon" },
-        ],
-      },
-    ],
+    additionalImageUrl: supplyImage,
   },
 };
 
 export default sections;
-
 
 /* 
  embedded: {
