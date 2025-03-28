@@ -132,7 +132,7 @@ const sections = {
     imageUrl: assetImage1,
     bulletPoints: [
       "Asset Lifecycle Management and Cost Analysis",
-      "Predictive and Preventive Maintenance Strategies",
+      "Predictive & Preventive Maintenance Strategies",
       "Spare Parts Optimization",
       "Asset Valuation and Depreciation Analysis",
       "Performance Monitoring and Optimization",

@@ -108,7 +108,7 @@ export function ScrollSection({
                 key={idx}
                 className="flex items-start space-x-3 group flex-1 min-w-[250px]"
                 variants={itemVariants}
-                //whileHover={shouldReduceMotion ? {} : { x: 5 }}
+                whileHover={shouldReduceMotion ? {} : { x: 5 }}
                 role="listitem"
               >
                 <Image
@@ -135,7 +135,7 @@ export function ScrollSection({
             >
               <motion.div
                 className="relative w-full h-full transform-gpu"
-                whileHover={shouldReduceMotion ? {} : { scale: 1.02 }}
+              //  whileHover={shouldReduceMotion ? {} : { scale: 1.0 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <Image
@@ -155,7 +155,7 @@ export function ScrollSection({
           className={`relative h-[510px] w-[360px] ${
             isEven
               ? "md:order-1 md:col-span-4 md:mr-2" // Reduced margin from md:mr-auto to md:mr-2
-              : "md:order-2 md:col-span-4 " // Reduced margin from md:ml-auto to md:ml-2
+              : "md:order-2 md:col-span-4 md:ml-8 " // Reduced margin from md:ml-auto to md:ml-2
           }`}
           variants={itemVariants}
         >
