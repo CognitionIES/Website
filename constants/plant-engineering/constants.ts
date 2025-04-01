@@ -149,7 +149,7 @@ export const PLANT_ENGINEERING_CONSTANTS = {
               "Static & Rotating Equipment",
               "Columns & Towers",
               "Heat Exchangers",
-              "Storage Tanks",
+              
               "Dryers & Cooling Towers",
               "Pumps & Pumping Systems",
               "Air & Gas Compressors System",
