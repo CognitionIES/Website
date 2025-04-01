@@ -33,7 +33,7 @@ export default function ContactSection() {
   const [status, setStatus] = useState(""); // For success/error messages
   const [isSubmitting, setIsSubmitting] = useState(false); // To disable form during submission
 
-  const { TITLE, DESCRIPTION, LOCATION, PHONE, EMAIL } =
+  const { TITLE, DESCRIPTION, LOCATION,  EMAIL } =
     CONTACT_CONSTANTS.CONTACT;
   const { STAGGER_CHILDREN } = CONTACT_CONSTANTS.ANIMATIONS;
 
@@ -133,7 +133,7 @@ export default function ContactSection() {
             {/* Phone */}
             <div className="flex items-center space-x-4">
               <FiPhone className="h-6 w-6 text-[#0098AF]" />
-              <div>
+              {/* <div>
                 <h3 className="text-lg font-medium text-[#5B5B5B]">
                   {PHONE.TITLE}
                 </h3>
@@ -142,7 +142,7 @@ export default function ContactSection() {
                     {number}
                   </p>
                 ))}
-              </div>
+              </div> */}
             </div>
             {/* Email */}
             <div className="flex items-center space-x-4">
