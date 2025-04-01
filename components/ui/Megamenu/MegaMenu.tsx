@@ -146,50 +146,52 @@ const servicesData: MainCategory[] = [
         icon: <Rss className="w-4 h-4" />, // Represents flow and safety monitoring
       },
       {
-        title: "Mechanical Engineering",
-        href: "/services/plant-engineering/details#section-2",
-        icon: <Wrench className="w-4 h-4" />,
-      },
-      {
         title: "Piping Engineering",
-        href: "/services/plant-engineering/details#section-3",
+        href: "/services/plant-engineering/details#section-2",
         icon: <Car className="w-4 h-4" />,
       },
       {
         title: "Piping Stress Analysis",
-        href: "/services/plant-engineering/details#section-4",
+        href: "/services/plant-engineering/details#section-3",
         icon: <Layers className="w-4 h-4" />,
       },
       {
-        title: "Civil Engineering",
+        title: "Mechanical Engineering",
+        href: "/services/plant-engineering/details#section-4",
+        icon: <Wrench className="w-4 h-4" />,
+      },
+      {
+        title: "Electrical Engineering",
         href: "/services/plant-engineering/details#section-5",
+        icon: <Zap className="w-4 h-4" />,
+      },
+      {
+        title: "Reverse Engineering",
+        href: "/services/plant-engineering/details#section-6",
+        icon: <Rewind className="w-4 h-4" />,
+      },
+      {
+        title: "Instrumentation Engineering",
+        href: "/services/plant-engineering/details#section-7",
+        icon: <Sliders className="w-4 h-4" />,
+      },
+      {
+        title: "Civil Engineering",
+        href: "/services/plant-engineering/details#section-8",
         icon: <Building2 className="w-4 h-4" />,
       },
       {
         title: "Structural Engineering",
-        href: "/services/plant-engineering/details#section-6",
+        href: "/services/plant-engineering/details#section-9",
         icon: <ShieldCheck className="w-4 h-4" />,
       },
-      {
-        title: "Electrical Engineering",
-        href: "/services/plant-engineering/details#section-7",
-        icon: <Zap className="w-4 h-4" />,
-      },
-      {
-        title: "Instrumentation Engineering",
-        href: "/services/plant-engineering/details#section-8",
-        icon: <Sliders className="w-4 h-4" />,
-      },
+
       {
         title: "Modular Package",
-        href: "/services/plant-engineering/details#section-9",
+        href: "/services/plant-engineering/details#section-10",
         icon: <Box className="w-4 h-4" />,
       },
-      {
-        title: "Reverse Engineering",
-        href: "/services/plant-engineering/details#section-10",
-        icon: <Rewind className="w-4 h-4" />,
-      },
+
       {
         title: "Procurement Support",
         href: "/services/plant-engineering/details#section-11",
@@ -206,7 +208,7 @@ const servicesData: MainCategory[] = [
   {
     title: "Saas Solutions",
     icon: <Server className="w-5 h-5 mr-2" />,
-    href: "/services/saas-solution",
+    href: "/services/saas-solution/servicecpq",
     subCategories: [
       {
         title: "SERVICECPQ",
@@ -227,31 +229,31 @@ const servicesData: MainCategory[] = [
     subCategories: [
       {
         title: "Temporary Staffing",
-        href: "/services/saas-solution/servicecpq",
-        icon: <Code className="w-4 h-4" />
+        href: "/services/staffing/temp-staff",
+        icon: <Code className="w-4 h-4" />,
       },
       {
         title: "Permanent Placement",
-        href: "/services/saas-solution/servicecpq",
-        icon: <Code className="w-4 h-4" />
+        href: "/services/staffing/permanent-placement",
+        icon: <Code className="w-4 h-4" />,
       },
       {
         title: "Executive Search",
-        href: "/services/saas-solution/servicecpq",
-        icon: <Code className="w-4 h-4" />
+        href: "/services/staffing/executive-search",
+        icon: <Code className="w-4 h-4" />,
       },
       {
         title: "Contract-to-Hire",
-        href: "/services/saas-solution/servicecpq",
-        icon: <Code className="w-4 h-4" />
-      }
+        href: "/services/staffing/contract-to-hire",
+        icon: <Code className="w-4 h-4" />,
+      },
     ],
     image: {
       src: "https://plus.unsplash.com/premium_photo-1661768507909-f961fcff0d45?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       alt: "Team collaborating in a modern office",
-      title: "Staffing and Recruitment Excellence"
-    }
-  }
+      title: "Staffing and Recruitment Excellence",
+    },
+  },
 ];
 
 // Arrow variants for animation

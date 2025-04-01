@@ -28,6 +28,7 @@ export default function PlantEngineeringDetailsPage() {
         ? { mainTopic: point, subPoints: [] }
         : { mainTopic: point.mainTopic, subPoints: point.subPoints || [] }
     ),
+    columns: item.columns || undefined,
   }));
 
   // Handle hash-based navigation and initial setup
@@ -46,7 +47,7 @@ export default function PlantEngineeringDetailsPage() {
 
     const timer = setTimeout(() => setShowScrollHint(false), 5000);
     return () => clearTimeout(timer);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Scroll to a specific section
@@ -125,6 +126,7 @@ export default function PlantEngineeringDetailsPage() {
               title={service.title}
               bulletPoints={service.bulletPoints}
               imageUrl={service.image}
+              columns={service.columns} // Correctly pass the columns prop from each service
             />
           </div>
         ))}

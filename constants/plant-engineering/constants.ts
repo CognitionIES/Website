@@ -21,11 +21,13 @@ import {
   ShieldCheck,
   Cpu,
   ClipboardList,
+  
 } from "lucide-react";
 import { IconType } from "react-icons"; // For icon typing
 
 // Define what a service looks like
 interface Service {
+  columns: undefined;
   bulletPoints: string[];
   icon: IconType;
   title: string;
@@ -85,10 +87,7 @@ export const PLANT_ENGINEERING_CONSTANTS = {
               "Preliminary Thermal Design for HE",
             ],
           },
-          {
-            mainTopic: "Safety & Risk Assessment (Safety Studies)",
-            subPoints: ["HAZOP", "HAZID", "SIL", "QRA"],
-          },
+
           {
             mainTopic: "Process Design & Optimization",
             subPoints: [
@@ -101,74 +100,19 @@ export const PLANT_ENGINEERING_CONSTANTS = {
             ],
           },
           {
-            mainTopic: "Revalidation & Retrofitting - Process Design",
+            mainTopic: "Revalidation & Retrofitting ",
             subPoints: [
               "Process Equipment Reassessment",
               "Hydraulics Pipeline Review",
               "Hydraulics Pump System Re-evaluation",
             ],
           },
-        ],
-      },
-      //Mechanical Engineering
-      {
-        icon: Wrench,
-        title: "Mechanical Engineering",
-        description:
-          "Engineering and maintaining high-performance mechanical systems to ensure plant reliability, efficiency, and safety through detailed design and analysis.",
-        image: mechImage,
-        alt: "Mechanical engineering tools",
-        href: "/services/plant-engineering/details#section-2",
-        bulletPoints: [
           {
-            mainTopic: "Equipment Drawings & Detailing",
-            subPoints: [
-              "Equipment List & Mechanical Datasheets",
-              "Equipment Drawings & Detailing",
-              "Mechanical Schematic Diagrams",
-              "Equipment Layout & Arrangement Drawings",
-              "GA Drawings for Equipment",
-              "Nozzle & Manhole Detail Drawings",
-            ],
-          },
-          {
-            mainTopic: "Equipment Drawings & Detailing",
-            subPoints: [
-              "Equipment & Pipe Support Drawings",
-              "Ladder & Platform Support Drawings",
-              "Tray Support & Welded Internal Details",
-              "Tube Bundle Detailing for Shell & Tube HE",
-              "3D Modeling & Visualization",
-              "Material Take-Off (MTO) & Bill of Materials (BOM)",
-            ],
-          },
-          {
-            mainTopic: "Static and Rotating Equipment",
-            subPoints: [
-              "Pressure Vessels",
-              "Static & Rotating Equipment",
-              "Columns & Towers",
-              "Heat Exchangers",
-              
-              "Dryers & Cooling Towers",
-              "Pumps & Pumping Systems",
-              "Air & Gas Compressors System",
-              "Fatigue & Failure Analysis (FEA)",
-            ],
-          },
-          {
-            mainTopic: "HVAC System Design and Engineering",
-            subPoints: [
-              "HVAC System Design & Engineering",
-              "HVAC System Design Basis",
-              "Heat Load Calculation",
-              "Ducting Layout & Routing",
-              "Duct Fabrication Drawings",
-            ],
+            mainTopic: "Safety & Risk Assessment ",
+            subPoints: ["HAZOP", "HAZID", "SIL", "QRA"],
           },
         ],
-      },
-      //Piping Engineering
+      }, //Piping Engineering
       {
         icon: Pipeline,
         title: "Piping Engineering",
@@ -176,13 +120,13 @@ export const PLANT_ENGINEERING_CONSTANTS = {
           "Designing and managing efficient piping systems to ensure safe and reliable transport of fluids and gases across the plant with advanced analysis and material specifications.",
         image: pipingImage,
         alt: "Piping engineering layout",
-        href: "/services/plant-engineering/details#section-3",
+        href: "/services/plant-engineering/details#section-2",
         bulletPoints: [
           {
             mainTopic: "Piping Layout & Design",
             subPoints: [
               "Overall & Unit Plot Plans",
-              "Piping Layout & Design",
+              
               "Equipment Layout & GA Drawings",
               "Piping Layout & GA Drawings",
               "Piping Isometric Drawings",
@@ -217,7 +161,7 @@ export const PLANT_ENGINEERING_CONSTANTS = {
           },
         ],
       },
-      //Piping Stress Analysis
+      //Piping Stress Analysis -  3 cols
       {
         icon: Gauge,
         title: "Piping Stress Analysis",
@@ -225,17 +169,22 @@ export const PLANT_ENGINEERING_CONSTANTS = {
           "Comprehensive analysis of piping systems to ensure structural integrity, safety, and reliability under diverse operating conditions through advanced stress evaluations and calculations.",
         image: pipeStressImage,
         alt: "Piping stress analysis dashboard",
-        href: "/services/plant-engineering/details#section-4",
+        href: "/services/plant-engineering/details#section-3",
         bulletPoints: [
           {
             mainTopic: "Types of Piping Stress Analysis",
             subPoints: [
               "Finite Element Analysis (FEA)",
-              "Types of Piping Stress Analysis",
               "Surge & Slug Flow Analysis",
               "Fatigue & Creep Assessment",
               "Displacement & Deflection Studies",
               "Occasional Load Analysis (Wind & Seismic)",
+             
+            ],
+          },{
+            mainTopic: "Types of Piping Stress Analysis",
+            subPoints: [
+              
               "Piping Flexibility & Support Optimization",
               "Elastic & Plastic Stress Analysis",
               "Upheaval & Buckling Analysis",
@@ -254,8 +203,205 @@ export const PLANT_ENGINEERING_CONSTANTS = {
             ],
           },
         ],
+        columns: 3,
       },
-      //Civil Engineering
+      //Mechanical Engineering
+      {
+        icon: Wrench,
+        title: "Mechanical Engineering",
+        description:
+          "Engineering and maintaining high-performance mechanical systems to ensure plant reliability, efficiency, and safety through detailed design and analysis.",
+        image: mechImage,
+        alt: "Mechanical engineering tools",
+        href: "/services/plant-engineering/details#section-4",
+        bulletPoints: [
+          {
+            mainTopic: "Equipment Drawings & Detailing",
+            subPoints: [
+              "Equipment List & Mechanical Datasheets",
+              "Equipment Drawings & Detailing",
+              "Mechanical Schematic Diagrams",
+              "Equipment Layout & Arrangement Drawings",
+              "GA Drawings for Equipment",
+              "Nozzle & Manhole Detail Drawings",
+            ],
+          },
+          {
+            mainTopic: "Equipment Drawings & Detailing",
+            subPoints: [
+              "Equipment & Pipe Support Drawings",
+              "Ladder & Platform Support Drawings",
+              "Tray Support & Welded Internal Details",
+              "Tube Bundle Detailing for Shell & Tube HE",
+              "3D Modeling & Visualization",
+              "Material Take-Off (MTO) & Bill of Materials (BOM)",
+            ],
+          },
+          {
+            mainTopic: "Static and Rotating Equipment",
+            subPoints: [
+              "Pressure Vessels",
+              "Static & Rotating Equipment",
+              "Columns & Towers",
+              "Heat Exchangers",
+
+              "Dryers & Cooling Towers",
+              "Pumps & Pumping Systems",
+              "Air & Gas Compressors System",
+              "Fatigue & Failure Analysis (FEA)",
+            ],
+          },
+          {
+            mainTopic: "HVAC System Design and Engineering",
+            subPoints: [
+              "HVAC System Design & Engineering",
+              "HVAC System Design Basis",
+              "Heat Load Calculation",
+              "Ducting Layout & Routing",
+              "Duct Fabrication Drawings",
+            ],
+          },
+        ],
+      },
+      //Electrical Engineering
+      {
+        icon: Fan,
+        title: "Electrical Engineering",
+        description:
+          "Implementing reliable electrical systems to power plant operations efficiently and safely.",
+        image: elecImage,
+        alt: "Electrical engineering panel",
+        href: "/services/plant-engineering/details#section-5",
+        bulletPoints: [
+          {
+            mainTopic: "Basic Engineering",
+            subPoints: [
+              "Electrical Design Basis",
+              "Preliminary Load List & Equipment Sizing",
+              "Preliminary Single Line Diagram (SLD)",
+              "Main Equipment & Switchgear Layouts",
+            ],
+          },
+          {
+            mainTopic: "Detailed Engineering",
+            subPoints: [
+              "Electrical Equipment Specifications & Datasheet",
+              "Plant Intercommunication System",
+              "Power & Control Cable Listings",
+              "Electrical Bill of Materials (BOM)",
+            ],
+          },
+          {
+            mainTopic: "Detailed Engineering ",
+            subPoints: [
+              "Erection Tender Preparation",
+              "As Built Drawings & Documentation",
+              "Relay Setting Schedules & Protection Coordination Chart",
+              "Final Single Line Diagram (SLD)",
+              "Electrical Equipment & Components Layouts",
+            ],
+          },
+          {
+            mainTopic: "Detailed Engineering ",
+            subPoints: [
+              "Earthing System Design & Layouts",
+              "HV/LV Power Cable Sizing & Routing",
+              "Cable, Illumination & Lightning ",
+              "Protection Layouts",
+              "Detailed Load List & Feeder Lists for Switchgear, MCCs, DB",
+            ],
+          },
+        ],
+      },
+      // Reverse Engineering - 3 cols
+      {
+        icon: Flask,
+        title: "Reverse Engineering",
+        description:
+          "Analyzing existing systems to recreate or improve designs for enhanced performance.",
+        image: ReverseImage,
+        alt: "Reverse engineering process",
+        href: "/services/plant-engineering/details#section-6",
+        bulletPoints: [
+          {
+            mainTopic: "Advanced Scanning & Data Capture",
+            subPoints: [
+              "High Precision Laser Scanning for Existing Plants & Equipment",
+              "Creating Accurate 3D Laser Models from Scanned Point Cloud Data",
+              "Supported File Formats: .pptx, .pcg, .xyz, .dwg, .dgn, .rvt, .fls",
+            ],
+          },
+          {
+            mainTopic: "Deliverables & Final Output",
+            subPoints: [
+              "Extraction & Submission of Detailed Engineering Drawings & Reports",
+              "Integration of Reverse Engineered Models into Existing Design Workflows",
+            ],
+          },
+          {
+            mainTopic: "3D Modeling & Data Translation",
+            subPoints: [
+              "Converting As Built Data into Millimeter Accurate 3D CAD Models",
+              "Generating Dumb Models from Laser Scans",
+              "Transfrming Dumb Models into Intelligent Models",
+            ],
+          },
+        ],
+        columns: 3,
+      }, //Instrumentation Engineering
+      {
+        icon: Gauge,
+        title: "Instrumentation Engineering",
+        description:
+          "Integrating advanced instrumentation for precise monitoring and control of plant processes.",
+        image: InstrumentationImage,
+        alt: "Instrumentation control system",
+        href: "/services/plant-engineering/details#section-7",
+        bulletPoints: [
+          {
+            mainTopic: "Basic Engineering",
+            subPoints: [
+              "I/O List",
+              "Instrument Cable Block Diagram",
+              "Instrument Installation Details",
+              "Preliminary Instrument List / Index",
+              "Instrument Process Datasheets",
+              "Hook-Up Drawings",
+              "Process Optimization",
+            ],
+          },
+          {
+            mainTopic: "Safety & Risk Assessment",
+            subPoints: [
+              "Final Instrumentation Design Basis",
+              "Instrument Location Layout",
+              "Instrument Index & Specification Datasheets",
+              "DCS Control Room Layout",
+            ],
+          },
+          {
+            mainTopic: "Safety & Risk Assessment",
+            subPoints: [
+              "Cable Tray & Fittings MTO",
+              "Instrument Installation Details",
+              "Junction Box Grouping",
+              "Instrument Cable Schedule and Wiring Diagram",
+            ],
+          },
+          {
+            mainTopic: "Safety & Risk Assessment ",
+            subPoints: [
+              "I/O List & Cause-Effect Diagram/List",
+              "Cable Tray Routing & Layout",
+              "Hook-Up Drawings & Erection Hardware MTO",
+
+              "Instrument Termination Drawings",
+              "As-Built Drawings & Documentation",
+            ],
+          },
+        ],
+      },
+      //Civil Engineering - 3 cols
       {
         icon: Building2,
         title: "Civil Engineering",
@@ -263,7 +409,7 @@ export const PLANT_ENGINEERING_CONSTANTS = {
           "Providing foundational civil engineering solutions for durable and safe plant infrastructure.",
         image: civilImage,
         alt: "Civil engineering construction",
-        href: "/services/plant-engineering/details#section-5",
+        href: "/services/plant-engineering/details#section-8",
         bulletPoints: [
           {
             mainTopic: "Site Development & Infrastructure",
@@ -286,8 +432,9 @@ export const PLANT_ENGINEERING_CONSTANTS = {
               "Admin Buildings, Canteens, Utility Blocks, and Non-Plant Structures",
             ],
           },
-        ],
-      }, //Structural Engineering
+        ],        columns: 3,
+      },
+      //Structural Engineering
       {
         icon: Building2,
         title: "Structural Engineering",
@@ -295,7 +442,7 @@ export const PLANT_ENGINEERING_CONSTANTS = {
           "Designing strong, stable structures to support plant operations and withstand environmental challenges.",
         image: StructuralImage,
         alt: "Civil engineering construction",
-        href: "/services/plant-engineering/details#section-6",
+        href: "/services/plant-engineering/details#section-9",
         bulletPoints: [
           {
             mainTopic: "Specialized Structural Engineering",
@@ -332,108 +479,8 @@ export const PLANT_ENGINEERING_CONSTANTS = {
             ],
           },
         ],
-      }, //Electrical Engineering
-      {
-        icon: Fan,
-        title: "Electrical Engineering",
-        description:
-          "Implementing reliable electrical systems to power plant operations efficiently and safely.",
-        image: elecImage,
-        alt: "Electrical engineering panel",
-        href: "/services/plant-engineering/details#section-7",
-        bulletPoints: [
-          {
-            mainTopic: "Basic Engineering",
-            subPoints: [
-              "Electrical Design Basis",
-              "Preliminary Load List & Equipment Sizing",
-              "Preliminary Single Line Diagram (SLD)",
-              "Main Equipment & Switchgear Layouts",
-            ],
-          },
-          {
-            mainTopic: "Detailed Engineering",
-            subPoints: [
-              "Electrical Equipment Specifications & Datasheet",
-              "Plant Intercommunication System",
-              "Power & Control Cable Listings",
-              "Electrical Bill of Materials (BOM)",
-            ],
-          },
-          {
-            mainTopic: "Detailed Engineering (Cont.)",
-            subPoints: [
-              "Erection Tender Preparation",
-              "As Built Drawings & Documentation",
-              "Relay Setting Schedules & Protection Coordination Chart",
-              "Final Single Line Diagram (SLD)",
-              "Electrical Equipment & Components Layouts",
-            ],
-          },
-          {
-            mainTopic: "Detailed Engineering",
-            subPoints: [
-              "Earthing System Design & Layouts",
-              "HV/LV Power Cable Sizing & Routing",
-              "Cable, Illumination & Lightning ",
-              "Protection Layouts",
-              "Detailed Load List & Feeder Lists for Switchgear, MCCs, DB",
-            ],
-          },
-        ],
-      }, //Instrumentation Engineering
-      {
-        icon: Gauge,
-        title: "Instrumentation Engineering",
-        description:
-          "Integrating advanced instrumentation for precise monitoring and control of plant processes.",
-        image: InstrumentationImage,
-        alt: "Instrumentation control system",
-        href: "/services/plant-engineering/details#section-8",
-        bulletPoints: [
-          {
-            mainTopic: "Basic Engineering",
-            subPoints: [
-              "I/O List",
-              "Instrument Cable Block Diagram",
-              "Instrument Installation Details",
-              "Preliminary Instrument List / Index",
-              "Instrument Process Datasheets",
-              "Hook-Up Drawings",
-              "Process Optimization",
-            ],
-          },
-          {
-            mainTopic: "Safety & Risk Assessment (Safety Studies)",
-            subPoints: [
-              "Final Instrumentation Design Basis",
-              "Instrument Location Layout",
-              "Instrument Index & Specification Datasheets",
-              "DCS Control Room Layout",
-            ],
-          },
-          {
-            mainTopic: "Safety & Risk Assessment (Safety Studies)",
-            subPoints: [
-              "Cable Tray & Fittings MTO",
-              "Instrument Installation Details",
-              "Junction Box Grouping",
-              "Instrument Cable Schedule and Wiring Diagram",
-            ],
-          },
-          {
-            mainTopic: "Safety & Risk Assessment (Safety Studies)",
-            subPoints: [
-              "I/O List & Cause-Effect Diagram/List",
-              "Cable Tray Routing & Layout",
-              "Hook-Up Drawings & Erection Hardware MTO",
-
-              "Instrument Termination Drawings",
-              "As-Built Drawings & Documentation",
-            ],
-          },
-        ],
-      }, //modular Engineering
+      },
+      //modular Engineering - 3 cols
       {
         icon: Cpu,
         title: "Modular Package",
@@ -441,7 +488,7 @@ export const PLANT_ENGINEERING_CONSTANTS = {
           "Delivering pre-engineered modular solutions for faster installation and operational flexibility.",
         image: ModularImage,
         alt: "Modular plant package",
-        href: "/services/plant-engineering/details#section-9",
+        href: "/services/plant-engineering/details#section-10",
         bulletPoints: [
           {
             mainTopic: "Modular Skid Design & Engineering",
@@ -452,6 +499,12 @@ export const PLANT_ENGINEERING_CONSTANTS = {
               "MTO & BOM Preparation",
               "Structural Steel Calculations (Including Anchor/Foundation Loads)",
               "E&I Skid Engineering (Cable Tray, Junction Box, Small-Bore Containment, etc.)",
+              
+            ],
+          },
+          {
+            mainTopic: "Modular Skid Design & Engineering",
+            subPoints: [
               "2D General Arrangement Drawings",
               "Detailed Structural Fabrication Drawings",
               "Lifting Lug Design & Details",
@@ -471,45 +524,9 @@ export const PLANT_ENGINEERING_CONSTANTS = {
               "Chemical Process Skids(Metering, Injection, Dosing, Feeding, Transport, Blending, Extraction & Filtration)",
             ],
           },
-        ],
+        ],        columns: 3,
       },
-
-      // Reverse Engineering
-      {
-        icon: Flask,
-        title: "Reverse Engineering",
-        description:
-          "Analyzing existing systems to recreate or improve designs for enhanced performance.",
-        image: ReverseImage,
-        alt: "Reverse engineering process",
-        href: "/services/plant-engineering/details#section-10",
-        bulletPoints: [
-          {
-            mainTopic: "Advanced Scanning & Data Capture",
-            subPoints: [
-              "High Precision Laser Scanning for Existing Plants & Equipment",
-              "Creating Accurate 3D Laser Models from Scanned Point Cloud Data",
-              "Supported File Formats: .pptx, .pcg, .xyz, .dwg, .dgn, .rvt, .fls",
-            ],
-          },
-          {
-            mainTopic: "Deliverables & Final Output",
-            subPoints: [
-              "Extraction & Submission of Detailed Engineering Drawings & Reports",
-              "Integration of Reverse Engineered Models into Existing Design Workflows",
-            ],
-          },
-          {
-            mainTopic: "3D Modeling & Data Translation",
-            subPoints: [
-              "Converting As Built Data into Millimeter Accurate 3D CAD Models",
-              "Generating Dumb Models from Laser Scans",
-              "Transfrming Dumb Models into Intelligent Models",
-            ],
-          },
-        ],
-      },
-      // procurement
+      // procurement - 3 cols
       {
         icon: ClipboardList,
         title: "Procurement Support",
@@ -542,7 +559,7 @@ export const PLANT_ENGINEERING_CONSTANTS = {
               "Integration & Implementation of Vendor Data into Engineering",
             ],
           },
-        ],
+        ],        columns: 3,
       },
     ] as unknown as Service[],
   },
