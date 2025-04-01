@@ -33,42 +33,42 @@ interface Service {
 const services: Service[] = [
   {
     title: "PROCESS & SAFETY ENGINEERING",
-    href: "/services/plant-engineering/process-and-safety",
+    href: "/services/plant-engineering/details#section-1",
     icon: <RssIcon className="w-4 h-4 text-[#0098AF] transition-colors" />,
     image: processImage,
     alt: "Process safety equipment",
   },
   {
     title: "MECHANICAL ENGINEERING",
-    href: "/services/plant-engineering/mechanical",
+    href: "/services/plant-engineering/details#section-2",
     icon: <Settings2 className="w-4 h-4 text-[#0098AF] transition-colors" />,
     image: mechImage,
     alt: "Mechanical engineering tools",
   },
   {
     title: "PIPING ENGINEERING",
-    href: "/services/plant-engineering/piping",
+    href: "/services/plant-engineering/details#section-3",
     icon: <DropletIcon className="w-4 h-4 text-[#0098AF] transition-colors" />,
     image: pipingImage,
     alt: "Piping engineering layout",
   },
   {
     title: "PIPING STRESS ANALYSIS",
-    href: "/services/plant-engineering/piping-stress-analysis",
+    href: "/services/plant-engineering/details#section-4",
     icon: <Layers2 className="w-4 h-4 text-[#0098AF] transition-colors" />,
     image: pipingStressImage,
     alt: "Piping stress analysis dashboard",
   },
   {
     title: "CIVIL ENGINEERING",
-    href: "/services/plant-engineering/civil",
+    href: "/services/plant-engineering/details#section-5",
     icon: <GaugeCircle className="w-4 h-4 text-[#0098AF] transition-colors" />,
     image: civilImage,
     alt: "Civil engineering construction",
   },
   {
     title: "STRUCTURAL ENGINEERING",
-    href: "/services/plant-engineering/structural",
+    href: "/services/plant-engineering/details#section-6",
     icon: (
       <ShieldEllipsis className="w-4 h-4 text-[#0098AF] transition-colors" />
     ),
@@ -77,7 +77,7 @@ const services: Service[] = [
   },
   {
     title: "ELECTRICAL ENGINEERING",
-    href: "/services/plant-engineering/electrical",
+    href: "/services/plant-engineering/details#section-7",
     icon: (
       <ShieldEllipsis className="w-4 h-4 text-[#0098AF] transition-colors" />
     ),
@@ -86,7 +86,7 @@ const services: Service[] = [
   },
   {
     title: "INSTRUMENTATION ENGINEERING",
-    href: "/services/plant-engineering/instrumentation",
+    href: "/services/plant-engineering/details#section-8",
     icon: (
       <ShieldEllipsis className="w-4 h-4 text-[#0098AF] transition-colors" />
     ),
@@ -95,7 +95,7 @@ const services: Service[] = [
   },
   {
     title: "MODULAR PACKAGE",
-    href: "/services/plant-engineering/modular-package",
+    href: "/services/plant-engineering/details#section-9",
     icon: (
       <ShieldEllipsis className="w-4 h-4 text-[#0098AF] transition-colors" />
     ),
@@ -104,7 +104,7 @@ const services: Service[] = [
   },
   {
     title: "REVERSE ENGINEERING",
-    href: "/services/plant-engineering/reverse-engineering",
+    href: "/services/plant-engineering/details#section-10",
     icon: (
       <ShieldEllipsis className="w-4 h-4 text-[#0098AF] transition-colors" />
     ),
@@ -113,7 +113,7 @@ const services: Service[] = [
   },
   {
     title: "PROCUREMENT SUPPORT",
-    href: "/services/plant-engineering/procurement-support",
+    href: "/services/plant-engineering/details#section-11",
     icon: (
       <ShieldEllipsis className="w-4 h-4 text-[#0098AF] transition-colors" />
     ),

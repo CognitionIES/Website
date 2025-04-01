@@ -142,57 +142,57 @@ const servicesData: MainCategory[] = [
     subCategories: [
       {
         title: "Process & Safety Engineering",
-        href: "/services/plant-engineering/process-and-safety",
+        href: "/services/plant-engineering/details#section-1",
         icon: <Rss className="w-4 h-4" />, // Represents flow and safety monitoring
       },
       {
         title: "Mechanical Engineering",
-        href: "/services/plant-engineering/mechanical",
+        href: "/services/plant-engineering/details#section-2",
         icon: <Wrench className="w-4 h-4" />,
       },
       {
         title: "Piping Engineering",
-        href: "/services/plant-engineering/piping",
+        href: "/services/plant-engineering/details#section-3",
         icon: <Car className="w-4 h-4" />,
       },
       {
         title: "Piping Stress Analysis",
-        href: "/services/plant-engineering/piping-stress-analysis",
+        href: "/services/plant-engineering/details#section-4",
         icon: <Layers className="w-4 h-4" />,
       },
       {
         title: "Civil Engineering",
-        href: "/services/plant-engineering/civil",
+        href: "/services/plant-engineering/details#section-5",
         icon: <Building2 className="w-4 h-4" />,
       },
       {
         title: "Structural Engineering",
-        href: "/services/plant-engineering/structural",
+        href: "/services/plant-engineering/details#section-6",
         icon: <ShieldCheck className="w-4 h-4" />,
       },
       {
         title: "Electrical Engineering",
-        href: "/services/plant-engineering/electrical",
+        href: "/services/plant-engineering/details#section-7",
         icon: <Zap className="w-4 h-4" />,
       },
       {
         title: "Instrumentation Engineering",
-        href: "/services/plant-engineering/instrumentation",
+        href: "/services/plant-engineering/details#section-8",
         icon: <Sliders className="w-4 h-4" />,
       },
       {
         title: "Modular Package",
-        href: "/services/plant-engineering/modular-package",
+        href: "/services/plant-engineering/details#section-9",
         icon: <Box className="w-4 h-4" />,
       },
       {
         title: "Reverse Engineering",
-        href: "/services/plant-engineering/reverse-engineering",
+        href: "/services/plant-engineering/details#section-10",
         icon: <Rewind className="w-4 h-4" />,
       },
       {
         title: "Procurement Support",
-        href: "/services/plant-engineering/procurement-support",
+        href: "/services/plant-engineering/details#section-11",
         icon: <ShoppingCart className="w-4 h-4" />,
       },
     ],

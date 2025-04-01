@@ -10,17 +10,17 @@ export const CONTACT_CONSTANTS = {
 
   // Contact Section
   CONTACT: {
-    TITLE: "Get in Touch",
+    TITLE: "GET IN TOUCH",
     DESCRIPTION:
-      "We’d love to hear from you. Whether you have a question, a project idea, or just want to say hello, feel free to reach out.",
+      "Feel free to get in touch with me. I am always open to discussing new projects, creative ideas or opportunities to be part of your visions.",
     LOCATION: {
       TITLE: "Our Location",
       ADDRESS: "123 ABC, DEF HIJ, JKLM 9999",
     },
-    PHONE: {
-      TITLE: "Toll Free Phone No.",
-      NUMBERS: ["1800 800 9000"],
-    },
+    //PHONE: {
+      //TITLE: "Toll Free Phone No.",
+      //NUMBERS: ["1800 800 9000"],
+    //},
     EMAIL: {
       TITLE: "Email",
       ADDRESS: "info@cognitionies.com",

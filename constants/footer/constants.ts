@@ -35,7 +35,7 @@ export const FOOTER_CONSTANTS = {
       TITLE: "Contact Us",
       ITEMS: [
         ["Email", "mailto:info@cognitionies.com", "info@cognitionies.com"],
-        ["Phone", "tel:+1800 800 9000", "+1 1800 800 9000"],
+        //["Phone", "tel:+1800 800 9000", "+1 1800 800 9000"],
       ],
     },
   

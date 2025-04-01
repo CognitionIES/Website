@@ -15,6 +15,28 @@ const Careers = () => {
 
       <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
+          {/* Image Section */}
+          <div
+            
+          >
+            <div className="relative rounded-2xl overflow-hidden shadow-lg">
+              <Image
+                src={CAREERS_CONSTANTS.IMAGE}
+                alt="Team collaborating in office"
+                width={1500}
+                height={350}
+                className="w-full h-[250px] sm:h-[350px] object-cover  transition-transform duration-300 hover:scale-105"
+              />
+
+              {/* Decorative overlay */}
+              <div className="absolute bottom-3 sm:bottom-4 right-3 sm:right-4 bg-white/90 backdrop-blur-sm p-2 sm:p-3 rounded-xl shadow-md">
+                <p className="text-xs sm:text-sm font-medium text-[#003C46] italic">
+                  Building the future together
+                </p>
+              </div>
+            </div>
+          </div>
+
           {/* Text Content */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -45,36 +67,10 @@ const Careers = () => {
               <div className="pt-2">
                 <Link href="/careers">
                   <Button className="bg-[#0098af] text-white hover:bg-white hover:text-[#003C46] text-sm sm:text-base font-medium transition-all duration-300 border-2 border-transparent hover:border-[#0098af] rounded-xl px-3 sm:px-4 py-2 h-9 sm:h-10 shadow-md hover:shadow-lg">
-                    <span>Explore Opportunities</span>
+                    <span>Opportunities</span>
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </Button>
                 </Link>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Image Section */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            viewport={{ once: true }}
-            className="order-1 md:order-2"
-          >
-            <div className="relative rounded-2xl overflow-hidden shadow-lg">
-              <Image
-                src={CAREERS_CONSTANTS.IMAGE}
-                alt="Team collaborating in office"
-                width={500}
-                height={350}
-                className="w-full h-[250px] sm:h-[350px] object-cover transition-transform duration-300 hover:scale-105"
-              />
-
-              {/* Decorative overlay */}
-              <div className="absolute bottom-3 sm:bottom-4 right-3 sm:right-4 bg-white/90 backdrop-blur-sm p-2 sm:p-3 rounded-xl shadow-md">
-                <p className="text-xs sm:text-sm font-medium text-[#003C46] italic">
-                  Building the future together
-                </p>
               </div>
             </div>
           </motion.div>

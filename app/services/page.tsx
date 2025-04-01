@@ -6,7 +6,7 @@ import Footer from "@/components/footer";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { ChevronDown, MousePointer2 } from "lucide-react";
 import { MegaMenu } from "@/components/ui/Megamenu/MegaMenu";
-import { Suspense, useEffect, useState, useRef } from "react";
+import { Suspense, useEffect, useState, useRef, useCallback } from "react";
 import SearchParamsHandler from "./SearchParamsHandler";
 import { ScrollSection } from "@/components/ScrollSection";
 
@@ -22,51 +22,45 @@ export default function ServicesPage() {
     return () => clearTimeout(timer);
   }, []);
 
+  const handleParamChange = useCallback((params: Record<string, string>) => {
+    console.log("Search parameters changed:", params);
+  }, []);
+
   const scrollToSection = (index: number) => {
     if (index < 0 || index >= sectionRefs.current.length || isScrolling) return;
     setIsScrolling(true);
     setCurrentSection(index);
-    sectionRefs.current[index]?.scrollIntoView({ behavior: "smooth" });
-    setTimeout(() => setIsScrolling(false), 800);
+    sectionRefs.current[index]?.scrollIntoView({
+      behavior: shouldReduceMotion ? "auto" : "smooth",
+    });
   };
 
   useEffect(() => {
     const handleWheel = (event: WheelEvent) => {
       if (isScrolling) return;
       event.preventDefault();
-      if (event.deltaY > 0) {
-        scrollToSection(currentSection + 1);
-      } else {
-        scrollToSection(currentSection - 1);
-      }
+      setIsScrolling(true);
+      const direction = event.deltaY > 0 ? 1 : -1;
+      const nextSection = Math.max(
+        0,
+        Math.min(sectionRefs.current.length - 1, currentSection + direction)
+      );
+      scrollToSection(nextSection);
     };
 
-    const handleKeydown = (event: KeyboardEvent) => {
-      if (isScrolling) return;
-      if (event.key === "ArrowDown") {
-        event.preventDefault();
-        scrollToSection(currentSection + 1);
-      } else if (event.key === "ArrowUp") {
-        event.preventDefault();
-        scrollToSection(currentSection - 1);
-      }
-    };
+    const handleScrollEnd = () => setIsScrolling(false);
 
     window.addEventListener("wheel", handleWheel, { passive: false });
-    window.addEventListener("keydown", handleKeydown);
+    window.addEventListener("scrollend", handleScrollEnd);
     return () => {
       window.removeEventListener("wheel", handleWheel);
-      window.removeEventListener("keydown", handleKeydown);
+      window.removeEventListener("scrollend", handleScrollEnd);
     };
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentSection, isScrolling]);
 
-  const handleParamChange = (param: string): void => {
-    console.log("Current param:", param);
-  };
-
   return (
-    <div className="relative min-h-screen overflow-hidden pb-8">
+    <div className="relative min-h-screen overflow-y-auto pb-8 snap-y snap-mandatory">
       <div
         className="fixed inset-0 bg-cover bg-center -z-10"
         style={{
@@ -93,7 +87,7 @@ export default function ServicesPage() {
                 sectionRefs.current[index] = el as HTMLDivElement | null;
               }}
               className={`min-h-screen flex items-center justify-center py-24 snap-start ${
-                index === 0 ? "mt-16" : "" // Add top margin to the first section
+                index === 0 ? "mt-16" : ""
               }`}
             >
               <div

@@ -1,6 +1,6 @@
 import { StaticImageData } from "next/image";
 import image1 from "./images/hero/builder-repairman-install-hvac-duct-cleaning-ventilation-pipes-hanging-from-ceiling.jpg";
-// import image2 from "./images/hero/excavator-action.jpg";
+ import image2 from "./images/hero/excavator-action.jpg";
 //import image3 from "./images/hero/factory-worker-control-robotic-arm-factory.jpg";
 import image4 from "./images/hero/portrait-engineers-work-hours-job-site.jpg";
 import image5 from "./images/hero/image.jpg";
@@ -26,16 +26,7 @@ export const heroSlides: HeroSlide[] = [
     image: image1,
     blurImage: undefined,
   },
-  {
-    id: 4,
-    title: "Empowering Intelligence with AI",
-    subtitle: "Intelligent Solutions for a Smarter Future",
-    majorService: "Artificial Intelligence & Machine Learning",
-    description:
-      "Harnessing the power of AI to develop intelligent systems that automate, optimize, and elevate decision-making across industries",
-    image: image5,
-    blurImage: image4,
-  },
+  
   {
     id: 2,
     title: "Engineering Better Processes for Better Results",
@@ -56,7 +47,18 @@ export const heroSlides: HeroSlide[] = [
       "Harnessing the power of AI to develop intelligent systems that automate, optimize, and elevate decision-making across industries",
     image: image5,
     blurImage: image4,
+  },{
+    id: 4,
+    title: "staffing title placeholder",
+    subtitle: "staffing sub-title placeholder",
+    majorService: "Staffing and recruitment ",
+    description:
+      "staffing description placeholder",
+    image: image2,
+    blurImage:
+      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&q=10&w=50&blur=20",
   },
+  
 ];
 // {
 //   id: 1,

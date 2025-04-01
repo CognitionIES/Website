@@ -76,31 +76,28 @@ export function ScrollSection({
           }`}
           variants={itemVariants}
         >
-          <div className="space-y-3">
+          <div className="space">
             <motion.h2
               className="text-4xl md:text-3xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/80 uppercase"
-              // Increased text size from text-3xl to text-4xl and md:text-2xl to md:text-3xl
               variants={itemVariants}
             >
               {title}
             </motion.h2>
-            <motion.div
+            {/* <motion.div
               className="h-1 w-32 md:w-40 bg-gradient-to-r from-primary to-transparent rounded-full"
               variants={itemVariants}
-            />
+            /> */}
           </div>
 
           <motion.p
             className="text-lg text-muted-foreground/90 leading-relaxed uppercase"
-            // Increased text size from text-base to text-lg
             variants={itemVariants}
           >
             {description}
           </motion.p>
 
           <motion.ul
-            className="flex flex-wrap gap-x-8 gap-y-3 mb-4"
-            // Reduced mb-8 to mb-4 to minimize space below bullet points
+            className="flex flex-wrap gap-x-8 gap-y-3"
             variants={containerVariants}
           >
             {bulletPoints.map((point, idx) => (

@@ -4,97 +4,130 @@ import { MegaMenu } from "@/components/ui/Megamenu/MegaMenu";
 import Footer from "@/components/footer";
 import { PLANT_ENGINEERING_CONSTANTS } from "@/constants/plant-engineering/constants";
 import { HorizontalScrollSection } from "@/components/horizontalScrollSection";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { ChevronDown, MousePointer2 } from "lucide-react";
-//import Link from "next/link";
-import frameBackground from "@/constants/images/Background/Frame_8.jpg"; 
+import frameBackground from "@/constants/images/Background/Frame_8.jpg";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 
 export default function PlantEngineeringDetailsPage() {
   const shouldReduceMotion = useReducedMotion();
   const { ITEMS } = PLANT_ENGINEERING_CONSTANTS.SERVICES;
+  const [showScrollHint, setShowScrollHint] = useState(true);
+  const [currentSection, setCurrentSection] = useState(0);
+  const [isScrolling, setIsScrolling] = useState(false);
+  const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-  // Add IDs to each service item for linking
+  // Add IDs and normalize bullet points
   const servicesWithIds = ITEMS.map((item, index) => ({
     ...item,
-    id: `section-${index + 1}`, // e.g., section-1, section-2, etc.
-    bulletPoints: item.bulletPoints || ["Default point 1", "Default point 2"], 
+    id: `section-${index + 1}`,
+    bulletPoints: (
+      item.bulletPoints || ["Default point 1", "Default point 2"]
+    ).map((point: string | { mainTopic: string; subPoints?: string[] }) =>
+      typeof point === "string"
+        ? { mainTopic: point, subPoints: [] }
+        : { mainTopic: point.mainTopic, subPoints: point.subPoints || [] }
+    ),
   }));
 
-  // Track the current section in view
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [currentSection, setCurrentSection] = useState(0);
-  const [showScrollHint, setShowScrollHint] = useState(true);
-
-  // Handle hash-based navigation on page load
+  // Handle hash-based navigation and initial setup
   useEffect(() => {
-    const hash = window.location.hash; // e.g., #section-3
+    const hash = window.location.hash;
     if (hash) {
       const element = document.querySelector(hash);
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });
+        const index = servicesWithIds.findIndex(
+          (service) => service.id === hash.slice(1)
+        );
+        if (index !== -1) setCurrentSection(index);
       }
     }
 
-    // Add scroll event listener to track the current section
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      const sectionHeight = window.innerHeight;
-      const sectionIndex = Math.round(scrollPosition / sectionHeight);
-      setCurrentSection(sectionIndex);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  // Hide scroll hint after 5 seconds
-  useEffect(() => {
     const timer = setTimeout(() => setShowScrollHint(false), 5000);
     return () => clearTimeout(timer);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  // Scroll to a specific section
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const scrollToSection = (index: number) => {
+    if (index < 0 || index >= sectionRefs.current.length || isScrolling) return;
+    setIsScrolling(true);
+    setCurrentSection(index);
+    sectionRefs.current[index]?.scrollIntoView({
+      behavior: shouldReduceMotion ? "auto" : "smooth",
+    });
+  };
+
+  // Wheel and keyboard navigation
+  useEffect(() => {
+    const handleWheel = (event: WheelEvent) => {
+      if (isScrolling) return;
+      event.preventDefault();
+      setIsScrolling(true);
+      const direction = event.deltaY > 0 ? 1 : -1;
+      const nextSection = Math.max(
+        0,
+        Math.min(sectionRefs.current.length - 1, currentSection + direction)
+      );
+      scrollToSection(nextSection);
+    };
+
+    const handleKeydown = (event: KeyboardEvent) => {
+      if (isScrolling) return;
+      if (event.key === "ArrowDown" || event.key === "ArrowUp") {
+        event.preventDefault();
+        setIsScrolling(true);
+        const direction = event.key === "ArrowDown" ? 1 : -1;
+        const nextSection = Math.max(
+          0,
+          Math.min(sectionRefs.current.length - 1, currentSection + direction)
+        );
+        scrollToSection(nextSection);
+      }
+    };
+
+    const handleScrollEnd = () => setIsScrolling(false);
+
+    window.addEventListener("wheel", handleWheel, { passive: false });
+    window.addEventListener("keydown", handleKeydown);
+    window.addEventListener("scrollend", handleScrollEnd);
+
+    return () => {
+      window.removeEventListener("wheel", handleWheel);
+      window.removeEventListener("keydown", handleKeydown);
+      window.removeEventListener("scrollend", handleScrollEnd);
+    };
+  }, [currentSection, isScrolling, scrollToSection]);
 
   return (
     <div className="relative min-h-screen overflow-y-auto snap-y snap-mandatory">
-      {/* Fixed Background Image */}
       <div
         className="fixed inset-0 bg-cover bg-center -z-10"
-        style={{
-          backgroundImage: `url(${frameBackground.src})`,
-        }}
+        style={{ backgroundImage: `url(${frameBackground.src})` }}
       />
-
-      {/* Main Content */}
       <div className="relative">
-        {/* Top navigation - Fixed at the top */}
         <div className="sticky top-0 z-50">
           <MegaMenu />
         </div>
-
-        {/* Sections with snap scrolling */}
         {servicesWithIds.map((service, index) => (
           <div
             key={service.id}
+            ref={(el) => {
+              sectionRefs.current[index] = el;
+            }}
             className="relative min-h-screen w-full flex items-center justify-center snap-start"
           >
             <HorizontalScrollSection
               index={index}
               id={service.id}
               title={service.title}
-              description={service.description}
-              bulletPoints={service.bulletPoints || ["Default point 1", "Default point 2"]}
+              bulletPoints={service.bulletPoints}
               imageUrl={service.image}
             />
-
-            {/* Scroll Indicator (not shown on the last section or footer) */}
-            
           </div>
         ))}
-
-    
-
-
-        {/* Scroll Hint */}
         <AnimatePresence>
           {showScrollHint && (
             <motion.div
@@ -121,8 +154,7 @@ export default function PlantEngineeringDetailsPage() {
           )}
         </AnimatePresence>
       </div>
-    <Footer />
+      <Footer />
     </div>
-    
   );
 }

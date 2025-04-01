@@ -466,14 +466,15 @@ export default function ServicesSection() {
               />
 
               {/* Content */}
-              <div className="relative h-full p-6 sm:p-8 lg:p-8 flex flex-col justify-between min-h-[350px] sm:min-h-[400px]">
+
+              <div className="relative h-full p-6 sm:p-8 lg:p-8 flex flex-col justify-between h-[200px]">
                 <div>
                   <h2 className="text-lg sm:text-xl lg:text-3xl font-semibold mb-3 sm:mb-4 text-white tracking-wide drop-shadow-md">
                     {service.title}
                   </h2>
                   <p
                     className={cn(
-                      "text-sm sm:text-base lg:text-lg text-justify leading-relaxed transition-all duration-500 ease-in-out",
+                      "text-sm sm:text-base lg:text-sm text-justify leading-relaxed transition-all duration-500 ease-in-out",
                       activeCard === service.id
                         ? "text-gray-200 opacity-100"
                         : "text-gray-900 opacity-0 h-0"
@@ -486,7 +487,109 @@ export default function ServicesSection() {
                 </div>
 
                 {/* Button */}
-                <div className="flex justify-end mt-4">
+                <div className="flex justify-end mt-2">
+                  <Link href={service.href}>
+                    <Button
+                      variant="secondary"
+                      className={cn(
+                        "bg-[#5b5b5b] text-white font-medium rounded-md px-4 py-2 sm:px-6 sm:py-3 transition-all duration-200",
+                        activeCard === service.id
+                          ? "hover:bg-white hover:shadow-md hover:text-[#000000]"
+                          : "bg-[#0098AF] hover:bg-[#003C46]"
+                      )}
+                    >
+                      Explore More
+                    </Button>
+                  </Link>
+                </div>
+
+                {/* Active Indicator Line */}
+                {activeCard === service.id && (
+                  <motion.div
+                    className="absolute bottom-0 left-0 h-1 bg-[#99D5DF] rounded-t-sm"
+                    initial={{ width: "0%" }}
+                    animate={{ width: "100%" }}
+                    transition={{ duration: 0.5, ease: "easeOut" }}
+                  />
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+
+
+        <div className="grid grid-cols-1 py-2 md:grid-cols-12 gap-4 sm:gap-6 lg:gap-10">
+          {SERVICES.map((service) => (
+            <div
+              key={service.id}
+              className={cn(
+                "rounded-lg overflow-hidden relative cursor-pointer transition-all duration-500 ease-in-out bg-white shadow-md border border-gray-200/80",
+                service.textColor,
+                activeCard === service.id ? "md:col-span-7" : "md:col-span-5",
+                "hover:shadow-lg hover:bg-gray-50"
+              )}
+              onMouseEnter={() => setActiveCard(service.id)}
+              onClick={() => setActiveCard(service.id)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  setActiveCard(service.id);
+                }
+              }}
+              tabIndex={0}
+              role="button"
+              aria-expanded={activeCard === service.id}
+              aria-label={`${service.title} card. Press to ${
+                activeCard === service.id ? "" : ""
+              }`}
+            >
+              
+              {/* Image */}
+              <div className="absolute inset-0">
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  height={1000}
+                  width={1000}
+                  className="object-cover bg-center transition-opacity duration-500"
+                  style={{
+                    opacity: activeCard === service.id ? 0.1 : 0.7, // Reduced opacity on mobile
+                  }}
+                />
+              </div>
+
+              {/* Gradient Overlay */}
+              <div
+                className={cn(
+                  "absolute inset-0 transition-opacity duration-500",
+                  activeCard === service.id
+                    ? "bg-gradient-to-br from-[#003C46]/85 to-[#0098AF]/95 opacity-100"
+                    : "bg-gradient-to-b from-transparent to-[#000000]/70 opacity-75"
+                )}
+              />
+
+              {/* Content */}
+              <div className="relative h-full p-6 sm:p-8 lg:p-8 flex flex-col justify-between h-[200px]">
+                <div>
+                  <h2 className="text-lg sm:text-xl lg:text-3xl font-semibold mb-3 sm:mb-4 text-white tracking-wide drop-shadow-md">
+                    {service.title}
+                  </h2>
+                  <p
+                    className={cn(
+                      "text-sm sm:text-base lg:text-sm text-justify leading-relaxed transition-all duration-500 ease-in-out",
+                      activeCard === service.id
+                        ? "text-gray-200 opacity-100"
+                        : "text-gray-900 opacity-0 h-0"
+                    )}
+                  >
+                    {activeCard === service.id
+                      ? service.fullDescription
+                      : service.shortDescription}
+                  </p>
+                </div>
+
+                {/* Button */}
+                <div className="flex justify-end mt-2">
                   <Link href={service.href}>
                     <Button
                       variant="secondary"

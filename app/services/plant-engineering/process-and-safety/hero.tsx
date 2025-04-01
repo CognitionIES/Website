@@ -42,7 +42,7 @@ export default function Hero() {
             </Link>
             <FiChevronRight className="w-4 h-4" />
             <Link
-              href="/services/services/plant-engineering/process-and-safety"
+              href="/services/services/plant-engineering/details#section-1"
               className="hover:text-[#99D5DF] transition-colors duration-200"
             >
               Process & Safety Engineering
