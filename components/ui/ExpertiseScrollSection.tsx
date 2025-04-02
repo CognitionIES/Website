@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
 import blueBulletImage from "@/constants/images/Bullet_Points/bullet_point_blue_1.png";
-import grayBulletImage from "@/constants/images/Bullet_Points/bullet_point_gray.png";
+import BulletPointGray from "@/constants/images/Bullet_Points/gray.png";
 
 interface ScrollSectionProps {
   index: number; 
@@ -29,7 +29,7 @@ export function ScrollSection({
   });
 
   const isEven = index % 2 === 0;
-  const bulletImage = isEven ? blueBulletImage : grayBulletImage;
+  const bulletImage = isEven ? blueBulletImage : BulletPointGray;
 
   const containerVariants = {
     hidden: { opacity: 0 },

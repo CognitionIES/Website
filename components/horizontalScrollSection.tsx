@@ -2,7 +2,7 @@ import React, { forwardRef } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
-import BulletPointGray from "@/constants/images/Bullet_points/bullet_point_gray.png";
+import BulletPointGray from "@/constants/images/Bullet_Points/gray.png";
 import BulletPointBlue from "@/constants/images/Bullet_Points/bullet_point_blue_1.png";
 
 interface BulletPoint {
