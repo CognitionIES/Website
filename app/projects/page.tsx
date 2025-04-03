@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 import { MegaMenu } from "@/components/ui/Megamenu/MegaMenu";
 // import projectsHeroImage from "@/constants/images/WEB LOGO.png"; // Replace with actual hero image
 import Hero from "./hero";
-import TestimonialSlider from "@/components/HomePage/Testimonials";
+//import TestimonialSlider from "@/components/HomePage/Testimonials";
 import Footer from "@/components/footer";
 
 const Projects: React.FC = () => {
@@ -47,23 +47,23 @@ const Projects: React.FC = () => {
 //     { quote: "Boosted our profitability.", author: "John Smith, ManufactureX" },
 //   ];
 
-  const stats = [
-    { label: "Projects Completed", value: "100+" },
-    { label: "Clients Served", value: "100+" },
-    { label: "Industries Impacted", value: "100+" },
-  ];
+  // const stats = [
+  //   { label: "Projects Completed", value: "100+" },
+  //   { label: "Clients Served", value: "100+" },
+  //   { label: "Industries Impacted", value: "100+" },
+  // ];
 
-  const faqs = [
-    {
-      question: "What types of projects do you undertake?",
-      answer:
-        "We specialize in digital transformation and cost management projects.",
-    },
-    {
-      question: "How long does a typical project take?",
-      answer: "Most projects range from 6 to 12 months depending on scope.",
-    },
-  ];
+  // const faqs = [
+  //   {
+  //     question: "What types of projects do you undertake?",
+  //     answer:
+  //       "We specialize in digital transformation and cost management projects.",
+  //   },
+  //   {
+  //     question: "How long does a typical project take?",
+  //     answer: "Most projects range from 6 to 12 months depending on scope.",
+  //   },
+  // ];
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -165,7 +165,7 @@ const Projects: React.FC = () => {
         />
       </section>
 
-      {/* Testimonials Section */}
+      {/* Testimonials Section
       <section className="w-full py-12 sm:py-14 lg:py-22 bg-gray-100 relative overflow-hidden">
         {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#003C46] relative drop-shadow-md text-center mb-12">
@@ -187,11 +187,11 @@ const Projects: React.FC = () => {
               </div>
             ))}
           </div>
-        </div> */}
+        </div> 
         <TestimonialSlider />
-      </section>
+      </section> */}
 
-      {/* Stats Section */}
+      {/* Stats Section
       <section className="w-full py-12 sm:py-14 lg:py-22 bg-[#003C46] text-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
@@ -214,10 +214,10 @@ const Projects: React.FC = () => {
           }}
           className="absolute top-1/4 right-1/4 w-5 h-5 bg-[#0098AF] opacity-30 rounded-full -z-10"
         />
-      </section>
+      </section> */}
 
       {/* FAQ Section */}
-      <section className="w-full py-12 sm:py-14 lg:py-22 relative overflow-hidden">
+      {/* <section className="w-full py-12 sm:py-14 lg:py-22 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#003C46] relative drop-shadow-md  mb-12">
             Frequently Asked Questions
@@ -237,7 +237,7 @@ const Projects: React.FC = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Call to Action Section */}
       <section className="w-full py-12 sm:py-14 lg:py-22 bg-[#0098AF] text-white relative overflow-hidden">

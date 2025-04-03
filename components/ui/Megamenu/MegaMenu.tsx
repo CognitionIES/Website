@@ -65,16 +65,16 @@ interface MainCategory {
   };
 }
 
-const projectsData: SubCategory[] = [
-  {
-    title: "Digitalization",
-    href: "/projects/digitalization",
-  },
-  {
-    title: "Product Cost Management",
-    href: "/projects/product-cost-management",
-  },
-];
+// const projectsData: SubCategory[] = [
+//   {
+//     title: "Digitalization",
+//     href: "/projects/digitalization",
+//   },
+//   {
+//     title: "Product Cost Management",
+//     href: "/projects/product-cost-management",
+//   },
+// ];
 
 // In MegaMenu.tsx
 const servicesData: MainCategory[] = [
@@ -455,7 +455,7 @@ export function MegaMenu() {
                   </div>
                 )}
               </div>
-              <div
+              {/* <div
                 className="relative"
                 onMouseEnter={() => setActiveDropdown("projects")}
                 onMouseLeave={() => setActiveDropdown(null)}
@@ -491,7 +491,14 @@ export function MegaMenu() {
                   </div>
                 )}
               </div>
-
+               */}
+              <Link
+                href="/projects"
+                className="text-gray-700 hover:text-blue-900 text-lg p-2 font-medium transition-colors duration-200"
+              >
+                Projects
+              </Link>
+              
               <Link
                 href="/careers"
                 className="text-gray-700 hover:text-blue-900 text-lg p-2 font-medium transition-colors duration-200"

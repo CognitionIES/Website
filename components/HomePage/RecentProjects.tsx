@@ -180,7 +180,7 @@ const RecentProjects = () => {
                       <h3 className="text-lg sm:text-2xl font-semibold text-[#5b5b5b] group-hover:text-[#0098af] transition-colors">
                         {project.title}
                       </h3>
-                      <p className="text-gray-600 line-clamp-3 text-sm sm:text-base text-justify leading-relaxed">
+                      <p className="text-gray-600 line-clamp-3  text-sm sm:text-base  leading-relaxed">
                         {project.description}
                       </p>
                       <a

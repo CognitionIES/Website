@@ -138,15 +138,14 @@ export const PLANT_ENGINEERING_CONSTANTS = {
             subPoints: [
               "Piping Support Design & Load Calculations",
               "Nozzle Orientation, Spool, Special Supports & Platform Design Drawings",
-              "As Built Documentation & Updates",
+             
             ],
           },
           {
-            mainTopic: "Material & Specification Management",
+            mainTopic: "Material & Specification MGMT.",
             subPoints: [
               "Piping MTO & BOM",
-              "Material & Specification Management",
-              "Insulation, Painting, & Material Spec.",
+                            "Insulation, Painting, & Material Spec.",
               "Specialty Items List",
               "Valve & Piping Special Component Data Sheets",
             ],
@@ -156,7 +155,7 @@ export const PLANT_ENGINEERING_CONSTANTS = {
             subPoints: [
               "Piping Stress Analysis",
               "3D Modeling & Simulation",
-              "Analysis & Modeling",
+              "As Built Documentation & Updates",
             ],
           },
         ],
@@ -185,21 +184,20 @@ export const PLANT_ENGINEERING_CONSTANTS = {
             mainTopic: "Types of Piping Stress Analysis",
             subPoints: [
               
+              "Sustained / Longitudinal Stress Evaluation",
               "Piping Flexibility & Support Optimization",
               "Elastic & Plastic Stress Analysis",
-              "Upheaval & Buckling Analysis",
-              "Collapse & Structural Stability",
-              "Sustained / Longitudinal Stress Evaluation",
             ],
           },
           {
             mainTopic: "Engineering Calculations & Validations",
             subPoints: [
-              "Engineering Calculations & Validations",
               "Trunnion Support Load Check",
-              "Flange Integrity Analysis (NC-3685.3 & API Standards)",
+              "Upheaval & Buckling Analysis",
               "Weld Strength Evaluation",
               "U Bolt Load Calculations",
+              "Collapse & Structural Stability ",
+              "Flange Integrity Analysis (NC-3685.3 & API Standards)",
             ],
           },
         ],
@@ -208,7 +206,7 @@ export const PLANT_ENGINEERING_CONSTANTS = {
       //Mechanical Engineering
       {
         icon: Wrench,
-        title: "Mechanical Engineering",
+        title: "Mechanical Design Engineering",
         description:
           "Engineering and maintaining high-performance mechanical systems to ensure plant reliability, efficiency, and safety through detailed design and analysis.",
         image: mechImage,
@@ -219,42 +217,40 @@ export const PLANT_ENGINEERING_CONSTANTS = {
             mainTopic: "Equipment Drawings & Detailing",
             subPoints: [
               "Equipment List & Mechanical Datasheets",
-              "Equipment Drawings & Detailing",
               "Mechanical Schematic Diagrams",
-              "Equipment Layout & Arrangement Drawings",
+              "Equipment Drawings & Detailing",
+              "Fatigue & Failure Analysis (FEA)",
               "GA Drawings for Equipment",
               "Nozzle & Manhole Detail Drawings",
+              "Equipment & Pipe Support Drawing",
             ],
           },
           {
             mainTopic: "Equipment Drawings & Detailing",
             subPoints: [
-              "Equipment & Pipe Support Drawings",
               "Ladder & Platform Support Drawings",
               "Tray Support & Welded Internal Details",
               "Tube Bundle Detailing for Shell & Tube HE",
               "3D Modeling & Visualization",
-              "Material Take-Off (MTO) & Bill of Materials (BOM)",
+              "MTO & BOM",
             ],
           },
           {
             mainTopic: "Static and Rotating Equipment",
             subPoints: [
-              "Pressure Vessels",
-              "Static & Rotating Equipment",
+              "Pressure Vessels & Heat Exchangers",
+              // "Static & Rotating Equipment",
               "Columns & Towers",
-              "Heat Exchangers",
-
+              "Storage Tanks",
               "Dryers & Cooling Towers",
               "Pumps & Pumping Systems",
+            
               "Air & Gas Compressors System",
-              "Fatigue & Failure Analysis (FEA)",
             ],
           },
           {
-            mainTopic: "HVAC System Design and Engineering",
+            mainTopic: "HVAC System Design",
             subPoints: [
-              "HVAC System Design & Engineering",
               "HVAC System Design Basis",
               "Heat Load Calculation",
               "Ducting Layout & Routing",
@@ -266,7 +262,7 @@ export const PLANT_ENGINEERING_CONSTANTS = {
       //Electrical Engineering
       {
         icon: Fan,
-        title: "Electrical Engineering",
+        title: "Electrical Design Engineering",
         description:
           "Implementing reliable electrical systems to power plant operations efficiently and safely.",
         image: elecImage,
@@ -285,30 +281,31 @@ export const PLANT_ENGINEERING_CONSTANTS = {
           {
             mainTopic: "Detailed Engineering",
             subPoints: [
-              "Electrical Equipment Specifications & Datasheet",
-              "Plant Intercommunication System",
-              "Power & Control Cable Listings",
-              "Electrical Bill of Materials (BOM)",
+              "Electrical Equipment Spec. & Datasheet",
+              "Final Single Line Diagram (SLD)",
+              "Electrical Equipment & Components Layouts",
+              "Earthing System Design & Layout",
             ],
           },
           {
             mainTopic: "Detailed Engineering ",
             subPoints: [
+              "HV/LV Power Cable Sizing & Routing",
+              "Cable, Illumination & Lightning ",
+              "Detailed Load List & Feeder Lists for Switchgear, MCCs, DB",
+              "Plant intercommunication System",
+              "Power & Control Cable Listings",
+              "Electrical Bill of Materials",
+            ],
+          },
+          {
+            mainTopic: "Detailed Engineering ",
+            subPoints: [
+              "Electrical Bill of Materials (BOM)",
               "Erection Tender Preparation",
               "As Built Drawings & Documentation",
               "Relay Setting Schedules & Protection Coordination Chart",
-              "Final Single Line Diagram (SLD)",
-              "Electrical Equipment & Components Layouts",
-            ],
-          },
-          {
-            mainTopic: "Detailed Engineering ",
-            subPoints: [
-              "Earthing System Design & Layouts",
-              "HV/LV Power Cable Sizing & Routing",
-              "Cable, Illumination & Lightning ",
-              "Protection Layouts",
-              "Detailed Load List & Feeder Lists for Switchgear, MCCs, DB",
+              
             ],
           },
         ],

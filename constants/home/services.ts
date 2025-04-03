@@ -47,38 +47,108 @@
 //     "Engineering isn’t just about solving problems—it’s about pushing boundaries. Our services spans three core domains, where precision meets innovation. Whether it’s revolutionizing mobility, engineering sustainable solutions, or harnessing the power of technology, we help industries move faster, work smarter, and build for the future.",
 // };
 // constants/home/services.js
-//import process from "@/constants/images/process-1.jpeg";
-import product from "@/constants/images/home/product-1.jpeg"
-import process2 from "@/constants/images/home/process-3.jpeg"
 
-export const SERVICES = [
+
+
+//import process from "@/constants/images/process-1.jpeg";
+// import product from "@/constants/images/home/product-1.jpeg"
+// import process2 from "@/constants/images/home/process-3.jpeg"
+
+// export const SERVICES = [
+//   {
+//     id: 1,
+//     title: "Product Engineering",
+//     shortDescription:
+//       "Transforming ideas into innovative, market-ready products with precision and services.",
+//     fullDescription:
+//       "From concept to Creation, we enhance product design, performance, and cost efficiency using advanced engineering solutions. Explore our expertise in product innovation.",
+//     bgColor: "bg-[#003C46]",
+
+//     textColor: "text-white",
+//     image:product,
+//     href: "/services/product-engineering",
+//   },
+//   {
+//     id: 2,
+//     title: "Plant Engineering",
+//     shortDescription:
+//       "Optimizing industrial facilities with advanced engineering and reliable solutions.",
+//     fullDescription:
+//       "Better Processes for Better Results, We optimize manufacturing processes, facility layouts, and equipment efficiency to ensure seamless production and operational excellence. Discover how we enhance industrial performance.",
+//     bgColor: "bg-[#0098AF]",
+//     textColor: "text-white",
+//     image: process2, 
+//     href: "/services/plant-engineering",
+//   },
+// ];
+// export const SERVICES_SECTION = {
+//   TITLE: "Engineering Excellence",
+//   DESCRIPTION:
+//     "Driving innovation and efficiency through advanced engineering solutions, optimizing products and processes for maximum performance.",
+// };
+// import process from "@/constants/images/home/process-1.jpeg";
+
+ import product from "@/constants/images/home/product-1.jpeg"
+ import process2 from "@/constants/images/home/process-3.jpeg"
+export const SERVICE_CARDS = [
   {
     id: 1,
     title: "Product Engineering",
-    shortDescription:
-      "Transforming ideas into innovative, market-ready products with precision and services.",
-    fullDescription:
-      "From concept to Creation, we enhance product design, performance, and cost efficiency using advanced engineering solutions. Explore our expertise in product innovation.",
-    bgColor: "bg-[#003C46]",
-    textColor: "text-white",
-    image:product,
-    href: "/services/product-engineering",
+    icon: "🌐",
+    shortDescription: "Transforming ideas into innovative, market-ready products with precision and services.",
+    description: "Better Processes for Better Results, We optimize manufacturing processes, facility layouts, and equipment efficiency to ensure seamless production and operational excellence. Discover how we enhance industrial performance.",
+   features: [
+     "iOS and Android development",
+     "Cross-platform solutions",
+     "UI/UX design for mobile",
+     "App store optimization"
+     ],
+    link: "/services/product-engineering",
+    image: product
   },
   {
     id: 2,
     title: "Plant Engineering",
-    shortDescription:
-      "Optimizing industrial facilities with advanced engineering and reliable solutions.",
-    fullDescription:
-      "Better Processes for Better Results, We optimize manufacturing processes, facility layouts, and equipment efficiency to ensure seamless production and operational excellence. Discover how we enhance industrial performance.",
-    bgColor: "bg-[#0098AF]",
-    textColor: "text-white",
-    image: process2, 
-    href: "/services/plant-engineering",
+    icon: "🏭",
+    shortDescription: "Optimizing industrial facilities with advanced engineering and reliable solutions.",
+    description: "Better Processes for Better Results, We optimize manufacturing processes, facility layouts, and equipment efficiency to ensure seamless production and operational excellence. Discover how we enhance industrial performance.",
+     features: [
+       "iOS and Android development",
+       "Cross-platform solutions",
+       "UI/UX design for mobile",
+       "App store optimization"
+     ],
+    link: "/services/plant-engineering",
+    image: product
+  },
+  {
+    id: 3,
+    title: "Product Engineering",
+    icon: "🌐",
+    shortDescription: "Transforming ideas into innovative, market-ready products with precision and services.",
+    description: "Better Processes for Better Results, We optimize manufacturing processes, facility layouts, and equipment efficiency to ensure seamless production and operational excellence. Discover how we enhance industrial performance.",
+   features: [
+       "iOS and Android development",
+       "Cross-platform solutions",
+       "UI/UX design for mobile",
+       "App store optimization"
+     ],
+    link: "/services/product-engineering",
+    image: product
+  },
+  {
+    id: 4,
+    title: "Plant Engineering",
+    icon: "🏭",
+    shortDescription: "Optimizing industrial facilities with advanced engineering and reliable solutions.",
+    description: "Better Processes for Better Results, We optimize manufacturing processes, facility layouts, and equipment efficiency to ensure seamless production and operational excellence. Discover how we enhance industrial performance.",
+     features: [
+       "iOS and Android development",
+       "Cross-platform solutions",
+       "UI/UX design for mobile",
+       "App store optimization"
+     ],
+    link: "/services/plant-engineering",
+    image: process2
   },
 ];
-export const SERVICES_SECTION = {
-  TITLE: "Engineering Excellence",
-  DESCRIPTION:
-    "Driving innovation and efficiency through advanced engineering solutions, optimizing products and processes for maximum performance.",
-};

@@ -108,10 +108,7 @@ export default function ContactSection() {
       <h2 className="text-6xl max-w-7xl mx-auto text-center mb-4 font-extrabold text-gray-800 tracking-tight">
         {TITLE}
       </h2>
-      <p className="text-base  max-w-7xl mx-auto text-gray-600 text-center mb-10 leading-relaxed ">
-              {DESCRIPTION.toUpperCase()}
-            </p>
-      
+
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <motion.div
           initial="hidden"
@@ -122,32 +119,14 @@ export default function ContactSection() {
         >
           {/* Contact Info */}
           <div className="space-y-6">
-            
+            {" "}
+            <p className="text-base  max-w-7xl mx-auto text-gray-600 text-justify mb-10 leading-relaxed ">
+              {DESCRIPTION}
+            </p>
             <div className="text-gray-600 bg-white p-5 rounded-lg shadow-sm">
-              {/* <div className="flex items-center space-x-3">
-                <FiMapPin className="h-5 w-5 text-[#0098AF]" />
-                <div>
-                  <h3 className="text-sm font-semibold text-gray-800">
-                    {LOCATION.TITLE}
-                  </h3>
-                  <p className="text-sm">{LOCATION.ADDRESS}</p>
-                </div>
-              </div> */}
+              <div className="flex items-center space-x-3"></div>
               <div className="flex items-center space-x-3">
-                {/* <FiPhone className="h-5 w-5 text-[#0098AF]" />
-                <div>
-                  <h3 className="text-sm font-semibold text-gray-800">
-                    {PHONE.TITLE}
-                  </h3>
-                  {PHONE.NUMBERS.map((number, index) => (
-                    <p key={index} className="text-sm">
-                      {number}
-                    </p>
-                  ))}
-                </div> */}
-              </div>
-              <div className="flex items-center space-x-3">
-                <FiMail className="h-5 w-5 text-[#0098AF]" />
+                <FiMail className=" text-[#0098AF]" />
                 <div>
                   <h3 className="text-sm font-semibold text-gray-800">
                     {EMAIL.TITLE}
@@ -291,7 +270,7 @@ export default function ContactSection() {
               )}
               <Button
                 type="submit"
-                className="w-full bg-[#0098AF] text-white hover:bg-white hover:text-black rounded-lg py-2 text-base  transition-all duration-300 hover:shadow-lg border-2 border-transparent hover:border-[#0098af] hover:outline hover:outline-2 hover:outline-[#0098af] disabled:bg-[#0098AF] disabled:cursor-not-allowed"
+                className=" bg-[#0098AF] text-white hover:bg-white hover:text-black rounded-lg py-2 text-base  transition-all duration-300 hover:shadow-lg border-2 border-transparent hover:border-[#0098af] hover:outline hover:outline-2 hover:outline-[#0098af] disabled:bg-[#0098AF] disabled:cursor-not-allowed"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? "Sending..." : "Submit"}
@@ -303,6 +282,3 @@ export default function ContactSection() {
     </section>
   );
 }
-/*
- <Button className="bg-[#0098af] text-white hover:bg-white hover:text-black text-lg transition-colors duration-200 border-2 border-transparent hover:border-[#0098af] hover:outline hover:outline-2 hover:outline-[#0098af]">
-*/
