@@ -193,7 +193,7 @@ export const HorizontalScrollSection = forwardRef<
                             height={14}
                             className="mt-1 flex-shrink-0"
                           />
-                          <span className="text-sm text-black/80 leading-snug">
+                          <span className="text-sm text-black transition-colors">
                             {point}
                           </span>
                         </motion.li>

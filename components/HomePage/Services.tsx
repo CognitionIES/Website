@@ -396,7 +396,7 @@ import { SERVICE_CARDS } from "@/constants/home/services";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
+// import { AspectRatio } from "@/components/ui/aspect-ratio";
 import Image from "next/image";
 
 const ServiceShowcase = () => {
@@ -544,7 +544,7 @@ const ServiceShowcase = () => {
                     >
                       {/* Card with hover effects and image */}
                       <div className="absolute inset-0 overflow-hidden">
-                        <AspectRatio ratio={16 / 9} className="h-full">
+                        <div className="aspect-w-16 aspect-h-9 h-full">
                           <Image
                             src={service.image}
                             alt={service.title}
@@ -552,7 +552,7 @@ const ServiceShowcase = () => {
                             height={100}
                             className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110"
                           />
-                        </AspectRatio>
+                        </div>
                         <div className="absolute inset-0 bg-gradient-to-b from-[#003C46]/40 to-[#003C46]/80 opacity-90 group-hover:opacity-75 transition-opacity duration-300"></div>
                       </div>
 

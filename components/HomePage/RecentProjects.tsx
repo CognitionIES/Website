@@ -152,7 +152,7 @@ const RecentProjects = () => {
                   )}
                   whileHover={{ y: -5 }}
                 >
-                  <div className="group h-full bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100">
+                  <div className="group h-full bg-white/30 rounded-xl overflow-hidden shadow-sm border border-gray-100">
                     {/* Image container */}
                     <div className="relative h-[180px] sm:h-[240px] w-full overflow-hidden">
                       <div

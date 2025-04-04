@@ -310,7 +310,7 @@ const testimonials: Testimonial[] = [
   {
     id: "testimonial-2",
     quote:
-      "Testimonial - 2.",
+      "Working with Cognition IES transformed our approach to product development. Their comprehensive analysis identified optimization opportunities we hadn't considered. The team's expertise in value engineering delivered a 15% reduction in manufacturing costs while enhancing product quality. Their clear communication and structured methodology made complex engineering concepts accessible to our entire team. I highly recommend their services to any company looking to gain a competitive edge",
     author: "Name - 2",
     position: "Position 2",
     company: "Company2",
@@ -320,7 +320,7 @@ const testimonials: Testimonial[] = [
   {
     id: "testimonial-3",
     quote:
-    "Testimonial - 3",
+    "The team at Cognition IES exceeded our expectations in delivering innovative engineering solutions. Their analytical approach to problem-solving and attention to detail resulted in significant cost savings and improved product performance. The collaborative environment they foster made the entire process smooth and productive. We've seen a marked improvement in our product's market reception since implementing their recommendations.",
   author: "Name 3",
   position: "Position 3",
   company: "Company3",
@@ -361,7 +361,7 @@ const Testimonials = () => {
         />
         <motion.div
           className="absolute bottom-0 right-0 w-64 h-64 rounded-full bg-[#00b4d8] opacity-5 blur-3xl"
-          animate={{ scale: [1, 1.1, 1], opacity: [0.05, 0.08, 0.05] }}
+          animate={{ scale: [1, 1.1, 1], opacity: [0.1, 0.09, 0.09] }}
           transition={{ duration: 6, repeat: Infinity, repeatType: "reverse" }}
         />
       </div>
@@ -372,29 +372,26 @@ const Testimonials = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className=" mb-4"
+          className="mb-4"
         >
           <span className="inline-block px-3 py-1 bg-[#0098af]/10 text-[#0098af] text-xs font-medium uppercase tracking-wider rounded-full mb-4">
             Testimonials
           </span>
-          <h2 className="text-3xl text-left sm:text-4xl font-bold text-[#003C46] ">
-            Voices of Success / What Our Client Says
+          <h2 className="text-3xl text-left sm:text-4xl font-bold text-[#003C46]">
+            Voices of Success
           </h2>
-          <p className="text-[#5b5b5b] text-base text-left sm:text-lg max-w-7xl mx-auto">
-            Hear from our partners about the impact of our innovative solutions. 
-          </p>
-          <p>/</p>
           <p className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-7xl">
-             Discover how our solutions have transformed businesses and created
-             lasting impact, directly from the leaders who partner with us.
-           </p>
+            Discover how our solutions have transformed businesses and created
+            lasting impact, directly from the leaders who partner with us.
+          </p>
         </motion.div>
 
-        {/* Carousel */}
+        {/* Carousel with Side Navigation */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.2 }}
+          className="relative" // Added relative positioning for absolute children
         >
           <Carousel
             opts={{ align: "center", loop: true }}
@@ -405,38 +402,26 @@ const Testimonials = () => {
                 <CarouselItem key={testimonial.id} className="basis-full">
                   <Card
                     className={cn(
-                      "bg-white border-none shadow-lg mx-auto relative",
-                      "max-w-7xl h-[370px]" // Fixed size with max-w-7xl
+                      "bg-white/30 border-none rounded-3xl  mx-auto relative",
+                      "max-w-7xl h-[380px]"
                     )}
                   >
+                     {/* TODO: 4xl in rounded  OPTION */}
                     <CardContent className="p-8 flex flex-col h-full relative">
-                      {/* Quote Icon */}
                       <Quote
                         size={60}
                         className="absolute top-6 right-6 text-[#0098af] opacity-10"
                       />
-                      {/* Gradient Line */}
-                      <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#00b4d8] to-transparent" />
-
-                      {/* Quote with overflow handling */}
+                      <div className="absolute bottom-0 left-0 w-3/4 ml-[140px] items-center h-1 bg-gradient-to-r from-transparent via-[#00b4d8] to-transparent" />
                       <blockquote
-                        className="text-[#5b5b5b] italic text-lg sm:text-xl mb-6 flex-grow overflow-y-auto"
-                        style={{ maxHeight: "250px" }} // Adjusted for larger card
+                        className="text-[#000000]/90 text-center italic text-lg sm:text-xl mb-6 flex-grow overflow-y-auto"
+                        style={{ maxHeight: "250px" }}
                       >
                         &quot;{testimonial.quote}&quot;
                       </blockquote>
-
-                      {/* Author Info */}
                       <div className="flex justify-center items-center gap-4 mt-auto">
-                        {/* Uncomment if you want the avatar back */}
-                        {/* <Avatar className="h-12 w-12 border-2 border-[#0098af]/20">
-                          <AvatarImage src={testimonial.image} alt={testimonial.author} />
-                          <AvatarFallback className="bg-[#0098af] text-white">
-                            {testimonial.author.split(" ").map((n) => n[0]).join("")}
-                          </AvatarFallback>
-                        </Avatar> */}
                         <div className="text-center">
-                          <h3 className="text-[#003C46] font-bold text-lg">
+                          <h3 className="text-[#5b5b5b] font-bold text-lg">
                             {testimonial.author}
                           </h3>
                           <p className="text-[#5b5b5b] text-sm">
@@ -453,17 +438,15 @@ const Testimonials = () => {
               ))}
             </CarouselContent>
 
-            {/* Navigation */}
-            <div className="flex justify-center gap-4 mt-12">
-              <CarouselPrevious
-                className="static h-12 w-12 rounded-full bg-[#0098af] text-white hover:bg-[#00b4d8] transition-colors duration-300"
-                aria-label="Previous testimonial"
-              />
-              <CarouselNext
-                className="static h-12 w-12 rounded-full bg-[#0098af] text-white hover:bg-[#00b4d8] transition-colors duration-300"
-                aria-label="Next testimonial"
-              />
-            </div>
+            {/* Side Navigation Arrows */}
+            <CarouselPrevious
+              className="absolute left-[-60px] top-1/2 transform -translate-y-1/2 h-12 w-12 rounded-full bg-[#0098af] text-white hover:bg-[#00b4d8] transition-colors duration-300"
+              aria-label="Previous testimonial"
+            />
+            <CarouselNext
+              className="absolute right-[-60px] top-1/2 transform -translate-y-1/2 h-12 w-12 rounded-full bg-[#0098af] text-white hover:bg-[#00b4d8] transition-colors duration-300"
+              aria-label="Next testimonial"
+            />
           </Carousel>
         </motion.div>
       </div>

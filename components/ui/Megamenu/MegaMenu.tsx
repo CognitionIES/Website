@@ -26,6 +26,7 @@ import {
   Server,
   Users,
 } from "lucide-react";
+import employeeIcon from "@/constants/images/employee.svg";
 // import {
 //   Gauge,
 //   Shield,
@@ -228,24 +229,24 @@ const servicesData: MainCategory[] = [
     href: "/services/staffing",
     subCategories: [
       {
-        title: "Temporary Staffing",
-        href: "/services/staffing/temp-staff",
-        icon: <Code className="w-4 h-4" />,
+        title: "For Job Seeker",
+        href: "/services/staffing/job-seeker",
+        icon: (
+          <span className="group flex items-center">
+            <Image
+              src={employeeIcon}
+              alt="Employee Icon"
+              width={16}
+              height={16}
+              className="transition-colors duration-200 group-hover:filter group-hover:brightness-0 group-hover:invert" // Changes to black on hover
+            />
+          </span>
+        ),
       },
       {
-        title: "Permanent Placement",
-        href: "/services/staffing/permanent-placement",
-        icon: <Code className="w-4 h-4" />,
-      },
-      {
-        title: "Executive Search",
-        href: "/services/staffing/executive-search",
-        icon: <Code className="w-4 h-4" />,
-      },
-      {
-        title: "Contract-to-Hire",
-        href: "/services/staffing/contract-to-hire",
-        icon: <Code className="w-4 h-4" />,
+        title: "For Employer",
+        href: "/services/staffing/employer",
+        icon: <Image src={employeeIcon} alt="Employee Icon" width={16} height={16} />,
       },
     ],
     image: {
@@ -455,50 +456,14 @@ export function MegaMenu() {
                   </div>
                 )}
               </div>
-              {/* <div
-                className="relative"
-                onMouseEnter={() => setActiveDropdown("projects")}
-                onMouseLeave={() => setActiveDropdown(null)}
-              >
-                <button
-                  className={`flex items-center p-2 text-gray-700 hover:text-blue-900 text-lg font-medium transition-colors duration-200 ${
-                    isSticky ? "py-3" : "py-4"
-                  }`}
-                >
-                  Projects
-                  <motion.span
-                    variants={arrowVariants}
-                    initial="closed"
-                    animate={activeDropdown === "projects" ? "open" : "closed"}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <ChevronDown className="ml- h-4 w-4" />
-                  </motion.span>
-                </button>
-                {activeDropdown === "projects" && (
-                  <div className="absolute z-[100] left-0 mt-0 w-56 bg-[#0098af] mt-[1px] shadow-lg border border-gray-100 rounded-md">
-                    <div className="flex  flex-col">
-                      {projectsData.map((item) => (
-                        <Link
-                          key={item.title}
-                          href={item.href}
-                          className="px-4 py-2 text-white  hover:text-black transition-colors duration-200"
-                        >
-                          {item.title}
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
-               */}
+
               <Link
                 href="/projects"
                 className="text-gray-700 hover:text-blue-900 text-lg p-2 font-medium transition-colors duration-200"
               >
                 Projects
               </Link>
-              
+
               <Link
                 href="/careers"
                 className="text-gray-700 hover:text-blue-900 text-lg p-2 font-medium transition-colors duration-200"

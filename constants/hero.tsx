@@ -1,9 +1,12 @@
 import { StaticImageData } from "next/image";
 import image1 from "./images/hero/builder-repairman-install-hvac-duct-cleaning-ventilation-pipes-hanging-from-ceiling.jpg";
- import image2 from "./images/hero/excavator-action.jpg";
+// import image2 from "./images/hero/excavator-action.jpg";
 //import image3 from "./images/hero/factory-worker-control-robotic-arm-factory.jpg";
 import image4 from "./images/hero/portrait-engineers-work-hours-job-site.jpg";
 import image5 from "./images/hero/image.jpg";
+import saasImage from "@/constants/images/hero/saas-2.jpg"
+import recruitmentImage from "@/constants/images/hero/recruit-1.jpg"
+
 
 export interface HeroSlide {
   id: number;
@@ -49,15 +52,26 @@ export const heroSlides: HeroSlide[] = [
     blurImage: image4,
   },{
     id: 4,
-    title: "staffing title placeholder",
-    subtitle: "staffing sub-title placeholder",
-    majorService: "Staffing and recruitment ",
+    title: "Staffing & Recruitment",
+    subtitle: "Connecting Talent with Opportunity",
+    majorService: "The Right People for the Right Roles ",
     description:
-      "staffing description placeholder",
-    image: image2,
+      "Helping businesses build high-performing teams by sourcing top talent through strategic recruitment and staffing solutions.",
+    image: recruitmentImage,
+    blurImage:
+      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&q=10&w=50&blur=20",
+  },{
+    id: 5,
+    title: "Powering Businesses with SaaS Innovation",
+    subtitle: "Scalable Software for a Digital World",
+    majorService: "SaaS Solutions ",
+    description:
+      "Delivering cloud-based, scalable, and secure software solutions that streamline operations, enhance efficiency, and drive growth.",
+    image: saasImage,
     blurImage:
       "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&q=10&w=50&blur=20",
   },
+  
   
 ];
 // {

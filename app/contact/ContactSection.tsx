@@ -84,7 +84,7 @@ export default function ContactSection() {
         } else {
           setStatus("Oops! Something went wrong.");
         }
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       } catch (error) {
         setStatus("Error submitting form.");
       } finally {
@@ -99,41 +99,46 @@ export default function ContactSection() {
     { value: "Product Engineering", label: "Product Engineering" },
     { value: "Plant Engineering", label: "Plant Engineering" },
     { value: "ServiceCPQ", label: "ServiceCPQ" },
+    { value: "Staffing And Recruitment", label: "Staffing And Recruitment" },
     { value: "Others", label: "Others" },
   ];
 
   return (
     <section className="py-16 bg-gradient-to-br from-gray-50 to-gray-100 relative">
-      {/* <h1 className="text-7xl text-gray-500 max-w-7xl mx-auto text-center mb-10 -z-10 ">CONTACT</h1> */}
-      <h2 className="text-6xl max-w-7xl mx-auto text-center mb-4 font-extrabold text-gray-800 tracking-tight">
-        {TITLE}
-      </h2>
+      <div className="relative">
+        {/* Background "CONTACT" text */}
+        <h1 className="absolute text-[11rem] md:text-[7rem] font-bold text-[#0098af] opacity-10 -top-10 left-1/2 transform -translate-x-1/2 font-montserrat">
+          CONTACT
+        </h1>
+        {/* Foreground "GET IN TOUCH" text */}
+        <h1 className="relative text-6xl md:text-4xl text-center font-bold tracking-wide font-montserrat">
+          <p className="text-[#5b5b5b] py-7">{TITLE}</p>
+        </h1>
+      </div>
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto px-4 mt-10 sm:px-6">
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={STAGGER_CHILDREN}
-          className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start"
+          className="grid grid-cols-1 lg:grid-cols-4 gap-10 items-start" // Changed to 4 columns
         >
-          {/* Contact Info */}
-          <div className="space-y-6">
-            {" "}
-            <p className="text-base  max-w-7xl mx-auto text-gray-600 text-justify mb-10 leading-relaxed ">
+          {/* Contact Info - Reduced Width */}
+          <div className="lg:col-span-1 space-y-2 items-center">
+            <p className="text-base text-gray-600 text-justify mb-10 leading-relaxed">
               {DESCRIPTION}
             </p>
             <div className="text-gray-600 bg-white p-5 rounded-lg shadow-sm">
-              <div className="flex items-center space-x-3"></div>
               <div className="flex items-center space-x-3">
-                <FiMail className=" text-[#0098AF]" />
+                <FiMail className="text-[#0098AF]" />
                 <div>
                   <h3 className="text-sm font-semibold text-gray-800">
                     {EMAIL.TITLE}
                   </h3>
                   <Link
                     href={`mailto:${EMAIL.ADDRESS}`}
-                    className="text-sm  hover:underline"
+                    className="text-sm hover:underline"
                   >
                     {EMAIL.ADDRESS}
                   </Link>
@@ -142,8 +147,8 @@ export default function ContactSection() {
             </div>
           </div>
 
-          {/* Contact Form */}
-          <div className="bg-white p-6 rounded-xl shadow-lg border-t-4 border-[#0098AF] w-[750px] max-h-[460px] flex flex-col">
+          {/* Contact Form - Increased Width */}
+          <div className="lg:col-span-3 bg-white p-6 rounded-xl shadow-lg border-t-4 border-[#0098AF] w-full max-h-[460px] flex flex-col">
             <form onSubmit={handleSubmit} className="space-y-3 flex-1">
               <div className="grid grid-cols-2 gap-3">
                 <Input
@@ -270,7 +275,7 @@ export default function ContactSection() {
               )}
               <Button
                 type="submit"
-                className=" bg-[#0098AF] text-white hover:bg-white hover:text-black rounded-lg py-2 text-base  transition-all duration-300 hover:shadow-lg border-2 border-transparent hover:border-[#0098af] hover:outline hover:outline-2 hover:outline-[#0098af] disabled:bg-[#0098AF] disabled:cursor-not-allowed"
+                className="bg-[#0098AF] text-white hover:bg-white hover:text-black rounded-lg py-2 text-base transition-all duration-300 hover:shadow-lg border-2 border-transparent hover:border-[#0098af] hover:outline hover:outline-2 hover:outline-[#0098af] disabled:bg-[#0098AF] disabled:cursor-not-allowed"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? "Sending..." : "Submit"}

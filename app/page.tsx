@@ -98,6 +98,8 @@ import AboutUs from "@/components/HomePage/AboutUs";
 import dynamic from "next/dynamic";
 import RecentProjects from "@/components/HomePage/RecentProjects";
 import ContactSection from "./contact/ContactSection";
+// import ServiceShowcase from "@/components/HomePage/Services";
+import ServicesShowcase from "@/components/ServicesShowcase";
 
 const TestimonialSlider = dynamic(
   () => import("@/components/HomePage/Testimonials"),
@@ -106,10 +108,10 @@ const TestimonialSlider = dynamic(
 const Careers = dynamic(() => import("@/components/HomePage/Careers"), {
   ssr: false,
 });
-const ServicesSection = dynamic(
-  () => import("@/components/HomePage/Services"),
-  { ssr: false }
-);
+// const ServicesSection = dynamic(
+//   () => import("@/components/HomePage/Services"),
+//   { ssr: false }
+// );
 
 export default function Home() {
   return (
@@ -122,14 +124,16 @@ export default function Home() {
           <AboutUs />
         </section>
         
-        <section className="bg-gradient-to-b from-gray-50 to-[#F5FDFF]">
+        {/* <section className="bg-gradient-to-b from-gray-50 to-[#F5FDFF]">
           <ServicesSection />
+        </section> */}
+        <section>
+          <ServicesShowcase />
         </section>
         <section className="bg-gradient-to-b from-gray-50 to-[#F5FDFF]">
           <RecentProjects />
           </section>
-        {/* <section>
-        </section> */}
+        
         <section className="">
           <TestimonialSlider />
         </section>

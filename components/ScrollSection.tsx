@@ -116,7 +116,7 @@ export function ScrollSection({
                   className="mt-1 flex-shrink-0 transition-transform group-hover:scale-125 "
                   aria-hidden="true"
                 />
-                <span className="text-xl md:text-base  group- text-foreground transition-colors uppercase">
+                <span className="text-xl md:text-base transition-colors uppercase">
                   {/* Increased text size from text-lg to text-xl and md:text-sm to md:text-base */}
                   {point}
                 </span>
