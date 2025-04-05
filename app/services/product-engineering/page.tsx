@@ -6,7 +6,7 @@ import Footer from "@/components/footer";
 import HeroSection from "./HeroSection";
 import AboutSection from "./AboutSection";
 import ServicesSection from "./ServiceSection";
-import FAQSection from "./FAQSection";
+//import FAQSection from "./FAQSection";
 
 export default function ProductEngineeringPage() {
   return (
@@ -22,7 +22,6 @@ export default function ProductEngineeringPage() {
       <ServicesSection  />
       </section >
       {/* FAQ section */}
-      <FAQSection />
       {/* Footer */}
       <Footer />
     </div>

@@ -42,14 +42,15 @@ export function ScrollSection({
     },
   };
 
+  // Modified to always animate from right to left
   const itemVariants = {
     hidden: {
       opacity: 0,
-      x: isEven ? -30 : 30,
+      x: 15, // Start from right for all elements
     },
     visible: {
       opacity: 1,
-      x: 0,
+      x: 0, // Animate to natural position
       transition: {
         duration: shouldReduceMotion ? 0 : 0.4,
       },
@@ -67,12 +68,11 @@ export function ScrollSection({
       aria-label={`Section ${title}`}
     >
       <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6 items-center">
-        {/* Reduced gap-8 to gap-4 and md:gap-12 to md:gap-6 to bring image and text closer */}
         <motion.div
           className={`space-y-2 flex flex-col justify-between h-full ${
             isEven
-              ? "md:order-2  md:col-span-8" // Reduced padding from md:pl-8 to md:pl-4
-              : "md:order-1  md:col-span-8" // Reduced padding from md:pr-8 to md:pr-4
+              ? "md:order-2 md:col-span-8"
+              : "md:order-1 md:col-span-8"
           }`}
           variants={itemVariants}
         >
@@ -83,10 +83,6 @@ export function ScrollSection({
             >
               {title}
             </motion.h2>
-            {/* <motion.div
-              className="h-1 w-32 md:w-40 bg-gradient-to-r from-primary to-transparent rounded-full"
-              variants={itemVariants}
-            /> */}
           </div>
 
           <motion.p
@@ -105,7 +101,7 @@ export function ScrollSection({
                 key={idx}
                 className="flex items-start space-x-3 group flex-1 min-w-[250px]"
                 variants={itemVariants}
-                whileHover={shouldReduceMotion ? {} : { x: 5 }}
+                whileHover={shouldReduceMotion ? {} : { x: -5 }} // Changed from x: 5 to x: -5 for hover
                 role="listitem"
               >
                 <Image
@@ -113,11 +109,10 @@ export function ScrollSection({
                   alt=""
                   width={16}
                   height={16}
-                  className="mt-1 flex-shrink-0 transition-transform group-hover:scale-125 "
+                  className="mt-1 flex-shrink-0 transition-transform group-hover:scale-125"
                   aria-hidden="true"
                 />
                 <span className="text-xl md:text-base transition-colors uppercase">
-                  {/* Increased text size from text-lg to text-xl and md:text-sm to md:text-base */}
                   {point}
                 </span>
               </motion.li>
@@ -127,12 +122,10 @@ export function ScrollSection({
           {additionalImageUrl && (
             <motion.div
               className="relative max-w-[1200px] py-0 h-[140px] rounded-lg overflow-hidden mt-auto"
-              // Removed py-10, added mt-auto to stick the image to the bottom
               variants={itemVariants}
             >
               <motion.div
                 className="relative w-full h-full transform-gpu"
-              //  whileHover={shouldReduceMotion ? {} : { scale: 1.0 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <Image
@@ -151,12 +144,12 @@ export function ScrollSection({
         <motion.div
           className={`relative h-[510px] w-[360px] ${
             isEven
-              ? "md:order-1 md:col-span-4 md:mr-2" // Reduced margin from md:mr-auto to md:mr-2
-              : "md:order-2 md:col-span-4 md:ml-8 " // Reduced margin from md:ml-auto to md:ml-2
+              ? "md:order-1 md:col-span-4 md:mr-2"
+              : "md:order-2 md:col-span-4 md:ml-8"
           }`}
           variants={itemVariants}
         >
-          <div className="absolute inset-0  rounded-2xl overflow-hidden shadow-xl">
+          <div className="absolute inset-0 rounded-2xl overflow-hidden shadow-xl">
             <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent z-10" />
             <motion.div
               className="relative w-full h-full transform-gpu"

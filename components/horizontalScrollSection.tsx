@@ -16,7 +16,7 @@ interface HorizontalScrollSectionProps {
   bulletPoints: BulletPoint[];
   imageUrl: string;
   id?: string;
-  columns?: 3 | 4; // New optional prop for number of columns
+  columns?: 3 | 4;
 }
 
 export const HorizontalScrollSection = forwardRef<
@@ -30,7 +30,7 @@ export const HorizontalScrollSection = forwardRef<
       bulletPoints = [],
       imageUrl,
       id,
-      columns = 4, // Default to 4 columns
+      columns = 4,
     }: HorizontalScrollSectionProps,
     ref
   ) => {
@@ -41,28 +41,28 @@ export const HorizontalScrollSection = forwardRef<
     });
 
     const containerVariants = {
-      hidden: { opacity: 0, y: 30 },
+      hidden: { opacity: 0, x: 30 },
       visible: {
         opacity: 1,
-        y: 0,
+        x: 0,
         transition: { duration: 0.6, ease: "easeOut" },
       },
     };
 
     const itemVariants = {
-      hidden: { opacity: 0, y: 20 },
+      hidden: { opacity: 0, x: 30 },
       visible: {
         opacity: 1,
-        y: 0,
+        x: 0,
         transition: { duration: shouldReduceMotion ? 0 : 0.5, ease: "easeOut" },
       },
     };
 
     const imageVariants = {
-      hidden: { opacity: 0, scale: 0.95 },
+      hidden: { opacity: 0, x: 30 },
       visible: {
         opacity: 1,
-        scale: 1,
+        x: 0,
         transition: { duration: 0.7, ease: "easeOut" },
       },
       hover: {
@@ -72,7 +72,7 @@ export const HorizontalScrollSection = forwardRef<
     };
 
     const columnVariants = {
-      hidden: { opacity: 0, x: -20 },
+      hidden: { opacity: 0, x: 15 },
       visible: (i: number) => ({
         opacity: 1,
         x: 0,
@@ -102,7 +102,6 @@ export const HorizontalScrollSection = forwardRef<
       inViewRef(node);
     };
 
-    // Prepare columns based on the 'columns' prop
     const columnGroups: BulletPoint[] = Array(columns).fill({
       mainTopic: "",
       subPoints: [],
@@ -122,10 +121,9 @@ export const HorizontalScrollSection = forwardRef<
     const bulletPointImage = isBlueBackground
       ? BulletPointGray
       : BulletPointBlue;
-    const titleColor = isBlueBackground ? "#5b5b5b" : "#0098af";
 
-    // Dynamic width class based on number of columns
     const columnWidthClass = columns === 3 ? "lg:w-1/3" : "lg:w-1/4";
+
     return (
       <motion.section
         ref={setRefs}
@@ -138,7 +136,7 @@ export const HorizontalScrollSection = forwardRef<
         aria-labelledby={`${id}-title`}
       >
         <div
-          className={`w-full h-[580px] max-w-7xl mx-auto px-6 py-4 rounded-xl transition-all duration-300 outline outline-1 outline-black shadow-md hover:shadow-lg ${
+          className={`w-full min-h-[580px] max-w-7xl mx-auto px-6 py-4 rounded-xl transition-all duration-300 outline outline-1 outline-black shadow-md hover:shadow-lg ${
             isBlueBackground
               ? "bg-gradient-to-br from-[#0098af]/10 to-[#0098af]/5"
               : "bg-gradient-to-br from-[#5b5b5b]/10 to-[#5b5b5b]/5"
@@ -149,15 +147,14 @@ export const HorizontalScrollSection = forwardRef<
             <motion.div className="text-left" variants={itemVariants}>
               <motion.h2
                 id={`${id}-title`}
-                className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight"
-                style={{ color: titleColor }}
+                className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-black"
                 variants={itemVariants}
               >
                 {title}
               </motion.h2>
             </motion.div>
 
-            {/* Enhanced Bullet Points Section */}
+            {/* Enhanced Bullet Points Section - Now with dynamic height */}
             <motion.div
               className="relative flex flex-col lg:flex-row gap-4 justify-between"
               variants={containerVariants}
@@ -169,7 +166,7 @@ export const HorizontalScrollSection = forwardRef<
                     variants={columnVariants}
                     initial="hidden"
                     animate={inView ? "visible" : "hidden"}
-                    className={`flex flex-col p-1 w-full ${columnWidthClass} h-[280px] transition-all duration-300`}
+                    className={`flex flex-col p-1 w-full ${columnWidthClass} min-h-fit transition-all duration-300`}
                   >
                     <motion.h3
                       className="text-base uppercase font-semibold text-[#1F2937] pb-2 border-b border-[#0098af]/20 mb-3"
@@ -200,17 +197,16 @@ export const HorizontalScrollSection = forwardRef<
                       ))}
                     </ul>
                   </motion.div>
-                  {/* Gradient Vertical Divider */}
                   {groupIdx < columns - 1 && (
-                    <div className="hidden lg:block w-[1px] h-[280px] bg-gradient-to-b from-gray-200/50 via-gray-400/50 to-gray-200/50 dark:from-gray-700 dark:via-gray-400 dark:to-gray-700 self-center" />
+                    <div className="hidden lg:block w-[1px] bg-gradient-to-b from-gray-200/50 via-gray-400/50 to-gray-200/50 dark:from-gray-700 dark:via-gray-400 dark:to-gray-700 self-stretch" />
                   )}
                 </React.Fragment>
               ))}
             </motion.div>
 
-            {/* Image Section */}
+            {/* Image Section - Now with relative height */}
             <motion.div
-              className="relative w-full h-[200px] rounded-xl overflow-hidden shadow-md"
+              className="relative w-full  h-auto aspect-[5/1] rounded-xl overflow-hidden shadow-md mt-4"
               variants={imageVariants}
               whileHover="hover"
             >
@@ -219,7 +215,7 @@ export const HorizontalScrollSection = forwardRef<
                 alt={`Illustration for ${title}`}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="object-cover transition-opacity duration-300 hover:opacity-95"
+                className="object-cover transition-opacity  duration-300 hover:opacity-95"
                 priority={index === 0}
               />
               <motion.div

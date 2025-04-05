@@ -48,8 +48,6 @@
 // };
 // constants/home/services.js
 
-
-
 //import process from "@/constants/images/process-1.jpeg";
 // import product from "@/constants/images/home/product-1.jpeg"
 // import process2 from "@/constants/images/home/process-3.jpeg"
@@ -77,7 +75,7 @@
 //       "Better Processes for Better Results, We optimize manufacturing processes, facility layouts, and equipment efficiency to ensure seamless production and operational excellence. Discover how we enhance industrial performance.",
 //     bgColor: "bg-[#0098AF]",
 //     textColor: "text-white",
-//     image: process2, 
+//     image: process2,
 //     href: "/services/plant-engineering",
 //   },
 // ];
@@ -88,67 +86,75 @@
 // };
 // import process from "@/constants/images/home/process-1.jpeg";
 
- import product from "@/constants/images/home/product-1.jpeg"
- import process2 from "@/constants/images/home/process-3.jpeg"
+import product from "@/constants/images/home/product-1.jpeg";
+import process2 from "@/constants/images/home/process-3.jpeg";
 export const SERVICE_CARDS = [
   {
     id: 1,
     title: "Product Engineering",
     icon: "🌐",
-    shortDescription: "Transforming ideas into innovative, market-ready products with precision and services.",
-    description: "Better Processes for Better Results, We optimize manufacturing processes, facility layouts, and equipment efficiency to ensure seamless production and operational excellence. Discover how we enhance industrial performance.",
-   features: [
-     "iOS and Android development",
-     "Cross-platform solutions",
-     "UI/UX design for mobile",
-     "App store optimization"
-     ],
+    shortDescription:
+      "Transforming ideas into innovative, market-ready products with precision and services.",
+    description:
+      "    Bridging innovation and execution, we engineer high-performance products that meet industry standards and customer expectations.",
+    features: [
+      "iOS and Android development",
+      "Cross-platform solutions",
+      "UI/UX design for mobile",
+      "App store optimization",
+    ],
     link: "/services/product-engineering",
-    image: product
+    image: product,
   },
   {
     id: 2,
     title: "Plant Engineering",
     icon: "🏭",
-    shortDescription: "Optimizing industrial facilities with advanced engineering and reliable solutions.",
-    description: "Better Processes for Better Results, We optimize manufacturing processes, facility layouts, and equipment efficiency to ensure seamless production and operational excellence. Discover how we enhance industrial performance.",
-     features: [
-       "iOS and Android development",
-       "Cross-platform solutions",
-       "UI/UX design for mobile",
-       "App store optimization"
-     ],
+    shortDescription:
+      "Optimizing industrial facilities with advanced engineering and reliable solutions.",
+    description:
+      "Simplifying complexity through smart process solutions that boost operational agility and cost-effectiveness.",
+    features: [
+      "iOS and Android development",
+      "Cross-platform solutions",
+      "UI/UX design for mobile",
+      "App store optimization",
+    ],
     link: "/services/plant-engineering",
-    image: product
+    image: product,
   },
   {
     id: 3,
-    title: "Product Engineering",
+    title: "Saas Solutions",
     icon: "🌐",
-    shortDescription: "Transforming ideas into innovative, market-ready products with precision and services.",
-    description: "Better Processes for Better Results, We optimize manufacturing processes, facility layouts, and equipment efficiency to ensure seamless production and operational excellence. Discover how we enhance industrial performance.",
-   features: [
-       "iOS and Android development",
-       "Cross-platform solutions",
-       "UI/UX design for mobile",
-       "App store optimization"
-     ],
+    shortDescription:
+      "Transforming ideas into innovative, market-ready products with precision and services.",
+    description:
+      "Enabling digital transformation through user-friendly, adaptable, and future-proof SaaS applications.",
+    features: [
+      "iOS and Android development",
+      "Cross-platform solutions",
+      "UI/UX design for mobile",
+      "App store optimization",
+    ],
     link: "/services/product-engineering",
-    image: product
+    image: product,
   },
   {
     id: 4,
-    title: "Plant Engineering",
+    title: "Staffing and Recruitment",
     icon: "🏭",
-    shortDescription: "Optimizing industrial facilities with advanced engineering and reliable solutions.",
-    description: "Better Processes for Better Results, We optimize manufacturing processes, facility layouts, and equipment efficiency to ensure seamless production and operational excellence. Discover how we enhance industrial performance.",
-     features: [
-       "iOS and Android development",
-       "Cross-platform solutions",
-       "UI/UX design for mobile",
-       "App store optimization"
-     ],
+    shortDescription:
+      "Optimizing industrial facilities with advanced engineering and reliable solutions.",
+    description:
+      "Finding the perfect fit for every role through a data-driven, industry-specific approach to talent acquisition.",
+    features: [
+      "iOS and Android development",
+      "Cross-platform solutions",
+      "UI/UX design for mobile",
+      "App store optimization",
+    ],
     link: "/services/plant-engineering",
-    image: process2
+    image: process2,
   },
 ];

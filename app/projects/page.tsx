@@ -1,28 +1,28 @@
 "use client";
 
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
-//import { FiChevronDown, FiChevronRight, FiHome } from "react-icons/fi";
 import { MegaMenu } from "@/components/ui/Megamenu/MegaMenu";
-// import projectsHeroImage from "@/constants/images/WEB LOGO.png"; // Replace with actual hero image
 import Hero from "./hero";
-//import TestimonialSlider from "@/components/HomePage/Testimonials";
 import Footer from "@/components/footer";
+import digitalizationImage from "@/constants/images/projects/digitalization.jpg";
+import pcmImage from "@/constants/images/projects/pcm-2.jpg";
 
 const Projects: React.FC = () => {
-  // Expanded project data
+  const [isInView, setIsInView] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
   const projects = [
     {
       title: "Digitalization",
       slug: "digitalization",
       description:
         "Transforming businesses through cutting-edge digital solutions, enhancing efficiency and scalability.",
-      image:
-        "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop",
+      image: digitalizationImage,
       features: ["Point 1", "Point 2", "Point 3"],
       client: "ABC",
       duration: "0 months",
@@ -33,77 +33,76 @@ const Projects: React.FC = () => {
       slug: "product-cost-management",
       description:
         "Optimizing product costs through strategic analysis and resource management for maximum profitability.",
-      image:
-        "https://images.unsplash.com/photo-1551288049-b5f3c5e7c7c0?q=80&w=2070&auto=format&fit=crop",
+      image: pcmImage,
       features: ["Point 1", "Point 2", "Point 3"],
       client: "ABC",
-      duration: " 0 months",
+      duration: "0 months",
       technologies: ["one", "two", "three"],
     },
   ];
 
-//   const testimonials = [
-//     { quote: "Revolutionized our workflow!", author: "Jane Doe, TechCorp" },
-//     { quote: "Boosted our profitability.", author: "John Smith, ManufactureX" },
-//   ];
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInView(entry.isIntersecting);
+      },
+      { threshold: 0.2 }
+    );
 
-  // const stats = [
-  //   { label: "Projects Completed", value: "100+" },
-  //   { label: "Clients Served", value: "100+" },
-  //   { label: "Industries Impacted", value: "100+" },
-  // ];
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
 
-  // const faqs = [
-  //   {
-  //     question: "What types of projects do you undertake?",
-  //     answer:
-  //       "We specialize in digital transformation and cost management projects.",
-  //   },
-  //   {
-  //     question: "How long does a typical project take?",
-  //     answer: "Most projects range from 6 to 12 months depending on scope.",
-  //   },
-  // ];
+    return () => {
+      if (sectionRef.current) {
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
+  // Animation variants for individual cards
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (index: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        delay: index * 0.3, // Stagger each card by 0.3 seconds
+      },
+    }),
+  };
 
   return (
     <div className="min-h-screen bg-gray-50">
       <MegaMenu />
-
-      {/* Hero Section */}
-      <section className="relative h-[350px] overflow-hidden">
+      <section className="relative h-[400px] overflow-hidden">
         <Hero />
       </section>
 
-      {/* Intro Section 
-      <section className="w-full py-12 sm:py-14 lg:py-22 relative overflow-hidden bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-justify">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#003C46] relative drop-shadow-md">
-            Innovating for Impact
-            <span className="absolute bottom-0 transform w-12 h-0.5 bg-gradient-to-r from-[#0098AF] to-transparent" />
-          </h2>
-          <p className="text-base sm:text-lg leading-relaxed text-gray-600 mt-6 max-w-7xl mx-auto">
-            Our projects harness technology and strategy to deliver transformative results, driving efficiency and profitability across industries.
-          </p>
-        </div>
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.15 }}
-          transition={{ delay: 1, duration: 1, repeat: Infinity, repeatType: "reverse" }}
-          className="absolute top-1/4 right-1/4 w-5 h-5 bg-[#0098AF] opacity-30 rounded-full -z-10"
-        />
-      </section>*/}
-
-      {/* Projects Section */}
-      <section className="w-full py-12 sm:py-14 lg:py-22 relative overflow-hidden">
+      <section
+        ref={sectionRef}
+        className="w-full py-12 sm:py-14 lg:py-22 relative overflow-hidden"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#003C46] relative drop-shadow-md text-justify mb-12">
-            Featured Projects
-            <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-[#0098AF] to-transparent" />
-          </h2>
+          <div className="mb-8 max-w-7xl">
+            <span className="inline-block px-3 py-1 bg-[#0098af]/10 text-[#0098af] text-xs font-medium uppercase tracking-wider rounded-full mb-4">
+              Projects
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#003C46] mb-4">
+              Fresh Results / Current Wins / What’s Done
+            </h2>
+          </div>
+
           <div className="space-y-12">
             {projects.map((project, index) => (
-              <div
+              <motion.div
                 key={project.title}
+                custom={index}
+                initial="hidden"
+                animate={isInView ? "visible" : "hidden"}
+                variants={cardVariants}
                 className={cn(
                   "grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-white p-6 rounded-xl shadow-lg",
                   index % 2 === 1 ? "md:flex-row-reverse" : ""
@@ -153,7 +152,7 @@ const Projects: React.FC = () => {
                     </Button>
                   </Link>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -165,83 +164,13 @@ const Projects: React.FC = () => {
         />
       </section>
 
-      {/* Testimonials Section
-      <section className="w-full py-12 sm:py-14 lg:py-22 bg-gray-100 relative overflow-hidden">
-        {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#003C46] relative drop-shadow-md text-center mb-12">
-            Client Testimonials
-            <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-12 h-0.5 bg-gradient-to-r from-[#0098AF] to-transparent" />
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <div
-                key={index}
-                className="bg-white p-6 rounded-xl shadow-lg text-center space-y-4"
-              >
-                <p className="text-base sm:text-lg text-gray-600 italic">
-                  &quot;{testimonial.quote}&quot;
-                </p>
-                <p className="text-gray-800 font-semibold">
-                  {testimonial.author}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div> 
-        <TestimonialSlider />
-      </section> */}
-
-      {/* Stats Section
-      <section className="w-full py-12 sm:py-14 lg:py-22 bg-[#003C46] text-white relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            {stats.map((stat) => (
-              <div key={stat.label} className="space-y-2">
-                <p className="text-4xl sm:text-5xl font-bold">{stat.value}</p>
-                <p className="text-base sm:text-lg">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.15 }}
-          transition={{
-            delay: 1,
-            duration: 1,
-            repeat: Infinity,
-            repeatType: "reverse",
-          }}
-          className="absolute top-1/4 right-1/4 w-5 h-5 bg-[#0098AF] opacity-30 rounded-full -z-10"
-        />
-      </section> */}
-
-      {/* FAQ Section */}
-      {/* <section className="w-full py-12 sm:py-14 lg:py-22 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#003C46] relative drop-shadow-md  mb-12">
-            Frequently Asked Questions
-          <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-[#0098AF] to-transparent" />
-          </h2>
-
-          <div className="space-y-6">
-            {faqs.map((faq, index) => (
-              <div key={index} className="bg-white p-6 rounded-xl shadow-lg">
-                <h3 className="text-xl sm:text-2xl font-semibold text-[#003C46]">
-                  {faq.question}
-                </h3>
-                <p className="text-base sm:text-lg text-gray-600 mt-2 text-justify">
-                  {faq.answer}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
-
-      {/* Call to Action Section */}
       <section className="w-full py-12 sm:py-14 lg:py-22 bg-[#0098AF] text-white relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+        >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 drop-shadow-md">
             Ready to Start Your Project?
           </h2>
@@ -253,7 +182,7 @@ const Projects: React.FC = () => {
               Get in Touch
             </Button>
           </Link>
-        </div>
+        </motion.div>
         <motion.div
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 0.1, scale: 1 }}
@@ -267,3 +196,196 @@ const Projects: React.FC = () => {
 };
 
 export default Projects;
+/* "use client";
+import { Button } from "@/components/ui/button";
+import { 
+  ArrowUpRight, 
+   
+} from "lucide-react";
+import { ProjectCard } from "@/components/ProjectCard";
+import { useInView } from "@/hooks/useInViews";
+import Hero from "./hero";
+import Link from "next/link";
+import Footer from "@/components/footer"; 
+import digitImage from "@/constants/images/projects/digitalization.jpg";
+import { StaticImageData } from "next/image";
+import pcmImage from "@/constants/images/projects/pcm-2.jpg";
+
+// Define project type for better type safety
+interface Project {
+  id: string;
+  title: string;
+  slug: string;
+  description: string;
+  imageSrc: string | StaticImageData;
+  features: string[];
+  client: string;
+  duration: string;
+  technologies: string[];
+  featured?: boolean;
+}
+
+const Projects: React.FC = () => {
+  // Use our custom hook to detect when elements enter viewport
+  const { ref: sectionRef, inView } = useInView({ threshold: 0.2 });
+  const { ref: ctaRef, inView: ctaInView } = useInView({ threshold: 0.3 });
+  
+  const projects: Project[] = [
+    {
+      id: "1",
+      title: "Digitalization",
+      slug: "digitalization",
+      description:
+        "Transforming businesses through cutting-edge digital solutions, enhancing efficiency and scalability through strategic implementation of modern technologies.",
+      imageSrc: digitImage,
+      features: [
+        "Process automation",
+        "Cloud infrastructure setup",
+        "Digital workflow optimization"
+      ],
+      client: "Global Financial Group",
+      duration: "6 months",
+      technologies: ["React", "Node.js", "AWS"],
+      featured: true
+    },
+    {
+      id: "2",
+      title: "Product Cost Management",
+      slug: "product-cost-management",
+      description:
+        "Optimizing product costs through strategic analysis and resource management for maximum profitability with detailed reporting and forecasting.",
+      imageSrc:pcmImage ,
+      features: [
+        "Cost analysis dashboard",
+        "Supply chain optimization",
+        "Predictive pricing models"
+      ],
+      client: "Manufacturing Excellence Corp",
+      duration: "8 months",
+      technologies: ["Python", "TensorFlow", "Power BI"],
+    },
+    {
+      id: "3",
+      title: "Enterprise Resource Planning",
+      slug: "enterprise-resource-planning",
+      description:
+        "Comprehensive ERP solution tailored for medium to large enterprises, seamlessly integrating all business processes into a unified platform.",
+      imageSrc: "/images/erp-system.jpg", 
+      features: [
+        "Real-time data synchronization",
+        "Custom reporting modules",
+        "Multi-department integration"
+      ],
+      client: "Retail Innovations Ltd",
+      duration: "12 months",
+      technologies: ["Java", "PostgreSQL", "Docker"],
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <Hero />
+      
+      {/* Hero Section 
+      <section className="relative py-24 lg:py-32 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-cyan-50 to-blue-50 z-0"></div>
+        <div 
+          className="absolute inset-0 z-0 opacity-20"
+          style={{
+            backgroundImage: "url('/images/grid-pattern.svg')",
+            backgroundSize: "cover"
+          }}
+        ></div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-4xl">
+            <div 
+              className={`transition-all duration-700 ease-out transform ${inView ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
+            >
+              <span className="inline-block px-3 py-1 bg-cyan-600/10 text-cyan-700 text-xs font-medium uppercase tracking-wider rounded-full mb-4">
+                Our Portfolio
+              </span>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 tracking-tight leading-tight">
+                Innovative Solutions for <span className="text-cyan-600">Modern Challenges</span>
+              </h1>
+              <p className="mt-6 text-lg text-slate-600 leading-relaxed max-w-3xl">
+                Browse our recent projects that showcase our expertise in delivering cutting-edge solutions 
+                tailored to our clients&apos; specific needs and business objectives.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Gallery 
+      <section
+        ref={sectionRef}
+        className="w-full py-16 md:py-24 relative"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <header className="mb-16 text-center">
+            <span className="inline-block px-3 py-1 bg-cyan-600/10 text-cyan-700 text-xs font-medium uppercase tracking-wider rounded-full">
+              Case Studies
+            </span>
+            <h2 className="mt-4 text-3xl md:text-4xl font-bold text-slate-900">
+              Our Latest Projects
+            </h2>
+            <div className="w-24 h-1 bg-cyan-600 mx-auto mt-6"></div>
+          </header>
+
+          <div className="space-y-16 md:space-y-24">
+            {projects.map((project, index) => (
+              <ProjectCard
+                key={project.id}
+                project={project}
+                index={index}
+                inView={inView}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section 
+      <section 
+        ref={ctaRef}
+        className="w-full py-16 md:py-24 relative"
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 to-blue-700 skew-y-1 transform -translate-y-10"></div>
+        <div className="absolute inset-0 opacity-10">
+          <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <defs>
+              <pattern id="grid" width="8" height="8" patternUnits="userSpaceOnUse">
+                <path d="M 8 0 L 0 0 0 8" fill="none" stroke="white" strokeWidth="0.5"></path>
+              </pattern>
+            </defs>
+            <rect width="100" height="100" fill="url(#grid)"></rect>
+          </svg>
+        </div>
+        
+        <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 transition-all duration-700 ease-out transform ${ctaInView ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+          <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 lg:p-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-slate-900">
+              Ready to Transform Your <span className="text-cyan-600">Business</span>?
+            </h2>
+            <p className="text-lg mb-8 text-slate-600 max-w-3xl mx-auto">
+              Our team of experts is ready to help you implement innovative solutions 
+              that will drive your business forward in today&apos;s competitive landscape.
+            </p>
+            <Link href="/contact">
+              <Button className="bg-cyan-600 hover:bg-cyan-700 text-white px-8 py-6 text-lg rounded-lg transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-cyan-200">
+                Start Your Project
+                <ArrowUpRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  );
+};
+
+export default Projects;
+*/

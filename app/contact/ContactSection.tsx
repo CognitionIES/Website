@@ -84,7 +84,7 @@ export default function ContactSection() {
         } else {
           setStatus("Oops! Something went wrong.");
         }
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
       } catch (error) {
         setStatus("Error submitting form.");
       } finally {

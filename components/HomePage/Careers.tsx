@@ -128,7 +128,8 @@ const Badge: React.FC<{ text: string }> = ({ text }) => (
 
 // Main Careers component
 const Careers: React.FC = () => {
-  const { IMAGE, SUBTITLE, DESCRIPTION } = CAREERS_CONSTANTS as unknown as CareersContent;
+  const { IMAGE, SUBTITLE, DESCRIPTION } =
+    CAREERS_CONSTANTS as unknown as CareersContent;
 
   return (
     <section
@@ -145,7 +146,9 @@ const Careers: React.FC = () => {
           <Badge text="We're Hiring" />
         </div>
 
-        <div className={`grid grid-cols-1 md:grid-cols-2 ${responsiveConfig.gap} items-center`}>
+        <div
+          className={`grid grid-cols-1 md:grid-cols-2 ${responsiveConfig.gap} items-center`}
+        >
           {/* Image Section */}
           <div className="relative">
             <div className="rounded-2xl w-[800px] overflow-hidden shadow-lg">
@@ -188,9 +191,7 @@ const Careers: React.FC = () => {
               </p>
               <div className="pt-2 text-right">
                 <Link href="/careers">
-                  <Button
-                    className="group bg-[#0098af] text-white hover:bg-white hover:text-[#003C46] text-sm sm:text-base font-medium transition-all duration-300 border-2 border-transparent hover:border-[#0098af] rounded-xl px-3 sm:px-4 py-2 h-9 sm:h-10 shadow-md hover:shadow-lg"
-                  >
+                  <Button className="group bg-[#0098af] text-white hover:bg-white hover:text-[#003C46] text-sm sm:text-base font-medium transition-all duration-300 border-2 border-transparent hover:border-[#0098af] rounded-xl px-3 sm:px-4 py-2 h-9 sm:h-10 shadow-md hover:shadow-lg">
                     <span>Opportunities</span>
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </Button>

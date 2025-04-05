@@ -15,7 +15,8 @@ import { useState, useCallback } from "react";
 import Link from "next/link";
 import { BROCHURE_CONSTANTS } from "@/constants/brochurePage/constants";
 
-const PDF_PATH = "/pdf/brochure.pdf"; // Place your brochure PDF in /public/pdf/
+const Product_PDF_PATH = "/pdf/COGNITION_Brochure_Product.pdf";
+const Plant_PDF_PATH = "/pdf/COGNITION_Brochure_Plant.pdf";
 
 export default function RightSection() {
   const [formData, setFormData] = useState({
@@ -28,7 +29,8 @@ export default function RightSection() {
     country: "",
     marketingConsent: false,
   });
-
+  
+  const [selectedBrochure, setSelectedBrochure] = useState("product"); // Default to product
   const [status, setStatus] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -37,7 +39,6 @@ export default function RightSection() {
 
   const { TITLE, PRIVACY_LINK, CONSENT_TEXT, COUNTRIES } = BROCHURE_CONSTANTS.RIGHT_CONTENT;
 
-  // Flatten industry subcategories for Select options
   const industryOptions = BROCHURE_CONSTANTS.INDUSTRIES.flatMap((category) =>
     category.subcategories.map((subcategory) => ({
       value: subcategory,
@@ -45,7 +46,6 @@ export default function RightSection() {
     }))
   );
 
-  // Memoized input change handler
   const handleInputChange = useCallback(
     (field: string, value: string | boolean) => {
       setFormData((prev) => ({ ...prev, [field]: value }));
@@ -53,7 +53,6 @@ export default function RightSection() {
     []
   );
 
-  // Check if all required fields are filled
   const isFormValid = useCallback(() => {
     return (
       formData.firstName.trim() !== "" &&
@@ -67,7 +66,6 @@ export default function RightSection() {
     );
   }, [formData]);
 
-  // Memoized form submission handler
   const handleSubmit = useCallback(
     async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
@@ -95,14 +93,15 @@ export default function RightSection() {
             industry: formData.industry,
             country: formData.country,
             marketingConsent: formData.marketingConsent ? "Yes" : "No",
+            brochureType: selectedBrochure, // Add brochure type to form submission
           }),
         });
 
         const result = await response.json();
-        console.log("Web3Forms Response:", result); // Debug log
-
+        
         if (result.success) {
-          window.open(PDF_PATH, "_blank");
+          const pdfPath = selectedBrochure === "product" ? Product_PDF_PATH : Plant_PDF_PATH;
+          window.open(pdfPath, "_blank");
           setStatus("Success! Check the new tab for your brochure.");
           setFormData({
             firstName: "",
@@ -124,12 +123,12 @@ export default function RightSection() {
         setIsSubmitting(false);
       }
     },
-    [formData, isSubmitting, isFormValid]
+    [formData, isSubmitting, isFormValid, selectedBrochure]
   );
 
   return (
     <div className="w-full lg:w-1/2 py-12 pl-4 lg:pl-8">
-      <div className="bg-[#1e3a5f] p-6 rounded-md shadow-md"> {/* Darker teal background for contrast */}
+      <div className="bg-[#1e3a5f] p-6 rounded-md shadow-md">
         <motion.h2
           variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
           className="text-3xl font-bold text-white"
@@ -144,8 +143,37 @@ export default function RightSection() {
         >
           Fill out the form below to receive our latest brochure.
         </motion.p>
+
+        {/* Toggle Button */}
+        <div className="flex justify-center mb-6">
+          <div className="inline-flex rounded-md shadow-sm" role="group">
+            <button
+              type="button"
+              className={`px-4 py-2 text-sm font-medium text-white ${
+                selectedBrochure === "product"
+                  ? "bg-[#0098af]"
+                  : "bg-gray-700 hover:bg-gray-600"
+              } rounded-l-md`}
+              onClick={() => setSelectedBrochure("product")}
+            >
+              Product Brochure
+            </button>
+            <button
+              type="button"
+              className={`px-4 py-2 text-sm font-medium text-white ${
+                selectedBrochure === "plant"
+                  ? "bg-[#0098af]"
+                  : "bg-gray-700 hover:bg-gray-600"
+              } rounded-r-md`}
+              onClick={() => setSelectedBrochure("plant")}
+            >
+              Plant Brochure
+            </button>
+          </div>
+        </div>
+
         <form onSubmit={handleSubmit} className="space-y-6">
-          {/* First Name, Last Name */}
+          {/* Rest of the form fields remain the same */}
           <div className="grid grid-cols-2 gap-6">
             <div>
               <label className="block text-sm font-medium text-white mb-1">
@@ -178,7 +206,6 @@ export default function RightSection() {
               />
             </div>
           </div>
-          {/* Business Email, Company Name */}
           <div className="grid grid-cols-2 gap-6">
             <div>
               <label className="block text-sm font-medium text-white mb-1">
@@ -211,7 +238,6 @@ export default function RightSection() {
               />
             </div>
           </div>
-          {/* Job Title */}
           <div>
             <label className="block text-sm font-medium text-white mb-1">
               Job Title *
@@ -227,7 +253,6 @@ export default function RightSection() {
               disabled={isSubmitting}
             />
           </div>
-          {/* Select Industry, Select Country */}
           <div className="grid grid-cols-2 gap-6">
             <div>
               <label className="block text-sm font-medium text-white mb-1">
@@ -280,7 +305,6 @@ export default function RightSection() {
               </Select>
             </div>
           </div>
-          {/* Checkbox */}
           <div className="flex items-center gap-2">
             <Checkbox
               id="marketingConsent"
@@ -305,7 +329,6 @@ export default function RightSection() {
               .
             </label>
           </div>
-          {/* Status Message */}
           {status && (
             <motion.p
               initial={{ opacity: 0, y: 5 }}
@@ -318,7 +341,6 @@ export default function RightSection() {
               {status}
             </motion.p>
           )}
-          {/* Submit Button */}
           <Button
             type="submit"
             className="w-full bg-[#0098af] hover:bg-white text-white hover:text-[#0098af] text-base font-medium rounded-md transition-transform disabled:bg-gray-400 disabled:text-gray-700 disabled:cursor-not-allowed"

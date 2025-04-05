@@ -221,29 +221,58 @@
 // }
 
 // export default Footer;
-"use client";
 
+"use client";
 import * as React from "react";
 import { motion } from "framer-motion";
 import CompanyInfo from "./Footer/CompanyInfo";
 import UsefulLinks from "./Footer/UsefulLinks";
-import Socials from "./Footer/Socials";
-import ContactUs from "./Footer/ContactUs";
+import Link from "next/link";
+import LinkedinLogo from "@/constants/images/linkedinLogo.png";
+import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#5B5B5B] text-white py-6 sm:py-12 lg:py-20 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-        {/* Grid layout for footer sections */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-6 sm:gap-8 lg:gap-12">
-          <CompanyInfo  />
-          <UsefulLinks  />
-          <Socials  />
-          <ContactUs  />
+    <footer className="bg-[#003C46] text-white relative overflow-hidden">
+      <div className="relative">
+        <div className="max-w-7xl mx-auto py-6 sm:py-12 lg:py-10 ">
+          {/* Grid layout for footer sections */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-10 mt-4 gap-6 sm:gap-8 lg:gap-12">
+            <CompanyInfo />
+            <div className="md:col-span-4 mt-5 ml-16 ">
+              <UsefulLinks />
+            </div>
+          </div>
+        </div>
+        <div className="absolute bottom-2 right-8 sm:bottom-1 sm:right-40 text-lg text-[#E6F0F5]/70">
+          <div className="flex space-x-3 mt-10">
+            <Link
+              href="https://www.linkedin.com/company/cognitionies"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#0098AF] ml-1 px-2 mt-[1px]"
+            >
+              <Image
+                src={LinkedinLogo}
+                alt="Linkedin Logo"
+                width={40}
+                height={40}
+              />
+            </Link>{" "}
+            |{" "}
+            <Link
+              href="mailto:info@cognitionies.com"
+              className="hover:text-[#0098AF]"
+            >
+              info@cognitionies.com
+            </Link>
+          </div>
         </div>
       </div>
-
-      {/* Decorative elements */}
+      <div className="text-center mt-8 text-xs text-[#E6F0F5]/70">
+        <p>Copyright © 2025 Cognition IES | All Rights Reserved</p>
+      </div>
+      {/* Decorative elements remain unchanged */}
       <motion.div
         initial={{ opacity: 0, scale: 0 }}
         whileInView={{ opacity: 0.2, scale: 1 }}
@@ -261,13 +290,23 @@ export default function Footer() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.15 }}
-        transition={{ delay: 1.5, duration: 1, repeat: Infinity, repeatType: "reverse" }}
+        transition={{
+          delay: 1.5,
+          duration: 1,
+          repeat: Infinity,
+          repeatType: "reverse",
+        }}
         className="absolute top-8 sm:top-12 left-8 sm:left-12 w-5 sm:w-6 h-5 sm:h-6 bg-[#0098AF]/50 rounded-full -z-10"
       />
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.15 }}
-        transition={{ delay: 2, duration: 1, repeat: Infinity, repeatType: "reverse" }}
+        transition={{
+          delay: 2,
+          duration: 1,
+          repeat: Infinity,
+          repeatType: "reverse",
+        }}
         className="absolute bottom-8 sm:bottom-12 right-8 sm:right-12 w-5 sm:w-6 h-5 sm:h-6 bg-[#0098AF]/50 rounded-full -z-10"
       />
     </footer>
@@ -286,7 +325,7 @@ export default function Footer() {
 // } from "lucide-react";
 // import Image from "next/image";
 // //import { motion } from "framer-motion";
-// import Logo from "@/constants/images/cognition.png";
+// import Logo from "@/constants/images/WEB-LOGO.png";
 // import Link from "next/link";
 
 // const Footer = () => {
@@ -460,10 +499,7 @@ export default function Footer() {
 //         <div className="mt-16 h-[2px] w-full max-w-7xl mx-auto bg-gradient-to-r from-transparent via-[#0098af]/40 to-transparent"></div>
 //         {/* Copyright text */}
 //         <div className="text-center mt-8 text-sm text-[#E6F0F5]/70">
-//           <p>
-//             &copy; {new Date().getFullYear()} Cognition IES. All rights
-//             reserved.
-//           </p>
+//           <p>Copyright &copy; 2025 Cognition IES | All Rights Reserved</p>
 //         </div>
 //       </div>
 //     </footer>

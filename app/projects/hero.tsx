@@ -4,14 +4,15 @@ import { motion } from "framer-motion";
 import { FiChevronDown, FiChevronRight, FiHome } from "react-icons/fi";
 import Image from "next/image";
 import Link from "next/link";
-import engineeringImage from "@/constants/images/Plant-engineering/hero-image-1.jpg";
+//import engineeringImage from "@/constants/images/Plant-engineering/hero-image-1.jpg";
+import HeroImage from "@/constants/images/projects/hero.jpg";
 
 export default function Hero() {
   return (
     <section>
-      <div className="relative h-[350px] overflow-hidden">
+      <div className="relative h-[400px] overflow-hidden">
         <Image
-          src={engineeringImage}
+          src={HeroImage}
           alt="FEED & Conceptual Design Innovation"
           fill
           className="object-cover"
@@ -22,7 +23,7 @@ export default function Hero() {
         <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 h-full flex flex-col justify-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white -top-10 drop-shadow-md relative">
             Projects
-          <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-[#99D5DF] to-transparent" />
+            <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-[#99D5DF] to-transparent" />
           </h1>
           {/* Move nav outside the centered flex flow and position it absolutely */}
           <nav className="absolute bottom-0 left-6 sm:left-8 lg:left-12 mb-6 flex items-center space-x-2 text-sm font-light text-white/80">
@@ -40,7 +41,6 @@ export default function Hero() {
             >
               Projects
             </Link>
-           
           </nav>
           <motion.div
             initial={{ opacity: 0, y: 10 }}
