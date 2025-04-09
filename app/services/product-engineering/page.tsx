@@ -1,28 +1,28 @@
 "use client";
 
-// This file puts together all parts of the product engineering page
 import { MegaMenu } from "@/components/ui/Megamenu/MegaMenu";
 import Footer from "@/components/footer";
 import HeroSection from "./HeroSection";
 import AboutSection from "./AboutSection";
 import ServicesSection from "./ServiceSection";
-//import FAQSection from "./FAQSection";
+//import { motion } from "framer-motion";
+//import { Button } from "@/components/ui/button";
+//import Link from "next/link";
+import CTASection from "@/components/CTA";
 
 export default function ProductEngineeringPage() {
   return (
     <div className="min-h-screen bg-[#FFFFFF]">
-      {/* Top navigation */}
       <MegaMenu />
-      {/* Hero section */}
       <HeroSection />
-      {/* About section */}
       <AboutSection />
-      {/* Services section */}
       <section id="services">
-      <ServicesSection  />
-      </section >
-      {/* FAQ section */}
-      {/* Footer */}
+        <ServicesSection />
+      </section>
+
+      {/* CTA Section */}
+      <CTASection />
+
       <Footer />
     </div>
   );

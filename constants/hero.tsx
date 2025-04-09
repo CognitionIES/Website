@@ -52,22 +52,22 @@ export const heroSlides: HeroSlide[] = [
     blurImage: image4,
   },{
     id: 4,
-    title: "Staffing & Recruitment",
-    subtitle: "Connecting Talent with Opportunity",
-    majorService: "The Right People for the Right Roles ",
-    description:
-      "Helping businesses build high-performing teams by sourcing top talent through strategic recruitment and staffing solutions.",
-    image: recruitmentImage,
-    blurImage:
-      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&q=10&w=50&blur=20",
-  },{
-    id: 5,
     title: "Powering Businesses with SaaS Innovation",
     subtitle: "Scalable Software for a Digital World",
     majorService: "SaaS Solutions ",
     description:
       "Delivering cloud-based, scalable, and secure software solutions that streamline operations, enhance efficiency, and drive growth.",
     image: saasImage,
+    blurImage:
+      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&q=10&w=50&blur=20",
+  },{
+    id: 5,
+    title: "The Right People for the Right Roles ",
+    subtitle: "Connecting Talent with Opportunity",
+    majorService: "Staffing & Recruitment",
+    description:
+      "Helping businesses build high-performing teams by sourcing top talent through strategic recruitment and staffing solutions.",
+    image: recruitmentImage,
     blurImage:
       "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&q=10&w=50&blur=20",
   },

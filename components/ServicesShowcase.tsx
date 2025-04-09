@@ -1,6 +1,11 @@
 import { useState, useRef, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { ExternalLink } from "lucide-react";
+import plantImage from "@/constants/images/home/plant.jpg";
+import productImage from "@/constants/images/home/product-2.jpg";
+import saasImage from "@/constants/images/home/saas.jpg";
+import recruitImage from "@/constants/images/home/staff.jpg";
+import Link from "next/link";
 
 const services = [
   {
@@ -9,8 +14,7 @@ const services = [
     description:
       "Bridging innovation and execution, we engineer high-performance products that meet industry standards and customer expectations.",
     color: "bg-[#003C46]",
-    image:
-      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200",
+    image: productImage,
     href: "/services/product-engineering",
   },
   {
@@ -19,8 +23,7 @@ const services = [
     description:
       "Simplifying complexity through smart process solutions that boost operational agility and cost-effectiveness.",
     color: "bg-[#003C46]",
-    image:
-      "https://images.unsplash.com/photo-1487875961445-47a00398c267?auto=format&fit=crop&q=80&w=1200",
+    image: plantImage,
     href: "/services/plant-engineering",
   },
   {
@@ -29,8 +32,7 @@ const services = [
     description:
       "Enabling digital transformation through user-friendly, adaptable, and future-proof SaaS applications.",
     color: "bg-[#003C46]",
-    image:
-      "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&q=80&w=1200",
+    image: saasImage,
     href: "/services/saas-solutions/servicecpq",
   },
   {
@@ -39,8 +41,7 @@ const services = [
     description:
       "Finding the perfect fit for every role through a data-driven, industry-specific approach to talent acquisition.",
     color: "bg-[#003C46]",
-    image:
-      "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=1200",
+    image: recruitImage,
     href: "/services/staffing",
   },
 ];
@@ -80,16 +81,16 @@ const ServicesShowcase = () => {
 
   return (
     <section className="w-full py-12 px-4 md:px-6 bg-gradient-to-b from-white via-white to-[#E6F0F5]/20">
-      <div className="max-w-7xl mx-auto">
-        <div className="mb-6 space-y-2 md:mb-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mb-6 space-y-2 md:mb-8 ">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#003C46] mb-2 md:mb-3 tracking-tight">
             Our Services
           </h2>
-          <p className="text-[#5b5b5b]/80 text-sm md:text-base lg:text-lg font-light">
+          {/* <p className="text-[#5b5b5b]/80 text-sm md:text-base lg:text-lg font-light">
             Driving innovation and efficiency through advanced engineering
             solutions, optimizing products and processes for maximum
             performance.
-          </p>
+          </p> */}
         </div>
 
         <div
@@ -98,7 +99,7 @@ const ServicesShowcase = () => {
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           {services.map((service) => (
-            <a
+            <Link
               key={service.id}
               href={service.href}
               data-service-id={service.id}
@@ -135,7 +136,11 @@ const ServicesShowcase = () => {
                   "absolute inset-0 bg-cover bg-center transition-transform duration-700",
                   activeCard === service.id ? "scale-105" : "scale-100"
                 )}
-                style={{ backgroundImage: `url(${service.image})` }}
+                style={{
+                  backgroundImage: `url(${service.image.src})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
               />
 
               <div
@@ -185,7 +190,7 @@ const ServicesShowcase = () => {
                   </p>
                 </div>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
 
@@ -207,7 +212,7 @@ const ServicesShowcase = () => {
           </div>
         )}
 
-        <div className="mt-8 md:mt-12 text-center">
+        <div className="mt-8 md:mt-2 text-center">
           <a
             href="/services"
             className="inline-flex items-center gap-1 text-[#003C46]/80 hover:text-[#0098af] transition-colors duration-300 text-sm md:text-base font-medium group"

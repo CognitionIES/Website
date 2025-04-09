@@ -12,14 +12,14 @@ export const CONTACT_CONSTANTS = {
   CONTACT: {
     TITLE: "GET IN TOUCH",
     DESCRIPTION:
-      "Feel free to get in touch with me. I am always open to discussing new projects, creative ideas or opportunities to be part of your visions.",
+      "Feel free to reach out—we’re always open to discussing your questions, new projects, creative ideas, or opportunities to collaborate and bring your vision to life.",
     LOCATION: {
       TITLE: "Our Location",
       ADDRESS: "123 ABC, DEF HIJ, JKLM 9999",
     },
     //PHONE: {
-      //TITLE: "Toll Free Phone No.",
-      //NUMBERS: ["1800 800 9000"],
+    //TITLE: "Toll Free Phone No.",
+    //NUMBERS: ["1800 800 9000"],
     //},
     EMAIL: {
       TITLE: "Email",

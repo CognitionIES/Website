@@ -107,12 +107,12 @@ export default function ContactSection() {
     <section className="py-16 bg-gradient-to-br from-gray-50 to-gray-100 relative">
       <div className="relative">
         {/* Background "CONTACT" text */}
-        <h1 className="absolute text-[11rem] md:text-[7rem] font-bold text-[#0098af] opacity-10 -top-10 left-1/2 transform -translate-x-1/2 font-montserrat">
+        <h1 className="absolute text-[12rem] md:text-[10rem] font-bold text-[#0098af] opacity-10 -top-20 left-1/2 transform -translate-x-1/2 font-montserrat">
           CONTACT
         </h1>
         {/* Foreground "GET IN TOUCH" text */}
-        <h1 className="relative text-6xl md:text-4xl text-center font-bold tracking-wide font-montserrat">
-          <p className="text-[#5b5b5b] py-7">{TITLE}</p>
+        <h1 className="relative text-7xl md:text-5xl text-center font-bold tracking-wide font-montserrat">
+          <p className="text-[#5b5b5b] py-6">{TITLE}</p>
         </h1>
       </div>
 
@@ -125,11 +125,12 @@ export default function ContactSection() {
           className="grid grid-cols-1 lg:grid-cols-4 gap-10 items-start" // Changed to 4 columns
         >
           {/* Contact Info - Reduced Width */}
-          <div className="lg:col-span-1 space-y-2 items-center">
-            <p className="text-base text-gray-600 text-justify mb-10 leading-relaxed">
+          <div className="lg:col-span-1 space-y-6 items-center">
+            <p className="text-xl text- font-semibold uppercase mb-4"> Bring Your Vision to Life</p>
+            <p className="text-base text-gray-600 text-justify mb-14 leading-relaxed">
               {DESCRIPTION}
             </p>
-            <div className="text-gray-600 bg-white p-5 rounded-lg shadow-sm">
+            <div className="text-gray-600 bg-white p-5  rounded-lg shadow-sm">
               <div className="flex items-center space-x-3">
                 <FiMail className="text-[#0098AF]" />
                 <div>

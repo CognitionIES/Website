@@ -7,8 +7,10 @@ import StructuralImage from "@/constants/images/horizontal/06.png";
 import elecImage from "@/constants/images/horizontal/07.jpg";
 import InstrumentationImage from "@/constants/images/horizontal/08.jpg";
 import ModularImage from "@/constants/images/horizontal/09.jpg";
-import ReverseImage from "@/constants/images/horizontal/10.jpg";
+//import ReverseImage from "@/constants/images/horizontal/10.jpg";
 import ProcurementImage from "@/constants/images/horizontal/11.jpg";
+import reverseImage1 from "@/constants/images/Plant-engineering/reverse-eng.jpg";
+import heroImage from "@/constants/images/Plant-engineering/hero.jpg";
 
 // This file holds all constants for the plant engineering page
 import {
@@ -21,9 +23,9 @@ import {
   ShieldCheck,
   Cpu,
   ClipboardList,
-  
 } from "lucide-react";
 import { IconType } from "react-icons"; // For icon typing
+import aboutImage from "@/constants/images/Plant-engineering/about.jpg";
 
 // Define what a service looks like
 interface Service {
@@ -42,8 +44,7 @@ interface Service {
 export const PLANT_ENGINEERING_CONSTANTS = {
   // Hero Section
   HERO: {
-    IMAGE:
-      "https://images.unsplash.com/photo-1581094794329-c8112c4e5190?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80",
+    IMAGE: heroImage,
     TITLE: "Plant Engineering services",
     SUBTITLE: "Innovative engineering solutions for complex challenges",
   },
@@ -52,15 +53,15 @@ export const PLANT_ENGINEERING_CONSTANTS = {
   ABOUT: {
     TITLE: "Plant Engineering Solutions",
     DESCRIPTION_1:
-      "At Cognition IES, we help industries build smarter, safer, and more efficient plants. From designing machinery and piping systems to optimizing energy use and safety compliance, we cover everything needed to keep your plant running smoothly. Whether you're setting up a new facility or upgrading an existing one, our team ensures seamless operations with practical, cost-effective solutions.",
-    DESCRIPTION_2: "Description 2", // Placeholder from your code
-    IMAGE:
-      "https://images.unsplash.com/photo-1581092921461-eab62e97a780?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+      "Efficiency, safety, and sustainability form the core of our Plant Engineering Services. We support industries in optimizing their facilities by offering engineering expertise that improves processes, infrastructure, and operations. Whether it's greenfield or brownfield projects, our goal is to help businesses achieve operational excellence by integrating intelligent planning, robust design, and compliance with modern industry standards. We empower plant systems to run smoother, safer, and smarter.",
+    DESCRIPTION_2:
+      "Our team brings industry-specific knowledge and a systems-driven mindset, enabling seamless integration of engineering solutions that enhance productivity while minimizing downtime and costs.", // Placeholder from your code
+    IMAGE: aboutImage,
   },
 
   // Services Section
   SERVICES: {
-    TITLE: "Our Plant Engineering Services",
+    TITLE: " Plant Engineering Services",
     SUBTITLE:
       "Comprehensive engineering solutions tailored to your specific needs",
     ITEMS: [
@@ -83,7 +84,6 @@ export const PLANT_ENGINEERING_CONSTANTS = {
               "Utility Consumption Summary",
               "Pipeline Sizing & Line List Development",
               "Piping Service Index",
-              "Bill of Quantities (BOQ)",
               "Preliminary Thermal Design for HE",
             ],
           },
@@ -126,7 +126,7 @@ export const PLANT_ENGINEERING_CONSTANTS = {
             mainTopic: "Piping Layout & Design",
             subPoints: [
               "Overall & Unit Plot Plans",
-              
+
               "Equipment Layout & GA Drawings",
               "Piping Layout & GA Drawings",
               "Piping Isometric Drawings",
@@ -138,14 +138,13 @@ export const PLANT_ENGINEERING_CONSTANTS = {
             subPoints: [
               "Piping Support Design & Load Calculations",
               "Nozzle Orientation, Spool, Special Supports & Platform Design Drawings",
-             
             ],
           },
           {
             mainTopic: "Material & Specification MGMT.",
             subPoints: [
               "Piping MTO & BOM",
-                            "Insulation, Painting, & Material Spec.",
+              "Insulation, Painting, & Material Spec.",
               "Specialty Items List",
               "Valve & Piping Special Component Data Sheets",
             ],
@@ -178,12 +177,11 @@ export const PLANT_ENGINEERING_CONSTANTS = {
               "Fatigue & Creep Assessment",
               "Displacement & Deflection Studies",
               "Occasional Load Analysis (Wind & Seismic)",
-             
             ],
-          },{
+          },
+          {
             mainTopic: "Types of Piping Stress Analysis",
             subPoints: [
-              
               "Sustained / Longitudinal Stress Evaluation",
               "Piping Flexibility & Support Optimization",
               "Elastic & Plastic Stress Analysis",
@@ -195,7 +193,7 @@ export const PLANT_ENGINEERING_CONSTANTS = {
               "Trunnion Support Load Check",
               "Upheaval & Buckling Analysis",
               "Weld Strength Evaluation",
-              "U Bolt Load Calculations",
+              "U-Bolt Load Calculations",
               "Collapse & Structural Stability ",
               "Flange Integrity Analysis (NC-3685.3 & API Standards)",
             ],
@@ -218,8 +216,8 @@ export const PLANT_ENGINEERING_CONSTANTS = {
             subPoints: [
               "Equipment List & Mechanical Datasheets",
               "Mechanical Schematic Diagrams",
-              "Equipment Drawings & Detailing",
-              "Fatigue & Failure Analysis (FEA)",
+              "Equipment Layout & Arrangement Drawing",
+
               "GA Drawings for Equipment",
               "Nozzle & Manhole Detail Drawings",
               "Equipment & Pipe Support Drawing",
@@ -232,6 +230,7 @@ export const PLANT_ENGINEERING_CONSTANTS = {
               "Tray Support & Welded Internal Details",
               "Tube Bundle Detailing for Shell & Tube HE",
               "3D Modeling & Visualization",
+              "Fatigue & Failure Analysis (FFA)",
               "MTO & BOM",
             ],
           },
@@ -244,7 +243,7 @@ export const PLANT_ENGINEERING_CONSTANTS = {
               "Storage Tanks",
               "Dryers & Cooling Towers",
               "Pumps & Pumping Systems",
-            
+
               "Air & Gas Compressors System",
             ],
           },
@@ -285,27 +284,25 @@ export const PLANT_ENGINEERING_CONSTANTS = {
               "Final Single Line Diagram (SLD)",
               "Electrical Equipment & Components Layouts",
               "Earthing System Design & Layout",
+              "Detailed Load List & Feeder Lists for Switchgear, MCCs, DB",
             ],
           },
           {
             mainTopic: "Detailed Engineering ",
             subPoints: [
               "HV/LV Power Cable Sizing & Routing",
-              "Cable, Illumination & Lightning ",
-              "Detailed Load List & Feeder Lists for Switchgear, MCCs, DB",
               "Plant intercommunication System",
               "Power & Control Cable Listings",
-              "Electrical Bill of Materials",
+              "Electrical Bill of Materials (BOM)",
+              "Cable, Illumination & Lightning Protection Layout ",
             ],
           },
           {
             mainTopic: "Detailed Engineering ",
             subPoints: [
-              "Electrical Bill of Materials (BOM)",
               "Erection Tender Preparation",
               "As Built Drawings & Documentation",
               "Relay Setting Schedules & Protection Coordination Chart",
-              
             ],
           },
         ],
@@ -316,7 +313,7 @@ export const PLANT_ENGINEERING_CONSTANTS = {
         title: "Reverse Engineering",
         description:
           "Analyzing existing systems to recreate or improve designs for enhanced performance.",
-        image: ReverseImage,
+        image: reverseImage1,
         alt: "Reverse engineering process",
         href: "/services/plant-engineering/details#section-6",
         bulletPoints: [
@@ -324,23 +321,24 @@ export const PLANT_ENGINEERING_CONSTANTS = {
             mainTopic: "Advanced Scanning & Data Capture",
             subPoints: [
               "High Precision Laser Scanning for Existing Plants & Equipment",
-              "Creating Accurate 3D Laser Models from Scanned Point Cloud Data",
-              "Supported File Formats: .pptx, .pcg, .xyz, .dwg, .dgn, .rvt, .fls",
+              "Creating Accurate 3D Laser Models from  Point Cloud Data",
+              "Supported File Formats: .pptx, .pcg, .xyz, .dwg, .dgn, .rvt, .fls, .ifd, .lfm, .rcp. ",
             ],
           },
           {
             mainTopic: "Deliverables & Final Output",
             subPoints: [
-              "Extraction & Submission of Detailed Engineering Drawings & Reports",
+              "Extraction & Submission of Detailed Drawings & Reports",
+              "P&ID/Engineering Data As-Built Verification ",
               "Integration of Reverse Engineered Models into Existing Design Workflows",
             ],
           },
           {
             mainTopic: "3D Modeling & Data Translation",
             subPoints: [
-              "Converting As Built Data into Millimeter Accurate 3D CAD Models",
               "Generating Dumb Models from Laser Scans",
               "Transfrming Dumb Models into Intelligent Models",
+              "Converting As-Built Data into Millimeter Accurate 3D CAD Models",
             ],
           },
         ],
@@ -358,41 +356,39 @@ export const PLANT_ENGINEERING_CONSTANTS = {
           {
             mainTopic: "Basic Engineering",
             subPoints: [
+              "Instrumentation Design Basis",
               "I/O List",
               "Instrument Cable Block Diagram",
-              "Instrument Installation Details",
               "Preliminary Instrument List / Index",
               "Instrument Process Datasheets",
-              "Hook-Up Drawings",
               "Process Optimization",
             ],
           },
           {
-            mainTopic: "Safety & Risk Assessment",
+            mainTopic: "Detailed Engineering",
             subPoints: [
               "Final Instrumentation Design Basis",
               "Instrument Location Layout",
               "Instrument Index & Specification Datasheets",
               "DCS Control Room Layout",
+              "I/O List & Cause-Effect Diagram/List",
             ],
           },
           {
-            mainTopic: "Safety & Risk Assessment",
+            mainTopic: "Detailed Engineering",
             subPoints: [
-              "Cable Tray & Fittings MTO",
+              "Cable Tray Routing & Layout",
               "Instrument Installation Details",
               "Junction Box Grouping",
               "Instrument Cable Schedule and Wiring Diagram",
             ],
           },
           {
-            mainTopic: "Safety & Risk Assessment ",
+            mainTopic: "Detailed Engineering ",
             subPoints: [
-              "I/O List & Cause-Effect Diagram/List",
-              "Cable Tray Routing & Layout",
-              "Hook-Up Drawings & Erection Hardware MTO",
-
               "Instrument Termination Drawings",
+              "Cable Tray & Fittings MTO",
+              "Hook-Up Drawings & Erection Hardware MTO",
               "As-Built Drawings & Documentation",
             ],
           },
@@ -426,10 +422,12 @@ export const PLANT_ENGINEERING_CONSTANTS = {
           {
             mainTopic: "Industrial & Commercial Building Design",
             subPoints: [
+              "Schedule of Quantities (SOQ)",
               "Admin Buildings, Canteens, Utility Blocks, and Non-Plant Structures",
             ],
           },
-        ],        columns: 3,
+        ],
+        columns: 3,
       },
       //Structural Engineering
       {
@@ -445,10 +443,19 @@ export const PLANT_ENGINEERING_CONSTANTS = {
             mainTopic: "Specialized Structural Engineering",
             subPoints: [
               "Hot Oil Heater Supporting Structures",
-              "Specialized Structural Engineering",
               "Waste Heat Recovery Units (WHRU)",
               "Reactor Structures & FPSO Modules",
               "Technological Structures & Heavy Industrial Frameworks",
+            ],
+          },
+          {
+            mainTopic: "Structural Stress Analysis",
+            subPoints: [
+              "Barge Transport & Offshore Load Handling",
+              "Dropped Object Impact Studies",
+              "Transit & Survival Load Assessments",
+              "Fire, Blast, and Fatigue Conditions",
+              "In-Place Analysisㅤㅤㅤㅤㅤㅤㅤㅤ (Operating, Damage, Extreme Scenarios)",
             ],
           },
           {
@@ -459,17 +466,7 @@ export const PLANT_ENGINEERING_CONSTANTS = {
             ],
           },
           {
-            mainTopic: "Structural Stress Analysis",
-            subPoints: [
-              "Barge Transport & Offshore Load Handling",
-              "Dropped Object Impact Studies",
-              "Transit & Survival Load Assessments",
-              "Fire, Blast, and Fatigue Conditions",
-              "In-Place Analysis (Operating, Damage, Extreme Scenarios)",
-            ],
-          },
-          {
-            mainTopic: "Transportation & Lifting Engineering",
+            mainTopic: "Transportation & Lifting",
             subPoints: [
               "Lifting Analysis, Reports & Drawings",
               "Structural Integrity Assessments ",
@@ -494,9 +491,8 @@ export const PLANT_ENGINEERING_CONSTANTS = {
               "Fabrication Isometric Drawings",
               "Monorail Calculations",
               "MTO & BOM Preparation",
-              "Structural Steel Calculations (Including Anchor/Foundation Loads)",
-              "E&I Skid Engineering (Cable Tray, Junction Box, Small-Bore Containment, etc.)",
-              
+              "Weight & COG Calculation for Lifting Arrangement",
+              "Structural Steel Calculationsㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ (Including Anchor/Foundation Loads)",
             ],
           },
           {
@@ -506,8 +502,8 @@ export const PLANT_ENGINEERING_CONSTANTS = {
               "Detailed Structural Fabrication Drawings",
               "Lifting Lug Design & Details",
               "Piping & Structural Stress Analysis Reports",
-              "Weight & COG Calculation for Lifting Arrangement",
               "Lifting Arrangement Drawings and Calculations",
+              "E&I Skid Engineeringㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ (Cable Tray, Junction Box, Small-Bore Containment, etc.)",
             ],
           },
           {
@@ -518,10 +514,11 @@ export const PLANT_ENGINEERING_CONSTANTS = {
               "High-Pressure Systems",
               "Fuel Oil Unloading & Transfer Skids",
               "Corrosion Inhibitor Skids",
-              "Chemical Process Skids(Metering, Injection, Dosing, Feeding, Transport, Blending, Extraction & Filtration)",
+              "Chemical Process Skids (Metering, Injection, Dosing, Feeding, Transport, Blending, Extraction & Filtration)",
             ],
           },
-        ],        columns: 3,
+        ],
+        columns: 3,
       },
       // procurement - 3 cols
       {
@@ -556,7 +553,8 @@ export const PLANT_ENGINEERING_CONSTANTS = {
               "Integration & Implementation of Vendor Data into Engineering",
             ],
           },
-        ],        columns: 3,
+        ],
+        columns: 3,
       },
     ] as unknown as Service[],
   },

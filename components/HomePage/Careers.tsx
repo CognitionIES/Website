@@ -114,17 +114,10 @@ const responsiveConfig = {
     className: "w-[800px] h-[150px] sm:h-[450px]",
   },
   overlayPosition: "bottom-4 right-4 sm:bottom-6 sm:right-6", // Adjusted for precision
-  badgePosition: "top-20 right-4 sm:top-16 sm:right-40",
+  badgePosition: "top-20 right-4 sm:top-16 text- sm:right-40",
 };
 
 // Reusable Badge component
-const Badge: React.FC<{ text: string }> = ({ text }) => (
-  <div className="inline-flex px-2 sm:px-3 py-1 bg-[#0098af]/10 rounded-full shadow-sm">
-    <p className="text-xs sm:text-sm font-medium text-[#0098af] uppercase tracking-wide">
-      {text}
-    </p>
-  </div>
-);
 
 // Main Careers component
 const Careers: React.FC = () => {
@@ -142,8 +135,11 @@ const Careers: React.FC = () => {
       {/* Main Content Container */}
       <div className={`max-w-7xl mx-auto ${responsiveConfig.containerPadding}`}>
         {/* "We're Hiring" Badge - Positioned Absolutely */}
-        <div className={`absolute ${responsiveConfig.badgePosition}`}>
-          <Badge text="We're Hiring" />
+        
+        <div className="top-20  right-4 sm:top-16  rounded-full sm:right-40 absolute "> 
+        <span className="inline-block px-3 py-1 bg-[#0098af]/10 text-[#0098af] text-xs font-medium uppercase tracking-wider rounded-full mb-4">
+            We&apos;re Hiring
+          </span>
         </div>
 
         <div

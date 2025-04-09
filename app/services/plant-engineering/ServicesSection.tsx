@@ -6,7 +6,7 @@ import { ServiceCard } from "@/components/ServiceCard";
 import { LucideIcon } from "lucide-react";
 
 export default function ServicesSection() {
-  const { TITLE, SUBTITLE, ITEMS } = PLANT_ENGINEERING_CONSTANTS.SERVICES;
+  const { TITLE, ITEMS } = PLANT_ENGINEERING_CONSTANTS.SERVICES;
 
   // Add IDs to each service item
   const servicesWithIds = ITEMS.map((item, index) => ({
@@ -23,12 +23,14 @@ export default function ServicesSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-12"
-        >
+          className="mb-8"
+        ><span className="inline-block px-3 py-1 bg-[#0098af]/10 text-[#0098af] text-xs font-medium uppercase tracking-wider rounded-full mb-4">
+        Our Services
+      </span>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#003C46]">
             {TITLE}
           </h2>
-          <p className="text-lg text-[#4A4A4A] max-w-7xl mx-auto">{SUBTITLE}</p>
+          {/* <p className="text-lg text-[#4A4A4A] max-w-7xl mx-auto">{SUBTITLE}</p> */}
         </motion.div>
         {/* Services grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

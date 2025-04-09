@@ -45,23 +45,25 @@ export function ServiceCard({ service, onClick }: ServiceCardProps) {
 
         {/* Icon */}
         <div className="absolute top-4 left-4 w-10 h-10 bg-white/90 rounded-full flex items-center justify-center z-10">
-          <service.icon className="w-5 h-5 text-primary" />
+          <service.icon className="w-5 h-5 text-[#0098af]" />
         </div>
 
-        {/* Overlay with info */}
-        <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/50 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
-          <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-            <h3 className="text-xl font-semibold mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
-              {service.title}
-            </h3>
-            <p className="text-sm mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-150">
-              {service.description}
-            </p>
-            <button className="inline-block bg-white text-primary px-4 py-2 rounded-md font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200 hover:bg-white/90">
-              Learn More
-            </button>
+        {/* Content container */}
+        <div className="absolute bottom-0 left-0 right-0 p-6 text-white z-10">
+          {/* Title with dynamic upward animation */}
+          <h3 className="text-2xl font-semibold mb-2 transition-transform duration-300 ease-in-out translate-y-0 group-hover:opacity-0">
+            {service.title}
+          </h3>
+
+          {/* Description container */}
+          <div className="absolute left-6 right-6 bottom-6 opacity-0 group-hover:opacity-100  transition-transform ease-in-out transition-opacity duration-300 delay-100">
+            <p className="text-2xl font-semibold">{service.title}</p>
+            <p className="text-base">{service.description}</p>
           </div>
         </div>
+
+        {/* Background overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0098af] via-[#0098af]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </div>
     </Link>
   );

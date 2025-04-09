@@ -6,7 +6,8 @@ import Footer from "@/components/footer";
 import HeroSection from "./HeroSection";
 import AboutSection from "./AboutSection";
 import ServicesSection from "./ServicesSection";
-import FAQSection from "./FAQSection";
+//import FAQSection from "./FAQSection";
+import CTASection from "@/components/CTA";
 
 export default function PlantEngineeringPage() {
   return (
@@ -22,7 +23,7 @@ export default function PlantEngineeringPage() {
       <ServicesSection />
       </section>
       {/* FAQ section */}
-      <FAQSection />
+      <CTASection />
       {/* Footer */}
       <Footer />
     </div>
