@@ -9,10 +9,10 @@ import dynamic from "next/dynamic";
 import RecentProjects from "@/components/HomePage/RecentProjects";
 import ContactSection from "./contact/ContactSection";
 import ServicesShowcase from "@/components/ServicesShowcase";
+import CTA from "@/components/CTA";
 //import React, { useEffect, useRef, useState } from "react";
 //import Link from "next/link";
 //import { Button } from "@/components/ui/button";
-import CTA from "@/components/HomePage/CTA";
 
 const TestimonialSlider = dynamic(
   () => import("@/components/HomePage/Testimonials"),

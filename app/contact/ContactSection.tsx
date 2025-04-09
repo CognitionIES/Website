@@ -126,7 +126,7 @@ export default function ContactSection() {
         >
           {/* Contact Info - Reduced Width */}
           <div className="lg:col-span-1 space-y-6 items-center">
-            <p className="text-xl text- font-semibold uppercase mb-4"> Bring Your Vision to Life</p>
+            <p className="text-2xl text-[#003C46] font-semibold tracking-tight uppercase mb-4"> Bring Your Vision to Life</p>
             <p className="text-base text-gray-600 text-justify mb-14 leading-relaxed">
               {DESCRIPTION}
             </p>

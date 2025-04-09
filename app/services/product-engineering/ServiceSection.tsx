@@ -35,14 +35,14 @@ const ServiceCard = ({ service }: { service: Service }) => {
         </div>
 
         {/* Content container */}
-        <div className="absolute bottom-0 left-0 right-0 p-6 text-white z-10">
+        <div className="absolute bottom-0 left-0 right-0 p-6 text-white z-10 bg-gradient-to-t from-[#0098af] via-[#00A4B4]/50 to-transparent opacity-90">
           {/* Title with dynamic upward animation */}
-          <h3 className="text-2xl font-semibold mb-2 transition-transform duration-300 ease-in-out translate-y-0 group-hover:opacity-0">
+          <h3 className="text-2xl font-semibold mb-2 transition-transform duration-300 ease-in-out translate-y-0 group-hover:opacity-0 ">
             {service.title}
           </h3>
 
           {/* Description container */}
-          <div className="absolute left-6 right-6 bottom-6 opacity-0 group-hover:opacity-100 transition-opacity ease-in-out duration-300 delay-100">
+          <div className="absolute left-6 right-6 bottom-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
             <p className="text-2xl font-semibold">{service.title}</p>
             <p className="text-base">{service.description}</p>
           </div>

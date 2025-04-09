@@ -80,7 +80,20 @@ body {
     @apply text-lg text-[#5b5b5b] mb-12 max-w-2xl mx-auto;
   }
 }
+.gradient-text {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-size: 200% 200%;
+}
 
+.seeker-gradient-text {
+  background-image: linear-gradient(120deg, #0098af, #00b4d8, #00d4fa);
+}
+
+.employer-gradient-text {
+  background-image: linear-gradient(120deg, #E6F0F5, #00b4d8, #0098af);
+}
 @layer components {
   .glass-morphism {
     @apply backdrop-blur-xl bg-white/10 border border-white/20 shadow-lg;

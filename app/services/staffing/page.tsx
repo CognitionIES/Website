@@ -1,182 +1,265 @@
-// import Footer from "@/components/footer";
-// import { Button } from "@/components/ui/button";
-// import { MegaMenu } from "@/components/ui/Megamenu/MegaMenu";
-// import Link from "next/link";
-
-// const Index = () => {
-//   return (
-//     <div className="min-h-screen flex flex-col">
-//       <MegaMenu />
-
-//       <main className="flex-grow">
-//         <section className="bg-gradient-to-r  from-[#0098af]-[#E6F0F5] to-white py-24 px-4">
-//           <div className="container max-w-7xl mx-auto">
-//             <div className="max-w-2xl">
-//               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0098af]-[#003C46] mb-6 leading-tight">
-//                 Connecting Talent with Opportunity
-//               </h1>
-//               <p className="text-xl text-[#5b5b5b] mb-8">
-//                 StaffSync is your trusted partner in staffing and recruitment, helping businesses find top talent and job seekers discover their dream careers.
-//               </p>
-//               <div className="flex flex-col sm:flex-row gap-4">
-//                 <Button asChild size="lg" className="bg-[#0098af] hover:bg-[#0098af]-[#003C46]">
-//                   <Link href="/job-seekers">Find Jobs</Link>
-//                 </Button>
-//                 <Button asChild size="lg" variant="outline" className="border-[#0098af] text-[#0098af] hover:bg-[#0098af]-[#E6F0F5]">
-//                   <Link href="/employer">Hire Talent</Link>
-//                 </Button>
-//               </div>
-//             </div>
-//           </div>
-//         </section>
-//       </main>
-
-//       <Footer />
-//     </div>
-//   );
-// };
-
-// export default Index;
-
-/* Divider */
-"use client";
-
-import { useState, useRef, useEffect } from "react";
-import { motion } from "framer-motion";
-//import faqs from "@/constants/faqs";
-//import { cn } from "@/lib/utils";
+import React from "react";
+import FeatureCard from "@/components/FeatureCard";
+import SectionButton from "@/components/SectionButton";
+import DividerElement from "@/components/DividerElement";
+import ImageCard from "./ImageCard";
+import ParallaxOrbs from "./ParallaxOrbs";
+import { Users, Target, Rocket, Award } from "lucide-react";
 import { MegaMenu } from "@/components/ui/Megamenu/MegaMenu";
-import Footer from "@/components/footer";
 import Hero from "./hero";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import MainContent from "./mainContent";
-import AboutSection from "./aboutSection";
+import AboutSection from "./mainContent";
+import CTASection from "@/components/CTA";
+import Footer from "@/components/footer";
 
-const FAQ = () => {
-  const [isInView, setIsInView] = useState(false);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [activeCategory, setActiveCategory] = useState("all");
-  const sectionRef = useRef<HTMLElement>(null);
+const Index = () => {
+  // Job seeker features
+  const jobSeekerFeatures = [
+    {
+      title: "Verified Job Listings",
+      description:
+        "Browse through carefully vetted opportunities that match your skillset and career goals.",
+      icon: "check",
+    },
+    {
+      title: "Direct Application",
+      description:
+        "Our intelligent system connects you with roles that align with your unique potential and aspirations.",
+      icon: "sparkle",
+    },
+    {
+      title: "Career Profile Management",
+      description:
+        "Access expert advice and resources to help you navigate your professional journey.",
+      icon: "check",
+    },
+    {
+      title: "Real-Time Alerts & Updates",
+      description:
+        "Receive tailored coaching to help you present your best self to potential employers.",
+      icon: "sparkle",
+    },
+    {
+      title: "Resume Guidance & Career Tips",
+      description:
+        "Receive tailored coaching to help you present your best self to potential employers.",
+      icon: "sparkle",
+    },
+    // {
+    //   title: "One Dashboard. Full Control",
+    //   description:
+    //     "Receive tailored coaching to help you present your best self to potential employers.",
+    //   icon: "sparkle",
+    // },
+  ];
 
-  //const categories = [
-  //  { id: "all", label: "All Questions" },
-  //  { id: "General", label: "General" },
-  //  { id: "Product", label: "About Product" },
-  //  { id: "Process", label: "About Process" },
-  //];
+  // Employer features
+  const employerFeatures = [
+    {
+      title: "Dedicated recruitment specialists for your sector",
+      description:
+        "Work with industry experts who understand your specific talent needs and market dynamics.",
+      icon: "sparkle",
+    },
+    {
+      title: "Permanent, temporary, and contract staffing options",
+      description:
+        "We identify, evaluate, and present only the most qualified candidates for your consideration.",
+      icon: "check",
+    },
+    {
+      title: "Complete talent acquisition strategy & execution",
+      description:
+        "Streamline your recruitment workflow with our proven methodologies and tools.",
+      icon: "check",
+    },
+    {
+      title: "Pre-screening, skill assessment & background checks",
+      description:
+        "Develop sustainable approaches to building and maintaining your ideal team.",
+      icon: "sparkle",
+    },
+    {
+      title: "Employer branding and candidate engagement support",
+      description:
+        "Develop sustainable approaches to building and maintaining your ideal team.",
+      icon: "sparkle",
+    },
+  ];
 
-  //const filteredFaqs = activeCategory === "all"
-  //? faqs
-  //: faqs.filter(faq => faq.category === activeCategory);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsInView(entry.isIntersecting);
-      },
-      { threshold: 0.2 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
+  // Stats
 
   return (
-    <div>
+    <div className="min-h-screen w-full mx-auto overflow-hidden">
+      {/* Header with logo */}
       <MegaMenu />
-      <Hero /> 
-      <MainContent />
+      <Hero />
       <AboutSection />
-      <section
-        ref={sectionRef}
-        className="w-full py-16 sm:py-20 lg:py-12 relative bg-gradient-to-b from-white to-[#E6F0F5]/30"
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="mb-8 max-w-7xl">
-            <span className="inline-block px-3 py-1 bg-[#0098af]/10 text-[#0098af] text-xs font-medium uppercase tracking-wider rounded-full mb-4">
-              Hiring Small heading
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#003C46] mb-4">
-              Hiring Title
-            </h2>
-            {/* <p className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-7xl">
-            The right engineering partner isn&apos;t just about technical services, it&apos;s about working with a team that understands your industry, your challenges, and the pressure to stay ahead.
-          </p> */}
-            {/* <p className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-7xl">Text</p> */}
-          </div>
 
-          {/* Category tabs */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="mb-8"
-          >
-            <div className="container max-w-7xl mx-auto">
-              <div className="max-w-2xl">
-                <h1 className="text-4xl md:text-5xl py-10 lg:text-6xl font-bold text-[#0098af]-[#003C46] mb-6 leading-tight">
-                  TITLE
-                </h1>
-                <p className="text-xl text-[#5b5b5b] mb-8">Description </p>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Button
-                    asChild
-                    size="lg"
-                    className="bg-[#0098af] hover:bg-[#0098af]-[#003C46]"
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
+        {/* Main Content */}
+        <div className="flex flex-col md:flex-row ">
+          {/* Job Seekers Column */}
+          <div className="w-full md:w-1/2  bg-[#E6F0F5] p-6 md:p-10 min-h-screen rounded-l-3xl overflow-y-auto custom-scrollbar relative">
+            <ParallaxOrbs theme="jobseeker" />
+
+            <div className="max-w-lg mx-auto px-4 relative z-10 mt-2">
+              <div className="text-center mb-8 animate-fade-in">
+                <h2 className="text-3xl md:text-4xl font-bold mb-2 gradient-text seeker-gradient-text">
+                  For Job Seekers
+                </h2>
+                <p className="text-[#5b5b5b] italic">
+                  Find Opportunities That Match Your Potential
+                </p>
+              </div>
+
+              <ImageCard
+                imageUrl="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+                alt="Professional working on laptop"
+                icon={<Target size={24} />}
+                theme="jobseeker"
+              />
+
+              <div
+                className="mb-8 text-[#5b5b5b] animate-fade-in"
+                style={{ animationDelay: "200ms" }}
+              >
+                <p className="leading-relaxed">
+                  Your job search should reflect your{" "}
+                  <span className="font-bold text-[#0098af]">
+                    unique potential
+                  </span>
+                  . Our platform connects you with opportunities that align with
+                  your skills, goals, and values, creating a more meaningful
+                  path to your next career move.
+                </p>
+              </div>
+
+              <div className="mb-10">
+                <div className="flex items-center mb-4">
+                  <h3
+                    className="text-xl font-bold text-[#0098af] animate-fade-in flex items-center"
+                    style={{ animationDelay: "300ms" }}
                   >
-                    <Link href="/job-seekers">Find Jobs</Link>
-                  </Button>
-                  <Button
-                    asChild
-                    size="lg"
-                    variant="outline"
-                    className="border-[#0098af] text-[#0098af] hover:bg-[#0098af]-[#E6F0F5]"
-                  >
-                    <Link href="/employer">Hire Talent</Link>
-                  </Button>
+                    <Award className="w-5 h-5 mr-2" />
+                    What We Offer
+                  </h3>
+                  <div className="flex-grow h-px bg-gradient-to-r from-[#0098af] to-transparent ml-3"></div>
+                </div>
+
+                <div className="relative space-y-4">
+                  <div className="connection-line"></div>
+                  {jobSeekerFeatures.map((feature, index) => (
+                    <FeatureCard
+                      key={index}
+                      title={feature.title}
+                      theme="jobseeker"
+                      delay={400 + index * 100}
+                      icon={feature.icon as "check" | "sparkle"}
+                      description={""}
+                    />
+                  ))}
                 </div>
               </div>
+
+              <div
+                className="text-center mt-10 animate-fade-in"
+                style={{ animationDelay: "900ms" }}
+              >
+                <SectionButton
+                  text="Start Your Journey"
+                  theme="jobseeker"
+                  size="lg"
+                />
+              </div>
             </div>
-          </motion.div>
+          </div>
 
-          {/* Simple divider */}
-          <div className="mt-16 h-[2px] w-full max-w-3xl mx-auto bg-gradient-to-r from-transparent via-[#0098af]/40 to-transparent"></div>
+          {/* Divider */}
+          <DividerElement />
 
-          {/* CTA section */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="mt-16 text-center max-w-2xl mx-auto"
-          >
-            <h3 className="text-xl sm:text-2xl font-semibold text-[#003C46] mb-4">
-              Still have questions?
-            </h3>
-            <p className="text-gray-600 mb-6">
-              Our team is ready to help you find the perfect engineering
-              solution for your business.
-            </p>
-            <a
-              href="/contact"
-              className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#0098af] hover:bg-[#007a8a] transition-colors duration-200 shadow-sm"
-            >
-              Contact Us
-            </a>
-          </motion.div>
+          {/* Employers Column */}
+          <div className="w-full md:w-1/2 bg-[#003C46] rounded-r-3xl p-6 md:p-10 min-h-screen overflow-y-auto custom-scrollbar relative">
+            <ParallaxOrbs theme="employer" />
+
+            <div className="max-w-lg mx-auto px-4 relative z-10 mt-2">
+              <div className="text-center mb-8 animate-fade-in">
+                <h2 className="text-3xl md:text-4xl font-bold mb-2 gradient-text employer-gradient-text">
+                  For Employers
+                </h2>
+                <p className="text-gray-300 italic">
+                  Great Companies Are Built By Great Teams
+                </p>
+              </div>
+
+              <ImageCard
+                imageUrl="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+                alt="Team working on computer"
+                icon={<Users size={24} />}
+                theme="employer"
+              />
+
+              <div
+                className="mb-8 text-[#E6F0F5] animate-fade-in"
+                style={{ animationDelay: "200ms" }}
+              >
+                <p className="leading-relaxed">
+                  Finding the right talent isn&apos;t just about filling
+                  positions—it&apos;s about building the future of your company.
+                  We believe that{" "}
+                  <span className="font-bold text-[#00b4d8]">
+                    every hire is a step toward growth
+                  </span>
+                  , and our approach reflects this philosophy.
+                </p>
+              </div>
+
+              <div className="mb-10">
+                <div className="flex items-center mb-4">
+                  <h3
+                    className="text-xl font-bold text-[#00b4d8] animate-fade-in flex items-center"
+                    style={{ animationDelay: "300ms" }}
+                  >
+                    <Rocket className="w-5 h-5 mr-2" />
+                    What We Offer
+                  </h3>
+                  <div className="flex-grow h-px bg-gradient-to-r from-[#00b4d8] to-transparent ml-3"></div>
+                </div>
+
+                <div className="relative space-y-4">
+                  <div className="connection-line"></div>
+                  {employerFeatures.map((feature, index) => (
+                    <FeatureCard
+                      key={index}
+                      title={feature.title}
+                      theme="employer"
+                      delay={400 + index * 100}
+                      icon={feature.icon as "check" | "sparkle"}
+                      description={""}
+                    />
+                  ))}
+                </div>
+              </div>
+
+              <div
+                className="text-center mt-10 animate-fade-in"
+                style={{ animationDelay: "900ms" }}
+              >
+                <SectionButton
+                  text="Build Your Team"
+                  theme="employer"
+                  size="lg"
+                />
+              </div>
+            </div>
+          </div>
         </div>
-      </section>
+      </div>
+      {/* Footer with animated dot pattern */}
+
+      <CTASection />
       <Footer />
     </div>
   );
 };
 
-export default FAQ;
+export default Index;
