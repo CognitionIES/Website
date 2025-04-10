@@ -8,7 +8,7 @@ export default function MapSection() {
   const { EMBED_URL } = CONTACT_CONSTANTS.MAP;
 
   return (
-    <div className="mt-16 rounded-lg overflow-hidden shadow-lg h-[400px] relative">
+    <div className="mt-16 max-w-7xl mx-auto   px-4 sm:px-6 lg:px-8 rounded-lg overflow-hidden  h-[400px] relative">
       {/* Google Maps iframe */}
       <iframe
         src={EMBED_URL}

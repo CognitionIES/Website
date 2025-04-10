@@ -37,7 +37,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
           {icon === 'check' ? (
             <CheckSquare 
               className={cn(
-                "w-5 h-5",
+                "w-5 h-5 ",
                 isJobSeeker ? "text-[#0098af]" : "text-[#00b4d8]"
               )} 
             />

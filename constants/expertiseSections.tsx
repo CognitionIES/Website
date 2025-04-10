@@ -3,7 +3,7 @@
   const servicesSections = {
       mechanical: {
         title: "Mechanical Design Services",
-        description: "Comprehensive mechanical engineering solutions delivering innovative designs and optimized performance across industries. Our services combines cutting-edge technology with practical engineering principles.",
+        description: "From product ideation to performance-driven engineering, our mechanical design services bring concepts to life. We integrate innovation with precision to deliver optimized, manufacturable, and cost-effective solutions tailored to your product’s lifecycle.",
         imageUrl: "https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?q=80&w=2070&auto=format&fit=crop",
         bulletPoints: [
           "Product Design and Development",
@@ -131,7 +131,7 @@
     },
     technical: {
       title: "Technical Documentation",
-      description: "Comprehensive technical documentation services ensuring clear communication of complex technical information.",
+      description: "From product ideation to performance-driven engineering, our mechanical design services bring concepts to life. We integrate innovation with precision to deliver optimized, manufacturable, and cost-effective solutions tailored to your product’s lifecycle.",
       imageUrl: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop",
       bulletPoints: [
         "Creation of Technical Manuals and User Guides",
@@ -152,7 +152,7 @@
     },
     mechincal: {
       title: "Asset Management",
-      description: "Comprehensive technical documentation services ensuring clear communication of complex technical information.",
+      description: "From product ideation to performance-driven engineering, our mechanical design services bring concepts to life. We integrate innovation with precision to deliver optimized, manufacturable, and cost-effective solutions tailored to your product’s lifecycle.",
       imageUrl: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop",
       bulletPoints: [
         "Hydraulic System Design and Optimization",

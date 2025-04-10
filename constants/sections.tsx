@@ -23,7 +23,7 @@ const sections = {
   mechanical: {
     title: "MECHANICAL DESIGN SERVICES",
     description:
-      "Comprehensive mechanical engineering solutions delivering innovative designs & optimized performance across industries. Our services combines cutting-edge technology with practical engineering principles.",
+      "From product ideation to performance-driven engineering, our mechanical design services bring concepts to life. We integrate innovation with precision to deliver optimized, manufacturable, and cost-effective solutions tailored to your product’s lifecycle.",
     imageUrl: mechImage1,
     bulletPoints: [
       "Product Design & Development",
@@ -44,7 +44,7 @@ const sections = {
   electrical: {
     title: "Electrical Design Services",
     description:
-      "Innovative electrical engineering solutions combining advanced circuit design with modern power systems & control technologies.",
+      "We empower your products with smart, efficient, and robust electrical systems. Our expertise spans circuit design, control systems, and renewable integration to ensure seamless functionality and energy efficiency across applications.",
     imageUrl: elecImage1,
     bulletPoints: [
       "Circuit Design & Simulation",
@@ -63,7 +63,7 @@ const sections = {
   "cae-cfd": {
     title: "CAE/CFD",
     description:
-      "Advanced engineering analysis services using state-of-the-art simulation tools & methodologies to optimize design performance & reliability",
+      "Delivering power through precision, our hydraulic engineering services focus on efficient system design and reliability. We analyze, model, and optimize hydraulic circuits to enhance performance while ensuring environmental and safety compliance.",
     imageUrl:
     caeImage1,
     bulletPoints: [
@@ -85,7 +85,7 @@ const sections = {
   prototyping: {
     title: "Prototyping & 3D Printing",
     description:
-      "Rapid prototyping & additive manufacturing services to bring concepts to life quickly & efficiently.",
+      "Accelerate your product development with our rapid prototyping solutions. From functional testing to design validation, we turn concepts into physical reality—fast—using additive manufacturing and low-volume production techniques.",
     imageUrl: protoImage1,
     bulletPoints: [
       "Rapid Prototyping (3D Printing, CNC Machining)",
@@ -124,7 +124,7 @@ const sections = {
   // 6. Asset Management (changed key from "asset" to "asset-management")
   "asset-management": {
     title: "Asset Management",
-    description: "R&om loreum ipslum",
+    description: "Maximize the life and value of your assets through strategic lifecycle management. Our data-driven approach ensures optimized performance, cost control, and risk mitigation through predictive maintenance and intelligent analytics.",
     imageUrl: assetImage1,
     bulletPoints: [
       "Asset Lifecycle Management & Cost Analysis",
@@ -143,7 +143,7 @@ const sections = {
   "embedded-systems": {
     title: "Embedded Systems Engineering",
     description:
-      "Advanced embedded systems solutions integrating hardware & software for intelligent device control & automation.",
+      "Drive innovation with intelligent, connected systems. Our embedded engineering solutions cover the full spectrum—from firmware development to IoT integration—ensuring reliable, scalable performance in today’s smart products.",
     imageUrl:embeddedImage1,
 
     bulletPoints: [
@@ -165,7 +165,7 @@ const sections = {
   "technical-publication": {
     title: "Technical Publication",
     description:
-      "Comprehensive technical documentation services ensuring clear communication of complex technical information.",
+      "Make complexity simple with clear, user-friendly documentation. We create compliant manuals, illustrated guides, and e-learning tools that ensure accurate communication across stakeholders, from field technicians to end-users.",
     imageUrl: techImage1,
     bulletPoints: [
       "Creation of Technical Manuals & User Guides",
@@ -186,7 +186,7 @@ const sections = {
   "supply-chain": {
     title: "Supply Chain Management ",
     description:
-      "End-to-end supply chain & procurement solutions to streamline sourcing, logistics, & vendor management.",
+      "Optimize your procurement pipeline and reduce costs with strategic supply chain solutions. From vendor selection to contract execution, we help you build resilient, data-backed sourcing models that boost profitability and operational efficiency.",
     imageUrl: supplyImage1,
     bulletPoints: [
       "Supplier Sourcing & Evaluation",

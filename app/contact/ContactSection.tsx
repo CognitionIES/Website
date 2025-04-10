@@ -1,6 +1,5 @@
 "use client";
 
-// This component shows contact info and a form to send messages
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -36,7 +35,6 @@ export default function ContactSection() {
   const { TITLE, DESCRIPTION, EMAIL } = CONTACT_CONSTANTS.CONTACT;
   const { STAGGER_CHILDREN } = CONTACT_CONSTANTS.ANIMATIONS;
 
-  // Memoized input change handler
   const handleInputChange = useCallback(
     (field: string, value: string | boolean) => {
       setFormData((prev) => ({ ...prev, [field]: value }));
@@ -44,7 +42,6 @@ export default function ContactSection() {
     []
   );
 
-  // Memoized form submission handler
   const handleSubmit = useCallback(
     async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
@@ -84,7 +81,7 @@ export default function ContactSection() {
         } else {
           setStatus("Oops! Something went wrong.");
         }
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       } catch (error) {
         setStatus("Error submitting form.");
       } finally {
@@ -94,7 +91,6 @@ export default function ContactSection() {
     [formData, isSubmitting]
   );
 
-  // Dropdown options for "Interested In"
   const interestOptions = [
     { value: "Product Engineering", label: "Product Engineering" },
     { value: "Plant Engineering", label: "Plant Engineering" },
@@ -104,42 +100,42 @@ export default function ContactSection() {
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-br from-gray-50 to-gray-100 relative">
-      <div className="relative">
-        {/* Background "CONTACT" text */}
-        <h1 className="absolute text-[12rem] md:text-[10rem] font-bold text-[#0098af] opacity-10 -top-20 left-1/2 transform -translate-x-1/2 font-montserrat">
+    <section className="py-8 md:py-12 lg:py-16 bg-gradient-to-br from-gray-50 to-gray-100 relative">
+      <div className="relative py-2">
+        <h1 className="absolute text-6xl sm:text-8xl md:text-[10rem] lg:text-[12rem] font-bold text-[#0098af] opacity-10 sm:text-hide -top-10 md:-top-16 left-1/2 transform -translate-x-1/2 font-montserrat whitespace-nowrap">
           CONTACT
         </h1>
-        {/* Foreground "GET IN TOUCH" text */}
-        <h1 className="relative text-7xl md:text-5xl text-center font-bold tracking-wide font-montserrat">
-          <p className="text-[#5b5b5b] py-6">{TITLE}</p>
+        <h1 className="relative text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-center font-bold tracking-wide font-montserrat px-4">
+          <p className="text-[#5b5b5b] ">{TITLE}</p>
         </h1>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 mt-10 sm:px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 md:mt-10">
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={STAGGER_CHILDREN}
-          className="grid grid-cols-1 lg:grid-cols-4 gap-10 items-start" // Changed to 4 columns
+          className="grid grid-cols-1 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-10"
         >
-          {/* Contact Info - Reduced Width */}
-          <div className="lg:col-span-1 space-y-6 items-center">
-            <p className="text-2xl text-[#003C46] font-semibold tracking-tight uppercase mb-4"> Bring Your Vision to Life</p>
-            <p className="text-base text-gray-600 text-justify mb-14 leading-relaxed">
+          {/* Contact Info */}
+          <div className="lg:col-span-1 space-y-4 md:space-y-6">
+            <p className="text-xl md:text-2xl text-[#003C46] font-semibold tracking-tight uppercase mb-2 md:mb-4">
+              Bring Your Vision to Life
+            </p>
+            <p className="text-sm md:text-base text-gray-600 text-justify mb-8 md:mb-14 leading-relaxed">
               {DESCRIPTION}
             </p>
-            <div className="text-gray-600 bg-white p-5  rounded-lg shadow-sm">
+            <div className="text-gray-600 bg-white p-4 md:p-5 rounded-lg shadow-sm">
               <div className="flex items-center space-x-3">
-                <FiMail className="text-[#0098AF]" />
+                <FiMail className="text-[#0098AF] text-lg md:text-xl" />
                 <div>
-                  <h3 className="text-sm font-semibold text-gray-800">
+                  <h3 className="text-xs md:text-sm font-semibold text-gray-800">
                     {EMAIL.TITLE}
                   </h3>
                   <Link
                     href={`mailto:${EMAIL.ADDRESS}`}
-                    className="text-sm hover:underline"
+                    className="text-xs md:text-sm hover:underline break-all"
                   >
                     {EMAIL.ADDRESS}
                   </Link>
@@ -148,10 +144,10 @@ export default function ContactSection() {
             </div>
           </div>
 
-          {/* Contact Form - Increased Width */}
-          <div className="lg:col-span-3 bg-white p-6 rounded-xl shadow-lg border-t-4 border-[#0098AF] w-full max-h-[460px] flex flex-col">
-            <form onSubmit={handleSubmit} className="space-y-3 flex-1">
-              <div className="grid grid-cols-2 gap-3">
+          {/* Contact Form */}
+          <div className="lg:col-span-3 bg-white p-4 sm:p-6 rounded-xl shadow-lg border-t-4 max-h-[600px] border-[#0098AF] w-full">
+            <form onSubmit={handleSubmit} className="space-y-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <Input
                   id="name"
                   type="text"
@@ -172,8 +168,6 @@ export default function ContactSection() {
                   required
                   disabled={isSubmitting}
                 />
-              </div>
-              <div className="grid grid-cols-2 gap-3">
                 <Input
                   id="company"
                   type="text"
@@ -232,33 +226,35 @@ export default function ContactSection() {
                 placeholder="Your Message"
                 value={formData.message}
                 onChange={(e) => handleInputChange("message", e.target.value)}
-                className="w-full border border-gray-300 focus:border-[#0098AF] focus:ring-1 focus:ring-[#0098AF] rounded-lg text-sm py-2 px-3 h-20 transition-all duration-200 resize-none placeholder-gray-400"
+                className="w-full border border-gray-300 focus:border-[#0098AF] focus:ring-1 focus:ring-[#0098AF] rounded-lg text-sm py-2 px-3 h-24 sm:h-20 transition-all duration-200 resize-none placeholder-gray-400"
                 required
                 disabled={isSubmitting}
               />
-              <div className="flex items-center gap-2">
-                <Checkbox
-                  id="consent"
-                  checked={formData.consent}
-                  onCheckedChange={(checked) =>
-                    handleInputChange("consent", !!checked)
-                  }
-                  className="h-4 w-4 border-gray-300 text-[#0098AF] focus:ring-[#0098AF] rounded transition-colors duration-200"
-                  disabled={isSubmitting}
-                />
-                <label
-                  htmlFor="consent"
-                  className="text-xs text-gray-600 leading-tight"
-                >
-                  I agree to receive further communication. See our{" "}
-                  <Link
-                    href="/privacy-policy"
-                    className="text-[#0098AF] hover:underline"
+              <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+                <div className="flex items-center gap-2">
+                  <Checkbox
+                    id="consent"
+                    checked={formData.consent}
+                    onCheckedChange={(checked) =>
+                      handleInputChange("consent", !!checked)
+                    }
+                    className="h-4 w-4 border-gray-300 text-[#0098AF] focus:ring-[#0098AF] rounded transition-colors duration-200"
+                    disabled={isSubmitting}
+                  />
+                  <label
+                    htmlFor="consent"
+                    className="text-xs text-gray-600 leading-tight"
                   >
-                    Privacy Policy
-                  </Link>
-                  .
-                </label>
+                    I agree to receive further communication. See our{" "}
+                    <Link
+                      href="/privacy-policy"
+                      className="text-[#0098AF] hover:underline"
+                    >
+                      Privacy Policy
+                    </Link>
+                    .
+                  </label>
+                </div>
               </div>
               {status && (
                 <motion.p
@@ -276,7 +272,7 @@ export default function ContactSection() {
               )}
               <Button
                 type="submit"
-                className="bg-[#0098AF] text-white hover:bg-white hover:text-black rounded-lg py-2 text-base transition-all duration-300 hover:shadow-lg border-2 border-transparent hover:border-[#0098af] hover:outline hover:outline-2 hover:outline-[#0098af] disabled:bg-[#0098AF] disabled:cursor-not-allowed"
+                className="w-full sm:w-auto bg-[#0098AF] text-white hover:bg-white hover:text-black rounded-lg py-2 px-4 text-sm md:text-base transition-all duration-300 hover:shadow-lg border-2 border-transparent hover:border-[#0098af] hover:outline hover:outline-2 hover:outline-[#0098af] disabled:bg-[#0098AF] disabled:cursor-not-allowed"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? "Sending..." : "Submit"}

@@ -2,17 +2,19 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import {
-  Select,
-  SelectTrigger,
-  SelectValue,
-  SelectContent,
-  SelectItem,
-} from "@/components/ui/select";
-import { Search } from "lucide-react";
+//import { Input } from "@/components/ui/input";
+//import {
+//  Select,
+//  SelectTrigger,
+//  SelectValue,
+//  SelectContent,
+//  SelectItem,
+//} from "@/components/ui/select";
+//import { Search } from "lucide-react";
 import { MegaMenu } from "@/components/ui/Megamenu/MegaMenu";
 import Footer from "@/components/footer";
+import Hero from "./Hero";
+import AboutSection from "./AboutSection";
 
 // Sample job data
 const sampleJobs = [
@@ -77,10 +79,11 @@ const JobSeekersPage = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <MegaMenu />
-
+      <Hero />
+      <AboutSection />
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="bg-gradient-to-b from-[#0098af]-[#E6F0F5] via-[#0098af]-[#E6F0F5] to-white py-20 px-4">
+        {/* <section className="bg-gradient-to-b from-[#0098af]-[#E6F0F5] via-[#0098af]-[#E6F0F5] to-white py-20 px-4">
           <div className="container mx-auto text-center max-w-6xl">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#003C46] mb-4 leading-tight drop-shadow-sm">
               Find your dream job now
@@ -89,7 +92,7 @@ const JobSeekersPage = () => {
               5 lakh+ jobs for you to explore
             </p>
 
-            {/* Search Box */}
+            {/* Search Box 
             <div className="bg-white rounded-2xl max-w-7xl mx-auto shadow-xl p-6 md:p-8 border border-gray-100">
               <form onSubmit={handleSearch} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
@@ -154,7 +157,7 @@ const JobSeekersPage = () => {
               </form>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Job Listings Section */}
         <section className="container mx-auto py-12 px-4">

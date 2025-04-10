@@ -28,7 +28,8 @@ const Hero = () => {
             className="text-lg md:text-xl text-[#5b5b5b] mb-10 
                       max-w-2xl mx-auto animate-fade-in-up delay-100"
           >
-            AI-powered platform unifying claims, CPQ, and repair workflows.
+            AI-powered platform unifying claims, Configue Price Quote (CPQ), and
+            repair workflows.
           </p>
 
           {/* CTA buttons */}

@@ -15,7 +15,7 @@ const ParallaxOrbs: React.FC<ParallaxOrbsProps> = ({ theme }) => {
         className={cn(
           "absolute rounded-full opacity-20 animate-float",
           isJobSeeker 
-            ? "bg-gradient-to-br from-[#0098af]/30 to-[#00b4d8]/30" 
+            ? "bg-gradient-to-br from-[#000000]/30 to-[#000000]/30" 
             : "bg-gradient-to-br from-[#E6F0F5]/20 to-[#00b4d8]/20",
           "w-72 h-72 -top-20 -right-20"
         )}
@@ -27,7 +27,7 @@ const ParallaxOrbs: React.FC<ParallaxOrbsProps> = ({ theme }) => {
         className={cn(
           "absolute rounded-full opacity-10 animate-float",
           isJobSeeker 
-            ? "bg-gradient-to-tr from-[#00b4d8]/20 to-[#0098af]/20" 
+            ? "bg-gradient-to-tr from-[#000000]/20 to-[#000000]/20" 
             : "bg-gradient-to-tr from-[#00b4d8]/20 to-[#E6F0F5]/10",
           "w-48 h-48 bottom-32 left-10"
         )}

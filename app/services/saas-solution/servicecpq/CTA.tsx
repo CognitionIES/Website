@@ -66,7 +66,7 @@ const CTA = () => {
             buttonLink="/contact"
             gradient="from-[#0098af] to-[#003C46]"
           /> */}
-          <h1>// CARDS WILL BE DISPLAYED HERE WITH PRICE TAGS SIMILAR TO THE WEBSITE</h1>
+          {/* <h1>// CARDS WILL BE DISPLAYED HERE WITH PRICE TAGS SIMILAR TO THE WEBSITE</h1> */}
         </div>
 
         <div className="mt-20 bg-gradient-to-br from-[#0098af] to-[#003C46] rounded-xl p-12 text-white text-center">
