@@ -1,4 +1,5 @@
-import image1 from "../images/home/who-we-are.jpg" 
+//import image1 from "../images/home/who-we-are.jpg" 
+import aboutImage from "@/constants/images/home/about.png"
 
 // Constants for the AboutUs section
 export const ABOUT_CONSTANTS = {
@@ -10,7 +11,7 @@ export const ABOUT_CONSTANTS = {
     "We drive innovation by seamlessly integrating product and process development, enhancing efficiency, reliability, and cost optimization. Through advanced simulations, 3D modeling, and data-driven insights, we streamline operations and accelerate time-to-market. With a focus on precision, sustainability, and continuous improvement, we empower industries to achieve scalable and future-ready growth while upholding the highest standards of quality and safety.",
   DESCRIPTION_3:
     "At Cognition IES, we are committed to delivering engineering excellence that transforms industries and drives sustainable growth.",
-    IMAGE: image1,
+    IMAGE: aboutImage,
   BUTTON_TEXT: "Download Brochure",
   BUTTON_HREF: "/brochure",
 };

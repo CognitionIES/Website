@@ -8,6 +8,7 @@ import { useEffect, useState, useRef } from "react";
 import { ChevronDown, MousePointer2 } from "lucide-react";
 import frameBackground from "@/constants/images/Background/Frame_8.jpg";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import CTASection from "@/components/CTA";
 
 export default function PlantEngineeringDetailsPage() {
   const shouldReduceMotion = useReducedMotion();
@@ -156,6 +157,7 @@ export default function PlantEngineeringDetailsPage() {
           )}
         </AnimatePresence>
       </div>
+      <CTASection />
       <Footer />
     </div>
   );

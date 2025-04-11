@@ -7,6 +7,7 @@ export const CAREERS_CONSTANTS = {
       IMAGE: HeroCareerImg, // Local image path (adjust as needed)
       TITLE: "Join Our Team",
       SUBTITLE: "Shape the future with us. We’re seeking passionate innovators to join our journey.",
+      TAGS: "#ComeJoinUs in #EngineeringABetterWorld",
     },
   
     // Values Section
@@ -29,6 +30,9 @@ export const CAREERS_CONSTANTS = {
           title: "Sustainability ",
           description: "Building greener solutions for a better tomorrow.",
         },
+        
+        
+        
       ],
     },
   
@@ -69,7 +73,7 @@ export const CAREERS_CONSTANTS = {
         },
         {
           title: "Health & Wellness",
-          description: "Comprehensive health benefits and wellness programs to support your physical and mental well-being."
+          description: "Comprehensive health benefits & wellness programs to support your physical & mental well-being."
         }
       ]
     },

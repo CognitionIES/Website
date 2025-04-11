@@ -39,16 +39,16 @@ export default function Hero() {
 
         <div className="absolute inset-0 bg-gradient-to-br from-[#003C46]/85 via-[#0098AF]/70 to-[#00b4d8]/50" />
         <div className="absolute inset-0 opacity-5 bg-[url('/images/engineering-pattern.jpg')] bg-repeat" />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col items-center justify-center text-center">
+        <div className="relative z-10 max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col items-center justify-center mb-4 text-center">
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight text-white drop-shadow-md mb-3 sm:mb-4">
             Your Career. Our Commitment
           </h1>
-          <p className="text-white text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-light max-w-2xl sm:max-w-3xl mx-auto mb-4 sm:mb-6">
+          <p className="text-white text-sm sm:text-lg md:text-lg lg:text-lg  font-light max-w-3xl sm:max-w-3xl mx-auto mb-4 sm:mb-2">
             We’re more than a job board. We’re your career partners. We aim to
             make the job-seeking process easier, smoother, and more transparent
             for everyone.
           </p>
-          <p className="text-white text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-light max-w-2xl sm:max-w-3xl mx-auto mb-8 sm:mb-12 md:mb-16 lg:mb-20">
+          <p className="text-white text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-light max-w-2xl sm:max-w-3xl mx-auto mb-8 sm:mb-18 md:mb-20 lg:mb-24">
             Because you’re not just finding a job — you’re stepping into your
             future.
           </p>

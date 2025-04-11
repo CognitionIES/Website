@@ -4,11 +4,12 @@
 import Footer from "@/components/footer";
 import { MegaMenu } from "@/components/ui/Megamenu/MegaMenu";
 import HeroSection from "./HeroSection";
-import ValuesSection from "./ValuesSection";
-import TestimonialsSection from "./TestimonialsSection";
+//import ValuesSection from "./ValuesSection";
+//import TestimonialsSection from "./TestimonialsSection";
 import BenefitsSection from "./BenefitsSection";
-import OpenPositions from "./OpenPositions";
-import ApplicationForm from "./ApplicationForm";
+//import OpenPositions from "./OpenPositions";
+//import ApplicationForm from "./ApplicationForm";
+import AboutSection from "./AboutSection";
 
 export default function CareersPage() {
   return (
@@ -17,15 +18,12 @@ export default function CareersPage() {
       <MegaMenu />
       {/* Hero section */}
       <HeroSection />
+      <AboutSection />
       {/* Values section */}
-      <ValuesSection />
+      {/* <ValuesSection /> */}
       {/* Open positions section */}
-      <OpenPositions />
-      {/* Testimonials section */}
-      <TestimonialsSection />
       {/* Benefits section */}
       <BenefitsSection />
-      <ApplicationForm />
       {/* Footer */}
       <Footer />
     </div>

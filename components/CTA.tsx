@@ -51,19 +51,8 @@ export default function CTASection() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         
-          {/* Category tabs */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="mb-8"
-          >
-           
-          </motion.div>
 
-          {/* Simple divider */}
-          <div className="mt-16 h-[2px] w-full max-w-3xl mx-auto bg-gradient-to-r from-transparent via-[#0098af]/40 to-transparent"></div>
-
+          
           {/* CTA section */}
         </div>
       </section>
@@ -71,7 +60,7 @@ export default function CTASection() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7, delay: 0.2 }}
+          transition={{ duration: 0.7, delay: 0.4 }}
           className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 drop-shadow-md">

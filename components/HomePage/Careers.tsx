@@ -31,8 +31,10 @@ const responsiveConfig = {
     height: 350,
     className: "w-full h-[150px] sm:h-[250px] md:h-[350px] lg:h-[450px]",
   },
-  overlayPosition: "bottom-2 right-2 sm:bottom-4 sm:right-4 md:bottom-6 md:right-6",
-  badgePosition: "top-4 right-4 sm:top-8 sm:right-8 md:top-12 md:right-12 lg:right-40",
+  overlayPosition:
+    "bottom-2 right-2 sm:bottom-4 sm:right-4 md:bottom-6 md:right-6",
+  badgePosition:
+    "top-4 right-4 sm:top-20 sm:right-8 md:top-24 md:right-12 lg:right-40",
 };
 
 // Main Careers component
@@ -50,18 +52,11 @@ const Careers: React.FC = () => {
 
       {/* Main Content Container */}
       <div className={`max-w-7xl mx-auto ${responsiveConfig.containerPadding}`}>
-        {/* "We're Hiring" Badge - Positioned Absolutely */}
-        <div className={`absolute ${responsiveConfig.badgePosition}`}>
-          <span className="inline-block px-2 py-1 sm:px-3 sm:py-1.5 bg-[#0098af]/10 text-[#0098af] text-xs sm:text-sm font-medium uppercase tracking-wider rounded-full">
-            We&apos;re Hiring
-          </span>
-        </div>
-
-        <div
-          className={`grid grid-cols-1 md:grid-cols-2 ${responsiveConfig.gap} items-center`}
+         <div
+          className={`grid grid-cols-1 md:grid-cols-3 gap-6${responsiveConfig.gap} items-center`}
         >
           {/* Image Section */}
-          <div className="relative">
+          <div className="relative md:col-span-2">
             <div className="rounded-2xl overflow-hidden shadow-lg">
               <Image
                 src={IMAGE}
@@ -88,19 +83,27 @@ const Careers: React.FC = () => {
             whileInView="visible"
             variants={motionVariants}
             viewport={{ once: true }}
-            className="order-2 md:order-1 mt-4 md:mt-0"
+            className="md:col-span-1 mt-4 md:mt-0"
           >
-            <div className="space-y-3 sm:space-y-4 md:space-y-6">
-              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#003C46] leading-tight">
+            <div className=" ">
+              <div className="text-right  ">
+                <span className="inline-block px-2 py-1  sm:px-3 sm:py-1.5 bg-[#0098af]/10 text-[#0098af] text-xs sm:text-xs font-medium uppercase tracking-wider rounded-full">
+                  We&apos;re Hiring
+                </span>
+              </div>
+             
+              <h2 className="text-xl mt-24 sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#003C46] leading-tight">
                 Join Our Team
               </h2>
-              <h3 className="text-base sm:text-lg md:text-xl text-gray-600 font-medium leading-snug">
+              <div className="w-[80px] sm:w-[100px] h-[3px] bg-gradient-to-r from-[#0098af] to-transparent rounded-full" />
+
+              <h3 className="text-base sm:text-lg mt-8 md:text-xl text-gray-600 font-medium leading-snug">
                 {SUBTITLE}
               </h3>
-              <p className="text-sm sm:text-base md:text-lg text-gray-600 text-justify leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg mt-4 text-gray-600 text-justify leading-relaxed">
                 {DESCRIPTION}
               </p>
-              <div className="pt-2 text-right">
+              <div className="pt-12 text-right">
                 <Link href="/careers">
                   <Button className="group bg-[#0098af] text-white hover:bg-white hover:text-[#003C46] text-xs sm:text-sm md:text-base font-medium transition-all duration-300 border-2 border-transparent hover:border-[#0098af] rounded-xl px-3 sm:px-4 md:px-5 py-1.5 sm:py-2 md:py-2.5 h-8 sm:h-9 md:h-10 shadow-md hover:shadow-lg">
                     <span>Opportunities</span>

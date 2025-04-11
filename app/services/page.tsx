@@ -9,6 +9,7 @@ import { MegaMenu } from "@/components/ui/Megamenu/MegaMenu";
 import { Suspense, useEffect, useState, useRef, useCallback } from "react";
 import SearchParamsHandler from "./SearchParamsHandler";
 import { ScrollSection } from "@/components/ScrollSection";
+import CTASection from "@/components/CTA";
 
 export default function ServicesPage() {
   const shouldReduceMotion = useReducedMotion();
@@ -109,7 +110,8 @@ export default function ServicesPage() {
               </div>
             </section>
           ))}
-        </main>
+        </main> 
+        <CTASection />
         <Footer />
       </div>
       <AnimatePresence>

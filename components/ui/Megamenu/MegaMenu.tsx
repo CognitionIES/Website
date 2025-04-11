@@ -22,7 +22,7 @@ import {
   ShieldCheck,
   Building2,
   Car,
-  Code,
+  //Code,
   Server,
   Users,
 } from "lucide-react";
@@ -212,9 +212,9 @@ const servicesData: MainCategory[] = [
     href: "/services/saas-solution/servicecpq",
     subCategories: [
       {
-        title: "SERVICECPQ",
+        title: "",
         href: "/services/saas-solution/servicecpq",
-        icon: <Code className="w-4 h-4" />,
+        icon: "",
       },
     ],
     image: {

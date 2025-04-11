@@ -117,12 +117,10 @@ const [skills, setSkills] = useState("");
         className="w-full py-16 sm:py-20 lg:py-12 relative bg-gradient-to-b from-white to-[#E6F0F5]/30"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="mb-8 max-w-7xl">
-            <span className="inline-block px-3 py-1 bg-[#0098af]/10 text-[#0098af] text-xs font-medium uppercase tracking-wider rounded-full mb-4">
-            Job Seekers
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#003C46] mb-4">
-            Find Your Dream Jobs
+          <div className="mb-8 max-w-7xl text-center">
+            
+            <h2 className="text-4xl sm:text-5xl font-bold text-[#003C46] mb-4">
+            Find Your Dream Job
             </h2>
           </div>
 

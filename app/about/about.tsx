@@ -3,13 +3,14 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { ABOUT_CONSTANTS } from "@/constants/aboutPage/constants";
+import ourJourneyImage from "@/constants/images/about/our-journey.png"
 
 import { useEffect, useRef, useState } from "react";
 // import Link from "next/link";
 // import { Button } from "@/components/ui/button";
 
 export default function AboutSection() {
-  const { IMAGES, TEXT,  STATS } = ABOUT_CONSTANTS;
+  const {  TEXT,  STATS } = ABOUT_CONSTANTS;
   const [isInView, setIsInView] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -69,7 +70,7 @@ export default function AboutSection() {
             variants={contentVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
-            className="grid md:grid-cols-2 gap-12 items-center"
+            className="grid md:grid-cols-2 gap-28 items-center"
           >
             <div className="">
               <p className="text-lg text-gray-600 mb-6 text-justify leading-relaxed">
@@ -102,9 +103,9 @@ export default function AboutSection() {
                 ))}
               </div>
             </div>
-            <div className="order-1 md:order-2 relative hidden md:block md:h-[360px] md:w-[555px] rounded-xl shadow-md overflow-hidden justify-self-end">
+            <div className="order-1 md:order-2 relative hidden md:block md:h-[360px] md:w-[620px] rounded-xl shadow-md overflow-hidden justify-self-end">
               <Image
-                src={IMAGES.STORY_IMAGE}
+                src={ourJourneyImage}
                 alt="Engineering services"
                 width={300}
                 height={500}

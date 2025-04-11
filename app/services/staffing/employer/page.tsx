@@ -8,14 +8,12 @@ import {
   Users,
   Clock,
   Sparkles,
-  TrendingUp,
   RotateCcw,
   Award,
   Target,
   Car,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+//import { Button } from "@/components/ui/button";
 //import {
 //  Carousel,
 //  CarouselContent,
@@ -23,11 +21,13 @@ import { Card, CardContent } from "@/components/ui/card";
 //  CarouselNext,
 //  CarouselPrevious,
 //} from "@/components/ui/carousel";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+//import { Input } from "@/components/ui/input";
+//import { Label } from "@/components/ui/label";
 //import { Separator } from "@/components/ui/seprator";
 import Image from "next/image";
 import { MegaMenu } from "@/components/ui/Megamenu/MegaMenu";
+import Footer from "@/components/footer";
+//import CTASection from "@/components/CTA";
 
 const Employers = () => {
   const animatedElementsRef = useRef<HTMLElement[]>([]);
@@ -81,6 +81,9 @@ const Employers = () => {
       image:
         "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=600&q=80",
     },
+  ];
+
+  const processSteps1 = [
     {
       title: "Interview Coordination",
       icon: <MessageSquare className="h-8 w-8 text-[#00b4d8]" />,
@@ -144,9 +147,9 @@ const Employers = () => {
   return (
     <div>
       <MegaMenu />
-      <div className="bg-gradient-to-br from-[#E6F0F5] to-white">
+      <div className="bg-gradient-to-br from-[#E6F0F5]  to-white">
         {/* Hero Section with Background Image */}
-        <div className="relative bg-[#003C46] text-white overflow-hidden">
+        <div className="relative bg-[#003C46] text-white h-[470px] overflow-hidden">
           <div className="absolute inset-0 z-0">
             <Image
               src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1920&q=80"
@@ -193,27 +196,58 @@ const Employers = () => {
           {/* How We Work Section */}
           <section className="py-16">
             <div className="text-center mb-12 animate-on-scroll">
-              <h2 className="text-2xl md:text-3xl font-bold text-[#0098af] mb-3">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#0098af] mb-3 uppercase">
                 Step-by-Step Engagement Process
               </h2>
             </div>
 
             {/* Process Flow with Images */}
-            <div className="grid md:grid-cols-5 gap-8 animate-on-scroll">
+            <div className="grid md:grid-cols-3 gap-8 animate-on-scroll">
               {processSteps.map((step, index) => (
                 <div
                   key={index}
-                  className=" p-6 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 group"
+                  className=" p-6 rounded-lg bg-white transition-all duration-300 group"
                 >
-                  <div className="flex flex-col items-center text-center">
-                    <div className="bg-[#E6F0F5] rounded-full p-4 mb-4 transform group-hover:scale-110 transition-transform duration-300">
-                      {step.icon}
+                  <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+                    <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-lg bg-[#0098AF]/10 flex items-center justify-center">
+                      <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-md bg-[#0098AF] flex items-center justify-center">
+                        <span className="text-white font-bold text-base sm:text-lg">
+                          {index + 1}
+                        </span>
+                      </div>
                     </div>
-                    <h3 className="font-semibold text-xl text-[#003C46] mb-2">
+                    <h3 className="flex-1 text-lg sm:text-xl font-bold text-[#003C46] leading-tight">
                       {step.title}
                     </h3>
-                    <p className="text-[#5b5b5b] mb-4">{step.description}</p>
                   </div>
+                  <p className="text-[#5B5B5B] text-sm sm:text-base">
+                    {step.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <div className="grid md:grid-cols-2 max-w-4xl mx-auto gap-8 animate-on-scroll py-4">
+              {processSteps1.map((step, index) => (
+                <div
+                  key={index}
+                  className=" p-6 rounded-lg bg-white transition-all duration-300 group"
+                >
+                  <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+                    <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-lg bg-[#0098AF]/10 flex items-center justify-center">
+                      <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-md bg-[#0098AF] flex items-center justify-center">
+                        <span className="text-white font-bold text-base sm:text-lg">
+                          {index + 4}
+                        </span>
+                      </div>
+                    </div>
+                    <h3 className="flex-1 text-lg sm:text-xl font-bold text-[#003C46] leading-tight">
+                      {step.title}
+                    </h3>
+                  </div>
+                  <p className="text-[#5B5B5B] text-sm sm:text-base">
+                    {step.description}
+                  </p>
                 </div>
               ))}
             </div>
@@ -222,7 +256,7 @@ const Employers = () => {
           <section>
             {/* Engagement Models We Offer */}
             <div>
-              <h3 className="text-3xl font-bold text-[#003C46] font-montserrat mb-8">
+              <h3 className="text-4xl text-center font-bold text-[#0098af] uppercase font-montserrat mb-8">
                 Engagement Models We Offer
               </h3>
 
@@ -265,30 +299,97 @@ const Employers = () => {
               </div>
             </div>
             {/* Why Our Model Works */}
-            <div className="py-12">
-              <h3 className="text-3xl font-bold text-[#003C46] font-montserrat mb-8">
+            <div className="py-12 px-4 lg:px-0">
+              <h3 className="text-3xl font-bold text-[#003C46] font-montserrat mb-8 text-center lg:text-left">
                 Why Our Model Works
               </h3>
 
-              <Card className="bg-white shadow-md">
-                <CardContent className="pt-6">
-                  <ul className="space-y-4">
-                    <BenefitItem text="Customizable engagement types" />
-                    <BenefitItem text="Dedicated account manager" />
-                    <BenefitItem text="Transparent communication" />
-                    <BenefitItem text="Faster turnaround time" />
-                    <BenefitItem text="Scalable hiring across business sizes" />
-                  </ul>
-
-                  <div className="mt-8 text-right">
-                    <TrendingUp className="inline-block h-28 w-28 text-[#00b4d8]/70" />
+              <div className="grid bg-white grid-cols-1 rounded-xl lg:grid-cols-2 gap-8 items-center">
+                {/* Left Column - Bullet Points */}
+                <div className="bg-white  p-8">
+                  <div>
+                    <ul className="space-y-4">
+                      <li className="flex items-start">
+                        <span className="text-green-500 mr-2 mt-1">✔</span>
+                        <span className="text-gray-700">
+                          Customizable engagement types
+                        </span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-green-500 mr-2 mt-1">✔</span>
+                        <span className="text-gray-700">
+                          Dedicated account manager
+                        </span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-green-500 mr-2 mt-1">✔</span>
+                        <span className="text-gray-700">
+                          Transparent communication
+                        </span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-green-500 mr-2 mt-1">✔</span>
+                        <span className="text-gray-700">
+                          Faster turnaround time
+                        </span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-green-500 mr-2 mt-1">✔</span>
+                        <span className="text-gray-700">
+                          Scalable hiring across business sizes
+                        </span>
+                      </li>
+                    </ul>
                   </div>
-                </CardContent>
-              </Card>
+                </div>
+
+                {/* Right Column - Graph Image */}
+                <div className="flex justify-center lg:justify-center p-8">
+                  <Image
+                    src="https://plus.unsplash.com/premium_photo-1682309543429-6aaa6d792dae?q=80&w=2112&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" // Replace with your graph image URL
+                    alt="Increasing Graph"
+                    width={400}
+                    height={500}
+                    className="w-full max-w-xs lg:max-w-[500px] h-auto rounded-lg shadow-md"
+                  />
+                </div>
+              </div>
             </div>
           </section>
 
           {/* Image Banner */}
+
+          {/* Benefits Section */}
+          <section className="py-16 bg-white rounded-lg shadow-sm  animate-on-scroll">
+            <div className="text-center mb-12">
+              <h2 className="text-2xl md:text-3xl font-bold text-[#0098af] mb-3">
+                Why Partner With Us
+              </h2>
+              <p className="text-[#5b5b5b] max-w-3xl mx-auto">
+                We&apos;re new, but we&apos;re bringing fresh energy to talent
+                acquisition
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 p-4 lg:grid-cols-4 gap-6">
+              {benefits.map((benefit, index) => (
+                <div
+                  key={index}
+                  className="p-2 hover:bg-[#E6F0F5] rounded-lg transition-all duration-300 transform hover:-translate-y-2"
+                >
+                  <div className="flex  flex-col items-center text-center">
+                    {benefit.icon}
+                    <h3 className="mt-4  font-semibold text-lg text-[#003C46]">
+                      {benefit.title}
+                    </h3>
+                    <p className="mt-2 text-sm text-[#5b5b5b]">
+                      {benefit.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
           <section className="py-10 animate-on-scroll">
             <div className="relative h-64 md:h-80 rounded-xl overflow-hidden">
               <Image
@@ -311,133 +412,16 @@ const Employers = () => {
               </div>
             </div>
           </section>
-
-          {/* Benefits Section */}
-          <section className="py-16 bg-white rounded-lg shadow-sm my-10 animate-on-scroll">
-            <div className="text-center mb-12">
-              <h2 className="text-2xl md:text-3xl font-bold text-[#0098af] mb-3">
-                Why Partner With Us
-              </h2>
-              <p className="text-[#5b5b5b] max-w-3xl mx-auto">
-                We&apos;re new, but we&apos;re bringing fresh energy to talent
-                acquisition
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {benefits.map((benefit, index) => (
-                <div
-                  key={index}
-                  className="p-6 hover:bg-[#E6F0F5] rounded-lg transition-all duration-300 transform hover:-translate-y-2"
-                >
-                  <div className="flex flex-col items-center text-center">
-                    {benefit.icon}
-                    <h3 className="mt-4 font-semibold text-lg text-[#003C46]">
-                      {benefit.title}
-                    </h3>
-                    <p className="mt-2 text-sm text-[#5b5b5b]">
-                      {benefit.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-
           {/* Contact Form Section */}
-          <section className="py-16 mb-10 bg-white rounded-lg shadow-sm animate-on-scroll">
-            <div className="md:flex items-center">
-              <div className="md:w-1/2 p-8">
-                <h2 className="text-2xl md:text-3xl font-bold text-[#0098af] mb-3">
-                  Let&apos;s Talk About Your Hiring Needs
-                </h2>
-                <p className="text-[#5b5b5b] mb-6">
-                  Fill out this quick form and we&apos;ll get back to you within
-                  24 hours
-                </p>
-
-                <div className="space-y-4">
-                  <div>
-                    <Label htmlFor="name">Your Name</Label>
-                    <Input id="name" placeholder="Enter your name" />
-                  </div>
-                  <div>
-                    <Label htmlFor="email">Email Address</Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      placeholder="Enter your email"
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="company">Company</Label>
-                    <Input id="company" placeholder="Your company name" />
-                  </div>
-                  <div>
-                    <Label htmlFor="message">Tell us about your needs</Label>
-                    <textarea
-                      id="message"
-                      rows={4}
-                      className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0098af]"
-                      placeholder="What positions are you looking to fill?"
-                    ></textarea>
-                  </div>
-                  <Button className="w-full bg-[#0098af] hover:bg-[#003C46]">
-                    Submit Request
-                  </Button>
-                </div>
-              </div>
-
-              <div className="md:w-1/2 p-8">
-                <Image
-                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80"
-                  alt="Team meeting"
-                  width={1920}
-                  height={1080}
-                  className="rounded-lg shadow-lg"
-                />
-
-                <div className="mt-8 bg-[#E6F0F5] p-6 rounded-lg">
-                  <h3 className="font-semibold text-lg text-[#003C46] mb-2">
-                    Our Promise
-                  </h3>
-                  <ul className="space-y-2">
-                    <li className="flex items-start">
-                      <CheckCircle className="h-5 w-5 text-[#00b4d8] mr-2 mt-0.5" />
-                      <span>Quick response within 24 hours</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="h-5 w-5 text-[#00b4d8] mr-2 mt-0.5" />
-                      <span>Personalized service for your business</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="h-5 w-5 text-[#00b4d8] mr-2 mt-0.5" />
-                      <span>No obligation initial consultation</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="h-5 w-5 text-[#00b4d8] mr-2 mt-0.5" />
-                      <span>Transparent pricing with no hidden fees</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </section>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 };
 
 export default Employers;
-const BenefitItem: React.FC<{ text: string }> = ({ text }) => {
-  return (
-    <li className="flex items-center">
-      <CheckCircle className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
-      <span className="text-[#5b5b5b] font-opensans">{text}</span>
-    </li>
-  );
-};
 const EngagementModelCard: React.FC<{
   icon: React.ReactNode;
   title: string;

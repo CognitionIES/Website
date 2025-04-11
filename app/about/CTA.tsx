@@ -11,7 +11,7 @@ export default function CTASection() {
 
   return (
     <section className="py-24 bg-gradient-to-r from-[#0098AF] to-[#5B5B5B] text-white relative">
-      <div className="max-w-7xl mx-auto px-6 text-center">
+      <div className="max-w-7xl mx-auto px-6 text-center items-center">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -21,15 +21,18 @@ export default function CTASection() {
           <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">
             {TEXT.CTA_TITLE}
           </h2>
-          <p className="text-lg font-light text-justify max-w-2xl mx-auto mb-8 relative">
-            {TEXT.CTA_DESC}
-            <motion.span
-              initial={{ width: 0 }}
-              whileInView={{ width: "20%" }}
-              transition={{ duration: 1 }}
-              className="absolute bottom-0 left-[90px] transform -translate-x-1/2 h-0.5 bg-white opacity-50"
-            />
-          </p>
+          <div className="text-center">
+            <p className="text-lg font-light text-center max-w-2xl mx-auto mb-8 relative">
+              {TEXT.CTA_DESC}
+              <motion.span
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                transition={{ duration: 1 }}
+                style={{ transformOrigin: "center" }}
+                className="absolute top-14 left-[32%] -translate-x-[30%] w-[37%] h-0.5 bg-white opacity-50"
+              />
+            </p>
+          </div>
           <div className="flex justify-center space-x-6">
             <Link href="/contact">
               <Button

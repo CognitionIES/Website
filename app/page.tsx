@@ -68,11 +68,8 @@ export default function Home() {
           <section>
             <Careers />
           </section>
-          <section>
             <ContactSection />
             <CTA />
-          </section>
-          
         </main>
         <Footer />
         {/* Decorative Elements */}

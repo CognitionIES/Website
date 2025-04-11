@@ -71,13 +71,13 @@ import { useEffect, useRef, useState } from "react";
 //import Link from "next/link";
 //import { Button } from "@/components/ui/button";
 import { CAREERS_CONSTANTS } from "@/constants/careersPage/constants";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+
 
 export default function AboutSection() {
-  const { TITLE, ITEMS } = CAREERS_CONSTANTS.VALUES;
+  const {  ITEMS } = CAREERS_CONSTANTS.VALUES;
   const [isInView, setIsInView] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
-  const {  CARD_HOVER } = CAREERS_CONSTANTS.ANIMATIONS
+  const { CARD_HOVER } = CAREERS_CONSTANTS.ANIMATIONS;
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -115,18 +115,15 @@ export default function AboutSection() {
   };
 
   return (
-    <div>
+    <div className="py-16">
       <section
         ref={sectionRef}
-        className="w-full py-16 sm:py-20 lg:py-12 relative bg-gradient-to-b from-white to-[#E6F0F5]/30"
+        className="w-full py-4 sm:py-8 lg:py-4 sm:h-[620px] relative bg-[#0098af]/10 rounded-xl"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="mb-8 max-w-7xl">
-            <span className="inline-block px-3 py-1 bg-[#0098af]/10 text-[#0098af] text-xs font-medium uppercase tracking-wider rounded-full mb-4">
-              Plant Engineering Solutions
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#003C46] mb-4">
-            {TITLE}
+          <div className="text-center mb-4">
+            <h2 className="text-3xl sm:text-4xl  lg:text-5xl font-bold text-[#003C46] relative drop-shadow-md text-center text-center">
+              Our Values{" "}
             </h2>
           </div>
 
@@ -136,30 +133,38 @@ export default function AboutSection() {
             animate={isInView ? "visible" : "hidden"}
             className=" items-center"
           >
-           <div className="grid md:grid-cols-4 gap-6">
-             {ITEMS.map((value, index) => (
-               <motion.div
-                 key={index}
-                 variants={CARD_HOVER}
-                 initial="rest"
-                 whileHover="hover"
-                 className="bg-white p-6 rounded-lg border border-[#0098AF]/10 shadow-sm cursor-pointer"
-               >
-                 <Card className="border-0">
-                   <CardHeader className="p-0">
-                     <CardTitle className="text-xl font-bold text-[#5B5B5B] mb-2 hover:text-[#0098AF] transition-colors duration-200">
-                       {value.title}
-                     </CardTitle>
-                   </CardHeader>
-                   <CardContent className="p-0">
-                     <CardDescription className="text-sm sm:text-base leading-relaxed text-gray-600 ">
-                       {value.description}
-                     </CardDescription>
-                   </CardContent>
-                 </Card>
-               </motion.div>
-             ))}
-           </div>
+            <div className="grid md:grid-cols-1 gap-4">
+              {ITEMS.map((value, index) => (
+                <motion.div
+                  key={index}
+                  variants={CARD_HOVER}
+                  initial="rest"
+                  whileHover="hover"
+                  className="bg-white p-4 rounded-lg border border-[#0098AF]/10 shadow-sm "
+                >
+                  {/* <Card className="border-0 ">
+                    <CardHeader className="p-0">
+                      <CardTitle className="text-xl font-bold text-[#5B5B5B] mb-2 hover:text-[#0098AF] transition-colors duration-200">
+                        {value.title}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="p-0">
+                      <CardDescription className="text-sm sm:text-base leading-relaxed text-gray-600 ">
+                        {value.description}
+                      </CardDescription>
+                    </CardContent>
+                  </Card> */}
+                  <div className="grid md:grid-cols-1 gap-1">
+                    <div className="text-xl font-bold text-[#5B5B5B] mb-2 hover:text-[#0098AF] transition-colors duration-200 ">
+                      {value.title}
+                    </div>
+                    <div className="text-sm sm:text-base leading-relaxed text-gray-600">
+                      {value.description}
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
         </div>
       </section>
