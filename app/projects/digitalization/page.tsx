@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
@@ -15,21 +14,7 @@ import Outcome from "./outcome";
 import Tech from "./tech";
 
 export default function DigitalizationProject() {
-  const project = {
-    title: "Digitalization",
-    description:
-      "Transforming businesses through cutting-edge digital solutions, enhancing efficiency and scalability.",
-    image:
-      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop",
-    features: ["point 1", "point 3", "point 2"],
-    client: "Company Name",
-    duration: "6 months",
-    technologies: ["tech 1", "tech 2", "tech 3"],
-    testimonial: {
-      quote: "Testimony",
-      author: "Jane Doe, CTO at CompanyName",
-    },
-  };
+  
 
   // Minimal animation for CTA button
   const buttonFadeIn = {
