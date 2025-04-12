@@ -1,5 +1,5 @@
 //import image1 from "../images/home/who-we-are.jpg" 
-import aboutImage from "@/constants/images/home/about.png"
+import aboutImage from "@/constants/images/home/who-we-are.jpg"
 
 // Constants for the AboutUs section
 export const ABOUT_CONSTANTS = {

@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import { FiMail } from "react-icons/fi";
-import { useState, useCallback } from "react";
+import { useState, useCallback, useRef, useEffect } from "react";
 import { CONTACT_CONSTANTS } from "@/constants/contactPage/constants";
 import Link from "next/link";
 
@@ -33,7 +33,7 @@ export default function ContactSection() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const { TITLE, DESCRIPTION, EMAIL } = CONTACT_CONSTANTS.CONTACT;
-  const { STAGGER_CHILDREN } = CONTACT_CONSTANTS.ANIMATIONS;
+  //const { STAGGER_CHILDREN } = CONTACT_CONSTANTS.ANIMATIONS;
 
   const handleInputChange = useCallback(
     (field: string, value: string | boolean) => {
@@ -81,7 +81,7 @@ export default function ContactSection() {
         } else {
           setStatus("Oops! Something went wrong.");
         }
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
       } catch (error) {
         setStatus("Error submitting form.");
       } finally {
@@ -98,7 +98,35 @@ export default function ContactSection() {
     { value: "Staffing And Recruitment", label: "Staffing And Recruitment" },
     { value: "Others", label: "Others" },
   ];
+  const [isInView, setIsInView] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInView(entry.isIntersecting);
+      },
+      { threshold: 0.2 } // Trigger when 20% of the section is visible
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
+  // Animation variants for fade-in effect
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const fadeInVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.5, delay: 0.2 } },
+  };
   return (
     <section className="py-8 md:py-12 lg:py-16 bg-gradient-to-br from-gray-50 to-gray-100 relative">
       <div className="relative py-2">
@@ -109,178 +137,196 @@ export default function ContactSection() {
           <p className="text-[#5b5b5b] ">{TITLE}</p>
         </h1>
       </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 md:mt-10">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={STAGGER_CHILDREN}
-          className="grid grid-cols-1 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-10"
-        >
-          {/* Contact Info */}
-          <div className="lg:col-span-1 space-y-4 md:space-y-6">
-            <p className="text-xl md:text-2xl text-[#003C46] font-semibold tracking-tight uppercase mb-2 md:mb-4">
-              Bring Your Vision to Life
-            </p>
-            <p className="text-sm md:text-base text-gray-600 text-justify mb-8 md:mb-14 leading-relaxed">
-              {DESCRIPTION}
-            </p>
-            <div className="text-gray-600 bg-white p-4 md:p-5 rounded-lg shadow-sm">
-              <div className="flex items-center space-x-3">
-                <FiMail className="text-[#0098AF] text-lg md:text-xl" />
-                <div>
-                  <h3 className="text-xs md:text-sm font-semibold text-gray-800">
-                    {EMAIL.TITLE}
-                  </h3>
-                  <Link
-                    href={`mailto:${EMAIL.ADDRESS}`}
-                    className="text-xs md:text-sm hover:underline break-all"
-                  >
-                    {EMAIL.ADDRESS}
-                  </Link>
+      <div>
+        <section ref={sectionRef} className="w-full  relative ">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            {/* CTA section */}
+          </div>
+        </section>
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 md:mt-10 text-white relative overflow-hidden">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.7, delay: 0.4 }}
+            className="grid grid-cols-1 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-10"
+          >
+            <div className="lg:col-span-1 space-y-4 md:space-y-6">
+              <p className="text-xl md:text-2xl text-[#003C46] font-semibold tracking-tight uppercase mb-2 md:mb-4">
+                Bring Your Vision to Life
+              </p>
+              <p className="text-sm md:text-base text-gray-600 text-justify mb-8 md:mb-14 leading-relaxed">
+                {DESCRIPTION}
+              </p>
+              <div className="text-gray-600 bg-white p-4 md:p-5 rounded-lg shadow-sm">
+                <div className="flex items-center space-x-3">
+                  <FiMail className="text-[#0098AF] text-lg md:text-xl" />
+                  <div>
+                    <h3 className="text-xs md:text-sm font-semibold text-gray-800">
+                      {EMAIL.TITLE}
+                    </h3>
+                    <Link
+                      href={`mailto:${EMAIL.ADDRESS}`}
+                      className="text-xs md:text-sm hover:underline break-all"
+                    >
+                      {EMAIL.ADDRESS}
+                    </Link>
+                  </div>
                 </div>
               </div>
+              <motion.span
+                initial={{ width: 0 }}
+                whileInView={{ width: "80%" }}
+                transition={{ delay: 0.6, duration: 1 }}
+                className="block h-1 bg-gradient-to-r from-[#0098af] to-white opacity-70  rounded-full"
+              />
             </div>
-          </div>
 
-          {/* Contact Form */}
-          <div className="lg:col-span-3 bg-white p-4 sm:p-6 rounded-xl shadow-lg border-t-4 max-h-[600px] border-[#0098AF] w-full">
-            <form onSubmit={handleSubmit} className="space-y-3">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <Input
-                  id="name"
-                  type="text"
-                  placeholder="Full Name"
-                  value={formData.name}
-                  onChange={(e) => handleInputChange("name", e.target.value)}
-                  className="w-full border border-gray-300 focus:border-[#0098AF] focus:ring-1 focus:ring-[#0098AF] rounded-lg text-sm py-2 px-3 transition-all duration-200 placeholder-gray-400"
-                  required
-                  disabled={isSubmitting}
-                />
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="Email Address"
-                  value={formData.email}
-                  onChange={(e) => handleInputChange("email", e.target.value)}
-                  className="w-full border border-gray-300 focus:border-[#0098AF] focus:ring-1 focus:ring-[#0098AF] rounded-lg text-sm py-2 px-3 transition-all duration-200 placeholder-gray-400"
-                  required
-                  disabled={isSubmitting}
-                />
-                <Input
-                  id="company"
-                  type="text"
-                  placeholder="Company Name"
-                  value={formData.company}
-                  onChange={(e) => handleInputChange("company", e.target.value)}
-                  className="w-full border border-gray-300 focus:border-[#0098AF] focus:ring-1 focus:ring-[#0098AF] rounded-lg text-sm py-2 px-3 transition-all duration-200 placeholder-gray-400"
-                  required
-                  disabled={isSubmitting}
-                />
-                <Input
-                  id="phone"
-                  type="tel"
-                  placeholder="Phone Number"
-                  value={formData.phone}
-                  onChange={(e) => handleInputChange("phone", e.target.value)}
-                  className="w-full border border-gray-300 focus:border-[#0098AF] focus:ring-1 focus:ring-[#0098AF] rounded-lg text-sm py-2 px-3 transition-all duration-200 placeholder-gray-400"
-                  required
-                  disabled={isSubmitting}
-                />
-              </div>
-              <Input
-                id="subject"
-                type="text"
-                placeholder="Subject"
-                value={formData.subject}
-                onChange={(e) => handleInputChange("subject", e.target.value)}
-                className="w-full border border-gray-300 focus:border-[#0098AF] focus:ring-1 focus:ring-[#0098AF] rounded-lg text-sm py-2 px-3 transition-all duration-200 placeholder-gray-400"
-                required
-                disabled={isSubmitting}
-              />
-              <Select
-                value={formData.interestedIn}
-                onValueChange={(value) =>
-                  handleInputChange("interestedIn", value)
-                }
-                disabled={isSubmitting}
-              >
-                <SelectTrigger className="w-full border border-gray-300 focus:border-[#0098AF] focus:ring-1 focus:ring-[#0098AF] rounded-lg text-sm py-2 px-3 transition-all duration-200 text-gray-500">
-                  <SelectValue placeholder="Interested In" />
-                </SelectTrigger>
-                <SelectContent className="bg-white border-gray-300 rounded-lg shadow-md">
-                  {interestOptions.map((option) => (
-                    <SelectItem
-                      key={option.value}
-                      value={option.value}
-                      className="text-sm py-1.5 px-3 hover:bg-[#0098AF] transition-colors duration-150"
-                    >
-                      {option.label}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-              <Textarea
-                id="message"
-                placeholder="Your Message"
-                value={formData.message}
-                onChange={(e) => handleInputChange("message", e.target.value)}
-                className="w-full border border-gray-300 focus:border-[#0098AF] focus:ring-1 focus:ring-[#0098AF] rounded-lg text-sm py-2 px-3 h-24 sm:h-20 transition-all duration-200 resize-none placeholder-gray-400"
-                required
-                disabled={isSubmitting}
-              />
-              <div className="flex flex-col sm:flex-row sm:items-center gap-2">
-                <div className="flex items-center gap-2">
-                  <Checkbox
-                    id="consent"
-                    checked={formData.consent}
-                    onCheckedChange={(checked) =>
-                      handleInputChange("consent", !!checked)
-                    }
-                    className="h-4 w-4 border-gray-300 text-[#0098AF] focus:ring-[#0098AF] rounded transition-colors duration-200"
+            {/* Contact Form */}
+            <div className="lg:col-span-3 bg-white p-4 sm:p-6 rounded-xl  border-t-4 max-h-[600px] border-[#0098AF] w-full">
+              <form onSubmit={handleSubmit} className="space-y-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <Input
+                    id="name"
+                    type="text"
+                    placeholder="Full Name"
+                    value={formData.name}
+                    onChange={(e) => handleInputChange("name", e.target.value)}
+                    className="w-full border border-gray-300 focus:border-[#0098AF] focus:ring-1 focus:ring-[#0098AF] rounded-lg text-sm py-2 px-3 transition-all duration-200 placeholder-gray-400"
+                    required
                     disabled={isSubmitting}
                   />
-                  <label
-                    htmlFor="consent"
-                    className="text-xs text-gray-600 leading-tight"
-                  >
-                    I agree to receive further communication. See our{" "}
-                    <Link
-                      href="/privacy-policy"
-                      className="text-[#0098AF] hover:underline"
-                    >
-                      Privacy Policy
-                    </Link>
-                    .
-                  </label>
+                  <Input
+                    id="email"
+                    type="email"
+                    placeholder="Email Address"
+                    value={formData.email}
+                    onChange={(e) => handleInputChange("email", e.target.value)}
+                    className="w-full border border-gray-300 focus:border-[#0098AF] focus:ring-1 focus:ring-[#0098AF] rounded-lg text-sm py-2 px-3 transition-all duration-200 placeholder-gray-400"
+                    required
+                    disabled={isSubmitting}
+                  />
+                  <Input
+                    id="company"
+                    type="text"
+                    placeholder="Company Name"
+                    value={formData.company}
+                    onChange={(e) =>
+                      handleInputChange("company", e.target.value)
+                    }
+                    className="w-full border border-gray-300 focus:border-[#0098AF] focus:ring-1 focus:ring-[#0098AF] rounded-lg text-sm py-2 px-3 transition-all duration-200 placeholder-gray-400"
+                    required
+                    disabled={isSubmitting}
+                  />
+                  <Input
+                    id="phone"
+                    type="tel"
+                    placeholder="Phone Number"
+                    value={formData.phone}
+                    onChange={(e) => handleInputChange("phone", e.target.value)}
+                    className="w-full border border-gray-300 focus:border-[#0098AF] focus:ring-1 focus:ring-[#0098AF] rounded-lg text-sm py-2 px-3 transition-all duration-200 placeholder-gray-400"
+                    required
+                    disabled={isSubmitting}
+                  />
                 </div>
-              </div>
-              {status && (
-                <motion.p
-                  initial={{ opacity: 0, y: 5 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3 }}
-                  className={`text-xs font-medium text-center ${
-                    status.includes("Error") || status.includes("Oops")
-                      ? "text-red-500"
-                      : "text-green-600"
-                  }`}
+                <Input
+                  id="subject"
+                  type="text"
+                  placeholder="Subject"
+                  value={formData.subject}
+                  onChange={(e) => handleInputChange("subject", e.target.value)}
+                  className="w-full border border-gray-300 focus:border-[#0098AF] focus:ring-1 focus:ring-[#0098AF] rounded-lg text-sm py-2 px-3 transition-all duration-200 placeholder-gray-400"
+                  required
+                  disabled={isSubmitting}
+                />
+                <Select
+                  value={formData.interestedIn}
+                  onValueChange={(value) =>
+                    handleInputChange("interestedIn", value)
+                  }
+                  disabled={isSubmitting}
                 >
-                  {status}
-                </motion.p>
-              )}
-              <Button
-                type="submit"
-                className="w-full sm:w-auto bg-[#0098AF] text-white hover:bg-white hover:text-black rounded-lg py-2 px-4 text-sm md:text-base transition-all duration-300 hover:shadow-lg border-2 border-transparent hover:border-[#0098af] hover:outline hover:outline-2 hover:outline-[#0098af] disabled:bg-[#0098AF] disabled:cursor-not-allowed"
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? "Sending..." : "Submit"}
-              </Button>
-            </form>
-          </div>
-        </motion.div>
-      </div>
+                  <SelectTrigger className="w-full border border-gray-300 focus:border-[#0098AF] focus:ring-1 focus:ring-[#0098AF] rounded-lg text-sm py-2 px-3 transition-all duration-200 text-gray-500">
+                    <SelectValue placeholder="Interested In" />
+                  </SelectTrigger>
+                  <SelectContent className="bg-white border-gray-300 rounded-lg shadow-md">
+                    {interestOptions.map((option) => (
+                      <SelectItem
+                        key={option.value}
+                        value={option.value}
+                        className="text-sm py-1.5 px-3 hover:bg-[#0098AF] transition-colors duration-150"
+                      >
+                        {option.label}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+                <Textarea
+                  id="message"
+                  placeholder="Your Message"
+                  value={formData.message}
+                  onChange={(e) => handleInputChange("message", e.target.value)}
+                  className="w-full border border-gray-300 focus:border-[#0098AF] focus:ring-1 focus:ring-[#0098AF] rounded-lg text-sm py-2 px-3 h-24 sm:h-20 transition-all duration-200 resize-none placeholder-gray-400"
+                  required
+                  disabled={isSubmitting}
+                />
+                <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+                  <div className="flex items-center gap-2">
+                    <Checkbox
+                      id="consent"
+                      checked={formData.consent}
+                      onCheckedChange={(checked) =>
+                        handleInputChange("consent", !!checked)
+                      }
+                      className="h-4 w-4 border-gray-300 text-[#0098AF] focus:ring-[#0098AF] rounded transition-colors duration-200"
+                      disabled={isSubmitting}
+                    />
+                    <label
+                      htmlFor="consent"
+                      className="text-xs text-gray-600 leading-tight"
+                    >
+                      I agree to receive further communication. See our{" "}
+                      <Link
+                        href="/privacy-policy"
+                        className="text-[#0098AF] hover:underline"
+                      >
+                        Privacy Policy
+                      </Link>
+                      .
+                    </label>
+                  </div>
+                </div>
+                {status && (
+                  <motion.p
+                    initial={{ opacity: 0, y: 5 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className={`text-xs font-medium text-center ${
+                      status.includes("Error") || status.includes("Oops")
+                        ? "text-red-500"
+                        : "text-green-600"
+                    }`}
+                  >
+                    {status}
+                  </motion.p>
+                )}
+                <Button
+                  type="submit"
+                  className="w-full sm:w-auto bg-[#0098AF] text-white hover:bg-white hover:text-black rounded-lg py-2 px-4 text-sm md:text-base transition-all duration-300 hover:shadow-lg border-2 border-transparent hover:border-[#0098af] hover:outline hover:outline-2 hover:outline-[#0098af] disabled:bg-[#0098AF] disabled:cursor-not-allowed"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? "Sending..." : "Submit"}
+                </Button>
+              </form>
+            </div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 0.1, scale: 1 }}
+            transition={{ delay: 0.7, duration: 1 }}
+            className="absolute bottom-1/3 left-1/3 w-32 h-32 bg-[#000000] opacity-20 rounded-full blur-3xl -z-10"
+          />
+        </section>
+      </div>{" "}
     </section>
   );
 }

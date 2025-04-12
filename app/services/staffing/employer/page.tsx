@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   Briefcase,
   Search,
@@ -27,6 +27,9 @@ import {
 import Image from "next/image";
 import { MegaMenu } from "@/components/ui/Megamenu/MegaMenu";
 import Footer from "@/components/footer";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 //import CTASection from "@/components/CTA";
 
 const Employers = () => {
@@ -123,26 +126,28 @@ const Employers = () => {
     },
   ];
 
-  // const testimonials = [
-  //   {
-  //     quote:
-  //       "As a startup ourselves, we understand the importance of finding the right talent quickly.",
-  //     author: "Our Founding Team",
-  //     company: "Talent Canvas",
-  //   },
-  //   {
-  //     quote:
-  //       "Their fresh approach to talent acquisition helped us build our initial team faster than expected.",
-  //     author: "Sarah K.",
-  //     company: "Tech Startup",
-  //   },
-  //   {
-  //     quote:
-  //       "The personalized service made all the difference in our hiring process.",
-  //     author: "Michael R.",
-  //     company: "Digital Agency",
-  //   },
-  // ];
+  const [isInView, setIsInView] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInView(entry.isIntersecting);
+      },
+      { threshold: 0.2 } // Trigger when 20% of the section is visible
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
 
   return (
     <div>
@@ -390,28 +395,53 @@ const Employers = () => {
               ))}
             </div>
           </section>
-          <section className="py-10 animate-on-scroll">
-            <div className="relative h-64 md:h-80 rounded-xl overflow-hidden">
-              <Image
-                src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1920&q=80"
-                alt="Team collaboration"
-                width={1920}
-                height={1080}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#0098af]/80 to-[#003C46]/90 flex items-center justify-center">
-                <div className="text-center text-white p-6 md:p-12 max-w-3xl">
-                  <h3 className="text-2xl md:text-3xl font-bold mb-4">
-                    Growing Together
-                  </h3>
-                  <p className="text-lg opacity-90">
-                    As a startup ourselves, we.&apos;re uniquely positioned to
-                    understand your hiring needs
-                  </p>
+
+          {/* CTA SECTION */}
+          <div>
+            <section
+              ref={sectionRef}
+              className="w-full  relative"
+            >
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+                {/* CTA section */}
+              </div>
+            </section>
+            <section className="w-full py-12 sm:py-14 lg:py-22 text-white relative overflow-hidden">
+              <div className="relative h-64 md:h-80 rounded-xl overflow-hidden">
+                <Image
+                  src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1920&q=80"
+                  alt="Team collaboration"
+                  width={1920}
+                  height={1080}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#0098af]/80 to-[#000000]/60 flex items-center justify-center">
+                  <div className="text-center text-white p-6 md:p-12 max-w-3xl">
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={isInView ? { opacity: 1, y: 0 } : {}}
+                      transition={{ duration: 0.7, delay: 0.2 }}
+                      className="mb-4"
+                    >
+                      <h3 className="text-2xl md:text-3xl font-bold mb-4">
+                        Growing Together
+                      </h3>
+                      <p className="text-lg opacity-90 mb-4">
+                        As a startup ourselves, we&apos;re uniquely positioned
+                        to understand your hiring needs
+                      </p>
+
+                      <Link href="/contact">
+                        <Button className="bg-white text-[#0098AF] rounded-lg hover:bg-[#0098af] hover:text-white transition-colors duration-200 text-lg px-6 py-2 w-fit">
+                          Get in Touch
+                        </Button>
+                      </Link>
+                    </motion.div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </section>
+            </section>
+          </div>
           {/* Contact Form Section */}
         </div>
       </div>

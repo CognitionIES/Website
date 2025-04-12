@@ -9,7 +9,7 @@ import engineeringImage from "@/constants/images/Plant-engineering/hero-image-1.
 export default function Hero() {
   return (
     <section>
-      <div className="relative h-[350px] overflow-hidden">
+      <div className="relative h-[450px] overflow-hidden">
         <Image
           src={engineeringImage}
           alt="FEED & Conceptual Design Innovation"

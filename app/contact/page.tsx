@@ -5,7 +5,8 @@ import { MegaMenu } from "@/components/ui/Megamenu/MegaMenu";
 import Footer from "@/components/footer";
 import HeroSection from "./HeroSection";
 import ContactSection from "./ContactSection";
-import MapSection from "./MapSection";
+//import { motion } from "framer-motion";
+//import MapSection from "./MapSection";
 
 export default function ContactPage() {
   return (
@@ -17,7 +18,7 @@ export default function ContactPage() {
       {/* Contact info and form section */}
       <ContactSection />
       {/* Map section */}
-      <MapSection />
+
       {/* Footer */}
       <Footer />
     </div>

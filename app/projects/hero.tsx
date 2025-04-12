@@ -10,7 +10,7 @@ import HeroImage from "@/constants/images/projects/hero.jpg";
 export default function Hero() {
   return (
     <section>
-      <div className="relative h-[400px] overflow-hidden">
+      <div className="relative h-[450px] overflow-hidden">
         <Image
           src={HeroImage}
           alt="FEED & Conceptual Design Innovation"

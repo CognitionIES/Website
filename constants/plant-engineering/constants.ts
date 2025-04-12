@@ -7,7 +7,7 @@ import StructuralImage from "@/constants/images/horizontal/06.png";
 import elecImage from "@/constants/images/horizontal/07.jpg";
 import InstrumentationImage from "@/constants/images/horizontal/08.jpg";
 import ModularImage from "@/constants/images/horizontal/09.jpg";
-//import ReverseImage from "@/constants/images/horizontal/10.jpg";
+import ReverseImage from "@/constants/images/horizontal/10.jpg";
 import ProcurementImage from "@/constants/images/horizontal/11.jpg";
 import reverseImage1 from "@/constants/images/Plant-engineering/reverse-eng.jpg";
 import heroImage from "@/constants/images/Plant-engineering/hero.jpg";
@@ -313,7 +313,7 @@ export const PLANT_ENGINEERING_CONSTANTS = {
         title: "Reverse Engineering",
         description:
           "Analyzing existing systems to recreate or improve designs for enhanced performance.",
-        image: reverseImage1,
+        image: ReverseImage,
         alt: "Reverse engineering process",
         href: "/services/plant-engineering/details#section-6",
         bulletPoints: [

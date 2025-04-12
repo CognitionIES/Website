@@ -50,9 +50,6 @@ export default function CTASection() {
         className="w-full  relative bg-gradient-to-b from-white to-[#E6F0F5]/30"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        
-
-          
           {/* CTA section */}
         </div>
       </section>

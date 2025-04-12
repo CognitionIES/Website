@@ -4,15 +4,15 @@ import { motion } from "framer-motion";
 import { FiChevronDown, FiChevronRight, FiHome } from "react-icons/fi";
 import Image from "next/image";
 import Link from "next/link";
-import HeroImageSm from "@/constants/images/staffing-recruitment/job-seeker-hero-sm.jpg"; // Small screen image
-import HeroImageMd from "@/constants/images/staffing-recruitment/job-seeker-hero.jpg"; // Medium screen image
-import HeroImageLg from "@/constants/images/staffing-recruitment/job-seeker-hero.jpg"; // Large screen image
+import HeroImageSm from "@/constants/images/staffing-recruitment/job-seeker-hero-sm.jpg";
+import HeroImageMd from "@/constants/images/staffing-recruitment/job-seeker-hero.jpg";
+import HeroImageLg from "@/constants/images/staffing-recruitment/job-seeker-hero.jpg";
 
 export default function Hero() {
   return (
-    <section className="relative w-full">
-      <div className="relative h-[300px] sm:h-[400px] md:h-[450px] lg:h-[500px] overflow-hidden">
-        {/* Image for small screens (hidden on sm and above) */}
+    <section className="relative w-full overflow-hidden">
+      <div className="relative h-[350px] sm:h-[250px] md:h-[350px] lg:h-[450px]">
+        {/* Responsive Hero Images */}
         <Image
           src={HeroImageSm}
           alt="Job Seeker Hero Image Small"
@@ -20,7 +20,6 @@ export default function Hero() {
           className="object-cover object-center block sm:hidden"
           priority
         />
-        {/* Image for medium screens (hidden below sm and above md) */}
         <Image
           src={HeroImageMd}
           alt="Job Seeker Hero Image Medium"
@@ -28,7 +27,6 @@ export default function Hero() {
           className="object-cover object-center hidden sm:block md:hidden"
           priority
         />
-        {/* Image for large screens (hidden below md) */}
         <Image
           src={HeroImageLg}
           alt="Job Seeker Hero Image Large"
@@ -37,78 +35,111 @@ export default function Hero() {
           priority
         />
 
-        <div className="absolute inset-0 bg-gradient-to-br from-[#003C46]/85 via-[#0098AF]/70 to-[#00b4d8]/50" />
-        <div className="absolute inset-0 opacity-5 bg-[url('/images/engineering-pattern.jpg')] bg-repeat" />
-        <div className="relative z-10 max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col items-center justify-center mb-4 text-center">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight text-white drop-shadow-md mb-3 sm:mb-4">
-            Your Career. Our Commitment
-          </h1>
-          <p className="text-white text-sm sm:text-lg md:text-lg lg:text-lg  font-light max-w-3xl sm:max-w-3xl mx-auto mb-4 sm:mb-2">
+        {/* Multi-layered Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#003C46]/90 via-[#0098AF]/75 to-[#00b4d8]/60" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#003C46]/50 to-transparent opacity-80" />
+        <div className="absolute inset-0 opacity-10 bg-[url('/images/engineering-pattern.jpg')] bg-repeat" />
+
+        {/* Content Container */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[450px] flex flex-col items-center text-center">
+          {/* Headline */}
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="text-3xl sm:text-4xl md:text-5xl mt-16 lg:text-6xl xl:text-7xl font-bold tracking-tight text-white drop-shadow-lg mb-4 sm:mb-6"
+          >
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-[#b0e9ff]">
+              Your Career.
+            </span>{" "}
+            Our Commitment.
+          </motion.h1>
+
+          {/* Subheadline */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            className="text-white/90 text-base sm:text-lg md:text-xl lg:text-2xl font-light max-w-3xl mx-auto mb-4 sm:mb-6"
+          >
             We’re more than a job board. We’re your career partners. We aim to
             make the job-seeking process easier, smoother, and more transparent
             for everyone.
-          </p>
-          <p className="text-white text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-light max-w-2xl sm:max-w-3xl mx-auto mb-8 sm:mb-18 md:mb-20 lg:mb-24">
+          </motion.p>
+
+          {/* Third Text Line - Hidden on smaller screens */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+            className="hidden sm:block text-white/85 text-sm sm:text-base md:text-lg lg:text-xl font-light max-w-3xl mx-auto mb-6 sm:mb-8"
+          >
             Because you’re not just finding a job — you’re stepping into your
             future.
-          </p>
+          </motion.p>
 
-          <nav className="absolute bottom-2 sm:bottom-4 left-2 sm:left-4 lg:left-6 flex flex-wrap items-center gap-1 sm:gap-2 md:gap-3 text-xs sm:text-sm md:text-base font-light text-white/80 px-2 py-1 sm:px-3 sm:py-2 rounded-full">
+          {/* Breadcrumb Navigation */}
+          <nav className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 lg:left-8 flex items-center gap-2 sm:gap-3 text-xs sm:text-sm md:text-base font-light text-white/85 backdrop-blur-sm px-3 py-1.5 sm:px-4 sm:py-2 rounded-full">
             <Link
               href="/"
-              className="hover:text-[#5b5b5b] flex items-center gap-1 transition-colors duration-200"
+              className="hover:text-white flex items-center gap-1.5 transition-colors duration-200"
             >
-              <FiHome className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" /> Home
+              <FiHome className="w-4 h-4 sm:w-5 sm:h-5" /> Home
             </Link>
-            <FiChevronRight className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" />
+            <FiChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
             <Link
               href="/services/staffing"
-              className="hover:text-[#5b5b5b] transition-colors duration-200"
+              className="hover:text-white transition-colors duration-200"
             >
-              Staffing And Recruitment
+              Staffing & Recruitment
             </Link>
-            <FiChevronRight className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" />
+            <FiChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
             <Link
               href="/services/staffing/job-seekers"
-              className="hover:text-[#5b5b5b] transition-colors duration-200"
+              className="hover:text-white transition-colors duration-200"
             >
-              For Job Seekers
+              Job Seekers
             </Link>
           </nav>
+
+          {/* Scroll Indicator */}
           <motion.div
-            initial={{ opacity: 0, y: 5 }}
-            animate={{ opacity: 0.7, y: 0 }}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 0.8, y: 0 }}
             transition={{
               repeat: Infinity,
-              duration: 1,
+              duration: 1.2,
               repeatType: "reverse",
+              ease: "easeInOut",
             }}
-            className="absolute bottom-4 sm:bottom-6 left-1/2 transform -translate-x-1/2 text-white/70"
+            className="absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 text-white/80"
           >
-            <FiChevronDown className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
+            <FiChevronDown className="w-6 h-6 sm:w-8 sm:h-8" />
           </motion.div>
         </div>
+
+        {/* Decorative Elements */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 0.25, scale: 1.2 }}
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 0.3, scale: 1 }}
           transition={{
-            delay: 0.5,
-            duration: 1.5,
+            duration: 2,
             repeat: Infinity,
             repeatType: "reverse",
+            ease: "easeInOut",
           }}
-          className="absolute bottom-0 left-0 w-40 sm:w-60 md:w-80 h-40 sm:h-60 md:h-80 bg-[#00b4d8] opacity-50 rounded-full blur-3xl -z-10"
+          className="absolute bottom-0 left-0 w-48 sm:w-64 md:w-80 h-48 sm:h-64 md:h-80 bg-gradient-to-br from-[#00b4d8]/40 to-[#0098AF]/20 rounded-full blur-3xl -z-10"
         />
         <motion.div
           initial={{ opacity: 0 }}
-          animate={{ opacity: 0.15 }}
+          animate={{ opacity: 0.2 }}
           transition={{
-            delay: 1,
-            duration: 1,
+            duration: 1.5,
             repeat: Infinity,
             repeatType: "reverse",
+            ease: "easeInOut",
           }}
-          className="absolute top-6 sm:top-10 md:top-20 right-2 sm:right-4 md:right-10 w-3 sm:w-4 md:w-5 h-3 sm:h-4 md:h-5 bg-[#5B5B5B] opacity-30 rounded-full -z-10"
+          className="absolute top-10 sm:top-16 md:top-24 right-4 sm:right-8 md:right-12 w-4 sm:w-6 md:w-8 h-4 sm:h-6 md:h-8 bg-[#b0e9ff]/50 rounded-full -z-10"
         />
       </div>
     </section>

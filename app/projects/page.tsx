@@ -1,45 +1,60 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
-import Image from "next/image";
+//import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { MegaMenu } from "@/components/ui/Megamenu/MegaMenu";
 import Hero from "./hero";
 import Footer from "@/components/footer";
-import digitalizationImage from "@/constants/images/projects/digitalization.jpg";
-import pcmImage from "@/constants/images/projects/pcm-2.jpg";
+//import digitalizationImage from "@/constants/images/projects/digitalization.jpg";
+//import pcmImage from "@/constants/images/projects/pcm-2.jpg";
+//import RecentProjects from "@/components/HomePage/RecentProjects";
+import { useIsMobile } from "@/hooks/use-mobile";
+import digitalImage from "@/constants/images/projects/digitalization.jpg";
+import { StaticImageData } from "next/image";
+import pcmImage2 from "@/constants/images/home/pcm-2.jpg";
 
+import AboutSection from "./about";
+
+type Project = {
+  id: string;
+  title: string;
+  category: string;
+  description: string;
+  image: string | StaticImageData;
+  href: string;
+};
+
+const projects: Project[] = [
+  {
+    id: "project-1",
+    title: "Digitalization",
+    category: "Digital Transformation",
+    description:
+      "Conducted a detailed cost and function analysis of the Log Splitter, identifying cost-saving opportunities through competitive benchmarking and design optimization.",
+    image: digitalImage,
+    href: "/projects/digitalization",
+  },
+  {
+    id: "project-2",
+    title: "Log Splitter Cost Optimization & Benchmarking",
+    category: "Financial Optimization",
+    description:
+      "Conducted a detailed cost and function analysis of the Log Splitter, identifying cost-saving opportunities through competitive benchmarking and design optimization.",
+    image: pcmImage2,
+    href: "/projects/product-cost-management",
+  },
+];
 const Projects: React.FC = () => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [activeIndex, setActiveIndex] = useState(0);
   const [isInView, setIsInView] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
-
-  const projects = [
-    {
-      title: "Digitalization",
-      slug: "digitalization",
-      description:
-        "Transforming businesses through cutting-edge digital solutions, enhancing efficiency and scalability.",
-      image: digitalizationImage,
-      features: ["Point 1", "Point 2", "Point 3"],
-      client: "ABC",
-      duration: "0 months",
-      technologies: ["one", "two", "three"],
-    },
-    {
-      title: "Product Cost Management",
-      slug: "product-cost-management",
-      description:
-        "Optimizing product costs through strategic analysis and resource management for maximum profitability.",
-      image: pcmImage,
-      features: ["Point 1", "Point 2", "Point 3"],
-      client: "ABC",
-      duration: "0 months",
-      technologies: ["one", "two", "three"],
-    },
-  ];
+  const isMobile = useIsMobile();
+  const visibleProjects = isMobile ? 1 : 2;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -61,27 +76,62 @@ const Projects: React.FC = () => {
     };
   }, []);
 
-  // Animation variants for individual cards
-  const cardVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: (index: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        delay: index * 0.3, // Stagger each card by 0.3 seconds
-      },
-    }),
+  const handleNext = () => {
+    setActiveIndex((prev) => (prev + 1 >= projects.length ? 0 : prev + 1));
   };
+
+  const handlePrev = () => {
+    setActiveIndex((prev) => (prev - 1 < 0 ? projects.length - 1 : prev - 1));
+  };
+
+  // const projects = [
+  //   {
+  //     title: "Digitalization",
+  //     slug: "digitalization",
+  //     description:
+  //       "Transforming businesses through cutting-edge digital solutions, enhancing efficiency and scalability.",
+  //     image: digitalizationImage,
+  //     features: ["Point 1", "Point 2", "Point 3"],
+  //     client: "ABC",
+  //     duration: "0 months",
+  //     technologies: ["one", "two", "three"],
+  //   },
+  //   {
+  //     title: "Product Cost Management",
+  //     slug: "product-cost-management",
+  //     description:
+  //       "Optimizing product costs through strategic analysis and resource management for maximum profitability.",
+  //     image: pcmImage,
+  //     features: ["Point 1", "Point 2", "Point 3"],
+  //     client: "ABC",
+  //     duration: "0 months",
+  //     technologies: ["one", "two", "three"],
+  //   },
+  // ];
+
+  // Animation variants for individual cards
+  // const cardVariants = {
+  //   hidden: { opacity: 0, y: 20 },
+  //   visible: (index: number) => ({
+  //     opacity: 1,
+  //     y: 0,
+  //     transition: {
+  //       duration: 0.6,
+  //       delay: index * 0.3, // Stagger each card by 0.3 seconds
+  //     },
+  //   }),
+  // };
 
   return (
     <div className="min-h-screen bg-gray-50">
       <MegaMenu />
-      <section className="relative h-[400px] overflow-hidden">
+      <section className="relative h-[450px] overflow-hidden">
         <Hero />
       </section>
 
-      <section
+
+
+      {/* <section
         ref={sectionRef}
         className="w-full py-12 sm:py-14 lg:py-22 relative overflow-hidden"
       >
@@ -162,8 +212,10 @@ const Projects: React.FC = () => {
           transition={{ delay: 0.7, duration: 1 }}
           className="absolute bottom-1/3 left-1/3 w-32 h-32 bg-[#000000] opacity-20 rounded-full blur-3xl -z-10"
         />
-      </section>
-
+      </section> */}
+      {/* <RecentProjects /> */}
+      <AboutSection />
+     
       <section className="w-full py-12 sm:py-14 lg:py-22 bg-[#0098AF] text-white relative overflow-hidden">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

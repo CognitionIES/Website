@@ -3,14 +3,13 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { ABOUT_CONSTANTS } from "@/constants/aboutPage/constants";
-import ourJourneyImage from "@/constants/images/about/our-journey.png"
 
 import { useEffect, useRef, useState } from "react";
 // import Link from "next/link";
 // import { Button } from "@/components/ui/button";
 
 export default function AboutSection() {
-  const {  TEXT,  STATS } = ABOUT_CONSTANTS;
+  const { IMAGES, TEXT,  STATS } = ABOUT_CONSTANTS;
   const [isInView, setIsInView] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -105,7 +104,7 @@ export default function AboutSection() {
             </div>
             <div className="order-1 md:order-2 relative hidden md:block md:h-[360px] md:w-[620px] rounded-xl shadow-md overflow-hidden justify-self-end">
               <Image
-                src={ourJourneyImage}
+                src={IMAGES.STORY_IMAGE}
                 alt="Engineering services"
                 width={300}
                 height={500}
