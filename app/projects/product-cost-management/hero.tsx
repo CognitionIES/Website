@@ -1,49 +1,85 @@
-import React from 'react';
-import { ArrowDownIcon } from 'lucide-react';
+"use client"; // Mark as Client Component to allow event handlers or interactivity
 
-const ProjectHero = () => {
-  const scrollToContent = () => {
-    const contentElement = document.getElementById('overview');
-    if (contentElement) window.scrollTo({ top: contentElement.offsetTop - 50, behavior: 'smooth' });
-  };
+import { motion } from "framer-motion";
+import { FiChevronDown, FiChevronRight, FiHome } from "react-icons/fi";
+import Image from "next/image";
+import Link from "next/link";
+import engineeringImage from "@/constants/images/Plant-engineering/hero-image-1.jpg";
 
+export default function Hero() {
   return (
-    <div className="relative overflow-hidden bg-gradient-to-br from-brand-teal/5 to-brand-blue/5">
-      <div className="absolute inset-0 bg-[#F7FAFC] z-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white/80"></div>
-      </div>
-      
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-32 pb-24 md:pt-40 md:pb-32 z-10">
-        <div className="max-w-3xl animate-fade-in">
-          <div className="inline-block px-3 py-1 mb-6 text-sm font-medium text-brand-teal bg-brand-teal/10 rounded-full">Case Study</div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold mb-6 text-brand-darkGray">
-            Log Splitter <span className="text-brand-orange">Cost Optimization</span>
+    <section>
+      <div className="relative h-[450px] overflow-hidden">
+        <Image
+          src={engineeringImage}
+          alt="FEED & Conceptual Design Innovation"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#003C46]/85 to-[#0098AF]/70" />
+        <div className="absolute inset-0 opacity-5 bg-[url('/images/engineering-pattern.jpg')] bg-repeat" />
+        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 h-full flex flex-col justify-center">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white -top-10 drop-shadow-md relative">
+            Product Cost Management
+            <span className="absolute bottom-0 left-0 w-48 h-0.5 bg-gradient-to-r from-[#99D5DF] to-transparent" />
           </h1>
-          <p className="text-xl md:text-2xl text-brand-gray mb-12 leading-relaxed">
-            Engineering innovative solutions for manufacturing efficiency.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
-            {["Industrial Equipment", "Manufacturing", "Cost Optimization"].map((tag, idx) => (
-              <div key={idx} className="rounded-full px-4 py-2 inline-flex items-center text-sm text-brand-gray bg-white border border-brand-teal/20">
-                <span className="mr-2 w-2 h-2 rounded-full bg-brand-orange" />
-                {tag}
-              </div>
-            ))}
-          </div>
+          {/* Move nav outside the centered flex flow and position it absolutely */}
+          <nav className="absolute bottom-0 left-6 sm:left-8 lg:left-12 mb-6 flex items-center space-x-2 text-sm font-light text-white/80">
+            <Link
+              href="/"
+              className="hover:text-[#99D5DF] flex items-center gap-1 transition-colors duration-200"
+            >
+              <FiHome className="w-4 h-4" />
+              Home
+            </Link>
+            <FiChevronRight className="w-4 h-4" />
+            <Link
+              href="/projects"
+              className="hover:text-[#99D5DF] transition-colors duration-200"
+            >
+              Projects
+            </Link>
+            <FiChevronRight className="w-4 h-4" />
+            <Link
+              href="/projects/product-cost-managementtalization"
+              className="hover:text-[#99D5DF] transition-colors duration-200"
+            >
+              Product Cost Management
+            </Link>
+          </nav>
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 0.7, y: 0 }}
+            transition={{
+              repeat: Infinity,
+              duration: 1.5,
+              repeatType: "reverse",
+            }}
+            className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white/70"
+          >
+            <FiChevronDown className="w-6 h-6" />
+          </motion.div>
+          
         </div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 0.25, scale: 1 }}
+          transition={{ delay: 0.5, duration: 1 }}
+          className="absolute bottom-0 left-0 w-80 h-80 bg-[#0098AF] opacity-50 rounded-full blur-3xl -z-10"
+        />
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.15 }}
+          transition={{
+            delay: 1,
+            duration: 1,
+            repeat: Infinity,
+            repeatType: "reverse",
+          }}
+          className="absolute top-20 right-16 w-5 h-5 bg-[#5B5B5B] opacity-30 rounded-full -z-10"
+        />
       </div>
-      
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
-        <button 
-          onClick={scrollToContent}
-          className="rounded-full w-12 h-12 bg-brand-teal text-white shadow-lg hover:bg-brand-orange transition-all duration-300"
-          aria-label="Scroll to content"
-        >
-          <ArrowDownIcon size={20} />
-        </button>
-      </div>
-    </div>
+    </section>
   );
-};
-
-export default ProjectHero;
+}

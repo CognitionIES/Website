@@ -104,7 +104,7 @@ export default function AboutSection() {
             </div>
             <div className="order-1 md:order-2 relative hidden md:block md:h-[360px] md:w-[620px] rounded-xl shadow-md overflow-hidden justify-self-end">
               <Image
-                src={IMAGES.STORY_IMAGE}
+                src={IMAGES.STORY_IMAGE.OurJourneyImage}
                 alt="Engineering services"
                 width={300}
                 height={500}

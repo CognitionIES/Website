@@ -34,7 +34,7 @@ const projects: Project[] = [
     title: "Digitalization",
     category: "Digital Transformation",
     description:
-      "Conducted a detailed cost and function analysis of the Log Splitter, identifying cost-saving opportunities through competitive benchmarking and design optimization.",
+      "Comprehensive Digital Transformation of a Manufacturing Plant through 3D Scanning, Digital Twin, and Real-Time Data Integration to Improve Efficiency and Accuracy.",
     image: digitalImage,
     href: "/projects/digitalization",
   },
@@ -129,8 +129,6 @@ const Projects: React.FC = () => {
         <Hero />
       </section>
 
-
-
       {/* <section
         ref={sectionRef}
         className="w-full py-12 sm:py-14 lg:py-22 relative overflow-hidden"
@@ -215,7 +213,7 @@ const Projects: React.FC = () => {
       </section> */}
       {/* <RecentProjects /> */}
       <AboutSection />
-     
+
       <section className="w-full py-12 sm:py-14 lg:py-22 bg-[#0098AF] text-white relative overflow-hidden">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

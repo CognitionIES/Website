@@ -78,7 +78,7 @@ export default function AboutSection() {
               <p className="text-lg text-gray-600 text-justify leading-relaxed">
                 {DESCRIPTION_2}
               </p>
-              <div className="mt-4">
+              <div className="mt-4 flex justify-end">
                 <Link href="/brochure">
                   <Button className="bg-[#0098af] text-white hover:bg-white hover:text-black text-sm sm:text-base px-4 py-2 sm:px-6 sm:py-3 transition-colors duration-200 border-2 border-transparent hover:border-[#0098af] hover:outline hover:outline-2 hover:outline-[#0098af]">
                     Download Brochure

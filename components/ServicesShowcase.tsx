@@ -33,7 +33,7 @@ const services = [
       "Enabling digital transformation through user-friendly, adaptable, and future-proof SaaS applications.",
     color: "bg-[#003C46]",
     image: saasImage,
-    href: "/services/saas-solutions/servicecpq",
+    href: "/services/saas-solution/servicecpq",
   },
   {
     id: 4,

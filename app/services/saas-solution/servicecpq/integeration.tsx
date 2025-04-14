@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 
 const Integration = () => {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-10 bg-gradient-to-b from-[#0098af]/20 to-white">
       <div className="container px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="animate-fade-in-up">

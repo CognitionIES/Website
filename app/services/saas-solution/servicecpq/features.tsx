@@ -1,208 +1,276 @@
-import React from 'react';
-import { 
-  ShoppingCart, 
-  Shield, 
- 
-  Settings, 
-  BarChartHorizontal, 
+import React, { useState } from "react";
+import {
+  Zap,
+  Settings,
   Bot,
-  Settings2,
-  ChevronRight,
-  CircleDashed,
-  Sparkles
-} from 'lucide-react';
-import BackgroundGrid from '@/components/ui/backgroundgrid';
-import Link from 'next/link';
-import Image from 'next/image';
+  DollarSign,
+  FileText,
+  ClipboardCheck,
+  Database,
+  BarChart,
+  Wrench,
+  Users,
+  Activity,
+  ShoppingCart,
+  Package,
+  Brain,
+  Globe,
+  
+} from "lucide-react";
+import BackgroundGrid from "@/components/ui/backgroundgrid";
+import { motion } from "framer-motion";
 
+const KeyFeatures = () => {
+  const [activeCategory, setActiveCategory] = useState<string | null>("cpq");
 
-const features = [
-  {
-    icon: <Shield />,
-    title: "Warranty Automation",
-    description: "Automate warranty claims with AI-powered processing.",
-  },
-  {
-    icon: <ShoppingCart />,
-    title: "B2B Commerce",
-    description: "Enable customers to order parts and services online.",
-  },
-  {
-    icon: <Settings />,
-    title: "Repair Management",
-    description: "Manage all repairs in one unified platform.",
-  },
-  {
-    icon: <Settings2 />,
-    title: "AI-Powered CPQ",
-    description: "Generate accurate quotes with automated configuration.",
-  },
-  {
-    icon: <Bot />,
-    title: "AI Claim Assistant",
-    description: "Extract key information from claim documents automatically.",
-  },
-  {
-    icon: <BarChartHorizontal />,
-    title: "Service Insights",
-    description: "Move from reactive to proactive service with predictive insights.",
-  },
-];
+  // Key feature categories
+  const featureCategories = [
+    {
+      id: "cpq",
+      title: "AI-Powered Configure, Price, Quote (CPQ)",
+      icon: <Zap className="h-6 w-6" />,
+      color: "bg-gradient-to-r from-[#0098af] to-[#00b4d8]/50",
+      features: [
+        {
+          icon: <Settings />,
+          title: "Intelligent Service Configuration",
+          description:
+            "Design and customize maintenance plans, repair options, and parts agreements through an intuitive guided interface.",
+        },
+        {
+          icon: <DollarSign />,
+          title: "Dynamic Pricing Engine",
+          description:
+            "Utilize AI to calculate real-time pricing based on equipment usage, service lifecycle, breakdown nature, and market conditions.",
+        },
+        {
+          icon: <FileText />,
+          title: "Automated Quote Generation",
+          description:
+            "Create accurate, detailed quotes using natural language inputs — streamlining even the most complex service configurations.",
+        },
+        {
+          icon: <ClipboardCheck />,
+          title: "Customizable Workflows",
+          description:
+            "Integrate effortlessly with CRM and ERP systems to adapt CPQ processes to your unique business operations.",
+        },
+      ],
+    },
+    {
+      id: "warranty",
+      title: "Warranty & Claims Management",
+      icon: <Database className="h-6 w-6" />,
+      color: "bg-gradient-to-r from-purple-500 to-indigo-400",
+      features: [
+        {
+          icon: <Bot />,
+          title: "Automated Processing",
+          description:
+            "Leverage AI to automate warranty claims, minimizing manual efforts and significantly reducing processing time.",
+        },
+        {
+          icon: <BarChart />,
+          title: "Real-Time Tracking",
+          description:
+            "Track claim statuses in real-time and gain insights into frequent part failures and overall warranty costs.",
+        },
+        {
+          icon: <ClipboardCheck />,
+          title: "Compliance Assurance",
+          description:
+            "Ensure adherence to global and regional warranty regulations with built-in compliance checks.",
+        },
+      ],
+    },
+    {
+      id: "repair",
+      title: "Repair Management",
+      icon: <Wrench className="h-6 w-6" />,
+      color: "bg-gradient-to-r from-amber-500 to-orange-400",
+      features: [
+        {
+          icon: <ClipboardCheck />,
+          title: "Streamlined Workflows",
+          description:
+            "Manage repair jobs end-to-end — from service request intake to job completion, with integrated billing and invoicing.",
+        },
+        {
+          icon: <Users />,
+          title: "Technician Efficiency",
+          description:
+            "Optimize scheduling and dispatch using technician availability and skill-based matching for better job allocation.",
+        },
+        {
+          icon: <Activity />,
+          title: "Performance Analytics",
+          description:
+            "Gain actionable insights into repair trends, bottlenecks, and service quality for continuous improvement.",
+        },
+      ],
+    },
+    {
+      id: "ecommerce",
+      title: "B2B E-Commerce Portal",
+      icon: <ShoppingCart className="h-6 w-6" />,
+      color: "bg-gradient-to-r from-emerald-500 to-green-400",
+      features: [
+        {
+          icon: <Package />,
+          title: "Unified Product Catalog",
+          description:
+            "Display all spare parts, consumables, and service packages in one centralized and searchable portal.",
+        },
+        {
+          icon: <ClipboardCheck />,
+          title: "Order Management",
+          description:
+            "Simplify order placement, payment, and confirmation — accelerating order fulfillment and customer satisfaction.",
+        },
+        {
+          icon: <Brain />,
+          title: "AI-Led Inventory Optimization",
+          description:
+            "Use predictive analytics to forecast demand and maintain ideal inventory levels across your network.",
+        },
+        {
+          icon: <Globe />,
+          title: "Global Scalability",
+          description:
+            "Support multi-currency, multilingual operations — enabling global sales and service reach with ease.",
+        },
+      ],
+    },
+  ];
 
-const Features = () => {
   return (
-    <section id="features" className="py-20  md:py-28 relative overflow-hidden">
+    <section
+      id="key-features"
+      className="py-20 md:py-16 relative overflow-hidden"
+    >
       {/* Background with gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#E6F0F5]/20 to-white -z-10" />
-      
+
       {/* Decorative elements */}
-      <div className="absolute top-20 left-8 text-[#00b4d8]/30">
-        <CircleDashed className="h-16 w-16 animate-spin-slow" />
-      </div>
-      <div className="absolute bottom-20 right-8 text-[#0098af]/30">
-        <CircleDashed className="h-12 w-12 animate-spin-slow" style={{ animationDirection: 'reverse' }} />
-      </div>
-      
-      <BackgroundGrid className="-z-10 opacity-60" />
-      
-      <div className="container max-w-7xl mx-auto relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in-up">
-          <div className="flex justify-center mb-5">
-            <div className="inline-flex items-center justify-center p-2 bg-[#E6F0F5]/50 rounded-full">
-              <Sparkles className="h-5 w-5 text-[#0098af] mr-2" />
-              <span className="text-sm font-medium text-[#003C46]">Intelligent Solutions</span>
-            </div>
-          </div>
+      <div className="absolute top-1/4 left-10 w-48 h-48 bg-[#00b4d8]/10 rounded-full blur-3xl -z-5"></div>
+      <div className="absolute bottom-1/4 right-10 w-48 h-48 bg-[#0098af]/10 rounded-full blur-3xl -z-5"></div>
+
+      <BackgroundGrid className="-z-10 opacity-40" />
+
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="text-center max-w-3xl mx-auto mb-10 animate-fade-in-up">
           <h2 className="text-3xl md:text-4xl font-semibold text-[#003C46] mb-6">
-            Powerful Features, Real Results
+            Key Features of Service CPQ
           </h2>
           <p className="text-[#5b5b5b]">
-            AI-powered solutions designed to optimize the entire aftersales journey.
+            Comprehensive solutions designed for modern after-sales service
+            operations
           </p>
         </div>
-        
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Left side: Images with floating elements */}
-          <div className="relative animate-fade-in-up order-2 lg:order-1">
-            <div className="grid grid-cols-2 gap-4 relative">
-              {/* Main image */}
-              <div className="col-span-2 rounded-2xl overflow-hidden shadow-xl transform hover:scale-[1.01] transition-transform duration-300">
-                <Image
-                  src="/lovable-uploads/852d3f58-69a8-440c-99e3-f02c5bdf8449.png" 
-                  alt="ServiceCPQ Dashboard" 
-                  width={800}
-                  height={500}
-                  className="w-full h-auto"
-                />
-              </div>
-              
-              {/* Additional smaller images */}
-              <div className="rounded-xl overflow-hidden shadow-lg relative group">
-                <div className="absolute inset-0 bg-[#0098af]/20 group-hover:bg-transparent transition-colors duration-300"></div>
-                <Image 
-                  src="/lovable-uploads/f73d1ba1-7652-41c6-af89-79754680a505.png" 
-                  alt="ServiceCPQ Repair View"
-                  width={400}
-                  height={250} 
-                  className="w-full h-auto object-cover"
-                />
-              </div>
-              
-              <div className="rounded-xl overflow-hidden shadow-lg relative group">
-                <div className="absolute inset-0 bg-[#00b4d8]/20 group-hover:bg-transparent transition-colors duration-300"></div>
-                <Image
-                  src="/lovable-uploads/93bad063-de59-42dc-9cbb-3b68b6d99707.png" 
-                  alt="ServiceCPQ Analytics" 
-                  width={400}
-                  height={250}
-                  className="w-full h-auto object-cover" 
-                />
-              </div>
-              
-              {/* Floating elements */}
-              <div className="absolute -top-6 -left-6 bg-[#0098af] text-white p-3 rounded-lg shadow-lg animate-subtle-bounce">
-                <Bot className="h-6 w-6" />
-              </div>
-              
-              <div className="absolute -bottom-6 -right-6 bg-[#00b4d8] text-white p-3 rounded-lg shadow-lg animate-subtle-bounce" style={{ animationDelay: "1s" }}>
-                <Settings2 className="h-6 w-6" />
-              </div>
-              
-              <div className="absolute top-1/3 -right-4 bg-white text-[#003C46] p-2 rounded-lg shadow-lg animate-pulse">
-                <Sparkles className="h-5 w-5 text-[#00b4d8]" />
+
+        {/* Feature Categories Tabs */}
+        <div className="flex flex-wrap justify-center gap-6 mb-2">
+          {featureCategories.map((category) => (
+            <button
+              key={category.id}
+              onClick={() => setActiveCategory(category.id)}
+              className={`flex items-center gap-2 px-5 py-3 rounded-full transition-all duration-300 ${
+                activeCategory === category.id
+                  ? `${category.color} text-white shadow-lg scale-105`
+                  : "bg-white/70 text-gray-700 hover:bg-white hover:shadow-md"
+              }`}
+            >
+              <span>{category.icon}</span>
+              <span className="font-medium">{category.title}</span>
+            </button>
+          ))}
+        </div>
+
+        {/* Feature Showcase */}
+        <div className="relative min-h-[400px]">
+          {featureCategories.map((category) => (
+            <div
+              key={category.id}
+              className={`${
+                activeCategory === category.id ? "block" : "hidden"
+              }`}
+            >
+              {/* Hexagonal Feature Grid */}
+              <div className="flex flex-col items-center">
+                {/* Category showcase image */}
+                <div className="mb-8 w-full max-w-3xl mx-auto rounded-xl overflow-hidden shadow-lg relative group">
+                  <div
+                    className={`absolute inset-0 ${category.color} opacity-10 group-hover:opacity-20 transition-opacity duration-500`}
+                  ></div>
+
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
+                    <h3 className="text-white text-xl font-semibold">
+                      {category.title}
+                    </h3>
+                    <p className="text-white/80 text-sm mt-2">
+                      Explore our comprehensive {category.title.toLowerCase()}{" "}
+                      features
+                    </p>
+                  </div>
+                </div>
+
+                {/* Honeycomb style feature layout */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                  {category.features.map((feature, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                      className={`bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 ${
+                        index % 2 === 0 ? "md:transform md:translate-y-10" : ""
+                      }`}
+                    >
+                      <div className={`h-2 ${category.color}`}></div>
+                      <div className="p-6">
+                        <div className="flex items-start gap-4">
+                          <div
+                            className={`p-3 rounded-lg ${category.color.replace(
+                              "gradient-to-r",
+                              "gradient-to-br"
+                            )} text-white`}
+                          >
+                            {feature.icon}
+                          </div>
+                          <div>
+                            <h4 className="text-lg font-semibold text-gray-800 mb-2">
+                              {feature.title}
+                            </h4>
+                            <p className="text-gray-600 text-sm">
+                              {feature.description}
+                            </p>
+                          </div>
+                        </div>
+
+                        {/* Feature benefits list */}
+                        <div className="mt-4 pl-16"></div>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-          
-          {/* Right side: Features grid */}
-          <div className="order-1 lg:order-2 relative">
-            {/* Decorative background element */}
-            <div className="absolute -z-10 top-1/4 right-1/4 w-64 h-64 bg-[#0098af]/10 rounded-full blur-3xl"></div>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {features.map((feature, index) => (
-                <FeatureCard 
-                  key={index} 
-                  icon={feature.icon} 
-                  title={feature.title} 
-                  description={feature.description} 
-                  index={index}
-                />
-              ))}
-            </div>
-            
-            <div className="mt-10 text-center lg:text-left">
-              <Link 
-                href="/contact" 
-                className="inline-flex items-center text-[#0098af] hover:text-[#003C46] transition-colors"
-              >
-                Discover all features
-                <ChevronRight className="ml-1 h-4 w-4" />
-              </Link>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
-      
+
       {/* Bottom decorative wave */}
-      <div className="absolute bottom-0 left-0 w-full h-12 bg-[#E6F0F5]/10 -z-5" style={{
-        maskImage: 'url("data:image/svg+xml,%3Csvg width=\'100%25\' height=\'100%25\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M0,40 C80,10 150,50 200,20 C250,0 300,20 350,10 C400,0 450,30 500,15 C550,0 600,15 650,30 C700,45 750,20 800,40 L800,100 L0,100 Z\' fill=\'%23FFFFFF\'/%3E%3C/svg%3E")',
-        maskSize: '800px 100px',
-        maskRepeat: 'repeat-x'
-      }}></div>
+      <div
+        className="absolute bottom-0 left-0 w-full h-12 bg-[#E6F0F5]/10 -z-5"
+        style={{
+          maskImage:
+            "url(\"data:image/svg+xml,%3Csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,40 C80,10 150,50 200,20 C250,0 300,20 350,10 C400,0 450,30 500,15 C550,0 600,15 650,30 C700,45 750,20 800,40 L800,100 L0,100 Z' fill='%23FFFFFF'/%3E%3C/svg%3E\")",
+          maskSize: "800px 100px",
+          maskRepeat: "repeat-x",
+        }}
+      ></div>
     </section>
   );
 };
 
-const FeatureCard = ({ 
-  icon, 
-  title, 
-  description, 
-  index 
-}: { 
-  icon: React.ReactNode; 
-  title: string; 
-  description: string; 
-  index: number;
-}) => {
-  // Calculate delay based on index (0-800ms in steps of 100ms)
-  const delay = Math.min(index * 100, 800);
-  
-  return (
-    <div 
-      className={`glass rounded-xl p-5 transition-all duration-300 hover:translate-y-[-5px] hover:shadow-md
-                 flex flex-col items-start animate-fade-in-up group cursor-pointer hover:border hover:border-[#0098af]`}
-      style={{ animationDelay: `${delay}ms` }}
-    >
-      <div className="w-12 h-12 rounded-lg hover bg-[#0098af]/10 flex items-center justify-center mb-4 group-hover:bg-[#0098af]/20 transition-colors">
-        <div className="text-[#0098af]">
-          {icon}
-        </div>
-      </div>
-      <h3 className="text-lg font-semibold text-[#003C46] mb-2">{title}</h3>
-      <p className="text-[#5b5b5b] text-sm">{description}</p>
-    </div>
-);
-}
-
-export default Features;
+export default KeyFeatures;

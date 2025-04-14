@@ -12,6 +12,7 @@ import AboutSection from "./mainContent";
 import CTASection from "@/components/CTA";
 import Footer from "@/components/footer";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const Index = () => {
   // Job seeker features
@@ -188,12 +189,13 @@ const Index = () => {
                   <div
                     className="text-center mt-4 sm:mt-6 animate-fade-in"
                     style={{ animationDelay: "900ms" }}
-                  >
+                  ><Link href="/services/staffing/job-seeker">
                     <SectionButton
+                      
                       text="Start Your Journey"
                       theme="jobseeker"
                       size="lg"
-                    />
+                    /></Link>
                   </div>
                 </div>
               </div>
@@ -261,11 +263,12 @@ const Index = () => {
                     className="text-center mt-4 sm:mt-6 animate-fade-in"
                     style={{ animationDelay: "900ms" }}
                   >
+                    <Link href="/services/staffing/employer">
                     <SectionButton
                       text="Build Your Team"
                       theme="employer"
                       size="lg"
-                    />
+                    /></Link>
                   </div>
                 </div>
               </div>

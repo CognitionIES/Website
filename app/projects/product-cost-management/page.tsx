@@ -20,6 +20,7 @@ import {
 import { MegaMenu } from "@/components/ui/Megamenu/MegaMenu";
 import ProjectCTA from "./ProjectCTA";
 import ProjectResults from "./result";
+import Hero from "./hero";
 
 export default function ProductCostManagement() {
   const project = {
@@ -68,83 +69,7 @@ export default function ProductCostManagement() {
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
       <MegaMenu />
-      {/* Hero Section */}
-      {/* <section className="relative h-[600px] overflow-hidden flex items-center justify-center px-4 sm:px-6 lg:px-8">
-        <div className="absolute inset-0">
-          <Image
-            src={project.heroImage}
-            alt="Log Splitter Hero"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-[#003C46]/85 to-[#0098af]/70" />
-          <div className="absolute inset-0 opacity-5 bg-dot-pattern bg-[length:20px_20px]" />
-        </div>
-
-        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 h-full flex flex-col justify-center">
-          <nav className="self-start mb-6 flex items-center space-x-2 text-sm font-light text-white/80">
-            <Link
-              href="/"
-              className="hover:text-[#00b4d8] flex items-center gap-1 transition-colors duration-200"
-            >
-              <FiHome className="w-4 h-4" /> Home
-            </Link>
-            <FiChevronRight className="w-4 h-4" />
-            <Link
-              href="/log-splitter-cost-optimization"
-              className="hover:text-[#00b4d8] transition-colors duration-200"
-            >
-              Log Splitter Cost Optimization
-            </Link>
-          </nav>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-4xl mx-auto text-center"
-          >
-            <div className="inline-block px-3 py-1 mb-6 text-xs font-medium text-white bg-[#0098af]/50 rounded-full uppercase">
-              Case Study
-            </div>
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight relative">
-              {project.title}
-              <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-12 h-0.5 bg-gradient-to-r from-[#00b4d8] to-transparent" />
-            </h1>
-            <p className="mt-4 text-lg sm:text-xl lg:text-2xl max-w-2xl mx-auto text-[#00b4d8]/90 font-light">
-              {project.subtitle}
-            </p>
-            <div className="flex flex-wrap justify-center gap-4 mt-6">
-              {[
-                "Industrial Equipment",
-                "Manufacturing",
-                "Cost Optimization",
-              ].map((tag) => (
-                <span
-                  key={tag}
-                  className="flex items-center text-sm text-[#00b4d8]/90 font-light"
-                >
-                  <span className="w-2 h-2 rounded-full bg-[#00b4d8] inline-block mr-2" />
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </motion.div>
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
-            <button
-              onClick={() =>
-                document
-                  .getElementById("overview")
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }
-              className="rounded-full w-12 h-12 bg-white text-[#0098af] shadow-lg hover:bg-[#E6F0F5] transition-all duration-300 border border-[#E6F0F5]"
-            >
-              <ChevronDown className="h-6 w-6 mx-auto" />
-            </button>
-          </div>
-        </div>
-      </section> */}
+      <Hero />
       <section className="relative bg-gradient-to-br from-[#003C46] via-[#003C46] to-[#0098af]/90 py-24 md:py-32 overflow-hidden">
         <div className="absolute inset-0 opacity-5 bg-dot-pattern bg-[length:20px_20px]"></div>
 

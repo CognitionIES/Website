@@ -38,7 +38,7 @@ export default function FooterNavigation() {
         },
         { 
           label: "SaaS Solutions", 
-          href: "https://cognitionies.com/saas-solutions",
+          href: "https://cognitionies.com/saas-solution",
           isExternal: true 
         },
         { 

@@ -226,7 +226,7 @@ export default function UsefulLinks() {
             {/* Saas Services */}
             <li>
               <Link
-                href="/services/saas-solutions/servicecpq"
+                href="/services/saas-solution/servicecpq"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-[#0098AF] flex items-center"

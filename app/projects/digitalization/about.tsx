@@ -61,6 +61,35 @@ export default function AboutSection() {
             </h2>
           </div>
 
+          {/* Mobile version - Visible only on small screens */}
+          <div className="md:hidden rounded-xl shadow-md overflow-hidden mb-8">
+            <div className="relative h-[200px]">
+              <Image
+                src={aboutImage}
+                alt="Engineering services"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="bg-[#003C46] p-4">
+              <h3 className="text-xl font-semibold uppercase text-white mb-2">
+                🔍 Background & Challenge
+              </h3>
+              <p className="text-white/90 text-sm">
+                The client, a reputed manufacturer of industrial chemical, was
+                facing growing challenges in scaling production due to manual
+                processes, lack of visibility into real-time plant performance,
+                and inefficient data communication across departments.
+              </p>
+              <p className="text-white/90 text-sm mt-2">
+                Cognition IES was approached to lead a complete digital
+                transformation of the plant, with the goal of creating a fully
+                integrated, intelligent digital ecosystem — from layout
+                validation to live production monitoring.
+              </p>
+            </div>
+          </div>
+
           <motion.div
             variants={contentVariants}
             initial="hidden"
@@ -76,9 +105,9 @@ export default function AboutSection() {
                 className="w-full h-full object-cover"
               />
               {/* Overlay text on top of the image */}
-              <div className="absolute  inset-0 bg-black/40 flex flex-col justify-center p-6">
+              <div className="absolute inset-0 bg-black/40 flex flex-col justify-center p-6">
                 <div className="w-3/4 sm:px-6 md:px-8 lg:px-12">
-                  <h3 className="text-3xl  font-semibold uppercase text-white mb-4">
+                  <h3 className="text-3xl font-semibold uppercase text-white mb-4">
                     🔍 Background & Challenge
                   </h3>
                   <p className="text-white/90 text-lg text-justify">

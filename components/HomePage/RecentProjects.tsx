@@ -30,7 +30,7 @@ const projects: Project[] = [
     title: "Digitalization",
     category: "Digital Transformation",
     description:
-      "Conducted a detailed cost and function analysis of the Log Splitter, identifying cost-saving opportunities through competitive benchmarking and design optimization.",
+      "Comprehensive Digital Transformation of a Manufacturing Plant through 3D Scanning, Digital Twin, and Real-Time Data Integration to Improve Efficiency and Accuracy.",
     image: digitalImage,
     href: "/projects/digitalization",
   },

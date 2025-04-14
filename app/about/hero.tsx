@@ -10,7 +10,7 @@ export default function hero() {
     <section>
       <div className="relative h-[450px] overflow-hidden">
         <Image
-          src={IMAGES.HERO_IMAGE}
+          src={IMAGES.HERO_IMAGE.HeroImage}
           alt="Plant Engineering Hero Image "
           fill
           className="object-cover"
@@ -19,7 +19,7 @@ export default function hero() {
         <div className="absolute inset-0 bg-gradient-to-br from-[#003C46]/85 to-[#0098AF]/70" />
         <div className="absolute inset-0 opacity-5 bg-[url('/images/engineering-pattern.jpg')] bg-repeat" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 lg:px-8 h-full flex flex-col justify-center">
-          <div className="relative min-h-screen flex items-end  px-4">
+          <div className="relative min-h-screen flex items-end mb-20 ">
             <div className="text-left mb-36">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white drop-shadow-md">
                 Cognition IES Pvt. Ltd.
@@ -31,7 +31,7 @@ export default function hero() {
             </div>
           </div>
           {/* Move nav outside the centered flex flow and position it absolutely */}
-          <nav className="absolute bottom-0 left-6 sm:left-8 lg:left-12 mb-6 flex items-center space-x-2 text-sm font-light text-white/80">
+          <nav className="absolute bottom-0 left-6 sm:left-8 lg:left-8 mb-6 flex items-center space-x-2 text-sm font-light text-white/80">
             <Link
               href="/"
               className="hover:text-[#99D5DF] flex items-center gap-1 transition-colors duration-200"

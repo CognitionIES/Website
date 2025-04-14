@@ -1,19 +1,25 @@
 
 // Constants for the About page to keep content and assets modular and reusable
+import HeroImage from "@/constants/images/about/about-hero.jpg"
+import OurJourneyImage from "@/constants/images/about/about-our-journey.jpg"
+import flexScaleImage from "@/constants/images/about/flex-scale.jpg"
+import lifeCycleImage from "@/constants/images/about/lifecyle-mastery.jpg"
+import qualityCoreImage from "@/constants/images/about/quality-core.jpg"
+import coInnovativeImage from "@/constants/images/about/coinnovative.jpg"
 export const ABOUT_CONSTANTS = {
   // Image URLs
   IMAGES: {
-    HERO_IMAGE: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31",
-    STORY_IMAGE: "https://images.unsplash.com/photo-1581093806997-124204d9fa9d?auto=format&fit=crop&q=80",
+    HERO_IMAGE: {HeroImage},
+    STORY_IMAGE:{OurJourneyImage},
     MISSION_VISION_BG:
       "https://images.unsplash.com/photo-1476304884326-cd2c88572c5f?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     TECH_PATTERN: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31",
     KEY_VALUES: [
-      "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
-      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40",
-      "https://images.unsplash.com/photo-1616337865743-bd29011bc36d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d",
-      
+      coInnovativeImage,
+      lifeCycleImage,
+      qualityCoreImage,
+      flexScaleImage,
+
     ],
   },
 

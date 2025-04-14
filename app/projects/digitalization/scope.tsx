@@ -7,13 +7,13 @@ export default function Scope() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative hidden  bg-white md:block h-[350px] rounded-xl overflow-hidden">
             {/* Overlay text on top of the image */}
-            <div className="absolute inset-0  flex flex-col p-6">
+            <div className="absolute inset-0  flex flex-col p-6 ">
               <div className="w-full flex justify-end">
                 <ul className="">
-                  <h3 className="text-3xl font-semibold uppercase  text-[#5b5b5b] mb-2">
-                    <span className="text-[#0098af]">🛠</span> Scope of Work
+                  <h3 className="text-3xl font-semibold uppercase  pl-2 text-[#5b5b5b] mb-2">
+                    <span className="text-[#0098af]">🛠</span> <span className="pl-4"> Scope of Work</span>
                   </h3>
-                  <li className="flex pl-4">
+                  <li className="flex pl-4 ">
                     <span className="text-[#0098af] pr-2">⦿</span>
                     <p className="flex-1 text-indent-0 pl-6 hanging-indent">
                       <span className="font-bold uppercase  ">

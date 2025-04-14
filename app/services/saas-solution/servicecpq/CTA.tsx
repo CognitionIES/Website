@@ -39,21 +39,7 @@ const CTA = () => {
   };
   return (
     <div>
-      <section className="py-10">
-        <div className="container px-6 lg:px-8 max-w-7xl mx-auto">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-semibold text-[#003C46] mb-6">
-              Try & Buy
-            </h2>
-            <p className="text-[#5b5b5b] text-lg">
-              Whatever your service business&apos;s size or growth phase is, our
-              pricing options include a mix of strategies and tactics
-              specifically designed to deliver the best results.
-            </p>
-          </div>
-
-        </div>
-      </section>
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 ">
         <section
           ref={sectionRef}
@@ -65,11 +51,9 @@ const CTA = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6 }}
-              className="mb-8"
+              className=""
             ></motion.div>
 
-            {/* Simple divider */}
-            <div className="mt-16 h-[2px] w-full max-w-3xl mx-auto bg-gradient-to-r from-transparent via-[#0098af]/40 to-transparent"></div>
 
             {/* CTA section */}
           </div>
