@@ -5,7 +5,7 @@ import Hero from "./hero";
 import Features from "./features";
 //import Problems from "./problem";
 //import Benefits from "./benefits";
-import Integration from "./integeration";
+//import Integration from "./integeration";
 import CTA from "./CTA";
 import { MegaMenu } from "@/components/ui/Megamenu/MegaMenu";
 import Footer from "@/components/footer";
