@@ -73,6 +73,7 @@ const Testimonials = () => {
     );
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => {
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       if (sectionRef.current) observer.unobserve(sectionRef.current);
     };
   }, []);

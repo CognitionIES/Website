@@ -60,7 +60,7 @@ export default function CompanyStory() {
           </div>
           <div className="lg:col-span-2 relative h-80 lg:h-[500px]">
             <Image
-              src={IMAGES.STORY_IMAGE}
+              src={IMAGES.STORY_IMAGE.OurJourneyImage}
               alt="Creative Workspace"
               layout="fill"
               objectFit="cover"
