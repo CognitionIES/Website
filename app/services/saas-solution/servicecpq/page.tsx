@@ -12,7 +12,7 @@ import Footer from "@/components/footer";
 import VideoShowcase from "./videoShowcase";
 import Partner from "./partner";
 import WhyChoose from "./whyChooseUs";
-import Industries from "../industries";
+import Industries from "./industries";
 
 const Index = () => {
   return (

@@ -5,10 +5,9 @@ import {
   Stethoscope,
   Hammer,
   Zap,
-  Target,
+  
 } from "lucide-react";
 import BackgroundGrid from "@/components/ui/backgroundgrid";
-import Image from "next/image";
 
 const industriesData = [
   {
