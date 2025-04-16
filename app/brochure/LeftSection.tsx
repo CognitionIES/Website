@@ -1,38 +1,58 @@
+// app/brochure/LeftSection.tsx
 "use client";
 
-// This component shows the text and services list on the left side
-import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 import { BROCHURE_CONSTANTS } from "@/constants/brochurePage/constants";
 
-export default function LeftSection() {
-  const { TITLE, DESCRIPTION_1, DESCRIPTION_2, SERVICES } = BROCHURE_CONSTANTS.LEFT_CONTENT;
+interface LeftSectionProps {
+  selectedBrochure: "product" | "plant";
+  setSelectedBrochure: (value: "product" | "plant") => void;
+}
+
+export default function LeftSection({ selectedBrochure }: LeftSectionProps) {
+  const content = BROCHURE_CONSTANTS.LEFT_CONTENT[selectedBrochure];
 
   return (
-    <div className="w-full lg:w-1/2 py-12 pr-4 lg:pr-8">
-      <div className="max-w-xl">
-        {/* Title */}
-        <h2 className="text-3xl mt-[24px] font-bold text-[#003C46] mb-6 relative drop-shadow-sm">
-          {TITLE}
-        </h2>
-        {/* First paragraph */}
-        <p className="text-gray-600 mb-8 text-justify">
-          {DESCRIPTION_1}
-        </p>
-        {/* Second paragraph */}
-        <p className="text-gray-600 mb-6">
-          {DESCRIPTION_2}
-        </p>
+    <motion.div
+      initial={{ opacity: 0, x: -20 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.5 }}
+      className="w-full lg:w-1/2 mb-8 pr-4 lg:pr-8"
+    >
+      <h2 className="text-2xl font-bold text-[#003C46] mb-6">
+        {content.TITLE}
+      </h2>
+      <p className="text-base text-justify text-gray-600 mb-6">
+        {content.DESCRIPTION}
+      </p>
 
-        {/* List of services */}
-        <div className="space-y-4">
-          {SERVICES.map((service, index) => (
-            <div key={index} className="flex items-start gap-3">
-              <ArrowRight className="h-6 w-6 mt-1 text-[#23dce1]" />
-              <p className="text-gray-700">{service}</p>
-            </div>
+      <div className="mb-8">
+        <h3 className="text-xl font-semibold text-[#003C46] mb-4">
+          Why Download?
+        </h3>
+        <ul className="space-y-2">
+          {content.WHY_DOWNLOAD.map((item, index) => (
+            <li key={index} className="flex items-start item-center">
+              <span className="text-[#0098af] mr-2  ">⦿</span>
+              <span className="text-gray-600 text-sm mt-[2px]">{item}</span>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
-    </div>
+
+      <div>
+        <h3 className="text-xl font-semibold text-[#003C46] mb-4">
+          What Makes Our Services Unique?
+        </h3>
+        <ul className="space-y-2">
+          {content.UNIQUE_POINTS.map((item, index) => (
+            <li key={index} className="flex items-start">
+              <span className="text-[#0098af] mr-2 ">⦿</span>
+              <span className="text-gray-600 text-sm mt-[2px]">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </motion.div>
   );
 }

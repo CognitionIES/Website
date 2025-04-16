@@ -102,10 +102,7 @@ body {
   .card-hover {
     @apply transition-all duration-300 hover:shadow-md hover:-translate-y-1;
   }
-  
-  .text-gradient {
-    @apply bg-gradient-career bg-clip-text text-transparent;
-  }
+ 
 
   .line-indicator {
     @apply absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-[#0098af] to-transparent;

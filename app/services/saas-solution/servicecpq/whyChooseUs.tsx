@@ -1,7 +1,6 @@
 import React from "react";
 import { Wrench, Target, HandshakeIcon } from "lucide-react";
 import BackgroundGrid from "@/components/ui/backgroundgrid";
-import Image from "next/image";
 //import Link from "next/link";
 
 const WhyChoose = () => {
@@ -56,18 +55,13 @@ const WhyChoose = () => {
                 for Service CPQ?
               </h2>
 
-              <div className="mt-6 inline-block bg-white/80 backdrop-blur-sm px-5 py-3 rounded-lg shadow-sm">
-                <p className="text-[#5b5b5b]">
-                  We&apos;re more than just a vendor - we&apos;re your partner in digital
-                  transformation
-                </p>
-              </div>
+             
             </div>
           </div>
 
           {/* Right side - curved image */}
           <div className="md:w-3/5">
-            <div className="relative overflow-hidden rounded-l-full rounded-r-lg shadow-lg">
+            {/* <div className="relative overflow-hidden rounded-l-full rounded-r-lg shadow-lg">
               <div className="absolute inset-0 bg-gradient-to-r from-[#0098af]/70 to-transparent mix-blend-multiply z-10"></div>
               <Image
                 src="https://images.unsplash.com/photo-1742943892627-f7e4ddf91224?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyfHx8ZW58MHx8fHx8"
@@ -81,12 +75,12 @@ const WhyChoose = () => {
                   Your success is our mission
                 </p>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
 
         {/* Reason cards - overlapping design */}
-        <div className="relative mt-24 mb-24">
+        <div className="relative mt-18 mb-24">
           <div className="flex flex-col md:flex-row gap-4 md:gap-0">
             {reasons.map((reason, index) => (
               <ReasonCard

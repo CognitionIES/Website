@@ -1,10 +1,11 @@
 import React from "react";
 import {
   Factory,
-  Construction,
+  
   Stethoscope,
   Hammer,
   Zap,
+  Tractor,
   
 } from "lucide-react";
 import BackgroundGrid from "@/components/ui/backgroundgrid";
@@ -17,7 +18,7 @@ const industriesData = [
       "Enhance collaboration with partners and streamline product support to deliver faster, more reliable after-sales service.",
   },
   {
-    icon: <Construction />,
+    icon: <Tractor />,
     title: "Heavy Equipment & Construction",
     description:
       "Optimize field service operations, manage complex warranty claims, and reduce equipment downtime with intelligent workflows.",
@@ -112,11 +113,11 @@ const IndustryCard = ({
       {/* Top accent line */}
       <div className="h-1 w-full bg-gradient-to-r from-[#0098af] to-[#00b4d8]"></div>
 
-      <div className="p-6">
+      <div className="p-6 flex flex-col items-center text-center">
         {/* Icon with animated background */}
         <div className="relative mb-5 inline-block">
           <div className="absolute inset-0 bg-[#E6F0F5] rounded-lg transform rotate-45 transition-transform group-hover:rotate-0"></div>
-          <div className="relative w-12 h-12 flex items-center justify-center">
+          <div className="relative w-12 h-12 flex items-center  justify-center">
             <div className="text-[#0098af] transform transition-transform group-hover:scale-110">
               {icon}
             </div>

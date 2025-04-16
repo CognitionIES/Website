@@ -4,7 +4,7 @@ import BackgroundGrid from "@/components/ui/backgroundgrid";
 
 const VideoShowcase = () => {
   return (
-    <section className="py-10 md:py-14 relative overflow-hidden">
+    <section className="py-6 md:py-8 relative overflow-hidden">
       {/* Background with gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#E6F0F5]/30 to-white -z-10" />
 
@@ -54,7 +54,7 @@ const VideoShowcase = () => {
           </div>
 
           {/* Caption */}
-          <p className="text-sm text-[#5b5b5b] text-center mt-4">
+          <p className="text-sm text-[#5b5b5b] text-center mt-4 mb-8">
             A comprehensive walkthrough of our AI-powered after-sales platform
           </p>
         </div>
@@ -62,7 +62,7 @@ const VideoShowcase = () => {
 
       {/* Bottom decorative wave */}
       <div
-        className="absolute bottom-0 left-0 w-full h-12 bg-[#E6F0F5]/10 -z-5"
+        className="absolute bottom-0 left-0 w-full h-12 bg-[#E6F0F5]/60 -z-5"
         style={{
           maskImage:
             "url(\"data:image/svg+xml,%3Csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,40 C80,10 150,50 200,20 C250,0 300,20 350,10 C400,0 450,30 500,15 C550,0 600,15 650,30 C700,45 750,20 800,40 L800,100 L0,100 Z' fill='%23FFFFFF'/%3E%3C/svg%3E\")",

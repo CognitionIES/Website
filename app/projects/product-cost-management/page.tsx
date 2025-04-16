@@ -2,21 +2,13 @@
 
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
+// import Link from "next/link";
 //import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import Footer from "@/components/footer";
 // import { FiHome, FiChevronRight } from "react-icons/fi";
-import {
-  ArrowLeft,
-  ArrowRight,
-  Award,
-  BarChart3,
-  ChevronDown,
-  Cog,
-  Lightbulb,
-  Users,
-} from "lucide-react";
+import pcmOverviewImage from "@/constants/images/projects/pcm-overview.jpg";
+import { Award, BarChart3, Cog, Lightbulb, Users } from "lucide-react";
 import { MegaMenu } from "@/components/ui/Megamenu/MegaMenu";
 import ProjectCTA from "./ProjectCTA";
 import ProjectResults from "./result";
@@ -65,118 +57,22 @@ export default function ProductCostManagement() {
       transition: { duration: 0.3 },
     },
   };
+  const scaleIn = {
+    initial: { scale: 0.9, opacity: 0 },
+    animate: { scale: 1, opacity: 1 },
+    transition: { duration: 0.5 },
+  };
 
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
       <MegaMenu />
       <Hero />
-      <section className="relative bg-gradient-to-br from-[#003C46] via-[#003C46] to-[#0098af]/90 py-24 md:py-32 overflow-hidden">
-        <div className="absolute inset-0 opacity-5 bg-dot-pattern bg-[length:20px_20px]"></div>
-
-        {/* Subtle animated accent */}
-        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#00b4d8] via-[#0098af] to-transparent"></div>
-
-        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-          {/* Breadcrumb navigation */}
-          <div className="flex items-center space-x-2 text-sm font-medium text-[#E6F0F5]/80 mb-12">
-            <Link
-              href="/"
-              className="hover:text-[#00b4d8] flex items-center gap-1.5 transition-colors duration-200"
-            >
-              <ArrowLeft className="w-4 h-4" />
-              <span>Back to Home</span>
-            </Link>
-          </div>
-
-          <div className="max-w-4xl">
-            {/* Case study label */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 mb-6 text-xs font-medium text-white bg-[#0098af]/60 rounded-full uppercase backdrop-blur-sm">
-              <Award className="h-3.5 w-3.5" />
-              <span>Case Study</span>
-            </div>
-
-            {/* Title with decorative underline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-              {project.title}
-              <div className="h-1 w-[150px] bg-gradient-to-r from-[#00b4d8] to-transparent rounded-full mt-4" />
-            </h1>
-
-            {/* Subtitle */}
-            <p className="text-lg sm:text-xl max-w-2xl text-[#E6F0F5] font-light mb-8">
-              {project.subtitle}
-            </p>
-
-            {/* Tags with refined styling */}
-            <div className="flex flex-wrap gap-4 mb-10">
-              {[
-                "Industrial Equipment",
-                "Manufacturing",
-                "Cost Optimization",
-              ].map((tag) => (
-                <span
-                  key={tag}
-                  className="px-4 py-1.5 bg-white/10 backdrop-blur-sm rounded-full text-sm text-[#E6F0F5]"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-
-            {/* Key metrics in a horizontal layout */}
-            {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
-              <div className="bg-white/10 backdrop-blur-sm p-5 rounded-lg border border-white/10">
-                <div className="text-sm text-[#E6F0F5]/80 mb-1">Client</div>
-                <div className="text-white font-medium">{project.client}</div>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm p-5 rounded-lg border border-white/10">
-                <div className="text-sm text-[#E6F0F5]/80 mb-1">
-                  Project Duration
-                </div>
-                <div className="text-white font-medium">{project.duration}</div>
-              </div>
-            </div> */}
-
-            {/* CTA button with subtle hover effect */}
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              transition={{ duration: 0.2 }}
-            >
-              <button
-                onClick={() =>
-                  document
-                    .getElementById("overview")
-                    ?.scrollIntoView({ behavior: "smooth" })
-                }
-                className="flex items-center gap-2 px-6 py-3 bg-white text-[#003C46] rounded-full hover:bg-[#E6F0F5] transition-colors duration-300"
-              >
-                <span>Explore Case Study</span>
-                <ArrowRight className="h-4 w-4" />
-              </button>
-            </motion.div>
-          </div>
-
-          {/* Scroll indicator with reduced animation */}
-          <div className="absolute  left-1/2 transform -translate-x-1/2 z-10 hidden sm:block">
-            <button
-              onClick={() =>
-                document
-                  .getElementById("overview")
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }
-              className="rounded-full w-10 h-10 bg-white text-[#0098af] shadow-md hover:bg-[#E6F0F5] transition-colors duration-200 flex items-center justify-center"
-            >
-              <ChevronDown className="h-5 w-5" />
-            </button>
-          </div>
-        </div>
-      </section>
 
       {/* Overview Section */}
       <motion.section
         {...fadeInUp}
         id="overview"
-        className="py-20 lg:py-28 bg-[#F5F7FA] scroll-mt-20 relative"
+        className="py-10 lg:py-14 bg-[#F5F7FA] scroll-mt-20 relative"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Heading */}
@@ -227,31 +123,43 @@ export default function ProductCostManagement() {
                 <h3 className="text-xl font-medium mb-4 text-[#003C46]">
                   Project Objectives
                 </h3>
-                <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <span className="text-[#0098af] mr-2">⦿</span>
-                    <span>Manufacturing Cost Reduction</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-[#0098af] mr-2">⦿</span>
-                    <span>Increase Profit Margins (50% target)</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-[#0098af] mr-2">⦿</span>
-                    <span>Benchmarking with Competitors</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-[#0098af] mr-2">⦿</span>
-                    <span>Improve Quality and Processes</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-[#0098af] mr-2">⦿</span>
-                    <span>Factor of Safety Validation</span>
-                  </li>
-                </ul>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <ul className="space-y-3">
+                      <li className="flex items-start">
+                        <span className="text-[#0098af] mr-2">⦿</span>
+                        <span>Manufacturing Cost Reduction</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-[#0098af] mr-2">⦿</span>
+                        <span>Increase Profit Margins (50% target)</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-[#0098af] mr-2">⦿</span>
+                        <span>Benchmarking with Competitors</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-[#0098af] mr-2">⦿</span>
+                        <span>Improve Quality and Processes</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-[#0098af] mr-2">⦿</span>
+                        <span>Factor of Safety Validation</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="pl-16  ">
+                    <Image
+                      src={pcmOverviewImage}
+                      width={120}
+                      height={400}
+                      className="rounded-lg shadow-lg"
+                      alt="Project overview"
+                    />
+                  </div>
+                </div>
               </div>
-
-              <div className="bg-white/80 backdrop-blur-sm shadow-sm p-6 rounded-lg border border-gray-100">
+              <div className="bg-white/80 backdrop-blur-sm py-8 shadow-sm p-6 rounded-lg border border-gray-100">
                 <h3 className="text-xl font-medium mb-4 text-[#003C46]">
                   Project Metrics
                 </h3>
@@ -274,6 +182,147 @@ export default function ProductCostManagement() {
           </div>
         </div>
       </motion.section>
+
+      <section
+        id="overview"
+        className="py-24 scroll-mt-16 relative max-w-7xl mx-auto"
+      >
+        {/* Background decorative elements */}
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#0098af]/30 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#0098af]/30 to-transparent"></div>
+        <div className="absolute right-0 inset-y-0 w-1/3 pattern-grid opacity-30"></div>
+
+        <div className="container mx-auto px-4 relative">
+          <div className="flex flex-col md:flex-row items-center mb-8">
+            <div className="md:w-1/3">
+              <span className="inline-block mb-2 text-sm font-semibold text-[#00b4d8] tracking-wider">
+                PROJECT OVERVIEW
+              </span>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#003C46] mb-4">
+                Optimizing for{" "}
+                <span className="text-gradient">performance</span>
+              </h2>
+            </div>
+            <div className="md:w-2/3 md:pl-12">
+              <div className="h-px w-12 bg-[#00b4d8] mb-6 md:hidden"></div>
+              <p className="text-lg text-[#5b5b5b] leading-relaxed">
+                Our client, a leading manufacturer in the industrial equipment
+                sector, specializes in outdoor power tools. They engaged us to
+                optimize costs and improve the competitiveness of their Log
+                Splitter product line.
+              </p>
+            </div>
+          </div>
+
+          {/* Innovative layout with stacked cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Left column: Client & Duration */}
+            <div className="space-y-6">
+              <motion.div
+                className=" bg-white/60 backdrop-blur-md border border-white/20 shadow-md  rounded-2xl p-6 overflow-hidden relative  transition-all duration-300 hover:shadow-lg hover:-translate-y-1 "
+                {...scaleIn}
+              >
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#00b4d8] to-transparent"></div>
+                <h3 className="text-xl font-semibold text-[#003C46] mb-4 flex items-center">
+                  <Users className="w-5 h-5 mr-2 text-[#00b4d8]" />
+                  Client
+                </h3>
+                <p className="text-lg text-[#5b5b5b]">{project.client}</p>
+              </motion.div>
+
+              <motion.div
+                className=" bg-white/60 backdrop-blur-md border border-white/20 shadow-md  rounded-2xl p-6 overflow-hidden relative  transition-all duration-300 hover:shadow-lg hover:-translate-y-1 "
+                {...scaleIn}
+                transition={{ delay: 0.1 }}
+              >
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#00b4d8] to-transparent"></div>
+                <h3 className="text-xl font-semibold text-[#003C46] mb-4 flex items-center">
+                  <Cog className="w-5 h-5 mr-2 text-[#00b4d8]" />
+                  Project Duration
+                </h3>
+                <p className="text-lg text-[#5b5b5b]">{project.duration}</p>
+              </motion.div>
+
+              <motion.div
+                className=" bg-white/60 backdrop-blur-md border border-white/20 shadow-md  rounded-2xl p-6 overflow-hidden relative md:mt-12 lg:mt-24  transition-all duration-300 hover:shadow-lg hover:-translate-y-1 "
+                {...scaleIn}
+                transition={{ delay: 0.2 }}
+              >
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#00b4d8] to-transparent"></div>
+                <h3 className="text-xl font-semibold text-[#003C46] mb-4 flex items-center">
+                  <Award className="w-5 h-5 mr-2 text-[#00b4d8]" />
+                  Project Objectives
+                </h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <span className="inline-block w-2 h-2 rounded-full bg-[#0098af] mt-2 mr-2"></span>
+                    <span>Manufacturing Cost Reduction</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="inline-block w-2 h-2 rounded-full bg-[#0098af] mt-2 mr-2"></span>
+                    <span>Increase Profit Margins (50% target)</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="inline-block w-2 h-2 rounded-full bg-[#0098af] mt-2 mr-2"></span>
+                    <span>Benchmarking with Competitors</span>
+                  </li>
+                </ul>
+              </motion.div>
+            </div>
+
+            {/* Center column: Main image */}
+            <motion.div
+              className="relative md:col-span-2 lg:translate-y-12"
+              {...scaleIn}
+              transition={{ delay: 0.3 }}
+            >
+              <div className="relative rounded-2xl overflow-hidden shadow-xl">
+                <Image
+                  src={project.overviewImage}
+                  alt="Project analysis meeting"
+                  width={1200}
+                  height={500}
+                  className="w-full h-[500px] object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#003C46]/70 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 w-full p-6">
+                  <h3 className="text-2xl font-semibold text-white mb-2">
+                    The Challenge
+                  </h3>
+                  <p className="text-white/90">
+                    Analyzing the product&apos;s design, components, and
+                    manufacturing costs to identify opportunities for cost
+                    reduction without compromising quality and performance.
+                  </p>
+                </div>
+
+                {/* Decorative elements */}
+                <div className="absolute top-6 right-6">
+                  <div className="w-16 h-16 rounded-full border-2 border-white/20 flex items-center justify-center">
+                    <div className="w-8 h-8 rounded-full bg-[#00b4d8]/50 backdrop-blur-sm pulse-slow"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-gradient-brand p-0.5 rounded-2xl absolute -bottom-4 right-8 shadow-lg">
+                <div className="bg-white rounded-2xl p-4 flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-[#E6F0F5] flex items-center justify-center">
+                    <Lightbulb className="w-6 h-6 text-[#0098af]" />
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-[#003C46]">
+                      Strategic Approach
+                    </h4>
+                    <p className="text-sm text-[#5b5b5b]">
+                      Applied value engineering methodology
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
 
       {/* Approach Section */}
       <motion.section

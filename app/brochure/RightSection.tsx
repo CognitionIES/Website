@@ -1,3 +1,4 @@
+// app/brochure/RightSection.tsx
 "use client";
 
 import { motion } from "framer-motion";
@@ -18,7 +19,11 @@ import { BROCHURE_CONSTANTS } from "@/constants/brochurePage/constants";
 const Product_PDF_PATH = "/pdf/COGNITION_Brochure_Product.pdf";
 const Plant_PDF_PATH = "/pdf/COGNITION_Brochure_Plant.pdf";
 
-export default function RightSection() {
+interface RightSectionProps {
+  selectedBrochure: "product" | "plant";
+}
+
+export default function RightSection({ selectedBrochure }: RightSectionProps) {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -29,15 +34,14 @@ export default function RightSection() {
     country: "",
     marketingConsent: false,
   });
-  
-  const [selectedBrochure, setSelectedBrochure] = useState("product"); // Default to product
   const [status, setStatus] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const WEB3FORMS_ACCESS_KEY = "aba4ac86-a28e-496a-86bb-e3c981356299";
   const WEB3FORMS_ENDPOINT = "https://api.web3forms.com/submit";
 
-  const { TITLE, PRIVACY_LINK, CONSENT_TEXT, COUNTRIES } = BROCHURE_CONSTANTS.RIGHT_CONTENT;
+  const { TITLE, PRIVACY_LINK, CONSENT_TEXT, COUNTRIES } =
+    BROCHURE_CONSTANTS.RIGHT_CONTENT;
 
   const industryOptions = BROCHURE_CONSTANTS.INDUSTRIES.flatMap((category) =>
     category.subcategories.map((subcategory) => ({
@@ -93,14 +97,15 @@ export default function RightSection() {
             industry: formData.industry,
             country: formData.country,
             marketingConsent: formData.marketingConsent ? "Yes" : "No",
-            brochureType: selectedBrochure, // Add brochure type to form submission
+            brochureType: selectedBrochure,
           }),
         });
 
         const result = await response.json();
-        
+
         if (result.success) {
-          const pdfPath = selectedBrochure === "product" ? Product_PDF_PATH : Plant_PDF_PATH;
+          const pdfPath =
+            selectedBrochure === "product" ? Product_PDF_PATH : Plant_PDF_PATH;
           window.open(pdfPath, "_blank");
           setStatus("Success! Check the new tab for your brochure.");
           setFormData({
@@ -127,56 +132,25 @@ export default function RightSection() {
   );
 
   return (
-    <div className="w-full lg:w-1/2 py-12 pl-4 lg:pl-8">
-      <div className="bg-[#1e3a5f] p-6 rounded-md shadow-md">
+    <div className="w-full lg:w-1/2 rounded-xl h-[570px] shadow-xl bg-[#0098af]/60 mb-24">
+      
+      <div className="  px-6 py-3 rounded-lg ">
+        <div className=" px-6 py-3 rounded-lg shadow-xl bg-white">
         <motion.h2
-          variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-          className="text-3xl font-bold text-white"
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          className="text-3xl font-bold text-center  text-black mb-4 "
         >
           {TITLE}
         </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3 }}
-          className="text-base text-gray-300 leading-relaxed mb-6"
-        >
-          Fill out the form below to receive our latest brochure.
-        </motion.p>
+        
 
-        {/* Toggle Button */}
-        <div className="flex justify-center mb-6">
-          <div className="inline-flex rounded-md shadow-sm" role="group">
-            <button
-              type="button"
-              className={`px-4 py-2 text-sm font-medium text-white ${
-                selectedBrochure === "product"
-                  ? "bg-[#0098af]"
-                  : "bg-gray-700 hover:bg-gray-600"
-              } rounded-l-md`}
-              onClick={() => setSelectedBrochure("product")}
-            >
-              Product Brochure
-            </button>
-            <button
-              type="button"
-              className={`px-4 py-2 text-sm font-medium text-white ${
-                selectedBrochure === "plant"
-                  ? "bg-[#0098af]"
-                  : "bg-gray-700 hover:bg-gray-600"
-              } rounded-r-md`}
-              onClick={() => setSelectedBrochure("plant")}
-            >
-              Plant Brochure
-            </button>
-          </div>
-        </div>
-
-        <form onSubmit={handleSubmit} className="space-y-6">
-          {/* Rest of the form fields remain the same */}
+        <form onSubmit={handleSubmit} className="space-y-6 ">
           <div className="grid grid-cols-2 gap-6">
             <div>
-              <label className="block text-sm font-medium text-white mb-1">
+              <label className="block text-sm font-medium text-black mb-1">
                 First Name *
               </label>
               <Input
@@ -185,13 +159,13 @@ export default function RightSection() {
                 placeholder="John"
                 value={formData.firstName}
                 onChange={(e) => handleInputChange("firstName", e.target.value)}
-                className="w-full bg-white border-none rounded-md text-sm py-2 px-3 placeholder-[#5b5b5b]"
+                className="w-full bg-[#E6F0F5] border-none rounded-md text-sm py-2 px-3 placeholder-[#5b5b5b]"
                 required
                 disabled={isSubmitting}
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-white mb-1">
+              <label className="block text-sm font-medium text-black mb-1">
                 Last Name *
               </label>
               <Input
@@ -200,7 +174,7 @@ export default function RightSection() {
                 placeholder="Doe"
                 value={formData.lastName}
                 onChange={(e) => handleInputChange("lastName", e.target.value)}
-                className="w-full bg-white border-none rounded-md text-sm py-2 px-3 placeholder-[#5b5b5b]"
+                className="w-full bg-[#E6F0F5] border-none rounded-md text-sm py-2 px-3 placeholder-[#5b5b5b]"
                 required
                 disabled={isSubmitting}
               />
@@ -208,7 +182,7 @@ export default function RightSection() {
           </div>
           <div className="grid grid-cols-2 gap-6">
             <div>
-              <label className="block text-sm font-medium text-white mb-1">
+              <label className="block text-sm font-medium text-black mb-1">
                 Business E-Mail *
               </label>
               <Input
@@ -217,13 +191,13 @@ export default function RightSection() {
                 placeholder="john.doe@company.com"
                 value={formData.email}
                 onChange={(e) => handleInputChange("email", e.target.value)}
-                className="w-full bg-white border-none rounded-md text-sm py-2 px-3 placeholder-[#5b5b5b]"
+                className="w-full bg-[#E6F0F5] border-none rounded-md text-sm py-2 px-3 placeholder-[#E6F0F5]"
                 required
                 disabled={isSubmitting}
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-white mb-1">
+              <label className="block text-sm font-medium text-black mb-1">
                 Company Name *
               </label>
               <Input
@@ -231,15 +205,17 @@ export default function RightSection() {
                 type="text"
                 placeholder="Company Ltd."
                 value={formData.companyName}
-                onChange={(e) => handleInputChange("companyName", e.target.value)}
-                className="w-full bg-white border-none rounded-md text-sm py-2 px-3 placeholder-[#5b5b5b]"
+                onChange={(e) =>
+                  handleInputChange("companyName", e.target.value)
+                }
+                className="w-full bg-[#E6F0F5] border-none rounded-md text-sm py-2 px-3 placeholder-[#5b5b5b]"
                 required
                 disabled={isSubmitting}
               />
             </div>
           </div>
           <div>
-            <label className="block text-sm font-medium text-white mb-1">
+            <label className="block text-sm font-medium text-black mb-1">
               Job Title *
             </label>
             <Input
@@ -248,14 +224,14 @@ export default function RightSection() {
               placeholder="Senior Engineer"
               value={formData.jobTitle}
               onChange={(e) => handleInputChange("jobTitle", e.target.value)}
-              className="w-full bg-white border-none rounded-md text-sm py-2 px-3 placeholder-[#5b5b5b]"
+              className="w-full bg-[#E6F0F5] border-none rounded-md text-sm py-2 px-3 placeholder-[#5b5b5b]"
               required
               disabled={isSubmitting}
             />
           </div>
           <div className="grid grid-cols-2 gap-6">
             <div>
-              <label className="block text-sm font-medium text-white mb-1">
+              <label className="block text-sm font-medium text-black mb-1">
                 Select Industry *
               </label>
               <Select
@@ -263,15 +239,15 @@ export default function RightSection() {
                 onValueChange={(value) => handleInputChange("industry", value)}
                 disabled={isSubmitting}
               >
-                <SelectTrigger className="w-full bg-white border-none rounded-md text-sm py-2 px-3 text-[#5b5b5b]">
+                <SelectTrigger className="w-full bg-[#E6F0F5] border-none rounded-md text-sm py-2 px-3 text-[#5b5b5b]">
                   <SelectValue placeholder="- Select -" />
                 </SelectTrigger>
-                <SelectContent className="bg-white border-none rounded-md shadow-md">
+                <SelectContent className="bg-[#E6F0F5] border-none rounded-md shadow-md">
                   {industryOptions.map((option) => (
                     <SelectItem
                       key={option.value}
                       value={option.value}
-                      className="text-sm py-1.5 px-3 hover:bg-[#1e3a5f] hover:text-white transition-colors duration-150"
+                      className="text-sm py-1.5 px-3 hover:bg-[#003C46] hover:text-black transition-colors duration-150"
                     >
                       {option.label}
                     </SelectItem>
@@ -280,7 +256,7 @@ export default function RightSection() {
               </Select>
             </div>
             <div>
-              <label className="block text-sm font-medium text-white mb-1">
+              <label className="block text-sm font-medium text-black mb-1">
                 Select Country *
               </label>
               <Select
@@ -288,15 +264,15 @@ export default function RightSection() {
                 onValueChange={(value) => handleInputChange("country", value)}
                 disabled={isSubmitting}
               >
-                <SelectTrigger className="w-full bg-white border-none rounded-md text-sm py-2 px-3 text-[#5b5b5b]">
+                <SelectTrigger className="w-full bg-[#E6F0F5] border-none rounded-md text-sm py-2 px-3 text-[#5b5b5b]">
                   <SelectValue placeholder="- Select -" />
                 </SelectTrigger>
-                <SelectContent className="bg-white border-none rounded-md shadow-md">
+                <SelectContent className="bg-[#E6F0F5] border-none rounded-md shadow-md">
                   {COUNTRIES.map((country) => (
                     <SelectItem
                       key={country}
                       value={country}
-                      className="text-sm py-1.5 px-3 hover:bg-[#1e3a5f] hover:text-white transition-colors duration-150"
+                      className="text-sm py-1.5 px-3 hover:bg-[#003C46] hover:text-black transition-colors duration-150"
                     >
                       {country}
                     </SelectItem>
@@ -317,7 +293,7 @@ export default function RightSection() {
             />
             <label
               htmlFor="marketingConsent"
-              className="text-sm text-white leading-tight"
+              className="text-sm text-black leading-tight"
             >
               {CONSENT_TEXT} By clicking Submit, you agree to the{" "}
               <Link
@@ -343,12 +319,13 @@ export default function RightSection() {
           )}
           <Button
             type="submit"
-            className="w-full bg-[#0098af] hover:bg-white text-white hover:text-[#0098af] text-base font-medium rounded-md transition-transform disabled:bg-gray-400 disabled:text-gray-700 disabled:cursor-not-allowed"
+            className="w-full bg-[#0098af] hover:bg-[#E6F0F5] hover:text-[#0098af] text-black text-base font-medium rounded-md transition-transform disabled:bg-[#5b5b5b] disabled:text-gray-700 disabled:cursor-not-allowed"
             disabled={isSubmitting || !isFormValid()}
           >
             {isSubmitting ? "Submitting..." : "Download Brochure"}
           </Button>
         </form>
+        </div>
       </div>
     </div>
   );

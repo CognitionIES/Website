@@ -1,4 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { motion } from "framer-motion";
+
 const constants = [
   {
     title: "Advanced Projects",
@@ -16,6 +18,19 @@ const constants = [
   },
 ];
 
+// Animation variants for the cards
+const cardVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: (index: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      delay: index * 0.2, // Staggered delay for each card
+    },
+  }),
+};
+
 export default function WorkWithUs() {
   return (
     <section className="py-20">
@@ -25,14 +40,23 @@ export default function WorkWithUs() {
         </h2>
         <div className="grid md:grid-cols-3 gap-8">
           {constants.map((benefit, index) => (
-            <Card key={index} className="text-center">
-              <CardHeader>
-                <CardTitle>{benefit.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">{benefit.description}</p>
-              </CardContent>
-            </Card>
+            <motion.div
+              key={index}
+              custom={index}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              variants={cardVariants}
+            >
+              <Card className="text-center">
+                <CardHeader>
+                  <CardTitle>{benefit.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">{benefit.description}</p>
+                </CardContent>
+              </Card>
+            </motion.div>
           ))}
         </div>
       </div>

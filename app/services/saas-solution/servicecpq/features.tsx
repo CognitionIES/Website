@@ -61,7 +61,7 @@ const KeyFeatures = () => {
       id: "warranty",
       title: "Warranty & Claims Management",
       icon: <Database className="h-6 w-6" />,
-      color: "bg-gradient-to-r from-purple-500 to-indigo-400",
+      color: "bg-gradient-to-r from-[#0098af] to-[#00b4d8]/50",
       features: [
         {
           icon: <Bot />,
@@ -87,7 +87,7 @@ const KeyFeatures = () => {
       id: "repair",
       title: "Repair Management",
       icon: <Wrench className="h-6 w-6" />,
-      color: "bg-gradient-to-r from-amber-500 to-orange-400",
+      color: "bg-gradient-to-r from-[#0098af] to-[#00b4d8]/50",
       features: [
         {
           icon: <ClipboardCheck />,
@@ -113,7 +113,7 @@ const KeyFeatures = () => {
       id: "ecommerce",
       title: "B2B E-Commerce Portal",
       icon: <ShoppingCart className="h-6 w-6" />,
-      color: "bg-gradient-to-r from-emerald-500 to-green-400",
+      color: "bg-gradient-to-r from-[#0098af] to-[#00b4d8]/50",
       features: [
         {
           icon: <Package />,
@@ -261,7 +261,7 @@ const KeyFeatures = () => {
 
       {/* Bottom decorative wave */}
       <div
-        className="absolute bottom-0 left-0 w-full h-12 bg-[#E6F0F5]/10 -z-5"
+        className="absolute bottom-0 left-0 w-full h-12 bg-[#E6F0F5]/50 -z-5"
         style={{
           maskImage:
             "url(\"data:image/svg+xml,%3Csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,40 C80,10 150,50 200,20 C250,0 300,20 350,10 C400,0 450,30 500,15 C550,0 600,15 650,30 C700,45 750,20 800,40 L800,100 L0,100 Z' fill='%23FFFFFF'/%3E%3C/svg%3E\")",

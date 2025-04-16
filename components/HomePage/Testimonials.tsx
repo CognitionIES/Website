@@ -31,10 +31,10 @@ const testimonials: Testimonial[] = [
   {
     id: "testimonial-1",
     quote:
-      "I am pleased to provide this reference for Cognition IES, which has been a reliable partner in supporting our engineering and cost analysis initiatives at Company Name + Equipment. They bring strong capabilities in teardown and idea generation, offering valuable insights that helped us refine our product design and explore cost-effective alternatives. Their approach to feature value and cost analysis has been beneficial in identifying areas for improvement.Cognition’s should-cost studies have provided useful visibility into cost structures and the level of detail has helped us make more informed decisions. In addition, their communication and deliverables are well-organized, making it easy for our teams to interpret findings and take action.We have had a very positive experience working with Cognition and would recommend them to organizations seeking engineering design support especially in the VAVE space.",
-    author: "John Doe",
+      "I am pleased to provide this reference for Cognition IES, which has been a reliable partner in supporting our engineering and cost analysis initiatives at well-know client. They bring strong capabilities in teardown and idea generation, offering valuable insights that helped us refine our product design and explore cost-effective alternatives. Their approach to feature value and cost analysis has been beneficial in identifying areas for improvement.Cognition’s should-cost studies have provided useful visibility into cost structures and the level of detail has helped us make more informed decisions. In addition, their communication and deliverables are well-organized, making it easy for our teams to interpret findings and take action.We have had a very positive experience working with Cognition and would recommend them to organizations seeking engineering design support especially in the VAVE space.",
+    author: "Andy Strom",
     position: "Senior Vice President",
-    company: "Industry Name Placeholder",
+    company: " Confidential Client",
     image:
       "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=2376&auto=format&fit=crop",
   },

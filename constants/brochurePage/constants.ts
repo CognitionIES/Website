@@ -1,27 +1,64 @@
-// This file holds all the constants for the brochure page
-export const BROCHURE_CONSTANTS = {
-  // Image for the banner
-  BANNER_IMAGE:
-    "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3",
+// constants/brochurePage/constants.js
+import heroImage from "@/constants/images/brochure/hero.jpg";
 
-  // Text content for the left section
-  LEFT_CONTENT: {
-    TITLE: "Engineering for Efficient Projects and Plants",
-    DESCRIPTION_1:
-      "Plant Engineering is the most sought-after practice at Cognition, it creates a strong market differentiation with its offerings for efficient, safe, and sustainable production facilities.",
-    DESCRIPTION_2:
-      "We bring excellence in engineering and operation through our following service portfolios:",
-    SERVICES: [
-      "CAPEX/OPEX plant engineering E/EPCM services",
-      "Engineering re-application and global rollouts",
-      "Services for digital makeover of manufacturing sites",
-      "Operational excellence & WAGES program",
-      "Plant reliability through AMS",
-      "Regulatory and compliance engineering services",
-    ],
+export const BROCHURE_CONSTANTS = {
+  BANNER_IMAGE: { heroImage },
+
+  // Toggle options
+  BROCHURE_TYPES: {
+    product: {
+      LABEL: "Product Brochure",
+      VALUE: "product",
+    },
+    plant: {
+      LABEL: "Plant Brochure",
+      VALUE: "plant",
+    },
   },
 
-  // Text and options for the right section (form)
+  // Left section content for Product and Plant
+  LEFT_CONTENT: {
+    product: {
+      TITLE: "Unlock the Power of Intelligent Product Engineering",
+      DESCRIPTION:
+        "Our Product Design Services blend innovation with manufacturability to help you bring high-quality products to market faster, smarter, and more cost-effectively.",
+      WHY_DOWNLOAD: [
+        "Comprehensive Overview of our CAD/CAE capabilities, design workflows, and domain coverage",
+        "Real-World Case Studies showcasing cost savings, timeline reductions, and client success",
+        "Scalable Solutions from concept to production-ready design",
+        "Tools & Platforms: CREO, SolidWorks, AutoCAD, Windchill, Inventor & more",
+        "Industries Served: Heavy Equipment, Industrial Machinery, Solar, HVAC, Pumps & Valves, and more",
+      ],
+      UNIQUE_POINTS: [
+        "Experienced Design Engineers with domain understanding",
+        "Cost Reduction-Focused Approach using benchmarking & redesign",
+        "Digital Collaboration Tools for seamless communication",
+        "Quick Turnaround Times for fast-paced project needs",
+        "Flexible Engagement Models: Hourly, Monthly, Project-Based",
+      ],
+    },
+    plant: {
+      TITLE: "Reimagine Your Plant with Digital Engineering Excellence",
+      DESCRIPTION:
+        "Cognition IES empowers industries with comprehensive Plant Engineering Services, blending design, automation, and digital tools to optimize operations, reduce downtime, and future-proof facilities.",
+      WHY_DOWNLOAD: [
+        "End-to-End Capabilities in layout design, utility planning, equipment detailing, and 3D modeling",
+        "Digitization & Simulation Focus for predictive maintenance and virtual commissioning",
+        "Industry Expertise in Chemical, Pharma, FMCG, Heavy Engineering, and Utilities",
+        "Compliance-Ready Designs aligned with ISO, OSHA, and industry-specific norms",
+        "CAD Tools Mastery: AutoCAD Plant 3D, Revit, EPLAN, Navisworks, SmartPlant & more",
+      ],
+      UNIQUE_POINTS: [
+        "Cross-Disciplinary Engineering Expertise under one roof",
+        "Digitalization-Driven Approach for operational visibility and risk reduction",
+        "Seamless Coordination with Site Teams and vendors",
+        "Compliance-Centric Design Models for smooth audits and certifications",
+        "Customizable Engagement: Remote Support | Onsite Visits | Hybrid Collaboration",
+      ],
+    },
+  },
+
+  // Right section (form)
   RIGHT_CONTENT: {
     TITLE: "Download Brochure",
     PRIVACY_LINK: "/privacy-policy",
@@ -39,7 +76,7 @@ export const BROCHURE_CONSTANTS = {
     ],
   },
 
-  // Industry options for the dropdown
+  // Industry options
   INDUSTRIES: [
     {
       category: "INDUSTRIAL PRODUCTS",

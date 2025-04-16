@@ -8,9 +8,9 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Tabs, TabsContent } from "@/components/ui/tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import faqs from "@/constants/faqs";
-//import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 import { MegaMenu } from "@/components/ui/Megamenu/MegaMenu";
 import Footer from "@/components/footer";
 import Hero from "./hero";
@@ -22,12 +22,12 @@ const FAQ = () => {
   const [activeCategory, setActiveCategory] = useState("all");
   const sectionRef = useRef<HTMLElement>(null);
 
-  //const categories = [
-  //  { id: "all", label: "All Questions" },
-  //  { id: "General", label: "General" },
-  //  { id: "Product", label: "About Product" },
-  //  { id: "Process", label: "About Process" },
-  //];
+  const categories = [
+   { id: "all", label: "All Questions" },
+   { id: "General", label: "General" },
+   { id: "Product", label: "About Product" },
+   { id: "Process", label: "About Process" },
+  ];
 
   const filteredFaqs =
     activeCategory === "all"
@@ -84,7 +84,7 @@ const FAQ = () => {
               onValueChange={setActiveCategory}
               className="w-full"
             >
-              {/* <TabsList className="grid w-full max-w-7xl mx-auto grid-cols-2 md:grid-cols-4 mb-8 bg-[#E6F0F5]/30">
+              <TabsList className="grid w-full max-w-7xl mx-auto grid-cols-2 md:grid-cols-4 mb-8 bg-[#E6F0F5]/30">
               {categories.map((category) => (
                 <TabsTrigger 
                   key={category.id} 
@@ -96,7 +96,7 @@ const FAQ = () => {
                   {category.label}
                 </TabsTrigger>
               ))}
-            </TabsList> */}
+            </TabsList>
 
               <TabsContent value={activeCategory} className="mt-0">
                 <motion.div

@@ -61,9 +61,6 @@ const Partner = () => {
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             <div className="mb-8 max-w-7xl text-center">
-              <span className="inline-block px-3 py-1 bg-[#0098af]/10 text-[#0098af] text-xs font-medium uppercase tracking-wider rounded-full mb-4">
-                PLACEHOLDER{" "}
-              </span>
               <h2 className="text-3xl sm:text-4xl font-bold text-[#003C46] mb-4">
                 Engineering Efficiency Where It Matters Most
               </h2>
@@ -75,7 +72,7 @@ const Partner = () => {
               animate={isInView ? "visible" : "hidden"}
               className=" items-center"
             >
-              <div className="text-center">
+              <div className="text-center max-w-5xl mx-auto">
                 <p className="text-lg text-gray-600 mb-6  leading-relaxed">
                   As an authorized dealer of Service CPQ, Cognition IES is proud
                   to offer cutting-edge, AI-driven after-sales solutions
@@ -92,7 +89,7 @@ const Partner = () => {
 
       {/* Bottom decorative wave */}
       <div
-        className="absolute bottom-0 left-0 w-full h-12 bg-[#E6F0F5]/10 -z-5"
+        className="absolute bottom-0 left-0 w-full h-12 bg-[#E6F0F5]/60 -z-5"
         style={{
           maskImage:
             "url(\"data:image/svg+xml,%3Csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,40 C80,10 150,50 200,20 C250,0 300,20 350,10 C400,0 450,30 500,15 C550,0 600,15 650,30 C700,45 750,20 800,40 L800,100 L0,100 Z' fill='%23FFFFFF'/%3E%3C/svg%3E\")",

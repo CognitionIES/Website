@@ -1,11 +1,9 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Search } from "lucide-react";
-
 import {
   Select,
   SelectTrigger,
@@ -14,40 +12,44 @@ import {
   SelectItem,
 } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
+import Image from "next/image";
 
 const sampleJobs = [
   {
     id: 1,
-    title: "Frontend Developer",
-    company: "TechCorp",
-    location: "Bangalore",
+    title: "Technical Something IDR",
+    company: "Company Name",
+    logo: "https://via.placeholder.com/40", // Placeholder logo URL
+    experience: "Fresher",
+    salary: "Not disclosed",
+    location: "Vadodara",
     description:
-      "Build and maintain user-friendly web applications using React and modern JavaScript frameworks.",
-    experience: "3-5 years",
-    skills: ["React", "JavaScript", "CSS"],
-    salary: "₹12-15 LPA",
+      "Description",
+    posted: "Recently",
   },
   {
     id: 2,
-    title: "Backend Engineer",
-    company: "DataSys",
-    location: "Hyderabad",
+    title: "Post Title",
+    company: "Company Name",
+    logo: "https://via.placeholder.com/40", // Placeholder logo URL
+    experience: "10+ years",
+    salary: "Not disclosed",
+    location: "Vadodara",
     description:
-      "Develop scalable server-side applications and APIs with Node.js and Python.",
-    experience: "5-10 years",
-    skills: ["Node.js", "Python", "MongoDB"],
-    salary: "₹15-20 LPA",
+      "Description",
+    posted: "4 Days Ago",
   },
   {
     id: 3,
-    title: "Full Stack Developer",
-    company: "InnoSoft",
-    location: "Mumbai",
+    title: "Not For You",
+    company: "Company Name",
+    logo: "https://via.placeholder.com/40", // Placeholder logo URL
+    experience: "You cant be serious",
+    salary: "Very High Expectations huh?",
+    location: "You Name it",
     description:
-      "Work on both frontend and backend to deliver end-to-end solutions using React and SQL.",
-    experience: "1-3 years",
-    skills: ["React", "Node.js", "SQL"],
-    salary: "₹8-12 LPA",
+      "YOu are not even close",
+    posted: "6 Days Ago",
   },
 ];
 
@@ -59,18 +61,17 @@ export default function AboutSection() {
   const [location, setLocation] = useState("");
   const [searchResults, setSearchResults] = useState<typeof sampleJobs>([]);
 
-  const handleSearch = (e: React.FormEvent) => {
+  const handleSearch = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
 
     const filteredJobs = sampleJobs.filter((job) => {
       const skillsMatch = skills
-        ? job.skills.some((skill) =>
-            skill.toLowerCase().includes(skills.toLowerCase())
-          ) || job.title.toLowerCase().includes(skills.toLowerCase())
+        ? job.description
+            .toLowerCase()
+            .includes(skills.toLowerCase()) ||
+          job.title.toLowerCase().includes(skills.toLowerCase())
         : true;
-
       const expMatch = experience ? job.experience === experience : true;
-
       const locMatch = location
         ? job.location.toLowerCase().includes(location.toLowerCase())
         : true;
@@ -98,21 +99,22 @@ export default function AboutSection() {
 
     return () => {
       if (sectionRef.current) {
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         observer.unobserve(sectionRef.current);
       }
     };
   }, []);
 
-  const contentVariants = {
+  const cardVariants = {
     hidden: { opacity: 0, y: 50 },
-    visible: {
+    visible: (index: number) => ({
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.8,
-        ease: "easeOut",
+        duration: 0.5,
+        delay: index * 0.2,
       },
-    },
+    }),
   };
 
   return (
@@ -129,7 +131,7 @@ export default function AboutSection() {
           </div>
 
           <motion.div
-            variants={contentVariants}
+            variants={cardVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
             className="items-center"
@@ -203,7 +205,7 @@ export default function AboutSection() {
                 </form>
               </div>
 
-              {/* Placeholder Job Postings */}
+              {/* Job Cards */}
               <div className="mt-12">
                 <h3 className="text-2xl font-semibold text-[#003C46] mb-6">
                   {searchResults.length > 0
@@ -212,32 +214,51 @@ export default function AboutSection() {
                 </h3>
                 <div className="space-y-4">
                   {(searchResults.length > 0 ? searchResults : sampleJobs).map(
-                    (job) => (
-                      <div
+                    (job, index) => (
+                      <motion.div
                         key={job.id}
-                        className="bg-white rounded-xl shadow-md p-6 border border-gray-100 flex items-center justify-between hover:shadow-lg transition-shadow"
+                        custom={index}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.3 }}
+                        variants={cardVariants}
+                        className="bg-white rounded-xl shadow-md p-4 border border-gray-100 flex items-start justify-between hover:shadow-lg transition-shadow"
                       >
-                        <div className="flex-1">
-                          <h4 className="text-xl font-bold text-[#003C46]">
-                            {job.title}
-                          </h4>
-                          <p className="text-gray-600">{job.company}</p>
-                          <p className="text-gray-500 text-sm mt-1">
+                        <div className="flex-1 text-left">
+                          <div className="flex items-center gap-2 mb-2">
+                            <Image
+                              src={job.logo}
+                              alt={`${job.company} logo`}
+                              width={40}
+                              height={40}
+                              className="w-10 h-10 rounded"
+                            />
+                            <div>
+                              <h4 className="text-lg font-bold text-[#003C46]">
+                                {job.title}
+                              </h4>
+                              <p className="text-gray-600 text-sm">
+                                {job.company}
+                              </p>
+                            </div>
+                          </div>
+                          <p className="text-gray-500 text-sm mb-1">
+                            {job.experience} | {job.salary} | {job.location}
+                          </p>
+                          <p className="text-gray-500 text-sm">
                             {job.description}
                           </p>
-                          <p className="text-gray-500 text-sm mt-1">
-                            Experience: {job.experience}
+                          <p className="text-gray-400 text-xs mt-2">
+                            {job.posted}
                           </p>
                         </div>
                         <Button
-                          className="bg-[#00b4d8] hover:bg-[#00b4d8]/90 text-white rounded-xl px-6 py-2"
-                          onClick={() =>
-                            alert(`Applying for ${job.title} at ${job.company}`)
-                          }
+                          variant="outline"
+                          className="ml-8 bg-[#0098af]/60 border-gray-300 text-gray-600 hover:bg-[#0098af]/40 rounded-full px-3 py-1"
                         >
                           Apply Now
                         </Button>
-                      </div>
+                      </motion.div>
                     )
                   )}
                 </div>

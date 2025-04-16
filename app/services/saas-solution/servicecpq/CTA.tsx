@@ -2,7 +2,6 @@
 import React from "react";
 import { useEffect, useRef, useState } from "react";
 
-import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 //import { Button } from "@/components/ui/button";
@@ -40,7 +39,7 @@ const CTA = () => {
   return (
     <div>
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 ">
+      <div className=" ">
         <section
           ref={sectionRef}
           className="w-full  relative bg-gradient-to-b from-white to-[#E6F0F5]/30"
@@ -58,7 +57,7 @@ const CTA = () => {
             {/* CTA section */}
           </div>
         </section>
-        <section className="w-full py-12 sm:py-14 lg:py-22  bg-gradient-to-br rounded-3xl from-[#0098af] to-[#003C46] text-white relative overflow-hidden">
+        <section className="w-full py-12 sm:py-14 lg:py-22   bg-[#0098AF] text-white relative overflow-hidden">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -79,11 +78,8 @@ const CTA = () => {
   group"
               >
                 Book Your Free Demo
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
-              <p className="text-white/80 self-center">
-                No commitment required
-              </p>
+              
             </div>
           </motion.div>
           <motion.div
