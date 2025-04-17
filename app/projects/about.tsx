@@ -145,16 +145,15 @@ export default function AboutSection() {
             <p className="text-xs font-medium tracking-wider text-[#0098af] uppercase">
               Featured Work
             </p>
-            <h1 className="text-xl sm:text-2xl lg:text-4xl font-semibold text-[#003C46] tracking-tight drop-shadow-sm">
-              Recent Projects
-            </h1>
-          </div>
+          </div>{" "}
+          <h1 className="text-xl sm:text-2xl lg:text-4xl font-semibold text-[#003C46] tracking-tight drop-shadow-sm">
+            Recent Projects
+          </h1>
           <motion.div
             variants={sectionHeaderVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
           ></motion.div>
-
           {/* Projects grid with navigation */}
           <motion.div
             variants={cardsContainerVariants}

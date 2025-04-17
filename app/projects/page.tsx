@@ -84,44 +84,7 @@ const Projects: React.FC = () => {
     setActiveIndex((prev) => (prev - 1 < 0 ? projects.length - 1 : prev - 1));
   };
 
-  // const projects = [
-  //   {
-  //     title: "Digitalization",
-  //     slug: "digitalization",
-  //     description:
-  //       "Transforming businesses through cutting-edge digital solutions, enhancing efficiency and scalability.",
-  //     image: digitalizationImage,
-  //     features: ["Point 1", "Point 2", "Point 3"],
-  //     client: "ABC",
-  //     duration: "0 months",
-  //     technologies: ["one", "two", "three"],
-  //   },
-  //   {
-  //     title: "Product Cost Management",
-  //     slug: "product-cost-management",
-  //     description:
-  //       "Optimizing product costs through strategic analysis and resource management for maximum profitability.",
-  //     image: pcmImage,
-  //     features: ["Point 1", "Point 2", "Point 3"],
-  //     client: "ABC",
-  //     duration: "0 months",
-  //     technologies: ["one", "two", "three"],
-  //   },
-  // ];
-
-  // Animation variants for individual cards
-  // const cardVariants = {
-  //   hidden: { opacity: 0, y: 20 },
-  //   visible: (index: number) => ({
-  //     opacity: 1,
-  //     y: 0,
-  //     transition: {
-  //       duration: 0.6,
-  //       delay: index * 0.3, // Stagger each card by 0.3 seconds
-  //     },
-  //   }),
-  // };
-
+  
   return (
     <div className="min-h-screen bg-gray-50">
       <MegaMenu />

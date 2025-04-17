@@ -4,12 +4,12 @@ import { motion } from "framer-motion";
 import { FiChevronDown, FiChevronRight, FiHome } from "react-icons/fi";
 import Image from "next/image";
 import Link from "next/link";
-import engineeringImage from "@/constants/images/Plant-engineering/hero-image-1.jpg";
+import engineeringImage from "@/constants/images/projects/pcm/hero.jpg";
 
 export default function Hero() {
   return (
     <section>
-      <div className="relative h-[450px] overflow-hidden">
+      <div className="relative h-[450px]  overflow-hidden">
         <Image
           src={engineeringImage}
           alt="FEED & Conceptual Design Innovation"

@@ -32,31 +32,31 @@ const testimonials: Testimonial[] = [
     id: "testimonial-1",
     quote:
       "I am pleased to provide this reference for Cognition IES, which has been a reliable partner in supporting our engineering and cost analysis initiatives at well-know client. They bring strong capabilities in teardown and idea generation, offering valuable insights that helped us refine our product design and explore cost-effective alternatives. Their approach to feature value and cost analysis has been beneficial in identifying areas for improvement.Cognition’s should-cost studies have provided useful visibility into cost structures and the level of detail has helped us make more informed decisions. In addition, their communication and deliverables are well-organized, making it easy for our teams to interpret findings and take action.We have had a very positive experience working with Cognition and would recommend them to organizations seeking engineering design support especially in the VAVE space.",
-    author: "Andy Strom",
+    author: "Anonymous",
     position: "Senior Vice President",
     company: " Confidential Client",
     image:
       "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=2376&auto=format&fit=crop",
   },
+  
   {
     id: "testimonial-2",
     quote:
-      "Working with Cognition IES transformed our approach to product development. Their comprehensive analysis identified optimization opportunities we hadn't considered. The team's expertise in value engineering delivered a 15% reduction in manufacturing costs while enhancing product quality. Their clear communication and structured methodology made complex engineering concepts accessible to our entire team. I highly recommend their services to any company looking to gain a competitive edge",
-    author: "Name - 2",
-    position: "Position 2",
-    company: "Company2",
-    image:
-      "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=2149&auto=format&fit=crop",
-  },
-  {
-    id: "testimonial-3",
-    quote:
-    "The team at Cognition IES exceeded our expectations in delivering innovative engineering solutions. Their analytical approach to problem-solving and attention to detail resulted in significant cost savings and improved product performance. The collaborative environment they foster made the entire process smooth and productive. We've seen a marked improvement in our product's market reception since implementing their recommendations.",
-  author: "Name 3",
-  position: "Position 3",
-  company: "Company3",
+    " The team at Cognition IES exceeded our expectations in delivering innovative engineering solutions. Their analytical approach to problem-solving and attention to detail resulted in significant cost savings and improved product performance. The collaborative environment they foster made the entire process smooth and productive. We've seen a marked improvement in our product's market reception since implementing their recommendations.",
+  author: "Anonymous",
+  position: "Project Manager",
+  company: "Confidential Client",
     image:
       "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?q=80&w=2187&auto=format&fit=crop",
+  },{
+    id: "testimonial-3",
+    quote:
+      "Working with Cognition IES transformed our approach to product development. Their comprehensive analysis identified optimization opportunities we hadn't considered. The team's expertise in value engineering delivered a 15% reduction in manufacturing costs while enhancing product quality. Their clear communication and structured methodology made complex engineering concepts accessible to our entire team. I highly recommend their services to any company looking to gain a competitive edge",
+    author: "Anonymous", 
+    position: "Senior Principal Engineer",
+    company: "Confidential Client",
+    image:
+      "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=2149&auto=format&fit=crop",
   },
 ];
 
