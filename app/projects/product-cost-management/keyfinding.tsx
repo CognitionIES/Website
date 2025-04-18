@@ -268,7 +268,7 @@ const PCMKeyFindings = () => {
     "Should-Costing",
     "FEA Reports",
     "Final Manufacturing Drawings",
-    "BOM Evolution",
+    "Costed BOM Evolution",
     "Vendor Identification",
     "Function Cost-Worth Analysis Report",
     "Physical Competitive Benchmark Report",

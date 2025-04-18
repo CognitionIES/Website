@@ -164,8 +164,7 @@ const JobSeekersPage = () => {
         </section> */}
 
         {/* Job Listings Section */}
-        <section className="container mx-auto py-12 px-4">
-          {searchResults.length > 0 ? (
+        <section className="">
             <div className="grid gap-6">
               {searchResults.map((job) => (
                 <div
@@ -199,13 +198,6 @@ const JobSeekersPage = () => {
                 </div>
               ))}
             </div>
-          ) : (
-            <p className="text-center text-gray-500">
-              {skills || experience || location
-                ? "No jobs match your search criteria"
-                : "Enter search criteria to find jobs"}
-            </p>
-          )}
         </section>
       </main>
 

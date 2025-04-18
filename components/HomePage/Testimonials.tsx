@@ -1,6 +1,4 @@
-
- 
-'use client';
+"use client";
 
 import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
@@ -38,21 +36,22 @@ const testimonials: Testimonial[] = [
     image:
       "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=2376&auto=format&fit=crop",
   },
-  
+
   {
     id: "testimonial-2",
     quote:
-    " The team at Cognition IES exceeded our expectations in delivering innovative engineering solutions. Their analytical approach to problem-solving and attention to detail resulted in significant cost savings and improved product performance. The collaborative environment they foster made the entire process smooth and productive. We've seen a marked improvement in our product's market reception since implementing their recommendations.",
-  author: "Anonymous",
-  position: "Project Manager",
-  company: "Confidential Client",
+      " Partnering with Cognition IES for our plant’s digital transformation has been a game-changer.From the very beginning, their team demonstrated a deep understanding of both engineering and digital technologies. The precision laser scanning helped us uncover layout inconsistencies. The digital twin they built is not just a model — it’s a dynamic tool that gives us real-time visibility into our operations.We’ve seen significant improvements in our decision-making, reduced downtime, and far fewer issues during equipment installation and changeovers. Their implementation of an evergreen strategy ensures that our digital systems evolve with us. The training and support provided to our staff were exceptional — even our most experienced operators quickly adapted to the new tools.Cognition IES didn’t just deliver a service; they’ve empowered us with a smarter, scalable way to run our facility. This project laid the foundation for Industry 4.0 in our plant, and we’re already planning the next phase with them.”",
+    author: "Anonymous",
+    position: "Project Manager",
+    company: "Confidential Client",
     image:
       "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?q=80&w=2187&auto=format&fit=crop",
-  },{
+  },
+  {
     id: "testimonial-3",
     quote:
       "Working with Cognition IES transformed our approach to product development. Their comprehensive analysis identified optimization opportunities we hadn't considered. The team's expertise in value engineering delivered a 15% reduction in manufacturing costs while enhancing product quality. Their clear communication and structured methodology made complex engineering concepts accessible to our entire team. I highly recommend their services to any company looking to gain a competitive edge",
-    author: "Anonymous", 
+    author: "Anonymous",
     position: "Senior Principal Engineer",
     company: "Confidential Client",
     image:
@@ -125,10 +124,7 @@ const Testimonials = () => {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="relative" // Added relative positioning for absolute children
         >
-          <Carousel
-            opts={{ align: "center", loop: true }}
-            className="w-full"
-          >
+          <Carousel opts={{ align: "center", loop: true }} className="w-full">
             <CarouselContent>
               {testimonials.map((testimonial) => (
                 <CarouselItem key={testimonial.id} className="basis-full">
@@ -138,7 +134,7 @@ const Testimonials = () => {
                       "max-w-7xl h-[380px]"
                     )}
                   >
-                     {/* TODO: 4xl in rounded  OPTION */}
+                    {/* TODO: 4xl in rounded  OPTION */}
                     <CardContent className="p-8 flex flex-col h-full relative">
                       <Quote
                         size={60}

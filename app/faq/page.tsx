@@ -8,26 +8,25 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsContent,  } from "@/components/ui/tabs";
 import faqs from "@/constants/faqs";
-import { cn } from "@/lib/utils";
+//import { cn } from "@/lib/utils";
 import { MegaMenu } from "@/components/ui/Megamenu/MegaMenu";
 import Footer from "@/components/footer";
 import Hero from "./hero";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import CTASection from "@/components/CTA";
 
 const FAQ = () => {
   const [isInView, setIsInView] = useState(false);
   const [activeCategory, setActiveCategory] = useState("all");
   const sectionRef = useRef<HTMLElement>(null);
 
-  const categories = [
-   { id: "all", label: "All Questions" },
-   { id: "General", label: "General" },
-   { id: "Product", label: "About Product" },
-   { id: "Process", label: "About Process" },
-  ];
+  // const categories = [
+  //  { id: "all", label: "All Questions" },
+  //  { id: "General", label: "General" },
+  //  { id: "Product", label: "About Product" },
+  //  { id: "Process", label: "About Process" },
+  // ];
 
   const filteredFaqs =
     activeCategory === "all"
@@ -84,7 +83,7 @@ const FAQ = () => {
               onValueChange={setActiveCategory}
               className="w-full"
             >
-              <TabsList className="grid w-full max-w-7xl mx-auto grid-cols-2 md:grid-cols-4 mb-8 bg-[#E6F0F5]/30">
+              {/* <TabsList className="grid w-full max-w-7xl mx-auto grid-cols-2 md:grid-cols-4 mb-8 bg-[#E6F0F5]/30">
               {categories.map((category) => (
                 <TabsTrigger 
                   key={category.id} 
@@ -96,7 +95,7 @@ const FAQ = () => {
                   {category.label}
                 </TabsTrigger>
               ))}
-            </TabsList>
+            </TabsList> */}
 
               <TabsContent value={activeCategory} className="mt-0">
                 <motion.div
@@ -144,33 +143,7 @@ const FAQ = () => {
       </section>
         
     
-      {/* CTA */}
-      <section className="w-full py-12 sm:py-14 lg:py-22 bg-[#0098AF] text-white relative overflow-hidden">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
-        >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 drop-shadow-md">
-            Ready to Start Your Project?
-          </h2>
-          <p className="text-base sm:text-lg mb-8">
-            Contact us today to see how we can bring your ideas to life.
-          </p>
-          <Link href="/contact">
-            <Button className="bg-white text-[#0098AF] rounded-lg hover:bg-[#5b5b5b] hover:text-white transition-colors duration-200 text-lg px-6 py-2 w-fit">
-              Get in Touch
-            </Button>
-          </Link>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 0.1, scale: 1 }}
-          transition={{ delay: 0.7, duration: 1 }}
-          className="absolute bottom-1/3 left-1/3 w-32 h-32 bg-[#000000] opacity-20 rounded-full blur-3xl -z-10"
-        />
-      </section>
+    <CTASection />
       <Footer />
     </div>
   );

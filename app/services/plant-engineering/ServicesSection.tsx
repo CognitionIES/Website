@@ -1,9 +1,6 @@
-"use client";
-
 import { motion } from "framer-motion";
 import { PLANT_ENGINEERING_CONSTANTS } from "@/constants/plant-engineering/constants";
 import { ServiceCard } from "@/components/ServiceCard";
-import { LucideIcon } from "lucide-react";
 
 export default function ServicesSection() {
   const { TITLE, ITEMS } = PLANT_ENGINEERING_CONSTANTS.SERVICES;
@@ -12,7 +9,6 @@ export default function ServicesSection() {
   const servicesWithIds = ITEMS.map((item, index) => ({
     ...item,
     id: `section-${index + 1}`, // e.g., section-1, section-2, etc.
-    icon: item.icon as LucideIcon, // Ensure icon is cast to the correct type
   }));
 
   return (
@@ -24,13 +20,13 @@ export default function ServicesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="mb-8"
-        ><span className="inline-block px-3 py-1 bg-[#0098af]/10 text-[#0098af] text-xs font-medium uppercase tracking-wider rounded-full mb-4">
-        Our Services
-      </span>
+        >
+          <span className="inline-block px-3 py-1 bg-[#0098af]/10 text-[#0098af] text-xs font-medium uppercase tracking-wider rounded-full mb-4">
+            Our Services
+          </span>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#003C46]">
             {TITLE}
           </h2>
-          {/* <p className="text-lg text-[#4A4A4A] max-w-7xl mx-auto">{SUBTITLE}</p> */}
         </motion.div>
         {/* Services grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

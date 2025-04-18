@@ -9,29 +9,21 @@ import InstrumentationImage from "@/constants/images/horizontal/08.jpg";
 import ModularImage from "@/constants/images/horizontal/09.jpg";
 import ReverseImage from "@/constants/images/horizontal/10.jpg";
 import ProcurementImage from "@/constants/images/horizontal/11.jpg";
-import reverseImage1 from "@/constants/images/Plant-engineering/reverse-eng.jpg";
 import heroImage from "@/constants/images/Plant-engineering/hero.jpg";
 
 // This file holds all constants for the plant engineering page
-import {
-  Wrench,
-  FlaskRound as Flask,
-  Baseline as Pipeline,
-  Building2,
-  Fan,
-  Gauge,
-  ShieldCheck,
-  Cpu,
-  ClipboardList,
-} from "lucide-react";
-import { IconType } from "react-icons"; // For icon typing
+import { Building2, Workflow, Box, Truck } from "lucide-react";
 import aboutImage from "@/constants/images/Plant-engineering/about.jpg";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
+import { ComponentType } from "react";
 
-// Define what a service looks like
 interface Service {
-  columns: undefined;
-  bulletPoints: string[];
-  icon: IconType;
+  columns?: number;
+  bulletPoints: {
+    mainTopic: string;
+    subPoints: string[];
+  }[];
+  icon: ComponentType<{ className?: string }> | IconProp; // Support both component and FontAwesome icon
   title: string;
   description: string;
   mainTopic: string[];
@@ -39,7 +31,17 @@ interface Service {
   image: string;
   alt: string;
   href: string;
+  id?: string;
 }
+import {
+  faBridge,
+  faBuildingShield,
+  faChartArea,
+  faGaugeHigh,
+  faGears,
+  faPlugCircleBolt,
+} from "@fortawesome/free-solid-svg-icons";
+import { IconSettingsDollar } from "@tabler/icons-react";
 
 export const PLANT_ENGINEERING_CONSTANTS = {
   // Hero Section
@@ -67,7 +69,7 @@ export const PLANT_ENGINEERING_CONSTANTS = {
     ITEMS: [
       //Process & Safety Engineering
       {
-        icon: ShieldCheck,
+        icon: faBuildingShield,
         title: "Process & Safety Engineering",
         description:
           "Comprehensive engineering solutions to optimize plant processes, ensure safety compliance, and enhance operational efficiency through advanced design and risk assessment.",
@@ -114,7 +116,7 @@ export const PLANT_ENGINEERING_CONSTANTS = {
         ],
       }, //Piping Engineering
       {
-        icon: Pipeline,
+        icon: Workflow,
         title: "Piping Engineering",
         description:
           "Designing and managing efficient piping systems to ensure safe and reliable transport of fluids and gases across the plant with advanced analysis and material specifications.",
@@ -161,7 +163,7 @@ export const PLANT_ENGINEERING_CONSTANTS = {
       },
       //Piping Stress Analysis -  3 cols
       {
-        icon: Gauge,
+        icon: faChartArea,
         title: "Piping Stress Analysis",
         description:
           "Comprehensive analysis of piping systems to ensure structural integrity, safety, and reliability under diverse operating conditions through advanced stress evaluations and calculations.",
@@ -203,7 +205,7 @@ export const PLANT_ENGINEERING_CONSTANTS = {
       },
       //Mechanical Engineering
       {
-        icon: Wrench,
+        icon: faGears,
         title: "Mechanical Design Engineering",
         description:
           "Engineering and maintaining high-performance mechanical systems to ensure plant reliability, efficiency, and safety through detailed design and analysis.",
@@ -260,7 +262,7 @@ export const PLANT_ENGINEERING_CONSTANTS = {
       },
       //Electrical Engineering
       {
-        icon: Fan,
+        icon: faPlugCircleBolt,
         title: "Electrical Design Engineering",
         description:
           "Implementing reliable electrical systems to power plant operations efficiently and safely.",
@@ -309,7 +311,7 @@ export const PLANT_ENGINEERING_CONSTANTS = {
       },
       // Reverse Engineering - 3 cols
       {
-        icon: Flask,
+        icon: IconSettingsDollar,
         title: "Reverse Engineering",
         description:
           "Analyzing existing systems to recreate or improve designs for enhanced performance.",
@@ -345,7 +347,7 @@ export const PLANT_ENGINEERING_CONSTANTS = {
         columns: 3,
       }, //Instrumentation Engineering
       {
-        icon: Gauge,
+        icon: faGaugeHigh,
         title: "Instrumentation Engineering",
         description:
           "Integrating advanced instrumentation for precise monitoring and control of plant processes.",
@@ -431,7 +433,7 @@ export const PLANT_ENGINEERING_CONSTANTS = {
       },
       //Structural Engineering
       {
-        icon: Building2,
+        icon: faBridge,
         title: "Structural Engineering",
         description:
           "Designing strong, stable structures to support plant operations and withstand environmental challenges.",
@@ -476,7 +478,7 @@ export const PLANT_ENGINEERING_CONSTANTS = {
       },
       //modular Engineering - 3 cols
       {
-        icon: Cpu,
+        icon: Box,
         title: "Modular Package",
         description:
           "Delivering pre-engineered modular solutions for faster installation and operational flexibility.",
@@ -522,7 +524,7 @@ export const PLANT_ENGINEERING_CONSTANTS = {
       },
       // procurement - 3 cols
       {
-        icon: ClipboardList,
+        icon: Truck,
         title: "Procurement Support",
         description:
           "Streamlining procurement processes to source quality materials and equipment on time and within budget.",

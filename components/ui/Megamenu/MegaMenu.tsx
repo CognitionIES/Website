@@ -2,56 +2,46 @@
 
 import { useState, useEffect, ReactNode, useRef } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
   ChevronDown,
-  ArrowRight,
+  
   Menu,
   X,
-  // BarChart,
-  Calculator,
   Workflow,
-  Rss,
-  ShoppingCart,
-  Rewind,
   Box,
-  Sliders,
-  Zap,
-  ShieldCheck,
   Building2,
-  Car,
-  //Code,
   Server,
   Users,
 } from "lucide-react";
-import employeeIcon from "@/constants/images/employee.svg";
-// import {
-//   Gauge,
-//   Shield,
-// Code,
-// Cloud,
-// Brain,
-// GitBranch,
-// CheckCircle,
-// Globe,
-//} from "lucide-react";
+import { IconSettingsDollar } from "@tabler/icons-react";
 import { Printer, Layers, FileText, Truck } from "lucide-react";
 import { Cpu } from "lucide-react";
-import { Wrench, Factory } from "lucide-react"; // Import icons
+import { Wrench, Factory } from "lucide-react";
 import Logo1 from "@/constants/images/navbar-logo.png";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faCompassDrafting } from "@fortawesome/free-regular-svg-icons"; // Correct package
-import { faGears, faPlugCircleBolt } from "@fortawesome/free-solid-svg-icons"; // Import faGears
+import {
+  faGears,
+  faPlugCircleBolt,
+  faMagnifyingGlassChart,
+  faBuildingShield,
+  faChartArea,
+  faGaugeHigh,
+  faBridge,
+  faUsers,
+  faCity,
+} from "@fortawesome/free-solid-svg-icons";
 import { usePathname, useRouter } from "next/navigation";
+import colImage from "@/constants/images/home/3.jpg";
 
 // Type definitions for menu structure
 interface SubCategory {
   title: string;
   href: string;
-  icon?: ReactNode; // Add optional icon property
+  icon?: ReactNode;
 }
 
 interface MainCategory {
@@ -60,34 +50,21 @@ interface MainCategory {
   href: string;
   subCategories: SubCategory[];
   image: {
-    src: string;
+    src: string | StaticImageData;
     alt: string;
     title: string;
   };
 }
-
-// const projectsData: SubCategory[] = [
-//   {
-//     title: "Digitalization",
-//     href: "/projects/digitalization",
-//   },
-//   {
-//     title: "Product Cost Management",
-//     href: "/projects/product-cost-management",
-//   },
-// ];
-
-// In MegaMenu.tsx
 const servicesData: MainCategory[] = [
   {
     title: "Product Engineering",
     href: "/services/product-engineering",
-    icon: <Wrench className="w-5 h-5 mr-2" />,
+    icon: <Wrench className=" w-4 h-4 mr-2" />,
     subCategories: [
       {
         title: "Mechanical Design Services",
         href: "/services?section=mechanical",
-        icon: <FontAwesomeIcon icon={faGears} className="w-5 h-5" />,
+        icon: <FontAwesomeIcon icon={faGears} className=" w-4 h-4" />,
       },
       {
         title: "Electrical Engineering Services",
@@ -97,7 +74,9 @@ const servicesData: MainCategory[] = [
       {
         title: "CAE/CFD",
         href: "/services?section=cae-cfd",
-        icon: <Calculator className="w-4 h-4" />,
+        icon: (
+          <FontAwesomeIcon icon={faMagnifyingGlassChart} className=" w-4 h-4" />
+        ),
       },
       {
         title: "Hydraulic Engineering Services",
@@ -131,50 +110,50 @@ const servicesData: MainCategory[] = [
       },
     ],
     image: {
-      src: "https://images.unsplash.com/photo-1581092921461-eab62e97a780?q=80&w=2070&auto=format&fit=crop",
+      src: colImage,
       alt: "Product Engineering",
-      title: "Advanced Product Engineering Solutions",
+      title: "You are at the right place",
     },
   },
   {
     title: "Plant Engineering",
     href: "/services/plant-engineering",
-    icon: <Factory className="w-5 h-5 mr-2" />,
+    icon: <Factory className=" w-4 h-4 mr-2" />,
     subCategories: [
       {
         title: "Process & Safety Engineering",
         href: "/services/plant-engineering/details#section-1",
-        icon: <Rss className="w-4 h-4" />, // Represents flow and safety monitoring
+        icon: <FontAwesomeIcon icon={faBuildingShield} className=" w-4 h-4" />,
       },
       {
         title: "Piping Engineering",
         href: "/services/plant-engineering/details#section-2",
-        icon: <Car className="w-4 h-4" />,
+        icon: <Workflow className="w-5 h-5" />,
       },
       {
         title: "Piping Stress Analysis",
         href: "/services/plant-engineering/details#section-3",
-        icon: <Layers className="w-4 h-4" />,
+        icon: <FontAwesomeIcon icon={faChartArea} className=" w-4 h-4" />,
       },
       {
         title: "Mechanical Engineering",
         href: "/services/plant-engineering/details#section-4",
-        icon: <Wrench className="w-4 h-4" />,
+        icon: <FontAwesomeIcon icon={faGears} className=" w-5 h-5" />,
       },
       {
         title: "Electrical Engineering",
         href: "/services/plant-engineering/details#section-5",
-        icon: <Zap className="w-4 h-4" />,
+        icon: <FontAwesomeIcon icon={faPlugCircleBolt} className="w-4 h-4" />,
       },
       {
         title: "Reverse Engineering",
         href: "/services/plant-engineering/details#section-6",
-        icon: <Rewind className="w-4 h-4" />,
+        icon: <IconSettingsDollar stroke={2} className="w-5 h-5" />,
       },
       {
         title: "Instrumentation Engineering",
         href: "/services/plant-engineering/details#section-7",
-        icon: <Sliders className="w-4 h-4" />,
+        icon: <FontAwesomeIcon icon={faGaugeHigh} className="w-4 h-4" />,
       },
       {
         title: "Civil Engineering",
@@ -184,31 +163,31 @@ const servicesData: MainCategory[] = [
       {
         title: "Structural Engineering",
         href: "/services/plant-engineering/details#section-9",
-        icon: <ShieldCheck className="w-4 h-4" />,
+        icon: <FontAwesomeIcon icon={faBridge} className="w-4 h-4" />,
       },
 
       {
         title: "Modular Package",
         href: "/services/plant-engineering/details#section-10",
-        icon: <Box className="w-4 h-4" />,
+        icon: <Box className="w-5 h-5" />,
       },
 
       {
         title: "Procurement Support",
         href: "/services/plant-engineering/details#section-11",
-        icon: <ShoppingCart className="w-4 h-4" />,
+        icon: <Truck className="w-5 h-5" />,
       },
     ],
     image: {
-      src: "https://images.unsplash.com/photo-1471958680802-1345a694ba6d?q=80&w=2066&auto=format&fit=crop",
+      src: colImage,
       alt: "Pipeline Services",
-      title: "Comprehensive Pipeline Solutions",
+      title: "Right Place Right Time",
     },
   },
   // IT Services can remain as is with individual pages if preferred, or adjust similarly
   {
     title: "Saas Solutions - servicecpq ",
-    icon: <Server className="w-5 h-5 mr-2" />,
+    icon: <Server className=" w-4 h-4 mr-2" />,
     href: "/services/saas-solution/servicecpq",
     subCategories: [
       {
@@ -218,66 +197,51 @@ const servicesData: MainCategory[] = [
       },
     ],
     image: {
-      src: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop",
+      src: colImage,
       alt: "IT Services",
       title: "Innovative IT Solutions",
     },
   },
   {
     title: "Staffing and Recruitment Services",
-    icon: <Users className="w-5 h-5 mr-2" />,
+    icon: <Users className=" w-4 h-4 mr-2" />,
     href: "/services/staffing",
     subCategories: [
       {
         title: "For Job Seeker",
         href: "/services/staffing/job-seeker",
-        icon: (
-          <span className="group flex items-center">
-            <Image
-              src={employeeIcon}
-              alt="Employee Icon"
-              width={16}
-              height={16}
-              className="transition-colors duration-200 group-hover:filter group-hover:brightness-0 group-hover:invert" // Changes to black on hover
-            />
-          </span>
-        ),
+        icon: <FontAwesomeIcon icon={faUsers} className="w-5 h-5" />,
       },
       {
         title: "For Employer",
         href: "/services/staffing/employer",
-        icon: <Image src={employeeIcon} alt="Employee Icon" width={16} height={16} />,
+        icon: <FontAwesomeIcon icon={faCity} className="w-5 h-5" />,
       },
     ],
     image: {
-      src: "https://plus.unsplash.com/premium_photo-1661768507909-f961fcff0d45?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      src: colImage,
       alt: "Team collaborating in a modern office",
       title: "Staffing and Recruitment Excellence",
     },
   },
 ];
 
-// Arrow variants for animation
 const arrowVariants = {
   closed: { rotate: 0 },
   open: { rotate: 180 },
 };
+
 export function MegaMenu() {
-  // State mngmnt for dropdown menus and sticky header
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [activeCategory, setActiveCategory] = useState<number>(0);
   const [isSticky, setIsSticky] = useState(true);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  // const [expandedSubCategory, setExpandedSubCategory] = useState<string | null>(
-  //   null
-  // );
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null); // Ref to store timeout
   const router = useRouter();
   const pathname = usePathname();
-  // const toggleSubCategory = (title: string) => {
-  //   setExpandedSubCategory(expandedSubCategory === title ? null : title);
-  // };
 
+  // Handle outside clicks to close dropdown
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (
@@ -285,7 +249,6 @@ export function MegaMenu() {
         !dropdownRef.current.contains(event.target as Node)
       ) {
         setActiveDropdown(null);
-        //setExpandedSubCategory(null);
       }
     }
 
@@ -293,7 +256,7 @@ export function MegaMenu() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  //  sticky header behavior on scroll
+  // Handle sticky header on scroll
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
@@ -303,6 +266,39 @@ export function MegaMenu() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Clear timeout on component unmount
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
+
+  // Handle mouse enter for services dropdown
+  const handleMouseEnter = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current); // Clear any existing timeout
+    }
+    setActiveDropdown("services");
+    setActiveCategory(0);
+  };
+
+  // Handle mouse leave for services dropdown
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setActiveDropdown(null);
+    }, 300); // 300ms delay before closing dropdown
+  };
+
+  // Handle mouse enter for dropdown content to keep it open
+  const handleDropdownMouseEnter = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current); // Prevent dropdown from closing
+    }
+  };
+
   return (
     <div className="relative z-50">
       <nav
@@ -341,18 +337,16 @@ export function MegaMenu() {
                 Home
               </Link>
 
-              {/* services Dropdown */}
+              {/* Services Dropdown */}
               <div
                 className="relative"
-                onMouseEnter={() => {
-                  setActiveDropdown("services");
-                  setActiveCategory(0);
-                }}
-                onMouseLeave={() => setActiveDropdown(null)}
+                ref={dropdownRef}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
               >
                 <button
-                  className={`flex items-center p-2 text-gray-700 hover:text-blue-900 text-lg font-medium transition-colors duration-200 ${
-                    isSticky ? "py-3" : "py-4"
+                  className={`flex items-center px-2 text-gray-700 hover:text-blue-900 text-lg font-medium transition-colors duration ${
+                    isSticky ? "py-4" : "py-4"
                   }`}
                 >
                   Services
@@ -367,7 +361,11 @@ export function MegaMenu() {
                 </button>
 
                 {activeDropdown === "services" && (
-                  <div className="absolute z-[100] transform -translate-x-[62%] mt-[2px] w-screen max-w-7xl bg-white shadow-lg border-t border-gray-100 transition-all duration-300 ease-in-out min-h-[300px]">
+                  <div
+                    className="absolute z-[100] transform -translate-x-[62%] mt-[2px] w-screen max-w-7xl bg-white shadow-lg border-t border-gray-100 transition-all duration-300 ease-in-out min-h-[300px]"
+                    onMouseEnter={handleDropdownMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                  >
                     <div className="grid grid-cols-3 min-h-[450px]">
                       {/* Main Categories */}
                       <div className="space-y-1 bg-[#003c46] flex flex-col py-2">
@@ -419,7 +417,6 @@ export function MegaMenu() {
                                 } else if (
                                   subCategory.href.includes("?section=")
                                 ) {
-                                  // Navigate to /services with the section query param
                                   router.push(subCategory.href);
                                 }
                               }}
@@ -449,7 +446,6 @@ export function MegaMenu() {
                           <p className="text-gray-700">
                             {servicesData[activeCategory].image.title}
                           </p>
-                          <ArrowRight className="w-5 h-5 text-gray-600" />
                         </div>
                       </div>
                     </div>
@@ -473,13 +469,12 @@ export function MegaMenu() {
 
               <Link
                 href="/about"
-                className="text-gray-700 hover:text-blue-900 text-lg p-2  font-medium transition-colors duration-200"
+                className="text-gray-700 hover:text-blue-900 text-lg p-2 font-medium transition-colors duration-200"
               >
                 About Us
               </Link>
 
               {/* Search and Contact Button */}
-
               <div className="flex items-center space-x-4 ml-2">
                 <Link href="/contact">
                   <Button className="bg-[#0098af] text-white hover:bg-white hover:text-black text-lg transition-colors duration-200 border-2 border-transparent hover:border-[#0098af] hover:outline hover:outline-2 hover:outline-[#0098af]">
@@ -511,14 +506,13 @@ export function MegaMenu() {
             <div className="px-4 pt-2 pb-3 space-y-1">
               <Link
                 href="/"
-                className="block px-3 py-2  text-base font-medium  text-gray-700 hover:text-blue-900 hover:bg-gray-50"
+                className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-900 hover:bg-gray-50"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Home
               </Link>
 
-              {/* Mobile services Dropdown */}
-              {/* Mobile services Dropdown */}
+              {/* Mobile Services Dropdown */}
               <div className="space-y-1">
                 <button
                   onClick={() =>
@@ -540,7 +534,12 @@ export function MegaMenu() {
                 {activeDropdown === "services-mobile" && (
                   <div className="pl-4 max-h-60 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100 pb-2">
                     {servicesData.map((service) => (
-                      <div key={service.title} className="space-y-1">
+                      <div
+                        key={service.title}
+                        className="space Також
+
+-y-1"
+                      >
                         <div className="px-3 py-2 text-lg font-semibold text-gray-800">
                           {service.title}
                         </div>

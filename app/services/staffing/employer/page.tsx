@@ -378,45 +378,54 @@ const Employers = () => {
               </h2>
             </div>
 
-            <div className="bg-gradient-to-br from-[#E6F0F5] to-white rounded-xl overflow-hidden shadow-lg">
+            <div className="bg-gradient-to-l from-[#E6F0F5] to-white rounded-xl overflow-hidden shadow-lg">
               <div className="grid grid-cols-1 lg:grid-cols-2">
                 {/* Left column - Benefits */}
-                <div className="p-8">
-                  <ul className="space-y-4">
-                    <li className="flex items-start p-3 rounded-lg hover:bg-white/70 transition-colors duration-200">
-                      <span className="flex-shrink-0 w-8 h-8 rounded-full bg-[#0098af] text-white flex items-center justify-center mr-3">
+                <div className="p-8 bg-gradient-to-l from-[#E6F0F5] to-white">
+                  <h2 className="tex-justify  md:text-base text-[#003C46] mb-4">
+                    Our staffing and recruitment model is built for flexibility,
+                    speed, and precision. With customizable engagement types, a
+                    dedicated account manager, and transparent communication
+                    throughout the process, we ensure every hire aligns with
+                    your goals and culture. Our agile approach enables faster
+                    turnaround times and scalable hiring solutions — whether
+                    you&apos;re a startup or a large enterprise.
+                  </h2>
+                  <ul className="space-y-2 py-1">
+                    <li className="flex items-start px-3  rounded-lg hover:bg-white/70 transition-colors duration-200">
+                      <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#0098af] text-white flex items-center justify-center mr-3">
                         ✓
                       </span>
                       <span className="text-[#003C46] font-medium">
                         Customizable engagement types
                       </span>
                     </li>
-                    <li className="flex items-start p-3 rounded-lg hover:bg-white/70 transition-colors duration-200">
-                      <span className="flex-shrink-0 w-8 h-8 rounded-full bg-[#0098af] text-white flex items-center justify-center mr-3">
+                    <li className="flex items-start px-3 rounded-lg hover:bg-white/70 transition-colors duration-200">
+                      <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#0098af] text-white flex items-center justify-center mr-3">
                         ✓
                       </span>
                       <span className="text-[#003C46] font-medium">
                         Dedicated account manager
                       </span>
                     </li>
-                    <li className="flex items-start p-3 rounded-lg hover:bg-white/70 transition-colors duration-200">
-                      <span className="flex-shrink-0 w-8 h-8 rounded-full bg-[#0098af] text-white flex items-center justify-center mr-3">
+                    <li className="flex items-start px-3 rounded-lg hover:bg-white/70 transition-colors duration-200">
+                      <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#0098af] text-white flex items-center justify-center mr-3">
                         ✓
                       </span>
                       <span className="text-[#003C46] font-medium">
                         Transparent communication
                       </span>
                     </li>
-                    <li className="flex items-start p-3 rounded-lg hover:bg-white/70 transition-colors duration-200">
-                      <span className="flex-shrink-0 w-8 h-8 rounded-full bg-[#0098af] text-white flex items-center justify-center mr-3">
+                    <li className="flex items-start px-3 rounded-lg hover:bg-white/70 transition-colors duration-200">
+                      <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#0098af] text-white flex items-center justify-center mr-3">
                         ✓
                       </span>
                       <span className="text-[#003C46] font-medium">
                         Faster turnaround time
                       </span>
                     </li>
-                    <li className="flex items-start p-3 rounded-lg hover:bg-white/70 transition-colors duration-200">
-                      <span className="flex-shrink-0 w-8 h-8 rounded-full bg-[#0098af] text-white flex items-center justify-center mr-3">
+                    <li className="flex items-start px-3 rounded-lg hover:bg-white/70 transition-colors duration-200">
+                      <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#0098af] text-white flex items-center justify-center mr-3">
                         ✓
                       </span>
                       <span className="text-[#003C46] font-medium">
@@ -427,8 +436,8 @@ const Employers = () => {
                 </div>
 
                 {/* Right column - Image */}
-                <div className="flex items-center justify-center p-8 bg-gradient-to-br from-[#0098af]/5 to-white">
-                  <div className="relative w-full h-64 rounded-lg overflow-hidden shadow-lg">
+                <div className="flex items-center justify-center p-8 bg-gradient-to-r from-[#E6F0F5] to-white">
+                  <div className="relative w-full h-72 rounded-lg overflow-hidden shadow-lg">
                     <div className="absolute inset-0 bg-[url('https://plus.unsplash.com/premium_photo-1682309543429-6aaa6d792dae?q=80&w=2112&auto=format&fit=crop')] bg-cover bg-center"></div>
                     <div className="absolute inset-0 bg-gradient-to-br from-[#0098af]/40 to-transparent"></div>
                   </div>
@@ -489,7 +498,7 @@ const Employers = () => {
               src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1920&q=80"
               alt="Team collaboration"
               width={1920}
-              height={1080}
+              height={1080} 
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-[#0098af]/80 to-[#000000]/60 flex items-center justify-center">

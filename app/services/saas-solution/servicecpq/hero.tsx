@@ -18,13 +18,13 @@ const Hero = () => {
           <h1
             className="text-4xl md:text-5xl font-medium tracking-tight lg:text-6xl font-semibold text-[#003C46] mb-6 leading-tight animate-fade-in-up"
           >
-            Intelligent After-Sales. <br />
-            All-in-One.
+            Intelligent After-Sales <br />
+            All-in-One
           </h1>
 
           {/* Subheading */}
           <p
-            className="text-lg md:text-xl text-[#5b5b5b] mb-10 max-w-2xl mx-auto animate-fade-in-up delay-100"
+            className="text-lg md:text-xl text-[#5b5b5b] mb-10 max-w-3xl mx-auto animate-fade-in-up delay-100"
           >
             AI-powered platform unifying claims, Configue Price Quote (CPQ), and
             repair workflows.

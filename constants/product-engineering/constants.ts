@@ -1,26 +1,5 @@
 // This file holds all constants for the product engineering page
-import {
-  FiActivity,
-  FiBook,
-  FiCpu,
-  FiDatabase,
-  FiDroplet,
-  FiPrinter,
-  FiTool,
-  FiTruck,
-  FiZap,
-} from "react-icons/fi";
-import { IconType } from "react-icons";
 
-//import mechImage from "@/constants/images/service/mech.png";
-//import elecImage from "@/constants/images/service/elec.png";
-//import caeImage from "@/constants/images/service/cae.png";
-//import prototypingImage from "@/constants/images/service/prototyp.png";
-//import hydraulicImage from "@/constants/images/service/hydraulic.png";
-//import assetImage from "@/constants/images/service/asset.png";
-//import embeddedImage from "@/constants/images/service/embedded.png";
-//import techImage from "@/constants/images/service/technical.png";
-//import supplyImage from "@/constants/images/service/supply.png";
 import supplyImage1 from "@/constants/images/side-images/supply.jpg";
 import mechImage1 from "@/constants/images/side-images/mech.jpg";
 import elecImage1 from "@/constants/images/side-images/elec.jpg";
@@ -32,17 +11,21 @@ import caeImage1 from "@/constants/images/side-images/cae.png"
 import techImage1 from "@/constants/images/side-images/tech.jpeg"
 import aboutImage from "@/constants/images/product/about.jpg"
 import embeddedImage2 from "@/constants/images/side-images/embedded-1.jpg"
+import { faGears, faMagnifyingGlassChart, faPlugCircleBolt } from "@fortawesome/free-solid-svg-icons";
+import { Cpu, FileText, Layers, Printer, Truck, Workflow } from "lucide-react";
 
-// Define what a service looks like
+// constants/product-engineering/constants.ts
+import { ComponentType } from "react";
+import { StaticImageData } from "next/image";
+
 interface Service {
-  icon: IconType;
+  icon: ComponentType<{ className?: string }> | { type: string; icon: never }; // Support both Lucide and Font Awesome
   title: string;
   description: string;
-  image: string;
+  image: StaticImageData;
   alt: string;
   href: string;
 }
-
 export const PRODUCT_ENGINEERING_CONSTANTS = {
   // Hero Section
   HERO: {
@@ -70,7 +53,7 @@ export const PRODUCT_ENGINEERING_CONSTANTS = {
       "Comprehensive engineering solutions tailored to your specific needs",
     ITEMS: [
       {
-        icon: FiTool,
+        icon: { type: "fontawesome", icon: faGears },
         title: "Mechanical Design Services",
         description: "Comprehensive mechanical design solutions including 3D modeling, simulation, & optimization",
         image: mechImage1,
@@ -79,7 +62,7 @@ export const PRODUCT_ENGINEERING_CONSTANTS = {
       },
 
       {
-        icon: FiZap,
+        icon: { type: "fontawesome", icon: faPlugCircleBolt },
         title: "Electrical Engineering Services",
         description: "Innovative electrical system design and power distribution solutions",
         image: elecImage1,
@@ -87,7 +70,7 @@ export const PRODUCT_ENGINEERING_CONSTANTS = {
         href: "/services?section=electrical",
       },
       {
-        icon: FiActivity,
+        icon: { type: "fontawesome", icon: faMagnifyingGlassChart },
         title: "CAE/CFD",
         description: "Advanced computational analysis for engineering design and fluid dynamics",
         image: caeImage1,
@@ -95,7 +78,7 @@ export const PRODUCT_ENGINEERING_CONSTANTS = {
         href: "/services?section=cae-cfd",
       },
       {
-        icon: FiPrinter,
+        icon: Printer,
         title: "Prototyping and 3D Printing",
         description: "Rapid prototyping and additive manufacturing services",
         image: protoImage1,
@@ -103,7 +86,7 @@ export const PRODUCT_ENGINEERING_CONSTANTS = {
         href: "/services?section=prototyping",
       },
       {
-        icon: FiDroplet,
+        icon: Workflow,
         title: "Hydraulic Engineering Services",
         description: "Expert hydraulic system design and fluid power solutions",
         image: hydraImage1,
@@ -112,7 +95,7 @@ export const PRODUCT_ENGINEERING_CONSTANTS = {
       },
 
       {
-        icon: FiDatabase,
+        icon: Layers,
         title: "Asset Management",
         description: "Comprehensive asset lifecycle management and optimization",
         image: assetImage1,
@@ -120,7 +103,7 @@ export const PRODUCT_ENGINEERING_CONSTANTS = {
         href: "/services?section=asset-management",
       },
       {
-        icon: FiCpu,
+        icon: Cpu,
         title: "Embedded Systems Engineering",
         description: "Custom embedded solutions and IoT device development",
         image: embeddedImage2,
@@ -128,7 +111,7 @@ export const PRODUCT_ENGINEERING_CONSTANTS = {
         href: "/services?section=embedded-systems",
       },
       {
-        icon: FiBook,
+        icon: FileText,
         title: "Technical Publication",
         description: "Professional technical documentation and manual creation",
         image: techImage1,
@@ -136,7 +119,7 @@ export const PRODUCT_ENGINEERING_CONSTANTS = {
         href: "/services?section=technical-publication",
       },
       {
-        icon: FiTruck,
+        icon: Truck,
         title: "Supply Chain Management",
         description: "End-to-end supply chain optimization and procurement services",
         image: supplyImage1,

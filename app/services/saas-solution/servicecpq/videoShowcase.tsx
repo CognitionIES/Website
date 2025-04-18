@@ -18,7 +18,7 @@ const VideoShowcase = () => {
         <div className="text-center max-w-3xl mx-auto mb-12 animate-fade-in-up">
           <div className="flex justify-center mb-5"></div>
           <h2 className="text-3xl md:text-4xl font-semibold text-[#003C46] mb-2">
-            See ServiceCPQ in Action
+            How ServiceCPQ in Action
           </h2>
           <p className="text-[#5b5b5b] mb-2">
             Experience our platform&apos;s capabilities through this quick

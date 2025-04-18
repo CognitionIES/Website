@@ -1,9 +1,7 @@
 "use client";
-import { Button } from "@/components/ui/button";
 import { ABOUT_CONSTANTS } from "@/constants/home/about";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
-import Link from "next/link";
 import { motion, useInView, useAnimation } from "framer-motion";
 
 const AboutUs = () => {
@@ -17,12 +15,15 @@ const AboutUs = () => {
     }
   }, [isInView, controls]);
 
-  // Variants for text content (staggered children)
+  // Variants for text content (staggered children with fade-in)
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3, // Slight delay for smooth entry
+      },
     },
   };
 
@@ -31,7 +32,7 @@ const AboutUs = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5, ease: "easeOut" },
+      transition: { duration: 0.7, ease: "easeOut" }, // Smoother duration
     },
   };
 
@@ -40,7 +41,7 @@ const AboutUs = () => {
     visible: {
       opacity: 1,
       x: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
+      transition: { duration: 0.8, ease: "easeOut", delay: 0.5 }, // Delayed image fade-in
     },
   };
 
@@ -49,7 +50,7 @@ const AboutUs = () => {
     visible: {
       scale: 1,
       opacity: 0.04,
-      transition: { duration: 1, ease: "easeOut" },
+      transition: { duration: 1.2, ease: "easeOut" }, // Slower for background elements
     },
   };
 
@@ -116,7 +117,7 @@ const AboutUs = () => {
               {ABOUT_CONSTANTS.SUBTITLE}
             </motion.h3>
             <motion.p
-              className="text-xs sm:text-sm md:text-[16px] py-2 text-justify text-gray-600 leading-relaxed"
+              className="text-sm sm:text-base md:text-lg text-justify text-gray-600 leading-relaxed"
               variants={childVariants}
             >
               {ABOUT_CONSTANTS.DESCRIPTION_2}
@@ -128,19 +129,7 @@ const AboutUs = () => {
               {ABOUT_CONSTANTS.DESCRIPTION_3}
             </motion.p>
 
-            <motion.div className="mt-4" variants={childVariants}>
-              <Link href={ABOUT_CONSTANTS.BUTTON_HREF}>
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <Button className="bg-[#0098af] text-white hover:bg-white hover:text-black text-sm sm:text-base px-4 py-2 sm:px-6 sm:py-3 transition-colors duration-200 border-2 border-transparent hover:border-[#0098af] hover:outline hover:outline-2 hover:outline-[#0098af]">
-                    {ABOUT_CONSTANTS.BUTTON_TEXT}
-                  </Button>
-                </motion.div>
-              </Link>
-            </motion.div>
+            
           </motion.div>
 
           {/* Image (hidden on mobile) */}

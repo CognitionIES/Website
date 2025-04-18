@@ -265,7 +265,7 @@ export default function ContactSection() {
                   placeholder="Your Message"
                   value={formData.message}
                   onChange={(e) => handleInputChange("message", e.target.value)}
-                  className="w-full border border-gray-300 focus:border-[#0098AF] focus:ring-1 focus:ring-[#0098AF] rounded-lg text-sm py-2 px-3 h-24 sm:h-20 transition-all duration-200 resize-none placeholder-gray-400"
+                  className="w-full text-black border border-gray-300 focus:border-[#0098AF] focus:ring-1 focus:ring-[#0098AF] rounded-lg text-sm py-2 px-3 h-24 sm:h-20 transition-all duration-200 resize-none placeholder-gray-400"
                   required
                   disabled={isSubmitting}
                 />

@@ -9,6 +9,7 @@ import digitalImage from "@/constants/images/projects/digitalization.jpg";
 import pcmImage2 from "@/constants/images/home/pcm-2.jpg";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 type Project = {
   id: string;
@@ -185,7 +186,7 @@ export default function AboutSection() {
                   >
                     <div className="group h-full bg-white/80 rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300">
                       {/* Image container - Now clickable */}
-                      <a
+                      <Link
                         href={project.href}
                         className="block relative h-[180px] sm:h-[240px] w-full overflow-hidden cursor-pointer"
                       >
@@ -207,7 +208,7 @@ export default function AboutSection() {
                             </p>
                           </div>
                         </div>
-                      </a>
+                      </Link>
 
                       {/* Content */}
                       <div className="p-4 sm:p-6 space-y-2 sm:space-y-3">

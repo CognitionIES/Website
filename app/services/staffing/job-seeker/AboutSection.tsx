@@ -1,7 +1,5 @@
 "use client";
 
-
-
 import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -18,7 +16,6 @@ import JobCard from "@/components/JobCard";
 import { jobsData, Job } from "@/constants/jobData";
 
 const AboutSection = () => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isInView, setIsInView] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
   const [skills, setSkills] = useState("");
@@ -36,11 +33,9 @@ const AboutSection = () => {
         ? job.description.toLowerCase().includes(skills.toLowerCase()) ||
           job.title.toLowerCase().includes(skills.toLowerCase())
         : true;
-        
       const expMatch = experience
         ? job.experience.toLowerCase().includes(experience.toLowerCase())
         : true;
-        
       const locMatch = location
         ? job.location.toLowerCase().includes(location.toLowerCase())
         : true;
@@ -54,10 +49,16 @@ const AboutSection = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setIsInView(entry.isIntersecting);
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          // Optionally, unobserve after the animation triggers to prevent repeated animations
+          if (sectionRef.current) {
+            observer.unobserve(sectionRef.current);
+          }
+        }
       },
       {
-        threshold: 0.2,
+        threshold: 0.2, // Trigger when 20% of the section is visible
         rootMargin: "0px 0px -20% 0px",
       }
     );
@@ -73,8 +74,18 @@ const AboutSection = () => {
     };
   }, []);
 
+  // Animation variants for the search container
+  const searchContainerVariants = {
+    hidden: { opacity: 0, y: 50 }, // Start 50px below and fully transparent
+    visible: {
+      opacity: 1,
+      y: 0, // Move to original position
+      transition: { duration: 0.6, ease: "easeOut" }, // Smooth animation
+    },
+  };
+
   return (
-    <div className="bg-gradient-to-b from-white to-[#E6F0F5]/30 min-h-screen">
+    <div className="bg-[#E6F0F5]/40 min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -92,10 +103,10 @@ const AboutSection = () => {
 
         <div ref={sectionRef} className="mb-12">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={ { opacity: 1, y: 0 } }
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-white rounded-2xl shadow-xl p-6 md:p-8 border border-gray-100"
+            variants={searchContainerVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"} // Trigger animation based on isInView
+            className="bg-white rounded-2xl bg-gradient-to-r from-[#003C46]/30 to-[#0098AF]/30 shadow-xl p-6 md:p-8"
           >
             <form onSubmit={handleSearch} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
@@ -163,7 +174,7 @@ const AboutSection = () => {
 
           {hasSearched && searchResults.length === 0 ? (
             <div className="text-center py-12">
-              <h3 className="text-xl text-gray-600 mb-4">No jobs match your criteria</h3>
+              <h3 className="text-xl text-red-600 mb-4">No jobs match your criteria</h3>
               <p className="text-gray-500">Try adjusting your search filters</p>
             </div>
           ) : (

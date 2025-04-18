@@ -1,6 +1,5 @@
 import { useState, useRef, useEffect } from "react";
 import { cn } from "@/lib/utils";
-import { ExternalLink } from "lucide-react";
 import plantImage from "@/constants/images/home/plant.jpg";
 import productImage from "@/constants/images/home/product-2.jpg";
 import saasImage from "@/constants/images/home/saas.jpg";
@@ -212,15 +211,7 @@ const ServicesShowcase = () => {
           </div>
         )}
 
-        <div className="mt-8 md:mt-2 text-center">
-          <a
-            href="/services"
-            className="inline-flex items-center gap-1 text-[#003C46]/80 hover:text-[#0098af] transition-colors duration-300 text-sm md:text-base font-medium group"
-          >
-            View all our solutions
-            <ExternalLink className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
-          </a>
-        </div>
+       
       </div>
     </section>
   );

@@ -48,7 +48,6 @@ export default function PlantEngineeringDetailsPage() {
 
     const timer = setTimeout(() => setShowScrollHint(false), 5000);
     return () => clearTimeout(timer);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Scroll to a specific section
@@ -66,6 +65,22 @@ export default function PlantEngineeringDetailsPage() {
   useEffect(() => {
     const handleWheel = (event: WheelEvent) => {
       if (isScrolling) return;
+
+      // Allow natural scrolling when on the last section and scrolling down
+      if (
+        currentSection === sectionRefs.current.length - 1 &&
+        event.deltaY > 0
+      ) {
+        setIsScrolling(false);
+        return;
+      }
+
+      // Allow natural scrolling when on the first section and scrolling up
+      if (currentSection === 0 && event.deltaY < 0) {
+        setIsScrolling(false);
+        return;
+      }
+
       event.preventDefault();
       setIsScrolling(true);
       const direction = event.deltaY > 0 ? 1 : -1;
@@ -78,7 +93,23 @@ export default function PlantEngineeringDetailsPage() {
 
     const handleKeydown = (event: KeyboardEvent) => {
       if (isScrolling) return;
+
       if (event.key === "ArrowDown" || event.key === "ArrowUp") {
+        // Allow natural scrolling when on the last section and pressing ArrowDown
+        if (
+          currentSection === sectionRefs.current.length - 1 &&
+          event.key === "ArrowDown"
+        ) {
+          setIsScrolling(false);
+          return;
+        }
+
+        // Allow natural scrolling when on the first section and pressing ArrowUp
+        if (currentSection === 0 && event.key === "ArrowUp") {
+          setIsScrolling(false);
+          return;
+        }
+
         event.preventDefault();
         setIsScrolling(true);
         const direction = event.key === "ArrowDown" ? 1 : -1;
@@ -127,7 +158,7 @@ export default function PlantEngineeringDetailsPage() {
               title={service.title}
               bulletPoints={service.bulletPoints}
               imageUrl={service.image}
-              columns={service.columns} // Correctly pass the columns prop from each service
+              columns={service.columns === 3 || service.columns === 4 ? service.columns : undefined}
             />
           </div>
         ))}
