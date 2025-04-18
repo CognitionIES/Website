@@ -7,7 +7,6 @@ import {
   FileText,
   ClipboardCheck,
   Database,
-  BarChart,
   Wrench,
   Users,
   Activity,
@@ -15,7 +14,7 @@ import {
   Package,
   Brain,
   Globe,
-  
+  Clock,
 } from "lucide-react";
 import BackgroundGrid from "@/components/ui/backgroundgrid";
 import { motion } from "framer-motion";
@@ -70,7 +69,7 @@ const KeyFeatures = () => {
             "Leverage AI to automate warranty claims, minimizing manual efforts and significantly reducing processing time.",
         },
         {
-          icon: <BarChart />,
+          icon: <Clock />,
           title: "Real-Time Tracking",
           description:
             "Track claim statuses in real-time and gain insights into frequent part failures and overall warranty costs.",
@@ -202,7 +201,6 @@ const KeyFeatures = () => {
                   <div
                     className={`absolute inset-0 ${category.color} opacity-10 group-hover:opacity-20 transition-opacity duration-500`}
                   ></div>
-
                   <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
                     <h3 className="text-white text-xl font-semibold">
                       {category.title}
@@ -215,20 +213,29 @@ const KeyFeatures = () => {
                 </div>
 
                 {/* Honeycomb style feature layout */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                {/* Honeycomb style feature layout */}
+                <div
+                  className={`grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto ${
+                    category.features.length === 3 ? "auto-rows-fr" : ""
+                  }`}
+                >
                   {category.features.map((feature, index) => (
                     <motion.div
                       key={index}
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: index * 0.1 }}
-                      className={`bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 ${
-                        index % 2 === 0 ? "md:transform md:translate-y-10" : ""
+                      className={`bg-white rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 ${
+                        category.features.length === 3 && index === 2
+                          ? "md:col-span-2 md:flex md:justify-center md:max-w-[calc(50%-1rem)] mx-auto"
+                          : index % 2 === 0
+                          ? "md:transform md:translate-y-10"
+                          : ""
                       }`}
                     >
-                      <div className={`h-2 ${category.color}`}></div>
                       <div className="p-6">
                         <div className="flex items-start gap-4">
+                          
                           <div
                             className={`p-3 rounded-lg ${category.color.replace(
                               "gradient-to-r",
@@ -246,8 +253,6 @@ const KeyFeatures = () => {
                             </p>
                           </div>
                         </div>
-
-                        {/* Feature benefits list */}
                         <div className="mt-4 pl-16"></div>
                       </div>
                     </motion.div>

@@ -18,6 +18,7 @@ import JobCard from "@/components/JobCard";
 import { jobsData, Job } from "@/constants/jobData";
 
 const AboutSection = () => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isInView, setIsInView] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
   const [skills, setSkills] = useState("");
@@ -92,7 +93,7 @@ const AboutSection = () => {
         <div ref={sectionRef} className="mb-12">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            animate={ { opacity: 1, y: 0 } }
             transition={{ duration: 0.6, delay: 0.2 }}
             className="bg-white rounded-2xl shadow-xl p-6 md:p-8 border border-gray-100"
           >

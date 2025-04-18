@@ -364,18 +364,7 @@ const PCMKeyFindings = () => {
         animate={isInView ? "visible" : "hidden"}
         className="absolute bottom-20 left-10 w-72 h-72 bg-[#003C46]/5 rounded-full blur-3xl z-0"
       />
-      <motion.div
-        className="absolute bottom-40 left-1/3 w-4 h-4 bg-[#00b4d8] rounded-full animate-float opacity-70"
-        style={{ animationDelay: "2s" }}
-        animate={{
-          y: [-10, 10, -10],
-          transition: {
-            repeat: Infinity,
-            duration: 3,
-            ease: "easeInOut",
-          },
-        }}
-      />
+      
 
       <section
         ref={sectionRef}

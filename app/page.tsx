@@ -10,9 +10,6 @@ import RecentProjects from "@/components/HomePage/RecentProjects";
 import ContactSection from "./contact/ContactSection";
 import ServicesShowcase from "@/components/ServicesShowcase";
 import CTA from "@/components/CTA";
-//import React, { useEffect, useRef, useState } from "react";
-//import Link from "next/link";
-//import { Button } from "@/components/ui/button";
 
 const TestimonialSlider = dynamic(
   () => import("@/components/HomePage/Testimonials"),
@@ -23,30 +20,6 @@ const Careers = dynamic(() => import("@/components/HomePage/Careers"), {
 });
 
 export default function Home() {
-  //const [isInView, setIsInView] = useState(false);
-  //const sectionRef = useRef<HTMLElement>(null);
-//
-  //useEffect(() => {
-  //  const observer = new IntersectionObserver(
-  //    ([entry]) => {
-  //      setIsInView(entry.isIntersecting);
-  //    },
-  //    { threshold: 0.2 }
-  //  );
-//
-  //  if (sectionRef.current) {
-  //    observer.observe(sectionRef.current);
-  //  }
-
-    // Cleanup observer on unmount
-//    return () => {
-//      if (sectionRef.current) {
-//        // eslint-disable-next-line react-hooks/exhaustive-deps
-//        observer.unobserve(sectionRef.current);
-//      }
-//    };
-//  }, []); // Empty dependency array is fine here
-
   return (
     <div>
       <MegaMenu />
@@ -68,8 +41,8 @@ export default function Home() {
           <section>
             <Careers />
           </section>
-            <ContactSection />
-            <CTA />
+          <ContactSection />
+          <CTA />
         </main>
         <Footer />
         {/* Decorative Elements */}

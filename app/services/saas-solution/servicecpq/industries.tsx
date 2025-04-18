@@ -1,13 +1,5 @@
-import React from "react";
-import {
-  Factory,
-  
-  Stethoscope,
-  Hammer,
-  Zap,
-  Tractor,
-  
-} from "lucide-react";
+import React, { useEffect, useRef, useState } from "react";
+import { Factory, Stethoscope, Hammer, Zap, Tractor } from "lucide-react";
 import BackgroundGrid from "@/components/ui/backgroundgrid";
 
 const industriesData = [
@@ -44,8 +36,34 @@ const industriesData = [
 ];
 
 const Industries = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect(); // Stop observing once visible
+        }
+      },
+      { threshold: 0.2 } // Trigger when 20% of the section is visible
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="py-10 md:py-14 relative overflow-hidden">
+    <section
+      ref={sectionRef}
+      className={`py-10 md:py-14 relative overflow-hidden transition-all duration-1000 ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+      }`}
+    >
       {/* Background elements */}
       <div className="absolute inset-0 bg-gradient-to-tr from-white via-white to-[#E6F0F5]/30 -z-10" />
       <div className="absolute -top-20 -left-20 w-80 h-80 bg-[#00b4d8]/5 rounded-full blur-3xl -z-5"></div>
@@ -56,7 +74,6 @@ const Industries = () => {
       <div className="container mx-auto px-4 relative z-10">
         {/* Header with hexagon background */}
         <div className="relative mb-10">
-          
           <div className="text-center max-w-3xl mx-auto relative z-10">
             <h2 className="text-3xl md:text-4xl font-semibold text-[#003C46] mb-2">
               Industries We Serve
@@ -77,16 +94,11 @@ const Industries = () => {
               title={industry.title}
               description={industry.description}
               index={index}
+              isVisible={isVisible}
             />
           ))}
         </div>
-
-        {/* Industry showcase - floating cards design */}
-       
       </div>
-
-      {/* Bottom decorative element */}
-      {/* <div className="absolute bottom-0 left-0 right-0 h-6 bg-gradient-to-r from-[#0098af]/20 via-[#00b4d8]/10 to-[#0098af]/20"></div> */}
     </section>
   );
 };
@@ -96,19 +108,23 @@ const IndustryCard = ({
   title,
   description,
   index,
+  isVisible,
 }: {
   icon: React.ReactNode;
   title: string;
   description: string;
   index: number;
+  isVisible: boolean;
 }) => {
   // Calculate delay based on index
   const delay = Math.min(index * 100, 800);
 
   return (
     <div
-      className="group relative bg-white backdrop-blur w-full md:w-[calc(33%-1rem)] max-w-sm rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-2 animate-fade-in-up shadow-sm hover:shadow-md border border-[#E6F0F5]"
-      style={{ animationDelay: `${delay}ms` }}
+      className={`group relative bg-white backdrop-blur w-full md:w-[calc(33%-1rem)] max-w-sm rounded-xl overflow-hidden transition-all duration-500 hover:-translate-y-2 shadow-sm hover:shadow-md border border-[#E6F0F5] ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+      }`}
+      style={{ transitionDelay: `${delay}ms` }}
     >
       {/* Top accent line */}
       <div className="h-1 w-full bg-gradient-to-r from-[#0098af] to-[#00b4d8]"></div>
@@ -117,7 +133,7 @@ const IndustryCard = ({
         {/* Icon with animated background */}
         <div className="relative mb-5 inline-block">
           <div className="absolute inset-0 bg-[#E6F0F5] rounded-lg transform rotate-45 transition-transform group-hover:rotate-0"></div>
-          <div className="relative w-12 h-12 flex items-center  justify-center">
+          <div className="relative w-12 h-12 flex items-center justify-center">
             <div className="text-[#0098af] transform transition-transform group-hover:scale-110">
               {icon}
             </div>

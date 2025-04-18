@@ -2,33 +2,57 @@
 import { Button } from "@/components/ui/button";
 import { ABOUT_CONSTANTS } from "@/constants/home/about";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import Link from "next/link";
+import { motion, useInView, useAnimation } from "framer-motion";
 
 const AboutUs = () => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [isInView, setIsInView] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
+  const controls = useAnimation();
+  const isInView = useInView(sectionRef, { amount: 0.2, once: true });
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsInView(entry.isIntersecting);
-      },
-      { threshold: 0.2 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    if (isInView) {
+      controls.start("visible");
     }
+  }, [isInView, controls]);
 
-    return () => {
-      if (sectionRef.current) {
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
+  // Variants for text content (staggered children)
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      
+    },
+  };
+
+  const childVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
+  };
+
+  const imageVariants = {
+    hidden: { opacity: 0, x: 50 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
+  const circleVariants = {
+    hidden: { scale: 0.8, opacity: 0 },
+    visible: {
+      scale: 1,
+      opacity: 0.04,
+      transition: { duration: 1, ease: "easeOut" },
+    },
+  };
+
   return (
     <section
       ref={sectionRef}
@@ -40,46 +64,92 @@ const AboutUs = () => {
     >
       {/* Subtle background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#0098af] opacity-[0.03] blur-3xl"></div>
-        <div className="absolute bottom-10 left-10 w-40 h-40 rounded-full bg-[#0098af] opacity-[0.04] blur-3xl"></div>
-        <div className="absolute w-full h-full bg-dot-pattern bg-[length:20px_20px] opacity-[0.02]"></div>
+        <motion.div
+          className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[#0098af] blur-3xl"
+          variants={circleVariants}
+          initial="hidden"
+          animate={controls}
+        />
+        <motion.div
+          className="absolute bottom-10 left-10 w-40 h-40 rounded-full bg-[#0098af] blur-3xl"
+          variants={circleVariants}
+          initial="hidden"
+          animate={controls}
+        />
+        <div className="absolute w-full h-full bg-dot-pattern bg-[length:20px_20px] opacity-[0.02]" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {" "}
-        <h2 className="text-2xl sm:text-3xl md:text-4xl text-justify font-semibold tracking-tight text-[#003C46]">
+        <motion.h2
+          className="text-2xl sm:text-3xl md:text-4xl text-justify font-semibold tracking-tight text-[#003C46]"
+          variants={childVariants}
+          initial="hidden"
+          animate={controls}
+        >
           {ABOUT_CONSTANTS.TITLE}
-        </h2>
-        <div className="w-[80px] sm:w-[100px] h-[3px] bg-gradient-to-r from-[#0098af] to-transparent rounded-full mt-1" />
+        </motion.h2>
+        <motion.div
+          className="w-[80px] sm:w-[100px] h-[3px] bg-gradient-to-r from-[#0098af] to-transparent rounded-full mt-1"
+          variants={childVariants}
+          initial="hidden"
+          animate={controls}
+        />
+
         <div className="grid grid-cols-1 py-8 md:grid-cols-[1fr_auto] items-start gap-10 md:gap-8 max-w-7xl mx-auto">
           {/* Text content */}
-          <div className="order-2 md:order-1">
-            <div>
-              <p className="text-sm sm:text-base md:text-lg text-justify text-gray-600 leading-relaxed">
-                {ABOUT_CONSTANTS.DESCRIPTION_1}
-              </p>
-              <h3 className="text-lg sm:text-xl font-semibold py-2 text-justify text-[#003c46]">
-                {ABOUT_CONSTANTS.SUBTITLE}
-              </h3>
-              <p className="text-xs sm:text-sm md:text-[16px] py-2 text-justify text-gray-600 leading-relaxed">
-                {ABOUT_CONSTANTS.DESCRIPTION_2}
-              </p>
-              <p className="text-lg sm:text-xl font-semibold py-2 text-justify text-[#003c46]">
-                {ABOUT_CONSTANTS.DESCRIPTION_3}
-              </p>
+          <motion.div
+            className="order-2 md:order-1"
+            variants={containerVariants}
+            initial="hidden"
+            animate={controls}
+          >
+            <motion.p
+              className="text-sm sm:text-base md:text-lg text-justify text-gray-600 leading-relaxed"
+              variants={childVariants}
+            >
+              {ABOUT_CONSTANTS.DESCRIPTION_1}
+            </motion.p>
+            <motion.h3
+              className="text-lg sm:text-xl font-semibold py-2 text-justify text-[#003c46]"
+              variants={childVariants}
+            >
+              {ABOUT_CONSTANTS.SUBTITLE}
+            </motion.h3>
+            <motion.p
+              className="text-xs sm:text-sm md:text-[16px] py-2 text-justify text-gray-600 leading-relaxed"
+              variants={childVariants}
+            >
+              {ABOUT_CONSTANTS.DESCRIPTION_2}
+            </motion.p>
+            <motion.p
+              className="text-lg sm:text-xl font-semibold py-2 text-justify text-[#003c46]"
+              variants={childVariants}
+            >
+              {ABOUT_CONSTANTS.DESCRIPTION_3}
+            </motion.p>
 
-              <div className="mt-4">
-                <Link href={ABOUT_CONSTANTS.BUTTON_HREF}>
+            <motion.div className="mt-4" variants={childVariants}>
+              <Link href={ABOUT_CONSTANTS.BUTTON_HREF}>
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ duration: 0.2 }}
+                >
                   <Button className="bg-[#0098af] text-white hover:bg-white hover:text-black text-sm sm:text-base px-4 py-2 sm:px-6 sm:py-3 transition-colors duration-200 border-2 border-transparent hover:border-[#0098af] hover:outline hover:outline-2 hover:outline-[#0098af]">
                     {ABOUT_CONSTANTS.BUTTON_TEXT}
                   </Button>
-                </Link>
-              </div>
-            </div>
-          </div>
+                </motion.div>
+              </Link>
+            </motion.div>
+          </motion.div>
 
           {/* Image (hidden on mobile) */}
-          <div className="order-1 md:order-2 relative hidden md:block md:h-[400px] md:w-[555px] rounded-xl shadow-md overflow-hidden justify-self-end">
+          <motion.div
+            className="order-1 md:order-2 relative hidden md:block md:h-[400px] md:w-[555px] rounded-xl shadow-md overflow-hidden justify-self-end"
+            variants={imageVariants}
+            initial="hidden"
+            animate={controls}
+          >
             <Image
               src={ABOUT_CONSTANTS.IMAGE}
               alt="Team collaboration"
@@ -87,7 +157,7 @@ const AboutUs = () => {
               height={100}
               className="w-full h-full object-cover"
             />
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
