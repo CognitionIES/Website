@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
 import digitalImage from "@/constants/images/home/our-recent-projects/digitalization.jpg";
-import pcmImage2 from "@/constants/images/home/our-recent-projects/digitalization.jpg";
+import pcmImage2 from "@/constants/images/home/our-recent-projects/pcm.jpg";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
