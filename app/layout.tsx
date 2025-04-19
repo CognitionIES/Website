@@ -3,7 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import FaqButton from "../components/FaqButton";
-//import TabImage from "@/app/"
 const favicon = "/favicon.ico";
 
 const geistSans = Geist({

@@ -6,14 +6,16 @@ import flexScaleImage from "@/constants/images/about/flex-scale.jpg"
 import lifeCycleImage from "@/constants/images/about/lifecyle-mastery.jpg"
 import qualityCoreImage from "@/constants/images/about/quality-core.jpg"
 import coInnovativeImage from "@/constants/images/about/coinnovative.jpg"
+import missionVisionImage from "@/constants/images/about/missionvision.jpg"
+import statsImage from "@/constants/images/about/stats.jpg"
 export const ABOUT_CONSTANTS = {
   // Image URLs
   IMAGES: {
     HERO_IMAGE: {HeroImage},
     STORY_IMAGE:{OurJourneyImage},
     MISSION_VISION_BG:
-      "https://images.unsplash.com/photo-1476304884326-cd2c88572c5f?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    TECH_PATTERN: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31",
+    missionVisionImage,
+    TECH_PATTERN: statsImage,
     KEY_VALUES: [
       coInnovativeImage,
       lifeCycleImage,

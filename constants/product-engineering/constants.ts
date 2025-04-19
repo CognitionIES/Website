@@ -1,16 +1,16 @@
 // This file holds all constants for the product engineering page
 
-import supplyImage1 from "@/constants/images/side-images/supply.jpg";
-import mechImage1 from "@/constants/images/side-images/mech.jpg";
-import elecImage1 from "@/constants/images/side-images/elec.jpg";
-import protoImage1 from "@/constants/images/side-images/prototyping.jpg";
-import hydraImage1 from "@/constants/images/side-images/hydraulic.jpg";
-import assetImage1 from "@/constants/images/side-images/asset.jpg";
-//import embeddedImage1 from "@/constants/images/side-images/embedded.jpg";
-import caeImage1 from "@/constants/images/side-images/cae.png"
-import techImage1 from "@/constants/images/side-images/tech.jpeg"
+import supplyImage1 from "@/constants/images/product/side/supply.jpg";
+import mechImage1 from "@/constants/images/product/side/mech.jpg";
+import elecImage1 from "@/constants/images/product/side/elec.jpg";
+import protoImage1 from "@/constants/images/product/side/prototyping.jpg";
+import hydraImage1 from "@/constants/images/product/side/hydraulic.jpg";
+import assetImage1 from "@/constants/images/product/side/asset.jpg";
+//import embeddedImage1 from "@/constants/images/product/side/embedded.jpg";
+import caeImage1 from "@/constants/images/product/side/cae.png"
+import techImage1 from "@/constants/images/product/side/tech.jpeg"
 import aboutImage from "@/constants/images/product/about.jpg"
-import embeddedImage2 from "@/constants/images/side-images/embedded-1.jpg"
+import embeddedImage2 from "@/constants/images/product/side/embedded-1.jpg"
 import { faGears, faMagnifyingGlassChart, faPlugCircleBolt } from "@fortawesome/free-solid-svg-icons";
 import { Cpu, FileText, Layers, Printer, Truck, Workflow } from "lucide-react";
 

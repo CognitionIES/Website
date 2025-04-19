@@ -10,9 +10,9 @@ import {
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { useIsMobile } from "@/hooks/use-mobile";
-import digitalImage from "@/constants/images/projects/digitalization.jpg";
 import { StaticImageData } from "next/image";
-import pcmImage2 from "@/constants/images/home/pcm-2.jpg";
+import digitalImage from "@/constants/images/home/our-recent-projects/digitalization.jpg";
+import pcmImage2 from "@/constants/images/home/our-recent-projects/digitalization.jpg";
 import Link from "next/link";
 
 type Project = {

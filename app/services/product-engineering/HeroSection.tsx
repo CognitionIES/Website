@@ -5,7 +5,7 @@ import { FiChevronDown, FiChevronRight, FiHome } from "react-icons/fi";
 import Image from "next/image";
 import Link from "next/link";
 //import engineeringImage from "@/constants/images/Plant-engineering/hero-image-1.jpg";
-import HeroImage from "@/constants/images/service/hero/product.jpg";
+import HeroImage from "@/constants/images/product/hero.jpg";
 
 export default function Hero() {
   return (

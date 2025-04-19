@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import aboutImage from "@/constants/images/projects/about.jpg";
+import aboutImage from "@/constants/images/projects/digitalization/about.jpg";
 
 export default function AboutSection() {
   const [isInView, setIsInView] = useState(false);

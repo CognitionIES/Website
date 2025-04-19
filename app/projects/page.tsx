@@ -2,17 +2,13 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
-//import Image from "next/image";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
 import { MegaMenu } from "@/components/ui/Megamenu/MegaMenu";
 import Hero from "./hero";
 import Footer from "@/components/footer";
 import { useIsMobile } from "@/hooks/use-mobile";
-import digitalImage from "@/constants/images/projects/digitalization.jpg";
 import { StaticImageData } from "next/image";
-import pcmImage2 from "@/constants/images/home/pcm-2.jpg";
+import digitalImage from "@/constants/images/home/our-recent-projects/digitalization.jpg";
+import pcmImage2 from "@/constants/images/home/our-recent-projects/digitalization.jpg";
 
 import AboutSection from "./about";
 import CTASection from "@/components/CTA";

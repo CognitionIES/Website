@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import outcomeImage from "@/constants/images/projects/outcome.jpg";
+import outcomeImage from "@/constants/images/projects/digitalization/outcome.jpg";
 import Image from "next/image";
 
 export default function Outcome() {

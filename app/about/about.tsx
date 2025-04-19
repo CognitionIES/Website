@@ -5,8 +5,6 @@ import Image from "next/image";
 import { ABOUT_CONSTANTS } from "@/constants/aboutPage/constants";
 
 import { useEffect, useRef, useState } from "react";
-// import Link from "next/link";
-// import { Button } from "@/components/ui/button";
 
 export default function AboutSection() {
   const { IMAGES, TEXT,  STATS } = ABOUT_CONSTANTS;

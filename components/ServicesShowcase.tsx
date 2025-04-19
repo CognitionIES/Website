@@ -1,9 +1,9 @@
 import { useState, useRef, useEffect } from "react";
 import { cn } from "@/lib/utils";
-import plantImage from "@/constants/images/home/plant.jpg";
-import productImage from "@/constants/images/home/product-2.jpg";
-import saasImage from "@/constants/images/home/saas.jpg";
-import recruitImage from "@/constants/images/home/staff.jpg";
+import plantImage from "@/constants/images/home/our-services/plant.jpg";
+import productImage from "@/constants/images/home/our-services/product-2.jpg";
+import saasImage from "@/constants/images/home/our-services/saas.jpg";
+import recruitImage from "@/constants/images/home/our-services/staff.jpg";
 import Link from "next/link";
 
 const services = [

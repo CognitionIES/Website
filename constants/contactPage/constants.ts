@@ -1,8 +1,10 @@
 // This file holds all constants for the contact page
+import contactImage from "@/constants/images/conatct.jpg"
+
 export const CONTACT_CONSTANTS = {
   // Hero Section
   HERO: {
-    IMAGE: "https://images.unsplash.com/photo-1557426272-fc759fdf7a8d",
+    IMAGE: contactImage,
     TITLE: "Contact Us",
     SUBTITLE:
       "Reach out to us—we’re here to collaborate and turn your ideas into reality.",

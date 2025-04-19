@@ -1,15 +1,15 @@
-import processImage from "@/constants/images/horizontal/01.jpg";
-import mechImage from "@/constants/images/horizontal/02.jpg";
-import pipingImage from "@/constants/images/horizontal/03.jpg";
-import pipeStressImage from "@/constants/images/horizontal/04.jpg";
-import civilImage from "@/constants/images/horizontal/05.jpg";
-import StructuralImage from "@/constants/images/horizontal/06.png";
-import elecImage from "@/constants/images/horizontal/07.jpg";
-import InstrumentationImage from "@/constants/images/horizontal/08.jpg";
-import ModularImage from "@/constants/images/horizontal/09.jpg";
-import ReverseImage from "@/constants/images/horizontal/10.jpg";
-import ProcurementImage from "@/constants/images/horizontal/11.jpg";
-import heroImage from "@/constants/images/Plant-engineering/hero.jpg";
+import processImage from "@/constants/images/plant/horizontal/01.jpg";
+import mechImage from "@/constants/images/plant/horizontal/02.jpg";
+import pipingImage from "@/constants/images/plant/horizontal/03.jpg";
+import pipeStressImage from "@/constants/images/plant/horizontal/04.jpg";
+import civilImage from "@/constants/images/plant/horizontal/05.jpg";
+import StructuralImage from "@/constants/images/plant/horizontal/06.png";
+import elecImage from "@/constants/images/plant/horizontal/07.jpg";
+import InstrumentationImage from "@/constants/images/plant/horizontal/08.jpg";
+import ModularImage from "@/constants/images/plant/horizontal/09.jpg";
+import ReverseImage from "@/constants/images/plant/horizontal/10.jpg";
+import ProcurementImage from "@/constants/images/plant/horizontal/11.jpg";
+import heroImage from "@/constants/images/plant/hero.jpg";
 
 // This file holds all constants for the plant engineering page
 import { Building2, Workflow, Box, Truck } from "lucide-react";

@@ -1,4 +1,4 @@
-import careerImage from "@/constants/images/home/career-home.jpg"
+import careerImage from "@/constants/images/home/career/career-home.jpg"
 
 // Constants for the Careers section
 export const CAREERS_CONSTANTS = {

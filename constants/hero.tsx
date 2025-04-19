@@ -1,11 +1,11 @@
 import { StaticImageData } from "next/image";
-import image1 from "./images/hero/builder-repairman-install-hvac-duct-cleaning-ventilation-pipes-hanging-from-ceiling.jpg";
+import image1 from "./images/home/hero/product.jpg";
 // import image2 from "./images/hero/excavator-action.jpg";
 //import image3 from "./images/hero/factory-worker-control-robotic-arm-factory.jpg";
-import image4 from "./images/hero/portrait-engineers-work-hours-job-site.jpg";
-import image5 from "./images/hero/image.jpg";
-import saasImage from "@/constants/images/hero/saas-2.jpg"
-import recruitmentImage from "@/constants/images/hero/recruit-1.jpg"
+import image4 from "./images/home/hero/process.jpg";
+import image5 from "./images/home/hero/ai-ml.jpg";
+import saasImage from "@/constants/images/home/hero/saas.jpg"
+import recruitmentImage from "@/constants/images/home/hero/recruit.jpg"
 
 
 export interface HeroSlide {

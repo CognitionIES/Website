@@ -21,7 +21,7 @@ export default function Hero() {
         <div className="absolute inset-0 opacity-5 bg-[url('/images/engineering-pattern.jpg')] bg-repeat" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 h-full flex flex-col justify-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white -top-10 drop-shadow-md relative">
-          Electrical Engineering
+            Electrical Engineering
             <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-[#99D5DF] to-transparent" />
           </h1>
           {/* Move nav outside the centered flex flow and position it absolutely */}

@@ -191,7 +191,7 @@ export default function ContactSection() {
                     placeholder="Full Name"
                     value={formData.name}
                     onChange={(e) => handleInputChange("name", e.target.value)}
-                    className="w-full border border-gray-300 focus:border-[#0098AF] focus:ring-1 focus:ring-[#0098AF] rounded-lg text-sm py-2 px-3 transition-all duration-200 placeholder-gray-400"
+                    className="w-full  border border-gray-300 focus:border-[#0098AF] focus:ring-1 focus:ring-[#0098AF] rounded-lg text-sm py-2 px-3 transition-all duration-200 placeholder-gray-400 text-black"
                     required
                     disabled={isSubmitting}
                   />

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { FiChevronDown, FiChevronRight, FiHome } from "react-icons/fi";
 import Image from "next/image";
 import Link from "next/link";
-import engineeringImage from "@/constants/images/Plant-engineering/hero-image-1.jpg";
+import engineeringImage from "@/constants/images/projects/digitalization/hero-image-1.jpg";
 
 export default function Hero() {
   return (

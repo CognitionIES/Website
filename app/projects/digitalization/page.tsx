@@ -24,8 +24,7 @@ export default function DigitalizationProject() {
       <Outcome />
       <Tech />
       <CTASection />
-      {/* Call to Action Section */}
-     
+      {/* Call to Action Section */} 
       <Footer />
     </div>
   );

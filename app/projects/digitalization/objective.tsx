@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import React from "react";
-import objectiveImage from "@/constants/images/projects/objective.jpg";
+import objectiveImage from "@/constants/images/projects/digitalization/objective.jpg";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
