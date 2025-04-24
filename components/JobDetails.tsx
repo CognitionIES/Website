@@ -52,12 +52,20 @@ const JobDetail = () => {
     if (!id) return;
     const { data, error } = await supabase
       .from("jobs")
-      .select("*")
+      .select("*, years_experience, skills")
       .eq("id", id)
       .eq("is_active", true)
-      .maybeSingle();
+      .maybeSingle<Job>();
     if (error || !data) setJob(null);
-    else setJob(data);
+    else if (typeof data === "object" && data !== null) {
+      setJob({
+        ...data,
+        years_experience: data.years_experience ?? null,
+        skills: data.skills ?? null,
+      });
+    } else {
+      setJob(null);
+    }
     setLoading(false);
   };
 

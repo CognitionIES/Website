@@ -57,7 +57,7 @@ export default async function JobDetailsServerPage({
       return <div>Job not found.</div>;
     }
 
-    return <JobDetailsPage job={job as Job} id={id} />;
+    return <JobDetailsPage job={job as unknown as Job} id={id} />;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (err: any) {
     console.error("Unexpected error fetching job:", err);
