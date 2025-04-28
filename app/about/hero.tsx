@@ -19,7 +19,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-br from-[#003C46]/85 to-[#0098AF]/70" />
         <div className="absolute inset-0 opacity- bg-repeat" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 h-full flex flex-col justify-end">
-          <div className="mb-2 sm:mb-2">
+          <div className="mb-2 py-14 sm:mb-2">
             <div className="text-left">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white drop-shadow-md relative">
                 Cognition IES Pvt. Ltd.
