@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import { motion } from "framer-motion";
@@ -16,6 +17,7 @@ import { FiMail } from "react-icons/fi";
 import { useState, useCallback, useRef, useEffect } from "react";
 import { CONTACT_CONSTANTS } from "@/constants/contactPage/constants";
 import Link from "next/link";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -31,9 +33,32 @@ export default function ContactSection() {
 
   const [status, setStatus] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const isMobile = useIsMobile();
+  const [isInView, setIsInView] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
 
   const { TITLE, DESCRIPTION, EMAIL } = CONTACT_CONSTANTS.CONTACT;
-  //const { STAGGER_CHILDREN } = CONTACT_CONSTANTS.ANIMATIONS;
+
+  useEffect(() => {
+    if (isMobile) return; // Skip observer for mobile
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInView(entry.isIntersecting);
+      },
+      { threshold: 0.2 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, [isMobile]);
 
   const handleInputChange = useCallback(
     (field: string, value: string | boolean) => {
@@ -81,7 +106,6 @@ export default function ContactSection() {
         } else {
           setStatus("Oops! Something went wrong.");
         }
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
       } catch (error) {
         setStatus("Error submitting form.");
       } finally {
@@ -98,100 +122,103 @@ export default function ContactSection() {
     { value: "Staffing And Recruitment", label: "Staffing And Recruitment" },
     { value: "Others", label: "Others" },
   ];
-  const [isInView, setIsInView] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsInView(entry.isIntersecting);
-      },
-      { threshold: 0.2 } // Trigger when 20% of the section is visible
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
-
-  // Animation variants for fade-in effect
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  // Animation variants for desktop only
   const fadeInVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 0.5, delay: 0.2 } },
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.7, delay: 0.4 } },
   };
+
+  const statusVariants = {
+    hidden: { opacity: 0, y: 5 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.3 } },
+  };
+
+  const lineVariants = {
+    hidden: { width: 0 },
+    visible: { width: "80%", transition: { delay: 0.6, duration: 1 } },
+  };
+
+  const circleVariants = {
+    hidden: { opacity: 0, scale: 0 },
+    visible: {
+      opacity: 0.1,
+      scale: 1,
+      transition: { delay: 0.7, duration: 1 },
+    },
+  };
+
+  // Conditionally select motion or static component
+  const Container = isMobile ? "div" : motion.div;
+  const StatusText = isMobile ? "p" : motion.p;
+  const Line = isMobile ? "span" : motion.span;
+  const Circle = isMobile ? "div" : motion.div;
+
   return (
-    <section className="py-8 md:py-12 lg:py-16 bg-gradient-to-br from-gray-50 to-gray-100 relative">
+    <section className="py-6 sm:py-8 md:py-12 lg:py-16 bg-gradient-to-br from-gray-50 to-gray-100 relative">
       <div className="relative py-2">
-        <h1 className="absolute text-6xl sm:text-8xl md:text-[10rem] lg:text-[12rem] font-bold text-[#0098af] opacity-10 sm:text-hide -top-10 md:-top-16 left-1/2 transform -translate-x-1/2 font-montserrat whitespace-nowrap">
+        <h1 className="absolute text-5xl sm:text-7xl md:text-9xl lg:text-[12rem] font-bold text-[#0098af] opacity-10 -top-8 sm:-top-10 md:-top-14 lg:-top-16 left-1/2 transform -translate-x-1/2 font-montserrat whitespace-nowrap">
           CONTACT
         </h1>
-        <h1 className="relative text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-center font-bold tracking-wide font-montserrat px-4">
-          <p className="text-[#5b5b5b] ">{TITLE}</p>
+        <h1 className="relative text-2xl sm:text-3xl md:text-4xl lg:text-7xl text-center font-bold tracking-wide font-montserrat px-4">
+          <p className="text-[#5b5b5b]">{TITLE}</p>
         </h1>
       </div>
-      <div>
-        <section ref={sectionRef} className="w-full  relative ">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-            {/* CTA section */}
-          </div>
-        </section>
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 md:mt-10 text-white relative overflow-hidden">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.4 }}
-            className="grid grid-cols-1 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-10"
+      <section ref={sectionRef} className="w-full relative">
+        <div className="max-w-[95%] sm:max-w-4xl md:max-w-5xl lg:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 sm:mt-8 md:mt-10 relative">
+          <Container
+            {...(!isMobile && {
+              initial: "hidden",
+              animate: isInView ? "visible" : "hidden",
+              variants: fadeInVariants,
+            })}
+            className="grid grid-cols-1 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 lg:gap-10"
           >
-            <div className="lg:col-span-1 space-y-4 md:space-y-6">
-              <p className="text-xl md:text-2xl text-[#003C46] font-semibold tracking-tight uppercase mb-2 md:mb-4">
+            {/* Left Section */}
+            <div className="lg:col-span-1 space-y-4 sm:space-y-6">
+              <p className="text-lg sm:text-xl md:text-2xl text-[#003C46] font-semibold tracking-tight uppercase mb-2 sm:mb-4">
                 Bring Your Vision to Life
               </p>
-              <p className="text-sm md:text-base text-gray-600 text-justify mb-8 md:mb-14 leading-relaxed">
+              <p className="text-xs sm:text-sm md:text-base text-gray-600 text-justify leading-relaxed mb-6 sm:mb-8 md:mb-14">
                 {DESCRIPTION}
               </p>
-              <div className="text-gray-600 bg-white p-4 md:p-5 rounded-lg shadow-sm">
-                <div className="flex items-center space-x-3">
-                  <FiMail className="text-[#0098AF] text-lg md:text-xl" />
+              <div className="text-gray-600 bg-white p-3 sm:p-4 md:p-5 rounded-lg shadow-sm">
+                <div className="flex items-center space-x-2 sm:space-x-3">
+                  <FiMail className="text-[#0098AF] text-base sm:text-lg md:text-xl" />
                   <div>
-                    <h3 className="text-xs md:text-sm font-semibold text-gray-800">
+                    <h3 className="text-[10px] sm:text-xs md:text-sm font-semibold text-gray-800">
                       {EMAIL.TITLE}
                     </h3>
                     <Link
                       href={`mailto:${EMAIL.ADDRESS}`}
-                      className="text-xs md:text-sm hover:underline break-all"
+                      className="text-[10px] sm:text-xs md:text-sm text-[#0098AF] hover:underline break-all"
                     >
                       {EMAIL.ADDRESS}
                     </Link>
                   </div>
                 </div>
               </div>
-              <motion.span
-                initial={{ width: 0 }}
-                whileInView={{ width: "80%" }}
-                transition={{ delay: 0.6, duration: 1 }}
-                className="block h-1 bg-gradient-to-r from-[#0098af] to-white opacity-70  rounded-full"
-              />
+              {!isMobile && (
+                <Line
+                  initial="hidden"
+                  whileInView="visible"
+                  variants={lineVariants}
+                  className="block h-1 w-3/4 sm:w-[80%] bg-gradient-to-r from-[#0098af] to-white opacity-70 rounded-full"
+                />
+              )}
             </div>
 
             {/* Contact Form */}
-            <div className="lg:col-span-3 bg-white p-4 sm:p-6 rounded-xl  border-t-4 max-h-[600px] border-[#0098AF] w-full">
-              <form onSubmit={handleSubmit} className="space-y-3">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div className="lg:col-span-3 bg-white p-4 sm:p-6 rounded-xl border-t-4 border-[#0098AF] w-full">
+              <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                   <Input
                     id="name"
                     type="text"
                     placeholder="Full Name"
                     value={formData.name}
                     onChange={(e) => handleInputChange("name", e.target.value)}
-                    className="w-full  border border-gray-300 focus:border-[#0098AF] focus:ring-1 focus:ring-[#0098AF] rounded-lg text-sm py-2 px-3 transition-all duration-200 placeholder-gray-400 text-black"
+                    className="w-full border border-gray-300 focus:border-[#0098AF] focus:ring-1 focus:ring-[#0098AF] rounded-lg text-xs sm:text-sm py-2 sm:py-2.5 px-3 transition-all duration-200 placeholder-gray-400 text-black"
                     required
                     disabled={isSubmitting}
                   />
@@ -201,7 +228,7 @@ export default function ContactSection() {
                     placeholder="Email Address"
                     value={formData.email}
                     onChange={(e) => handleInputChange("email", e.target.value)}
-                    className="w-full border border-gray-300 focus:border-[#0098AF] focus:ring-1 focus:ring-[#0098AF] rounded-lg text-sm py-2 px-3 transition-all duration-200 placeholder-gray-400"
+                    className="w-full border border-gray-300 focus:border-[#0098AF] focus:ring-1 focus:ring-[#0098AF] rounded-lg text-xs sm:text-sm py-2 sm:py-2.5 px-3 transition-all duration-200 placeholder-gray-400 text-black"
                     required
                     disabled={isSubmitting}
                   />
@@ -213,7 +240,7 @@ export default function ContactSection() {
                     onChange={(e) =>
                       handleInputChange("company", e.target.value)
                     }
-                    className="w-full border border-gray-300 focus:border-[#0098AF] focus:ring-1 focus:ring-[#0098AF] rounded-lg text-sm py-2 px-3 transition-all duration-200 placeholder-gray-400"
+                    className="w-full border border-gray-300 focus:border-[#0098AF] focus:ring-1 focus:ring-[#0098AF] rounded-lg text-xs sm:text-sm py-2 sm:py-2.5 px-3 transition-all duration-200 placeholder-gray-400 text-black"
                     required
                     disabled={isSubmitting}
                   />
@@ -223,7 +250,7 @@ export default function ContactSection() {
                     placeholder="Phone Number"
                     value={formData.phone}
                     onChange={(e) => handleInputChange("phone", e.target.value)}
-                    className="w-full border border-gray-300 focus:border-[#0098AF] focus:ring-1 focus:ring-[#0098AF] rounded-lg text-sm py-2 px-3 transition-all duration-200 placeholder-gray-400"
+                    className="w-full border border-gray-300 focus:border-[#0098AF] focus:ring-1 focus:ring-[#0098AF] rounded-lg text-xs sm:text-sm py-2 sm:py-2.5 px-3 transition-all duration-200 placeholder-gray-400 text-black"
                     required
                     disabled={isSubmitting}
                   />
@@ -234,7 +261,7 @@ export default function ContactSection() {
                   placeholder="Subject"
                   value={formData.subject}
                   onChange={(e) => handleInputChange("subject", e.target.value)}
-                  className="w-full border border-gray-300 focus:border-[#0098AF] focus:ring-1 focus:ring-[#0098AF] rounded-lg text-sm py-2 px-3 transition-all duration-200 placeholder-gray-400"
+                  className="w-full border border-gray-300 focus:border-[#0098AF] focus:ring-1 focus:ring-[#0098AF] rounded-lg text-xs sm:text-sm py-2 sm:py-2.5 px-3 transition-all duration-200 placeholder-gray-400 text-black"
                   required
                   disabled={isSubmitting}
                 />
@@ -245,7 +272,7 @@ export default function ContactSection() {
                   }
                   disabled={isSubmitting}
                 >
-                  <SelectTrigger className="w-full border border-gray-300 focus:border-[#0098AF] focus:ring-1 focus:ring-[#0098AF] rounded-lg text-sm py-2 px-3 transition-all duration-200 text-gray-500">
+                  <SelectTrigger className="w-full border border-gray-300 focus:border-[#0098AF] focus:ring-1 focus:ring-[#0098AF] rounded-lg text-xs sm:text-sm py-2 sm:py-2.5 px-3 transition-all duration-200 text-gray-500">
                     <SelectValue placeholder="Interested In" />
                   </SelectTrigger>
                   <SelectContent className="bg-white border-gray-300 rounded-lg shadow-md">
@@ -253,7 +280,7 @@ export default function ContactSection() {
                       <SelectItem
                         key={option.value}
                         value={option.value}
-                        className="text-sm py-1.5 px-3 hover:bg-[#0098AF] transition-colors duration-150"
+                        className="text-xs sm:text-sm py-1.5 px-3 hover:bg-[#0098AF] hover:text-white transition-colors duration-150"
                       >
                         {option.label}
                       </SelectItem>
@@ -265,11 +292,11 @@ export default function ContactSection() {
                   placeholder="Your Message"
                   value={formData.message}
                   onChange={(e) => handleInputChange("message", e.target.value)}
-                  className="w-full text-black border border-gray-300 focus:border-[#0098AF] focus:ring-1 focus:ring-[#0098AF] rounded-lg text-sm py-2 px-3 h-24 sm:h-20 transition-all duration-200 resize-none placeholder-gray-400"
+                  className="w-full border border-gray-300 focus:border-[#0098AF] focus:ring-1 focus:ring-[#0098AF] rounded-lg text-xs sm:text-sm py-2 sm:py-2.5 px-3 h-20 sm:h-24 transition-all duration-200 resize-none placeholder-gray-400 text-black"
                   required
                   disabled={isSubmitting}
                 />
-                <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+                <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
                   <div className="flex items-center gap-2">
                     <Checkbox
                       id="consent"
@@ -282,7 +309,7 @@ export default function ContactSection() {
                     />
                     <label
                       htmlFor="consent"
-                      className="text-xs text-gray-600 leading-tight"
+                      className="text-[10px] sm:text-xs text-gray-600 leading-tight"
                     >
                       I agree to receive further communication. See our{" "}
                       <Link
@@ -296,37 +323,41 @@ export default function ContactSection() {
                   </div>
                 </div>
                 {status && (
-                  <motion.p
-                    initial={{ opacity: 0, y: 5 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className={`text-xs font-medium text-center ${
+                  <StatusText
+                    {...(!isMobile && {
+                      initial: "hidden",
+                      animate: "visible",
+                      variants: statusVariants,
+                    })}
+                    className={`text-[10px] sm:text-xs font-medium text-center ${
                       status.includes("Error") || status.includes("Oops")
                         ? "text-red-500"
                         : "text-green-600"
                     }`}
                   >
                     {status}
-                  </motion.p>
+                  </StatusText>
                 )}
                 <Button
                   type="submit"
-                  className="w-full sm:w-auto bg-[#0098AF] text-white hover:bg-white hover:text-black rounded-lg py-2 px-4 text-sm md:text-base transition-all duration-300 hover:shadow-lg border-2 border-transparent hover:border-[#0098af] hover:outline hover:outline-2 hover:outline-[#0098af] disabled:bg-[#0098AF] disabled:cursor-not-allowed"
+                  className="w-full sm:w-auto bg-[#0098AF] text-white hover:bg-white hover:text-black rounded-lg py-2 px-4 text-xs sm:text-sm md:text-base transition-all duration-300 hover:shadow-lg border-2 border-transparent hover:border-[#0098af] hover:outline hover:outline-2 hover:outline-[#0098af] disabled:bg-[#0098AF] disabled:cursor-not-allowed"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? "Sending..." : "Submit"}
                 </Button>
               </form>
             </div>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 0.1, scale: 1 }}
-            transition={{ delay: 0.7, duration: 1 }}
-            className="absolute bottom-1/3 left-1/3 w-32 h-32 bg-[#000000] opacity-20 rounded-full blur-3xl -z-10"
-          />
-        </section>
-      </div>{" "}
+          </Container>
+          {!isMobile && (
+            <Circle
+              initial="hidden"
+              animate="visible"
+              variants={circleVariants}
+              className="absolute bottom-1/3 left-1/3 w-32 h-32 bg-[#000000] opacity-20 rounded-full blur-3xl -z-10"
+            />
+          )}
+        </div>
+      </section>
     </section>
   );
 }

@@ -17,7 +17,7 @@ export default function Hero() {
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-br from-[#003C46]/85 to-[#0098AF]/70" />
-        <div className="absolute inset-0 opacity-5 bg-[url('/images/engineering-pattern.jpg')] bg-repeat" />
+        <div className="absolute inset-0 opacity- bg-repeat" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 h-full flex flex-col justify-end">
           <div className="mb-2 sm:mb-2">
             <div className="text-left">

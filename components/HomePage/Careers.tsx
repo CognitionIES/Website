@@ -25,16 +25,16 @@ const motionVariants: Variants = {
 const responsiveConfig = {
   sectionPadding: "py-8 sm:py-12 md:py-16 lg:py-24",
   containerPadding: "px-4 sm:px-6 md:px-8 lg:px-12",
-  gap: "gap-4 sm:gap-6 md:gap-8 lg:gap-12",
+  gap: "gap-4 sm:gap-2 md:gap-8 lg:gap-12",
   imageSize: {
     width: 1500,
     height: 350,
-    className: "w-full h-[150px] sm:h-[250px] md:h-[350px] lg:h-[450px]",
+    className: "w-full h-[180px] sm:h-[250px] md:h-[350px] lg:h-[450px]",
   },
   overlayPosition:
     "bottom-2 right-2 sm:bottom-4 sm:right-4 md:bottom-6 md:right-6",
   badgePosition:
-    "top-4 right-4 sm:top-20 sm:right-8 md:top-24 md:right-12 lg:right-40",
+    "top-2 right-2 sm:top-20 sm:right-8 md:top-24 md:right-12 lg:right-40",
 };
 
 // Main Careers component
@@ -47,13 +47,13 @@ const Careers: React.FC = () => {
       className={`w-full ${responsiveConfig.sectionPadding} bg-gradient-to-b from-white to-[#E6F0F5]/20 relative overflow-hidden`}
     >
       {/* Decorative Background Elements */}
-      <div className="absolute top-0 right-0 w-32 sm:w-48 md:w-64 h-32 sm:h-48 md:h-64 bg-[#0098af]/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-40 sm:w-56 md:w-72 h-40 sm:h-56 md:h-72 bg-[#0098af]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-0 w-24 sm:w-48 md:w-64 h-24 sm:h-48 md:h-64 bg-[#0098af]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-32 sm:w-56 md:w-72 h-32 sm:h-56 md:h-72 bg-[#0098af]/5 rounded-full blur-3xl pointer-events-none" />
 
       {/* Main Content Container */}
-      <div className={`max-w-7xl mx-auto ${responsiveConfig.containerPadding}`}>
-         <div
-          className={`grid grid-cols-1 md:grid-cols-3 gap-6${responsiveConfig.gap} items-center`}
+      <div className={`max-w-[95%] sm:max-w-7xl mx-auto ${responsiveConfig.containerPadding}`}>
+        <div
+          className={`grid grid-cols-1 md:grid-cols-3 ${responsiveConfig.gap} items-start md:items-center`}
         >
           {/* Image Section */}
           <div className="relative md:col-span-2">
@@ -68,9 +68,9 @@ const Careers: React.FC = () => {
               />
               {/* Decorative Overlay - Bottom Right Corner */}
               <div
-                className={`absolute ${responsiveConfig.overlayPosition} bg-white/90 backdrop-blur-sm p-1.5 sm:p-2 md:p-3 rounded-xl shadow-md`}
+                className={`absolute ${responsiveConfig.overlayPosition} bg-white/90 backdrop-blur-sm p-1 sm:p-2 md:p-3 rounded-xl shadow-md`}
               >
-                <p className="text-xs sm:text-sm md:text-base font-medium text-[#003C46] italic">
+                <p className="text-[10px] sm:text-sm md:text-base font-medium text-[#003C46] italic">
                   Building the future together
                 </p>
               </div>
@@ -83,27 +83,27 @@ const Careers: React.FC = () => {
             whileInView="visible"
             variants={motionVariants}
             viewport={{ once: true }}
-            className="md:col-span-1 mt-4 md:mt-0"
+            className="md:col-span-1 mt-6 sm:mt-4 md:mt-0"
           >
-            <div className=" ">
-              <div className="text-right  ">
-                <span className="inline-block px-2 py-1  sm:px-3 sm:py-1.5 bg-[#0098af]/10 text-[#0098af] text-xs sm:text-xs font-medium uppercase tracking-wider rounded-full">
+            <div className="">
+              <div className="text-left md:text-right">
+                <span className="inline-block px-2 py-1 sm:px-3 sm:py-1.5 bg-[#0098af]/10 text-[#0098af] text-[10px] sm:text-xs font-medium uppercase tracking-wider rounded-full">
                   We&apos;re Hiring
                 </span>
               </div>
-             
-              <h2 className="text-xl mt-24 sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#003C46] leading-tight">
+              
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#003C46] leading-tight mt-4 md:mt-24">
                 Join Our Team
               </h2>
-              <div className="w-[80px] sm:w-[100px] h-[3px] bg-gradient-to-r from-[#0098af] to-transparent rounded-full" />
+              <div className="w-[60px] sm:w-[100px] h-[2px] md:h-[3px] bg-gradient-to-r from-[#0098af] to-transparent rounded-full mt-2 md:mt-0" />
 
-              <h3 className="text-base sm:text-lg mt-8 md:text-xl text-gray-600 font-medium leading-snug">
+              <h3 className="text-sm sm:text-lg md:text-xl text-gray-600 font-medium leading-snug mt-4 md:mt-8">
                 {SUBTITLE}
               </h3>
-              <p className="text-sm sm:text-base md:text-lg mt-4 text-gray-600 text-justify leading-relaxed">
+              <p className="text-xs sm:text-base md:text-lg mt-3 sm:mt-4 text-gray-600 text-justify leading-relaxed">
                 {DESCRIPTION}
               </p>
-              <div className="pt-12 text-right">
+              <div className="pt-6 sm:pt-12 text-left md:text-right">
                 <Link href="/careers">
                   <Button className="group bg-[#0098af] text-white hover:bg-white hover:text-[#003C46] text-xs sm:text-sm md:text-base font-medium transition-all duration-300 border-2 border-transparent hover:border-[#0098af] rounded-xl px-3 sm:px-4 md:px-5 py-1.5 sm:py-2 md:py-2.5 h-8 sm:h-9 md:h-10 shadow-md hover:shadow-lg">
                     <span>Opportunities</span>
@@ -117,7 +117,7 @@ const Careers: React.FC = () => {
       </div>
 
       {/* Divider */}
-      <div className="mt-6 sm:mt-10 md:mt-12 lg:mt-16 h-[2px] w-full max-w-3xl mx-auto bg-gradient-to-r from-transparent via-[#0098af]/50 to-transparent" />
+      <div className="mt-8 sm:mt-10 md:mt-12 lg:mt-16 h-[2px] w-full max-w-3xl mx-auto bg-gradient-to-r from-transparent via-[#0098af]/50 to-transparent" />
     </section>
   );
 };

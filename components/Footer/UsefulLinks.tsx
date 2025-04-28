@@ -1,23 +1,28 @@
-// Footer/UsefulLinks.jsx
+"use client";
 import Link from "next/link";
 import * as React from "react";
 import { motion } from "framer-motion";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 export default function UsefulLinks() {
+  const isMobile = useIsMobile();
+  const Line = isMobile ? "span" : motion.span;
+
   return (
-    <div className="md:col-span-4">
-      <div className="grid grid-cols-2  gap-4">
+    <div className="col-span-1 md:col-span-4">
+      <div className="grid grid-cols-2 gap-4 sm:gap-6">
         {/* Column 1: Useful Links */}
         <div>
-          <h3 className="text-2xl  mb-1">Useful Links</h3>
-          <motion.span
-            initial={{ width: 0 }}
-            whileInView={{ width: "50%" }}
-            transition={{ delay: 0.6, duration: 1 }}
-            className="block h-[2px] bg-gradient-to-r from-[#0098af] to-[#003C46] opacity-70  mb-4 rounded-full"
-          />
-          <ul className="space-y-2 text-[#E6F0F5]/70">
-            {/* Home */}
+          <h3 className="text-xl sm:text-2xl mb-1 sm:mb-2">Useful Links</h3>
+          {!isMobile && (
+            <Line
+              initial={{ width: 0 }}
+              whileInView={{ width: "50%" }}
+              transition={{ delay: 0.6, duration: 1 }}
+              className="block h-[2px] bg-gradient-to-r from-[#0098af] to-[#003C46] opacity-70 mb-3 sm:mb-4 rounded-full"
+            />
+          )}
+          <ul className="space-y-1 sm:space-y-2 text-[#E6F0F5]/70 text-xs sm:text-sm">
             <li>
               <Link
                 href="/"
@@ -27,7 +32,7 @@ export default function UsefulLinks() {
               >
                 Home
                 <svg
-                  className="w-4 h-4 ml-1"
+                  className="w-3 sm:w-4 h-3 sm:h-4 ml-1"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -41,8 +46,6 @@ export default function UsefulLinks() {
                 </svg>
               </Link>
             </li>
-            {/* Projects */}
-
             <li>
               <Link
                 href="/projects"
@@ -52,7 +55,7 @@ export default function UsefulLinks() {
               >
                 Projects
                 <svg
-                  className="w-4 h-4 ml-1"
+                  className="w-3 sm:w-4 h-3 sm:h-4 ml-1"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -66,7 +69,6 @@ export default function UsefulLinks() {
                 </svg>
               </Link>
             </li>
-            {/* Careers */}
             <li>
               <Link
                 href="/careers"
@@ -76,7 +78,7 @@ export default function UsefulLinks() {
               >
                 Careers
                 <svg
-                  className="w-4 h-4 ml-1"
+                  className="w-3 sm:w-4 h-3 sm:h-4 ml-1"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -90,7 +92,6 @@ export default function UsefulLinks() {
                 </svg>
               </Link>
             </li>
-            {/* Abouts Us */}
             <li>
               <Link
                 href="/about"
@@ -100,7 +101,7 @@ export default function UsefulLinks() {
               >
                 About Us
                 <svg
-                  className="w-4 h-4 ml-1"
+                  className="w-3 sm:w-4 h-3 sm:h-4 ml-1"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -114,7 +115,6 @@ export default function UsefulLinks() {
                 </svg>
               </Link>
             </li>
-            {/* Contact Us */}
             <li>
               <Link
                 href="/contact"
@@ -124,7 +124,7 @@ export default function UsefulLinks() {
               >
                 Contact Us
                 <svg
-                  className="w-4 h-4 ml-1"
+                  className="w-3 sm:w-4 h-3 sm:h-4 ml-1"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -138,7 +138,6 @@ export default function UsefulLinks() {
                 </svg>
               </Link>
             </li>
-            {/* FAQs */}
             <li>
               <Link
                 href="/faq"
@@ -148,7 +147,7 @@ export default function UsefulLinks() {
               >
                 FAQs
                 <svg
-                  className="w-4 h-4 ml-1"
+                  className="w-3 sm:w-4 h-3 sm:h-4 ml-1"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -167,15 +166,16 @@ export default function UsefulLinks() {
 
         {/* Column 2: Services */}
         <div>
-          <h3 className="text-2xl  mb-1">Services</h3>
-          <motion.span
-            initial={{ width: 0 }}
-            whileInView={{ width: "30%" }}
-            transition={{ delay: 0.6, duration: 1 }}
-            className="block h-[2px] bg-gradient-to-r from-[#0098af] to-[#003C46] opacity-70  mb-4 rounded-full"
-          />
-          <ul className="space-y-2 text-[#E6F0F5]/70">
-          {/* Product Engineering */}
+          <h3 className="text-xl sm:text-2xl mb-1 sm:mb-2">Services</h3>
+          {!isMobile && (
+            <Line
+              initial={{ width: 0 }}
+              whileInView={{ width: "30%" }}
+              transition={{ delay: 0.6, duration: 1 }}
+              className="block h-[2px] bg-gradient-to-r from-[#0098af] to-[#003C46] opacity-70 mb-3 sm:mb-4 rounded-full"
+            />
+          )}
+          <ul className="space-y-1 sm:space-y-2 text-[#E6F0F5]/70 text-xs sm:text-sm">
             <li>
               <Link
                 href="/services/product-engineering"
@@ -185,7 +185,7 @@ export default function UsefulLinks() {
               >
                 Product Engineering
                 <svg
-                  className="w-4 h-4 ml-1"
+                  className="w-3 sm:w-4 h-3 sm:h-4 ml-1"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -199,7 +199,6 @@ export default function UsefulLinks() {
                 </svg>
               </Link>
             </li>
-            {/* Plant Engineering */}
             <li>
               <Link
                 href="/services/plant-engineering"
@@ -209,7 +208,7 @@ export default function UsefulLinks() {
               >
                 Plant Engineering
                 <svg
-                  className="w-4 h-4 ml-1"
+                  className="w-3 sm:w-4 h-3 sm:h-4 ml-1"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -223,7 +222,6 @@ export default function UsefulLinks() {
                 </svg>
               </Link>
             </li>
-            {/* Saas Services */}
             <li>
               <Link
                 href="/services/saas-solution/servicecpq"
@@ -233,7 +231,7 @@ export default function UsefulLinks() {
               >
                 SaaS Solutions
                 <svg
-                  className="w-4 h-4 ml-1"
+                  className="w-3 sm:w-4 h-3 sm:h-4 ml-1"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -247,7 +245,6 @@ export default function UsefulLinks() {
                 </svg>
               </Link>
             </li>
-            {/* Staffing and recruitment */}
             <li>
               <Link
                 href="https://cognitionies.com/services/staffing-recruitment"
@@ -257,7 +254,7 @@ export default function UsefulLinks() {
               >
                 Staffing & Recruitment
                 <svg
-                  className="w-4 h-4 ml-1"
+                  className="w-3 sm:w-4 h-3 sm:h-4 ml-1"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"

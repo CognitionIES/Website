@@ -72,6 +72,7 @@ export default function ServicesPage() {
       window.removeEventListener("wheel", handleWheel);
       window.removeEventListener("scrollend", handleScrollEnd);
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentSection, isScrolling]);
 
   return (

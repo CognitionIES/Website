@@ -154,7 +154,7 @@ export default function JobDetailsPage({ job, id }: { job: Job; id: string }) {
     }
   };
 
-  if (!job) return <div className="text-center py-16">Job not found.</div>;
+  if (!job) return <div className="text-center py-16">Job not found.</div>
 
   return (
     <div className="bg-[#E6F0F5]/40 min-h-screen">
