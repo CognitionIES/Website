@@ -7,6 +7,7 @@ import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { CAREERS_CONSTANTS } from "@/constants/home/careers";
+import { useIsMobile } from "@/hooks/use-mobile"; // Import the useMobile hook
 
 // Define types for props and constants
 interface CareersContent {
@@ -42,19 +43,72 @@ const Careers: React.FC = () => {
   const { IMAGE, SUBTITLE, DESCRIPTION } =
     CAREERS_CONSTANTS as unknown as CareersContent;
 
+  // Use the custom useMobile hook
+  const isMobile = useIsMobile();
+
+  // Mobile Layout
+  if (isMobile) {
+    return (
+      <section
+        className={`w-full ${responsiveConfig.sectionPadding} bg-gradient-to-b from-white to-[#E6F0F5]/20 relative overflow-hidden`}
+      >
+        <div className="max-w-[95%] sm:max-w-7xl mx-auto ${responsiveConfig.containerPadding}">
+          <div className="flex flex-col  sm:gap-8 md:gap-12">
+            {/* "We’re Hiring" Text */}
+            <div className="text-left ">
+              <span className="inline-block px-2 py-1 sm:px-3 sm:py-1.5 bg-[#0098af]/10 text-[#0098af] text-xs sm:text-sm font-medium uppercase tracking-wider rounded-full">
+                We&apos;re Hiring
+              </span>
+            </div>
+
+            {/* "Join Our Team" Title */}
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#003C46] leading-tight mt-2">
+              Join Our Team
+            </h2>
+            <div className="w-[60px] sm:w-[100px] h-[2px] md:h-[3px] bg-gradient-to-r from-[#0098af] to-transparent rounded-full mt-[3px]" />
+
+            {/* Image */}
+            <div className="relative rounded-2xl mt-4 overflow-hidden shadow-lg">
+              <Image
+                src={IMAGE}
+                alt="Team collaborating in office"
+                width={1500}
+                height={350}
+                className="w-full h-[250px] sm:h-[350px] object-cover transition-transform duration-300 hover:scale-105"
+                priority
+              />
+            </div>
+
+            {/* Subtitle and Description */}
+            <h3 className="text-lg sm:text-xl text-gray-600 font-medium leading-snug mt-4">
+              {SUBTITLE}
+            </h3>
+            <p className="text-base sm:text-lg text-gray-600 mt-3 sm:mt-4 text-justify leading-relaxed">
+              {DESCRIPTION}
+            </p>
+
+            {/* "Opportunities" Button */}
+            <div className="pt-6 text-left">
+              <Link href="/careers">
+                <Button className="group bg-[#0098af] text-white hover:bg-white hover:text-[#003C46] text-sm sm:text-base font-medium transition-all duration-300 border-2 border-transparent hover:border-[#0098af] rounded-xl px-4 py-2.5 h-10 sm:h-11 shadow-md hover:shadow-lg">
+                  <span>Opportunities</span>
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  // Desktop Layout (default)
   return (
     <section
       className={`w-full ${responsiveConfig.sectionPadding} bg-gradient-to-b from-white to-[#E6F0F5]/20 relative overflow-hidden`}
     >
-      {/* Decorative Background Elements */}
-      <div className="absolute top-0 right-0 w-24 sm:w-48 md:w-64 h-24 sm:h-48 md:h-64 bg-[#0098af]/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-32 sm:w-56 md:w-72 h-32 sm:h-56 md:h-72 bg-[#0098af]/5 rounded-full blur-3xl pointer-events-none" />
-
-      {/* Main Content Container */}
-      <div className={`max-w-[95%] sm:max-w-7xl mx-auto ${responsiveConfig.containerPadding}`}>
-        <div
-          className={`grid grid-cols-1 md:grid-cols-3 ${responsiveConfig.gap} items-start md:items-center`}
-        >
+      <div className="max-w-[95%] sm:max-w-7xl mx-auto ${responsiveConfig.containerPadding}">
+        <div className="grid grid-cols-1 md:grid-cols-3 ${responsiveConfig.gap} items-start md:items-center">
           {/* Image Section */}
           <div className="relative md:col-span-2">
             <div className="rounded-2xl overflow-hidden shadow-lg">
@@ -66,7 +120,6 @@ const Careers: React.FC = () => {
                 className={`${responsiveConfig.imageSize.className} object-cover transition-transform duration-300 hover:scale-105`}
                 priority
               />
-              {/* Decorative Overlay - Bottom Right Corner */}
               <div
                 className={`absolute ${responsiveConfig.overlayPosition} bg-white/90 backdrop-blur-sm p-1 sm:p-2 md:p-3 rounded-xl shadow-md`}
               >
@@ -85,13 +138,13 @@ const Careers: React.FC = () => {
             viewport={{ once: true }}
             className="md:col-span-1 mt-6 sm:mt-4 md:mt-0"
           >
-            <div className="">
+            <div className="ml-8">
               <div className="text-left md:text-right">
                 <span className="inline-block px-2 py-1 sm:px-3 sm:py-1.5 bg-[#0098af]/10 text-[#0098af] text-[10px] sm:text-xs font-medium uppercase tracking-wider rounded-full">
                   We&apos;re Hiring
                 </span>
               </div>
-              
+
               <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#003C46] leading-tight mt-4 md:mt-24">
                 Join Our Team
               </h2>

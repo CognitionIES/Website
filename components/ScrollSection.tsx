@@ -5,6 +5,7 @@ import { useInView } from "react-intersection-observer";
 import Image from "next/image";
 import blueBulletImage from "@/constants/images/Bullet_Points/bullet_point_blue_1.png";
 import BulletPointGray from "@/constants/images/Bullet_Points/gray.png";
+import { useIsMobile } from "@/hooks/use-mobile"; // Adjust path as needed
 
 interface ScrollSectionProps {
   index: number;
@@ -28,6 +29,7 @@ export function ScrollSection({
     threshold: 0.3,
     triggerOnce: false,
   });
+  const isMobile = useIsMobile();
 
   const isEven = index % 2 === 0;
   const bulletImage = isEven ? blueBulletImage : BulletPointGray;
@@ -42,7 +44,6 @@ export function ScrollSection({
     },
   };
 
-  // Modified to always animate from right to left
   const itemVariants = {
     hidden: {
       opacity: 0,
@@ -57,6 +58,57 @@ export function ScrollSection({
     },
   };
 
+  if (isMobile) {
+    return (
+      <motion.div
+        ref={ref}
+        variants={containerVariants}
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+        className="relative max-w-7xl mx-auto px-4 py-6"
+        role="region"
+        aria-label={`Section ${title}`}
+      >
+        <div className="space-y-4">
+          <motion.h2
+            className="text-3xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/80 uppercase"
+            variants={itemVariants}
+          >
+            {title}
+          </motion.h2>
+
+          <motion.ul
+            className="grid grid-cols-2 gap-x-4 gap-y-3"
+            variants={containerVariants}
+          >
+            {bulletPoints.map((point, idx) => (
+              <motion.li
+                key={idx}
+                className="flex items-start space-x-3 group"
+                variants={itemVariants}
+                whileHover={shouldReduceMotion ? {} : { x: -5 }}
+                role="listitem"
+              >
+                <Image
+                  src={bulletImage}
+                  alt=""
+                  width={16}
+                  height={16}
+                  className="mt-1 flex-shrink-0 transition-transform group-hover:scale-125"
+                  aria-hidden="true"
+                />
+                <span className="text-lg transition-colors uppercase">
+                  {point}
+                </span>
+              </motion.li>
+            ))}
+          </motion.ul>
+        </div>
+      </motion.div>
+    );
+  }
+
+  // Desktop view (unchanged)
   return (
     <motion.div
       ref={ref}
@@ -101,7 +153,7 @@ export function ScrollSection({
                 key={idx}
                 className="flex items-start space-x-3 group flex-1 min-w-[250px]"
                 variants={itemVariants}
-                whileHover={shouldReduceMotion ? {} : { x: -5 }} // Changed from x: 5 to x: -5 for hover
+                whileHover={shouldReduceMotion ? {} : { x: -5 }}
                 role="listitem"
               >
                 <Image

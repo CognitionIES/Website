@@ -28,22 +28,22 @@ export default function FooterNavigation() {
       links: [
         { 
           label: "Product Engineering", 
-          href: "https://cognitionies.com/product-engineering", 
+          href: "/services/product-engineering", 
           isExternal: true 
         },
         { 
           label: "Plant Engineering", 
-          href: "https://cognitionies.com/plant-engineering",
+          href: "/services/plant-engineering",
           isExternal: true 
         },
         { 
           label: "SaaS Solutions", 
-          href: "https://cognitionies.com/saas-solution",
+          href: "/services/saas-solution/servicecpq",
           isExternal: true 
         },
         { 
           label: "Staffing & Recruitment", 
-          href: "https://cognitionies.com/staffing-recruitment",
+          href: "/services/staffing-recruitment",
           isExternal: true 
         },
       ],

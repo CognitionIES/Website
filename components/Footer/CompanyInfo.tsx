@@ -20,30 +20,32 @@ export default function CompanyInfo() {
       className="col-span-1 md:col-span-5"
     >
       {/* Company logo */}
-      <div className="flex items-center mb-4 sm:mb-6 relative">
+      <div className="flex items-center justify-center md:justify-start mb-4 sm:mb-6 relative">
         <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight">
           <Image
             src={iamge}
             alt="Company Logo"
-            width={480}
+            width={580}
             height={80}
-            className="w-[200px] sm:w-[300px] md:w-[400px] lg:w-[480px] h-auto"
+            className="max-w-[100%] h-auto"
           />
         </span>
       </div>
-      {/* Company description */}
-      <div className="pr-0 sm:pr-8">
-        <p className="text-xs sm:text-sm md:text-base text-justify leading-relaxed text-gray-200 mb-4 sm:mb-6 font-light">
-          {DESCRIPTION}
-        </p>
-      </div>
-      {/* Decorative line */}
+      {/* Company description - only shown in desktop view */}
+      {!isMobile && (
+        <div className="pr-0 sm:pr-8">
+          <p className="text-xs sm:text-sm md:text-base text-justify leading-relaxed text-gray-200 mb-4 sm:mb-6 font-light">
+            {DESCRIPTION}
+          </p>
+        </div>
+      )}
+      {/* Decorative line for non-mobile */}
       {!isMobile && (
         <Line
           initial={{ width: 0 }}
           whileInView={{ width: "70%" }}
           transition={{ delay: 0.6, duration: 1 }}
-          className="block h-1 bg-gradient-to-r from-[#0098af] to-[#003C46] opacity-70 rounded-full"
+          className="block h-1 bg-gradient-to-r from-[#0098AF] to-[#003C46] opacity-70 rounded-full"
         />
       )}
     </Container>

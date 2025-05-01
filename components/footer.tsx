@@ -11,17 +11,18 @@ export default function Footer() {
   return (
     <footer className="bg-[#003C46] text-white relative overflow-hidden">
       <div className="relative px-4 sm:px-6">
-        <div className="max-w-[95%] sm:max-w-4xl md:max-w-5xl lg:max-w-7xl mx-auto py-6 sm:py-8 md:py-10 lg:py-10">
+        <div className="max-w-[95%] sm:max-w-4xl md:max-w-5xl lg:max-w-7xl mx-auto mt-6 sm:py-8 md:py-10 lg:py-10">
           {/* Grid layout for footer sections */}
-          <div className="grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-10 md:gap-8 lg:gap-12 mt-4">
+          <div className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-10 md:gap-8 lg:gap-12 mt-4">
             <CompanyInfo />
             <div className="col-span-1 md:col-span-4 mt-0 sm:mt-5 md:mt-5 ml-0 sm:ml-16">
               <UsefulLinks />
             </div>
           </div>
         </div>
-        <div className="absolute bottom-2 right-4 sm:bottom-2 sm:right-8 md:bottom-1 md:right-40 text-base sm:text-lg text-[#E6F0F5]/70">
-          <div className="flex items-center space-x-2 sm:space-x-3 mt-6 sm:mt-10">
+        {/* LinkedIn and Email for desktop view */}
+        <div className="hidden md:block absolute bottom-2 right-4 sm:bottom-2 sm:right-8 md:bottom-1 md:right-40 text-base sm:text-lg text-[#E6F0F5]/70">
+          <div className="flex items-center space-x-2 sm:space-x-3 mt-8 sm:mt-10">
             <Link
               href="https://www.linkedin.com/company/cognitionies"
               target="_blank"
