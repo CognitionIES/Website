@@ -126,9 +126,10 @@ const RecentProjects = () => {
             Our Recent Projects
           </h1>
         </motion.div>
-        {/* Navigation buttons (mobile only) */}
-        {isMobile && (
-          <div className="flex justify-between mt-4 mb-4 sm:hidden">
+
+        {/* Navigation buttons (desktop only) */}
+        {!isMobile && (
+          <div className="flex justify-between mt-4 mb-4 sm:hidden md:flex">
             <Button
               variant="outline"
               className="p-2 rounded-full bg-white border-[#0098af] text-[#0098af] hover:bg-[#0098af] hover:text-white transition-colors"
@@ -147,6 +148,7 @@ const RecentProjects = () => {
             </Button>
           </div>
         )}
+
         {/* Projects grid with navigation */}
         <div className="relative max-w-7xl">
           <div className="overflow-hidden">
@@ -200,19 +202,19 @@ const RecentProjects = () => {
                       <h3 className="text-lg sm:text-2xl font-semibold text-[#5b5b5b] group-hover:text-[#0098af] transition-colors">
                         {project.title}
                       </h3>
-                      <p className="text-gray-600 line-clamp-3  text-sm sm:text-base  leading-relaxed">
+                      <p className="text-gray-600 line-clamp-3 text-sm sm:text-base leading-relaxed">
                         {project.description}
                       </p>
-                      <a
+                      <Link
                         href={project.href}
                         className="inline-flex items-center gap-1.5 text-sm sm:text-base font-medium text-[#0098af] group relative"
                       >
                         <span className="relative">
                           View in detail
-                          <span className="absolute -bottom-px leftgap- left-0 w-full h-px bg-[#0098af]/50 scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                          <span className="absolute -bottom-px left-0 w-full h-px bg-[#0098af]/50 scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
                         </span>
                         <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </motion.div>
@@ -220,6 +222,25 @@ const RecentProjects = () => {
             </div>
           </div>
         </div>
+
+        {/* Circular Indicators (mobile only) */}
+        {isMobile && (
+          <div className="flex justify-center gap-1.5 mt-4">
+            {projects.map((project, index) => (
+              <button
+                key={project.id}
+                className={cn(
+                  "w-2 h-2 rounded-full transition-all duration-300",
+                  activeIndex === index
+                    ? "bg-[#0098af] scale-125"
+                    : "bg-[#5b5b5b]/20"
+                )}
+                onClick={() => setActiveIndex(index)}
+                aria-label={`Go to ${project.title} project`}
+              />
+            ))}
+          </div>
+        )}
 
         {/* View all projects button */}
         <motion.div

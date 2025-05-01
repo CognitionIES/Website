@@ -2,10 +2,10 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import Image from "next/image";
+import { useIsMobile } from "@/hooks/use-mobile"; // Adjust path as needed
+import Image from "next/image"; // Ensure Image is imported from next/image
 import blueBulletImage from "@/constants/images/Bullet_Points/bullet_point_blue_1.png";
 import BulletPointGray from "@/constants/images/Bullet_Points/gray.png";
-import { useIsMobile } from "@/hooks/use-mobile"; // Adjust path as needed
 
 interface ScrollSectionProps {
   index: number;
@@ -32,7 +32,6 @@ export function ScrollSection({
   const isMobile = useIsMobile();
 
   const isEven = index % 2 === 0;
-  const bulletImage = isEven ? blueBulletImage : BulletPointGray;
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -65,44 +64,43 @@ export function ScrollSection({
         variants={containerVariants}
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
-        className="relative max-w-7xl mx-auto px-4 py-6"
+        className="relative max-w-7xl mx-auto px-2 py-6"
         role="region"
         aria-label={`Section ${title}`}
+        aria-labelledby={`section-title-${index}`}
       >
-        <div className="space-y-4">
-          <motion.h2
-            className="text-3xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/80 uppercase"
-            variants={itemVariants}
-          >
-            {title}
-          </motion.h2>
+        <div
+          className=" backdrop-blur-sm p-4 rounded-xl "
+        >
+          <div className="space-y-8">
+            <motion.h2
+              id={`section-title-${index}`}
+              className="text-2xl sm:text-3xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/80 uppercase"
+              variants={itemVariants}
+            >
+              {title}
+            </motion.h2>
 
-          <motion.ul
-            className="grid grid-cols-2 gap-x-4 gap-y-3"
-            variants={containerVariants}
-          >
-            {bulletPoints.map((point, idx) => (
-              <motion.li
-                key={idx}
-                className="flex items-start space-x-3 group"
-                variants={itemVariants}
-                whileHover={shouldReduceMotion ? {} : { x: -5 }}
-                role="listitem"
-              >
-                <Image
-                  src={bulletImage}
-                  alt=""
-                  width={16}
-                  height={16}
-                  className="mt-1 flex-shrink-0 transition-transform group-hover:scale-125"
-                  aria-hidden="true"
-                />
-                <span className="text-lg transition-colors uppercase">
-                  {point}
-                </span>
-              </motion.li>
-            ))}
-          </motion.ul>
+            <motion.ul
+              className="grid grid-cols-1 sm:grid-cols-2 gap-3"
+              variants={containerVariants}
+            >
+              {bulletPoints.map((point, idx) => (
+                <motion.li
+                  key={idx}
+                  className="flex items-start space-x-2 group min-w-0"
+                  variants={itemVariants}
+                  whileHover={shouldReduceMotion ? {} : { x: -5 }}
+                  role="listitem"
+                >
+                  <span className="mt-1 w-4 h-4 bg-gray-300 rounded-full inline-block flex-shrink-0 mr-2 group-hover:bg-gray-400 transition-colors duration-200"></span>
+                  <span className="text-base sm:text-lg transition-colors uppercase break-words">
+                    {point}
+                  </span>
+                </motion.li>
+              ))}
+            </motion.ul>
+          </div>
         </div>
       </motion.div>
     );
@@ -157,7 +155,7 @@ export function ScrollSection({
                 role="listitem"
               >
                 <Image
-                  src={bulletImage}
+                  src={isEven ? blueBulletImage : BulletPointGray}
                   alt=""
                   width={16}
                   height={16}

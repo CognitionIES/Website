@@ -60,10 +60,10 @@ export default function CTASection() {
           transition={{ duration: 0.7, delay: 0.4 }}
           className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 drop-shadow-md">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-semibold mb-6 drop-shadow-md">
             Ready to Start Your Project?
           </h2>
-          <p className="text-base sm:text-lg mb-8">
+          <p className="text-sm sm:text-lg mb-8">
             Contact us today to see how we can bring your ideas to life.
           </p>
           <Link href="/contact">

@@ -1,15 +1,15 @@
-
-
 import React, { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { CheckCircle } from "lucide-react";
 import keyImage from "@/constants/images/bg/key.jpg";
 import deliverablesImage from "@/constants/images/bg/deliverables.jpg";
 import Image from "next/image";
+import { useIsMobile } from "@/hooks/use-mobile"; // Assuming this hook exists
 
 const PCMKeyFindings = () => {
   const [isInView, setIsInView] = useState(false);
   const sectionRef = useRef(null);
+  const isMobile = useIsMobile(); // Get isMobile from hook
 
   const keyFindings = [
     "Major weight savings and design simplification opportunities were found across valves, cradles, tanks, and support structures",
@@ -124,127 +124,189 @@ const PCMKeyFindings = () => {
         animate={isInView ? "visible" : "hidden"}
         className="absolute bottom-20 left-10 w-72 h-72 bg-[#003C46]/5 rounded-full blur-3xl z-0"
       />
-      
 
       <section
         ref={sectionRef}
         className="relative z-10 py-6 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
       >
         {/* Key Findings Section */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          className="relative hidden md:block h-[320px] rounded-xl shadow-md overflow-hidden mb-8"
-        >
-          <motion.div style={{ y: y1 }}>
-            <Image
-              src={keyImage}
-              alt="Engineering services"
-              width={300}
-              height={500}
-              className="w-full h-full opacity-40 object-cover"
-            />
-          </motion.div>
-          {/* Overlay text on top of the image */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#003C46]/10 to-[#0098af]/60  flex flex-col p-6">
+        {isMobile ? (
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            className="space-y-4 mb-6"
+          >
             <motion.h2
-              className="text-4xl font-bold mb-6 flex items-center gap-2"
               variants={itemVariants}
+              className="text-2xl sm:text-3xl font-bold flex items-center gap-2 text-[#003C46]"
             >
-              <span className="text-3xl">📌</span> Key Findings
+              <span className="text-2xl">📌</span> Key Findings
             </motion.h2>
-
-            <motion.div
-              variants={containerVariants}
-              className="grid grid-cols-1 md:grid-cols-1 gap-2"
-            >
+            <motion.div variants={containerVariants} className="">
               {keyFindings.map((finding, idx) => (
                 <motion.div
                   key={idx}
                   variants={itemVariants}
-                  className="rounded-xl px-5 py-1 group"
-                  whileHover={{
-                    x: 5,
-                    scale: 1.01,
-                    transition: { duration: 0.2 },
-                  }}
+                  className="flex items-start px-2 py-1 gap-2"
                 >
-                  <div className="flex items-start gap-3">
-                    <motion.div
-                      className="flex-shrink-0 w-7 h-7 rounded-full bg-[#00b4d8] text-[#5b5b5b] flex items-center justify-center"
-                      whileHover={{ scale: 1.1, rotate: 360 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <span className="text-sm font-bold">{idx + 1}</span>
-                    </motion.div>
-                    <p className="text-black/90  transition-colors duration-300">
-                      {finding}
-                    </p>
-                  </div>
+                  <span className="text-[#00b4d8] mt-1">•</span>
+                  <p className="text-black/90  text-base sm:text-base">
+                    {finding}
+                  </p>
                 </motion.div>
               ))}
             </motion.div>
-          </div>
-        </motion.div>
+          </motion.div>
+        ) : (
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            className="relative hidden md:block h-[320px] rounded-xl shadow-md overflow-hidden mb-8"
+          >
+            <motion.div style={{ y: y1 }}>
+              <Image
+                src={keyImage}
+                alt="Engineering services"
+                width={300}
+                height={500}
+                className="w-full h-full opacity-40 object-cover"
+              />
+            </motion.div>
+            {/* Overlay text on top of the image */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#003C46]/10 to-[#0098af]/60 flex flex-col p-6">
+              <motion.h2
+                className="text-4xl font-bold mb-6 flex items-center gap-2"
+                variants={itemVariants}
+              >
+                <span className="text-3xl">📌</span> Key Findings
+              </motion.h2>
+
+              <motion.div
+                variants={containerVariants}
+                className="grid grid-cols-1 md:grid-cols-1 gap-2"
+              >
+                {keyFindings.map((finding, idx) => (
+                  <motion.div
+                    key={idx}
+                    variants={itemVariants}
+                    className="rounded-xl px-5 py-1 group"
+                    whileHover={{
+                      x: 5,
+                      scale: 1.01,
+                      transition: { duration: 0.2 },
+                    }}
+                  >
+                    <div className="flex items-start gap-3">
+                      <motion.div
+                        className="flex-shrink-0 w-7 h-7 rounded-full bg-[#00b4d8] text-[#5b5b5b] flex items-center justify-center"
+                        whileHover={{ scale: 1.1, rotate: 360 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <span className="text-sm font-bold">{idx + 1}</span>
+                      </motion.div>
+                      <p className="text-black transition-colors  duration-300">
+                        {finding}
+                      </p>
+                    </div>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </div>
+          </motion.div>
+        )}
 
         {/* Deliverables Section */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          className="relative hidden md:block h-[280px] rounded-xl shadow-md overflow-hidden"
-        >
-          <motion.div style={{ y: y2 }}>
-            <Image
-              src={deliverablesImage}
-              alt="Engineering services"
-              width={300}
-              height={500}
-              className="w-full h-full object-cover"
-            />
-          </motion.div>
-          {/* Overlay text on top of the image */}
-          <div className="absolute inset-0 bg-black/40 flex flex-col p-6">
+        {isMobile ? (
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            className="space-y-4"
+          >
             <motion.h2
-              className="text-4xl font-bold mb-6 flex items-center gap-2 bg-gradient-to-r from-[#003C46] to-[#0098af] bg-clip-text  text-black/80"
               variants={itemVariants}
+              className="text-2xl sm:text-3xl font-bold flex items-center gap-2 text-[#003C46]"
             >
-              <span className="text-3xl text-black">📦</span> Deliverables
+              <span className="text-2xl">📦</span> Deliverables
             </motion.h2>
-
             <motion.div
               variants={containerVariants}
-              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-1"
+              className="grid grid-cols-2 sm:grid-cols-2 "
             >
               {deliverables.map((deliverable, idx) => (
                 <motion.div
                   key={idx}
                   variants={itemVariants}
-                  className="group"
-                  whileHover={{
-                    y: -5,
-                    scale: 1.03,
-                    boxShadow: "0 4px 6px rgba(0,0,0,0.1)",
-                    transition: { duration: 0.2 },
-                  }}
+                  className="flex items-start gap-2 p-1 rounded-lg "
                 >
-                  <div className="flex items-start gap-2 mb-2 p-3 border-l-4 border-[#00b4d8] bg-white/70 rounded-r-lg shadow-sm hover:bg-white hover:shadow-md transition-all duration-300">
-                    <motion.div
-                      whileHover={{ scale: 1.2, rotate: 360 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <CheckCircle className="text-[#00b4d8] h-4 w-4 flex-shrink-0 mt-0.5" />
-                    </motion.div>
-                    <span className="text-[#000000] text-sm group-hover:text-[#003C46] transition-colors duration-300">
-                      {deliverable}
-                    </span>
-                  </div>
+                  <CheckCircle className="text-[#00b4d8] h-4 w-4 mt-0.5" />
+                  <span className="text-[#000000] text-base sm:text-base">
+                    {deliverable}
+                  </span>
                 </motion.div>
               ))}
             </motion.div>
-          </div>
-        </motion.div>
+          </motion.div>
+        ) : (
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            className="relative hidden md:block h-[280px] rounded-xl shadow-md overflow-hidden"
+          >
+            <motion.div style={{ y: y2 }}>
+              <Image
+                src={deliverablesImage}
+                alt="Engineering services"
+                width={300}
+                height={500}
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
+            {/* Overlay text on top of the image */}
+            <div className="absolute inset-0 bg-black/40 flex flex-col p-6">
+              <motion.h2
+                className="text-4xl font-bold mb-6 flex items-center gap-2 bg-gradient-to-r from-[#003C46] to-[#0098af] bg-clip-text text-black/80"
+                variants={itemVariants}
+              >
+                <span className="text-3xl text-black">📦</span> Deliverables
+              </motion.h2>
+
+              <motion.div
+                variants={containerVariants}
+                className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-1"
+              >
+                {deliverables.map((deliverable, idx) => (
+                  <motion.div
+                    key={idx}
+                    variants={itemVariants}
+                    className="group"
+                    whileHover={{
+                      y: -5,
+                      scale: 1.03,
+                      boxShadow: "0 4px 6px rgba(0,0,0,0.1)",
+                      transition: { duration: 0.2 },
+                    }}
+                  >
+                    <div className="flex items-start gap-2 mb-2 p-3 border-l-4 border-[#00b4d8] bg-white/70 rounded-r-lg shadow-sm hover:bg-white hover:shadow-md transition-all duration-300">
+                      <motion.div
+                        whileHover={{ scale: 1.2, rotate: 360 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <CheckCircle className="text-[#00b4d8] h-4 w-4 flex-shrink-0 mt-0.5" />
+                      </motion.div>
+                      <span className="text-[#000000] text-sm group-hover:text-[#003C46] transition-colors duration-300">
+                        {deliverable}
+                      </span>
+                    </div>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </div>
+          </motion.div>
+        )}
       </section>
     </div>
   );

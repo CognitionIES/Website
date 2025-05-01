@@ -1,11 +1,14 @@
 "use client";
+
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { useIsMobile } from "@/hooks/use-mobile"; // Assuming this hook exists
 
 export default function Scope() {
   const listRefs = useRef<(HTMLLIElement | null)[]>([]);
   const [isInView, setIsInView] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
+  const isMobile = useIsMobile(); // Get isMobile from hook
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -30,7 +33,7 @@ export default function Scope() {
   }, []);
 
   useEffect(() => {
-    if (isInView) {
+    if (isInView && !isMobile) {
       listRefs.current.forEach((item, index) => {
         if (item) {
           setTimeout(() => {
@@ -40,7 +43,7 @@ export default function Scope() {
         }
       });
     }
-  }, [isInView]);
+  }, [isInView, isMobile]);
 
   const sectionVariants = {
     hidden: { opacity: 0, y: 30 },
@@ -52,6 +55,19 @@ export default function Scope() {
         ease: "easeOut",
       },
     },
+  };
+
+  const mobileItemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (index: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 0.1 * index,
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    }),
   };
 
   // Common data for both desktop and mobile
@@ -82,86 +98,85 @@ export default function Scope() {
     <div>
       <section
         ref={sectionRef}
-        className="w-full py-6 sm:py-10 lg:py-6 relative overflow-hidden"
+        className="w-full py-8 sm:py-10 lg:py-12 relative overflow-hidden"
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200 opacity-90 z-0"></div>
-        <motion.div
-          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
-          variants={sectionVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-        >
-          {/* Desktop version */}
-          <div className="relative hidden bg-white/95 md:block md:h-[370px] rounded-xl overflow-hidden shadow-lg transform transition-all duration-500 hover:shadow-xl animate-fade-in">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#0098AF]/10 to-transparent rounded-bl-full"></div>
-            <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-[#0098AF]/10 to-transparent rounded-tr-full"></div>
-            <div className="absolute inset-0 flex flex-col p-6">
-              <div className="w-full flex justify-end">
-                <ul className="">
-                  <h3 className="text-3xl font-semibold uppercase pl-2 text-[#5b5b5b] mb-4 flex items-center animate-fade-in">
-                    <span className="text-[#0098af] animate-float">🛠</span>
-                    <span className="pl-4">Scope of Work</span>
-                  </h3>
-                  {scopeItems.map((item, index) => (
-                    <li
-                      key={index}
-                      ref={(el) => {
-                        listRefs.current[index] = el;
-                      }}
-                      className="flex pl-4 mb-2 opacity-0 translate-y-4 transition-all duration-500 ease-out"
-                    >
-                      <span className="text-[#0098af] pr-2 transition-transform duration-300 hover:scale-110">
-                        ⦿
-                      </span>
-                      <p className="flex-1 text-indent-0 pl-6 hanging-indent">
-                        <span className="font-bold uppercase">
-                          {item.title}:{" "}
-                        </span>
-                        {item.desc}
-                      </p>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          {/* Mobile version */}
+        <div>
           <motion.div
-            className="md:hidden bg-white/95 rounded-xl overflow-hidden shadow-lg p-4 animate-fade-in"
+            className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
             variants={sectionVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
           >
-            <h3 className="text-2xl font-semibold uppercase text-[#5b5b5b] mb-4 flex items-center">
-              <span className="text-[#0098af] animate-float">🛠</span>
-              <span className="pl-2">Scope of Work</span>
-            </h3>
-            <ul className="space-y-4">
-              {scopeItems.map((item, index) => (
-                <li
-                  key={index}
-                  ref={(el) => {
-                    listRefs.current[index + scopeItems.length] = el; // Offset index for mobile
-                  }}
-                  className="opacity-0 translate-y-4 transition-all duration-500 ease-out"
-                >
-                  <div className="flex">
-                    <span className="text-[#0098af] pr-2 transition-transform duration-300 hover:scale-110">
-                      ⦿
-                    </span>
-                    <div>
-                      <span className="font-bold text-sm uppercase block">
-                        {item.title}
-                      </span>
-                      <p className="text-sm text-gray-700">{item.desc}</p>
+            {isMobile && (
+              <div className="bg-white/95 rounded-xl shadow-md p-6 space-y-4 ">
+                <h3 className="text-xl sm:text-2xl font-semibold uppercase text-[#5b5b5b] flex items-center">
+                  <span className="text-[#0098af] mr-2">🛠</span>
+                  Scope of Work
+                </h3>
+                <ul className="space-y-4">
+                  {scopeItems.map((item, index) => (
+                    <motion.li
+                      key={index}
+                      custom={index}
+                      variants={mobileItemVariants}
+                      initial="hidden"
+                      animate={isInView ? "visible" : "hidden"}
+                      className="flex items-start"
+                    >
+                      <span className="text-[#0098af] pr-3 mt-1">⦿</span>
+                      <div>
+                        <span className="font-bold uppercase text-sm sm:text-base">
+                          {item.title}
+                        </span>
+                        <p className="text-gray-600 text-sm sm:text-base leading-relaxed mt-1">
+                          {item.desc}
+                        </p>
+                      </div>
+                    </motion.li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {!isMobile && (
+              <div className="relative bg-white/95 rounded-xl overflow-hidden shadow-lg transform transition-all duration-500 hover:shadow-xl">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#0098AF]/10 to-transparent rounded-bl-full"></div>
+                <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-[#0098AF]/10 to-transparent rounded-tr-full"></div>
+                <div className="relative flex flex-col p-6 sm:p-8 lg:p-10">
+                  <div className="w-full ">
+                    <div className="w-full ">
+                      <h3 className="text-2xl sm:text-3xl font-semibold uppercase text-[#5b5b5b] mb-6 flex items-center">
+                        <span className="text-[#0098af] mr-3">🛠</span>
+                        Scope of Work
+                      </h3>
+                      <ul className="space-y-4">
+                        {scopeItems.map((item, index) => (
+                          <li
+                            key={index}
+                            ref={(el) => {
+                              listRefs.current[index] = el;
+                            }}
+                            className="flex items-start pl-4 opacity-0 translate-y-4 transition-all duration-500 ease-out"
+                          >
+                            <span className="text-[#0098af] pr-3 mt-1 transition-transform duration-300 hover:scale-110">
+                              ⦿
+                            </span>
+                            <p className="flex-1 text-base sm:text-lg text-gray-700">
+                              <span className="font-bold uppercase">
+                                {item.title}:{" "}
+                              </span>
+                              {item.desc}
+                            </p>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
-                </li>
-              ))}
-            </ul>
+                </div>
+              </div>
+            )}
           </motion.div>
-        </motion.div>
+        </div>
       </section>
     </div>
   );

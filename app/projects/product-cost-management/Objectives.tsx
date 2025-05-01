@@ -5,10 +5,12 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import objectiveImage from "@/constants/images/projects/pcm/objective.jpg";
 import objectiveImage2 from "@/constants/images/projects/pcm/objective-two.jpg";
+import { useIsMobile } from "@/hooks/use-mobile"; // Assuming this hook exists
 
 export default function Objectives() {
   const [isInView, setIsInView] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
+  const isMobile = useIsMobile(); // Get isMobile from hook
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -27,7 +29,6 @@ export default function Objectives() {
 
     return () => {
       if (sectionRef.current) {
-        // eslint-disable-next-line react-hooks/exhaustive-deps
         observer.unobserve(sectionRef.current);
       }
     };
@@ -45,145 +46,235 @@ export default function Objectives() {
     },
   };
 
+  const mobileItemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (index: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 0.1 * index,
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    }),
+  };
+
   return (
     <div>
       <section
         ref={sectionRef}
-        className="w-full py-8 sm:py-10 lg:py-6 relative bg-gradient-to-b from-white to-[#E6F0F5]/30"
+        className="w-full py-8 sm:py-10 lg:py-12 relative bg-gradient-to-b from-white to-[#E6F0F5]/30"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          
-
-          {/* Mobile version - Visible only on small screens */}
-          <div className="md:hidden rounded-xl shadow-md overflow-hidden mb-8">
-            <div className="relative h-[200px]">
-              <Image
-                src={objectiveImage}
-                alt="Engineering services"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div className="bg-[#003C46] p-4">
-              <h3 className="text-xl font-semibold uppercase text-white mb-2">
-                🏢 Client Profile
-              </h3>
-              <p className="text-white/90 text-sm">
-                The client, a reputed manufacturer of industrial chemical, was
-                facing growing challenges in scaling production due to manual
-                processes, lack of visibility into real-time plant performance,
-                and inefficient data communication across departments.
-              </p>
-              <p className="text-white/90 text-sm mt-2">
-                Cognition IES was approached to lead a complete digital
-                transformation of the plant, with the goal of creating a fully
-                integrated, intelligent digital ecosystem — from layout
-                validation to live production monitoring.
-              </p>
-            </div>
-          </div>
-
           <motion.div
             variants={contentVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
-            className="items-center grid grid-cols-[3fr_2fr] gap-8"
+            className="items-center"
           >
-            {/* 🎯 Client Objectives */}
-            <div className="relative hidden md:block h-[430px] rounded-xl shadow-md overflow-hidden">
-              <Image
-                src={objectiveImage}
-                alt="Engineering services"
-                width={300}
-                height={500}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-black/40 flex flex-col  p-6">
-                <h3 className="text-3xl font-semibold uppercase text-white mb-8">
-                  🎯 Client Objectives
-                </h3>
-                <div className="w-full space-y-2 sm:px-2 md:px-4 lg:px-6">
-                  <p className="text-white/90 mr-20 text-lg ">
-                    🔧 Manufacturing Cost Reduction
-                  </p>
-                  <p className="text-white/90 mr-20 text-lg ">
-                    💸 Improve Margins up to 50%
-                  </p>
-                  <p className="text-white/90 mr-20 text-lg ">
-                    📉 Move Down the Price Ladder
-                  </p>
-                  <p className="text-white/90 mr-20 text-lg ">
-                    🛠 Re-imagine Product Architecture
-                  </p>
-                  <p className="text-white/90 mr-20 text-lg ">
-                    🆚 Benchmarking with Market Leaders
-                  </p>
-                  <p className="text-white/90 mr-20 text-lg ">
-                    🔍 Reverse Engineering of Competitor Models
-                  </p>
-                  <p className="text-white/90 mr-20 text-lg ">
-                    📈 Process Quality Enhancement
-                  </p>
-                  <p className="text-white/90 mr-20 text-lg">
-                    🧮 Factor of Safety Validation on Reengineered Parts
-                  </p>
+            {isMobile && (
+              <div className="space-y-6">
+                {/* Mobile Client Objectives */}
+                <div className="rounded-xl shadow-md overflow-hidden">
+                  <div className="relative h-[200px] sm:h-[250px]">
+                    <Image
+                      src={objectiveImage}
+                      alt="Client Objectives"
+                      fill
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 flex text-left items-center  bg-black/50 p-4 sm:p-6">
+                      <h3 className="text-2xl sm:text-2xl font-semibold uppercase text-white ">
+                        🎯 Client Objectives
+                      </h3>
+                    </div>
+                  </div>
+                  <div className="bg-[#003C46] p-4 sm:p-6">
+                    <div className="grid grid-cols-2 gap-2">
+                      {[
+                        "🔧 Manufacturing Cost Reduction",
+                        "💸 Improve Margins up to 50%",
+                        "📉 Move Down the Price Ladder",
+                        "🔍 Reverse Engineering of Competitor Models",
+                        "🛠 Re-imagine Product Architecture",
+                        "🆚 Benchmarking with Market Leaders",
+                        "📈 Process Quality Enhancement",
+                        "🧮 Factor of Safety Validation on Reengineered Parts",
+                      ].map((item, index) => (
+                        <motion.p
+                          key={index}
+                          custom={index}
+                          variants={mobileItemVariants}
+                          initial="hidden"
+                          animate={isInView ? "visible" : "hidden"}
+                          className="text-white/90 text-sm sm:text-base"
+                        >
+                          {item}
+                        </motion.p>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Mobile Business Perspective */}
+                <div className="rounded-xl shadow-md overflow-hidden">
+                  {" "}
+                  <div className="bg-[#003C46] p-3 sm:p-6">
+                    {" "}
+                    <h3 className="text-xl sm:text-4xl font-semibold uppercase text-white mb-4">
+                      💼 Business Perspective
+                    </h3>
+                    <div className=" grid grid-cols-2 md:grid-cols-2">
+                      {/* Market Positioning */}
+                      <div>
+                        <h6 className="text-base sm:text-lg font-semibold uppercase text-white mb-2">
+                          🧭 Market Positioning
+                        </h6>
+                        <div className="space-y-2">
+                          {[
+                            "Enhance brand value improvements",
+                            "Compete more aggressively on price ladder",
+                          ].map((item, index) => (
+                            <motion.p
+                              key={index}
+                              custom={index + 8} // Offset for previous list
+                              variants={mobileItemVariants}
+                              initial="hidden"
+                              animate={isInView ? "visible" : "hidden"}
+                              className="text-white/90 text-sm sm:text-base flex items-start"
+                            >
+                              <span className="text-[#E6F0F5] mr-2">⦿</span>
+                              {item}
+                            </motion.p>
+                          ))}
+                        </div>
+                      </div>
+                      {/* 📊 Revenue Growth */}
+                      <div>
+                        <h6 className="text-base sm:text-lg font-semibold uppercase text-white ">
+                          📊 Revenue Growth
+                        </h6>
+                        <div className="space-y-2">
+                          {[
+                            "Increase margin with cost effective design",
+                            "Expand customer base with optimized SKUs",
+                          ].map((item, index) => (
+                            <motion.p
+                              key={index}
+                              custom={index + 10} // Offset for previous lists
+                              variants={mobileItemVariants}
+                              initial="hidden"
+                              animate={isInView ? "visible" : "hidden"}
+                              className="text-white/90 text-sm sm:text-base flex items-start"
+                            >
+                              <span className="text-[#E6F0F5] mr-2">⦿</span>
+                              {item}
+                            </motion.p>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
+            )}
 
-            
-            {/* Business Perspective */}
-            <div className="relative hidden md:block h-[430px] rounded-xl shadow-md overflow-hidden">
-              <Image
-                src={objectiveImage2}
-                alt="Engineering services"
-                width={300}
-                height={500}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-black/40 flex flex-col  p-6">
-                <h3 className="text-3xl font-semibold uppercase text-white mb-8">
-                  💼Business Perspective
-                </h3>
-                {/* Market Positioning */}
-                <div className="w-full  sm:px-2 md:px-4 lg:px-6">
-                  <h6 className="text-xl font-semibold uppercase text-white mb-4">
-                    🧭 Market Positioning
-                  </h6>
-                  <p className="text-white/90  text-lg ">
-                   <span className="text-[#E6F0F5] mr-2 transition-transform duration-300 inline-block hover:scale-110">
-                      ⦿
-                    </span> Enhance brand value 
-                    improvements{" "}
-                  </p>
-                  <p className="text-white/90  text-lg ">
-                   <span className="text-[#E6F0F5] mr-2 transition-transform duration-300 inline-block hover:scale-110">
-                      ⦿
-                    </span> Compete more aggressively on price ladder
-                  </p>
+            {!isMobile && (
+              <div className="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-6 lg:gap-8">
+                {/* Desktop Client Objectives */}
+                <div className="relative h-[400px] lg:h-[430px] rounded-xl shadow-md overflow-hidden">
+                  <Image
+                    src={objectiveImage}
+                    alt="Client Objectives"
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/50 flex flex-col p-6 sm:p-8 lg:p-10">
+                    <h3 className="text-2xl sm:text-3xl font-semibold uppercase text-white mb-6">
+                      🎯 Client Objectives
+                    </h3>
+                    <div className="space-y-2">
+                      {[
+                        "🔧 Manufacturing Cost Reduction",
+                        "💸 Improve Margins up to 50%",
+                        "📉 Move Down the Price Ladder",
+                        "🛠 Re-imagine Product Architecture",
+                        "🆚 Benchmarking with Market Leaders",
+                        "🔍 Reverse Engineering of Competitor Models",
+                        "📈 Process Quality Enhancement",
+                        "🧮 Factor of Safety Validation on Reengineered Parts",
+                      ].map((item, index) => (
+                        <p
+                          key={index}
+                          className="text-white/90 text-base sm:text-lg"
+                        >
+                          {item}
+                        </p>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-                {/* Revenue Growth */}
-                <div className="w-full  sm:px-2 md:px-4 lg:px-6">
-                  <h6 className="text-xl font-semibold uppercase text-white py-4">
-                    📊 Revenue Growth
-                  </h6>
-                  <p className="text-white/90  text-lg ">
-                 
-                       <span className="text-[#E6F0F5] mr-2 transition-transform duration-300 inline-block hover:scale-110">
-                      ⦿
-                    </span>
-                    Increased margins with cost-effective designs
-                  </p>
-                  <p className="text-white/90  text-lg ">
-                   <span className="text-[#E6F0F5] mr-2 transition-transform duration-300 inline-block hover:scale-110">
-                      ⦿
-                    </span> Expand customer base with optimized SKUs
-                  </p>
+
+                {/* Desktop Business Perspective */}
+                <div className="relative h-[400px] lg:h-[430px] rounded-xl shadow-md overflow-hidden">
+                  <Image
+                    src={objectiveImage2}
+                    alt="Business Perspective"
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/50 flex flex-col p-6 sm:p-8 lg:p-10">
+                    <h3 className="text-2xl sm:text-3xl font-semibold uppercase text-white mb-6">
+                      💼 Business Perspective
+                    </h3>
+                    <div className="space-y-4">
+                      <div>
+                        <h6 className="text-lg sm:text-xl font-semibold uppercase text-white mb-2">
+                          🧭 Market Positioning
+                        </h6>
+                        <div className="space-y-2">
+                          {[
+                            "Enhance brand value improvements",
+                            "Compete more aggressively on price ladder",
+                          ].map((item, index) => (
+                            <p
+                              key={index}
+                              className="text-white/90 text-base sm:text-lg flex items-start"
+                            >
+                              <span className="text-[#E6F0F5] mr-2 transition-transform duration-300 inline-block hover:scale-110">
+                                ⦿
+                              </span>
+                              {item}
+                            </p>
+                          ))}
+                        </div>
+                      </div>
+                      <div>
+                        <h6 className="text-lg sm:text-xl font-semibold uppercase text-white mb-2">
+                          📊 Revenue Growth
+                        </h6>
+                        <div className="space-y-2">
+                          {[
+                            "Increased margins with cost-effective designs",
+                            "Expand customer base with optimized SKUs",
+                          ].map((item, index) => (
+                            <p
+                              key={index}
+                              className="text-white/90 text-base sm:text-lg flex items-start"
+                            >
+                              <span className="text-[#E6F0F5] mr-2 transition-transform duration-300 inline-block hover:scale-110">
+                                ⦿
+                              </span>
+                              {item}
+                            </p>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-
-
+            )}
           </motion.div>
         </div>
       </section>

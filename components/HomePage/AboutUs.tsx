@@ -96,7 +96,7 @@ const AboutUs = () => {
           animate={controls}
         />
 
-        <div className="grid grid-cols-1 py-8 md:grid-cols-[1fr_auto] items-start gap-10 md:gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 mt-8 md:grid-cols-[1fr_auto] items-start gap-10 md:gap-8 max-w-7xl mx-auto">
           {/* Text content */}
           <motion.div
             className="order-2 md:order-1"

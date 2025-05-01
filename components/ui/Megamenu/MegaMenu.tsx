@@ -7,7 +7,6 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
   ChevronDown,
-  
   Menu,
   X,
   Workflow,
@@ -21,7 +20,7 @@ import { Printer, Layers, FileText, Truck } from "lucide-react";
 import { Cpu } from "lucide-react";
 import { Wrench, Factory } from "lucide-react";
 import Logo1 from "@/constants/images/navbar-logo.png";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faGears,
@@ -55,16 +54,17 @@ interface MainCategory {
     title: string;
   };
 }
+
 const servicesData: MainCategory[] = [
   {
     title: "Product Engineering",
     href: "/services/product-engineering",
-    icon: <Wrench className=" w-4 h-4 mr-2" />,
+    icon: <Wrench className="w-4 h-4 mr-2" />,
     subCategories: [
       {
         title: "Mechanical Design Services",
         href: "/services?section=mechanical",
-        icon: <FontAwesomeIcon icon={faGears} className=" w-4 h-4" />,
+        icon: <FontAwesomeIcon icon={faGears} className="w-4 h-4" />,
       },
       {
         title: "Electrical Engineering Services",
@@ -75,7 +75,7 @@ const servicesData: MainCategory[] = [
         title: "CAE/CFD",
         href: "/services?section=cae-cfd",
         icon: (
-          <FontAwesomeIcon icon={faMagnifyingGlassChart} className=" w-4 h-4" />
+          <FontAwesomeIcon icon={faMagnifyingGlassChart} className="w-4 h-4" />
         ),
       },
       {
@@ -118,12 +118,12 @@ const servicesData: MainCategory[] = [
   {
     title: "Plant Engineering",
     href: "/services/plant-engineering",
-    icon: <Factory className=" w-4 h-4 mr-2" />,
+    icon: <Factory className="w-4 h-4 mr-2" />,
     subCategories: [
       {
         title: "Process & Safety Engineering",
         href: "/services/plant-engineering/details#section-1",
-        icon: <FontAwesomeIcon icon={faBuildingShield} className=" w-4 h-4" />,
+        icon: <FontAwesomeIcon icon={faBuildingShield} className="w-4 h-4" />,
       },
       {
         title: "Piping Engineering",
@@ -133,12 +133,12 @@ const servicesData: MainCategory[] = [
       {
         title: "Piping Stress Analysis",
         href: "/services/plant-engineering/details#section-3",
-        icon: <FontAwesomeIcon icon={faChartArea} className=" w-4 h-4" />,
+        icon: <FontAwesomeIcon icon={faChartArea} className="w-4 h-4" />,
       },
       {
         title: "Mechanical Engineering",
         href: "/services/plant-engineering/details#section-4",
-        icon: <FontAwesomeIcon icon={faGears} className=" w-5 h-5" />,
+        icon: <FontAwesomeIcon icon={faGears} className="w-5 h-5" />,
       },
       {
         title: "Electrical Engineering",
@@ -165,13 +165,11 @@ const servicesData: MainCategory[] = [
         href: "/services/plant-engineering/details#section-9",
         icon: <FontAwesomeIcon icon={faBridge} className="w-4 h-4" />,
       },
-
       {
         title: "Modular Package",
         href: "/services/plant-engineering/details#section-10",
         icon: <Box className="w-5 h-5" />,
       },
-
       {
         title: "Procurement Support",
         href: "/services/plant-engineering/details#section-11",
@@ -184,10 +182,9 @@ const servicesData: MainCategory[] = [
       title: "Right Place Right Time",
     },
   },
-  // IT Services can remain as is with individual pages if preferred, or adjust similarly
   {
-    title: "Saas Solutions - servicecpq ",
-    icon: <Server className=" w-4 h-4 mr-2" />,
+    title: "Saas Solutions - servicecpq",
+    icon: <Server className="w-4 h-4 mr-2" />,
     href: "/services/saas-solution/servicecpq",
     subCategories: [
       {
@@ -204,7 +201,7 @@ const servicesData: MainCategory[] = [
   },
   {
     title: "Staffing and Recruitment Services",
-    icon: <Users className=" w-4 h-4 mr-2" />,
+    icon: <Users className="w-4 h-4 mr-2" />,
     href: "/services/staffing",
     subCategories: [
       {
@@ -231,13 +228,34 @@ const arrowVariants = {
   open: { rotate: 180 },
 };
 
+const mobileMenuVariants = {
+  closed: { height: 0, opacity: 0 },
+  open: {
+    height: "auto",
+    opacity: 1,
+    transition: { duration: 0.3, ease: "easeInOut" },
+  },
+};
+
+const dropdownVariants = {
+  closed: { height: 0, opacity: 0 },
+  open: {
+    height: "auto",
+    opacity: 1,
+    transition: { duration: 0.2, ease: "easeOut" },
+  },
+};
+
 export function MegaMenu() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [activeCategory, setActiveCategory] = useState<number>(0);
   const [isSticky, setIsSticky] = useState(true);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [openMobileCategory, setOpenMobileCategory] = useState<string | null>(
+    null
+  );
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null); // Ref to store timeout
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const router = useRouter();
   const pathname = usePathname();
 
@@ -279,7 +297,7 @@ export function MegaMenu() {
   // Handle mouse enter for services dropdown
   const handleMouseEnter = () => {
     if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current); // Clear any existing timeout
+      clearTimeout(timeoutRef.current);
     }
     setActiveDropdown("services");
     setActiveCategory(0);
@@ -289,14 +307,21 @@ export function MegaMenu() {
   const handleMouseLeave = () => {
     timeoutRef.current = setTimeout(() => {
       setActiveDropdown(null);
-    }, 300); // 300ms delay before closing dropdown
+    }, 300);
   };
 
   // Handle mouse enter for dropdown content to keep it open
   const handleDropdownMouseEnter = () => {
     if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current); // Prevent dropdown from closing
+      clearTimeout(timeoutRef.current);
     }
+  };
+
+  // Toggle mobile category dropdown
+  const toggleMobileCategory = (categoryTitle: string) => {
+    setOpenMobileCategory(
+      openMobileCategory === categoryTitle ? null : categoryTitle
+    );
   };
 
   return (
@@ -474,7 +499,7 @@ export function MegaMenu() {
                 About Us
               </Link>
 
-              {/* Search and Contact Button */}
+              {/* Contact Button */}
               <div className="flex items-center space-x-4 ml-2">
                 <Link href="/contact">
                   <Button className="bg-[#0098af] text-white hover:bg-white hover:text-black text-lg transition-colors duration-200 border-2 border-transparent hover:border-[#0098af] hover:outline hover:outline-2 hover:outline-[#0098af]">
@@ -501,99 +526,145 @@ export function MegaMenu() {
         </div>
 
         {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden bg-white border-t border-gray-200">
-            <div className="px-4 pt-2 pb-3 space-y-1">
-              <Link
-                href="/"
-                className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-900 hover:bg-gray-50"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Home
-              </Link>
-
-              {/* Mobile Services Dropdown */}
-              <div className="space-y-1">
-                <button
-                  onClick={() =>
-                    setActiveDropdown(
-                      activeDropdown === "services-mobile"
-                        ? null
-                        : "services-mobile"
-                    )
-                  }
-                  className="flex items-center justify-between w-full px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-900 hover:bg-gray-50"
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div
+              className="md:hidden bg-gradient-to-b from-white to-gray-50 border-t border-gray-200 shadow-lg"
+              variants={mobileMenuVariants}
+              initial="closed"
+              animate="open"
+              exit="closed"
+            >
+              <div className="px-4 pt-4 pb-6 space-y-2">
+                <Link
+                  href="/"
+                  className="block px-4 py-2 text-lg font-medium text-gray-700 hover:text-blue-900 hover:bg-gray-100 rounded-md transition-colors duration-200"
+                  onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  Services
-                  <ChevronDown
-                    className={`ml-2 h-4 w-4 transition-transform ${
-                      activeDropdown === "services-mobile" ? "rotate-180" : ""
-                    }`}
-                  />
-                </button>
-                {activeDropdown === "services-mobile" && (
-                  <div className="pl-4 max-h-60 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100 pb-2">
-                    {servicesData.map((service) => (
-                      <div
-                        key={service.title}
-                        className="space Також
+                  Home
+                </Link>
 
--y-1"
+                {/* Mobile Services Section */}
+                <div className="space-y-2">
+                  <div className="px-4 py-2 text-lg font-semibold text-gray-800 bg-gray-100 rounded-md">
+                    Services
+                  </div>
+                  {servicesData.map((service) => (
+                    <div key={service.title} className="space-y-1">
+                      <button
+                        onClick={() => toggleMobileCategory(service.title)}
+                        className="flex items-center justify-between w-full px-4 py-3 text-lg font-medium text-gray-700 hover:text-blue-900 hover:bg-gray-100 rounded-md transition-colors duration-200"
                       >
-                        <div className="px-3 py-2 text-lg font-semibold text-gray-800">
+                        <div className="flex items-center">
+                          {service.icon && (
+                            <span className="mr-2">{service.icon}</span>
+                          )}
                           {service.title}
                         </div>
-                        {service.subCategories.map((subCategory) => (
-                          <Link
-                            key={subCategory.title}
-                            href={subCategory.href}
-                            className="block px-3 py-2 text-lg text-gray-600 hover:text-blue-900 hover:bg-gray-50"
-                            onClick={() => setIsMobileMenuOpen(false)}
+                        <motion.span
+                          variants={arrowVariants}
+                          animate={
+                            openMobileCategory === service.title
+                              ? "open"
+                              : "closed"
+                          }
+                          transition={{ duration: 0.2 }}
+                        >
+                          <ChevronDown className="h-4 w-4" />
+                        </motion.span>
+                      </button>
+                      <AnimatePresence>
+                        {openMobileCategory === service.title && (
+                          <motion.div
+                            className="pl-4 max-h-60 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100"
+                            variants={dropdownVariants}
+                            initial="closed"
+                            animate="open"
+                            exit="closed"
                           >
-                            {subCategory.title}
-                          </Link>
-                        ))}
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
+                            {service.subCategories
+                              .filter((sub) => sub.title) // Filter out empty titles
+                              .map((subCategory) => (
+                                <Link
+                                  key={subCategory.title}
+                                  href={subCategory.href}
+                                  className="flex items-center px-4 py-2 text-base text-gray-600 hover:text-blue-900 hover:bg-gray-50 rounded-md transition-colors duration-200"
+                                  onClick={() => {
+                                    setIsMobileMenuOpen(false);
+                                    if (
+                                      subCategory.href.includes("?section=") &&
+                                      pathname === "/services"
+                                    ) {
+                                      const sectionId =
+                                        subCategory.href.split("section=")[1];
+                                      const targetSection =
+                                        document.getElementById(sectionId);
+                                      if (targetSection) {
+                                        targetSection.scrollIntoView({
+                                          behavior: "smooth",
+                                          block: "start",
+                                        });
+                                      }
+                                      return false;
+                                    }
+                                  }}
+                                >
+                                  {subCategory.icon && (
+                                    <span className="mr-2">
+                                      {subCategory.icon}
+                                    </span>
+                                  )}
+                                  {subCategory.title}
+                                </Link>
+                              ))}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  ))}
+                </div>
 
-              <Link
-                href="/careers"
-                className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-900 hover:bg-gray-50"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Careers
-              </Link>
-              <Link
-                href="/projects"
-                className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-900 hover:bg-gray-50"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Projects
-              </Link>
-              <Link
-                href="/about"
-                className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-900 hover:bg-gray-50"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                About Us
-              </Link>
+                <Link
+                  href="/projects"
+                  className="block px-4 py-2 text-lg font-medium text-gray-700 hover:text-blue-900 hover:bg-gray-100 rounded-md transition-colors duration-200"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Projects
+                </Link>
+                <Link
+                  href="/careers"
+                  className="block px-4 py-2 text-lg font-medium text-gray-700 hover:text-blue-900 hover:bg-gray-100 rounded-md transition-colors duration-200"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Careers
+                </Link>
+                <Link
+                  href="/about"
+                  className="block px-4 py-2 text-lg font-medium text-gray-700 hover:text-blue-900 hover:bg-gray-100 rounded-md transition-colors duration-200"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  About Us
+                </Link>
 
-              {/* Mobile Contact Button */}
-              <div className="px-3 py-2">
-                <Button className="w-full bg-[#0098af] text-white hover:bg-white hover:text-black border-2 border-transparent hover:border-[#0098af] hover:outline hover:outline-2 hover:outline-[#0098af] transition-colors duration-200">
-                  Contact Us
-                </Button>
+                {/* Mobile Contact Button */}
+                <div className="px-4 pt-2">
+                  <Link href="/contact">
+                    <Button
+                      className="w-full bg-[#0098af] text-white hover:bg-white hover:text-black border-2 border-transparent hover:border-[#0098af] hover:outline hover:outline-2 hover:outline-[#0098af] transition-colors duration-200"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Contact Us
+                    </Button>
+                  </Link>
+                </div>
               </div>
-            </div>
-          </div>
-        )}
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Spacer for sticky header */}
+        {isSticky && <div className="h-[2px]" />}
       </nav>
-
-      {/* Spacer for sticky header */}
-      {isSticky && <div className="h-14 " />}
     </div>
   );
 }

@@ -48,7 +48,7 @@ export default function Objective() {
       <div>
         <section
           ref={sectionRef}
-          className="w-full py-8 sm:py-10 lg:py-6 relative bg-gradient-to-b from-white to-[#E6F0F5]/30"
+          className="w-full py-8 sm:py-10 lg:py-12 relative overflow-hidden"
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             <motion.div
@@ -58,7 +58,7 @@ export default function Objective() {
               className="items-center"
             >
                 {/* Mobile version */}
-                <div className="md:hidden rounded-xl shadow-md overflow-hidden mb-8">
+                <div className="md:hidden rounded-xl shadow-md overflow-hidden ">
                   <div className="relative h-[200px]">
                     <Image
                       src={objectiveImage}
