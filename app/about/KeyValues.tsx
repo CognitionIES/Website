@@ -9,7 +9,7 @@ export default function KeyValues() {
   const { IMAGES, TEXT, ANIMATIONS, KEY_VALUES } = ABOUT_CONSTANTS;
 
   return (
-    <section className="py-24 bg-white relative">
+    <section className="py-12 sm:py-8 lg:py-12 bg-white relative">
       <div className="max-w-7xl mx-auto px-6">
         <h2 className="text-4xl md:text-5xl font-bold text-center text-[#003C46] mb-12 tracking-tight">
           {TEXT.VALUES_TITLE}

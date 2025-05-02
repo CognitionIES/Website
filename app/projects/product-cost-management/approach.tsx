@@ -123,7 +123,7 @@ const ProjectApproach = () => {
                     variants={mobileItemVariants}
                     initial="hidden"
                     animate={isInView ? "visible" : "hidden"}
-                    className="rounded-xl shadow-md p-3 bg-white/80 border border-[#0098af]"
+                    className="rounded-xl shadow-md  p-3 bg-white/80 border border-[#0098af]"
                   >
                     <h2 className="text-lg font-bold text-[#0098af] mb-2">
                       {idx + 1}. {section.title}
@@ -132,7 +132,7 @@ const ProjectApproach = () => {
                       {section.points.map((point, pointIdx) => (
                         <div key={pointIdx} className="flex items-start gap-2">
                           <span className="text-[#00b4d8] pl-2">•</span>
-                          <p className="text-[#5b5b5b] text-sm">{point}</p>
+                          <p className="text-[#5b5b5b]  text-justify text-sm">{point}</p>
                         </div>
                       ))}
                     </div>

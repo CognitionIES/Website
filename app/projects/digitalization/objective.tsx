@@ -63,8 +63,8 @@ export default function Objective() {
                     <Image
                       src={objectiveImage}
                       alt="Engineering services"
-                      fill
-                      className="object-cover"
+                      
+                      className="w-[450px] h-[200px] "
                     />
                   </div>
                   <div className="bg-[#003C46] p-4">

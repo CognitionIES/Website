@@ -98,7 +98,7 @@ const SummaryGains = () => {
               <div className="space-y-6">
                 {/* Business Impact Section */}
                 <motion.div variants={itemVariants}>
-                  <h3 className="text-2xl sm:text-3xl font-bold mb-4 flex items-center gap-2 bg-gradient-to-r from-[#003C46] to-[#0098af] bg-clip-text text-transparent">
+                  <h3 className="text-2xl sm:text-3xl font-bold mb-4 flex items-center gap-2 bg-gradient-to-r from-[#003C46] to-[#0098af] bg-clip-text text-transparent ">
                     <BarChart className="h-6 w-6 sm:h-8 sm:w-8 text-black" />{" "}
                     Business Impact
                   </h3>
@@ -126,7 +126,7 @@ const SummaryGains = () => {
                                 idx % 2 === 0 ? "bg-white" : "bg-gray-50"
                               }`}
                             >
-                              <TableCell className="font-medium border border-gray-100 text-sm sm:text-base p-2">
+                              <TableCell className="font-medium  border border-gray-100 text-sm sm:text-base p-2">
                                 {impact.metric}
                               </TableCell>
                               <TableCell className="text-center text-red-500 border border-gray-100 font-medium text-sm sm:text-base p-2">

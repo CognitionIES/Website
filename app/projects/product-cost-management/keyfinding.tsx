@@ -151,7 +151,7 @@ const PCMKeyFindings = () => {
                   className="flex items-start px-2 py-1 gap-2"
                 >
                   <span className="text-[#00b4d8] mt-1">•</span>
-                  <p className="text-black/90  text-base sm:text-base">
+                  <p className="text-black/90  text-base  text-justify sm:text-base">
                     {finding}
                   </p>
                 </motion.div>

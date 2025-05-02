@@ -205,7 +205,7 @@ const JobDetail = () => {
 
       <Card>
         <CardHeader>
-          <CardTitle>Apply for this job</CardTitle>
+          <CardTitle> job</CardTitle>
         </CardHeader>
         <CardContent>
           {success ? (

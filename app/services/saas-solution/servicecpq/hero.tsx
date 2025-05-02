@@ -31,10 +31,10 @@ const Hero = () => {
           </p>
 
           {/* CTA buttons */}
-          <div className="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in-up delay-200">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up delay-200">
             <Link
               href="/contact"
-              className="bg-[#0098af] text-white px-6 py-3 rounded-md inline-flex items-center justify-center transition-all duration-300 hover:bg-[#003C46] focus:outline-none focus:ring-2 focus:ring-[#0098af]/50 focus:ring-offset-2;  group"
+              className="bg-[#0098af] w-1/2 text-white px-6 py-3 rounded-md inline-flex items-center justify-center transition-all duration-300 hover:bg-[#003C46] focus:outline-none focus:ring-2 focus:ring-[#0098af]/50 focus:ring-offset-2;  group"
             >
               Book Free Demo
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />

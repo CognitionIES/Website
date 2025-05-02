@@ -10,7 +10,7 @@ export default function CTASection() {
   const isMobile = useIsMobile();
 
   return (
-    <section className="py-16 sm:py-24 bg-gradient-to-r from-[#0098AF] to-[#5B5B5B] text-white relative">
+    <section className="py-12 sm:py-8 lg:py-12 bg-gradient-to-r from-[#0098AF] to-[#5B5B5B] text-white relative">
       <div className="max-w-[95%] sm:max-w-4xl md:max-w-7xl mx-auto px-4 sm:px-6 text-center items-center">
         <motion.div
           initial="hidden"

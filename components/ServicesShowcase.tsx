@@ -79,7 +79,7 @@ const ServicesShowcase = () => {
   }, [activeCard, isMobile]);
 
   return (
-    <section className="w-full py-12 px-4 md:px-6 bg-gradient-to-b from-white via-white to-[#E6F0F5]/20">
+    <section className="w-full py-10 sm:py-8 lg:py-12 bg-gradient-to-b from-white via-white to-[#E6F0F5]/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-6 space-y-2 md:mb-8 ">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#003C46] mb-2 md:mb-3 tracking-tight">
@@ -121,7 +121,7 @@ const ServicesShowcase = () => {
                 "relative overflow-hidden rounded-xl md:rounded-2xl shadow-md transition-all ease-out cursor-pointer",
                 "snap-center shrink-0",
                 "min-w-[250px] md:min-w-0",
-                "h-[350px] md:h-[420px] lg:h-[480px]",
+                "h-[450px] md:h-[420px] lg:h-[480px]",
                 isMobile ? "w-[250px]" : "flex-1",
                 !isMobile && activeCard === service.id
                   ? "md:w-[42%]"

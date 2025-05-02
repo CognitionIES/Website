@@ -157,7 +157,7 @@ export default function ContactSection() {
     <section className="py-12 sm:py-8 md:py-12 lg:py-16 bg-gradient-to-br from-gray-50 to-gray-100 relative">
       <div className="relative py-2">
         {isMobile ? (
-          <h1 className="absolute text-5xl sm:text-7xl md:text-9xl lg:text-[12rem] font-bold text-[#0098af] opacity-10 -top-1 sm:-top-10 md:-top-14 lg:-top-16 left-1/2 transform -translate-x-1/2 font-montserrat whitespace-nowrap">
+          <h1 className="absolute text-6xl sm:text-7xl md:text-9xl lg:text-[12rem] font-bold text-[#0098af] opacity-10 -top-5 sm:-top-10 md:-top-14 lg:-top-16 left-1/2 transform -translate-x-1/2 font-montserrat whitespace-nowrap">
             CONTACT
           </h1>
         ) : (

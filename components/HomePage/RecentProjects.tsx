@@ -82,7 +82,7 @@ const RecentProjects = () => {
   return (
     <section
       ref={sectionRef}
-      className="w-full py-6 sm:py-8 lg:py-12 overflow-hidden relative"
+      className="w-full py-10 sm:py-8 lg:py-12 overflow-hidden relative"
       style={{
         backgroundImage:
           "radial-gradient(circle at 10% 90%, rgba(0, 152, 175, 0.05) 0%, transparent 30%), radial-gradient(circle at 90% 10%, rgba(91, 91, 91, 0.05) 0%, transparent 30%)",

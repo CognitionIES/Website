@@ -24,7 +24,7 @@ const motionVariants: Variants = {
 
 // Configuration for responsive design
 const responsiveConfig = {
-  sectionPadding: "py-12 sm:py-12 md:py-16 lg:py-24",
+  sectionPadding: "py-10 sm:py-8 lg:py-12",
   containerPadding: "px-4 sm:px-6 md:px-8 lg:px-12",
   gap: "gap-4 sm:gap-2 md:gap-8 lg:gap-12",
   imageSize: {

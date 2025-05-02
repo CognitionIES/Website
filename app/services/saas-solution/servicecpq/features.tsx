@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import {
   Zap,
   Settings,
@@ -20,7 +20,8 @@ import BackgroundGrid from "@/components/ui/backgroundgrid";
 import { motion } from "framer-motion";
 
 const KeyFeatures = () => {
-  const [activeCategory, setActiveCategory] = useState<string | null>("cpq");
+  const [activeCategory, setActiveCategory] = useState("cpq");
+  const carouselRef = useRef<HTMLDivElement>(null);
 
   // Key feature categories
   const featureCategories = [
@@ -142,6 +143,33 @@ const KeyFeatures = () => {
     },
   ];
 
+  // Function to scroll to a specific category in the carousel
+  const scrollToCategory = (categoryId: React.SetStateAction<string>) => {
+    setActiveCategory(categoryId);
+
+    if (carouselRef.current) {
+      // Find the index of the button for the desired category
+      const categoryIndex = featureCategories.findIndex(
+        (cat) => cat.id === categoryId
+      );
+      if (categoryIndex !== -1) {
+        // Get all buttons in the carousel
+        const buttons = carouselRef.current.querySelectorAll("button");
+        // Calculate which button to scroll to (could be first or second set of duplicates)
+        const buttonToScrollTo =
+          buttons[categoryIndex] ||
+          buttons[categoryIndex + featureCategories.length];
+        if (buttonToScrollTo) {
+          // Scroll the button into view with smooth behavior
+          buttonToScrollTo.scrollIntoView({
+            behavior: "smooth",
+            inline: "center",
+          });
+        }
+      }
+    }
+  };
+
   return (
     <section
       id="key-features"
@@ -167,8 +195,8 @@ const KeyFeatures = () => {
           </p>
         </div>
 
-        {/* Feature Categories Tabs */}
-        <div className="flex flex-wrap justify-center gap-6 mb-2">
+        {/* Feature Categories Tabs - Desktop */}
+        <div className="md:flex md:flex-wrap md:justify-center md:gap-6 mb-2 hidden">
           {featureCategories.map((category) => (
             <button
               key={category.id}
@@ -183,6 +211,51 @@ const KeyFeatures = () => {
               <span className="font-medium">{category.title}</span>
             </button>
           ))}
+        </div>
+
+        {/* Mobile Carousel - Improved */}
+        <div className="md:hidden mb-2">
+          {/* Static carousel that snaps */}
+          <div
+            ref={carouselRef}
+            className="flex gap-4 px-4 py-2 overflow-x-auto snap-x snap-mandatory scrollbar-hide"
+          >
+            {/* Duplicate categories for better scrolling experience */}
+            {[...featureCategories, ...featureCategories].map(
+              (category, index) => (
+                <button
+                  key={`${category.id}-${index}`}
+                  onClick={() => scrollToCategory(category.id)}
+                  className={`flex items-center gap-2 px-5 py-3 rounded-full transition-all duration-300 flex-shrink-0 snap-center touch-manipulation ${
+                    activeCategory === category.id
+                      ? `${category.color} text-white shadow-lg scale-105`
+                      : "bg-white/70 text-gray-700 hover:bg-white hover:shadow-md"
+                  }`}
+                >
+                  <span>{category.icon}</span>
+                  <span className="font-medium whitespace-nowrap">
+                    {category.title}
+                  </span>
+                </button>
+              )
+            )}
+          </div>
+
+          {/* Indicator Dots */}
+          <div className="flex justify-center mt-4 mb-4">
+            {featureCategories.map((category) => (
+              <button
+                key={`indicator-${category.id}`}
+                onClick={() => scrollToCategory(category.id)}
+                className={`w-2.5 h-2.5 rounded-full mx-1.5 transition-all duration-300 ${
+                  activeCategory === category.id
+                    ? "bg-[#0098af] scale-110"
+                    : "bg-gray-300 hover:bg-gray-400"
+                }`}
+                aria-label={`Go to ${category.title}`}
+              />
+            ))}
+          </div>
         </div>
 
         {/* Feature Showcase */}
@@ -212,10 +285,9 @@ const KeyFeatures = () => {
                   </div>
                 </div>
 
-                {/* Honeycomb style feature layout */}
-                {/* Honeycomb style feature layout */}
+                {/* Honeycomb style feature layout - Mobile optimized */}
                 <div
-                  className={`grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto ${
+                  className={`grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto ${
                     category.features.length === 3 ? "auto-rows-fr" : ""
                   }`}
                 >
@@ -233,19 +305,20 @@ const KeyFeatures = () => {
                           : ""
                       }`}
                     >
-                      <div className="p-6">
-                        <div className="flex items-start gap-4">
-                          
+                      <div className="p-5 md:p-6">
+                        <div className="flex items-start gap-3 md:gap-4">
                           <div
-                            className={`p-3 rounded-lg ${category.color.replace(
+                            className={`p-2.5 md:p-3 rounded-lg ${category.color.replace(
                               "gradient-to-r",
                               "gradient-to-br"
                             )} text-white`}
                           >
-                            {feature.icon}
+                            {React.cloneElement(feature.icon, {
+                              className: "h-5 w-5 md:h-6 md:w-6",
+                            })}
                           </div>
-                          <div>
-                            <h4 className="text-lg font-semibold text-gray-800 mb-2">
+                          <div className="flex-1">
+                            <h4 className="text-base md:text-lg font-semibold text-gray-800 mb-1 md:mb-2 break-words">
                               {feature.title}
                             </h4>
                             <p className="text-gray-600 text-sm">
@@ -253,7 +326,6 @@ const KeyFeatures = () => {
                             </p>
                           </div>
                         </div>
-                        <div className="mt-4 pl-16"></div>
                       </div>
                     </motion.div>
                   ))}
@@ -274,6 +346,17 @@ const KeyFeatures = () => {
           maskRepeat: "repeat-x",
         }}
       ></div>
+
+      {/* CSS for hiding scrollbar */}
+      <style jsx>{`
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      `}</style>
     </section>
   );
 };

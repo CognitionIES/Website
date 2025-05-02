@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 //import Footer from "./footer";
-
+import { ArrowRight } from "lucide-react";
 export default function CTASection() {
   const [isInView, setIsInView] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
@@ -67,11 +67,13 @@ export default function CTASection() {
             Contact us to explore how our digitalization solutions can transform
             your operations.
           </p>
-          <Link href="/contact">
-            <Button className="bg-white text-[#0098AF] rounded-lg hover:bg-[#5b5b5b] hover:text-white transition-colors duration-200 text-lg px-6 py-2 w-fit">
-              Get in Touch
-            </Button>
-          </Link>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <Link href="/contact">
+              <Button className="bg-white text-[#5b5b5b] hover:bg-[#E6F0F5] px-10 py-4 text-lg font-semibold rounded-full shadow-lg transition-all duration-300">
+                Start Your Project <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
+          </div>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, scale: 0 }}

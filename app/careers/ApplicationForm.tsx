@@ -422,7 +422,7 @@ const ApplicationForm = () => {
                         className="text-[#5B5B5B] text-xs sm:text-sm cursor-pointer"
                       >
                         I agree to the{" "}
-                        <a href="#" className="text-[#0098AF] hover:underline">
+                        <a href="/privacy-policy" className="text-[#0098AF] hover:underline">
                           Privacy Policy
                         </a>{" "}
                         and consent to having my personal data processed for

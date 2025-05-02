@@ -76,7 +76,7 @@ export default function Objectives() {
               <div className="space-y-6">
                 {/* Mobile Client Objectives */}
                 <div className="rounded-xl shadow-md overflow-hidden">
-                  <div className="relative h-[200px] sm:h-[250px]">
+                  <div className="relative h-[180px] sm:h-[250px]">
                     <Image
                       src={objectiveImage}
                       alt="Client Objectives"
@@ -90,7 +90,7 @@ export default function Objectives() {
                     </div>
                   </div>
                   <div className="bg-[#003C46] p-4 sm:p-6">
-                    <div className="grid grid-cols-2 gap-2">
+                    <div className="grid grid-cols-1 gap-2">
                       {[
                         "🔧 Manufacturing Cost Reduction",
                         "💸 Improve Margins up to 50%",
@@ -124,10 +124,10 @@ export default function Objectives() {
                     <h3 className="text-xl sm:text-4xl font-semibold uppercase text-white mb-4">
                       💼 Business Perspective
                     </h3>
-                    <div className=" grid grid-cols-2 md:grid-cols-2">
+                    <div className=" grid grid-cols-1 md:grid-cols-2">
                       {/* Market Positioning */}
                       <div>
-                        <h6 className="text-base sm:text-lg font-semibold uppercase text-white mb-2">
+                        <h6 className="text-base sm:text-lg font-semibold uppercase text-white my-2">
                           🧭 Market Positioning
                         </h6>
                         <div className="space-y-2">
@@ -151,7 +151,7 @@ export default function Objectives() {
                       </div>
                       {/* 📊 Revenue Growth */}
                       <div>
-                        <h6 className="text-base sm:text-lg font-semibold uppercase text-white ">
+                        <h6 className="text-base sm:text-lg font-semibold uppercase text-white my-2 ">
                           📊 Revenue Growth
                         </h6>
                         <div className="space-y-2">

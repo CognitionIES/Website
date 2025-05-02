@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import {
@@ -85,23 +84,23 @@ const Employers = () => {
   const processSteps = [
     {
       title: "Requirement Discovery",
-      icon: <Briefcase className="h-8 w-8 text-[#00b4d8]" />,
+      icon: <Briefcase className="h-6 w-6 sm:h-8 sm:w-8 text-[#00b4d8]" />,
       description:
-        "Understand your hiring needs. JDs. limelines and cultural fit",
+        "Understand your hiring needs. JDs. timelines and cultural fit",
       image:
         "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=600&q=80",
     },
     {
       title: "Choose Your Engagement Model",
-      icon: <Search className="h-8 w-8 text-[#00b4d8]" />,
+      icon: <Search className="h-6 w-6 sm:h-8 sm:w-8 text-[#00b4d8]" />,
       description:
-        "Flexible models: Contingency RPO, Contract, Retained Payroll ",
+        "Flexible models: Contingency RPO, Contract, Retained Payroll",
       image:
         "https://images.unsplash.com/photo-1579389083078-4e7018379f7e?auto=format&fit=crop&w=600&q=80",
     },
     {
       title: "Candidate Scrolling & Screening",
-      icon: <MessageSquare className="h-8 w-8 text-[#00b4d8]" />,
+      icon: <MessageSquare className="h-6 w-6 sm:h-8 sm:w-8 text-[#00b4d8]" />,
       description:
         "Head-hunting, screening and shortlisting candidates from verified databases",
       image:
@@ -112,15 +111,15 @@ const Employers = () => {
   const processSteps1 = [
     {
       title: "Interview Coordination",
-      icon: <MessageSquare className="h-8 w-8 text-[#00b4d8]" />,
+      icon: <MessageSquare className="h-6 w-6 sm:h-8 sm:w-8 text-[#00b4d8]" />,
       description: "Interview scheduling, feedback loop and support",
       image:
         "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=600&q=80",
     },
     {
       title: "Post Placement Support",
-      icon: <MessageSquare className="h-8 w-8 text-[#00b4d8]" />,
-      description: "Follow-aips, feedback collection and retention",
+      icon: <MessageSquare className="h-6 w-6 sm:h-8 sm:w-8 text-[#00b4d8]" />,
+      description: "Follow-ups, feedback collection and retention",
       image:
         "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=600&q=80",
     },
@@ -152,32 +151,32 @@ const Employers = () => {
   const engagementModels = [
     {
       title: "Contingency Hiring",
-      icon: <Target className="w-10 h-10" />,
+      icon: <Target className="w-8 h-8 sm:w-10 sm:h-10" />,
       description: "Pay only on successful hire",
     },
     {
       title: "Retained Search",
-      icon: <Award className="w-10 h-10" />,
+      icon: <Award className="w-8 h-8 sm:w-10 sm:h-10" />,
       description: "Ideal for senior leadership positions",
     },
     {
       title: "Contract Staffing",
-      icon: <Clock className="w-10 h-10" />,
+      icon: <Clock className="w-8 h-8 sm:w-10 sm:h-10" />,
       description: "For short-term or project-based needs",
     },
     {
       title: "RPO",
-      icon: <RotateCcw className="w-10 h-10" />,
+      icon: <RotateCcw className="w-8 h-8 sm:w-10 sm:h-10" />,
       description: "Full-cycle hiring managed by our team",
     },
     {
       title: "Payroll Services",
-      icon: <Car className="w-10 h-10" />,
+      icon: <Car className="w-8 h-8 sm:w-10 sm:h-10" />,
       description: "We onboard & manage compliance for your hires",
     },
     {
       title: "Services",
-      icon: <Briefcase className="w-10 h-10" />,
+      icon: <Briefcase className="w-8 h-8 sm:w-10 sm:h-10" />,
       description: "We onboard & manage compliance for your hires",
     },
   ];
@@ -287,7 +286,7 @@ const Employers = () => {
                   </Link>
                   <ChevronRight className="w-4 h-4" />
                   <Link
-                    href="/services/st E6F0F5affing/employers"
+                    href="/services/staffing/employers"
                     className="hover:text-[#99D5DF] transition-colors duration-200"
                   >
                     Employers
@@ -342,22 +341,22 @@ const Employers = () => {
               variants={contentVariants}
               initial="hidden"
               animate={isProcessInView ? "visible" : "hidden"}
-              className="grid md:grid-cols-3 gap-8"
+              className="grid md:grid-cols-3 gap-4 sm:gap-8"
             >
               {processSteps.map((step, index) => (
                 <div
                   key={index}
-                  className="p-6 rounded-lg bg-white transition-all duration-300 group"
+                  className="p-3 sm:p-6 rounded-lg bg-white transition-all duration-300 group"
                 >
-                  <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-                    <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-lg bg-[#0098AF]/10 flex items-center justify-center">
-                      <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-md bg-[#0098AF] flex items-center justify-center">
-                        <span className="text-white font-bold text-base sm:text-lg">
+                  <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-6">
+                    <div className="flex-shrink-0 w-10 h-10 sm:w-14 sm:h-14 rounded-lg bg-[#0098AF]/10 flex items-center justify-center">
+                      <div className="w-5 h-5 sm:w-8 sm:h-8 rounded-md bg-[#0098AF] flex items-center justify-center">
+                        <span className="text-white font-bold text-sm sm:text-lg">
                           {index + 1}
                         </span>
                       </div>
                     </div>
-                    <h3 className="flex-1 text-lg sm:text-xl font-bold text-[#003C46] leading-tight">
+                    <h3 className="flex-1 text-base sm:text-lg md:text-xl font-bold text-[#003C46] leading-tight">
                       {step.title}
                     </h3>
                   </div>
@@ -372,22 +371,22 @@ const Employers = () => {
               variants={contentVariants}
               initial="hidden"
               animate={isProcessInView ? "visible" : "hidden"}
-              className="grid md:grid-cols-2 max-w-4xl mx-auto gap-8 py-4"
+              className="grid md:grid-cols-2 max-w-4xl mx-auto gap-4 sm:gap-8 py-4"
             >
               {processSteps1.map((step, index) => (
                 <div
                   key={index}
-                  className="p-6 rounded-lg bg-white transition-all duration-300 group"
+                  className="p-3 sm:p-6 rounded-lg bg-white transition-all duration-300 group"
                 >
-                  <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-                    <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-lg bg-[#0098AF]/10 flex items-center justify-center">
-                      <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-md bg-[#0098AF] flex items-center justify-center">
-                        <span className="text-white font-bold text-base sm:text-lg">
+                  <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-6">
+                    <div className="flex-shrink-0 w-10 h-10 sm:w-14 sm:h-14 rounded-lg bg-[#0098AF]/10 flex items-center justify-center">
+                      <div className="w-5 h-5 sm:w-8 sm:h-8 rounded-md bg-[#0098AF] flex items-center justify-center">
+                        <span className="text-white font-bold text-sm sm:text-lg">
                           {index + 4}
                         </span>
                       </div>
                     </div>
-                    <h3 className="flex-1 text-lg sm:text-xl font-bold text-[#003C46] leading-tight">
+                    <h3 className="flex-1 text-base sm:text-lg md:text-xl font-bold text-[#003C46] leading-tight">
                       {step.title}
                     </h3>
                   </div>
@@ -408,26 +407,26 @@ const Employers = () => {
             </div>
 
             {/* Innovative Engagement Model Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-6 justify-items-center">
               {engagementModels.map((model, index) => (
                 <div
                   key={index}
-                  className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full max-w-[200px] sm:max-w-none"
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-[#0098af]/90 to-[#003C46] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-                  <div className="relative z-10 h-full flex flex-col items-center justify-center p-6 bg-gradient-to-br from-white to-[#E6F0F5] group-hover:from-transparent group-hover:to-transparent transition-all duration-300">
-                    <div className="w-16 h-16 rounded-full flex items-center justify-center bg-[#E6F0F5] group-hover:bg-white/20 transition-colors duration-300 mb-4">
+                  <div className="relative z-10 h-full flex flex-col items-center justify-center p-3 sm:p-6 bg-gradient-to-br from-white to-[#E6F0F5] group-hover:from-transparent group-hover:to-transparent transition-all duration-300">
+                    <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center bg-[#E6F0F5] group-hover:bg-white/20 transition-colors duration-300 mb-4">
                       <div className="text-[#0098af] group-hover:text-white transition-colors duration-300">
                         {model.icon}
                       </div>
                     </div>
 
-                    <h3 className="text-xl font-bold text-[#003C46] group-hover:text-white transition-colors duration-300 mb-2 text-center">
+                    <h3 className="text-base sm:text-lg md:text-xl font-bold text-[#003C46] group-hover:text-white transition-colors duration-300 mb-2 text-center">
                       {model.title}
                     </h3>
 
-                    <p className="text-[#5b5b5b] group-hover:text-white/90 transition-colors duration-300 text-center">
+                    <p className="text-[#5b5b5b] group-hover:text-white/90 transition-colors duration-300 text-center text-sm sm:text-base">
                       {model.description}
                     </p>
                   </div>
@@ -448,7 +447,7 @@ const Employers = () => {
               <div className="grid grid-cols-1 lg:grid-cols-2">
                 {/* Left column - Benefits */}
                 <div className="p-8 bg-gradient-to-l from-[#E6F0F5] to-white">
-                  <h2 className="tex-justify  md:text-base text-[#003C46] mb-4">
+                  <h2 className="text-justify md:text-base text-[#003C46] mb-4">
                     Our staffing and recruitment model is built for flexibility,
                     speed, and precision. With customizable engagement types, a
                     dedicated account manager, and transparent communication
@@ -458,7 +457,7 @@ const Employers = () => {
                     you&apos;re a startup or a large enterprise.
                   </h2>
                   <ul className="space-y-2 py-1">
-                    <li className="flex items-start px-3  rounded-lg hover:bg-white/70 transition-colors duration-200">
+                    <li className="flex items-start px-3 rounded-lg hover:bg-white/70 transition-colors duration-200">
                       <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#0098af] text-white flex items-center justify-center mr-3">
                         ✓
                       </span>
@@ -566,6 +565,8 @@ const Employers = () => {
               width={1920}
               height={1080}
               className="w-full h-full object-cover"
+              sizes="(max-width: 640px) 100vw, (max-width: 1280px) 90vw, 1920px"
+              quality={80}
             />
             <div className="absolute inset-0 bg-gradient-to-r from-[#0098af]/80 to-[#000000]/60 flex items-center justify-center">
               <div className="text-center text-white p-6 md:p-12 max-w-3xl">

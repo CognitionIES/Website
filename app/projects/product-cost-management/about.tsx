@@ -73,7 +73,7 @@ export default function AboutSection() {
                   <h3 className="text-lg sm:text-xl font-semibold uppercase text-white mb-3">
                     🏢 Client Profile
                   </h3>
-                  <p className="text-white/90 text-sm sm:text-base leading-relaxed">
+                  <p className="text-white/90 text-sm sm:text-base text-justify leading-relaxed">
                     Our client, a leading industrial equipment manufacturer,
                     delivers high-performance outdoor power tools like log
                     splitters, pressure washers, and air compressors for
@@ -84,7 +84,7 @@ export default function AboutSection() {
                   <h3 className="text-lg sm:text-xl font-semibold uppercase text-white mt-4 mb-3">
                     🎯 Project Overview
                   </h3>
-                  <p className="text-white/90 text-sm sm:text-base leading-relaxed">
+                  <p className="text-white/90 text-sm sm:text-base  text-justify leading-relaxed">
                     The project focused on cost transformation and design
                     refinement of the Log Splitter lineup, maintaining quality
                     and safety while achieving cost reductions through

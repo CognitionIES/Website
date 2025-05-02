@@ -77,7 +77,7 @@ const Testimonials = () => {
   return (
     <section
       ref={sectionRef}
-      className="w-full py-12 sm:py-16 lg:py-20 relative overflow-hidden"
+      className="w-full py-10 sm:py-8 lg:py-12 relative overflow-hidden"
       style={{ backgroundColor: "#E6F0F5" }}
     >
       {/* Subtle Background Elements */}

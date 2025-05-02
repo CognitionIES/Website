@@ -9,7 +9,7 @@ export default function MissionVision() {
   const { IMAGES, TEXT, ANIMATIONS } = ABOUT_CONSTANTS;
 
   return (
-    <section className="py-24 bg-gray-200 relative">
+    <section className="py-12 sm:py-8 lg:py-12 bg-gray-200 relative">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial="hidden"

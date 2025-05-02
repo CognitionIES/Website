@@ -141,7 +141,7 @@ export default function JobDetailsPage({ job, id }: { job: Job; id: string }) {
         cover_letter: "",
       });
       if (resumeRef.current) resumeRef.current.value = "";
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
       console.error("Error submitting application:", err);
       toast({
@@ -154,7 +154,13 @@ export default function JobDetailsPage({ job, id }: { job: Job; id: string }) {
     }
   };
 
-  if (!job) return <div className="text-center py-16">Job not found.</div>
+  if (!job) return <div className="text-center py-16">Job not found.</div>;
+
+  // Parse job description into bullet points
+  const descriptionPoints = job.description
+    .split(/•|-/)
+    .map((point) => point.trim())
+    .filter((point) => point.length > 0);
 
   return (
     <div className="bg-[#E6F0F5]/40 min-h-screen">
@@ -171,19 +177,6 @@ export default function JobDetailsPage({ job, id }: { job: Job; id: string }) {
                 <CardTitle className="text-2xl text-[#003C46]">
                   {job.title}
                 </CardTitle>
-                {job.skills && job.skills.length > 0 && (
-                  <div className="flex flex-wrap gap-2">
-                    {job.skills.map((skill) => (
-                      <Badge
-                        key={skill}
-                        variant="outline"
-                        className="bg-[#E6F0F5] text-[#003C46] border-none"
-                      >
-                        {skill}
-                      </Badge>
-                    ))}
-                  </div>
-                )}
               </div>
             </CardHeader>
             <CardContent>
@@ -202,13 +195,40 @@ export default function JobDetailsPage({ job, id }: { job: Job; id: string }) {
                       {job.years_experience}+ years experience
                     </span>
                   )}
+                {job.salary && (
+                  <span className="inline-block bg-[#E6F0F5] text-[#0098af] px-2 py-1 text-sm rounded">
+                    Salary: {job.salary}
+                  </span>
+                )}
               </div>
-              <div className="mt-4 text-sm whitespace-pre-line">
-                {job.description}
+
+              <div className="mt-4">
+                <h3 className="text-lg font-semibold text-[#003C46] mb-2">
+                  Job Description
+                </h3>
+                <ul className="list-disc pl-4 text-sm text-[#5b5b5b] space-y-1">
+                  {descriptionPoints.map((point, index) => (
+                    <li key={index}>{point}</li>
+                  ))}
+                </ul>
               </div>
-              {job.salary && (
-                <div className="mt-4 text-md font-medium text-[#0098af]">
-                  Salary: {job.salary}
+
+              {job.skills && job.skills.length > 0 && (
+                <div className="mt-4">
+                  <h3 className="text-lg font-semibold text-[#003C46] mb-2">
+                    Key Skills
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    {job.skills.map((skill) => (
+                      <Badge
+                        key={skill}
+                        variant="outline"
+                        className="bg-gray-200 text-[#003C46] border-none text-xs px-3 py-1 rounded-full"
+                      >
+                        {skill}
+                      </Badge>
+                    ))}
+                  </div>
                 </div>
               )}
             </CardContent>
@@ -231,7 +251,7 @@ export default function JobDetailsPage({ job, id }: { job: Job; id: string }) {
                     Application submitted!
                   </h3>
                   <p className="text-green-600">
-                    Thank you for applying. We&lsquo;ll be in touch soon.
+                    Thank you for applying. We‘ll be in touch soon.
                   </p>
                 </div>
               ) : (
@@ -252,6 +272,7 @@ export default function JobDetailsPage({ job, id }: { job: Job; id: string }) {
                         onChange={handleChange}
                         required
                         className="border-[#E6F0F5] focus:border-[#0098af]"
+                        aria-label="Full Name"
                       />
                     </div>
                     <div>
@@ -270,6 +291,7 @@ export default function JobDetailsPage({ job, id }: { job: Job; id: string }) {
                         onChange={handleChange}
                         required
                         className="border-[#E6F0F5] focus:border-[#0098af]"
+                        aria-label="Email"
                       />
                     </div>
                   </div>
@@ -280,7 +302,7 @@ export default function JobDetailsPage({ job, id }: { job: Job; id: string }) {
                         htmlFor="phone"
                         className="block text-sm font-medium mb-1 text-[#5b5b5b]"
                       >
-                        Phone Number
+                        Phone Number <span className="text-red-500">*</span>
                       </label>
                       <Input
                         id="phone"
@@ -288,7 +310,9 @@ export default function JobDetailsPage({ job, id }: { job: Job; id: string }) {
                         placeholder="Phone Number"
                         value={form.phone}
                         onChange={handleChange}
+                        required
                         className="border-[#E6F0F5] focus:border-[#0098af]"
+                        aria-label="Phone Number"
                       />
                     </div>
                     <div>
@@ -296,7 +320,8 @@ export default function JobDetailsPage({ job, id }: { job: Job; id: string }) {
                         htmlFor="experience"
                         className="block text-sm font-medium mb-1 text-[#5b5b5b]"
                       >
-                        Years of Experience
+                        Years of Experience{" "}
+                        <span className="text-red-500">*</span>
                       </label>
                       <Input
                         id="experience"
@@ -304,7 +329,9 @@ export default function JobDetailsPage({ job, id }: { job: Job; id: string }) {
                         placeholder="e.g. 3 years"
                         value={form.experience}
                         onChange={handleChange}
+                        required
                         className="border-[#E6F0F5] focus:border-[#0098af]"
+                        aria-label="Years of Experience"
                       />
                       <span className="text-xs text-[#5b5b5b]">
                         Helps recruiters match you to the job
@@ -317,7 +344,7 @@ export default function JobDetailsPage({ job, id }: { job: Job; id: string }) {
                       htmlFor="location"
                       className="block text-sm font-medium mb-1 text-[#5b5b5b]"
                     >
-                      Current Location
+                      Current Location <span className="text-red-500">*</span>
                     </label>
                     <Input
                       id="location"
@@ -325,7 +352,9 @@ export default function JobDetailsPage({ job, id }: { job: Job; id: string }) {
                       placeholder="e.g. New York, NY"
                       value={form.location}
                       onChange={handleChange}
+                      required
                       className="border-[#E6F0F5] focus:border-[#0098af]"
+                      aria-label="Current Location"
                     />
                   </div>
 
@@ -344,6 +373,7 @@ export default function JobDetailsPage({ job, id }: { job: Job; id: string }) {
                       accept=".pdf,.doc,.docx,application/msword,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
                       className="cursor-pointer border-[#E6F0F5] focus:border-[#0098af]"
                       required
+                      aria-label="Upload Resume"
                     />
                     <span className="text-xs text-[#5b5b5b]">
                       PDF or Word document (5MB max)
@@ -376,6 +406,7 @@ export default function JobDetailsPage({ job, id }: { job: Job; id: string }) {
                       rows={4}
                       value={form.cover_letter}
                       onChange={handleChange}
+                      aria-label="Cover Letter (optional)"
                     />
                   </div>
 
