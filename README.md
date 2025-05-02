@@ -5,13 +5,13 @@
 **Live Website:** [Link](hopefullyworking.vercel.app)
 
 # About the Project
-Welcome to the official GitHub repository for the Cognition IES website, developed to showcase our innovative engineering solutions and services. This project was built by an intern at Cognition IES starting February 2025, with contributions spanning frontend development, UI/UX enhancements, and feature integrations.
+Welcome to the official GitHub repository for the Cognition IES website, which was created to highlight our groundbreaking engineering solutions and services. This project was designed by an intern at Cognition IES from February 2025, and contributions include frontend development, UI/UX improvement, and feature additions.
 
-It highlights core services like Product Engineering, Digital Twins, and Embedded Systems Engineering, reflecting Cognition IES's mission of delivering value through innovation and client-focused solutions.
+It emphasizes key services such as Product Engineering, Digital Twins, and Embedded Systems Engineering, which indicate Cognition IES's objective of providing value through innovation and client-centric solutions.
 
 # Key Features
-- **Responsive Design:** Adapts seamlessly to all screen sizes for an optimal user experience.
-- **Interactive Components:** Includes carousels, dropdown menus, and smooth scrolling to enhance navigation.
+- **Responsive Design:** Scales smoothly across all screen sizes for maximum user experience.
+- **Interactive Components:** Features carousels, dropdowns, and smooth scrolling for improved navigation.
 - **SEO Optimization:** Uses `react-helmet-async` to boost search engine visibility.
 - **User Engagement:** Features contact forms, FAQ sections, and testimonials to connect with visitors.
 
@@ -46,12 +46,12 @@ To run this project locally:
    ```
 
 # Usage
-- Explore sections like Services, Careers, and About using the responsive navbar.
+- Browse sections such as Services, Careers, and About using the responsive navbar.
 - Submit inquiries via the contact form.
 - Check out testimonials and recent projects to see Cognition IES's impact.
 
 # Development Highlights
-This project was completed over nine weeks with key milestones:
+This project took nine weeks to complete with major milestones:
 
 - **Planning:** Designed wireframes and set up the project structure.
 - **Core Build:** Developed essential UI components like the navbar and hero section.
@@ -62,7 +62,6 @@ This project was completed over nine weeks with key milestones:
 # Key Learnings
 Through this project, I gained expertise in:
 
-- Building scalable React applications with modular design.
-- Creating responsive, accessible web interfaces.
+- Creating scalable Next applications with modular architecture.
+- Developing responsive, accessible web interfaces.
 - Optimizing websites for performance and search engines.
-- Using Git and GitHub for version control and collaboration
