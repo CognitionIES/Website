@@ -13,40 +13,49 @@ export default function Hero() {
   return (
     <section>
       <div
-        className={`relative h-[450px] overflow-hidden ${
-          isMobile ? " flex items-center justify-center" : ""
-        }`}
+        className={`relative ${
+          isMobile ? "h-[400px]" : "h-[450px]"
+        } overflow-hidden`}
       >
         <Image
           src={HeroImage}
-          alt="FEED & Conceptual Design Innovation"
+          alt="Projects Showcase"
           fill
           className="object-cover"
           priority
+          sizes="(max-width: 640px) 100vw, (max-width: 1280px) 90vw, 1280px"
+          quality={80}
         />
         <div className="absolute inset-0 bg-gradient-to-br from-[#003C46]/85 to-[#0098AF]/70" />
-        <div className="absolute inset-0 opacity-5  bg-repeat" />
+        <div className="absolute inset-0 opacity-5 bg-[url('/images/engineering-pattern.jpg')] bg-repeat" />
         <div
-          className={`relative z-10 ${
-            isMobile
-              ? "max-w-full px-6"
-              : "max-w-7xl mx-auto px-6 sm:px-8 lg:px-12"
-          } h-full flex flex-col justify-center`}
+          className={`relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center ${
+            isMobile ? "items-center text-center" : ""
+          }`}
         >
-          <h1
-            className={`text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white -top-10 drop-shadow-md relative ${
-              isMobile ? "text-center mb-24" : ""
-            }`}
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white drop-shadow-md relative"
           >
             Projects
             <span
               className={`absolute bottom-0 ${
-                isMobile ? "left-1 w-24" : "left-0"
-              } w-12 h-0.5 bg-gradient-to-r from-[#99D5DF] to-transparent`}
+                isMobile ? "" : "left-0 w-24"
+              } h-0.5 bg-gradient-to-r from-[#99D5DF] to-transparent`}
             />
-          </h1>
+          </motion.h1>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            className="text-lg md:text-xl lg:text-xl mt-4 tracking-tight text-white/90 drop-shadow-md"
+          >
+            Showcasing innovative engineering solutions across industries
+          </motion.h2>
           {!isMobile && (
-            <nav className="absolute bottom-0 left-6 sm:left-8 lg:left-12 mb-6 flex items-center space-x-2 text-sm font-light text-white/80">
+            <nav className="absolute bottom-0 left-4 sm:left-6 lg:left-8 mb-6 flex items-center space-x-2 text-sm font-light text-white/80">
               <Link
                 href="/"
                 className="hover:text-[#99D5DF] flex items-center gap-1 transition-colors duration-200"

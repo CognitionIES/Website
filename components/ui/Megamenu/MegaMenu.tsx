@@ -20,7 +20,7 @@ import { Printer, Layers, FileText, Truck } from "lucide-react";
 import { Cpu } from "lucide-react";
 import { Wrench, Factory } from "lucide-react";
 import Logo1 from "@/constants/images/navbar-logo.png";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faGears,
@@ -54,17 +54,16 @@ interface MainCategory {
     title: string;
   };
 }
-
 const servicesData: MainCategory[] = [
   {
     title: "Product Engineering",
     href: "/services/product-engineering",
-    icon: <Wrench className="w-4 h-4 mr-2" />,
+    icon: <Wrench className=" w-4 h-4 mr-2" />,
     subCategories: [
       {
         title: "Mechanical Design Services",
         href: "/services?section=mechanical",
-        icon: <FontAwesomeIcon icon={faGears} className="w-4 h-4" />,
+        icon: <FontAwesomeIcon icon={faGears} className=" w-4 h-4" />,
       },
       {
         title: "Electrical Engineering Services",
@@ -75,7 +74,7 @@ const servicesData: MainCategory[] = [
         title: "CAE/CFD",
         href: "/services?section=cae-cfd",
         icon: (
-          <FontAwesomeIcon icon={faMagnifyingGlassChart} className="w-4 h-4" />
+          <FontAwesomeIcon icon={faMagnifyingGlassChart} className=" w-4 h-4" />
         ),
       },
       {
@@ -118,12 +117,12 @@ const servicesData: MainCategory[] = [
   {
     title: "Plant Engineering",
     href: "/services/plant-engineering",
-    icon: <Factory className="w-4 h-4 mr-2" />,
+    icon: <Factory className=" w-4 h-4 mr-2" />,
     subCategories: [
       {
         title: "Process & Safety Engineering",
         href: "/services/plant-engineering/details#section-1",
-        icon: <FontAwesomeIcon icon={faBuildingShield} className="w-4 h-4" />,
+        icon: <FontAwesomeIcon icon={faBuildingShield} className=" w-4 h-4" />,
       },
       {
         title: "Piping Engineering",
@@ -133,12 +132,12 @@ const servicesData: MainCategory[] = [
       {
         title: "Piping Stress Analysis",
         href: "/services/plant-engineering/details#section-3",
-        icon: <FontAwesomeIcon icon={faChartArea} className="w-4 h-4" />,
+        icon: <FontAwesomeIcon icon={faChartArea} className=" w-4 h-4" />,
       },
       {
         title: "Mechanical Engineering",
         href: "/services/plant-engineering/details#section-4",
-        icon: <FontAwesomeIcon icon={faGears} className="w-5 h-5" />,
+        icon: <FontAwesomeIcon icon={faGears} className=" w-5 h-5" />,
       },
       {
         title: "Electrical Engineering",
@@ -165,11 +164,13 @@ const servicesData: MainCategory[] = [
         href: "/services/plant-engineering/details#section-9",
         icon: <FontAwesomeIcon icon={faBridge} className="w-4 h-4" />,
       },
+
       {
         title: "Modular Package",
         href: "/services/plant-engineering/details#section-10",
         icon: <Box className="w-5 h-5" />,
       },
+
       {
         title: "Procurement Support",
         href: "/services/plant-engineering/details#section-11",
@@ -182,9 +183,10 @@ const servicesData: MainCategory[] = [
       title: "Right Place Right Time",
     },
   },
+  // IT Services can remain as is with individual pages if preferred, or adjust similarly
   {
-    title: "Saas Solutions - servicecpq",
-    icon: <Server className="w-4 h-4 mr-2" />,
+    title: "Saas Solutions - servicecpq ",
+    icon: <Server className=" w-4 h-4 mr-2" />,
     href: "/services/saas-solution/servicecpq",
     subCategories: [
       {
@@ -201,7 +203,7 @@ const servicesData: MainCategory[] = [
   },
   {
     title: "Staffing and Recruitment Services",
-    icon: <Users className="w-4 h-4 mr-2" />,
+    icon: <Users className=" w-4 h-4 mr-2" />,
     href: "/services/staffing",
     subCategories: [
       {
@@ -229,20 +231,12 @@ const arrowVariants = {
 };
 
 const mobileMenuVariants = {
-  closed: { height: 0, opacity: 0 },
+  closed: { height: 0, opacity: 0, y: -20 },
   open: {
     height: "auto",
     opacity: 1,
-    transition: { duration: 0.3, ease: "easeInOut" },
-  },
-};
-
-const dropdownVariants = {
-  closed: { height: 0, opacity: 0 },
-  open: {
-    height: "auto",
-    opacity: 1,
-    transition: { duration: 0.2, ease: "easeOut" },
+    y: 0,
+    transition: { duration: 0.4, ease: "easeInOut" },
   },
 };
 
@@ -250,15 +244,29 @@ export function MegaMenu() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [activeCategory, setActiveCategory] = useState<number>(0);
   const [isSticky, setIsSticky] = useState(true);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openMobileCategory, setOpenMobileCategory] = useState<string | null>(
     null
   );
+
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null); // Ref to store timeout
   const router = useRouter();
   const pathname = usePathname();
-
+  const toggleMobileCategory = (categoryTitle: string) => {
+    setOpenMobileCategory(
+      openMobileCategory === categoryTitle ? null : categoryTitle
+    );
+  };
+  const dropdownVariants = {
+    closed: { height: 0, opacity: 0, y: -10 },
+    open: {
+      height: "auto",
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.3, ease: "easeOut" },
+    },
+  };
   // Handle outside clicks to close dropdown
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -297,7 +305,7 @@ export function MegaMenu() {
   // Handle mouse enter for services dropdown
   const handleMouseEnter = () => {
     if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
+      clearTimeout(timeoutRef.current); // Clear any existing timeout
     }
     setActiveDropdown("services");
     setActiveCategory(0);
@@ -307,21 +315,14 @@ export function MegaMenu() {
   const handleMouseLeave = () => {
     timeoutRef.current = setTimeout(() => {
       setActiveDropdown(null);
-    }, 300);
+    }, 300); // 300ms delay before closing dropdown
   };
 
   // Handle mouse enter for dropdown content to keep it open
   const handleDropdownMouseEnter = () => {
     if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
+      clearTimeout(timeoutRef.current); // Prevent dropdown from closing
     }
-  };
-
-  // Toggle mobile category dropdown
-  const toggleMobileCategory = (categoryTitle: string) => {
-    setOpenMobileCategory(
-      openMobileCategory === categoryTitle ? null : categoryTitle
-    );
   };
 
   return (
@@ -499,7 +500,7 @@ export function MegaMenu() {
                 About Us
               </Link>
 
-              {/* Contact Button */}
+              {/* Search and Contact Button */}
               <div className="flex items-center space-x-4 ml-2">
                 <Link href="/contact">
                   <Button className="bg-[#0098af] text-white hover:bg-white hover:text-black text-lg transition-colors duration-200 border-2 border-transparent hover:border-[#0098af] hover:outline hover:outline-2 hover:outline-[#0098af]">
@@ -513,12 +514,15 @@ export function MegaMenu() {
             <div className="md:hidden flex items-center">
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="text-gray-700 hover:text-blue-900 p-2"
+                className="text-gray-700 hover:text-[#0098af] p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0098af] focus:ring-opacity-50"
+                aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+                aria-expanded={isMobileMenuOpen}
+                aria-controls="mobile-menu"
               >
                 {isMobileMenuOpen ? (
-                  <X className="h-6 w-6" />
+                  <X className="h-7 w-7" />
                 ) : (
-                  <Menu className="h-6 w-6" />
+                  <Menu className="h-7 w-7" />
                 )}
               </button>
             </div>
@@ -526,145 +530,163 @@ export function MegaMenu() {
         </div>
 
         {/* Mobile Menu */}
-        <AnimatePresence>
-          {isMobileMenuOpen && (
-            <motion.div
-              className="md:hidden bg-gradient-to-b from-white to-gray-50 border-t border-gray-200 shadow-lg"
-              variants={mobileMenuVariants}
-              initial="closed"
-              animate="open"
-              exit="closed"
-            >
-              <div className="px-4 pt-4 pb-6 space-y-2">
-                <Link
-                  href="/"
-                  className="block px-4 py-2 text-lg font-medium text-gray-700 hover:text-blue-900 hover:bg-gray-100 rounded-md transition-colors duration-200"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Home
-                </Link>
-
-                {/* Mobile Services Section */}
-                <div className="space-y-2">
-                  <div className="px-4 py-2 text-lg font-semibold text-gray-800 bg-gray-100 rounded-md">
-                    Services
-                  </div>
-                  {servicesData.map((service) => (
-                    <div key={service.title} className="space-y-1">
-                      <button
-                        onClick={() => toggleMobileCategory(service.title)}
-                        className="flex items-center justify-between w-full px-4 py-3 text-lg font-medium text-gray-700 hover:text-blue-900 hover:bg-gray-100 rounded-md transition-colors duration-200"
-                      >
-                        <div className="flex items-center">
-                          {service.icon && (
-                            <span className="mr-2">{service.icon}</span>
-                          )}
-                          {service.title}
-                        </div>
-                        <motion.span
-                          variants={arrowVariants}
-                          animate={
-                            openMobileCategory === service.title
-                              ? "open"
-                              : "closed"
-                          }
-                          transition={{ duration: 0.2 }}
-                        >
-                          <ChevronDown className="h-4 w-4" />
-                        </motion.span>
-                      </button>
-                      <AnimatePresence>
-                        {openMobileCategory === service.title && (
-                          <motion.div
-                            className="pl-4 max-h-60 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100"
-                            variants={dropdownVariants}
-                            initial="closed"
-                            animate="open"
-                            exit="closed"
-                          >
-                            {service.subCategories
-                              .filter((sub) => sub.title) // Filter out empty titles
-                              .map((subCategory) => (
-                                <Link
-                                  key={subCategory.title}
-                                  href={subCategory.href}
-                                  className="flex items-center px-4 py-2 text-base text-gray-600 hover:text-blue-900 hover:bg-gray-50 rounded-md transition-colors duration-200"
-                                  onClick={() => {
-                                    setIsMobileMenuOpen(false);
-                                    if (
-                                      subCategory.href.includes("?section=") &&
-                                      pathname === "/services"
-                                    ) {
-                                      const sectionId =
-                                        subCategory.href.split("section=")[1];
-                                      const targetSection =
-                                        document.getElementById(sectionId);
-                                      if (targetSection) {
-                                        targetSection.scrollIntoView({
-                                          behavior: "smooth",
-                                          block: "start",
-                                        });
-                                      }
-                                      return false;
-                                    }
-                                  }}
-                                >
-                                  {subCategory.icon && (
-                                    <span className="mr-2">
-                                      {subCategory.icon}
-                                    </span>
-                                  )}
-                                  {subCategory.title}
-                                </Link>
-                              ))}
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
-                    </div>
-                  ))}
-                </div>
-
-                <Link
-                  href="/projects"
-                  className="block px-4 py-2 text-lg font-medium text-gray-700 hover:text-blue-900 hover:bg-gray-100 rounded-md transition-colors duration-200"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Projects
-                </Link>
-                <Link
-                  href="/careers"
-                  className="block px-4 py-2 text-lg font-medium text-gray-700 hover:text-blue-900 hover:bg-gray-100 rounded-md transition-colors duration-200"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Careers
-                </Link>
-                <Link
-                  href="/about"
-                  className="block px-4 py-2 text-lg font-medium text-gray-700 hover:text-blue-900 hover:bg-gray-100 rounded-md transition-colors duration-200"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  About Us
-                </Link>
-
-                {/* Mobile Contact Button */}
-                <div className="px-4 pt-2">
-                  <Link href="/contact">
-                    <Button
-                      className="w-full bg-[#0098af] text-white hover:bg-white hover:text-black border-2 border-transparent hover:border-[#0098af] hover:outline hover:outline-2 hover:outline-[#0098af] transition-colors duration-200"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      Contact Us
-                    </Button>
+        {isMobileMenuOpen && (
+          <AnimatePresence>
+            {isMobileMenuOpen && (
+              <motion.div
+                id="mobile-menu"
+                className="md:hidden bg-white border-t border-gray-200 shadow-lg"
+                variants={mobileMenuVariants}
+                initial="closed"
+                animate="open"
+                exit="closed"
+                role="menu"
+                aria-label="Mobile navigation"
+              >
+                <div className="px-4 py-6 space-y-3">
+                  <Link
+                    href="/"
+                    className="block px-4 py-3 text-lg font-medium text-gray-700 hover:text-[#0098af] hover:bg-gray-50 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#0098af] focus:ring-opacity-50"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    role="menuitem"
+                    aria-current={pathname === "/" ? "page" : undefined}
+                  >
+                    Home
                   </Link>
-                </div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
 
-        {/* Spacer for sticky header */}
-        {isSticky && <div className="h-[2px]" />}
+                  <div className="space-y-2">
+                    <div className="px-4 py-3 text-lg font-semibold text-gray-800 bg-gray-100 rounded-lg">
+                      Services
+                    </div>
+                    {servicesData.map((service) => (
+                      <div key={service.title} className="space-y-1">
+                        <button
+                          onClick={() => toggleMobileCategory(service.title)}
+                          className="flex items-center justify-between w-full px-4 py-4 text-lg font-medium text-gray-700 hover:text-[#0098af] hover:bg-gray-50 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#0098af] focus:ring-opacity-50"
+                          aria-expanded={openMobileCategory === service.title}
+                          aria-controls={`mobile-submenu-${service.title}`}
+                          role="menuitem"
+                        >
+                          <div className="flex items-center">
+                            {service.icon}
+                            {service.title}
+                          </div>
+                          <motion.span
+                            variants={arrowVariants}
+                            animate={
+                              openMobileCategory === service.title
+                                ? "open"
+                                : "closed"
+                            }
+                            transition={{ duration: 0.2 }}
+                          >
+                            <ChevronDown className="h-5 w-5" />
+                          </motion.span>
+                        </button>
+                        <AnimatePresence>
+                          {openMobileCategory === service.title && (
+                            <motion.div
+                              id={`mobile-submenu-${service.title}`}
+                              className="pl-6 space-y-1 max-h-64 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100"
+                              variants={dropdownVariants}
+                              initial="closed"
+                              animate="open"
+                              exit="closed"
+                            >
+                              {service.subCategories
+                                .filter((sub) => sub.title)
+                                .map((subCategory) => (
+                                  <Link
+                                    key={subCategory.title}
+                                    href={subCategory.href}
+                                    className="flex items-center px-4 py-3 text-base text-gray-600 hover:text-[#0098af] hover:bg-gray-50 rounded-md transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#0098af] focus:ring-opacity-50"
+                                    onClick={() => {
+                                      setIsMobileMenuOpen(false);
+                                      if (
+                                        subCategory.href.includes(
+                                          "?section="
+                                        ) &&
+                                        pathname === "/services"
+                                      ) {
+                                        const sectionId =
+                                          subCategory.href.split("section=")[1];
+                                        const targetSection =
+                                          document.getElementById(sectionId);
+                                        if (targetSection) {
+                                          targetSection.scrollIntoView({
+                                            behavior: "smooth",
+                                            block: "start",
+                                          });
+                                        }
+                                        return false;
+                                      }
+                                    }}
+                                    role="menuitem"
+                                  >
+                                    {subCategory.icon && (
+                                      <span className="mr-3">
+                                        {subCategory.icon}
+                                      </span>
+                                    )}
+                                    {subCategory.title}
+                                  </Link>
+                                ))}
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    ))}
+                  </div>
+
+                  <Link
+                    href="/projects"
+                    className="block px-4 py-3 text-lg font-medium text-gray-700 hover:text-[#0098af] hover:bg-gray-50 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#0098af] focus:ring-opacity-50"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    role="menuitem"
+                    aria-current={pathname === "/projects" ? "page" : undefined}
+                  >
+                    Projects
+                  </Link>
+                  <Link
+                    href="/careers"
+                    className="block px-4 py-3 text-lg font-medium text-gray-700 hover:text-[#0098af] hover:bg-gray-50 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#0098af] focus:ring-opacity-50"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    role="menuitem"
+                    aria-current={pathname === "/careers" ? "page" : undefined}
+                  >
+                    Careers
+                  </Link>
+                  <Link
+                    href="/about"
+                    className="block px-4 py-3 text-lg font-medium text-gray-700 hover:text-[#0098af] hover:bg-gray-50 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#0098af] focus:ring-opacity-50"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    role="menuitem"
+                    aria-current={pathname === "/about" ? "page" : undefined}
+                  >
+                    About Us
+                  </Link>
+
+                  <div className="px-4 pt-2">
+                    <Link href="/contact">
+                      <Button
+                        className="w-full bg-[#0098af] text-white hover:bg-[#008090] py-3 text-lg font-medium rounded-lg transition-all duration-200 border-2 border-transparent hover:border-[#00707a] focus:outline-none focus:ring-2 focus:ring-[#0098af] focus:ring-opacity-50"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        role="menuitem"
+                        aria-label="Contact Us"
+                      >
+                        Contact Us
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        )}
       </nav>
+
+      {/* Spacer for sticky header */}
+      {isSticky && <div className="h-14 " />}
     </div>
   );
 }

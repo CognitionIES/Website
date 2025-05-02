@@ -15,7 +15,7 @@ export default function DigitalizationProject() {
     <div className="min-h-screen bg-gradient-to-b from-[#F9FAFB] to-[#E5ECEF]">
       <MegaMenu />
       {/* Hero Section */}
-      <section className="relative h-[300px] sm:h-[450px] overflow-hidden">
+      <section className="relative  overflow-hidden">
         <Hero />
       </section>
       <AboutSection />

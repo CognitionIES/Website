@@ -115,7 +115,7 @@ export default function AboutSection() {
   };
 
   return (
-    <div className="py-16">
+    <div className="py-8 sm:py-12 lg:py-16">
       <section
         ref={sectionRef}
         className="w-full py-4 sm:py-8 lg:py-4 sm:h-[620px] relative bg-[#0098af]/10 rounded-xl"

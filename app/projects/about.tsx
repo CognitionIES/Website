@@ -80,9 +80,7 @@ export default function AboutSection() {
   }, []);
 
   useEffect(() => {
-    // Only animate elements when section is in view
     if (isInView) {
-      // Animate project cards with staggered delay
       projectRefs.current.forEach((item, index) => {
         if (item) {
           setTimeout(() => {
@@ -94,7 +92,6 @@ export default function AboutSection() {
     }
   }, [isInView]);
 
-  // Animation variants for section elements
   const sectionHeaderVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -136,17 +133,15 @@ export default function AboutSection() {
         ref={sectionRef}
         className="w-full py-16 sm:py-20 lg:py-12 relative bg-gradient-to-br from-white to-[#E6F0F5]/30 overflow-hidden"
       >
-        {/* Decorative elements */}
         <div className="absolute top-0 right-0 w-64 h-64 bg-[#0098AF]/5 rounded-full filter blur-3xl"></div>
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#003C46]/5 rounded-full filter blur-3xl"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          {/* Section header */}
           <div className="inline-block mb-1 bg-[#E6F0F5] bg-opacity-70 rounded-full backdrop-blur-sm px-3 py-1">
             <p className="text-xs font-medium tracking-wider text-[#0098af] uppercase">
               Featured Work
             </p>
-          </div>{" "}
+          </div>
           <h1 className="text-xl sm:text-2xl lg:text-4xl font-semibold text-[#003C46] tracking-tight drop-shadow-sm">
             Recent Projects
           </h1>
@@ -155,22 +150,15 @@ export default function AboutSection() {
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
           ></motion.div>
-          {/* Projects grid with navigation */}
+
           <motion.div
             variants={cardsContainerVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
             className="relative max-w-7xl mt-8"
           >
-            <div className="overflow-hidden">
-              <div
-                className="flex transition-transform duration-500 ease-out gap-4 sm:gap-6 lg:gap-6"
-                style={{
-                  transform: `translateX(-${
-                    activeIndex * (100 / visibleProjects)
-                  }%)`,
-                }}
-              >
+            {isMobile ? (
+              <div className="space-y-6">
                 {projects.map((project, index) => (
                   <motion.div
                     key={project.id}
@@ -178,17 +166,13 @@ export default function AboutSection() {
                       projectRefs.current[index] = el;
                     }}
                     variants={cardVariants}
-                    className={cn(
-                      "project-card flex-shrink-0 w-full opacity-0 translate-y-12 transition-all duration-700",
-                      isMobile ? "w-full" : "w-1/2"
-                    )}
+                    className="project-card w-full opacity-0 translate-y-12 transition-all duration-700"
                     whileHover={{ y: -5 }}
                   >
-                    <div className="group h-full bg-white/80 rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300">
-                      {/* Image container - Now clickable */}
+                    <div className="group h-full bg-white/90 rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300">
                       <Link
                         href={project.href}
-                        className="block relative h-[180px] sm:h-[240px] w-full overflow-hidden cursor-pointer"
+                        className="block relative h-[200px] w-full overflow-hidden cursor-pointer"
                       >
                         <div
                           className="absolute inset-0 bg-cover bg-center h-full w-full transform transition-transform duration-700 group-hover:scale-105"
@@ -200,30 +184,28 @@ export default function AboutSection() {
                             })`,
                           }}
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-60 group-hover:opacity-70 transition-opacity" />
-                        <div className="absolute top-3 sm:top-4 left-3 sm:left-4">
-                          <div className="px-2 sm:px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full">
-                            <p className="text-[10px] sm:text-xs font-medium text-[#003C46]">
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-60 group-hover:opacity-70 transition-opacity" />
+                        <div className="absolute top-3 left-3">
+                          <div className="px-2 py-1 bg-white/90 backdrop-blur-sm rounded-full">
+                            <p className="text-[10px] font-medium text-[#003C46]">
                               {project.category}
                             </p>
                           </div>
                         </div>
                       </Link>
 
-                      {/* Content */}
-                      <div className="p-4 sm:p-6 space-y-2 sm:space-y-3">
-                        {/* Heading - Now clickable */}
+                      <div className="p-4 space-y-3">
                         <a href={project.href} className="block">
-                          <h3 className="text-lg sm:text-2xl font-semibold text-[#5b5b5b] group-hover:text-[#0098af] transition-colors">
+                          <h3 className="text-lg font-semibold text-[#5b5b5b] group-hover:text-[#0098af] transition-colors">
                             {project.title}
                           </h3>
                         </a>
-                        <p className="text-gray-600 line-clamp-3 text-sm sm:text-base leading-relaxed">
+                        <p className="text-gray-600 line-clamp-3 text-sm leading-relaxed">
                           {project.description}
                         </p>
                         <a
                           href={project.href}
-                          className="inline-flex items-center gap-1.5 text-sm sm:text-base font-medium text-[#0098af] group relative"
+                          className="inline-flex items-center gap-1.5 text-sm font-medium text-[#0098af] group relative"
                         >
                           <span className="relative">
                             View in detail
@@ -236,10 +218,82 @@ export default function AboutSection() {
                   </motion.div>
                 ))}
               </div>
-            </div>
+            ) : (
+              <div className="overflow-hidden">
+                <div
+                  className="flex transition-transform duration-500 ease-out gap-4 sm:gap-6 lg:gap-6"
+                  style={{
+                    transform: `translateX(-${
+                      activeIndex * (100 / visibleProjects)
+                    }%)`,
+                  }}
+                >
+                  {projects.map((project, index) => (
+                    <motion.div
+                      key={project.id}
+                      ref={(el) => {
+                        projectRefs.current[index] = el;
+                      }}
+                      variants={cardVariants}
+                      className={cn(
+                        "project-card flex-shrink-0 w-full opacity-0 translate-y-12 transition-all duration-700",
+                        "w-1/2"
+                      )}
+                      whileHover={{ y: -5 }}
+                    >
+                      <div className="group h-full bg-white/80 rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300">
+                        <Link
+                          href={project.href}
+                          className="block relative h-[180px] sm:h-[240px] w-full overflow-hidden cursor-pointer"
+                        >
+                          <div
+                            className="absolute inset-0 bg-cover bg-center h-full w-full transform transition-transform duration-700 group-hover:scale-105"
+                            style={{
+                              backgroundImage: `url(${
+                                typeof project.image === "string"
+                                  ? project.image
+                                  : project.image.src
+                              })`,
+                            }}
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-60 group-hover:opacity-70 transition-opacity" />
+                          <div className="absolute top-3 sm:top-4 left-3 sm:left-4">
+                            <div className="px-2 sm:px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full">
+                              <p className="text-[10px] sm:text-xs font-medium text-[#003C46]">
+                                {project.category}
+                              </p>
+                            </div>
+                          </div>
+                        </Link>
 
-            {/* Navigation buttons (mobile only) */}
-            {isMobile && (
+                        <div className="p-4 sm:p-6 space-y-2 sm:space-y-3">
+                          <a href={project.href} className="block">
+                            <h3 className="text-lg sm:text-2xl font-semibold text-[#5b5b5b] group-hover:text-[#0098af] transition-colors">
+                              {project.title}
+                            </h3>
+                          </a>
+                          <p className="text-gray-600 line-clamp-3 text-sm sm:text-base leading-relaxed">
+                            {project.description}
+                          </p>
+                          <a
+                            href={project.href}
+                            className="inline-flex items-center gap-1.5 text-sm sm:text-base font-medium text-[#0098af] group relative"
+                          >
+                            <span className="relative">
+                              View in detail
+                              <span className="absolute -bottom-px left-0 w-full h-px bg-[#0098af]/50 scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                            </span>
+                            <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                          </a>
+                        </div>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {!isMobile && (
               <div className="flex justify-between mt-4 sm:hidden">
                 <Button
                   variant="outline"
@@ -261,8 +315,6 @@ export default function AboutSection() {
             )}
           </motion.div>
         </div>
-
-        {/* Animated decorative corner element */}
       </section>
     </div>
   );

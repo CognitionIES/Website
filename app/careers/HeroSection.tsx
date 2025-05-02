@@ -57,15 +57,15 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className={`text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white drop-shadow-lg ${
+            className={`text-4xl md:text-5xl lg:text-6xl  font-extrabold tracking-tight text-white drop-shadow-md relative ${
               isMobile ? "mb-6" : "mb-3 sm:mb-4 md:mb-6"
-            } leading-tight`}
+            } leading-tight relative`}
           >
             {TITLE}
             <span
               className={`absolute bottom-0 ${
-                isMobile ? "left-1 w-24" : "left-0"
-              } w-12 h-0.5 bg-gradient-to-r from-[#99D5DF] to-transparent`}
+                isMobile ? "left-0  " : "left-0 w-12 "
+              } h-0.5 bg-gradient-to-r from-[#99D5DF] to-transparent`}
             />
           </motion.h1>
           <motion.p
