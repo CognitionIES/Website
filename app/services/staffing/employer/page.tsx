@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import {
@@ -12,6 +13,9 @@ import {
   Award,
   Target,
   Car,
+  ChevronDown,
+  ChevronRight,
+  Home,
 } from "lucide-react";
 import Image from "next/image";
 import { MegaMenu } from "@/components/ui/Megamenu/MegaMenu";
@@ -19,6 +23,7 @@ import Footer from "@/components/footer";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const Employers = () => {
   const animatedElementsRef = useRef<HTMLElement[]>([]);
@@ -54,9 +59,9 @@ const Employers = () => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsProcessInView(true); // Set to true when section first comes into view
+          setIsProcessInView(true);
           if (processSectionRef.current) {
-            observer.unobserve(processSectionRef.current); // Stop observing to prevent re-triggering
+            observer.unobserve(processSectionRef.current);
           }
         }
       },
@@ -194,7 +199,6 @@ const Employers = () => {
 
     return () => {
       if (sectionRef.current) {
-        // eslint-disable-next-line react-hooks/exhaustive-deps
         observer.unobserve(sectionRef.current);
       }
     };
@@ -213,54 +217,115 @@ const Employers = () => {
     },
   };
 
+  const isMobile = useIsMobile();
+
   return (
     <div className="bg-gradient-to-br from-[#E6F0F5]/40 to-white">
       <MegaMenu />
       <div className="">
-        {/* Hero Section with Background Image */}
-        <div className="relative bg-[#003C46] text-white h-[470px] overflow-hidden">
-          <div className="absolute inset-0 z-0">
+        {/* Hero Section */}
+        <section>
+          <div
+            className={`relative ${
+              isMobile ? "h-[400px]" : "h-[450px]"
+            } overflow-hidden`}
+          >
             <Image
               src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1920&q=80"
               alt="Team collaboration"
-              width={1920}
-              height={1080}
-              className="w-full h-full object-cover opacity-20"
+              fill
+              className="object-cover opacity-20"
+              priority
+              sizes="(max-width: 640px) 100vw, (max-width: 1280px) 90vw, 1280px"
+              quality={80}
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#003C46] via-[#0098af] to-[#003C46] opacity-80"></div>
-          </div>
-
-          <div className="max-w-7xl mx-auto px-4 py-16 md:py-32 relative z-10 overflow-x-auto whitespace-nowrap">
-            <div className="text-center items-center">
-              <div className="mb-8">
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-center items-center justify-center animate-on-scroll visible">
-                  Our Business Engagement Model
-                </h1>
-                <p className="text-base opacity-90 mb-4 uppercase animate-on-scroll visible">
-                  Transparent, Flexible and Scalable
-                </p>
-                <div className="max-w-3xl mx-auto">
-                  <p className="text-lg opacity-90 mb-8 uppercase animate-on-scroll visible">
-                    We help you hire smarter through a structured Engagement
-                    model that ensures success from Day One
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="absolute bottom-0 left-0 right-0">
-            <svg
-              viewBox="0 0 1200 120"
-              preserveAspectRatio="none"
-              className="absolute bottom-0 w-full h-16 text-[#E6F0F5]"
+            <div className="absolute inset-0 bg-gradient-to-r from-[#003C46]/85 to-[#0098AF]/70" />
+            <div className="absolute inset-0 opacity-10 bg-[url('/images/engineering-pattern.jpg')] bg-repeat" />
+            <div
+              className={`relative z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 h-full flex flex-col justify-center ${
+                isMobile ? "items-center text-center" : ""
+              }`}
             >
-              <path
-                d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-                fill="currentColor"
-              ></path>
-            </svg>
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white drop-shadow-md relative"
+              >
+                Our Business Engagement Model
+                <span
+                  className={`absolute bottom-0 ${
+                    isMobile ? "" : "left-0 w-48"
+                  } h-0.5 bg-gradient-to-r from-[#99D5DF] to-transparent`}
+                />
+              </motion.h1>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+                className="text-base sm:text-lg md:text-xl text-white/90 mt-4 max-w-3xl"
+              >
+                Transparent, Flexible and Scalable
+              </motion.p>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+                className="text-base sm:text-lg md:text-xl text-white/90 mt-2 max-w-3xl"
+              >
+                We help you hire smarter through a structured Engagement model
+                that ensures success from Day One
+              </motion.p>
+              {!isMobile && (
+                <nav className="absolute bottom-0 left-6 sm:left-8 lg:left-12 mb-6 flex items-center space-x-2 text-sm font-light text-white/80">
+                  <Link
+                    href="/"
+                    className="hover:text-[#99D5DF] flex items-center gap-1 transition-colors duration-200"
+                  >
+                    <Home className="w-4 h-4" />
+                    Home
+                  </Link>
+                  <ChevronRight className="w-4 h-4" />
+                  <Link
+                    href="/services/st E6F0F5affing/employers"
+                    className="hover:text-[#99D5DF] transition-colors duration-200"
+                  >
+                    Employers
+                  </Link>
+                </nav>
+              )}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 0.7, y: 0 }}
+                transition={{
+                  repeat: Infinity,
+                  duration: 1.5,
+                  repeatType: "reverse",
+                }}
+                className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white/70"
+              >
+                <ChevronDown className="w-6 h-6" />
+              </motion.div>
+            </div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 0.25, scale: 1 }}
+              transition={{ delay: 0.5, duration: 1 }}
+              className="absolute bottom-0 left-0 w-80 h-80 bg-[#0098AF] opacity-50 rounded-full blur-3xl -z-10"
+            />
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.15 }}
+              transition={{
+                delay: 1,
+                duration: 1,
+                repeat: Infinity,
+                repeatType: "reverse",
+              }}
+              className="absolute top-20 right-16 w-5 h-5 bg-[#5B5B5B] opacity-30 rounded-full -z-10"
+            />
           </div>
-        </div>
+        </section>
 
         {/* Main Content */}
         <div className="max-w-7xl mx-auto px-4">
@@ -499,7 +564,7 @@ const Employers = () => {
               src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1920&q=80"
               alt="Team collaboration"
               width={1920}
-              height={1080} 
+              height={1080}
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-[#0098af]/80 to-[#000000]/60 flex items-center justify-center">
