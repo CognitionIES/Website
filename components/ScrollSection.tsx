@@ -69,9 +69,7 @@ export function ScrollSection({
         aria-label={`Section ${title}`}
         aria-labelledby={`section-title-${index}`}
       >
-        <div
-          className=" backdrop-blur-sm p-4 rounded-xl "
-        >
+        <div className=" backdrop-blur-sm p-4 rounded-xl ">
           <div className="space-y-8">
             <motion.h2
               id={`section-title-${index}`}
@@ -100,6 +98,25 @@ export function ScrollSection({
                 </motion.li>
               ))}
             </motion.ul>
+            {additionalImageUrl && (
+              <motion.div
+                className="relative max-w-full py-0 h-[60px] rounded-lg overflow-hidden mt-auto"
+                variants={itemVariants}
+              >
+                <motion.div
+                  className="relative w-full h-full transform-gpu"
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <Image
+                    src={additionalImageUrl}
+                    alt={`Additional image for ${title}`}
+                    className="object-cover"
+                    fill
+                    loading="lazy"
+                  />
+                </motion.div>
+              </motion.div>
+            )}
           </div>
         </div>
       </motion.div>
@@ -120,9 +137,7 @@ export function ScrollSection({
       <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6 items-center">
         <motion.div
           className={`space-y-2 flex flex-col justify-between h-full ${
-            isEven
-              ? "md:order-2 md:col-span-8"
-              : "md:order-1 md:col-span-8"
+            isEven ? "md:order-2 md:col-span-8" : "md:order-1 md:col-span-8"
           }`}
           variants={itemVariants}
         >
