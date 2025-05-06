@@ -18,7 +18,6 @@ type Job = {
 };
 
 export default function JobsSection() {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [jobs, setJobs] = useState<Job[]>([]);
   const [search, setSearch] = useState("");
   const [location, setLocation] = useState("");
@@ -28,14 +27,26 @@ export default function JobsSection() {
 
   useEffect(() => {
     const fetchJobs = async () => {
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const { data } = await supabase
-        .from("jobs")
-        .select("id, title, location, job_type, description, years_experience")
-        .eq("is_active", true)
-        .order("created_at", { ascending: false });
-      
-      setLoading(false);
+      try {
+        const { data, error } = await supabase
+          .from("jobs")
+          .select(
+            "id, title, location, job_type, description, years_experience"
+          )
+          .eq("is_active", true)
+          .order("created_at", { ascending: false });
+
+        if (error) {
+          console.error("Error fetching jobs:", error);
+          return;
+        }
+
+        setJobs(data || []);
+        setLoading(false);
+      } catch (err) {
+        console.error("Unexpected error:", err);
+        setLoading(false);
+      }
     };
     fetchJobs();
   }, []);
