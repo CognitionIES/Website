@@ -47,7 +47,7 @@ export default function Hero() {
         {/* Multi-layered Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#003C46]/90 via-[#0098AF]/75 to-[#00b4d8]/60" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#003C46]/50 to-transparent opacity-80" />
-        <div className="absolute inset-0 opacity-10 bg-[url('/images/engineering-pattern.jpg')] bg-repeat" />
+        <div className="absolute inset-0 opacity-10   bg-repeat" />
 
         {/* Content Container */}
         <div

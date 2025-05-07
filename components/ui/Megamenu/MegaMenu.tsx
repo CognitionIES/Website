@@ -382,7 +382,7 @@ export function MegaMenu() {
                     animate={activeDropdown === "services" ? "open" : "closed"}
                     transition={{ duration: 0.2 }}
                   >
-                    <ChevronDown className="ml- h-4 w-4" />
+                    <ChevronDown className="mt-1 1 h-4 w-4" />
                   </motion.span>
                 </button>
 

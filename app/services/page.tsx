@@ -10,6 +10,7 @@ import { Suspense, useEffect, useState, useRef, useCallback } from "react";
 import SearchParamsHandler from "./SearchParamsHandler";
 import { ScrollSection } from "@/components/ScrollSection";
 import CTASection from "@/components/CTA";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 export default function ServicesPage() {
   const shouldReduceMotion = useReducedMotion();
@@ -17,6 +18,7 @@ export default function ServicesPage() {
   const [currentSection, setCurrentSection] = useState(0);
   const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [isScrolling, setIsScrolling] = useState(false);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const timer = setTimeout(() => setShowScrollHint(false), 5000);
@@ -35,23 +37,22 @@ export default function ServicesPage() {
       behavior: shouldReduceMotion ? "auto" : "smooth",
     });
   };
+
   useEffect(() => {
     const handleWheel = (event: WheelEvent) => {
       if (isScrolling) return;
 
-      // If on the last section and scrolling down, allow natural scrolling
       if (
         currentSection === sectionRefs.current.length - 1 &&
         event.deltaY > 0
       ) {
         setIsScrolling(false);
-        return; // Don't prevent default, allow natural scroll to CTA and Footer
+        return;
       }
 
-      // If on the first section and scrolling up, allow natural scrolling
       if (currentSection === 0 && event.deltaY < 0) {
         setIsScrolling(false);
-        return; // Don't prevent default, allow natural scroll up
+        return;
       }
 
       event.preventDefault();
@@ -72,7 +73,7 @@ export default function ServicesPage() {
       window.removeEventListener("wheel", handleWheel);
       window.removeEventListener("scrollend", handleScrollEnd);
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentSection, isScrolling]);
 
   return (
@@ -89,10 +90,6 @@ export default function ServicesPage() {
             <MegaMenu />
           </header>
           <main className="relative pt-8">
-            <div
-              className="fixed top-0 left-8 bottom-0 w-px bg-gradient-to-b from-transparent via-foreground/10 to-transparent"
-              aria-hidden="true"
-            />
             <Suspense fallback={<div>Loading search parameters...</div>}>
               <SearchParamsHandler onParamChange={handleParamChange} />
             </Suspense>
@@ -103,9 +100,9 @@ export default function ServicesPage() {
                 ref={(el) => {
                   sectionRefs.current[index] = el as HTMLDivElement | null;
                 }}
-                className={`min-h-screen flex items-center justify-center py-24 snap-start ${
-                  index === 0 ? "mt-16" : ""
-                }`}
+                className={`min-h-screen flex items-center justify-center ${
+                  isMobile ? "py-2 px-2" : "py-24"
+                } snap-start ${index === 0 ? "mt-2" : ""}`}
               >
                 <div
                   className={`w-full max-w-7xl mx-auto px-2 py-4 rounded-3xl transition-colors duration-500 outline outline-2 outline-black/50 ${
@@ -131,7 +128,7 @@ export default function ServicesPage() {
         <AnimatePresence>
           {showScrollHint && (
             <motion.div
-              className="fixed bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-primary/90"
+              className="fixed bottom-6 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2 text-primary/90 z-50"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 10 }}
@@ -146,9 +143,11 @@ export default function ServicesPage() {
                   ease: "easeInOut",
                 }}
               >
-                <MousePointer2 size={16} aria-hidden="true" />
-                <span className="text-sm font-medium">Scroll to explore</span>
-                <ChevronDown size={16} aria-hidden="true" />
+                <MousePointer2 size={isMobile ? 14 : 16} aria-hidden="true" />
+                <span className={`font-medium ${isMobile ? "text-xs" : "text-sm"}`}>
+                  Scroll to explore
+                </span>
+                <ChevronDown size={isMobile ? 14 : 16} aria-hidden="true" />
               </motion.div>
             </motion.div>
           )}

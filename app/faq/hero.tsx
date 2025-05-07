@@ -24,7 +24,7 @@ export default function hero() {
           quality={80}
         />
         <div className="absolute inset-0 bg-gradient-to-br from-[#003C46]/85 to-[#0098AF]/70" />
-        <div className="absolute inset-0 opacity-5 bg-[url('/images/career-pattern.jpg')] bg-repeat" />
+        <div className="absolute inset-0 opacity-5  bg-repeat" />
         <div
           className={`relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 h-full flex flex-col ${
             isMobile ? "items-center mt-28 justify-center" : "justify-end"

@@ -47,7 +47,7 @@ function Hero() {
           }`}
         >
           <Image
-            src={slide.image}
+            src={isMobile ? slide.mobileImage : slide.image}
             alt={slide.title}
             width={1920}
             height={1080}

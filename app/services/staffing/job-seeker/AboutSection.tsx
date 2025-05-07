@@ -14,7 +14,6 @@ type Job = {
   location: string;
   job_type: string | null;
   description: string;
-  years_experience: number | null;
 };
 
 export default function JobsSection() {
@@ -30,21 +29,22 @@ export default function JobsSection() {
       try {
         const { data, error } = await supabase
           .from("jobs")
-          .select(
-            "id, title, location, job_type, description, years_experience"
-          )
+          .select("id, title, location, job_type, description")
           .eq("is_active", true)
           .order("created_at", { ascending: false });
 
         if (error) {
           console.error("Error fetching jobs:", error);
+          setJobs([]); // Set to empty array on error
+          setLoading(false);
           return;
         }
 
-        setJobs(data || []);
+        setJobs((data as Job[]) || []); // Type assertion to ensure data matches Job[]
         setLoading(false);
       } catch (err) {
         console.error("Unexpected error:", err);
+        setJobs([]); // Set to empty array on unexpected error
         setLoading(false);
       }
     };
@@ -217,12 +217,6 @@ export default function JobsSection() {
                             {job.job_type}
                           </span>
                         )}
-                        {job.years_experience !== null &&
-                          job.years_experience !== undefined && (
-                            <span className="inline-block px-2 py-1 text-xs bg-[#E6F0F5] text-[#003C46] rounded-full">
-                              {job.years_experience}+ years experience
-                            </span>
-                          )}
                       </div>
                     </div>
                   </div>

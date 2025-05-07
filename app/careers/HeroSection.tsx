@@ -45,7 +45,7 @@ export default function HeroSection() {
           quality={80}
         />
         <div className="absolute inset-0 bg-gradient-to-br from-[#003C46]/90 via-[#003C46]/70 to-[#0098AF]/60" />
-        <div className="absolute inset-0 opacity-10 bg-[url('/images/career-pattern.jpg')] bg-repeat" />
+        <div className="absolute inset-0 opacity-10  bg-repeat" />
         <div
           className={`relative z-10 ${
             isMobile

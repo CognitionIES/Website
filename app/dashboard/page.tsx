@@ -31,6 +31,7 @@ type Job = {
   skills: string[] | null;
   is_active: boolean;
   created_at: string;
+  employer_id: string; // Added employer_id property
 };
 
 const Dashboard = () => {
@@ -132,6 +133,7 @@ const Dashboard = () => {
         skills: (job as any).skills ?? null,
         is_active: job.is_active as boolean,
         created_at: job.created_at as string,
+        employer_id: job.employer_id as string, // Added employer_id
       }))
     );
     setLoading(false);
@@ -173,26 +175,33 @@ const Dashboard = () => {
     try {
       setLoading(true);
 
-      console.log("Deleting job with ID:", jobToDelete); // Debug log
+      console.log("Deleting job with ID:", jobToDelete);
+      console.log("Session user ID:", session.user.id);
+      console.log(
+        "Job employer_id:",
+        jobs.find((job) => job.id === jobToDelete)?.employer_id
+      );
 
       const { error, count } = await supabase
         .from("jobs")
         .delete()
         .eq("id", jobToDelete)
-        .eq("employer_id", session.user.id); // Add employer_id check for safety
+        .eq("employer_id", session.user.id);
 
-      console.log("Delete response:", { error, count }); // Debug log
+      console.log("Delete response:", { error, count });
 
-      if (error) throw error;
+      if (error) {
+        throw new Error(`Delete failed: ${error.message}`);
+      }
 
       if (count === 0) {
         throw new Error(
-          "No job was deleted. It may not exist or you lack permission."
+          "No job was deleted. It may not exist, or you lack permission to delete it."
         );
       }
 
       toast({ title: "Job deleted successfully" });
-      await fetchJobs(); // Refresh job list
+      await fetchJobs();
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
       console.error("Error deleting job:", error);
@@ -202,12 +211,11 @@ const Dashboard = () => {
         description: error.message || "An unexpected error occurred",
       });
     } finally {
-      setLoading(false); // Always reset loading state
+      setLoading(false);
       setDeleteDialogOpen(false);
       setJobToDelete(null);
     }
   };
-
   const handleViewApplicants = (jobId: string) => {
     router.push(`/jobs/${jobId}/applicants`); // Use router.push
   };
