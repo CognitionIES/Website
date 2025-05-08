@@ -101,7 +101,7 @@ export default function ServicesPage() {
                   sectionRefs.current[index] = el as HTMLDivElement | null;
                 }}
                 className={` flex items-center justify-center ${
-                  isMobile ? "py-12  px-2 min-h-1/2" : "py-24 min-h-screen"
+                  isMobile ? "py-[96px]  px-2 min-h-3/4" : "py-24 min-h-screen"
                 } snap-start ${index === 0 ? "mt-12" : ""}`}
               >
                 <div
