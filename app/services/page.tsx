@@ -100,12 +100,12 @@ export default function ServicesPage() {
                 ref={(el) => {
                   sectionRefs.current[index] = el as HTMLDivElement | null;
                 }}
-                className={`min-h-screen flex items-center justify-center ${
-                  isMobile ? "py-2 px-2" : "py-24"
-                } snap-start ${index === 0 ? "mt-2" : ""}`}
+                className={` flex items-center justify-center ${
+                  isMobile ? "py-12  px-2 min-h-1/2" : "py-24 min-h-screen"
+                } snap-start ${index === 0 ? "mt-12" : ""}`}
               >
                 <div
-                  className={`w-full max-w-7xl mx-auto px-2 py-4 rounded-3xl transition-colors duration-500 outline outline-2 outline-black/50 ${
+                  className={`w-full max-w-7xl  mx-auto px-2 py-8 rounded-3xl transition-colors duration-500 outline outline-2 outline-black/50 ${
                     index % 2 === 0
                       ? "bg-blue-400/5 dark:bg-blue-950/10"
                       : "bg-gray-400/10 dark:bg-gray-900/10"

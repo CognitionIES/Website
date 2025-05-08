@@ -64,13 +64,15 @@ export function ScrollSection({
         variants={containerVariants}
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
-        className="relative max-w-7xl mx-auto px-2 py-6"
+        className="relative max-w-7xl mx-auto px-2 py-4" // Changed from py-6 to py-4
         role="region"
         aria-label={`Section ${title}`}
         aria-labelledby={`section-title-${index}`}
       >
-        <div className=" backdrop-blur-sm p-4 rounded-xl ">
-          <div className="space-y-8">
+        <div className="backdrop-blur-sm p-4 rounded-xl">
+          <div className="space-y-6">
+            {" "}
+            {/* Changed from space-y-8 to space-y-6 */}
             <motion.h2
               id={`section-title-${index}`}
               className="text-2xl sm:text-3xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/80 uppercase"
@@ -78,7 +80,6 @@ export function ScrollSection({
             >
               {title}
             </motion.h2>
-
             <motion.ul
               className="grid grid-cols-1 sm:grid-cols-2 gap-3"
               variants={containerVariants}
@@ -98,27 +99,27 @@ export function ScrollSection({
                 </motion.li>
               ))}
             </motion.ul>
-            {additionalImageUrl && (
-              <motion.div
-                className="relative max-w-full py-0 h-[60px] rounded-lg overflow-hidden mt-auto"
-                variants={itemVariants}
-              >
-                <motion.div
-                  className="relative w-full h-full transform-gpu"
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
-                  <Image
-                    src={additionalImageUrl}
-                    alt={`Additional image for ${title}`}
-                    className="object-cover"
-                    fill
-                    loading="lazy"
-                  />
-                </motion.div>
-              </motion.div>
-            )}
           </div>
         </div>
+        {additionalImageUrl && (
+          <motion.div
+            className="relative max-w-full py-0 h-[60px] rounded-lg overflow-hidden mt-auto"
+            variants={itemVariants}
+          >
+            <motion.div
+              className="relative w-full h-full transform-gpu"
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <Image
+                src={additionalImageUrl}
+                alt={`Additional image for ${title}`}
+                className="object-cover"
+                fill
+                loading="lazy"
+              />
+            </motion.div>
+          </motion.div>
+        )}
       </motion.div>
     );
   }
